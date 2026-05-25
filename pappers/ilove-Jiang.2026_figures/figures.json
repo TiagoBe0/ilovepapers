@@ -1,0 +1,266 @@
+{
+  "source_file": "/home/santi/Documentos/ilovepappers/pappers/ilove-Jiang.2026.pdf",
+  "total_figures": 20,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "Fig. 1. A chronological overview of LLMs for code generation in recent years. The timeline was established mainly according to the release date. The models with publicly available model checkpoints are highlighted in green color.",
+      "page": 4,
+      "bbox": {
+        "l": 59.554237365722656,
+        "t": 640.5981597900391,
+        "r": 421.56121826171875,
+        "b": 114.6983642578125
+      },
+      "image_path": "images/fig_001_Fig_1_A_chronological_overview_of_LLMs.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Fig. 2. The overview of LLMs with encoder-decoder and decoder-only Transformer architecture for code generation, adapted from [254].",
+      "page": 6,
+      "bbox": {
+        "l": 49.115291595458984,
+        "t": 640.5124435424805,
+        "r": 437.9169921875,
+        "b": 392.880615234375
+      },
+      "image_path": "images/fig_002_Fig_2_The_overview_of_LLMs_with_encode.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Fig. 3. Overview of the paper search and collection process.",
+      "page": 10,
+      "bbox": {
+        "l": 48.645938873291016,
+        "t": 314.23297119140625,
+        "r": 436.5849609375,
+        "b": 148.440673828125
+      },
+      "image_path": "images/fig_003_Fig_3_Overview_of_the_paper_search_and.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Fig. 4. Data qualitative analysis. Top : Annual distribution of selected papers across various publication venues. Bottom : Distribution analysis of research topics covered in the included papers.",
+      "page": 15,
+      "bbox": {
+        "l": 49.94613265991211,
+        "t": 640.1950988769531,
+        "r": 436.0472412109375,
+        "b": 259.06573486328125
+      },
+      "image_path": "images/fig_004_Fig_4_Data_qualitative_analysis_Top_.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Fig. 5. A diagram illustrating the general training, inference, and evaluation workflow for Code LLMs and their associated databases. The training workflow is mainly divided into four distinct stages: Stages G 2460 and G 2461 are the pre-training phase, whereas Stages G 2462 and G 2463 represent the post-training phases. It is important to note that Stages G 2461 and G 2463 are optional. For instance, StarCoder [146] incorporates only Stage G 2460 . WizardCoder [171], fine-tuned upon StarCoder, includes only Stage G 2462 , while Code Llama [224], continually pre-trained on Llama 2, encompasses Stages G 2461 and G 2462 . DeepSeek-Coder-V2 [330], continually pre-trained on DeepSeek-V2, covers Stages G 2461 , G 2462 , and G 2463 . Note that pre-trained model can be directly used for inference through prompt engineering.",
+      "page": 16,
+      "bbox": {
+        "l": 56.291831970214844,
+        "t": 639.0692672729492,
+        "r": 429.9583740234375,
+        "b": 498.4708709716797
+      },
+      "image_path": "images/fig_005_Fig_5_A_diagram_illustrating_the_gener.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Fig. 6. Taxonomy of LLMs for code generation.",
+      "page": 17,
+      "bbox": {
+        "l": 72.06533813476562,
+        "t": 641.4500503540039,
+        "r": 411.38824462890625,
+        "b": 116.05682373046875
+      },
+      "image_path": "images/fig_006_Fig_6_Taxonomy_of_LLMs_for_code_genera.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Fig. 7. The diagram provides a comprehensive overview of various techniques and their interconnections within the development of LLMs. Circular icons, distinguished by different colors, represent the specific techniques, while gray rectangles denote the evolved models with corresponding techniques. The upper section of the diagram outlines the techniques involved in the model training process, such as pre-training, instruction tuning, and reinforcement learning from human feedback (RLHF), as well as the incorporation of synthetic data. The lower section highlights the techniques related to model inference and evaluation, including prompt engineering, multi-turn prompting, retrieval-augmented generation, and LLM-based evaluations like LLM-asa-Judge. This visual representation underscores the dynamic evolution and integration of innovations in LLM development, facilitating a clearer understanding of how these technologies progressively enhance model capabilities and address various challenges.",
+      "page": 18,
+      "bbox": {
+        "l": 54.2689208984375,
+        "t": 641.2719421386719,
+        "r": 429.9809875488281,
+        "b": 335.33367919921875
+      },
+      "image_path": "images/fig_007_Fig_7_The_diagram_provides_a_comprehen.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Fig. 8. A diagram depicting the standard data preprocessing workflow utilized in the pre-training phase of LLMs for code generation.",
+      "page": 20,
+      "bbox": {
+        "l": 49.168968200683594,
+        "t": 640.0910186767578,
+        "r": 436.5014953613281,
+        "b": 399.0909729003906
+      },
+      "image_path": "images/fig_008_Fig_8_A_diagram_depicting_the_standard.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 9. The comparison among three representative data synthesis methods used for generating instruction data with LLMs. The Code Alpaca [44] employs the self-instruct method, whereas WizardCoder [171] and Magicoder [276] utilize the Evol-Instruct and OSS-Instruct methods, respectively.",
+      "page": 28,
+      "bbox": {
+        "l": 49.16621780395508,
+        "t": 640.073371887207,
+        "r": 436.64141845703125,
+        "b": 501.56146240234375
+      },
+      "image_path": "images/fig_009_Fig_9_The_comparison_among_three_repre.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Fig. 10. Comparison of instruction tuning with various fine-tuning strategies and prompting for code tasks, adapted from [272]. For (a), which involves training a Transformer from scratch, please refer to [7] for its use in source code summarization task. In the case of (e), we utilize a representative RLHF [198] as an example. Additional reinforcement learning methods, such as DPO [213], are also applicable at this stage.",
+      "page": 31,
+      "bbox": {
+        "l": 48.42830276489258,
+        "t": 638.4118270874023,
+        "r": 436.6003112792969,
+        "b": 450.3327941894531
+      },
+      "image_path": "images/fig_010_Fig_10_Comparison_of_instruction_tunin.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 11. Two examples of instruction data sampled from Code Alpaca [44] used to instruction-tune pre-trained code LLM to enhance their alignment with NL instructions. The instruction corpus encompasses a variety of tasks, each accompanied by distinct instructions, such as prime numbers generation and URLs extraction.",
+      "page": 32,
+      "bbox": {
+        "l": 49.77320861816406,
+        "t": 639.6684265136719,
+        "r": 436.4075622558594,
+        "b": 411.53094482421875
+      },
+      "image_path": "images/fig_011_Fig_11_Two_examples_of_instruction_dat.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Fig. 12. An illustration of FFT and PEFT methods. Part (a) refers to the Full Fine-tuning method, which updates all parameters of the base model during fine-tuning. Part (b) stands for the Specification-based PEFT method that conditionally fine-tunes a small subset of the model parameters while freezing the rest of the model, e.g., BitFit [303]. Part (c) represents the Addition-based PEFT method that fine-tunes the incremental parameters introduced into the base model or input, e.g., Adapter [102], Prefix-tuning [148], and Prompt-tuning [142]. Part (d) symbolizes the Reparameterization-based method which reparameterizes existing model parameters by low-rank transformation, e.g., LoRA [103], QLoRA [66], and AdaLoRA [310].",
+      "page": 33,
+      "bbox": {
+        "l": 49.151981353759766,
+        "t": 638.2695846557617,
+        "r": 436.19482421875,
+        "b": 477.0429382324219
+      },
+      "image_path": "images/fig_012_Fig_12_An_illustration_of_FFT_and_PEFT.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 13. An illustration of the self-improving code generation pipeline using prompts for LLMs. This process incorporates iterative self-refinement by integrating execution outcomes and includes an optional selfreflection mechanism to enhance generation quality.",
+      "page": 37,
+      "bbox": {
+        "l": 54.846031188964844,
+        "t": 640.3827209472656,
+        "r": 430.8630065917969,
+        "b": 408.4318542480469
+      },
+      "image_path": "images/fig_013_Fig_13_An_illustration_of_the_self-imp.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 14. A workflow illustration of the RACG. Upon receiving a query (instruction), the retriever selects the relevant contexts from a large-scale vector database. Subsequently, the retrieved contexts are merged with the query, and this combined input is fed into the generator (LLM) to produce the target code solution.",
+      "page": 39,
+      "bbox": {
+        "l": 49.03903579711914,
+        "t": 641.3367462158203,
+        "r": 437.6627197265625,
+        "b": 466.1790008544922
+      },
+      "image_path": "images/fig_014_Fig_14_A_workflow_illustration_of_the_.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Fig. 15. The general architecture of an LLM-powered autonomous agent system, adapted from [277]. Planning : The agent decomposes large tasks into smaller, manageable sub-goals or engages in self-criticism and selfreflection on past actions to learn from mistakes and improve future performance. Memory : This component enables the agent to store and retrieve past information. Tools : The agent is trained to invoke external functions or APIs. Action : The agent executes actions, with or without the use of tools, to interact with the environment. The gray dashed lines represent the dataflow within the system.",
+      "page": 40,
+      "bbox": {
+        "l": 48.44242477416992,
+        "t": 641.0875778198242,
+        "r": 436.7616271972656,
+        "b": 494.6325988769531
+      },
+      "image_path": "images/fig_015_Fig_15_The_general_architecture_of_an_.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Fig. 16. MetaGPT integrates human workflow efficiencies into LLM-based multi-agent collaboration to break down complex code-related tasks into specific, actionable procedures. These procedures are then assigned to various roles, such as Product Manager, Architect, and Engineer played by LLM. The image is sourced from the original paper [100].",
+      "page": 41,
+      "bbox": {
+        "l": 57.34474182128906,
+        "t": 639.6853790283203,
+        "r": 428.2536315917969,
+        "b": 433.3601379394531
+      },
+      "image_path": "images/fig_016_Fig_16_MetaGPT_integrates_human_workfl.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "Fig. 17. The pipeline of (Code) LLM-as-a-judge for evaluating generated code by Code LLMs. There are primarily two types of approaches: pairwise comparison and single answer grading.",
+      "page": 43,
+      "bbox": {
+        "l": 57.02176284790039,
+        "t": 636.0307235717773,
+        "r": 429.174560546875,
+        "b": 419.96514892578125
+      },
+      "image_path": "images/fig_017_Fig_17_The_pipeline_of_Code_LLM-as-a.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "Fig. 18. The performance comparison of LLMs for code generation on the MBPP [18] benchmark, measured by pass@1 . For models with various sizes, we report only the largest size version of each model with a magnitude of billion (B) parameters.",
+      "page": 46,
+      "bbox": {
+        "l": 54.28233337402344,
+        "t": 640.2181015014648,
+        "r": 430.8797912597656,
+        "b": 446.255615234375
+      },
+      "image_path": "images/fig_018_Fig_18_The_performance_comparison_of_L.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "Fig. 19. The performance comparison of LLMs for code generation on the BigCodeBench [332] benchmark, measured by pass@1 . For models with various sizes, we report only the largest size version of each model with a magnitude of billion (B) parameters.",
+      "page": 46,
+      "bbox": {
+        "l": 55.21380615234375,
+        "t": 393.382568359375,
+        "r": 431.46929931640625,
+        "b": 171.74169921875
+      },
+      "image_path": "images/fig_019_Fig_19_The_performance_comparison_of_L.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Fig. 20. An exemplar of GitHub Copilot to demonstrate how to use development tools powered by LLMs, including Claude 3.5 Sonnet (Preview), Claude 3.7 Sonnet (Preview), Claude 3.7 Sonnet Thinking (Preview), Gemini 2.0 Flash (Preview), GPT-4o, o1 (Preview), and o3-mini (Preview). To illustrate its capabilities, we input the description of the '5. Longest Palindromic Substring' problem from LeetCode into Copilot's chat box. The code generated by Copilot is then submitted to the online judge platform, where it is successfully accepted.",
+      "page": 54,
+      "bbox": {
+        "l": 54.50783157348633,
+        "t": 639.8122100830078,
+        "r": 430.2940673828125,
+        "b": 200.33929443359375
+      },
+      "image_path": "images/fig_020_Fig_20_An_exemplar_of_GitHub_Copilot_t.png"
+    }
+  ]
+}

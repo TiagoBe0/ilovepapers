@@ -1,0 +1,552 @@
+{
+  "source_file": "/home/santi/Documentos/ilovepappers/pappers/libro.pdf",
+  "total_figures": 42,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 0.0,
+        "t": 595.2105102539062,
+        "r": 594.762939453125,
+        "b": 0.88287353515625
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 14,
+      "bbox": {
+        "l": 208.80230712890625,
+        "t": 446.0814514160156,
+        "r": 385.6595458984375,
+        "b": 327.39593505859375
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "1.2 Vapor de agua.",
+      "page": 16,
+      "bbox": {
+        "l": 205.12120056152344,
+        "t": 610.1900634765625,
+        "r": 390.3991394042969,
+        "b": 482.1590270996094
+      },
+      "image_path": "images/fig_003_12_Vapor_de_agua.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "1.3 Recipiente estándar para mantener gases.",
+      "page": 16,
+      "bbox": {
+        "l": 262.32855224609375,
+        "t": 266.49658203125,
+        "r": 332.9535217285156,
+        "b": 144.5723876953125
+      },
+      "image_path": "images/fig_004_13_Recipiente_estándar_para_mantener_ga.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "1.4 Hielo.",
+      "page": 18,
+      "bbox": {
+        "l": 203.43283081054688,
+        "t": 217.28948974609375,
+        "r": 391.4181213378906,
+        "b": 87.90057373046875
+      },
+      "image_path": "images/fig_005_14_Hielo.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 20,
+      "bbox": {
+        "l": 191.75318908691406,
+        "t": 561.6947326660156,
+        "r": 404.4111328125,
+        "b": 417.7248229980469
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "1.6 Sal disolviéndose en agua (O=Cloro o=Sodio)",
+      "page": 22,
+      "bbox": {
+        "l": 204.35116577148438,
+        "t": 610.2209930419922,
+        "r": 391.7579040527344,
+        "b": 483.46551513671875
+      },
+      "image_path": "images/fig_007_16_Sal_disolviéndose_en_agua_OCloro_o.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "1.7 Distancia entre primeros vecinos d = a/2",
+      "page": 22,
+      "bbox": {
+        "l": 109.97796630859375,
+        "t": 265.40911865234375,
+        "r": 485.1604919433594,
+        "b": 130.29803466796875
+      },
+      "image_path": "images/fig_008_17_Distancia_entre_primeros_vecinos_d_.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "",
+      "page": 24,
+      "bbox": {
+        "l": 203.37644958496094,
+        "t": 521.7301025390625,
+        "r": 390.95159912109375,
+        "b": 396.04595947265625
+      },
+      "image_path": "images/fig_009_no_caption.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "",
+      "page": 25,
+      "bbox": {
+        "l": 203.3197784423828,
+        "t": 363.0552062988281,
+        "r": 391.6271057128906,
+        "b": 237.79388427734375
+      },
+      "image_path": "images/fig_010_no_caption.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "",
+      "page": 26,
+      "bbox": {
+        "l": 202.53660583496094,
+        "t": 312.5372314453125,
+        "r": 392.0553283691406,
+        "b": 197.9632568359375
+      },
+      "image_path": "images/fig_011_no_caption.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "",
+      "page": 37,
+      "bbox": {
+        "l": 161.13571166992188,
+        "t": 272.01947021484375,
+        "r": 432.9429931640625,
+        "b": 110.392333984375
+      },
+      "image_path": "images/fig_012_no_caption.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "2.2 Partículas elementales.",
+      "page": 45,
+      "bbox": {
+        "l": 95.01801300048828,
+        "t": 686.8544311523438,
+        "r": 498.3426513671875,
+        "b": 139.36920166015625
+      },
+      "image_path": "images/fig_013_22_Partículas_elementales.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "",
+      "page": 56,
+      "bbox": {
+        "l": 146.67189025878906,
+        "t": 797.4833488464355,
+        "r": 449.2433776855469,
+        "b": 515.1946716308594
+      },
+      "image_path": "images/fig_014_no_caption.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "",
+      "page": 59,
+      "bbox": {
+        "l": 243.48040771484375,
+        "t": 670.2912139892578,
+        "r": 353.7529296875,
+        "b": 419.7814025878906
+      },
+      "image_path": "images/fig_015_no_caption.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "",
+      "page": 74,
+      "bbox": {
+        "l": 187.10812377929688,
+        "t": 707.3925018310547,
+        "r": 407.9013977050781,
+        "b": 630.8450927734375
+      },
+      "image_path": "images/fig_016_no_caption.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "",
+      "page": 75,
+      "bbox": {
+        "l": 218.75152587890625,
+        "t": 573.210205078125,
+        "r": 375.1851806640625,
+        "b": 363.57623291015625
+      },
+      "image_path": "images/fig_017_no_caption.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "",
+      "page": 77,
+      "bbox": {
+        "l": 193.62501525878906,
+        "t": 674.3383331298828,
+        "r": 401.0583801269531,
+        "b": 553.8176574707031
+      },
+      "image_path": "images/fig_018_no_caption.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "",
+      "page": 78,
+      "bbox": {
+        "l": 237.67311096191406,
+        "t": 760.2876129150391,
+        "r": 355.20819091796875,
+        "b": 671.3469696044922
+      },
+      "image_path": "images/fig_019_no_caption.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "4.9 Un tornillo elevador.",
+      "page": 78,
+      "bbox": {
+        "l": 213.88734436035156,
+        "t": 542.3918151855469,
+        "r": 379.6919250488281,
+        "b": 467.74822998046875
+      },
+      "image_path": "images/fig_020_49_Un_tornillo_elevador.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "4.10 Barra con pesos apoyada en un extremo.",
+      "page": 78,
+      "bbox": {
+        "l": 199.21730041503906,
+        "t": 289.997802734375,
+        "r": 395.13330078125,
+        "b": 217.33209228515625
+      },
+      "image_path": "images/fig_021_410_Barra_con_pesos_apoyada_en_un_extre.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "",
+      "page": 80,
+      "bbox": {
+        "l": 244.46826171875,
+        "t": 468.089599609375,
+        "r": 350.1913146972656,
+        "b": 375.74896240234375
+      },
+      "image_path": "images/fig_022_no_caption.png"
+    },
+    {
+      "figure_id": "fig_023",
+      "label": "picture",
+      "caption": "",
+      "page": 89,
+      "bbox": {
+        "l": 204.26510620117188,
+        "t": 489.9848937988281,
+        "r": 389.8677062988281,
+        "b": 329.9679870605469
+      },
+      "image_path": "images/fig_023_no_caption.png"
+    },
+    {
+      "figure_id": "fig_024",
+      "label": "picture",
+      "caption": "",
+      "page": 90,
+      "bbox": {
+        "l": 201.68775939941406,
+        "t": 799.0678062438965,
+        "r": 393.5833435058594,
+        "b": 623.4279937744141
+      },
+      "image_path": "images/fig_024_no_caption.png"
+    },
+    {
+      "figure_id": "fig_025",
+      "label": "picture",
+      "caption": "",
+      "page": 94,
+      "bbox": {
+        "l": 211.80052185058594,
+        "t": 518.1162414550781,
+        "r": 383.0406494140625,
+        "b": 408.78173828125
+      },
+      "image_path": "images/fig_025_no_caption.png"
+    },
+    {
+      "figure_id": "fig_026",
+      "label": "picture",
+      "caption": "",
+      "page": 95,
+      "bbox": {
+        "l": 233.72494506835938,
+        "t": 667.8488616943359,
+        "r": 360.7669372558594,
+        "b": 534.6575622558594
+      },
+      "image_path": "images/fig_026_no_caption.png"
+    },
+    {
+      "figure_id": "fig_027",
+      "label": "picture",
+      "caption": "",
+      "page": 96,
+      "bbox": {
+        "l": 200.63623046875,
+        "t": 463.8529052734375,
+        "r": 394.2646179199219,
+        "b": 319.00897216796875
+      },
+      "image_path": "images/fig_027_no_caption.png"
+    },
+    {
+      "figure_id": "fig_028",
+      "label": "picture",
+      "caption": "5.7 Un sistema de estrella doble.",
+      "page": 99,
+      "bbox": {
+        "l": 202.80514526367188,
+        "t": 792.76318359375,
+        "r": 393.1722717285156,
+        "b": 691.6382141113281
+      },
+      "image_path": "images/fig_028_57_Un_sistema_de_estrella_doble.png"
+    },
+    {
+      "figure_id": "fig_029",
+      "label": "picture",
+      "caption": "",
+      "page": 100,
+      "bbox": {
+        "l": 178.74343872070312,
+        "t": 795.5760383605957,
+        "r": 415.70452880859375,
+        "b": 561.4599914550781
+      },
+      "image_path": "images/fig_029_no_caption.png"
+    },
+    {
+      "figure_id": "fig_030",
+      "label": "picture",
+      "caption": "",
+      "page": 100,
+      "bbox": {
+        "l": 201.52621459960938,
+        "t": 540.1015319824219,
+        "r": 393.5901184082031,
+        "b": 389.1286926269531
+      },
+      "image_path": "images/fig_030_no_caption.png"
+    },
+    {
+      "figure_id": "fig_031",
+      "label": "picture",
+      "caption": "",
+      "page": 101,
+      "bbox": {
+        "l": 209.0428009033203,
+        "t": 703.6728515625,
+        "r": 385.9906921386719,
+        "b": 592.5772094726562
+      },
+      "image_path": "images/fig_031_no_caption.png"
+    },
+    {
+      "figure_id": "fig_032",
+      "label": "picture",
+      "caption": "5.11 Un cúmulo de galaxias y 5.12 Una nube de polvo interestelar.",
+      "page": 102,
+      "bbox": {
+        "l": 146.62258911132812,
+        "t": 793.4241523742676,
+        "r": 448.4007263183594,
+        "b": 685.9356079101562
+      },
+      "image_path": "images/fig_032_511_Un_cúmulo_de_galaxias_y_512_Una_nu.png"
+    },
+    {
+      "figure_id": "fig_033",
+      "label": "picture",
+      "caption": "5.13 ¿Formación de nuevas estrellas?",
+      "page": 102,
+      "bbox": {
+        "l": 187.57196044921875,
+        "t": 208.07098388671875,
+        "r": 407.11724853515625,
+        "b": 114.4407958984375
+      },
+      "image_path": "images/fig_033_513_Formación_de_nuevas_estrellas.png"
+    },
+    {
+      "figure_id": "fig_034",
+      "label": "picture",
+      "caption": "",
+      "page": 103,
+      "bbox": {
+        "l": 203.4403076171875,
+        "t": 434.14324951171875,
+        "r": 391.9400329589844,
+        "b": 244.78216552734375
+      },
+      "image_path": "images/fig_034_no_caption.png"
+    },
+    {
+      "figure_id": "fig_035",
+      "label": "picture",
+      "caption": "",
+      "page": 106,
+      "bbox": {
+        "l": 124.04412841796875,
+        "t": 348.02557373046875,
+        "r": 469.50439453125,
+        "b": 153.89398193359375
+      },
+      "image_path": "images/fig_035_no_caption.png"
+    },
+    {
+      "figure_id": "fig_036",
+      "label": "picture",
+      "caption": "",
+      "page": 113,
+      "bbox": {
+        "l": 173.70130920410156,
+        "t": 318.892333984375,
+        "r": 420.6674499511719,
+        "b": 172.3878173828125
+      },
+      "image_path": "images/fig_036_no_caption.png"
+    },
+    {
+      "figure_id": "fig_037",
+      "label": "picture",
+      "caption": "",
+      "page": 116,
+      "bbox": {
+        "l": 182.25547790527344,
+        "t": 244.86578369140625,
+        "r": 411.990234375,
+        "b": 106.090087890625
+      },
+      "image_path": "images/fig_037_no_caption.png"
+    },
+    {
+      "figure_id": "fig_038",
+      "label": "picture",
+      "caption": "",
+      "page": 119,
+      "bbox": {
+        "l": 186.3196258544922,
+        "t": 411.8455505371094,
+        "r": 408.9222412109375,
+        "b": 272.96282958984375
+      },
+      "image_path": "images/fig_038_no_caption.png"
+    },
+    {
+      "figure_id": "fig_039",
+      "label": "picture",
+      "caption": "",
+      "page": 124,
+      "bbox": {
+        "l": 186.9093475341797,
+        "t": 413.14971923828125,
+        "r": 407.46319580078125,
+        "b": 275.68963623046875
+      },
+      "image_path": "images/fig_039_no_caption.png"
+    },
+    {
+      "figure_id": "fig_040",
+      "label": "picture",
+      "caption": "",
+      "page": 129,
+      "bbox": {
+        "l": 206.51036071777344,
+        "t": 793.7518005371094,
+        "r": 390.5558776855469,
+        "b": 638.2949676513672
+      },
+      "image_path": "images/fig_040_no_caption.png"
+    },
+    {
+      "figure_id": "fig_041",
+      "label": "picture",
+      "caption": "",
+      "page": 134,
+      "bbox": {
+        "l": 190.4911346435547,
+        "t": 794.4391059875488,
+        "r": 400.6045837402344,
+        "b": 639.2530364990234
+      },
+      "image_path": "images/fig_041_no_caption.png"
+    },
+    {
+      "figure_id": "fig_042",
+      "label": "picture",
+      "caption": "",
+      "page": 135,
+      "bbox": {
+        "l": 197.43240356445312,
+        "t": 778.5353813171387,
+        "r": 397.580078125,
+        "b": 478.3847351074219
+      },
+      "image_path": "images/fig_042_no_caption.png"
+    }
+  ]
+}

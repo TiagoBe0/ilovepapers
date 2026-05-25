@@ -1,0 +1,43 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,14,picture,,images/fig_002_no_caption.png
+fig_003,16,picture,1.2 Vapor de agua.,images/fig_003_12_Vapor_de_agua.png
+fig_004,16,picture,1.3 Recipiente estándar para mantener gases.,images/fig_004_13_Recipiente_estándar_para_mantener_ga.png
+fig_005,18,picture,1.4 Hielo.,images/fig_005_14_Hielo.png
+fig_006,20,picture,,images/fig_006_no_caption.png
+fig_007,22,picture,1.6 Sal disolviéndose en agua (O=Cloro o=Sodio),images/fig_007_16_Sal_disolviéndose_en_agua_OCloro_o.png
+fig_008,22,picture,1.7 Distancia entre primeros vecinos d = a/2,images/fig_008_17_Distancia_entre_primeros_vecinos_d_.png
+fig_009,24,picture,,images/fig_009_no_caption.png
+fig_010,25,picture,,images/fig_010_no_caption.png
+fig_011,26,picture,,images/fig_011_no_caption.png
+fig_012,37,picture,,images/fig_012_no_caption.png
+fig_013,45,picture,2.2 Partículas elementales.,images/fig_013_22_Partículas_elementales.png
+fig_014,56,picture,,images/fig_014_no_caption.png
+fig_015,59,picture,,images/fig_015_no_caption.png
+fig_016,74,picture,,images/fig_016_no_caption.png
+fig_017,75,picture,,images/fig_017_no_caption.png
+fig_018,77,picture,,images/fig_018_no_caption.png
+fig_019,78,picture,,images/fig_019_no_caption.png
+fig_020,78,picture,4.9 Un tornillo elevador.,images/fig_020_49_Un_tornillo_elevador.png
+fig_021,78,picture,4.10 Barra con pesos apoyada en un extremo.,images/fig_021_410_Barra_con_pesos_apoyada_en_un_extre.png
+fig_022,80,picture,,images/fig_022_no_caption.png
+fig_023,89,picture,,images/fig_023_no_caption.png
+fig_024,90,picture,,images/fig_024_no_caption.png
+fig_025,94,picture,,images/fig_025_no_caption.png
+fig_026,95,picture,,images/fig_026_no_caption.png
+fig_027,96,picture,,images/fig_027_no_caption.png
+fig_028,99,picture,5.7 Un sistema de estrella doble.,images/fig_028_57_Un_sistema_de_estrella_doble.png
+fig_029,100,picture,,images/fig_029_no_caption.png
+fig_030,100,picture,,images/fig_030_no_caption.png
+fig_031,101,picture,,images/fig_031_no_caption.png
+fig_032,102,picture,5.11 Un cúmulo de galaxias y 5.12 Una nube de polvo interestelar.,images/fig_032_511_Un_cúmulo_de_galaxias_y_512_Una_nu.png
+fig_033,102,picture,5.13 ¿Formación de nuevas estrellas?,images/fig_033_513_Formación_de_nuevas_estrellas.png
+fig_034,103,picture,,images/fig_034_no_caption.png
+fig_035,106,picture,,images/fig_035_no_caption.png
+fig_036,113,picture,,images/fig_036_no_caption.png
+fig_037,116,picture,,images/fig_037_no_caption.png
+fig_038,119,picture,,images/fig_038_no_caption.png
+fig_039,124,picture,,images/fig_039_no_caption.png
+fig_040,129,picture,,images/fig_040_no_caption.png
+fig_041,134,picture,,images/fig_041_no_caption.png
+fig_042,135,picture,,images/fig_042_no_caption.png

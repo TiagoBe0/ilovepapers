@@ -1,0 +1,448 @@
+{
+  "source_file": "/home/santi/Documentos/ilovepappers/pappers/ilove-LucaReali.2026.pdf",
+  "total_figures": 34,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 502.72442626953125,
+        "t": 736.7370185852051,
+        "r": 558.386962890625,
+        "b": 663.2282409667969
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 36.80961608886719,
+        "t": 732.2471504211426,
+        "r": 98.20907592773438,
+        "b": 664.1319885253906
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 499.89337158203125,
+        "t": 646.3198394775391,
+        "r": 529.8085327148438,
+        "b": 616.4174194335938
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 372.7562255859375,
+        "t": 547.1787567138672,
+        "r": 392.0019226074219,
+        "b": 533.7833557128906
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Fig. 1. Theory and modelling of fusion materials will necessarily play a part in transitioning from present, experimental devices to future fusion reactors. In this review, we highlight examples from the state-of-the-art alongside the areas where we see gaps that should soon be addressed (central image: ©2023 United Kingdom Atomic Energy Authority).",
+      "page": 2,
+      "bbox": {
+        "l": 117.96997833251953,
+        "t": 214.829345703125,
+        "r": 476.93658447265625,
+        "b": 86.38690185546875
+      },
+      "image_path": "images/fig_005_Fig_1_Theory_and_modelling_of_fusion_m.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Fig. 2. Variation in the predicted damage dose rate (measured according to the NRT-displacements per atom or dpa per unit time), and helium and hydrogen production per year that would be experienced in pure Fe as a function of depth into the plasma-facing wall of a typical fusion tokamak design. Also shown is the variation in total neutron fl ux over the same depth for the design (an early concept of the STEP prototype [44,45]) that included other materials, such as tungs10 armour and tritium breeding materials. The neutron fl uxes are the volume averages in voxels of a rectangular mesh superimposed over the underlying (STEP) tokamak geometry and include the accumulated contributions from all nuclear interactions, including neutron scattering, multiplication, and absorption. This large variation of neutron-exposure-related phenomena on the engineering component-scale highlights the heterogeneous modelling challenge that must be solved to predict material performance at this scale.",
+      "page": 3,
+      "bbox": {
+        "l": 122.90262603759766,
+        "t": 737.175106048584,
+        "r": 472.9685363769531,
+        "b": 527.1704406738281
+      },
+      "image_path": "images/fig_006_Fig_2_Variation_in_the_predicted_damag.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Fig. 3. (a) Transmutation of W after 10 years of continuous exposure to the plasma-facing conditions expected in a prototype fusion reactor; (b) Atomic arrangement of the surface models used to calculate the general stacking faults energy (GSFE) on the ⟨ 111 ⟩ { ̄ 110} slip system; (c) Evolution of the lattice constant in transmuted W-alloys during the fi rst ten years of continuous exposure to EU-DEMO conditions, in terms of the relative difference   0 =  0  - 0 0  0 0 ; and (d) GSFE for the slip along ⟨ 111 ⟩ direction in { ̄ 110} plane after 5 years of irradiation. Figure adapted from [48,49].",
+      "page": 4,
+      "bbox": {
+        "l": 123.78563690185547,
+        "t": 738.3406753540039,
+        "r": 472.01947021484375,
+        "b": 463.8941955566406
+      },
+      "image_path": "images/fig_007_Fig_3_a_Transmutation_of_W_after_10_.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Fig. 4. Summary of method combining transport and inventory calculation to investigate material activity with independent uncertainty analysis on relevant nuclear data.",
+      "page": 4,
+      "bbox": {
+        "l": 121.47836303710938,
+        "t": 404.78662109375,
+        "r": 473.44830322265625,
+        "b": 215.5782470703125
+      },
+      "image_path": "images/fig_008_Fig_4_Summary_of_method_combining_tran.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 5. Top: A section of phase diagram containing Re, Os cluster concentration determined from experimental data for neutron irradiated W and for ion irradiated W-Re-Os with similar alloy composition and dose [75-78]. Bottom: First principles based Monte Carlo simulations in a bcc 30x30x30 supercell containing voids (blue) decorated by Re (red) and Os (green) in W with 2at% Re and 0.2at% Os and 0.2 at% vacancy at 1173K [68,69]. (For interpretation of the references to colour in this fi gure legend, the reader is referred to the web version of this article.)",
+      "page": 6,
+      "bbox": {
+        "l": 42.60722732543945,
+        "t": 737.9559745788574,
+        "r": 282.9388732910156,
+        "b": 217.29620361328125
+      },
+      "image_path": "images/fig_009_Fig_5_Top_A_section_of_phase_diagram_.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Fig. 6. Short-range order evolution in W-Cr-Y-Zr SMART materials as function of alloy compositions-a) being W 70 Cr 28 Y 1 Zr 1 and b) being W 70 Cr 29 Y 0 . 5 Zr 0 . 5 -showing the phase decomposition between W and Cr whereas the SRO between Y and Zr (insert fi gures) is strongly negative [79-81].",
+      "page": 7,
+      "bbox": {
+        "l": 87.77909851074219,
+        "t": 737.0626449584961,
+        "r": 507.0989074707031,
+        "b": 532.215576171875
+      },
+      "image_path": "images/fig_010_Fig_6_Short-range_order_evolution_in_W.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 8. Top: Formation of Cr (grey atoms) clustering predicted and extracted from modelling of Fe-alloys with nominal 3at.%Cr alloys containing Fe (pink) containing C (red), N (green) impurities interacting with vacancies (blue) [98]. Bottom: Temperature and composition maps showing fcc (blue) and bcc (red) phases of Fe-Cr-Ni-Mn high entropy alloys from Monte-Carlo simulations using cluster expansion Hamiltonian [96,97,99].. (For interpretation of the references to colour in this fi gure legend, the reader is referred to the web version of this article.)",
+      "page": 8,
+      "bbox": {
+        "l": 324.63671875,
+        "t": 737.2966499328613,
+        "r": 542.1004638671875,
+        "b": 324.6675720214844
+      },
+      "image_path": "images/fig_011_Fig_8_Top_Formation_of_Cr_grey_atoms.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Fig. 7. Top: Modelling of co-segregation of Cr (blue) and V (red) from W (yellow) and Ta (green) in high-entropy alloys W 38 Ta 36 Cr 15 V 11 [79]. The arrow shows a direction where the predicted composition partitioning changes between the matrix and the Cr-V-rich precipitates. Bottom: Reduction of void density from binary W-Ta to W-Ta-V alloys with 3% and 5% at. of V obtained from overlapping cascade molecular dynamics simulations in combination with annealing using machine-learning potentials [88]. (For interpretation of the references to colour in this fi gure legend, the reader is referred to the web version of this article.)",
+      "page": 8,
+      "bbox": {
+        "l": 55.971439361572266,
+        "t": 736.6913948059082,
+        "r": 267.640380859375,
+        "b": 352.4454345703125
+      },
+      "image_path": "images/fig_012_Fig_7_Top_Modelling_of_co-segregation.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "",
+      "page": 9,
+      "bbox": {
+        "l": 42.11750411987305,
+        "t": 737.5480346679688,
+        "r": 281.8516845703125,
+        "b": 580.1099853515625
+      },
+      "image_path": "images/fig_013_no_caption.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 10. Re-enriched matrix precipitates in pure W irradiated in a mixed spectrum reactor at 590-700 °C [5]. The measured and calculated transmutant Re content is far below the 25% Re equilibrium phase stability limit for W-Re at these temperatures [112].",
+      "page": 10,
+      "bbox": {
+        "l": 120.61121368408203,
+        "t": 735.7725791931152,
+        "r": 478.23663330078125,
+        "b": 610.7180328369141
+      },
+      "image_path": "images/fig_014_Fig_10_Re-enriched_matrix_precipitates.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Fig. 11. Comparison of predicted and measured hardening of HT9 and T91 ferritic/martensitic steels following fast reactor or dual ion irradiation [129].",
+      "page": 10,
+      "bbox": {
+        "l": 43.99740219116211,
+        "t": 561.9793548583984,
+        "r": 282.518310546875,
+        "b": 371.6699523925781
+      },
+      "image_path": "images/fig_015_Fig_11_Comparison_of_predicted_and_mea.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Fig. 12. DFT-CRA trajectories of microstructural evolution in bcc Fe. The evolution of the total energy for four trajectories (t1-t4) and their average is shown, data from [145].",
+      "page": 12,
+      "bbox": {
+        "l": 42.020450592041016,
+        "t": 737.7513961791992,
+        "r": 282.6466064453125,
+        "b": 594.7115020751953
+      },
+      "image_path": "images/fig_016_Fig_12_DFT-CRA_trajectories_of_microst.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "",
+      "page": 13,
+      "bbox": {
+        "l": 70.11661529541016,
+        "t": 735.6652603149414,
+        "r": 525.69140625,
+        "b": 645.4721069335938
+      },
+      "image_path": "images/fig_017_no_caption.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "Fig. 14. The largest C15-type structures, dynamically formed under CRA conditions, as a function of irradiation dose predicted by different methodologies [145].",
+      "page": 13,
+      "bbox": {
+        "l": 45.14680862426758,
+        "t": 598.9350891113281,
+        "r": 282.2221984863281,
+        "b": 430.7374572753906
+      },
+      "image_path": "images/fig_018_Fig_14_The_largest_C15-type_structures.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "Fig. 15. Variation of lattice strain and volume strain of a ion irradiated tungsten sample. The scatter plot shows X-ray Laue diffraction measurements of the lattice strain along the irradiation direction. Lattice strain and volumetric strain derived from CRA simulations are shown in solid and dashed curves respectively. Figure adapted from [158].",
+      "page": 13,
+      "bbox": {
+        "l": 67.03475952148438,
+        "t": 383.7295227050781,
+        "r": 258.9585266113281,
+        "b": 185.2840576171875
+      },
+      "image_path": "images/fig_019_Fig_15_Variation_of_lattice_strain_and.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "",
+      "page": 14,
+      "bbox": {
+        "l": 117.44109344482422,
+        "t": 736.9315528869629,
+        "r": 479.1002502441406,
+        "b": 621.0327758789062
+      },
+      "image_path": "images/fig_020_no_caption.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "Fig. 17. Comparison of binding energies calculated with the MLP using (a) 4 × 4 × 4, (b) 8 × 8 × 8, and (c) 12 × 12 × 12 supercells. The DFT data (purple and green) in all panels is calculated using a 4 × 4 × 4 supercell. Binding energies calculated using fi xed-cells (purple and blue star markers); relaxed-cells (green and red hexagon markers. Binding energies of He with He  -1  bubbles (solid markers) and with He  -1 clusters (open markers). (For interpretation of the references to colour in this figure legend, the reader is referred to the web version of this article.)",
+      "page": 15,
+      "bbox": {
+        "l": 69.06354522705078,
+        "t": 737.9811859130859,
+        "r": 526.2981567382812,
+        "b": 622.5928955078125
+      },
+      "image_path": "images/fig_021_Fig_17_Comparison_of_binding_energies_.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "Fig. 18. Comparison of (a) formation energies and (b) relaxation volumes of vacancies in the equiatomic random Ta-Ti-V-W high-entropy alloy computed using DFT and MLP.",
+      "page": 15,
+      "bbox": {
+        "l": 123.0152359008789,
+        "t": 565.8116760253906,
+        "r": 472.33197021484375,
+        "b": 415.87933349609375
+      },
+      "image_path": "images/fig_022_Fig_18_Comparison_of_a_formation_ene.png"
+    },
+    {
+      "figure_id": "fig_023",
+      "label": "picture",
+      "caption": "Fig. 19. Distribution of (a) formation energies and (b) relaxation volumes for vacancies computed using MLP for the structure of disordered equiatomic Ta-Ti-V-W alloy with 128at. sites.",
+      "page": 16,
+      "bbox": {
+        "l": 122.61107635498047,
+        "t": 738.2826538085938,
+        "r": 471.6806335449219,
+        "b": 604.8269653320312
+      },
+      "image_path": "images/fig_023_Fig_19_Distribution_of_a_formation_e.png"
+    },
+    {
+      "figure_id": "fig_024",
+      "label": "picture",
+      "caption": "Fig. 20. (a) Hydrogen interacting with lattice defects in a material. (b) A typical Arrhenius plot of the diffusion coefficient of solute hydrogen in a metal. The blue open symbols represent experimental data, which often deviate at low temperatures due to the trapping effects of lattice defects. The red solid and green dashed lines show the diffusion coefficients with and without NQEs, respectively. (c) NQEs and their description by PI methods. (d) Improvements in the accuracy-efficiency trade-off thanks to MLPs. (For interpretation of the references to colour in this fi gure legend, the reader is referred to the web version of this article.)",
+      "page": 17,
+      "bbox": {
+        "l": 122.20036315917969,
+        "t": 737.8802757263184,
+        "r": 471.8909912109375,
+        "b": 479.901123046875
+      },
+      "image_path": "images/fig_024_Fig_20_a_Hydrogen_interacting_with_l.png"
+    },
+    {
+      "figure_id": "fig_025",
+      "label": "picture",
+      "caption": "Fig. 21. Graphical representation of the REBa 2 Cu 3 O 7 unitcell, where red spheres represent oxygen ions and the blue, green and yellow spheres represent the copper, barium and rare earth cations respectively. (For interpretation of the references to colour in this fi gure legend, the reader is referred to the web version of this article.)",
+      "page": 17,
+      "bbox": {
+        "l": 371.2421569824219,
+        "t": 413.4954528808594,
+        "r": 492.3050842285156,
+        "b": 216.364501953125
+      },
+      "image_path": "images/fig_025_Fig_21_Graphical_representation_of_the.png"
+    },
+    {
+      "figure_id": "fig_026",
+      "label": "picture",
+      "caption": "Fig. 22. Two images of the cascade progression in the x-z plane of a 20 keV cascade with pka launched in the x direction taken at the peak damage and fi nal state. Vacancies are cubes, interstitial are spheres, antisites are spherocylinders with the colours the same as in Fig. 21 [283].",
+      "page": 18,
+      "bbox": {
+        "l": 88.50041961669922,
+        "t": 736.3394012451172,
+        "r": 506.3136291503906,
+        "b": 568.2012176513672
+      },
+      "image_path": "images/fig_026_Fig_22_Two_images_of_the_cascade_progr.png"
+    },
+    {
+      "figure_id": "fig_027",
+      "label": "picture",
+      "caption": "",
+      "page": 19,
+      "bbox": {
+        "l": 117.25411224365234,
+        "t": 734.9906158447266,
+        "r": 478.2745056152344,
+        "b": 512.2813415527344
+      },
+      "image_path": "images/fig_027_no_caption.png"
+    },
+    {
+      "figure_id": "fig_028",
+      "label": "picture",
+      "caption": "",
+      "page": 19,
+      "bbox": {
+        "l": 117.18739318847656,
+        "t": 484.17657470703125,
+        "r": 477.9371337890625,
+        "b": 292.92999267578125
+      },
+      "image_path": "images/fig_028_no_caption.png"
+    },
+    {
+      "figure_id": "fig_029",
+      "label": "picture",
+      "caption": "Fig. 25. Trajectories of migrating SIA  defects and He-SIA  (  = 1, 2) defects at 300 K. (a) SIA 1 ; (b) SIA 2 ; (c) He-SIA 1 , and (d) He-SIA 2 [328].",
+      "page": 21,
+      "bbox": {
+        "l": 117.94278717041016,
+        "t": 734.4712104797363,
+        "r": 478.1402587890625,
+        "b": 474.53338623046875
+      },
+      "image_path": "images/fig_029_Fig_25_Trajectories_of_migrating_SIA_.png"
+    },
+    {
+      "figure_id": "fig_030",
+      "label": "picture",
+      "caption": "Fig. 26. (a) Simulated retention as a function of the annealing temperature after 2 keV D ion implantation with a fl uence of 10 22 D/m 2 at 317 K. (b) Simulated total and partial TDS spectra at the heating rate of 0.5 K/s [346].",
+      "page": 21,
+      "bbox": {
+        "l": 117.0070571899414,
+        "t": 442.3014221191406,
+        "r": 478.7868347167969,
+        "b": 302.0180969238281
+      },
+      "image_path": "images/fig_030_Fig_26_a_Simulated_retention_as_a_fu.png"
+    },
+    {
+      "figure_id": "fig_031",
+      "label": "picture",
+      "caption": "Fig. 27. (a) Analysis-ready CAD model of the MAST-U tokamak device. The associated fi nite element mesh involves 127 million elements. (b) for the purpose of demonstrating the capabilities of a full-scale FEM simulation, the tokamak is loaded with gravitational body forces, producing stresses in the structure illustrated here using the von Mises invariant of the stress fi eld. Figures from [349].",
+      "page": 22,
+      "bbox": {
+        "l": 118.96871185302734,
+        "t": 737.0648231506348,
+        "r": 475.93084716796875,
+        "b": 506.95001220703125
+      },
+      "image_path": "images/fig_031_Fig_27_a_Analysis-ready_CAD_model_of.png"
+    },
+    {
+      "figure_id": "fig_032",
+      "label": "picture",
+      "caption": "Fig. 28. A demonstration of the capabilities of V-KSTAR: a) 3D distribution of heat fl uxes on the plasma facing components of the KSTAR tokamak due to fast ion losses. b) V-KSTAR 3D tracings of radio frequency waves injected for plasma heating and current drive in KSTAR.",
+      "page": 22,
+      "bbox": {
+        "l": 116.9088134765625,
+        "t": 459.8410339355469,
+        "r": 478.5346984863281,
+        "b": 323.48028564453125
+      },
+      "image_path": "images/fig_032_Fig_28_A_demonstration_of_the_capabili.png"
+    },
+    {
+      "figure_id": "fig_033",
+      "label": "picture",
+      "caption": "Fig. 29. Changes in dimensional stability as a function of temperature for Fe under DEMO helium-cooled pebble bed (HCPB) fusion blanket conditions [367], using a model developed in Ref. [361]. Fig. 29(a) Swelling rate. Fig. 29(b) Creep rate.",
+      "page": 24,
+      "bbox": {
+        "l": 117.1968994140625,
+        "t": 737.425422668457,
+        "r": 479.6986083984375,
+        "b": 591.3529052734375
+      },
+      "image_path": "images/fig_033_Fig_29_Changes_in_dimensional_stabilit.png"
+    },
+    {
+      "figure_id": "fig_034",
+      "label": "picture",
+      "caption": "Fig. 30. Molecular dynamics simulation of low temperature irradiation creep in tungsten. Figure adapted from Ref. [148]. In the absence of thermally activated diffusion, vacancies remain immobile and isolated, while self-interstitial atom defects coalesce irrespectively of thermal activation, driven by elastic interactions. The irreversible deformation remains closely aligned with externally applied stress.",
+      "page": 24,
+      "bbox": {
+        "l": 54.05034255981445,
+        "t": 546.1470336914062,
+        "r": 270.7706604003906,
+        "b": 380.8349609375
+      },
+      "image_path": "images/fig_034_Fig_30_Molecular_dynamics_simulation_o.png"
+    }
+  ]
+}

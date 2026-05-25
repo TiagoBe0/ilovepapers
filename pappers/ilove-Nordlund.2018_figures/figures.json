@@ -1,0 +1,331 @@
+{
+  "source_file": "/home/santi/Documentos/ilovepappers/pappers/ilove-Nordlund.2018.pdf",
+  "total_figures": 25,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 493.9228820800781,
+        "t": 727.8849563598633,
+        "r": 553.190673828125,
+        "b": 654.7577667236328
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 31.54616928100586,
+        "t": 722.4483947753906,
+        "r": 93.0262222290039,
+        "b": 653.3650360107422
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 494.74908447265625,
+        "t": 617.1261291503906,
+        "r": 524.6824951171875,
+        "b": 586.5569305419922
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "(a) Kinetic energy of atoms during a collision cascade",
+      "page": 3,
+      "bbox": {
+        "l": 58.005332946777344,
+        "t": 727.0495910644531,
+        "r": 527.6024169921875,
+        "b": 470.0400085449219
+      },
+      "image_path": "images/fig_004_a_Kinetic_energy_of_atoms_during_a_col.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "(b) Potential energy and displacement distance during a collision cascade",
+      "page": 3,
+      "bbox": {
+        "l": 57.79938888549805,
+        "t": 446.4590759277344,
+        "r": 527.4830322265625,
+        "b": 182.957275390625
+      },
+      "image_path": "images/fig_005_b_Potential_energy_and_displacement_di.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Fig. 3. Illustration of the damage function as a function of energy for Cu. The graph clearly shows that there is not a single TDE value for damage production. Overlayed on the original fi gure is a step function illustrating the NRT-dpa equation with a threshold of 30 eV. Figure adapted from Ref. [52], reprinted with permission from Elsevier.",
+      "page": 4,
+      "bbox": {
+        "l": 350.7281494140625,
+        "t": 510.96112060546875,
+        "r": 523.483642578125,
+        "b": 350.9059143066406
+      },
+      "image_path": "images/fig_006_Fig_3_Illustration_of_the_damage_funct.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Fig. 2. Illustration of the threshold displacement energy concept. If the bottom left atom 0 at R0 receives a recoil e.g. in directions A or B, it will cause a complex many-body collisional process. In case the atom would move in a straight path along path B and the other atoms would not have time to move at all (which of course in reality will not be the case), the potential energy in the system could be illustrated as on the right side in the ' Sudden approximation ' curve. At some point there is a maximum in the potential energy curve, before the atom goes into an interstitial position in one of the minima to the right of the original position. This maximum is an estimate of the threshold displacement energy. In reality the atoms respond somewhat to the motion of the recoiling atom 0, which lowers the threshold energy. In equilibrium, the threshold is much lower since all atoms have ample time to relax their position and a defect is formed only when the atom positions and movements happen to be such that a defect can form. Path A illustrates a case where the original atom 0 is directed directly towards another atom 1. In this case the original atom most likely replaces the atom at 1, while atom 1 receives a secondary recoil and becomes an interstitial atom. However, after this initial defect production, recombination effects may still affect the threshold, see discussion in main text. Figure from OECD review article [41], reprinted with permission TO BE OBTAINED.",
+      "page": 4,
+      "bbox": {
+        "l": 138.77650451660156,
+        "t": 288.2281188964844,
+        "r": 465.72808837890625,
+        "b": 136.1787109375
+      },
+      "image_path": "images/fig_007_Fig_2_Illustration_of_the_threshold_di.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Fig. 4. Illustration of the highly chaotic nature of damage production. The lines in fi ve shades of grey show damage production as a function of energy for the same recoil atom in exactly the same direction without any thermal atom displacements. The thick red curve shows the average over 50 individual directions (the curves for all individual cases are not shown since it is dif fi cult to view fi fty shades of grey). Except for the ambient temperature being 0 K, the simulations are identical to those done by the Mendelev potential in Ref. [59]. Note how in a few cases, perfect damage recombination occurs even up to 400 eV. Since the initial and ambient temperature is 0 K, the recombination is fully athermal, i.e. made possible by the kinetic energy introduced by the recoil itself. Also shown are the NRT-dpa and arc-dpa equations for Fe. The agreement between the average curve and the arc-dpa is not perfect since the arc-dpa was fi t to a composite data set of many potentials. Original fi gure for this Article. (For interpretation of the references to color in this fi gure legend, the reader is referred to the Web version of this article.)",
+      "page": 5,
+      "bbox": {
+        "l": 301.5608215332031,
+        "t": 728.2707443237305,
+        "r": 551.7575073242188,
+        "b": 545.2266235351562
+      },
+      "image_path": "images/fig_008_Fig_4_Illustration_of_the_highly_chaot.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 5. Schematic illustration of the time scales associated with an athermal collision cascade ( fi rst three frames) and subsequent thermal defect migration (last frame). Figure from Ref. [243], reprinted by permission from Springer Nature.",
+      "page": 7,
+      "bbox": {
+        "l": 79.55123901367188,
+        "t": 726.4607238769531,
+        "r": 506.47625732421875,
+        "b": 332.9846496582031
+      },
+      "image_path": "images/fig_009_Fig_5_Schematic_illustration_of_the_ti.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Fig. 6. Comparison of surviving defect fraction in Fe obtained from MD simulations with different potentials and groups based on the data available in 2005 [85]. From Ref. [85], reprinted with permission from Elsevier.",
+      "page": 7,
+      "bbox": {
+        "l": 33.781002044677734,
+        "t": 286.72637939453125,
+        "r": 283.8196105957031,
+        "b": 132.02874755859375
+      },
+      "image_path": "images/fig_010_Fig_6_Comparison_of_surviving_defect_f.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 8. The frequency of defects as a function of defect size. Prediction from MD compared to in situ observations of W-irradiated W foils at cryogenic temperatures [104]. Reprinted with permission.",
+      "page": 8,
+      "bbox": {
+        "l": 350.4276428222656,
+        "t": 728.369026184082,
+        "r": 523.98583984375,
+        "b": 523.4468383789062
+      },
+      "image_path": "images/fig_011_Fig_8_The_frequency_of_defects_as_a_fu.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Fig. 7. MDsimulation of the damage evolution in a cascade induced by a 5 keV recoil in Si. The spheres show atoms with a potential energy more than 0.2 eV higher than the ground state, and the colors and atom sizes indicate how much above the ground state it is (red being > ¼ 1 eV above). a) 0.1 ps, b) 1 ps and c) 8 ps after the cascade starts. The fi nal state at 8 ps is stable over MD time scales at room temperature. Reprinted fi gure with permission from Ref. [113]. Copyright (1995) by the American Physical Society. Reprinted with permission from the authors. (For interpretation of the references to color in this fi gure legend, the reader is referred to the Web version of this article.)",
+      "page": 8,
+      "bbox": {
+        "l": 44.64731979370117,
+        "t": 352.1131896972656,
+        "r": 291.94989013671875,
+        "b": 135.48541259765625
+      },
+      "image_path": "images/fig_012_Fig_7_MDsimulation_of_the_damage_evolu.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 9. Surviving defect fractions in irradiated Al2O3 and Al.",
+      "page": 9,
+      "bbox": {
+        "l": 340.5450134277344,
+        "t": 292.5992126464844,
+        "r": 513.1170654296875,
+        "b": 160.052734375
+      },
+      "image_path": "images/fig_013_Fig_9_Surviving_defect_fractions_in_ir.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 10. Different con fi gurations of vacancies in a monolayer of graphene. The images (top row) were taken by aberration-corrected scanning TEM (Nion Ultrastem 100 at 60 or 90 kV). The corresponding lattice models (bottom row) are based on DFT-relaxed structures [175,409]. (a, b): single vacancy (nonagon with one open bond and a pentagon); (c-h): three different reconstructions of a double vacancy with pentagons, heptagons and octagons (indicated). The microscopy images were treated with double gaussian fi lter [410]. Original work for this article courtesy by Mukesh Tripathi, Gregor T. Leuthner and Jani Kotakoski.",
+      "page": 11,
+      "bbox": {
+        "l": 99.46070098876953,
+        "t": 727.5082702636719,
+        "r": 485.3288269042969,
+        "b": 530.9774169921875
+      },
+      "image_path": "images/fig_014_Fig_10_Different_con_fi_gurations_of_v.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Fig. 11. Molecular dynamics view of the mechanism of radiation damage reduction in nanocrystalline Ni. In the image, only atoms that are in a defective environment are plotted, making the cascade and grain boundaries easily visible. (a) Selected area of a 12-nm nc grain size sample showing the grain boundary (GB) atoms and the displacement vectors between the atoms due to a 5 keV PKA. The inset shows a magni fi ed view of the defect region after cooling down. (b) An example of the GB acting as an interstitial sink, by the annihilation of interstitials with free volume in the GB (marked in yellow). Reprinted fi gure from Ref. [221]. Copyright (2002) by the American Physical Society. (For interpretation of the references to color in this fi gure legend, the reader is referred to the Web version of this article.)",
+      "page": 12,
+      "bbox": {
+        "l": 54.732601165771484,
+        "t": 522.6962890625,
+        "r": 280.8072204589844,
+        "b": 142.58807373046875
+      },
+      "image_path": "images/fig_015_Fig_11_Molecular_dynamics_view_of_the_.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Fig. 12. Recoil implantation of Cu into Al during 500keV Xe bombardment. Figure based on data from Ref. [284].",
+      "page": 14,
+      "bbox": {
+        "l": 81.08956909179688,
+        "t": 727.3056259155273,
+        "r": 253.04747009277344,
+        "b": 495.5263671875
+      },
+      "image_path": "images/fig_016_Fig_12_Recoil_implantation_of_Cu_into_.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "Fig. 13. Time development of the ion beam mixing in crystalline and amorphous Si as well as several metals. Reprinted from Ref. [326], with the permission of AIP Publishing.",
+      "page": 15,
+      "bbox": {
+        "l": 77.7839584350586,
+        "t": 727.5014495849609,
+        "r": 506.6925964355469,
+        "b": 554.8604431152344
+      },
+      "image_path": "images/fig_017_Fig_13_Time_development_of_the_ion_bea.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "Fig. 14. Simulated R 2 values (circles), fi t of the function R 2 ð E Þ to the simulated data, and mixing Q 0 ð E Þ (dashed line) for Ni. Reprinted fi gure with permission from Ref. [292]. Copyright (1999) by the American Physical Society.",
+      "page": 15,
+      "bbox": {
+        "l": 72.01133728027344,
+        "t": 423.15399169921875,
+        "r": 244.1124725341797,
+        "b": 308.52471923828125
+      },
+      "image_path": "images/fig_018_Fig_14_Simulated_R_2_values_circles.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "Fig. 15. Experimental and simulation data showing quantitatively the problem with the NRT-dpa equation. In the fi gure, ' expt ' stands for experimental data, and MD for simulated molecular dynamics data. The other abbreviations denoted different interatomic potentials. The references are as in Ref. [313]. The fi gure shows that the NRTdpa equation does not represent correctly either the actual damage (Frenkel pairs produced) nor the number of replaced atoms. The former is overestimated by roughly a factor of 3, and the latter underestimated by a factor of 30. From Ref. [313], reprinted with open access permission.",
+      "page": 16,
+      "bbox": {
+        "l": 329.3766174316406,
+        "t": 288.689697265625,
+        "r": 544.3987426757812,
+        "b": 126.47308349609375
+      },
+      "image_path": "images/fig_019_Fig_15_Experimental_and_simulation_dat.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Fig. 16. Schematic of the concepts and quantities used in deriving the new arc-dpa and rpa equations. From Ref. [313], reprinted with open access permission.",
+      "page": 17,
+      "bbox": {
+        "l": 57.558895111083984,
+        "t": 192.97161865234375,
+        "r": 258.7309265136719,
+        "b": 75.13037109375
+      },
+      "image_path": "images/fig_020_Fig_16_Schematic_of_the_concepts_and_q.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "Fig. 17. Illustration of the improvement obtained with the new arc-dpa and rpa equations for a) Fe and b) W. The W data also includes two data points simulated at 800 K with the DD potential (solid circles). The references are: [A98]: Ref. [111], [Z93]: Ref. [304]. The references are as in Ref. [313]. From Ref. [313], reprinted with open access permission.",
+      "page": 18,
+      "bbox": {
+        "l": 116.38214111328125,
+        "t": 727.5515441894531,
+        "r": 487.8117370605469,
+        "b": 576.0694427490234
+      },
+      "image_path": "images/fig_021_Fig_17_Illustration_of_the_improvement.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "Fig. 18. Schematic illustration of the damage predicted by the three different damage models for the case of \u0018 1 keV damage energy in a typical metal. For illustration purposes, the damage is illustrated as if all damage were produced in the same 2-dimensional plane. Blue circles illustrate atoms in original lattice positions, yellow-brown denotes atoms that are in a different lattice position after the damage event, red atom pairs denote two interstitial atoms sharing the same lattice site, and empty lattice positions denote vacancies. Left: Damage production predicted by the NRT-dpa model. Middle: actual damage production, addressed by the new arc-dpa equation. Right: actual atom replacements, addressed by the new rpa equation, agreeing better with experimental data on number of replaced atoms (ion beam mixing). Note that in real 3 dimensional systems, the difference is even larger than in this 2D schematic. From Ref. [313], reprinted with open access permission. (For interpretation of the references to color in this fi gure legend, the reader is referred to the Web version of this article.)",
+      "page": 19,
+      "bbox": {
+        "l": 107.42753601074219,
+        "t": 248.707275390625,
+        "r": 478.0126647949219,
+        "b": 117.2701416015625
+      },
+      "image_path": "images/fig_022_Fig_18_Schematic_illustration_of_the_d.png"
+    },
+    {
+      "figure_id": "fig_023",
+      "label": "picture",
+      "caption": "Fig. 19. Average numbers of defects from cascades in Au, Pt and W, as a function of PKA energy. Defect numbers are expressed as the NRT ef fi ciency, i.e. the fraction of defects as compared to the NRT model prediction. The ef fi ciency function as de fi ned in the arcdpa model is also plotted for each material. For Au and Pt, the function was fi tted to the data shown here, while for W the function was fi tted to data from 4 different potentials, two of which are shown here. Original work for this article.",
+      "page": 21,
+      "bbox": {
+        "l": 57.25410079956055,
+        "t": 261.963134765625,
+        "r": 258.3316650390625,
+        "b": 109.18365478515625
+      },
+      "image_path": "images/fig_023_Fig_19_Average_numbers_of_defects_from.png"
+    },
+    {
+      "figure_id": "fig_024",
+      "label": "picture",
+      "caption": "Fig. 20. Some damage buildup processes that may occur in metals after the primary damage state formation. Note that in semiconductors and ionic materials, amorphous regions usually play a major additional role. Original work for this article.",
+      "page": 23,
+      "bbox": {
+        "l": 128.30044555664062,
+        "t": 726.0879669189453,
+        "r": 456.0684509277344,
+        "b": 549.3260192871094
+      },
+      "image_path": "images/fig_024_Fig_20_Some_damage_buildup_processes_t.png"
+    },
+    {
+      "figure_id": "fig_025",
+      "label": "picture",
+      "caption": "Fig. 21. a) Multiple scales of physical phenomena b) Multiscale modeling to address this. Figure from Ref. [243], reprinted by permission from Springer Nature.",
+      "page": 23,
+      "bbox": {
+        "l": 107.01654052734375,
+        "t": 502.89874267578125,
+        "r": 478.61627197265625,
+        "b": 373.4832763671875
+      },
+      "image_path": "images/fig_025_Fig_21_a_Multiple_scales_of_physical_.png"
+    }
+  ]
+}

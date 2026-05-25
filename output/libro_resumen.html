@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen - Atomos en movimiento</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  /* ── Reset & base ──────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;
+    --surface:    #ffffff;
+    --panel:      #ffffff;
+    --ink:        #18202a;
+    --muted:      #5a6472;
+    --line:       #d8dde4;
+    --accent:     #174a7e;    /* azul journal */
+    --accent-h:   #0d3259;
+    --gold:       #b8860b;    /* acento dorado */
+    --teal:       #0a6858;
+    --soft-blue:  #eef3fb;
+    --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;
+    --warn:       #fff8e1;
+    --nav-h:      44px;
+    --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.75;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  /* ── Nav bar ────────────────────────────────────────────────── */
+  .top-nav {
+    position: sticky; top: 0; z-index: 200;
+    height: var(--nav-h);
+    background: var(--accent);
+    display: flex; align-items: center; gap: 12px;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .top-nav a.back {
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px;
+    transition: background .15s;
+  }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title {
+    color: rgba(255,255,255,.6);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .top-nav .journal-name {
+    margin-left: auto;
+    color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  /* ── Header / masthead ──────────────────────────────────────── */
+  header {
+    background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff;
+    padding: 52px 28px 44px;
+    border-bottom: 4px solid var(--gold);
+  }
+  header .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  .journal-stripe {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .journal-stripe::after {
+    content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4);
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.3px;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,.78);
+    max-width: 820px;
+    margin-bottom: 28px;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: rgba(255,255,255,.8);
+  }
+  .meta div {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px;
+    border-radius: 6px;
+  }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* ── Main layout ────────────────────────────────────────────── */
+  main, .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  main { padding: 40px 24px 80px; }
+
+  /* ── Sections ───────────────────────────────────────────────── */
+  section { margin-bottom: 48px; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+    position: relative;
+  }
+  h2::before {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px;
+    background: var(--gold);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  p { margin: 0 0 16px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+
+  /* ── Lead / abstract ────────────────────────────────────────── */
+  .lead {
+    font-size: 17px;
+    font-style: italic;
+    color: #2a3540;
+    background: var(--soft-blue);
+    border-left: 4px solid var(--accent);
+    padding: 22px 24px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  /* ── Tags ───────────────────────────────────────────────────── */
+  .tag {
+    display: inline-block;
+    margin: 0 6px 8px 0;
+    padding: 4px 11px;
+    border-radius: 20px;
+    background: var(--soft-blue);
+    color: var(--accent);
+    border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .2px;
+  }
+
+  /* ── Cards & grids ──────────────────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important {
+    background: var(--soft-gold);
+    border-left: 4px solid var(--gold);
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+  }
+  @media (min-width: 720px) {
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+  }
+
+  /* ── Tables ─────────────────────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    margin: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 11px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+  }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* ── Figure list wrapper ────────────────────────────────────── */
+  .figure-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* ── Figure card ────────────────────────────────────────────── */
+  figure {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s;
+  }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+
+  /* Two-panel layout on wide screens */
+  @media (min-width: 680px) {
+    figure {
+      display: grid;
+      grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr;
+      min-height: 220px;
+    }
+    figure > img {
+      grid-column: 1;
+      grid-row: 1 / 3;
+    }
+    figure > figcaption {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    figure > .figbody {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
+  figure > img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    background: #0e1826;
+    display: block;
+    border-right: 1px solid var(--line);
+  }
+
+  /* On mobile: image full width on top */
+  @media (max-width: 679px) {
+    figure > img {
+      max-height: 280px;
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+
+  figcaption {
+    padding: 18px 20px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  figcaption strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .caption {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #3a4650;
+    line-height: 1.55;
+  }
+
+  .figbody {
+    padding: 16px 20px 18px;
+    background: var(--soft-teal);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: #1e3530;
+    line-height: 1.65;
+    border-left: 3px solid var(--teal);
+  }
+  .figbody p { margin: 0; }
+  .figbody::before {
+    content: '↳ Interpretación';
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 7px;
+  }
+
+  .small { color: var(--muted); font-size: 13px; }
+  .refs li { margin-bottom: 10px; }
+
+  /* ── Scrollbar ──────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+  <a href="../index.html" class="back">← Índice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+    <div class="inner">
+      <h1>Atomos en movimiento</h1>
+      <p class="subtitle">Resumen visual del primer capitulo de <strong>Seis piezas faciles</strong>, de Richard P. Feynman: una introduccion a la fisica desde la hipotesis atomica.</p>
+      <div class="meta">
+        <div><strong>Autor:</strong> Richard P. Feynman</div>
+        <div><strong>Capitulo:</strong> 1, Atomos en movimiento</div>
+        <div><strong>Fuente local:</strong> <a href="../pappers/libro.pdf">pappers/libro.pdf</a></div>
+        <div><strong>Figuras:</strong> <a href="../pappers/libro_figures/figures.md">pappers/libro_figures</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <p class="lead">
+        El capitulo propone una idea madre: todo esta hecho de atomos en movimiento perpetuo. Con esa sola imagen, Feynman explica calor, fases de la materia, presion, evaporacion, disolucion, reacciones quimicas, olor, evidencia experimental y hasta la continuidad entre fisica, quimica y biologia.
+      </p>
+      <div>
+        <span class="tag">Hipotesis atomica</span>
+        <span class="tag">Calor</span>
+        <span class="tag">Gases</span>
+        <span class="tag">Solidos y liquidos</span>
+        <span class="tag">Equilibrio dinamico</span>
+        <span class="tag">Quimica</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Idea Central</h2>
+      <div class="important">
+        <p>
+          Si hubiera que salvar una sola frase de la ciencia, Feynman elegiria la hipotesis atomica: las cosas estan hechas de pequenas particulas que se mueven siempre, se atraen a cierta distancia y se repelen al comprimirse demasiado.
+        </p>
+        <p>
+          La fuerza del capitulo esta en mostrar que esa imagen no es una definicion seca: es una maquina explicativa. Permite razonar por que el agua fluye, por que el hielo es rigido, por que un gas presiona, por que evaporar enfria y por que una llama libera energia.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Mapa Del Capitulo</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Ciencia como aproximacion</h3>
+          <p>Feynman abre recordando que las leyes fisicas son aproximaciones que sobreviven mientras el experimento las confirme. Aprender fisica es construir mapas cada vez mejores, no memorizar dogmas definitivos.</p>
+        </div>
+        <div class="card">
+          <h3>2. La materia no es continua</h3>
+          <p>La gota de agua parece lisa, pero al imaginarla ampliada aparecen moleculas moviendose, atrayendose y chocando. El calor es esa agitacion interna.</p>
+        </div>
+        <div class="card">
+          <h3>3. Estados de la materia</h3>
+          <p>En el vapor, las moleculas estan separadas y chocan con las paredes: eso produce presion. En el hielo, las moleculas ocupan posiciones ordenadas y vibran en una red.</p>
+        </div>
+        <div class="card">
+          <h3>4. Procesos dinamicos</h3>
+          <p>Evaporacion y disolucion no son hechos estaticos: moleculas entran y salen continuamente. El equilibrio ocurre cuando las salidas y regresos se compensan.</p>
+        </div>
+        <div class="card">
+          <h3>5. Quimica como reordenamiento</h3>
+          <p>Una reaccion quimica cambia companeros atomicos. Quemar carbono en oxigeno libera energia porque las nuevas uniones son energeticamente mas favorables.</p>
+        </div>
+        <div class="card">
+          <h3>6. Evidencia y alcance</h3>
+          <p>Movimiento browniano, cristales y rayos X apoyan la imagen atomica. Feynman remata extendiendo la idea a la biologia: lo vivo tambien son atomos obedeciendo leyes fisicas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Conceptos Para Recordar</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Como lo explica Feynman</th>
+            <th>Lectura rapida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Calor</td>
+            <td>Movimiento microscopico de atomos y moleculas.</td>
+            <td>Mas temperatura significa mas agitacion.</td>
+          </tr>
+          <tr>
+            <td>Presion de un gas</td>
+            <td>Golpes repetidos de moleculas contra las paredes o el piston.</td>
+            <td>Mas densidad o mas velocidad molecular eleva la presion.</td>
+          </tr>
+          <tr>
+            <td>Solido</td>
+            <td>Red ordenada donde los atomos vibran cerca de posiciones fijas.</td>
+            <td>La rigidez viene del orden de largo alcance.</td>
+          </tr>
+          <tr>
+            <td>Evaporacion</td>
+            <td>Moleculas de mayor energia escapan de la superficie.</td>
+            <td>Al irse las mas energeticas, el liquido se enfria.</td>
+          </tr>
+          <tr>
+            <td>Disolucion</td>
+            <td>Iones salen y regresan del cristal; el agua los estabiliza electricamente.</td>
+            <td>El equilibrio depende de tasas opuestas.</td>
+          </tr>
+          <tr>
+            <td>Reaccion quimica</td>
+            <td>Los atomos se recombinan y forman nuevas moleculas.</td>
+            <td>La energia liberada aparece como movimiento, calor o luz.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Resumen En Una Linea</h2>
+      <p>
+        El mundo macroscopico que vemos quieto, solido o continuo es, por debajo, un escenario de particulas en movimiento: la fisica empieza cuando aprendemos a traducir lo visible en esa dinamica invisible.
+      </p>
+    </section>
+
+    <section>
+      <h2>Figuras Del PDF</h2>
+      <p class="small">Las imagenes vienen de <code>pappers/libro_figures/images</code>. Bajo cada una agrego una lectura breve para estudiar el argumento del capitulo.</p>
+
+      <div class="figure-list">
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_001_no_caption.png" alt="Cubierta y contracubierta de Seis piezas faciles">
+          <figcaption><strong>Fig. 001, pagina 1.</strong> Cubierta, contracubierta y datos editoriales del libro.</figcaption>
+          <div class="figbody"><p>Sirve como contexto bibliografico: el texto pertenece a una edicion castellana de <em>Six Easy Pieces</em>, una seleccion introductoria de las clases de Feynman.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_002_no_caption.png" alt="Detalle editorial de la portadilla">
+          <figcaption><strong>Fig. 002, pagina 2.</strong> Imagen decorativa/editorial sin caption extraido.</figcaption>
+          <div class="figbody"><p>Marca el inicio del material del libro antes del capitulo. No aporta contenido fisico, pero queda incluida para conservar el recorrido visual del PDF.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_003_Agua_ampliada_mil_millones_de_veces.png" alt="Agua ampliada mil millones de veces">
+          <figcaption><strong>Figura 1.1, pagina 8.</strong> <span class="caption">Agua ampliada mil millones de veces.</span></figcaption>
+          <div class="figbody"><p>La imagen introduce el salto conceptual principal: lo que parece continuo esta compuesto por moleculas de agua, cada una con oxigeno e hidrogenos, moviendose y atrayendose.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_004_Figura_12.png" alt="Vapor representado como moleculas separadas">
+          <figcaption><strong>Figura 1.2, pagina 10.</strong> Vapor.</figcaption>
+          <div class="figbody"><p>En el gas las moleculas estan muy separadas. Esa separacion permite entender por que el vapor ocupa el recipiente y por que sus choques producen presion.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_005_Figura_13.png" alt="Gas en un cilindro con piston">
+          <figcaption><strong>Figura 1.3, pagina 11.</strong> Gas en un cilindro con piston.</figcaption>
+          <div class="figbody"><p>La presion aparece como promedio macroscopico de muchos impactos microscopicos. Si comprimimos el gas, los choques con el piston pueden aumentar la velocidad molecular y calentar el sistema.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_006_Figura_14.png" alt="Estructura esquematica del hielo">
+          <figcaption><strong>Figura 1.4, pagina 13.</strong> Hielo.</figcaption>
+          <div class="figbody"><p>El hielo muestra la diferencia entre liquido y solido: las moleculas quedan ordenadas en una estructura rigida, aunque siguen vibrando. La red abierta ayuda a explicar la expansion del agua al congelarse.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_007_Figura_15.png" alt="Agua evaporandose en contacto con aire">
+          <figcaption><strong>Figura 1.5, pagina 15.</strong> Agua evaporandose en el aire.</figcaption>
+          <div class="figbody"><p>La superficie no esta quieta: algunas moleculas escapan y otras regresan. Si se retira el aire humedo, regresan menos moleculas y la evaporacion neta aumenta; por eso soplar enfria.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_008_Figura_16.png" alt="Sal disolviendose en agua">
+          <figcaption><strong>Figura 1.6, pagina 17.</strong> Sal disolviendose en agua.</figcaption>
+          <div class="figbody"><p>El agua separa iones del cristal por atraccion electrica: los hidrogenos se orientan hacia el cloro negativo y el oxigeno hacia el sodio positivo. La disolucion tambien es un equilibrio dinamico.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_009_Figura_17.png" alt="Estructura cristalina de la sal comun">
+          <figcaption><strong>Figura 1.7, pagina 18.</strong> Estructura cristalina de la sal comun.</figcaption>
+          <div class="figbody"><p>La figura recuerda que no toda sustancia se organiza naturalmente en moleculas aisladas. En la sal solida hay una red de iones sodio y cloro mantenida por atraccion electrica.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_010_Figura_18.png" alt="Carbono quemandose en oxigeno">
+          <figcaption><strong>Figura 1.8, pagina 20.</strong> Carbono quemandose en oxigeno.</figcaption>
+          <div class="figbody"><p>Una reaccion quimica cambia las asociaciones entre atomos. Cuando carbono y oxigeno forman nuevas moleculas, la energia liberada se transforma en movimiento molecular, calor y a veces luz.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_011_no_caption.png" alt="Aroma de violetas como molecula en el aire">
+          <figcaption><strong>Figura 1.9, pagina 22.</strong> Aroma de violetas.</figcaption>
+          <div class="figbody"><p>El olor se vuelve una explicacion atomica: una molecula especifica viaja por el aire y llega por azar a la nariz. La percepcion se apoya en formas moleculares concretas.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/libro_figures/images/fig_012_110_La_sustancia_representada_es_α_-ir.png" alt="Formula estructural de alfa-irona">
+          <figcaption><strong>Figura 1.10, pagina 23.</strong> <span class="caption">La sustancia representada es alfa-irona.</span></figcaption>
+          <div class="figbody"><p>La formula quimica es una forma compacta de dibujar una arquitectura atomica. Feynman usa este ejemplo para mostrar por que los nombres quimicos pueden ser largos: intentan describir estructura, no solo etiqueta.</p></div>
+        </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

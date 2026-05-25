@@ -1,0 +1,13 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,2,picture,,images/fig_002_no_caption.png
+fig_003,8,picture,Agua ampliada mil millones de veces,images/fig_003_Agua_ampliada_mil_millones_de_veces.png
+fig_004,10,picture,Figura 1.2.,images/fig_004_Figura_12.png
+fig_005,11,picture,Figura 1.3.,images/fig_005_Figura_13.png
+fig_006,13,picture,Figura 1.4.,images/fig_006_Figura_14.png
+fig_007,15,picture,Figura 1.5.,images/fig_007_Figura_15.png
+fig_008,17,picture,Figura 1.6.,images/fig_008_Figura_16.png
+fig_009,18,picture,Figura 1.7.,images/fig_009_Figura_17.png
+fig_010,20,picture,Figura 1.8.,images/fig_010_Figura_18.png
+fig_011,22,picture,,images/fig_011_no_caption.png
+fig_012,23,picture,1.10. La sustancia representada es α -irona.,images/fig_012_110_La_sustancia_representada_es_α_-ir.png

@@ -1,0 +1,65 @@
+fig_001 (p. 1)
+[Sin caption]
+
+fig_002 (p. 2)
+[Sin caption]
+
+fig_003 (p. 3)
+[Sin caption]
+
+fig_004 (p. 3)
+Figure 1. Containment of Diaeretiella rapae for exposure method assays.
+
+fig_005 (p. 4)
+[Sin caption]
+
+fig_006 (p. 5)
+[Sin caption]
+
+fig_007 (p. 5)
+Figure 2. Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after combined application of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).
+
+fig_008 (p. 6)
+[Sin caption]
+
+fig_009 (p. 6)
+[Sin caption]
+
+fig_010 (p. 6)
+Figure 4. Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after combined application. Bars are modelestimated means ( ± 95% con fi dence interval) from a binomial generalised linear model for six treatment groups. Treatments sharing a letter are not signi fi cantly different (LSD (Least Signi fi cant Difference) pairwise comparisons, P < 0.05).
+
+fig_011 (p. 7)
+[Sin caption]
+
+fig_012 (p. 7)
+Figure 5. Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after direct application of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).
+
+fig_013 (p. 8)
+[Sin caption]
+
+fig_014 (p. 8)
+[Sin caption]
+
+fig_015 (p. 8)
+Figure 7. Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after direct application of various treatments. Bars are model-estimated means ( ± 95% con fi dence interval) from a binomial generalised linear model for six treatment groups. Treatments sharing a letter are not signi fi cantly different (LSD pairwise comparisons, P < 0.05).
+
+fig_016 (p. 9)
+[Sin caption]
+
+fig_017 (p. 9)
+Figure 8. Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after exposure to residues of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).
+
+fig_018 (p. 9)
+Figure 9. Survival of (A) Diaeretiella rapae and (B) Chrysoperla carnea after exposure to residues of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).
+
+fig_019 (p. 10)
+[Sin caption]
+
+fig_020 (p. 10)
+Figure 10. Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after exposure to residues of various treatments. Bars are model-estimated means ( ± 95% con fi dence interval) from a binomial generalised linear model for six treatment groups. Treatments sharing a letter are not signi fi cantly different (LSD pairwise comparisons, P < 0.05). NS, Not signi fi cant.
+
+fig_021 (p. 11)
+[Sin caption]
+
+fig_022 (p. 12)
+[Sin caption]

@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen - Primary radiation damage</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  /* ── Reset & base ──────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;
+    --surface:    #ffffff;
+    --panel:      #ffffff;
+    --ink:        #18202a;
+    --muted:      #5a6472;
+    --line:       #d8dde4;
+    --accent:     #174a7e;    /* azul journal */
+    --accent-h:   #0d3259;
+    --gold:       #b8860b;    /* acento dorado */
+    --teal:       #0a6858;
+    --soft-blue:  #eef3fb;
+    --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;
+    --warn:       #fff8e1;
+    --nav-h:      44px;
+    --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.75;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  /* ── Nav bar ────────────────────────────────────────────────── */
+  .top-nav {
+    position: sticky; top: 0; z-index: 200;
+    height: var(--nav-h);
+    background: var(--accent);
+    display: flex; align-items: center; gap: 12px;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .top-nav a.back {
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px;
+    transition: background .15s;
+  }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title {
+    color: rgba(255,255,255,.6);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .top-nav .journal-name {
+    margin-left: auto;
+    color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  /* ── Header / masthead ──────────────────────────────────────── */
+  header {
+    background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff;
+    padding: 52px 28px 44px;
+    border-bottom: 4px solid var(--gold);
+  }
+  header .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  .journal-stripe {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .journal-stripe::after {
+    content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4);
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.3px;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,.78);
+    max-width: 820px;
+    margin-bottom: 28px;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: rgba(255,255,255,.8);
+  }
+  .meta div {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px;
+    border-radius: 6px;
+  }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* ── Main layout ────────────────────────────────────────────── */
+  main, .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  main { padding: 40px 24px 80px; }
+
+  /* ── Sections ───────────────────────────────────────────────── */
+  section { margin-bottom: 48px; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+    position: relative;
+  }
+  h2::before {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px;
+    background: var(--gold);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  p { margin: 0 0 16px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+
+  /* ── Lead / abstract ────────────────────────────────────────── */
+  .lead {
+    font-size: 17px;
+    font-style: italic;
+    color: #2a3540;
+    background: var(--soft-blue);
+    border-left: 4px solid var(--accent);
+    padding: 22px 24px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  /* ── Tags ───────────────────────────────────────────────────── */
+  .tag {
+    display: inline-block;
+    margin: 0 6px 8px 0;
+    padding: 4px 11px;
+    border-radius: 20px;
+    background: var(--soft-blue);
+    color: var(--accent);
+    border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .2px;
+  }
+
+  /* ── Cards & grids ──────────────────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important {
+    background: var(--soft-gold);
+    border-left: 4px solid var(--gold);
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+  }
+  @media (min-width: 720px) {
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+  }
+
+  /* ── Tables ─────────────────────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    margin: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 11px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+  }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* ── Figure list wrapper ────────────────────────────────────── */
+  .figure-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* ── Figure card ────────────────────────────────────────────── */
+  figure {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s;
+  }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+
+  /* Two-panel layout on wide screens */
+  @media (min-width: 680px) {
+    figure {
+      display: grid;
+      grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr;
+      min-height: 220px;
+    }
+    figure > img {
+      grid-column: 1;
+      grid-row: 1 / 3;
+    }
+    figure > figcaption {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    figure > .figbody {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
+  figure > img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    background: #0e1826;
+    display: block;
+    border-right: 1px solid var(--line);
+  }
+
+  /* On mobile: image full width on top */
+  @media (max-width: 679px) {
+    figure > img {
+      max-height: 280px;
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+
+  figcaption {
+    padding: 18px 20px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  figcaption strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .caption {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #3a4650;
+    line-height: 1.55;
+  }
+
+  .figbody {
+    padding: 16px 20px 18px;
+    background: var(--soft-teal);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: #1e3530;
+    line-height: 1.65;
+    border-left: 3px solid var(--teal);
+  }
+  .figbody p { margin: 0; }
+  .figbody::before {
+    content: '↳ Interpretación';
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 7px;
+  }
+
+  .small { color: var(--muted); font-size: 13px; }
+  .refs li { margin-bottom: 10px; }
+
+  /* ── Scrollbar ──────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+  <a href="../index.html" class="back">← Índice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+    <div class="inner">
+      <h1>Dano primario por radiacion</h1>
+      <p class="subtitle">Resumen en espanol del review <strong>Primary radiation damage: A review of current understanding and models</strong>, con las imagenes extraidas del PDF local y una lectura detallada de cada figura.</p>
+      <div class="meta">
+        <div><strong>Autores:</strong> Kai Nordlund, Steven J. Zinkle, Andrea E. Sand, Fredric Granberg, Robert S. Averback, Roger E. Stoller, Tomoaki Suzudo, Lorenzo Malerba, Florian Banhart, William J. Weber, Francois Willaime, Sergei L. Dudarev, David Simeone</div>
+        <div><strong>Revista:</strong> Journal of Nuclear Materials 512 (2018) 450-479</div>
+        <div><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.jnucmat.2018.10.027">10.1016/j.jnucmat.2018.10.027</a></div>
+        <div><strong>PDF local:</strong> <a href="../pappers/ilove-Nordlund.2018.pdf">pappers/ilove-Nordlund.2018.pdf</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <p class="lead">
+        El articulo revisa que ocurre en los primeros picosegundos despues de que una particula energetica golpea un material. Ese primer estado, llamado dano primario, define cuantas vacancias, intersticiales, atomos reemplazados, zonas amorfas o defectos topologicos quedan antes de que empiece la evolucion lenta por temperatura. La tesis fuerte es que el modelo clasico NRT-dpa es util como escala historica, pero no describe bien ni el dano sobreviviente ni la mezcla atomica real; por eso el paper propone usar arc-dpa para defectos sobrevivientes y rpa para reemplazos atomicos.
+      </p>
+      <div>
+        <span class="tag">Dano por radiacion</span>
+        <span class="tag">Cascadas de desplazamiento</span>
+        <span class="tag">TDE</span>
+        <span class="tag">NRT-dpa</span>
+        <span class="tag">arc-dpa</span>
+        <span class="tag">rpa</span>
+        <span class="tag">Dinamica molecular</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pregunta Del Review</h2>
+      <p>
+        Para comparar materiales irradiados se suele hablar de dpa, desplazamientos por atomo. El problema es que "un desplazamiento calculado" no siempre equivale a "un defecto que queda". En una cascada, miles de atomos pueden moverse violentamente y despues recombinarse casi por completo. El review pregunta como representar mejor ese dano primario y como conectar simulaciones atomisticas, experimentos y modelos analiticos.
+      </p>
+      <p>
+        Tambien separa dos fenomenos que a veces se mezclan: la produccion de defectos cristalograficos, como pares Frenkel, y la mezcla por radiacion, donde atomos terminan en sitios cristalinos distintos sin dejar necesariamente una vacancia/intersticial visible.
+      </p>
+    </section>
+
+    <section>
+      <h2>Ideas Clave</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. El dano primario es ultrarrapido</h3>
+          <p>La etapa balistica ocurre aproximadamente en 0,1-1 ps y la relajacion de la cascada en 1-10 ps. Despues vienen procesos termicamente activados que pueden durar desde nanosegundos hasta anos.</p>
+        </div>
+        <div class="card">
+          <h3>2. No existe un unico umbral perfecto</h3>
+          <p>La energia umbral de desplazamiento depende de direccion, material, temperatura local, dinamica de muchos cuerpos y recombinacion. Una sola TDE promedio simplifica demasiado.</p>
+        </div>
+        <div class="card">
+          <h3>3. NRT-dpa sobreestima defectos</h3>
+          <p>El modelo NRT cuenta desplazamientos esperados, pero ignora que muchos intersticiales y vacancias se recombinan durante la propia cascada. En metales suele sobreestimar el dano sobreviviente.</p>
+        </div>
+        <div class="card">
+          <h3>4. rpa captura mezcla atomica</h3>
+          <p>La mezcla puede ser mucho mayor que el numero de defectos remanentes. Por eso el review distingue dano estructural sobreviviente, arc-dpa, de reemplazos atomicos, rpa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Mapa De Modelos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Que mide</th>
+            <th>Problema</th>
+            <th>Uso recomendado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TDE</td>
+            <td>Energia minima para crear un desplazamiento estable en una condicion dada.</td>
+            <td>No es constante universal: cambia con direccion, relajacion atomica y recombinacion.</td>
+            <td>Parametro de entrada, no descripcion completa del dano.</td>
+          </tr>
+          <tr>
+            <td>NRT-dpa</td>
+            <td>Numero convencional de desplazamientos por atomo calculados desde energia de dano.</td>
+            <td>Sobreestima pares Frenkel sobrevivientes y subestima mezcla atomica.</td>
+            <td>Comparacion historica y regulatoria, con cautela.</td>
+          </tr>
+          <tr>
+            <td>arc-dpa</td>
+            <td>Dpa corregido por recombinacion atermica dentro de la cascada.</td>
+            <td>Depende de funciones ajustadas a simulaciones y datos disponibles.</td>
+            <td>Mejor estimador del dano primario sobreviviente en metales.</td>
+          </tr>
+          <tr>
+            <td>rpa</td>
+            <td>Reemplazos atomicos por atomo, relacionados con mezcla ionica.</td>
+            <td>No equivale a defectos remanentes; mide otra consecuencia fisica.</td>
+            <td>Cuantificar mezcla atomica y reordenamiento sin confundirlo con pares Frenkel.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Figuras Explicadas</h2>
+      <p class="small">Las citas bajo cada figura corresponden a los captions extraidos del PDF. En las tres primeras imagenes no habia caption: parecen elementos graficos/editoriales de la primera pagina, por eso las incluyo al final de esta lectura como imagenes sin interpretacion cientifica central.</p>
+
+      <div class="figure-list">
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_004_a_Kinetic_energy_of_atoms_during_a_col.png" alt="Energia cinetica durante una cascada de colisiones">
+          <figcaption><strong>Fig. 1a, pagina 3.</strong><p class="caption">(a) Kinetic energy of atoms during a collision cascade</p></figcaption>
+          <div class="figbody">
+            <p>Esta imagen muestra una cascada de colisiones como una explosion atomica local: un PKA transfiere energia a vecinos, esos vecinos golpean a otros, y se forma una region caliente y desordenada. Lo importante no es solo cuantos atomos se mueven, sino que al principio casi todo el volumen parece perturbado. El mensaje fisico es que el dano primario no nace como defectos aislados y ordenados, sino como una fase breve, colectiva y fuertemente fuera de equilibrio.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_005_b_Potential_energy_and_displacement_di.png" alt="Energia potencial y distancia desplazada durante una cascada">
+          <figcaption><strong>Fig. 1b, pagina 3.</strong><p class="caption">(b) Potential energy and displacement distance during a collision cascade</p></figcaption>
+          <div class="figbody">
+            <p>Complementa la figura anterior separando energia almacenada y desplazamiento. Muchos atomos alcanzan posiciones transitorias muy alejadas de su sitio original, pero eso no implica que todos terminen como defectos permanentes. La figura prepara la idea de recombinacion atermica: durante el enfriamiento de la cascada, vacancias e intersticiales pueden aniquilarse antes de que el material vuelva a una temperatura normal.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_007_Fig_2_Illustration_of_the_threshold_di.png" alt="Concepto de energia umbral de desplazamiento">
+          <figcaption><strong>Fig. 2, pagina 4.</strong><p class="caption">Illustration of the threshold displacement energy concept.</p></figcaption>
+          <div class="figbody">
+            <p>La figura explica la TDE, la energia minima para sacar un atomo de su sitio y dejar un defecto estable. La lectura central es que el umbral no es una barrera simple de una particula moviendose en linea recta. La red se relaja, los atomos vecinos tambien se mueven y la direccion del retroceso cambia el resultado. Por eso una TDE unica, por ejemplo 30 eV, es una aproximacion practica, no una propiedad microscopica completa.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_006_Fig_3_Illustration_of_the_damage_funct.png" alt="Funcion de dano para cobre">
+          <figcaption><strong>Fig. 3, pagina 4.</strong><p class="caption">Illustration of the damage function as a function of energy for Cu.</p></figcaption>
+          <div class="figbody">
+            <p>Esta grafica compara una funcion de dano realista con una funcion escalonada tipo NRT. La curva real no salta de cero a dano fijo en un unico umbral; crece de manera gradual y fluctuante. La figura es una critica visual a los modelos demasiado discretos: cerca del umbral, pequenas diferencias de energia y direccion pueden cambiar completamente si queda o no queda dano.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_008_Fig_4_Illustration_of_the_highly_chaot.png" alt="Naturaleza caotica de la produccion de dano">
+          <figcaption><strong>Fig. 4, pagina 5.</strong><p class="caption">Illustration of the highly chaotic nature of damage production.</p></figcaption>
+          <div class="figbody">
+            <p>La figura muestra que incluso con condiciones muy controladas la produccion de dano fluctua mucho. Algunas trayectorias recombinan perfectamente aunque la energia sea relativamente alta. La curva promedio se parece mas a arc-dpa que a NRT-dpa, porque arc-dpa intenta incorporar la perdida de defectos por recombinacion. Es una de las figuras conceptuales mas importantes del paper: el dano primario es estadistico, no determinista.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_009_Fig_5_Schematic_illustration_of_the_ti.png" alt="Escalas temporales de cascada y migracion termica">
+          <figcaption><strong>Fig. 5, pagina 7.</strong><p class="caption">Schematic illustration of the time scales associated with an athermal collision cascade and subsequent thermal defect migration.</p></figcaption>
+          <div class="figbody">
+            <p>Ordena el fenomeno por tiempos: primero colisiones balisticas, luego una zona localmente caliente, despues enfriamiento y finalmente migracion termica de defectos. Esta separacion es clave porque los modelos de dano primario solo quieren describir el estado inmediatamente posterior a la cascada, antes de que diffusion, sinks, granos o superficies reorganicen la microestructura.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_010_Fig_6_Comparison_of_surviving_defect_f.png" alt="Fraccion de defectos sobrevivientes en hierro">
+          <figcaption><strong>Fig. 6, pagina 7.</strong><p class="caption">Comparison of surviving defect fraction in Fe obtained from MD simulations with different potentials and groups.</p></figcaption>
+          <div class="figbody">
+            <p>Resume un punto metodologico delicado: distintas simulaciones de dinamica molecular no dan exactamente el mismo numero de defectos sobrevivientes. Cambian los potenciales interatomicos, criterios de conteo, tamano de celda y tiempos de relajacion. Aun asi aparece una tendencia comun: la eficiencia de dano es menor que la prediccion NRT, especialmente cuando las cascadas se vuelven mas energeticas.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_012_Fig_7_MDsimulation_of_the_damage_evolu.png" alt="Evolucion de dano en cascada de silicio">
+          <figcaption><strong>Fig. 7, pagina 8.</strong><p class="caption">MD simulation of the damage evolution in a cascade induced by a 5 keV recoil in Si.</p></figcaption>
+          <div class="figbody">
+            <p>En silicio, la cascada produce una region excitada que evoluciona desde una nube caliente hasta un estado final estable en escala de MD. La figura ayuda a comparar metales y semiconductores: en semiconductores pueden aparecer zonas amorfas o desorden topologico, no solo pares Frenkel simples. Por eso un unico estimador de dpa puede esconder diferencias cualitativas entre clases de materiales.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_011_Fig_8_The_frequency_of_defects_as_a_fu.png" alt="Frecuencia de defectos como funcion del tamano">
+          <figcaption><strong>Fig. 8, pagina 8.</strong><p class="caption">The frequency of defects as a function of defect size.</p></figcaption>
+          <div class="figbody">
+            <p>Compara predicciones MD con observaciones in situ en tungsteno irradiado. La distribucion de tamanos importa porque no basta contar "cuantos defectos" hay: un cluster grande, un lazo de dislocacion y muchos defectos puntuales aislados pueden tener efectos mecanicos muy distintos. La figura conecta el dano primario con la microestructura observable experimentalmente.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_013_Fig_9_Surviving_defect_fractions_in_ir.png" alt="Fracciones de defectos sobrevivientes en alumina y aluminio">
+          <figcaption><strong>Fig. 9, pagina 9.</strong><p class="caption">Surviving defect fractions in irradiated Al2O3 and Al.</p></figcaption>
+          <div class="figbody">
+            <p>Contrasta un material ionico, alumina, con un metal, aluminio. Sirve para mostrar que la recombinacion y estabilidad del dano no son universales: la estructura de enlace, carga, subredes y movilidad de defectos modifican la fraccion sobreviviente. Es una advertencia contra tomar parametros calibrados en metales y aplicarlos automaticamente a ceramicos o oxidos.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_014_Fig_10_Different_con_fi_gurations_of_v.png" alt="Configuraciones de vacancias en grafeno">
+          <figcaption><strong>Fig. 10, pagina 11.</strong><p class="caption">Different configurations of vacancies in a monolayer of graphene.</p></figcaption>
+          <div class="figbody">
+            <p>En grafeno, una vacancia no es solo un hueco: la red se reconstruye formando pentagonos, heptagonos, octagonos y enlaces reorganizados. La figura muestra por que en materiales de baja dimensionalidad y enlaces covalentes fuertes el dano primario debe describirse como topologia local, no solo como conteo de atomos desplazados.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_015_Fig_11_Molecular_dynamics_view_of_the_.png" alt="Reduccion de dano en niquel nanocristalino">
+          <figcaption><strong>Fig. 11, pagina 12.</strong><p class="caption">Molecular dynamics view of the mechanism of radiation damage reduction in nanocrystalline Ni.</p></figcaption>
+          <div class="figbody">
+            <p>Muestra como los bordes de grano pueden actuar como sumideros de intersticiales. En materiales nanocristalinos, las interfaces no son detalle secundario: cambian el balance de recombinacion y supervivencia de defectos. Esta figura explica por que la microestructura inicial puede hacer que dos materiales con la misma composicion acumulen dano de manera muy distinta.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_016_Fig_12_Recoil_implantation_of_Cu_into_.png" alt="Implantacion por retroceso de cobre en aluminio">
+          <figcaption><strong>Fig. 12, pagina 14.</strong><p class="caption">Recoil implantation of Cu into Al during 500 keV Xe bombardment.</p></figcaption>
+          <div class="figbody">
+            <p>Entra en el tema de mezcla por radiacion. El bombardeo con Xe empuja atomos de Cu hacia Al por retrocesos atomicos, generando mezcla sin que todo pueda entenderse como defectos sobrevivientes. Es un puente hacia el concepto rpa: la radiacion puede cambiar quien ocupa que sitio, incluso si la red final no conserva un par vacancia-intersticial por cada evento.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_017_Fig_13_Time_development_of_the_ion_bea.png" alt="Evolucion temporal de mezcla por haz ionico">
+          <figcaption><strong>Fig. 13, pagina 15.</strong><p class="caption">Time development of the ion beam mixing in crystalline and amorphous Si as well as several metals.</p></figcaption>
+          <div class="figbody">
+            <p>Compara como crece la mezcla con el tiempo o fluencia en materiales distintos. La diferencia entre silicio cristalino, silicio amorfo y metales indica que la mezcla depende de estructura, movilidad y canalizacion de energia. La figura refuerza que el dano por radiacion tiene al menos dos salidas medibles: defectos estructurales y reordenamiento quimico/posicional.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_018_Fig_14_Simulated_R_2_values_circles.png" alt="Valores R2 simulados y mezcla Q para niquel">
+          <figcaption><strong>Fig. 14, pagina 15.</strong><p class="caption">Simulated R2 values, fit of the function R2(E), and mixing Q0(E) for Ni.</p></figcaption>
+          <div class="figbody">
+            <p>Cuantifica la mezcla en funcion de energia para Ni. El ajuste permite pasar de observaciones/simulaciones atomisticas a una funcion analitica util. La linea de mezcla no debe leerse como dpa: esta midiendo distancias y reemplazos, por eso alimenta mejor el concepto de rpa que el de pares Frenkel sobrevivientes.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_019_Fig_15_Experimental_and_simulation_dat.png" alt="Problema cuantitativo con la ecuacion NRT-dpa">
+          <figcaption><strong>Fig. 15, pagina 16.</strong><p class="caption">Experimental and simulation data showing quantitatively the problem with the NRT-dpa equation.</p></figcaption>
+          <div class="figbody">
+            <p>Es una figura de diagnostico: NRT-dpa sobreestima los pares Frenkel producidos aproximadamente por un factor de 3, pero subestima los atomos reemplazados aproximadamente por un factor de 30. En otras palabras, NRT falla en dos direcciones distintas segun lo que se quiera medir. Por eso el paper propone separar dano sobreviviente y mezcla atomica en dos estimadores complementarios.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_020_Fig_16_Schematic_of_the_concepts_and_q.png" alt="Conceptos para derivar arc-dpa y rpa">
+          <figcaption><strong>Fig. 16, pagina 17.</strong><p class="caption">Schematic of the concepts and quantities used in deriving the new arc-dpa and rpa equations.</p></figcaption>
+          <div class="figbody">
+            <p>Esta figura organiza las magnitudes: energia transferida, energia disponible para dano, defectos que sobreviven y atomos que cambian de posicion. Es el mapa conceptual de la propuesta del review. arc-dpa corrige NRT para contar mejor el dano remanente; rpa describe cuantos atomos fueron reemplazados, una variable relevante para mezcla ionica y cambios de composicion local.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_021_Fig_17_Illustration_of_the_improvement.png" alt="Mejora obtenida con arc-dpa y rpa">
+          <figcaption><strong>Fig. 17, pagina 18.</strong><p class="caption">Illustration of the improvement obtained with the new arc-dpa and rpa equations for Fe and W.</p></figcaption>
+          <div class="figbody">
+            <p>Compara las nuevas ecuaciones con datos para Fe y W. La mejora consiste en que arc-dpa baja la prediccion de dano a niveles mas compatibles con defectos sobrevivientes, mientras que rpa puede representar la cantidad mucho mayor de reemplazos. La figura no dice que el problema este resuelto para todos los materiales, sino que separar variables produce una descripcion mas honesta.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_022_Fig_18_Schematic_illustration_of_the_d.png" alt="Comparacion esquematica entre NRT, arc-dpa y rpa">
+          <figcaption><strong>Fig. 18, pagina 19.</strong><p class="caption">Schematic illustration of the damage predicted by the three different damage models.</p></figcaption>
+          <div class="figbody">
+            <p>Probablemente la figura mas pedagogica del review: a la izquierda, NRT imagina muchos pares vacancia-intersticial; al centro, arc-dpa muestra menos defectos remanentes; a la derecha, rpa muestra muchos atomos en sitios reemplazados. Asi se ve por que "dano" y "mezcla" no son sinonimos. Un material puede tener pocos defectos sobrevivientes pero mucha reconfiguracion atomica.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_023_Fig_19_Average_numbers_of_defects_from.png" alt="Eficiencia NRT en Au Pt y W">
+          <figcaption><strong>Fig. 19, pagina 21.</strong><p class="caption">Average numbers of defects from cascades in Au, Pt and W, as a function of PKA energy.</p></figcaption>
+          <div class="figbody">
+            <p>Extiende la comparacion a Au, Pt y W usando eficiencia NRT, es decir, defectos observados divididos por lo que predeciria NRT. Al aumentar la energia, la eficiencia no permanece en 1: cae porque las cascadas densas favorecen recombinacion interna. La curva de arc-dpa intenta capturar precisamente esa caida material-dependiente.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_024_Fig_20_Some_damage_buildup_processes_t.png" alt="Procesos de acumulacion de dano despues del dano primario">
+          <figcaption><strong>Fig. 20, pagina 23.</strong><p class="caption">Some damage buildup processes that may occur in metals after the primary damage state formation.</p></figcaption>
+          <div class="figbody">
+            <p>Marca el limite del tema principal. Despues del dano primario, los defectos pueden migrar, agruparse, formar lazos de dislocacion, vacios, segregacion o interactuar con sinks. Esto significa que arc-dpa describe un estado inicial mejorado, pero no predice por si solo toda la degradacion a largo plazo. Para eso hacen falta modelos de evolucion microestructural.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_025_Fig_21_a_Multiple_scales_of_physical_.png" alt="Escalas fisicas multiples y modelado multiescala">
+          <figcaption><strong>Fig. 21, pagina 23.</strong><p class="caption">a) Multiple scales of physical phenomena b) Multiscale modeling to address this.</p></figcaption>
+          <div class="figbody">
+            <p>Cierra el argumento con una vision multiescala. MD captura picosegundos y nanometros; experimentos y servicio nuclear involucran segundos-anos y microestructuras grandes. El camino propuesto es encadenar modelos: cascadas atomisticas para dano primario, modelos cineticos para evolucion de defectos y modelos continuos para propiedades macroscopicas.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_001_no_caption.png" alt="Imagen sin caption extraida de pagina 1">
+          <figcaption><strong>Imagen sin caption, pagina 1.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody">
+            <p>Elemento grafico de la primera pagina extraido por el pipeline. No parece corresponder a una figura cientifica numerada del articulo, asi que no lo uso para interpretar resultados.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_002_no_caption.png" alt="Imagen sin caption extraida de pagina 1">
+          <figcaption><strong>Imagen sin caption, pagina 1.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody">
+            <p>Otro elemento sin caption de la portada. Se conserva en el resumen para que el conjunto de imagenes extraidas quede completo, pero no forma parte del argumento tecnico.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Nordlund.2018_figures/images/fig_003_no_caption.png" alt="Imagen sin caption extraida de pagina 1">
+          <figcaption><strong>Imagen sin caption, pagina 1.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody">
+            <p>Imagen pequena sin caption detectada en la pagina inicial. Igual que las dos anteriores, la incluyo como salida del extractor pero la excluyo de las conclusiones cientificas.</p>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Modelo Mental</h2>
+      <div class="important">
+        <p><strong>Impacto inicial:</strong> una particula energetica genera un PKA y una cascada de colisiones. En ese instante muchisimos atomos se desplazan, pero el sistema aun no decidio cuantos defectos quedaran.</p>
+        <p><strong>Recombinacion atermica:</strong> durante el enfriamiento local, muchos pares vacancia-intersticial se recombinan sin necesitar difusion termica lenta. Aqui NRT-dpa tiende a contar de mas.</p>
+        <p><strong>Estado primario:</strong> quedan algunos defectos sobrevivientes y muchos atomos pueden haber intercambiado posiciones. arc-dpa estima mejor lo primero; rpa estima lo segundo.</p>
+        <p><strong>Evolucion posterior:</strong> desde ese estado inicial empiezan migracion, clustering, interaccion con bordes de grano, superficies, dislocaciones y cambios macroscopicos.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Limitaciones</h2>
+      <p>
+        El review insiste en que ningun modelo dpa puede reemplazar a una descripcion completa de microestructura y propiedades. Las simulaciones MD estan limitadas por potenciales interatomicos, tamanos de celda y tiempos muy cortos; las ecuaciones analiticas necesitan promedios y ajustes; y la respuesta real depende de temperatura, composicion, defectos preexistentes, interfaces y fluencia. La mejora no es tener un numero magico, sino usar el numero correcto para la pregunta correcta.
+      </p>
+    </section>
+
+    <section>
+      <h2>Resumen Final</h2>
+      <p>
+        Nordlund et al. proponen ordenar el dano por radiacion desde su origen: primero entender la cascada atomistica, luego distinguir defectos que sobreviven de atomos que fueron reemplazados, y finalmente conectar ese estado primario con la evolucion multiescala. La conclusion practica es clara: NRT-dpa sigue siendo una referencia historica, pero para interpretar dano primario moderno conviene usar arc-dpa para produccion de defectos y rpa para mezcla atomica. Esa separacion evita comparar fenomenos distintos con una sola etiqueta.
+      </p>
+      <p class="small">Archivo HTML generado desde el PDF local y las figuras ya extraidas en <code>pappers/ilove-Nordlund.2018_figures</code>.</p>
+    </section>
+  </main>
+</body>
+</html>

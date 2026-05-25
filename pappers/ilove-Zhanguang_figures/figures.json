@@ -1,0 +1,266 @@
+{
+  "source_file": "/home/santi/Documentos/ilovepappers/pappers/ilove-Zhanguang.pdf",
+  "total_figures": 20,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 499.127197265625,
+        "t": 739.1263084411621,
+        "r": 558.096923828125,
+        "b": 665.0164947509766
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 36.167240142822266,
+        "t": 732.9852256774902,
+        "r": 96.55796813964844,
+        "b": 665.4127655029297
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 499.66632080078125,
+        "t": 646.2813262939453,
+        "r": 529.3049926757812,
+        "b": 616.1906127929688
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 123.35072326660156,
+        "t": 585.8976745605469,
+        "r": 141.84432983398438,
+        "b": 573.27197265625
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Fig. 1. (a) Diagram of simulation region division, (b) Single crystal FeCoNiCrCu HEA.",
+      "page": 2,
+      "bbox": {
+        "l": 97.77584075927734,
+        "t": 247.092529296875,
+        "r": 495.8578186035156,
+        "b": 68.10394287109375
+      },
+      "image_path": "images/fig_005_Fig_1_a_Diagram_of_simulation_region.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Fig. 2. (a) Simulation flowchart, (b) Diagram of overlapping cascade irradiation (red atoms are interstitials, blue atoms are vacancies).",
+      "page": 3,
+      "bbox": {
+        "l": 85.69267272949219,
+        "t": 738.065990447998,
+        "r": 507.5087890625,
+        "b": 368.31048583984375
+      },
+      "image_path": "images/fig_006_Fig_2_a_Simulation_flowchart_b_Di.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Fig. 3. Evolution of the number of defects during a single cascade collision at different PKA energies.",
+      "page": 4,
+      "bbox": {
+        "l": 86.384521484375,
+        "t": 738.9927177429199,
+        "r": 508.8720397949219,
+        "b": 333.09814453125
+      },
+      "image_path": "images/fig_007_Fig_3_Evolution_of_the_number_of_defec.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Fig. 4. Curve of Frenkel defect pairs changing with cascade count under different PKA energies.",
+      "page": 5,
+      "bbox": {
+        "l": 134.076171875,
+        "t": 738.786304473877,
+        "r": 461.1633605957031,
+        "b": 470.4447021484375
+      },
+      "image_path": "images/fig_008_Fig_4_Curve_of_Frenkel_defect_pairs_ch.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 5. Diagram of cyclic loading application.",
+      "page": 5,
+      "bbox": {
+        "l": 85.82836151123047,
+        "t": 334.9966735839844,
+        "r": 508.720458984375,
+        "b": 65.40301513671875
+      },
+      "image_path": "images/fig_009_Fig_5_Diagram_of_cyclic_loading_applic.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Fig. 6. (a) Uniaxial stress-strain curve, (b) Variation of face-centered cubic (FCC) phase proportion with PKA energy, (c) Reduction rate of yield strength, (d) Reduction rate of yield strain.",
+      "page": 6,
+      "bbox": {
+        "l": 87.49366760253906,
+        "t": 425.5964660644531,
+        "r": 507.2698974609375,
+        "b": 76.00439453125
+      },
+      "image_path": "images/fig_010_Fig_6_a_Uniaxial_stress-strain_curve.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 7. Cyclic stress-strain loops for unirradiated FeCoNiCrCu and irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (b), 5k eV (c), 1kKeV (d), and 20k eV (e).",
+      "page": 8,
+      "bbox": {
+        "l": 100.20173645019531,
+        "t": 738.2881736755371,
+        "r": 496.2970886230469,
+        "b": 228.025634765625
+      },
+      "image_path": "images/fig_011_Fig_7_Cyclic_stress-strain_loops_for_u.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Fig. 8. Variation of stress amplitude with the number of cycles for unirradiated FeCoNiCrCu (a), irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (b), 5k eV (c), 10k eV (d), and 20k eV (e), and (f) Variation of average stress amplitude with PKA energy.",
+      "page": 9,
+      "bbox": {
+        "l": 127.53012084960938,
+        "t": 737.6714210510254,
+        "r": 462.2462463378906,
+        "b": 144.09210205078125
+      },
+      "image_path": "images/fig_012_Fig_8_Variation_of_stress_amplitude_wi.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 9. Dislocation distributions of irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (a), 5k eV (b), 10k eV (c), 20k eV (d).",
+      "page": 10,
+      "bbox": {
+        "l": 79.91690063476562,
+        "t": 735.9312057495117,
+        "r": 514.8410034179688,
+        "b": 486.4482421875
+      },
+      "image_path": "images/fig_013_Fig_9_Dislocation_distributions_of_irr.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 10. (a) Dislocation evolutions of different irradiated FeCoNiCrCu at different of the first cycle, (b) Enlarged view of dislocation evolutions of PKA energy 20k eV irradiated FeCoNiCrCu.",
+      "page": 11,
+      "bbox": {
+        "l": 73.20916748046875,
+        "t": 739.1416511535645,
+        "r": 519.9484252929688,
+        "b": 270.89813232421875
+      },
+      "image_path": "images/fig_014_Fig_10_a_Dislocation_evolutions_of_d.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Fig. 11. Variations of dislocation density of different irradiated FeCoNiCrCu with the number of cyclic loading cycles.",
+      "page": 12,
+      "bbox": {
+        "l": 92.5743637084961,
+        "t": 738.1307487487793,
+        "r": 502.2281494140625,
+        "b": 557.80419921875
+      },
+      "image_path": "images/fig_015_Fig_11_Variations_of_dislocation_densi.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Fig. 12. (a) Variations of FCC atom proportion with the cycle numbers of cyclic loading, (b) Variations of lattice disorder atom proportion with the cycles number of cyclic loading in different irradiated FeCoNiCrCu.",
+      "page": 12,
+      "bbox": {
+        "l": 93.49396514892578,
+        "t": 519.5258178710938,
+        "r": 501.18988037109375,
+        "b": 352.0556945800781
+      },
+      "image_path": "images/fig_016_Fig_12_a_Variations_of_FCC_atom_prop.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "Fig. 13. Correlation between lattice disorder fraction and dislocation density.",
+      "page": 13,
+      "bbox": {
+        "l": 122.99614715576172,
+        "t": 738.7681922912598,
+        "r": 472.0831604003906,
+        "b": 480.9799499511719
+      },
+      "image_path": "images/fig_017_Fig_13_Correlation_between_lattice_dis.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "Fig. 14. Interaction between dislocations and lattice disordered atoms under cyclic loading.",
+      "page": 13,
+      "bbox": {
+        "l": 80.80104064941406,
+        "t": 441.91680908203125,
+        "r": 514.8087158203125,
+        "b": 203.4945068359375
+      },
+      "image_path": "images/fig_018_Fig_14_Interaction_between_dislocation.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "Fig. 15. Definition and evolution of the enrichment factor (E-Factor). (a) Schematic representation of the calculation model, showing disordered atoms within the cylindrical shell surrounding the dislocation core. (b) Variation of the E-Factor during the loading process.",
+      "page": 14,
+      "bbox": {
+        "l": 158.5845489501953,
+        "t": 737.8107261657715,
+        "r": 435.8273010253906,
+        "b": 300.645263671875
+      },
+      "image_path": "images/fig_019_Fig_15_Definition_and_evolution_of_the.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Fig. 16. Stacking fault defect distributions of different irradiated FeCoNiCrCu at different cycles.",
+      "page": 15,
+      "bbox": {
+        "l": 73.90294647216797,
+        "t": 738.596622467041,
+        "r": 520.45166015625,
+        "b": 453.8204650878906
+      },
+      "image_path": "images/fig_020_Fig_16_Stacking_fault_defect_distribut.png"
+    }
+  ]
+}

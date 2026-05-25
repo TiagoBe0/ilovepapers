@@ -1,0 +1,292 @@
+{
+  "source_file": "/home/santi/Documentos/ilovepappers/pappers/ilove-Tonks.2026.pdf",
+  "total_figures": 22,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 512.0936279296875,
+        "t": 789.6302196979523,
+        "r": 593.9208984375,
+        "b": 751.545825958252
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 47.12472152709961,
+        "t": 778.6322574615479,
+        "r": 81.48371887207031,
+        "b": 752.1506958007812
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 3,
+      "bbox": {
+        "l": 512.0384521484375,
+        "t": 778.3828630447388,
+        "r": 546.2515869140625,
+        "b": 751.4942054748535
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figure 1. Containment of Diaeretiella rapae for exposure method assays.",
+      "page": 3,
+      "bbox": {
+        "l": 306.155029296875,
+        "t": 731.6240005493164,
+        "r": 544.8717651367188,
+        "b": 641.3071594238281
+      },
+      "image_path": "images/fig_004_Figure_1_Containment_of_Diaeretiella_ra.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 4,
+      "bbox": {
+        "l": 46.99587631225586,
+        "t": 778.7000703811646,
+        "r": 81.45835876464844,
+        "b": 751.9803581237793
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 5,
+      "bbox": {
+        "l": 512.0989990234375,
+        "t": 778.2168130874634,
+        "r": 546.2088012695312,
+        "b": 751.5894775390625
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Figure 2. Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after combined application of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).",
+      "page": 5,
+      "bbox": {
+        "l": 124.47116088867188,
+        "t": 337.762939453125,
+        "r": 467.3624572753906,
+        "b": 84.8629150390625
+      },
+      "image_path": "images/fig_007_Figure_2_Survival_of_A_Myzus_persicae.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 6,
+      "bbox": {
+        "l": 47.047672271728516,
+        "t": 778.6693048477173,
+        "r": 81.44612121582031,
+        "b": 751.9891738891602
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "",
+      "page": 6,
+      "bbox": {
+        "l": 125.69859313964844,
+        "t": 732.5705108642578,
+        "r": 468.1504821777344,
+        "b": 477.8748779296875
+      },
+      "image_path": "images/fig_009_no_caption.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Figure 4. Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after combined application. Bars are modelestimated means ( ± 95% con fi dence interval) from a binomial generalised linear model for six treatment groups. Treatments sharing a letter are not signi fi cantly different (LSD (Least Signi fi cant Difference) pairwise comparisons, P < 0.05).",
+      "page": 6,
+      "bbox": {
+        "l": 307.2227478027344,
+        "t": 411.4619140625,
+        "r": 545.2940673828125,
+        "b": 230.50250244140625
+      },
+      "image_path": "images/fig_010_Figure_4_Predicted_probability_of_emerg.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "",
+      "page": 7,
+      "bbox": {
+        "l": 512.0904541015625,
+        "t": 778.284553527832,
+        "r": 546.2959594726562,
+        "b": 751.7044639587402
+      },
+      "image_path": "images/fig_011_no_caption.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Figure 5. Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after direct application of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).",
+      "page": 7,
+      "bbox": {
+        "l": 124.32616424560547,
+        "t": 731.5385131835938,
+        "r": 468.06646728515625,
+        "b": 475.302978515625
+      },
+      "image_path": "images/fig_012_Figure_5_Survival_of_A_Myzus_persicae.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "",
+      "page": 8,
+      "bbox": {
+        "l": 47.07329559326172,
+        "t": 778.621973991394,
+        "r": 81.51251220703125,
+        "b": 752.0105400085449
+      },
+      "image_path": "images/fig_013_no_caption.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "",
+      "page": 8,
+      "bbox": {
+        "l": 126.4017562866211,
+        "t": 731.8652458190918,
+        "r": 469.3542175292969,
+        "b": 478.1514587402344
+      },
+      "image_path": "images/fig_014_no_caption.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Figure 7. Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after direct application of various treatments. Bars are model-estimated means ( ± 95% con fi dence interval) from a binomial generalised linear model for six treatment groups. Treatments sharing a letter are not signi fi cantly different (LSD pairwise comparisons, P < 0.05).",
+      "page": 8,
+      "bbox": {
+        "l": 48.864158630371094,
+        "t": 420.2410583496094,
+        "r": 287.4297790527344,
+        "b": 239.4237060546875
+      },
+      "image_path": "images/fig_015_Figure_7_Predicted_probability_of_emerg.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "",
+      "page": 9,
+      "bbox": {
+        "l": 512.066650390625,
+        "t": 778.3320827484131,
+        "r": 546.2948608398438,
+        "b": 751.6706848144531
+      },
+      "image_path": "images/fig_016_no_caption.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "Figure 8. Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after exposure to residues of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).",
+      "page": 9,
+      "bbox": {
+        "l": 124.28572845458984,
+        "t": 731.2699165344238,
+        "r": 468.5632629394531,
+        "b": 475.33721923828125
+      },
+      "image_path": "images/fig_017_Figure_8_Survival_of_A_Myzus_persicae.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "Figure 9. Survival of (A) Diaeretiella rapae and (B) Chrysoperla carnea after exposure to residues of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).",
+      "page": 9,
+      "bbox": {
+        "l": 124.35308074951172,
+        "t": 417.06622314453125,
+        "r": 467.4728088378906,
+        "b": 163.82171630859375
+      },
+      "image_path": "images/fig_018_Figure_9_Survival_of_A_Diaeretiella_r.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "",
+      "page": 10,
+      "bbox": {
+        "l": 47.082427978515625,
+        "t": 778.707124710083,
+        "r": 81.42925262451172,
+        "b": 751.8905143737793
+      },
+      "image_path": "images/fig_019_no_caption.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Figure 10. Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after exposure to residues of various treatments. Bars are model-estimated means ( ± 95% con fi dence interval) from a binomial generalised linear model for six treatment groups. Treatments sharing a letter are not signi fi cantly different (LSD pairwise comparisons, P < 0.05). NS, Not signi fi cant.",
+      "page": 10,
+      "bbox": {
+        "l": 48.764007568359375,
+        "t": 735.9733123779297,
+        "r": 289.05047607421875,
+        "b": 548.9220581054688
+      },
+      "image_path": "images/fig_020_Figure_10_Predicted_probability_of_emer.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "",
+      "page": 11,
+      "bbox": {
+        "l": 512.18798828125,
+        "t": 778.2175254821777,
+        "r": 546.2003784179688,
+        "b": 751.539966583252
+      },
+      "image_path": "images/fig_021_no_caption.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "",
+      "page": 12,
+      "bbox": {
+        "l": 47.21943664550781,
+        "t": 778.6726551055908,
+        "r": 81.48600769042969,
+        "b": 752.1319999694824
+      },
+      "image_path": "images/fig_022_no_caption.png"
+    }
+  ]
+}
