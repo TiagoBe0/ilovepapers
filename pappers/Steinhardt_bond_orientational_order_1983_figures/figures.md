@@ -1,0 +1,132 @@
+# Figuras extraídas
+
+**Fuente:** `/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Steinhardt_bond_orientational_order_1983.pdf`
+**Total figuras:** 16
+
+---
+
+## FIG_001 · Picture · Página 2
+
+![fig_001](images/fig_001_FlG_1_Different_13-atom_particle_clust.png)
+
+**Caption:** FlG. 1. Different 13-atom particle clusters occurring in liquids near the melting temperature.
+
+---
+
+## FIG_002 · Picture · Página 5
+
+![fig_002](images/fig_002_FIG_2_Histograms_of_quadratic_and_thir.png)
+
+**Caption:** FIG. 2. Histograms of quadratic and third-order invariants for 13-atom icosahedral, fcc, and hcp clusters, as we11 as for 1S-atom bcc and 7-atom sc clusters. Bonds at the surface are excluded.
+
+---
+
+## FIG_003 · Picture · Página 8
+
+![fig_003](images/fig_003_FIG_3_Symmetry_parameter_86_for_a_13-.png)
+
+**Caption:** FIG. 3. Symmetry parameter 8'6 for a 13-atom hcp cluster as a function of aspect ratio c/a. The two equilateral triangles above and below the "equatorial plane" of Fig. 1(b) have been stretched along the c axis. The c/a ratio corresponding to hard spheres is ( 3 )'~ .
+
+---
+
+## FIG_004 · Picture · Página 12
+
+![fig_004](images/fig_004_FIG_4_a_Quadratic_invariants_QI_for_.png)
+
+**Caption:** FIG. 4. (a) Quadratic invariants QI for a hightemperature LennardJones liquid (solid lines). The dashed lines indicate averages obtained using a randomnumber generator to produce the orientations of an equivalent number of bonds. (b) QI histograms for a supercooled Lennard-Jones liquid. The dependence on the radius (r) of the averaging volume is shown: a dashed line, r=3; dotted-dashed line, r= S, solid line, r=7.
+
+---
+
+## FIG_005 · Picture · Página 13
+
+![fig_005](images/fig_005_FIR_5_Time_dependence_of_the_a_tempe.png)
+
+**Caption:** FIR. 5. Time dependence of the (a) temperature and (b) pressure (arbitrary units) for a sequence of moleculardynamics runs. The abrupt changes in the fifth curve from the top at 10 v=4.6 indicates the onset of crystallization. The break in the seventh pressure curve from the top suggests that crystallization may have occurred in this run as well. (The order of samples is the same from top to bottom in the two figures. )
+
+---
+
+## FIG_006 · Picture · Página 13
+
+![fig_006](images/fig_006_FIG_6_a_and_b_show_the_radial_dist.png)
+
+**Caption:** FIG. 6. (a) and (b) show the radial distribution functions (RDF) for the high-( T*=0.719) and low(T*=0. 554) temperature samples whose orientational order is displayed in Fig. 4. (c) shows the RDF for a sample which has crystallized. The extra peak is indicated by the arrow.
+
+---
+
+## FIG_007 · Picture · Página 14
+
+![fig_007](images/fig_007_FIG_7_Orientation_correlation_function.png)
+
+**Caption:** FIG. 7. Orientation correlation functions in highand low-temperature samples.
+
+---
+
+## FIG_008 · Picture · Página 15
+
+![fig_008](images/fig_008_FIG_g_Orientational_correlation_length.png)
+
+**Caption:** FIG. g. Orientational correlation length g6 (triangles) and "order parameter" Q6 (squares) as a function of temperature. The temperature is given both in reduced units and in units appropriate to liquid argon.
+
+---
+
+## FIG_009 · Picture · Página 16
+
+![fig_009](images/fig_009_FIG_9_View_of_the_12_atoms_making_up_t.png)
+
+**Caption:** FIG. 9. View of the 12 atoms making up the surfaces of an icosahedron, together with their decomposition into three orthogonal rectangular planes.
+
+---
+
+## FIG_010 · Picture · Página 16
+
+![fig_010](images/fig_010_no_caption.png)
+
+**Caption:** _Sin caption_
+
+---
+
+## FIG_011 · Picture · Página 17
+
+![fig_011](images/fig_011_no_caption.png)
+
+**Caption:** _Sin caption_
+
+---
+
+## FIG_012 · Picture · Página 17
+
+![fig_012](images/fig_012_FIG_10_The_orientational_correlation_f.png)
+
+**Caption:** FIG. 10. The orientational correlation function G6(r) obtained by cooling in a small icosahedral field, turning this field off, and then equilibrating (solid line). For comparison, we show G6(r) for a sample cooled at the same rate without an icosahedral field (dashed line). Both samples were cooled more rapidly than in the low-temperature sample shown in Fig. 7.
+
+---
+
+## FIG_013 · Picture · Página 18
+
+![fig_013](images/fig_013_FIG_12_Phase_diagram_for_a_Lennard-Jon.png)
+
+**Caption:** FIG. 12. Phase diagram for a Lennard-Jones liquid (adapted from Ref. 42). The arrow shows the thermodynamic path taken on most of the runs discussed in this paper (p*=0.973). Qualitatively similar results were obtained upon supercooling at a higher density, p*=1. 053.
+
+---
+
+## FIG_014 · Picture · Página 18
+
+![fig_014](images/fig_014_FIG_13_Orientational_order_in_the_rela.png)
+
+**Caption:** FIG. 13. Orientational order in the relaxed Finney model as a function of averaging size. The solid lines show histograms for a well-ordered molecular-dynamics sample with approximately the same number of particles as in the 853-particle Finney model.
+
+---
+
+## FIG_015 · Picture · Página 19
+
+![fig_015](images/fig_015_FICx_14_Qrientational_histograms_for_s.png)
+
+**Caption:** FICx. 14. Qrientational histograms for several of the amorphon clusters discussed in Ref. 11.
+
+---
+
+## FIG_016 · Picture · Página 20
+
+![fig_016](images/fig_016_FIG_15_Spiral_packing_of_tetrahedra_di.png)
+
+**Caption:** FIG. 15. Spiral packing of tetrahedra discussed by Bernal (Ref. 25).

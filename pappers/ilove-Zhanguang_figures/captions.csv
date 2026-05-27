@@ -1,0 +1,21 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,1,picture,,images/fig_002_no_caption.png
+fig_003,1,picture,,images/fig_003_no_caption.png
+fig_004,1,picture,,images/fig_004_no_caption.png
+fig_005,2,picture,"Fig. 1. (a) Diagram of simulation region division, (b) Single crystal FeCoNiCrCu HEA.",images/fig_005_Fig_1_a_Diagram_of_simulation_region.png
+fig_006,3,picture,"Fig. 2. (a) Simulation flowchart, (b) Diagram of overlapping cascade irradiation (red atoms are interstitials, blue atoms are vacancies).",images/fig_006_Fig_2_a_Simulation_flowchart_b_Di.png
+fig_007,4,picture,Fig. 3. Evolution of the number of defects during a single cascade collision at different PKA energies.,images/fig_007_Fig_3_Evolution_of_the_number_of_defec.png
+fig_008,5,picture,Fig. 4. Curve of Frenkel defect pairs changing with cascade count under different PKA energies.,images/fig_008_Fig_4_Curve_of_Frenkel_defect_pairs_ch.png
+fig_009,5,picture,Fig. 5. Diagram of cyclic loading application.,images/fig_009_Fig_5_Diagram_of_cyclic_loading_applic.png
+fig_010,6,picture,"Fig. 6. (a) Uniaxial stress-strain curve, (b) Variation of face-centered cubic (FCC) phase proportion with PKA energy, (c) Reduction rate of yield strength, (d) Reduction rate of yield strain.",images/fig_010_Fig_6_a_Uniaxial_stress-strain_curve.png
+fig_011,8,picture,"Fig. 7. Cyclic stress-strain loops for unirradiated FeCoNiCrCu and irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (b), 5k eV (c), 1kKeV (d), and 20k eV (e).",images/fig_011_Fig_7_Cyclic_stress-strain_loops_for_u.png
+fig_012,9,picture,"Fig. 8. Variation of stress amplitude with the number of cycles for unirradiated FeCoNiCrCu (a), irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (b), 5k eV (c), 10k eV (d), and 20k eV (e), and (f) Variation of average stress amplitude with PKA energy.",images/fig_012_Fig_8_Variation_of_stress_amplitude_wi.png
+fig_013,10,picture,"Fig. 9. Dislocation distributions of irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (a), 5k eV (b), 10k eV (c), 20k eV (d).",images/fig_013_Fig_9_Dislocation_distributions_of_irr.png
+fig_014,11,picture,"Fig. 10. (a) Dislocation evolutions of different irradiated FeCoNiCrCu at different of the first cycle, (b) Enlarged view of dislocation evolutions of PKA energy 20k eV irradiated FeCoNiCrCu.",images/fig_014_Fig_10_a_Dislocation_evolutions_of_d.png
+fig_015,12,picture,Fig. 11. Variations of dislocation density of different irradiated FeCoNiCrCu with the number of cyclic loading cycles.,images/fig_015_Fig_11_Variations_of_dislocation_densi.png
+fig_016,12,picture,"Fig. 12. (a) Variations of FCC atom proportion with the cycle numbers of cyclic loading, (b) Variations of lattice disorder atom proportion with the cycles number of cyclic loading in different irradiated FeCoNiCrCu.",images/fig_016_Fig_12_a_Variations_of_FCC_atom_prop.png
+fig_017,13,picture,Fig. 13. Correlation between lattice disorder fraction and dislocation density.,images/fig_017_Fig_13_Correlation_between_lattice_dis.png
+fig_018,13,picture,Fig. 14. Interaction between dislocations and lattice disordered atoms under cyclic loading.,images/fig_018_Fig_14_Interaction_between_dislocation.png
+fig_019,14,picture,"Fig. 15. Definition and evolution of the enrichment factor (E-Factor). (a) Schematic representation of the calculation model, showing disordered atoms within the cylindrical shell surrounding the dislocation core. (b) Variation of the E-Factor during the loading process.",images/fig_019_Fig_15_Definition_and_evolution_of_the.png
+fig_020,15,picture,Fig. 16. Stacking fault defect distributions of different irradiated FeCoNiCrCu at different cycles.,images/fig_020_Fig_16_Stacking_fault_defect_distribut.png

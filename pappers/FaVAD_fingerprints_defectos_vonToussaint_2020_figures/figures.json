@@ -1,0 +1,123 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/FaVAD_fingerprints_defectos_vonToussaint_2020.pdf",
+  "total_figures": 9,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "Figure 1: Workflow for analyzing the damaged material sample by calculating the DV. Unclassified atoms are characterized by a principal component analysis (PCA), which defines its DV and geometry.",
+      "page": 4,
+      "bbox": {
+        "l": 36.191650390625,
+        "t": 539.4239807128906,
+        "r": 277.7850341796875,
+        "b": 123.41400146484375
+      },
+      "image_path": "images/fig_001_Figure_1_Workflow_for_analyzing_the_dam.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 2: Workflow for calculating vacancy spatial volume by computing nearest neighbours (NN) distance between numerical sampling points and the atoms locations.",
+      "page": 4,
+      "bbox": {
+        "l": 305.1300964355469,
+        "t": 323.42694091796875,
+        "r": 535.933837890625,
+        "b": 127.1678466796875
+      },
+      "image_path": "images/fig_002_Figure_2_Workflow_for_calculating_vacan.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Figure 3: Fe geometries used to compute the reference DVs: A Fe atom depicted as a blue sphere represents an atom in a lattice position for the DFA classification (panel a), in an interstitial site (panel b) for the SIA, and next to a single vacancy (panel c) for the ANtV. A green sphere represents a vacancy in the lattice structure. Amplitudes of reference descriptor vectors as a function of their components are shown in panels d-f) for different values of the cutoff parameter r c .",
+      "page": 5,
+      "bbox": {
+        "l": 41.17414855957031,
+        "t": 763.2235107421875,
+        "r": 546.335205078125,
+        "b": 515.8165283203125
+      },
+      "image_path": "images/fig_003_Figure_3_Fe_geometries_used_to_compute_.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figure 4: (Color on-line) Normalized distance distributions of the atom DVs with respect to the reference descriptor vectors for iron lattices at different temperatures. In panel a) the distributions with respect to a reference DV calculated for a lattice at 300 K is given. Displayed is the density for the atoms underlying the reference vector calculation, i.e. the distance distribution for a lattice at 300 K. As is indicated by the dashed line, this distribution follows closely the expected χ 2 -density (c.f. Eq.6 ). Panel a) shows also the distance density of a lattice at 900 K which reflects the effect of atomic thermal motion. The upper boundary of the density provides a good first guess for a reasonable distance threshold (highlighted by the vertical dotted line). In panel b) the same quantities are displayed, although this time with respect to the reference descriptor vector computed from a sample at 600 K. The lower two panels display the distance distribution of the iron sample after the collision cascade. There is a clear separation between the large majority of the atoms and a small fraction at larger distances. For more details please refer to the text.",
+      "page": 6,
+      "bbox": {
+        "l": 37.2818717956543,
+        "t": 762.3364944458008,
+        "r": 289.3182067871094,
+        "b": 582.9812622070312
+      },
+      "image_path": "images/fig_004_Figure_4_Color_on-line_Normalized_dis.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Figure 5: (Color on-line) DVs of the defect free atom (DFA) classification for different values of n max and two different cut-off-radii ( r c = 0 . 275 nm (labelled as 1NN) and r c = 0 . 31 nm (2NN). Beyond a certain n max the relative differences between the two representations of the two different density fields for the most pronounced vector components are decreasing, thus hampering the stability of the identification. At the same time the number of vector components increases combinatorically (please note the logarithmic scale on the abscissa).",
+      "page": 7,
+      "bbox": {
+        "l": 310.4089660644531,
+        "t": 758.8513946533203,
+        "r": 554.013427734375,
+        "b": 594.5191497802734
+      },
+      "image_path": "images/fig_005_Figure_5_Color_on-line_DVs_of_the_def.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 8,
+      "bbox": {
+        "l": 42.65571594238281,
+        "t": 756.0900802612305,
+        "r": 281.88299560546875,
+        "b": 583.5034790039062
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Figure 7: (Color on-line) A principal component analysis is applied to the DVs of the unclassified atoms and the obtained results are shown in a). The DV of the unclassified atom is presented in b), which is found by performing a cluster analysis in a). The geometry of the unclassified atom is shown in panel c). Atoms in the new classification are represented by purple spheres, while lattice atoms are depicted as brown spheres.",
+      "page": 9,
+      "bbox": {
+        "l": 66.86885070800781,
+        "t": 761.7526702880859,
+        "r": 529.573974609375,
+        "b": 630.8872375488281
+      },
+      "image_path": "images/fig_007_Figure_7_Color_on-line_A_principal_co.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Figure 8: Comparison of the nearest distance distribution for a defect-free (pristine) sample and the damaged iron sample. The sampling grid had a lattice spacing of 0.0775 nm in each direction, corresponding to N = 200 3 sampling points. For each sample point the distance to the nearest atom is computed using a KD-tree algorithm which reduces the numerical effort from N 2 to N log N . The sharp cut-off of the distribution of the pristine sample at around 2.5 ˚ A 2 supports a threshold value slightly above, e.g. 3 ˚ A 2 . Sample points with distances to the nearest atom larger than this threshold are considered to be located at/near a vacancy site or in a void structure.",
+      "page": 9,
+      "bbox": {
+        "l": 43.3853645324707,
+        "t": 365.69622802734375,
+        "r": 263.9852294921875,
+        "b": 200.910400390625
+      },
+      "image_path": "images/fig_008_Figure_8_Comparison_of_the_nearest_dist.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Figure 9: Visualization of the damage in the material. Spheres correspond to Fe atoms, where each colour channel describes a different combination of d M for each defect classification. Cloud-like regions represent vacancies in the volume.",
+      "page": 10,
+      "bbox": {
+        "l": 321.3446960449219,
+        "t": 747.6164627075195,
+        "r": 540.9385986328125,
+        "b": 534.975341796875
+      },
+      "image_path": "images/fig_009_Figure_9_Visualization_of_the_damage_in.png"
+    }
+  ]
+}

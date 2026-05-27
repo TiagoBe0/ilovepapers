@@ -1,0 +1,36 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,1,picture,,images/fig_002_no_caption.png
+fig_003,1,picture,,images/fig_003_no_caption.png
+fig_004,2,picture,,images/fig_004_no_caption.png
+fig_005,2,picture,"Fig. 1 Schematic showing an overview of arti fi cial intelligence (AI), machine learning (ML), and deep learning (DL) methods and its applications in materials science and engineering. Deep learning is considered a part of machine learning, which is contained in an umbrella term arti fi cial intelligence.",images/fig_005_Fig_1_Schematic_showing_an_overview_of_.png
+fig_006,3,picture,,images/fig_006_no_caption.png
+fig_007,4,picture,,images/fig_007_no_caption.png
+fig_008,5,picture,,images/fig_008_no_caption.png
+fig_009,6,picture,,images/fig_009_no_caption.png
+fig_010,7,picture,,images/fig_010_no_caption.png
+fig_011,7,picture,"Fig. 2 Schematic representations of an atomic structure as a graph. a CGCNN model in which crystals are converted to graphs with nodes representing atoms in the unit cell and edges representing atom connections. Nodes and edges are characterized by vectors corresponding to the atoms and bonds in the crystal, respectively [Reprinted with permission from ref. 67 Copyright 2019 American Physical Society], b ALIGNN 65 model in which the convolution layer alternates between message passing on the bond graph and its bond-angle line graph. c MEGNet in which the initial graph is represented by the set of atomic attributes, bond attributes and global state attributes [Reprinted with permission from ref. 33 Copyright 2019 American Chemical Society] model, d iCGCNN model in which multiple edges connect a node to neighboring nodes to show the number of Voronoi neighbors [Reprinted with permission from ref. 122 Copyright 2019 American Physical Society].",images/fig_011_Fig_2_Schematic_representations_of_an_a.png
+fig_012,8,picture,,images/fig_012_no_caption.png
+fig_013,9,picture,,images/fig_013_no_caption.png
+fig_014,9,picture,"Fig. 3 Example applications of deep learning for spectral data. a Predicting structure information from the X-ray diffraction 374 , Reprinted according to the terms of the CC-BY license 374 . Copyright 2020. b Predicting catalysis properties from computational electronic density of states data. Reprinted according to the terms of the CC-BY license 202 . Copyright 2021.",images/fig_014_Fig_3_Example_applications_of_deep_lear.png
+fig_015,10,picture,,images/fig_015_no_caption.png
+fig_016,11,picture,,images/fig_016_no_caption.png
+fig_017,12,picture,,images/fig_017_no_caption.png
+fig_018,13,picture,,images/fig_018_no_caption.png
+fig_019,14,picture,,images/fig_019_no_caption.png
+fig_020,14,picture,Fig. 4 Deep-learning-based algorithm for atomic site classi fi cation. a Deep neural networks U-Net model constructed for quanti fi cation analysis of annular dark- fi eld in the scanning transmission electron microscope (ADF-STEM) image of V-WSe2. b Examples of training dataset for deep learning of atom segmentation model for fi ve different species. c Pixel-level accuracy of the atom segmentation model as a function of training epoch. d Measurement accuracy of the segmentation model compared with human-based measurements. Scale bars are 1 nm [Reprinted according to the terms of the CC-BY license ref. 228 ].,images/fig_020_Fig_4_Deep-learning-based_algorithm_for.png
+fig_021,15,picture,,images/fig_021_no_caption.png
+fig_022,16,picture,,images/fig_022_no_caption.png
+fig_023,17,picture,,images/fig_023_no_caption.png
+fig_024,17,picture,,images/fig_024_no_caption.png
+fig_025,18,picture,,images/fig_025_no_caption.png
+fig_026,18,picture,"Fig. 5 A schematic showing the application of skip-gram variation of Word2vec for predicting context words. a Network for training word embeddings for natural language processing application. A one-hot encoded vector at left represents each distinct word in the corpus; the role of a hidden layer is to predict the probability of neighboring words in the corpus. This network structure trains a relatively small hidden layer of 100 -200 neurons to contain information on the context of words in the entire corpus, with the result that similar words end up with similar hidden layer weights (word embeddings). Such word embeddings can transform wordsin text form into numerical vectors that may be useful for a variety of applications. b projection of word embeddings for various materials science words, as trained on a corpus scienti fi c abstracts, into two dimensions using principle components analysis. Without any explicit training, the word embeddings naturally preserve relationships between chemical formulas, their common oxides, and their ground state structures. [Reprinted according to the terms of the CC-BY license ref. 259 ].",images/fig_026_Fig_5_A_schematic_showing_the_applicati.png
+fig_027,19,picture,,images/fig_027_no_caption.png
+fig_028,20,picture,,images/fig_028_no_caption.png
+fig_029,21,picture,,images/fig_029_no_caption.png
+fig_030,22,picture,,images/fig_030_no_caption.png
+fig_031,23,picture,,images/fig_031_no_caption.png
+fig_032,24,picture,,images/fig_032_no_caption.png
+fig_033,25,picture,,images/fig_033_no_caption.png
+fig_034,26,picture,,images/fig_034_no_caption.png
+fig_035,26,picture,,images/fig_035_no_caption.png

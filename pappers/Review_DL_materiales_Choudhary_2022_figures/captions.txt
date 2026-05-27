@@ -1,0 +1,104 @@
+fig_001 (p. 1)
+[Sin caption]
+
+fig_002 (p. 1)
+[Sin caption]
+
+fig_003 (p. 1)
+[Sin caption]
+
+fig_004 (p. 2)
+[Sin caption]
+
+fig_005 (p. 2)
+Fig. 1 Schematic showing an overview of arti fi cial intelligence (AI), machine learning (ML), and deep learning (DL) methods and its applications in materials science and engineering. Deep learning is considered a part of machine learning, which is contained in an umbrella term arti fi cial intelligence.
+
+fig_006 (p. 3)
+[Sin caption]
+
+fig_007 (p. 4)
+[Sin caption]
+
+fig_008 (p. 5)
+[Sin caption]
+
+fig_009 (p. 6)
+[Sin caption]
+
+fig_010 (p. 7)
+[Sin caption]
+
+fig_011 (p. 7)
+Fig. 2 Schematic representations of an atomic structure as a graph. a CGCNN model in which crystals are converted to graphs with nodes representing atoms in the unit cell and edges representing atom connections. Nodes and edges are characterized by vectors corresponding to the atoms and bonds in the crystal, respectively [Reprinted with permission from ref. 67 Copyright 2019 American Physical Society], b ALIGNN 65 model in which the convolution layer alternates between message passing on the bond graph and its bond-angle line graph. c MEGNet in which the initial graph is represented by the set of atomic attributes, bond attributes and global state attributes [Reprinted with permission from ref. 33 Copyright 2019 American Chemical Society] model, d iCGCNN model in which multiple edges connect a node to neighboring nodes to show the number of Voronoi neighbors [Reprinted with permission from ref. 122 Copyright 2019 American Physical Society].
+
+fig_012 (p. 8)
+[Sin caption]
+
+fig_013 (p. 9)
+[Sin caption]
+
+fig_014 (p. 9)
+Fig. 3 Example applications of deep learning for spectral data. a Predicting structure information from the X-ray diffraction 374 , Reprinted according to the terms of the CC-BY license 374 . Copyright 2020. b Predicting catalysis properties from computational electronic density of states data. Reprinted according to the terms of the CC-BY license 202 . Copyright 2021.
+
+fig_015 (p. 10)
+[Sin caption]
+
+fig_016 (p. 11)
+[Sin caption]
+
+fig_017 (p. 12)
+[Sin caption]
+
+fig_018 (p. 13)
+[Sin caption]
+
+fig_019 (p. 14)
+[Sin caption]
+
+fig_020 (p. 14)
+Fig. 4 Deep-learning-based algorithm for atomic site classi fi cation. a Deep neural networks U-Net model constructed for quanti fi cation analysis of annular dark- fi eld in the scanning transmission electron microscope (ADF-STEM) image of V-WSe2. b Examples of training dataset for deep learning of atom segmentation model for fi ve different species. c Pixel-level accuracy of the atom segmentation model as a function of training epoch. d Measurement accuracy of the segmentation model compared with human-based measurements. Scale bars are 1 nm [Reprinted according to the terms of the CC-BY license ref. 228 ].
+
+fig_021 (p. 15)
+[Sin caption]
+
+fig_022 (p. 16)
+[Sin caption]
+
+fig_023 (p. 17)
+[Sin caption]
+
+fig_024 (p. 17)
+[Sin caption]
+
+fig_025 (p. 18)
+[Sin caption]
+
+fig_026 (p. 18)
+Fig. 5 A schematic showing the application of skip-gram variation of Word2vec for predicting context words. a Network for training word embeddings for natural language processing application. A one-hot encoded vector at left represents each distinct word in the corpus; the role of a hidden layer is to predict the probability of neighboring words in the corpus. This network structure trains a relatively small hidden layer of 100 -200 neurons to contain information on the context of words in the entire corpus, with the result that similar words end up with similar hidden layer weights (word embeddings). Such word embeddings can transform wordsin text form into numerical vectors that may be useful for a variety of applications. b projection of word embeddings for various materials science words, as trained on a corpus scienti fi c abstracts, into two dimensions using principle components analysis. Without any explicit training, the word embeddings naturally preserve relationships between chemical formulas, their common oxides, and their ground state structures. [Reprinted according to the terms of the CC-BY license ref. 259 ].
+
+fig_027 (p. 19)
+[Sin caption]
+
+fig_028 (p. 20)
+[Sin caption]
+
+fig_029 (p. 21)
+[Sin caption]
+
+fig_030 (p. 22)
+[Sin caption]
+
+fig_031 (p. 23)
+[Sin caption]
+
+fig_032 (p. 24)
+[Sin caption]
+
+fig_033 (p. 25)
+[Sin caption]
+
+fig_034 (p. 26)
+[Sin caption]
+
+fig_035 (p. 26)
+[Sin caption]

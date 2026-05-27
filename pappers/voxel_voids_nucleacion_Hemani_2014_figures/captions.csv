@@ -1,0 +1,16 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,20,picture,Figure 1: Void Analysis using serial algorithm,images/fig_002_Figure_1_Void_Analysis_using_serial_alg.png
+fig_003,21,picture,,images/fig_003_no_caption.png
+fig_004,22,picture,,images/fig_004_no_caption.png
+fig_005,23,picture,,images/fig_005_no_caption.png
+fig_006,24,picture,,images/fig_006_no_caption.png
+fig_007,25,picture,,images/fig_007_no_caption.png
+fig_008,26,picture,,images/fig_008_no_caption.png
+fig_009,27,picture,,images/fig_009_no_caption.png
+fig_010,29,picture,,images/fig_010_no_caption.png
+fig_011,29,picture,,images/fig_011_no_caption.png
+fig_012,29,picture,,images/fig_012_no_caption.png
+fig_013,29,picture,,images/fig_013_no_caption.png
+fig_014,29,picture,,images/fig_014_no_caption.png
+fig_015,29,picture,,images/fig_015_no_caption.png

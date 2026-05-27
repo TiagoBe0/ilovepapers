@@ -1,0 +1,59 @@
+fig_001 (p. 1)
+[Sin caption]
+
+fig_002 (p. 1)
+[Sin caption]
+
+fig_003 (p. 1)
+[Sin caption]
+
+fig_004 (p. 1)
+[Sin caption]
+
+fig_005 (p. 2)
+Fig. 1. (a) Diagram of simulation region division, (b) Single crystal FeCoNiCrCu HEA.
+
+fig_006 (p. 3)
+Fig. 2. (a) Simulation flowchart, (b) Diagram of overlapping cascade irradiation (red atoms are interstitials, blue atoms are vacancies).
+
+fig_007 (p. 4)
+Fig. 3. Evolution of the number of defects during a single cascade collision at different PKA energies.
+
+fig_008 (p. 5)
+Fig. 4. Curve of Frenkel defect pairs changing with cascade count under different PKA energies.
+
+fig_009 (p. 5)
+Fig. 5. Diagram of cyclic loading application.
+
+fig_010 (p. 6)
+Fig. 6. (a) Uniaxial stress-strain curve, (b) Variation of face-centered cubic (FCC) phase proportion with PKA energy, (c) Reduction rate of yield strength, (d) Reduction rate of yield strain.
+
+fig_011 (p. 8)
+Fig. 7. Cyclic stress-strain loops for unirradiated FeCoNiCrCu and irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (b), 5k eV (c), 1kKeV (d), and 20k eV (e).
+
+fig_012 (p. 9)
+Fig. 8. Variation of stress amplitude with the number of cycles for unirradiated FeCoNiCrCu (a), irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (b), 5k eV (c), 10k eV (d), and 20k eV (e), and (f) Variation of average stress amplitude with PKA energy.
+
+fig_013 (p. 10)
+Fig. 9. Dislocation distributions of irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (a), 5k eV (b), 10k eV (c), 20k eV (d).
+
+fig_014 (p. 11)
+Fig. 10. (a) Dislocation evolutions of different irradiated FeCoNiCrCu at different of the first cycle, (b) Enlarged view of dislocation evolutions of PKA energy 20k eV irradiated FeCoNiCrCu.
+
+fig_015 (p. 12)
+Fig. 11. Variations of dislocation density of different irradiated FeCoNiCrCu with the number of cyclic loading cycles.
+
+fig_016 (p. 12)
+Fig. 12. (a) Variations of FCC atom proportion with the cycle numbers of cyclic loading, (b) Variations of lattice disorder atom proportion with the cycles number of cyclic loading in different irradiated FeCoNiCrCu.
+
+fig_017 (p. 13)
+Fig. 13. Correlation between lattice disorder fraction and dislocation density.
+
+fig_018 (p. 13)
+Fig. 14. Interaction between dislocations and lattice disordered atoms under cyclic loading.
+
+fig_019 (p. 14)
+Fig. 15. Definition and evolution of the enrichment factor (E-Factor). (a) Schematic representation of the calculation model, showing disordered atoms within the cylindrical shell surrounding the dislocation core. (b) Variation of the E-Factor during the loading process.
+
+fig_020 (p. 15)
+Fig. 16. Stacking fault defect distributions of different irradiated FeCoNiCrCu at different cycles.

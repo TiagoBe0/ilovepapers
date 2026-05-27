@@ -1,0 +1,26 @@
+fig_001 (p. 2)
+Figure 1: Visualization of a scan captured from a Structure Sensor (left: RGB; right: point cloud).
+
+fig_002 (p. 3)
+Figure 2: Illustration of our hierarchical feature learning architecture and its application for set segmentation and classification using points in 2D Euclidean space as an example. Single scale point grouping is visualized here. For details on density adaptive grouping, see Fig. 3
+
+fig_003 (p. 4)
+[Sin caption]
+
+fig_004 (p. 6)
+Figure 4: Left: Point cloud with random point dropout. Right: Curve showing advantage of our density adaptive strategy in dealing with non-uniform density. DP means random input dropout during training; otherwise training is on uniformly dense points. See Sec.3.3 for details.
+
+fig_005 (p. 6)
+[Sin caption]
+
+fig_006 (p. 7)
+Wall Floor Chair Desk Bed Door Table Figure 6: Scannet labeling results. [20] captures the overall layout of the room correctly but fails to discover the furniture. Our approach, in contrast, is much better at segmenting objects besides the room layout.
+
+fig_007 (p. 7)
+Figure 7: An example of nonrigid shape classification. (a) Horse (b) Cat (C) Horse
+
+fig_008 (p. 8)
+Figure 8: 3D point cloud patterns learned from the first layer kernels. The model is trained for ModelNet40 shape classification (20 out of the 128 kernels are randomly selected). Color indicates point depth (red is near, blue is far).
+
+fig_009 (p. 12)
+Figure 9: Virtual scan generated from ScanNet

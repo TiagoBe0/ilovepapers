@@ -1,0 +1,23 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,2,picture,,images/fig_002_no_caption.png
+fig_003,3,picture,,images/fig_003_no_caption.png
+fig_004,3,picture,Figure 1. Containment of Diaeretiella rapae for exposure method assays.,images/fig_004_Figure_1_Containment_of_Diaeretiella_ra.png
+fig_005,4,picture,,images/fig_005_no_caption.png
+fig_006,5,picture,,images/fig_006_no_caption.png
+fig_007,5,picture,"Figure 2. Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after combined application of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).",images/fig_007_Figure_2_Survival_of_A_Myzus_persicae.png
+fig_008,6,picture,,images/fig_008_no_caption.png
+fig_009,6,picture,,images/fig_009_no_caption.png
+fig_010,6,picture,"Figure 4. Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after combined application. Bars are modelestimated means ( ± 95% con fi dence interval) from a binomial generalised linear model for six treatment groups. Treatments sharing a letter are not signi fi cantly different (LSD (Least Signi fi cant Difference) pairwise comparisons, P < 0.05).",images/fig_010_Figure_4_Predicted_probability_of_emerg.png
+fig_011,7,picture,,images/fig_011_no_caption.png
+fig_012,7,picture,"Figure 5. Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after direct application of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).",images/fig_012_Figure_5_Survival_of_A_Myzus_persicae.png
+fig_013,8,picture,,images/fig_013_no_caption.png
+fig_014,8,picture,,images/fig_014_no_caption.png
+fig_015,8,picture,"Figure 7. Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after direct application of various treatments. Bars are model-estimated means ( ± 95% con fi dence interval) from a binomial generalised linear model for six treatment groups. Treatments sharing a letter are not signi fi cantly different (LSD pairwise comparisons, P < 0.05).",images/fig_015_Figure_7_Predicted_probability_of_emerg.png
+fig_016,9,picture,,images/fig_016_no_caption.png
+fig_017,9,picture,"Figure 8. Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after exposure to residues of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).",images/fig_017_Figure_8_Survival_of_A_Myzus_persicae.png
+fig_018,9,picture,"Figure 9. Survival of (A) Diaeretiella rapae and (B) Chrysoperla carnea after exposure to residues of negative controls (untreated, water), a synthetic positive control (sulfoxa fl or), or one of three bioinsecticides (fatty acids, silicone polymers, surfactants). For both species, survival was signi fi cantly affected by treatment (log-rank test, P < 0.001).",images/fig_018_Figure_9_Survival_of_A_Diaeretiella_r.png
+fig_019,10,picture,,images/fig_019_no_caption.png
+fig_020,10,picture,"Figure 10. Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after exposure to residues of various treatments. Bars are model-estimated means ( ± 95% con fi dence interval) from a binomial generalised linear model for six treatment groups. Treatments sharing a letter are not signi fi cantly different (LSD pairwise comparisons, P < 0.05). NS, Not signi fi cant.",images/fig_020_Figure_10_Predicted_probability_of_emer.png
+fig_021,11,picture,,images/fig_021_no_caption.png
+fig_022,12,picture,,images/fig_022_no_caption.png

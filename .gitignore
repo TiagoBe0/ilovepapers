@@ -1,5 +1,2 @@
 # PDF files
 *.pdf
-
-# Papers figures and metadata
-pappers/*_figures/

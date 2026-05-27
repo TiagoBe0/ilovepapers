@@ -1,0 +1,110 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Shuo.pdf",
+  "total_figures": 8,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "FIG. 1. Simulation models in this work. Unit cells and supercells for metals with (a) BCC, (b) (FCC, and (c) HCP lattices. The supercells for the BCC and FCC lattices are cubic, while that for the HCP lattice is not cubic but orthogonal. The spacial directions x , y , and z align with the cell axes of the lattices. The BCC supercell contains 35152 atoms, and the FCC and HCP supercells contain 32000 atoms.",
+      "page": 2,
+      "bbox": {
+        "l": 87.58704376220703,
+        "t": 739.6515846252441,
+        "r": 524.99169921875,
+        "b": 525.2898864746094
+      },
+      "image_path": "images/fig_001_FIG_1_Simulation_models_in_this_work_.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "FIG. 2. Time convergence of the phonon thermal conductivity. Cumulative averages of the phonon thermal conductivity κ of (a) BCC Mo and (b) FCC Au as a function of time calculated using the UNEP-v1 model at 300 K and zero pressure. In both panels, the thin lines represent results from three independent HNEMD simulations, and the thick line represents the average of them. Isotope disorder was not considered in the simulations.",
+      "page": 5,
+      "bbox": {
+        "l": 66.60338592529297,
+        "t": 595.8537292480469,
+        "r": 286.7974548339844,
+        "b": 300.284423828125
+      },
+      "image_path": "images/fig_002_FIG_2_Time_convergence_of_the_phonon_t.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "FIG. 3. Comparison of phonon thermal conductivities with and without isotope scattering effects. In all the MD simulations, the temperature is 300 K and the pressure is zero. Error bars denote the standard error of the mean from three independent calculations.",
+      "page": 5,
+      "bbox": {
+        "l": 317.5256042480469,
+        "t": 471.2632141113281,
+        "r": 561.4274291992188,
+        "b": 162.0240478515625
+      },
+      "image_path": "images/fig_003_FIG_3_Comparison_of_phonon_thermal_con.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 6,
+      "bbox": {
+        "l": 54.49809646606445,
+        "t": 441.7669677734375,
+        "r": 297.56170654296875,
+        "b": 288.2181091308594
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "FIG. 5. Phonon thermal conductivity comparison between MD simulations with UNEP-v1 and EAM models. In all the MD simulations, the temperature is 300 K, the pressure is zero, and isotope scattering is considered. Error bars denote the standard error of the mean from three independent calculations.",
+      "page": 7,
+      "bbox": {
+        "l": 53.84073257446289,
+        "t": 682.1577682495117,
+        "r": 298.7546691894531,
+        "b": 373.20623779296875
+      },
+      "image_path": "images/fig_005_FIG_5_Phonon_thermal_conductivity_comp.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "FIG. 6. Phonon thermal conductivity comparison between MD simulations and BTE calculations. In each panel, filled circles represent BTE results considering phonon-phonon (pp) scattering only, plus symbols represent BTE results considering both phonon-phonon and phonon-electron (pe) scatterings, filled squares represent MD results based on the UNEP-v1 model, and filled triangles represent MD results based on the EAM potential. BTE results for W and Mo are from Wang and Bao 13 , while those for the remaining elements are from Wang et al. 6 .",
+      "page": 8,
+      "bbox": {
+        "l": 63.35931396484375,
+        "t": 738.8759269714355,
+        "r": 553.0445556640625,
+        "b": 476.93865966796875
+      },
+      "image_path": "images/fig_006_FIG_6_Phonon_thermal_conductivity_comp.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "FIG. 7. Comparison of MD and BTE results for phonon thermal conductivities for all the materials considered in this work, including 16 metals and 4 binary alloys. Filled squares and triangles represent MD results from the UNEP-v1 model and the EAM potential, respectively. Only phonon-phonon scattering is considered in the BTE results.",
+      "page": 9,
+      "bbox": {
+        "l": 67.48338317871094,
+        "t": 739.6498146057129,
+        "r": 285.5148010253906,
+        "b": 525.8135375976562
+      },
+      "image_path": "images/fig_007_FIG_7_Comparison_of_MD_and_BTE_results.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "FIG. 8. Comparison of MD and BTE results for phonon thermal conductivities for all the materials considered in this work, including 16 metals and 4 binary alloys. Filled squares represent MD results from the UNEP-v1 model. Both phonon-phonon and phonon-electron scatterings are considered in the BTE results.",
+      "page": 9,
+      "bbox": {
+        "l": 330.5984191894531,
+        "t": 739.5442237854004,
+        "r": 548.5045776367188,
+        "b": 526.0153503417969
+      },
+      "image_path": "images/fig_008_FIG_8_Comparison_of_MD_and_BTE_results.png"
+    }
+  ]
+}

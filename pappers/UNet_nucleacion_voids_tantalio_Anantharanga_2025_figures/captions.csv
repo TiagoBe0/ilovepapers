@@ -1,0 +1,21 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,4,picture,"Figure 1: A reversed erosion algorithm, together with EBSD and grain boundary information, is used to reconstruct pre-damaged microstructures. (top) Samples of EBSD data showing defects resulting from the presence of voids. (middle) Erosion algorithm fills the defects until (bottom) The defect is completely filled.",images/fig_002_Figure_1_A_reversed_erosion_algorithm_.png
+fig_003,5,picture,"Figure 2: A visual compilation of three image sets: grain boundary energy (top row), void masks (middle row), and final ground truth images (bottom row). The final ground truth images are obtained by performing a pixel wise multiplication of grain boundary energy and void masks. The red boxes emphasize two cases: (i) when voids intersect grain boundaries, resulting in retained regions in the final mask, and (ii) when voids fall outside grain boundaries, leading to their exclusion from the final mask. This approach ensures that only voids that are on grain boundaries are preserved for further analysis.",images/fig_003_Figure_2_A_visual_compilation_of_three_.png
+fig_004,6,picture,"Figure 3: A visual compilation of three image sets: micrograph (top row), grain boundary energy (middle row), and grain orientation (bottom row). The dataset to the ML model includes grain orientations and grain boundary energies.",images/fig_004_Figure_3_A_visual_compilation_of_three_.png
+fig_005,7,picture,"Figure 4: The full U-Net architecture, comprised of an encoder-decoder structure with attention gates between corresponding layers. The encoder processes a 100×100×5 input and the decoder reconstructs a 100×100×1 predictions. Popouts illustrate the encoder, decoder, and attention gate architectures.",images/fig_005_Figure_4_The_full_U-Net_architecture_c.png
+fig_006,8,picture,"Figure 5: Representative selection of model results for training sets, indicating the robustness of the ML architecture for capturing void nucleation probability fields. Intensity values are clamped between 0.05 and 0.6 for better visualization.",images/fig_006_Figure_5_Representative_selection_of_mo.png
+fig_007,9,picture,,images/fig_007_no_caption.png
+fig_008,9,picture,,images/fig_008_no_caption.png
+fig_009,10,picture,,images/fig_009_no_caption.png
+fig_010,12,picture,,images/fig_010_no_caption.png
+fig_011,12,picture,,images/fig_011_no_caption.png
+fig_012,12,picture,Figure 8: PCC analysis of model performance across entire dataset,images/fig_012_Figure_8_PCC_analysis_of_model_performa.png
+fig_013,12,picture,(a) Graphical illustration of ROI metric: the region of interest around a void is projected onto the predicted image.,images/fig_013_a_Graphical_illustration_of_ROI_metric.png
+fig_014,18,picture,,images/fig_014_no_caption.png
+fig_015,18,picture,"(c) Micrograph segmented into red (bad voids), blue (good voids), and black (no void regions).",images/fig_015_c_Micrograph_segmented_into_red_bad_v.png
+fig_016,18,picture,,images/fig_016_no_caption.png
+fig_017,18,picture,,images/fig_017_no_caption.png
+fig_018,18,picture,(f) Mask applied to the microstructure to highlight regions of voids,images/fig_018_f_Mask_applied_to_the_microstructure_t.png
+fig_019,18,picture,,images/fig_019_no_caption.png
+fig_020,19,picture,"Figure 11: Pearson correlation coefficient based comparison between the ground truth and predicted void nucleation fields. The reference ground truth image is shown in the top row indicating the baseline against which all comparisons are made. The bottom row presents various predicted images, each annotated with its corresponding PCC value. The predicted field corresponding to the ground truth reference yields the highest correlation values as showm in green, while random predictors (such as constant fields of ones, zeros, or 0.5 values) exhibit significantly lower PCC values, underscoring their lack of structural correspondence. This shows that PCC is stringent as compared many other metrics which can give a false impression that the model predicts well even in cases where it does not do well.",images/fig_020_Figure_11_Pearson_correlation_coefficie.png

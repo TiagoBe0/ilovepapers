@@ -1,0 +1,149 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DGP_multitarea_HEA_Alvi_2025.pdf",
+  "total_figures": 11,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 515.0950927734375,
+        "t": 771.2746639251709,
+        "r": 561.1337890625,
+        "b": 758.9019203186035
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 543.5596923828125,
+        "t": 747.9142951965332,
+        "r": 560.2665405273438,
+        "b": 721.4024200439453
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 480.1463317871094,
+        "t": 580.6273345947266,
+        "r": 561.3424072265625,
+        "b": 567.7944946289062
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Fig. 1 | Schematic overview of the BIRDSHOT data acquisition work fl ow. The dataset results from a multi-institutional effort combining alloy synthesis, mechanical testing across various strain rates (including nanoindentation, strain",
+      "page": 3,
+      "bbox": {
+        "l": 58.7563362121582,
+        "t": 742.5160980224609,
+        "r": 540.7777099609375,
+        "b": 512.4469299316406
+      },
+      "image_path": "images/fig_004_Fig_1__Schematic_overview_of_the_BIRDS.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Fig. 2 | Pairwise plot illustrating correlations between different experimental properties. This plot shows pairwise relations between yield strength, ultimate tensile strength, ratio of ultimate tensile strength and yield strength, elongation, hardness, modulus and ratio of hardness under dynamic and quasi-static conditions.",
+      "page": 5,
+      "bbox": {
+        "l": 59.80006408691406,
+        "t": 743.6141815185547,
+        "r": 541.2940063476562,
+        "b": 265.0361328125
+      },
+      "image_path": "images/fig_005_Fig_2__Pairwise_plot_illustrating_corr.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Fig. 3 | Schematic representation of the two-layered variational deep Gaussian process (DGP) architecture with encoder-decoder based prior injection. Each variational multi-task Gaussian process (MTGP) layer reduces dimensionality from input to latent representation, governed by the reduction parameter.",
+      "page": 6,
+      "bbox": {
+        "l": 58.886898040771484,
+        "t": 742.1087265014648,
+        "r": 540.7024536132812,
+        "b": 577.91015625
+      },
+      "image_path": "images/fig_006_Fig_3__Schematic_representation_of_the.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Fig. 4 | The fi gure illustrates difference in fi tting performance for hardness between two DGP-all models. a Without prior injection, the points within the red circle are further from the actual value and b With prior injection, the points within the red circle tend to be closer to the actual value.",
+      "page": 9,
+      "bbox": {
+        "l": 211.6093292236328,
+        "t": 746.346118927002,
+        "r": 560.946044921875,
+        "b": 555.8959350585938
+      },
+      "image_path": "images/fig_007_Fig_4__The_fi_gure_illustrates_differe.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 10,
+      "bbox": {
+        "l": 274.1868896484375,
+        "t": 747.5087127685547,
+        "r": 561.7387084960938,
+        "b": 138.4132080078125
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 6 | HDGP-P-All model results. a Predicted VarvYS at 298 K; b SFEcalculation; c AverageVEC; d Yield strength (MPa); e TrueUTS(MPa); f UTS/YSratio; g Elongation; h Hardness (GPa); i Modulus (GPa); j Average HDYN HQS; k Depth of penetration (mm).",
+      "page": 11,
+      "bbox": {
+        "l": 91.67925262451172,
+        "t": 743.3171768188477,
+        "r": 509.26165771484375,
+        "b": 138.3323974609375
+      },
+      "image_path": "images/fig_009_Fig_6__HDGP-P-All_model_results_a_Pre.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Fig. 7 | Schematic representation of the two-layered variational deep Gaussian process (DGP) architecture. Each variational multi-task Gaussian process (MTGP) layer reduces dimensionality from input to latent representation, governed by the reduction parameter.",
+      "page": 12,
+      "bbox": {
+        "l": 58.52383041381836,
+        "t": 229.771728515625,
+        "r": 538.7164916992188,
+        "b": 77.784423828125
+      },
+      "image_path": "images/fig_010_Fig_7__Schematic_representation_of_the.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 8 | The fi gure illustrates RMSE and spearman rank coef fi cient for different reduction parameters. Figure at the top shows mean RMSE for test set over all tasks with respect to different reduction parameter for HDGP-NP-All. Bottom fi gure",
+      "page": 13,
+      "bbox": {
+        "l": 58.32600784301758,
+        "t": 740.2577209472656,
+        "r": 540.7222900390625,
+        "b": 344.989013671875
+      },
+      "image_path": "images/fig_011_Fig_8__The_fi_gure_illustrates_RMSE_an.png"
+    }
+  ]
+}

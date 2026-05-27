@@ -1,0 +1,175 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PartNet_anotacion_regiones_3D_Yi.pdf",
+  "total_figures": 13,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "Figure 1: We use our method to create detailed per-point labeling of 31963 models in 16 shape categories in ShapeNetCore.",
+      "page": 1,
+      "bbox": {
+        "l": 76.80133056640625,
+        "t": 716.4770812988281,
+        "r": 528.7866821289062,
+        "b": 553.2257690429688
+      },
+      "image_path": "images/fig_001_Figure_1_We_use_our_method_to_create_de.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 2: This figure illustrates the number of correctly-labeled models (y-axis) as people spend more time providing input (xaxis) for a representative collection. Our result corresponds to the highest-performing curve (a), and we provide two variants of our method, one that does not include verification (b), and one that only uses local geometric features to train a single classifier for the entire dataset (c). We also show baseline cost of manually labeling every model (d). Note that all variants take substantially longer to annotate the entire dataset.",
+      "page": 2,
+      "bbox": {
+        "l": 343.7636413574219,
+        "t": 738.5198097229004,
+        "r": 530.230712890625,
+        "b": 605.7827758789062
+      },
+      "image_path": "images/fig_002_Figure_2_This_figure_illustrates_the_nu.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Figure 3: This figure summarizes our pipeline. Given the input dataset we select annotation set and use our UI to obtain human labels. We automatically propagate these labels to the rest of the shapes and then query the users to verify most confident propagations. We then use these verifications to improve our propagation technique.",
+      "page": 4,
+      "bbox": {
+        "l": 53.88262939453125,
+        "t": 737.7222213745117,
+        "r": 556.7593383789062,
+        "b": 633.7035980224609
+      },
+      "image_path": "images/fig_003_Figure_3_This_figure_summarizes_our_pip.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 5,
+      "bbox": {
+        "l": 316.416015625,
+        "t": 738.6522674560547,
+        "r": 559.2314453125,
+        "b": 646.9929504394531
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Figure 4: At each iteration our method selects an annotation set (in orange) and a verification set (in blue) from the shape network (in gray). The models selected for annotation are distributed over the network to provide good coverage of shape variations. In contrast, models selected for verification tend to cluster close to annotated models since labels can be more reliably propagated between them.",
+      "page": 5,
+      "bbox": {
+        "l": 55.03252410888672,
+        "t": 736.0185241699219,
+        "r": 292.4930419921875,
+        "b": 567.4531707763672
+      },
+      "image_path": "images/fig_005_Figure_4_At_each_iteration_our_method_s.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Figure 6: User interface for acquiring semantic labeling. Our interface is designed for crowdsourcing and is therefore very lightweight and simple; the user only annotates a single label, on a single shape, from a single viewpoint.",
+      "page": 6,
+      "bbox": {
+        "l": 328.9716796875,
+        "t": 738.9349937438965,
+        "r": 545.8280029296875,
+        "b": 610.4580688476562
+      },
+      "image_path": "images/fig_006_Figure_6_User_interface_for_acquiring_s.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Figure 7: Given a set of human annotated models (top) and two unlabeled shapes (bottom), the labels can be propagated by (a) using only the feature-based classifier trained on all annotated models, (b) using only the most similar model to train the classifier, and (c) using correspondences and smoothness terms. Incorporating both (b) and (c) significantly improves the result in comparison to currently used alternatives (a).",
+      "page": 7,
+      "bbox": {
+        "l": 53.864688873291016,
+        "t": 738.3111228942871,
+        "r": 293.80743408203125,
+        "b": 604.7968902587891
+      },
+      "image_path": "images/fig_007_Figure_7_Given_a_set_of_human_annotated.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 7,
+      "bbox": {
+        "l": 325.4798889160156,
+        "t": 737.85107421875,
+        "r": 557.3916625976562,
+        "b": 601.5437469482422
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Figure 9: We use our method to get part labels for more than 30,000 models in 16 shape categories in ShapeNetCore. We denote the number of models in each category in parentheses.",
+      "page": 8,
+      "bbox": {
+        "l": 317.90045166015625,
+        "t": 739.9518203735352,
+        "r": 558.1229248046875,
+        "b": 462.14605712890625
+      },
+      "image_path": "images/fig_009_Figure_9_We_use_our_method_to_get_part_.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Figure 10: Number of positively-verified labeled shapes (y-axis) as a function of human input time (x-axis) for representative labels in our data. As expected the graph is monotonically increasing, and flattens out as time progresses and the algorithm encounters more diverse models. Note the relative inefficiency of manual labeling.",
+      "page": 9,
+      "bbox": {
+        "l": 317.6983337402344,
+        "t": 739.540340423584,
+        "r": 558.2634887695312,
+        "b": 580.9587860107422
+      },
+      "image_path": "images/fig_010_Figure_10_Number_of_positively-verified.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Figure 11: Force-multiplication factor (FMF, y-axis) over time. Predictably FMF drops as the system annotates a higher fraction of the model collection (x-axis).",
+      "page": 9,
+      "bbox": {
+        "l": 334.8177490234375,
+        "t": 520.1929626464844,
+        "r": 539.345703125,
+        "b": 354.66650390625
+      },
+      "image_path": "images/fig_011_Figure_11_Force-multiplication_factor_.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Figure 12: Our automatic label propagation tool demonstrates a superior performance in comparison to previous techniques (adapted to handle ShapeNetCore data).",
+      "page": 10,
+      "bbox": {
+        "l": 317.0535888671875,
+        "t": 551.8482513427734,
+        "r": 556.6607055664062,
+        "b": 454.9567565917969
+      },
+      "image_path": "images/fig_012_Figure_12_Our_automatic_label_propagati.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Figure 13: Comparison of different variants of our method where each curve corresponds to a result obtained without some feature, and x-axis is human input time and y-axis is average per-part F1score. See text for details.",
+      "page": 11,
+      "bbox": {
+        "l": 317.11785888671875,
+        "t": 738.7656898498535,
+        "r": 557.4131469726562,
+        "b": 608.0539245605469
+      },
+      "image_path": "images/fig_013_Figure_13_Comparison_of_different_varia.png"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+fig_001 (p. 2)
+Silvia Surez
+
+fig_002 (p. 2)
+Mara D : Hernndez -Alonso
+
+fig_003 (p. 2)
+Juan M : Coronado
+
+fig_004 (p. 2)
+Fernando Fresno
+
+fig_005 (p. 3)
+Fig. 2 Pictorial diagram showing the main events of photocatalysis over semiconductors.
+
+fig_006 (p. 3)
+Fig. 1 Annual evolution of the number of publications devoted to photocatalysis with alternative materials to TiO2. ZnO ( ), sulfides ( ) and mixed oxides containing Nb, V, Ti or Ta ( ). Data source: ISI web of knowledge.
+
+fig_007 (p. 4)
+Fig. 3 Examples of single site photocatalytic centres (A), and pictorial diagram (B) showing the mechanism of CO photo-oxidation over singlesite photocatalysts with Mo centres. (Based on ref. 28).
+
+fig_008 (p. 5)
+Fig. 4 Band gaps (eV) and redox potentials, using the normal hydrogen electrode (NHE) as a reference, for several semiconductors (Based on the data in ref. 8,10-12).
+
+fig_009 (p. 5)
+Fig. 5 Photoactivity expressed as the initial rate for the decomposition of three different pollutants in aqueous solution using different TiO2 commercial photocatalysts with the structures: anatase (A) supplied by Millenium, rutile (R), or a mixture of rutile and anatase (R + A; Degussa P25). Data taken from ref. 46.
+
+fig_010 (p. 7)
+Fig. 6 Mechanism for charge separation on TiO2 coupled with a different semiconductor.
+
+fig_011 (p. 8)
+Fig. 7 Incident solar power as a function of the photons wavelength as obtained from the integration of the 1.5 AM reference spectrum 74 . Dashed lines represent the solar power accumulated at each wavelength considering photon efficiencies of 5% and 25%. The different symbol marks some of the current or future achievements of photocatalysis for H2 production using TiO2, ZnS, CdS or (Ga0.88Zn0.12)(N0.88O0.12) as photocatalyst. It should be noted that these values are significantly overestimated because total photon absorption is considered and consequently H2 production rates would be appreciably lower in practice.
+
+fig_012 (p. 9)
+Fig. 8 SEM images of (a) Au and (b) NiO x loaded on BaLa4Ti4O15 photocatalysts by a photo-deposition method. (Reproduced from ref. 94).
+
+fig_013 (p. 13)
+Fig. 9 Left panel: Photocatalytic degradation of aqueous rhodamine B over flower-shaped Bi2WO6 (A); uncalcined (B); TiO2 Degussa P25 (C); and solid-state synthesized Bi2WO6 (D). Right: SEM image of uncalcined hydrothermally treated Bi2WO6 superstructure. Figure adapted from ref. 143.
+
+fig_014 (p. 16)
+Fig. 10 Transmission electron micrographs of the oxynitride nanoparticles ammonolyzed at (a) 800  C and (b) 1000  C. In (c) a high resolution TEM image of the sample treated in NH3 at 800  C is shown. In (d) a typical electron energy loss spectrum clearly shows the presence of nitrogen in the crystallites. (Reproduced from ref. 177).
+
+fig_015 (p. 22)
+Fig. 11 Pictorial diagram showing the proposed mechanism of CO2 photoreduction, using either H2 or CH4 as the reductant, over MgO or ZrO2. From ref. 286-288

@@ -1,0 +1,84 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TorchPoints3D_framework_Chaton_2020.pdf",
+  "total_figures": 6,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "Figure 1: Torch-Points3D supports multiple tasks such as classification, segmentation, object detection, panoptic segmentation, and registration. All visuals have been produced by the framework.",
+      "page": 1,
+      "bbox": {
+        "l": 307.4508361816406,
+        "t": 517.6088256835938,
+        "r": 535.9082641601562,
+        "b": 187.97418212890625
+      },
+      "image_path": "images/fig_001_Figure_1_Torch-Points3D_supports_multip.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 2: Overall architecture of the framework, with data flow highlighted in red. Dataset implements the core loading mechanism of raw data and creates objects containing the points' positions, relevant features, and labels. Those objects are then passed through data augmentation transforms and aggregated into batches in the Dataloader . They are finally passed to the Model , which outputs the prediction. A tracker evaluates the performance from predefined Metrics and publish results on the console and/or directly on Weight and Biases ( wandb.ai ).",
+      "page": 4,
+      "bbox": {
+        "l": 99.33238983154297,
+        "t": 735.7296447753906,
+        "r": 500.6965026855469,
+        "b": 583.31103515625
+      },
+      "image_path": "images/fig_002_Figure_2_Overall_architecture_of_the_fr.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 5,
+      "bbox": {
+        "l": 306.3574523925781,
+        "t": 735.5358581542969,
+        "r": 540.4752807617188,
+        "b": 472.209716796875
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Table 3: Improvement in terms of mIoU provided by inference-time voting schemes on S3DIS 6-folds.",
+      "page": 7,
+      "bbox": {
+        "l": 305.8466796875,
+        "t": 703.175537109375,
+        "r": 538.7289428710938,
+        "b": 441.8701477050781
+      },
+      "image_path": "images/fig_004_Table_3_Improvement_in_terms_of_mIoU_pr.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Listing 4: Optimizer hyper-parameters used for training all models on S3DIS.",
+      "page": 7,
+      "bbox": {
+        "l": 58.76374053955078,
+        "t": 698.1961517333984,
+        "r": 284.7775573730469,
+        "b": 524.6203308105469
+      },
+      "image_path": "images/fig_005_Listing_4_Optimizer_hyper-parameters_us.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "(b) Registration example on KITTI odometry.",
+      "page": 8,
+      "bbox": {
+        "l": 66.98110961914062,
+        "t": 733.7449188232422,
+        "r": 278.2032775878906,
+        "b": 470.4132080078125
+      },
+      "image_path": "images/fig_006_b_Registration_example_on_KITTI_odomet.png"
+    }
+  ]
+}

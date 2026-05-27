@@ -1,0 +1,318 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet_Qi_2017.pdf",
+  "total_figures": 24,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "Figure 1. Applications of PointNet. We propose a novel deep net architecture that consumes raw point cloud (set of points) without voxelization or rendering. It is a unified architecture that learns both global and local point features, providing a simple, efficient and effective approach for a number of 3D recognition tasks.",
+      "page": 1,
+      "bbox": {
+        "l": 310.9042663574219,
+        "t": 592.6418609619141,
+        "r": 544.2865600585938,
+        "b": 490.6372375488281
+      },
+      "image_path": "images/fig_001_Figure_1_Applications_of_PointNet_We_p.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 3,
+      "bbox": {
+        "l": 73.64893341064453,
+        "t": 710.6639556884766,
+        "r": 521.1107788085938,
+        "b": 564.8353729248047
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Figure 3. Qualitative results for part segmentation. We visualize the CAD part segmentation results across all 16 object categories. We show both results for partial simulated Kinect scans (left block) and complete ShapeNet CAD models (right block).",
+      "page": 5,
+      "bbox": {
+        "l": 72.45881652832031,
+        "t": 720.0544204711914,
+        "r": 263.6902770996094,
+        "b": 614.3530731201172
+      },
+      "image_path": "images/fig_003_Figure_3_Qualitative_results_for_part_s.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figure 4. Qualitative results for semantic segmentation. Top row is input point cloud with color. Bottom row is output semantic segmentation result (on points) displayed in the same camera viewpoint as input.",
+      "page": 7,
+      "bbox": {
+        "l": 72.35514831542969,
+        "t": 720.2871780395508,
+        "r": 263.1009826660156,
+        "b": 607.3055114746094
+      },
+      "image_path": "images/fig_004_Figure_4_Qualitative_results_for_semant.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Figure 5. Three approaches to achieve order invariance. Multilayer perceptron (MLP) applied on points consists of 5 hidden layers with neuron sizes 64,64,64,128,1024, all points share a single copy of MLP. The MLP close to the output consists of two layers with sizes 512,256.",
+      "page": 7,
+      "bbox": {
+        "l": 308.92388916015625,
+        "t": 719.7050933837891,
+        "r": 543.0792236328125,
+        "b": 635.0172729492188
+      },
+      "image_path": "images/fig_005_Figure_5_Three_approaches_to_achieve_or.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Figure 6. PointNet robustness test. The metric is overall classification accuracy on ModelNet40 test set. Left: Delete points. Furthest means the original 1024 points are sampled with furthest sampling. Middle: Insertion. Outliers uniformly scattered in the unit sphere. Right: Perturbation. Add Gaussian noise to each point independently.",
+      "page": 8,
+      "bbox": {
+        "l": 48.85903549194336,
+        "t": 720.1079711914062,
+        "r": 286.7464294433594,
+        "b": 659.2549743652344
+      },
+      "image_path": "images/fig_006_Figure_6_PointNet_robustness_test_The_.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Figure 7. Critical points and upper bound shape. While critical points jointly determine the global shape feature for a given shape, any point cloud that falls between the critical points set and the upper bound shape gives exactly the same feature. We color-code all figures to show the depth information.",
+      "page": 8,
+      "bbox": {
+        "l": 74.83379364013672,
+        "t": 266.2027587890625,
+        "r": 260.6253662109375,
+        "b": 139.67633056640625
+      },
+      "image_path": "images/fig_007_Figure_7_Critical_points_and_upper_boun.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 10,
+      "bbox": {
+        "l": 343.37249755859375,
+        "t": 720.2145004272461,
+        "r": 509.09326171875,
+        "b": 594.0601654052734
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "mlp (64,128,128) mlp (64,128,1024) input feature Classification Network Figure 9. Network architecture for part segmentation. T1 and T2 are alignment/transformation networks for input points and features. FC is fully connected layer operating on each point. MLP is multi-layer perceptron on each point. One-hot is a vector of size 16 indicating category of the input shape.",
+      "page": 11,
+      "bbox": {
+        "l": 49.24290466308594,
+        "t": 719.1676940917969,
+        "r": 286.1595458984375,
+        "b": 629.5704040527344
+      },
+      "image_path": "images/fig_009_mlp_64128128_mlp_641281024_input.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Figure 10. Baseline 3D CNN segmentation network. The network is fully convolutional and predicts part scores for each voxel.",
+      "page": 11,
+      "bbox": {
+        "l": 49.53293228149414,
+        "t": 557.4728546142578,
+        "r": 286.5496826171875,
+        "b": 431.9806823730469
+      },
+      "image_path": "images/fig_010_Figure_10_Baseline_3D_CNN_segmentation_.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Figure 11. Precision-recall curves for object detection in 3D point cloud. We evaluated on all six areas for four categories: table, chair, sofa and board. IoU threshold is 0.5 in volume.",
+      "page": 12,
+      "bbox": {
+        "l": 72.7313461303711,
+        "t": 720.838737487793,
+        "r": 262.3451843261719,
+        "b": 571.7958679199219
+      },
+      "image_path": "images/fig_011_Figure_11_Precision-recall_curves_for_o.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Figure 13. Shape correspondence between two chairs. For the clarity of the visualization, we only show 20 randomly picked correspondence pairs.",
+      "page": 12,
+      "bbox": {
+        "l": 314.5775451660156,
+        "t": 716.876335144043,
+        "r": 534.9476928710938,
+        "b": 576.9703521728516
+      },
+      "image_path": "images/fig_012_Figure_13_Shape_correspondence_between_.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Figure 12. Model retrieval from point cloud. For every given point cloud, we retrieve the top-5 similar shapes from the ModelNet test split. From top to bottom rows, we show examples of chair, plant, nightstand and bathtub queries. Retrieved results that are in wrong category are marked by red boxes.",
+      "page": 12,
+      "bbox": {
+        "l": 50.365352630615234,
+        "t": 526.5591125488281,
+        "r": 285.35662841796875,
+        "b": 368.92071533203125
+      },
+      "image_path": "images/fig_013_Figure_12_Model_retrieval_from_point_cl.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Figure 14. Shape correspondence between two tables. For the clarity of the visualization, we only show 20 randomly picked correspondence pairs.",
+      "page": 12,
+      "bbox": {
+        "l": 310.9380798339844,
+        "t": 512.6805725097656,
+        "r": 540.3247680664062,
+        "b": 440.21807861328125
+      },
+      "image_path": "images/fig_014_Figure_14_Shape_correspondence_between_.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Figure 15. Effects of bottleneck size and number of input points. The metric is overall classification accuracy on ModelNet40 test set.",
+      "page": 12,
+      "bbox": {
+        "l": 331.514892578125,
+        "t": 296.5979309082031,
+        "r": 521.0678100585938,
+        "b": 200.04290771484375
+      },
+      "image_path": "images/fig_015_Figure_15_Effects_of_bottleneck_size_an.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Figure 16. PointNet normal reconstrution results. In this figure, we show the reconstructed normals for all the points in some sample point clouds and the ground-truth normals computed on the mesh.",
+      "page": 13,
+      "bbox": {
+        "l": 321.1634521484375,
+        "t": 716.7031173706055,
+        "r": 533.0804443359375,
+        "b": 427.0877685546875
+      },
+      "image_path": "images/fig_016_Figure_16_PointNet_normal_reconstrution.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "Figure 17. The consistency of segmentation results. We illustrate the segmentation results for some sample given point clouds S , their critical point sets C S and upper-bound shapes N S . We observe that the shape family between the C S and N S share a consistent segmentation results.",
+      "page": 14,
+      "bbox": {
+        "l": 61.154911041259766,
+        "t": 719.3800582885742,
+        "r": 272.2428283691406,
+        "b": 530.9040222167969
+      },
+      "image_path": "images/fig_017_Figure_17_The_consistency_of_segmentati.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "Figure 18. The critical point sets and the upper-bound shapes for unseen objects. We visualize the critical point sets and the upper-bound shapes for teapot, bunny, hand and human body, which are not in the ModelNet or ShapeNet shape repository to test the generalizability of the learnt per-point functions of our PointNet on other unseen objects. The images are color-coded to reflect the depth information.",
+      "page": 14,
+      "bbox": {
+        "l": 51.9447135925293,
+        "t": 462.5498352050781,
+        "r": 285.5098876953125,
+        "b": 301.46533203125
+      },
+      "image_path": "images/fig_018_Figure_18_The_critical_point_sets_and_t.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "Figure 19. Point function visualization. For each per-point function h , we calculate the values h ( p ) for all the points p in a cube of diameter two located at the origin, which spatially covers the unit sphere to which our input shapes are normalized when training our PointNet. In this figure, we visualize all the points p that give h ( p ) > 0 . 5 with function values color-coded by the brightness of the voxel. We randomly pick 15 point functions and visualize the activation regions for them.",
+      "page": 15,
+      "bbox": {
+        "l": 84.48485565185547,
+        "t": 483.1732482910156,
+        "r": 249.88082885742188,
+        "b": 384.33575439453125
+      },
+      "image_path": "images/fig_019_Figure_19_Point_function_visualization.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Figure 20. 2D embedding of learnt shape global features. We use t-SNE technique to visualize the learnt global shape features for the shapes in ModelNet40 test split.",
+      "page": 16,
+      "bbox": {
+        "l": 49.19029235839844,
+        "t": 659.4074249267578,
+        "r": 544.5332641601562,
+        "b": 166.03143310546875
+      },
+      "image_path": "images/fig_020_Figure_20_2D_embedding_of_learnt_shape_.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "Figure 21. PointNet segmentation results on complete CAD models.",
+      "page": 17,
+      "bbox": {
+        "l": 110.71939849853516,
+        "t": 707.1874389648438,
+        "r": 499.7528076171875,
+        "b": 425.3152160644531
+      },
+      "image_path": "images/fig_021_Figure_21_PointNet_segmentation_results.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "Figure 22. PointNet segmentation results on simulated Kinect scans.",
+      "page": 17,
+      "bbox": {
+        "l": 121.36538696289062,
+        "t": 380.1123352050781,
+        "r": 499.673828125,
+        "b": 109.0291748046875
+      },
+      "image_path": "images/fig_022_Figure_22_PointNet_segmentation_results.png"
+    },
+    {
+      "figure_id": "fig_023",
+      "label": "picture",
+      "caption": "Figure 23. PointNet segmentation failure cases. In this figure, we summarize six types of common errors in our segmentation application. The prediction and the ground-truth segmentations are given in the first and second columns, while the difference maps are computed and shown in the third columns. The red dots correspond to the wrongly labeled points in the given point clouds. (a) illustrates the most common failure cases: the points on the boundary are wrongly labeled. In the examples, the label predictions for the points near the intersections between the table/chair legs and the tops are not accurate. However, most segmentation algorithms suffer from this error. (b) shows the errors on exotic shapes. For examples, the chandelier and the airplane shown in the figure are very rare in the data set. (c) shows that small parts can be overwritten by nearby large parts. For example, the jet engines for airplanes (yellow in the figure) are mistakenly classified as body (green) or the plane wing (purple). (d) shows the error caused by the inherent ambiguity of shape parts. For example, the two bottoms of the two tables in the figure are classified as table legs and table bases (category other in [29]), while ground-truth segmentation is the opposite. (e) illustrates the error introduced by the incompleteness of the partial scans. For the two caps in the figure, almost half of the point clouds are missing. (f) shows the failure cases when some object categories have too less training data to cover enough variety. There are only 54 bags and 39 caps in the whole dataset for the two categories shown here.",
+      "page": 18,
+      "bbox": {
+        "l": 50.80360794067383,
+        "t": 613.1587219238281,
+        "r": 543.6078491210938,
+        "b": 321.5707702636719
+      },
+      "image_path": "images/fig_023_Figure_23_PointNet_segmentation_failure.png"
+    },
+    {
+      "figure_id": "fig_024",
+      "label": "picture",
+      "caption": "Figure 24. Examples of semantic segmentation and object detection. First row is input point cloud, where walls and ceiling are hided for clarity. Second and third rows are prediction and ground-truth of semantic segmentation on points, where points belonging to different semantic regions are colored differently (chairs in red, tables in purple, sofa in orange, board in gray, bookcase in green, floors in blue, windows in violet, beam in yellow, column in magenta, doors in khaki and clutters in black). The last two rows are object detection with bounding boxes, where predicted boxes are from connected components based on semantic segmentation prediction.",
+      "page": 19,
+      "bbox": {
+        "l": 49.48841094970703,
+        "t": 715.0152587890625,
+        "r": 545.0806884765625,
+        "b": 146.27227783203125
+      },
+      "image_path": "images/fig_024_Figure_24_Examples_of_semantic_segmenta.png"
+    }
+  ]
+}

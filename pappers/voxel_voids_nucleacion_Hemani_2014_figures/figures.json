@@ -1,0 +1,201 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/voxel_voids_nucleacion_Hemani_2014.pdf",
+  "total_figures": 15,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 421.2554016113281,
+        "t": 688.0440826416016,
+        "r": 508.1817626953125,
+        "b": 573.1595764160156
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 1: Void Analysis using serial algorithm",
+      "page": 20,
+      "bbox": {
+        "l": 112.95760345458984,
+        "t": 570.4685668945312,
+        "r": 399.49627685546875,
+        "b": 226.73223876953125
+      },
+      "image_path": "images/fig_002_Figure_1_Void_Analysis_using_serial_alg.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 21,
+      "bbox": {
+        "l": 110.00071716308594,
+        "t": 627.8231353759766,
+        "r": 479.9676208496094,
+        "b": 292.91192626953125
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 22,
+      "bbox": {
+        "l": 126.72572326660156,
+        "t": 585.7441101074219,
+        "r": 494.6519470214844,
+        "b": 321.88861083984375
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 23,
+      "bbox": {
+        "l": 126.6239242553711,
+        "t": 585.8586730957031,
+        "r": 494.54693603515625,
+        "b": 321.78887939453125
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 24,
+      "bbox": {
+        "l": 126.59445190429688,
+        "t": 592.0662078857422,
+        "r": 495.0035400390625,
+        "b": 327.96875
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "",
+      "page": 25,
+      "bbox": {
+        "l": 127.06047821044922,
+        "t": 592.1434631347656,
+        "r": 494.6474304199219,
+        "b": 330.38720703125
+      },
+      "image_path": "images/fig_007_no_caption.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 26,
+      "bbox": {
+        "l": 127.03816986083984,
+        "t": 591.9446716308594,
+        "r": 494.66357421875,
+        "b": 329.5826416015625
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "",
+      "page": 27,
+      "bbox": {
+        "l": 113.9823989868164,
+        "t": 574.1936340332031,
+        "r": 493.6826171875,
+        "b": 350.38519287109375
+      },
+      "image_path": "images/fig_009_no_caption.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "",
+      "page": 29,
+      "bbox": {
+        "l": 7.106958866119385,
+        "t": 1264.7881622314453,
+        "r": 328.8085632324219,
+        "b": 953.1184997558594
+      },
+      "image_path": "images/fig_010_no_caption.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "",
+      "page": 29,
+      "bbox": {
+        "l": 2459.989013671875,
+        "t": 1223.1267051696777,
+        "r": 3034.9130859375,
+        "b": 647.4131469726562
+      },
+      "image_path": "images/fig_011_no_caption.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "",
+      "page": 29,
+      "bbox": {
+        "l": 853.3330078125,
+        "t": 1181.597053527832,
+        "r": 1039.545166015625,
+        "b": 997.275146484375
+      },
+      "image_path": "images/fig_012_no_caption.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "",
+      "page": 29,
+      "bbox": {
+        "l": 1519.20361328125,
+        "t": 1181.2901229858398,
+        "r": 1699.655517578125,
+        "b": 997.2747192382812
+      },
+      "image_path": "images/fig_013_no_caption.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "",
+      "page": 29,
+      "bbox": {
+        "l": 23.355262756347656,
+        "t": 687.3600463867188,
+        "r": 489.8912048339844,
+        "b": 14.78955078125
+      },
+      "image_path": "images/fig_014_no_caption.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "",
+      "page": 29,
+      "bbox": {
+        "l": 1413.9193115234375,
+        "t": 628.2166137695312,
+        "r": 2147.70166015625,
+        "b": 0.0
+      },
+      "image_path": "images/fig_015_no_caption.png"
+    }
+  ]
+}

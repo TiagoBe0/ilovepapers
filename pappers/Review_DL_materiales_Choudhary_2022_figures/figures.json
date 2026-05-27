@@ -1,0 +1,461 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Review_DL_materiales_Choudhary_2022.pdf",
+  "total_figures": 35,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 34.90544891357422,
+        "t": 767.7072277069092,
+        "r": 150.13031005859375,
+        "b": 743.2528800964355
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 477.71124267578125,
+        "t": 712.4412231445312,
+        "r": 550.4655151367188,
+        "b": 697.7533493041992
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 529.2726440429688,
+        "t": 45.69805908203125,
+        "r": 551.1038818359375,
+        "b": 28.03631591796875
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 22.2823429107666,
+        "t": 769.2117195129395,
+        "r": 47.197933197021484,
+        "b": 749.0835952758789
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Fig. 1 Schematic showing an overview of arti fi cial intelligence (AI), machine learning (ML), and deep learning (DL) methods and its applications in materials science and engineering. Deep learning is considered a part of machine learning, which is contained in an umbrella term arti fi cial intelligence.",
+      "page": 2,
+      "bbox": {
+        "l": 144.3491668701172,
+        "t": 266.8397216796875,
+        "r": 459.8498229980469,
+        "b": 89.53704833984375
+      },
+      "image_path": "images/fig_005_Fig_1_Schematic_showing_an_overview_of_.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 3,
+      "bbox": {
+        "l": 547.205810546875,
+        "t": 768.9789905548096,
+        "r": 572.1079711914062,
+        "b": 749.5162010192871
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "",
+      "page": 4,
+      "bbox": {
+        "l": 22.266822814941406,
+        "t": 769.2474594116211,
+        "r": 47.33224868774414,
+        "b": 748.6247749328613
+      },
+      "image_path": "images/fig_007_no_caption.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 5,
+      "bbox": {
+        "l": 547.1973876953125,
+        "t": 768.6311264038086,
+        "r": 572.0140380859375,
+        "b": 749.436653137207
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "",
+      "page": 6,
+      "bbox": {
+        "l": 22.145709991455078,
+        "t": 769.5639457702637,
+        "r": 47.49502944946289,
+        "b": 748.5913009643555
+      },
+      "image_path": "images/fig_009_no_caption.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "",
+      "page": 7,
+      "bbox": {
+        "l": 547.270263671875,
+        "t": 768.8664646148682,
+        "r": 571.993896484375,
+        "b": 749.5038261413574
+      },
+      "image_path": "images/fig_010_no_caption.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 2 Schematic representations of an atomic structure as a graph. a CGCNN model in which crystals are converted to graphs with nodes representing atoms in the unit cell and edges representing atom connections. Nodes and edges are characterized by vectors corresponding to the atoms and bonds in the crystal, respectively [Reprinted with permission from ref. 67 Copyright 2019 American Physical Society], b ALIGNN 65 model in which the convolution layer alternates between message passing on the bond graph and its bond-angle line graph. c MEGNet in which the initial graph is represented by the set of atomic attributes, bond attributes and global state attributes [Reprinted with permission from ref. 33 Copyright 2019 American Chemical Society] model, d iCGCNN model in which multiple edges connect a node to neighboring nodes to show the number of Voronoi neighbors [Reprinted with permission from ref. 122 Copyright 2019 American Physical Society].",
+      "page": 7,
+      "bbox": {
+        "l": 57.16061782836914,
+        "t": 730.2619552612305,
+        "r": 531.1299438476562,
+        "b": 462.7836608886719
+      },
+      "image_path": "images/fig_011_Fig_2_Schematic_representations_of_an_a.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "",
+      "page": 8,
+      "bbox": {
+        "l": 22.25796890258789,
+        "t": 769.2520618438721,
+        "r": 47.0838508605957,
+        "b": 748.6855888366699
+      },
+      "image_path": "images/fig_012_no_caption.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "",
+      "page": 9,
+      "bbox": {
+        "l": 547.3091430664062,
+        "t": 769.0182056427002,
+        "r": 572.0355834960938,
+        "b": 749.5443420410156
+      },
+      "image_path": "images/fig_013_no_caption.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 3 Example applications of deep learning for spectral data. a Predicting structure information from the X-ray diffraction 374 , Reprinted according to the terms of the CC-BY license 374 . Copyright 2020. b Predicting catalysis properties from computational electronic density of states data. Reprinted according to the terms of the CC-BY license 202 . Copyright 2021.",
+      "page": 9,
+      "bbox": {
+        "l": 75.29695892333984,
+        "t": 478.795166015625,
+        "r": 508.1719665527344,
+        "b": 89.66387939453125
+      },
+      "image_path": "images/fig_014_Fig_3_Example_applications_of_deep_lear.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "",
+      "page": 10,
+      "bbox": {
+        "l": 22.28338623046875,
+        "t": 769.1995487213135,
+        "r": 47.138160705566406,
+        "b": 748.9614181518555
+      },
+      "image_path": "images/fig_015_no_caption.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "",
+      "page": 11,
+      "bbox": {
+        "l": 547.2959594726562,
+        "t": 768.8278560638428,
+        "r": 572.10009765625,
+        "b": 749.2841491699219
+      },
+      "image_path": "images/fig_016_no_caption.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "",
+      "page": 12,
+      "bbox": {
+        "l": 22.155609130859375,
+        "t": 769.2366008758545,
+        "r": 47.31125259399414,
+        "b": 748.8364562988281
+      },
+      "image_path": "images/fig_017_no_caption.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "",
+      "page": 13,
+      "bbox": {
+        "l": 547.2948608398438,
+        "t": 768.8992309570312,
+        "r": 572.0092163085938,
+        "b": 749.5441017150879
+      },
+      "image_path": "images/fig_018_no_caption.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "",
+      "page": 14,
+      "bbox": {
+        "l": 22.268360137939453,
+        "t": 769.1709365844727,
+        "r": 47.215087890625,
+        "b": 749.1903343200684
+      },
+      "image_path": "images/fig_019_no_caption.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Fig. 4 Deep-learning-based algorithm for atomic site classi fi cation. a Deep neural networks U-Net model constructed for quanti fi cation analysis of annular dark- fi eld in the scanning transmission electron microscope (ADF-STEM) image of V-WSe2. b Examples of training dataset for deep learning of atom segmentation model for fi ve different species. c Pixel-level accuracy of the atom segmentation model as a function of training epoch. d Measurement accuracy of the segmentation model compared with human-based measurements. Scale bars are 1 nm [Reprinted according to the terms of the CC-BY license ref. 228 ].",
+      "page": 14,
+      "bbox": {
+        "l": 66.10308837890625,
+        "t": 730.3282814025879,
+        "r": 540.333251953125,
+        "b": 491.73529052734375
+      },
+      "image_path": "images/fig_020_Fig_4_Deep-learning-based_algorithm_for.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "",
+      "page": 15,
+      "bbox": {
+        "l": 547.0473022460938,
+        "t": 768.4115409851074,
+        "r": 571.9713745117188,
+        "b": 749.3197441101074
+      },
+      "image_path": "images/fig_021_no_caption.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "",
+      "page": 16,
+      "bbox": {
+        "l": 22.143138885498047,
+        "t": 769.250825881958,
+        "r": 47.263938903808594,
+        "b": 748.7678108215332
+      },
+      "image_path": "images/fig_022_no_caption.png"
+    },
+    {
+      "figure_id": "fig_023",
+      "label": "picture",
+      "caption": "",
+      "page": 17,
+      "bbox": {
+        "l": 547.1691284179688,
+        "t": 768.754810333252,
+        "r": 572.163330078125,
+        "b": 749.2880477905273
+      },
+      "image_path": "images/fig_023_no_caption.png"
+    },
+    {
+      "figure_id": "fig_024",
+      "label": "picture",
+      "caption": "",
+      "page": 17,
+      "bbox": {
+        "l": 34.9244499206543,
+        "t": 284.47039794921875,
+        "r": 284.3181457519531,
+        "b": 57.4239501953125
+      },
+      "image_path": "images/fig_024_no_caption.png"
+    },
+    {
+      "figure_id": "fig_025",
+      "label": "picture",
+      "caption": "",
+      "page": 18,
+      "bbox": {
+        "l": 22.226224899291992,
+        "t": 769.2250957489014,
+        "r": 47.15004348754883,
+        "b": 749.1964378356934
+      },
+      "image_path": "images/fig_025_no_caption.png"
+    },
+    {
+      "figure_id": "fig_026",
+      "label": "picture",
+      "caption": "Fig. 5 A schematic showing the application of skip-gram variation of Word2vec for predicting context words. a Network for training word embeddings for natural language processing application. A one-hot encoded vector at left represents each distinct word in the corpus; the role of a hidden layer is to predict the probability of neighboring words in the corpus. This network structure trains a relatively small hidden layer of 100 -200 neurons to contain information on the context of words in the entire corpus, with the result that similar words end up with similar hidden layer weights (word embeddings). Such word embeddings can transform wordsin text form into numerical vectors that may be useful for a variety of applications. b projection of word embeddings for various materials science words, as trained on a corpus scienti fi c abstracts, into two dimensions using principle components analysis. Without any explicit training, the word embeddings naturally preserve relationships between chemical formulas, their common oxides, and their ground state structures. [Reprinted according to the terms of the CC-BY license ref. 259 ].",
+      "page": 18,
+      "bbox": {
+        "l": 84.4969482421875,
+        "t": 731.1259002685547,
+        "r": 518.0601196289062,
+        "b": 539.8214874267578
+      },
+      "image_path": "images/fig_026_Fig_5_A_schematic_showing_the_applicati.png"
+    },
+    {
+      "figure_id": "fig_027",
+      "label": "picture",
+      "caption": "",
+      "page": 19,
+      "bbox": {
+        "l": 547.2763061523438,
+        "t": 768.5767059326172,
+        "r": 571.9042358398438,
+        "b": 749.4782943725586
+      },
+      "image_path": "images/fig_027_no_caption.png"
+    },
+    {
+      "figure_id": "fig_028",
+      "label": "picture",
+      "caption": "",
+      "page": 20,
+      "bbox": {
+        "l": 22.221595764160156,
+        "t": 769.2699718475342,
+        "r": 47.11735534667969,
+        "b": 748.9076766967773
+      },
+      "image_path": "images/fig_028_no_caption.png"
+    },
+    {
+      "figure_id": "fig_029",
+      "label": "picture",
+      "caption": "",
+      "page": 21,
+      "bbox": {
+        "l": 547.4324951171875,
+        "t": 769.0645790100098,
+        "r": 572.1849975585938,
+        "b": 749.4007263183594
+      },
+      "image_path": "images/fig_029_no_caption.png"
+    },
+    {
+      "figure_id": "fig_030",
+      "label": "picture",
+      "caption": "",
+      "page": 22,
+      "bbox": {
+        "l": 22.260887145996094,
+        "t": 769.2848587036133,
+        "r": 47.30058288574219,
+        "b": 748.8332595825195
+      },
+      "image_path": "images/fig_030_no_caption.png"
+    },
+    {
+      "figure_id": "fig_031",
+      "label": "picture",
+      "caption": "",
+      "page": 23,
+      "bbox": {
+        "l": 547.4465942382812,
+        "t": 769.0205173492432,
+        "r": 572.1406860351562,
+        "b": 749.5836906433105
+      },
+      "image_path": "images/fig_031_no_caption.png"
+    },
+    {
+      "figure_id": "fig_032",
+      "label": "picture",
+      "caption": "",
+      "page": 24,
+      "bbox": {
+        "l": 22.245738983154297,
+        "t": 769.295389175415,
+        "r": 47.29878616333008,
+        "b": 748.5263900756836
+      },
+      "image_path": "images/fig_032_no_caption.png"
+    },
+    {
+      "figure_id": "fig_033",
+      "label": "picture",
+      "caption": "",
+      "page": 25,
+      "bbox": {
+        "l": 547.4713134765625,
+        "t": 769.0145416259766,
+        "r": 572.1375122070312,
+        "b": 749.4712371826172
+      },
+      "image_path": "images/fig_033_no_caption.png"
+    },
+    {
+      "figure_id": "fig_034",
+      "label": "picture",
+      "caption": "",
+      "page": 26,
+      "bbox": {
+        "l": 22.236242294311523,
+        "t": 769.2555522918701,
+        "r": 47.13089370727539,
+        "b": 748.9037246704102
+      },
+      "image_path": "images/fig_034_no_caption.png"
+    },
+    {
+      "figure_id": "fig_035",
+      "label": "picture",
+      "caption": "",
+      "page": 26,
+      "bbox": {
+        "l": 310.4964599609375,
+        "t": 406.4617614746094,
+        "r": 353.1315612792969,
+        "b": 391.0733642578125
+      },
+      "image_path": "images/fig_035_no_caption.png"
+    }
+  ]
+}

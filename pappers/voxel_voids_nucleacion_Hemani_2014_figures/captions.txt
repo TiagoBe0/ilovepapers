@@ -1,0 +1,44 @@
+fig_001 (p. 1)
+[Sin caption]
+
+fig_002 (p. 20)
+Figure 1: Void Analysis using serial algorithm
+
+fig_003 (p. 21)
+[Sin caption]
+
+fig_004 (p. 22)
+[Sin caption]
+
+fig_005 (p. 23)
+[Sin caption]
+
+fig_006 (p. 24)
+[Sin caption]
+
+fig_007 (p. 25)
+[Sin caption]
+
+fig_008 (p. 26)
+[Sin caption]
+
+fig_009 (p. 27)
+[Sin caption]
+
+fig_010 (p. 29)
+[Sin caption]
+
+fig_011 (p. 29)
+[Sin caption]
+
+fig_012 (p. 29)
+[Sin caption]
+
+fig_013 (p. 29)
+[Sin caption]
+
+fig_014 (p. 29)
+[Sin caption]
+
+fig_015 (p. 29)
+[Sin caption]

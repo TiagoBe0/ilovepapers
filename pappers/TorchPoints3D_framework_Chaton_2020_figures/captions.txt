@@ -1,0 +1,17 @@
+fig_001 (p. 1)
+Figure 1: Torch-Points3D supports multiple tasks such as classification, segmentation, object detection, panoptic segmentation, and registration. All visuals have been produced by the framework.
+
+fig_002 (p. 4)
+Figure 2: Overall architecture of the framework, with data flow highlighted in red. Dataset implements the core loading mechanism of raw data and creates objects containing the points' positions, relevant features, and labels. Those objects are then passed through data augmentation transforms and aggregated into batches in the Dataloader . They are finally passed to the Model , which outputs the prediction. A tracker evaluates the performance from predefined Metrics and publish results on the console and/or directly on Weight and Biases ( wandb.ai ).
+
+fig_003 (p. 5)
+[Sin caption]
+
+fig_004 (p. 7)
+Table 3: Improvement in terms of mIoU provided by inference-time voting schemes on S3DIS 6-folds.
+
+fig_005 (p. 7)
+Listing 4: Optimizer hyper-parameters used for training all models on S3DIS.
+
+fig_006 (p. 8)
+(b) Registration example on KITTI odometry.
