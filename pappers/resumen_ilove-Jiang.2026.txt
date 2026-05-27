@@ -1,0 +1,56 @@
+# Resumen — A Survey on Large Language Models for Code Generation
+
+**Autores:** Juyong Jiang, Fan Wang, Jiasi Shen, Sungju Kim, Sunghun Kim
+**Afil.:** HKUST (Guangzhou), HKUST, NAVER Cloud
+**Revista:** ACM Computing Surveys (2026)
+
+---
+
+## ⚠️ Nota
+
+Este paper es **off-topic respecto a tu trabajo principal** en MD / materiales. Lo dejo resumido por si lo querés citar lateralmente (por ejemplo en una sección sobre uso de LLMs para ayuda en código en tu pipeline).
+
+---
+
+## 🎯 Tipo
+
+**Survey exhaustivo** sobre LLMs aplicados a **generación de código** (Code LLMs). Cubre toda la cadena: datos, entrenamiento, evaluación, ética, impacto ambiental, aplicaciones reales (e.g. GitHub Copilot).
+
+---
+
+## 🧠 Contenido principal
+
+### Taxonomía propuesta
+
+- **Data curation:** corpus de código (The Stack, CodeParrot, etc.).
+- **Modelos:** Codex, StarCoder, Code Llama, DeepSeek-Coder, etc.
+- **Métodos de entrenamiento:** pretraining, instruction tuning, RLHF.
+- **Evaluación:** HumanEval, MBPP, BigCodeBench.
+- **Aplicaciones:** completado de código, traducción, debugging, generación de tests.
+
+### Historia
+
+Línea temporal desde GPT-3 → Codex → era actual de Code LLMs especializados.
+
+### Comparación cuantitativa
+
+Tabla con resultados en HumanEval / MBPP / BigCodeBench across modelos, **sourced from los papers originales** (no re-corridos) para fair comparison.
+
+### Aspectos abiertos
+
+- Ética: licencias del código de entrenamiento.
+- Impacto ambiental: compute de entrenamiento.
+- Generalización entre lenguajes.
+
+---
+
+## 🧩 Conexión (tangencial) con tu trabajo
+
+- Si usás Copilot / Claude / Cursor para escribir el pipeline LAMMPS/OVITO/PyTorch, este survey es la referencia para entender qué modelos hay y qué hacen.
+- No tiene relación directa con materiales / defectos / ML científico.
+
+---
+
+## 📎 Conexiones
+
+- Off-topic vs el resto de la carpeta. Comparte sólo el genérico "uso de transformers" con [[OE-BERT_DAPT_optoelectronica_Huang_2025]] (DAPT de BERT para optoelectrónica).

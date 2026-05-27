@@ -1,0 +1,65 @@
+# Resumen — Dynamics of nanoscale phase decomposition in laser ablation
+
+**Autores:** Y. Sun, C. Chen, T. J. Albert, … L. V. Zhigilei, K. Sokolowski-Tinten (SLAC, UVA, Univ. Duisburg-Essen)
+**Revista:** Communications Materials 6, 69 (2025), DOI: 10.1038/s43246-025-00785-4
+
+---
+
+## 🎯 Idea central
+
+Estudio combinado **experimento + simulación** que reconstruye los procesos de **descomposición de fase nanoescala** durante la **ablación láser ultracorta** de films delgados de oro. Combina:
+
+- **Difracción de rayos-X femtosegundo** (LCLS / SLAC) resuelta en tiempo.
+- **Dinámica molecular** a gran escala.
+
+---
+
+## 🧪 Fenómeno físico
+
+Cuando un pulso de fs ilumina un metal:
+
+1. **Excitación electrónica** ultrarrápida.
+2. **Acoplamiento electrón-fonón** → calentamiento atómico.
+3. **Stress confinement** → ondas mecánicas y tensiones extremas.
+4. **Descomposición de fase** del material superheated:
+   - **Spallation** (a fluencia baja): nucleación y crecimiento de nano-voids sub-superficie → ejección de capa líquida.
+   - **Phase explosion** (a fluencia alta): explosión volumétrica → vapor + clusters atómicos + gotitas líquidas.
+
+---
+
+## ⚙️ Lo que aporta el paper
+
+### Experimento
+
+- **Pulsos X-ray fs** miden características de **small-angle diffraction** durante la expansión del plume de ablación.
+- Mapea la **emergencia y crecimiento de heterogeneidades de densidad nanoescala** en tiempo real.
+
+### Simulación
+
+- MD a gran escala (Zhigilei et al.) predice cuándo y cómo aparecen estas heterogeneidades.
+- Identifica las **firmas características** de spallation vs phase explosion en la difracción.
+
+### Mapeo experimento ↔ simulación
+
+- Las firmas predichas por MD se identifican en los datos X-ray → validación cruzada.
+- Permite distinguir mecanismos que ocurren simultáneamente en el plume.
+
+---
+
+## 🧩 Por qué importa
+
+- Es un caso modelo de **probing extremo** de condiciones lejos del equilibrio termodinámico y mecánico.
+- La metodología (X-ray fs + MD multi-escala) puede aplicarse a otros procesos rápidos: choque, irradiación intensa, ablación pulsada para fabricación.
+
+---
+
+## 📎 Conexiones
+
+- Mecanismos de nucleación de voids comparten física con [[voxel_voids_nucleacion_Hemani_2014]] (análisis MD voxel) y [[UNet_nucleacion_voids_tantalio_Anantharanga_2025]] (predicción ML de sitios de nucleación).
+- Complementario a [[MD_cascadas_CuNi_irradiacion_Wei_2025]] (otro escenario MD de daño extremo, pero por irradiación iónica).
+
+---
+
+## ⚠️ Comentario
+
+El archivo era `test1.pdf` (y `test0.pdf` era duplicado). No tenía resumen previo — quizás lo subiste sin clasificar. Si el tema no te resulta central, es un buen paper "tangente" para referenciar al hablar de procesos lejos del equilibrio.

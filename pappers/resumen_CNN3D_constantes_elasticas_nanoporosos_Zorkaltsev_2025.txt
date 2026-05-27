@@ -1,0 +1,46 @@
+# Resumen — Transferable 3D CNNs for elastic constants prediction in nanoporous metals
+
+**Autores:** Zorkaltsev, Topolnicki, Carmon, Mathesan, Dłotko, Mordehai, Haranczyk
+**Revista:** Materials & Design (2025), DOI: 10.1016/j.matdes.2025.114896
+
+---
+
+## 🎯 Idea central
+
+CNNs 3D que aprenden **directamente la topología 3D** de metales nanoporosos (representada como voxel grid) y predicen sus **constantes elásticas** (módulos, anisotropía), con buena generalización entre geometrías y resolución de grilla.
+
+---
+
+## 🧪 Highlights del paper
+
+- **3D CNN** sobre voxel grid de la microestructura → propiedades elásticas.
+- **Supera al baseline** basado en descriptores topológicos hand-crafted.
+- **DenseNet-201** mantiene 92% del R² al bajar la resolución de 80³ a 30³ voxels — los modelos transfieren bien entre escalas.
+- **Eficiencia de datos:** entrenar con 50% del dataset solo cuesta <4% en R² → aprendizaje data-efficient.
+- **Transfer learning:** un modelo entrenado en nanoporous gold (NPG) se adapta a un dataset distinto con **pocas muestras adicionales**.
+- **Screening masivo:** se evalúan **100 000 diseños estocásticos** y se identifican configuraciones **Pareto-óptimas** de NPG (relación rigidez vs densidad).
+
+---
+
+## ⚙️ Pipeline
+
+1. Generar microestructuras nanoporosas (estocásticas, distintas porosidades).
+2. Calcular tensor elástico por MD → ground truth.
+3. Voxelizar la geometría → input 3D al CNN.
+4. Entrenar DenseNet-201 (y otras backbones) para regresión multi-output del tensor.
+5. Transferir el modelo entrenado a otra clase de estructura con fine-tuning corto.
+
+---
+
+## 🧩 Por qué es relevante
+
+- **Conecta directamente con tu interés** en predecir propiedades elásticas (módulo de Young, etc.) a partir de microestructura — alineado con el paper TGS de MIT que mide E vía SAW [[TGS_vacancias_in_situ_Botica_MIT_2026]].
+- Demuestra que **3D CNN sobre voxel grid** es competitivo contra descriptores ad-hoc y permite **screening** masivo de diseños.
+- Es la versión "moderna" del enfoque que vio el paper de Peivaste s41598-023-50893-9 (3D CNN para propiedades de defectos) [[3DCNN_predicciones_propiedades_Peivaste]] *(pendiente)*.
+
+---
+
+## 📎 Conexiones
+
+- Comparte filosofía con [[voxel_voids_nucleacion_Hemani_2014]] (voxelización del dominio) pero usa DL en lugar de DFS.
+- Alternativa volumétrica a enfoques basados en grafos como [[CGCNN_cristales_Xie_Grossman_2018]].

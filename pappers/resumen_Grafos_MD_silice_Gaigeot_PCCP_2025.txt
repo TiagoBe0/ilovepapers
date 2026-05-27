@@ -1,0 +1,57 @@
+# Resumen — Exploiting graph theory in MD simulations for extracting chemical and physical properties of materials
+
+**Autores:** S. Bougueroua, A. Kolganov, C. Helain, C. Zens, D. Barth, E. Pidko, M.-P. Gaigeot
+**Revista:** Phys. Chem. Chem. Phys. 27, 1298 (2025), DOI: 10.1039/d4cp02764g
+
+---
+
+## 🎯 Idea central
+
+Mostrar cómo la **teoría algorítmica de grafos** puede extraer propiedades químicas y físicas de trayectorias MD complejas que son difíciles de analizar con métodos tradicionales basados solo en coordenadas cartesianas.
+
+Es una mini-review + paper aplicado, con foco en **interfaces sólido-líquido**.
+
+---
+
+## ⚙️ Marco metodológico
+
+### Representación
+
+- **Vértices** = átomos.
+- **Aristas** = interacciones (enlaces covalentes, H-bonds, interacciones débiles…).
+- **2D topological graphs** por default, pero pueden extenderse a 3D (con coords).
+
+### Operaciones algorítmicas clave
+
+1. **Detección de sub-grafos** (motifs) → patrones químicos recurrentes.
+2. **Isomorfismo de sub-grafos** → reconocer "el mismo motif" en frames distintos.
+3. **Estadística temporal** sobre instancias de motifs → distribución y dinámica.
+
+---
+
+## 🧪 Aplicaciones presentadas
+
+### 1. Búsqueda de sitios activos catalíticos en SiO₂
+
+- Identifica patrones de coordinación Si–O que correlacionan con actividad catalítica.
+- Permite filtrar la trayectoria por sub-grafos relevantes en lugar de inspección visual.
+
+### 2. Interfaz SiO₂ / H₂O
+
+- Grafos detectan motivos surface–water (puentes de H, anillos…).
+- Estadísticas dan una imagen cuantitativa de la estructura y dinámica del interfaz.
+
+---
+
+## 🧩 Por qué importa
+
+- Es una **alternativa estructural** a las redes neuronales sobre grafos: aquí el grafo se analiza con algoritmos clásicos de teoría de grafos (no DL), pero el resultado es comparable o complementario en interpretabilidad.
+- Particularmente útil cuando se quiere **trazabilidad física** del análisis (qué motif específico aparece y por qué).
+
+---
+
+## 📎 Conexiones
+
+- Filosofía cercana a [[CGCNN_cristales_Xie_Grossman_2018]] pero sin aprendizaje — solo análisis algorítmico del grafo.
+- Complementario a métodos ML no supervisados como [[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]]: aquí los motifs se enumeran, allí se descubren por embedding.
+- Si trabajás con interfaces o sistemas químicos, este enfoque puede integrarse al workflow MD → grafo → estadística.

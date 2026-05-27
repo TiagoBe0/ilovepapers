@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen - Teoria y Modelado de Materiales de Fusion</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;
+    --surface:    #ffffff;
+    --panel:      #ffffff;
+    --ink:        #18202a;
+    --muted:      #5a6472;
+    --line:       #d8dde4;
+    --accent:     #174a7e;
+    --accent-h:   #0d3259;
+    --gold:       #b8860b;
+    --teal:       #0a6858;
+    --soft-blue:  #eef3fb;
+    --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;
+    --warn:       #fff8e1;
+    --nav-h:      44px;
+    --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.75;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .top-nav {
+    position: sticky; top: 0; z-index: 200;
+    height: var(--nav-h);
+    background: var(--accent);
+    display: flex; align-items: center; gap: 12px;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .top-nav a.back {
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px;
+    transition: background .15s;
+  }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title {
+    color: rgba(255,255,255,.6);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .top-nav .journal-name {
+    margin-left: auto;
+    color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  header {
+    background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff;
+    padding: 52px 28px 44px;
+    border-bottom: 4px solid var(--gold);
+  }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.3px;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,.78);
+    max-width: 820px;
+    margin-bottom: 28px;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: rgba(255,255,255,.8);
+  }
+  .meta div {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px;
+    border-radius: 6px;
+  }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+
+  section { margin-bottom: 48px; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+    position: relative;
+  }
+  h2::before {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px;
+    background: var(--gold);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  p { margin: 0 0 16px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+
+  .lead {
+    font-size: 17px;
+    font-style: italic;
+    color: #2a3540;
+    background: var(--soft-blue);
+    border-left: 4px solid var(--accent);
+    padding: 22px 24px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  .tag {
+    display: inline-block;
+    margin: 0 6px 8px 0;
+    padding: 4px 11px;
+    border-radius: 20px;
+    background: var(--soft-blue);
+    color: var(--accent);
+    border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .2px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important {
+    background: var(--soft-gold);
+    border-left: 4px solid var(--gold);
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+  }
+  @media (min-width: 720px) {
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    margin: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px; letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+
+  figure {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s;
+  }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+
+  @media (min-width: 680px) {
+    figure {
+      display: grid;
+      grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr;
+      min-height: 220px;
+    }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+
+  figure > img {
+    width: 100%; height: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    background: #0e1826;
+    display: block;
+    border-right: 1px solid var(--line);
+  }
+
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); }
+  }
+
+  figcaption {
+    padding: 18px 20px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  figcaption strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px; color: #3a4650; line-height: 1.55; }
+
+  .figbody {
+    padding: 16px 20px 18px;
+    background: var(--soft-teal);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: #1e3530;
+    line-height: 1.65;
+    border-left: 3px solid var(--teal);
+  }
+  .figbody p { margin: 0; }
+  .figbody::before {
+    content: '↳ Interpretacion';
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 7px;
+  }
+
+  .small { color: var(--muted); font-size: 13px; }
+  .refs li { margin-bottom: 10px; }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="../index.html" class="back">← Indice</a>
+    <span class="nav-title">Teoria y Modelado de Materiales de Fusion — Luca Reali et al. 2026</span>
+    <span class="journal-name">ilovepappers Journal</span>
+  </nav>
+
+  <header>
+    <div class="inner">
+      <div class="journal-stripe">Review · Fusion · Tungsteno · Modelado Multiescala</div>
+      <h1>Teoria y Modelado de Materiales de Fusion: Del Reactor Experimental al Prototipo</h1>
+      <p class="subtitle">Resumen en espanol del review <strong>Theory and modelling of fusion materials</strong>, con las figuras extraidas y explicadas. Un mapa del estado del arte en modelado atomistico, DFT, MLPs y FEM aplicados a materiales de fusion nuclear.</p>
+      <div class="meta">
+        <div><strong>Autores:</strong> Luca Reali et al. (UKAEA / Imperial College London y otros)</div>
+        <div><strong>Revista:</strong> Journal of Nuclear Materials (2026)</div>
+        <div><strong>Tipo:</strong> Review — modelado de materiales para reactores de fusion</div>
+        <div><strong>PDF local:</strong> <a href="../pappers/ilove-LucaReali.2026.pdf">pappers/ilove-LucaReali.2026.pdf</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <p class="lead">
+        Esta revision mapea el estado del arte en teoria y modelado de materiales para fusion nuclear, con enfasis en tungsteno (W) y aceros ferriticos/martensiticos (FM) como materiales de primera pared y manta. El review cubre desde DFT y potenciales de aprendizaje automatico (MLPs) hasta dinamica molecular, simulaciones de cascadas de colision, modelos de transmutacion, difusion de hidrogeno/helio, y FEM a escala de componente. El mensaje central: el modelado ya no es solo investigacion fundamental; es parte necesaria del camino desde los reactores experimentales actuales hasta los prototipos como STEP o EU-DEMO.
+      </p>
+      <div>
+        <span class="tag">Fusion</span>
+        <span class="tag">Tungsteno</span>
+        <span class="tag">Radiacion</span>
+        <span class="tag">DFT</span>
+        <span class="tag">MLP</span>
+        <span class="tag">Cascadas</span>
+        <span class="tag">Transmutacion</span>
+        <span class="tag">HEA</span>
+        <span class="tag">Hidrogeno</span>
+        <span class="tag">Tokamak</span>
+        <span class="tag">Review</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contexto: Por Que El Modelado Es Indispensable</h2>
+      <p>
+        Un reactor de fusion expone los materiales de primera pared a condiciones sin precedente en ningun reactor experimental actual: flujos de neutrones de 14 MeV, tasas de dano de varios dpa/ano, produccion de transmutantes como Re y Os en el W, e implantacion masiva de hidrogeno y helio desde el plasma. Ningun experimento actual puede reproducir simultaneamente todas estas condiciones durante 10 anos.
+      </p>
+      <p>
+        El modelado computacional cierra esa brecha: permite predecir la evolucion microestructural del material bajo condiciones de reactor real a largo plazo, guiar el diseno de aleaciones nuevas (HEA, W-Cr-Y-Zr SMART, etc.) y proveer parametros para modelos de ingenieria a gran escala.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>DFT + potenciales empiricos</h3>
+          <p>Escala atomica. Calcula energias de formacion y migracion de defectos, energias de enlace He/H, propiedades elasticas de aleaciones. Base de todo el modelado posterior.</p>
+        </div>
+        <div class="card">
+          <h3>Potenciales de ML (MLP)</h3>
+          <p>Precision DFT a costo de potencial empirico. Permite MD en sistemas de millones de atomos y simulaciones de cascadas con quimica realista en HEA.</p>
+        </div>
+        <div class="card">
+          <h3>Dinamica Molecular (MD)</h3>
+          <p>Simula cascadas de colision, difusion de defectos, nucleacion de burbujas de He, fluencia por irradiacion y evolucion microestructural durante recocido.</p>
+        </div>
+        <div class="card">
+          <h3>FEM a escala de componente</h3>
+          <p>Usa parametros derivados de MD/DFT para simular esfuerzos termomechanicos en componentes reales del tokamak (MAST-U, KSTAR), con mallas de 127 millones de elementos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Temas Principales Del Review</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tema</th>
+            <th>Material / Sistema</th>
+            <th>Hallazgo / Avance clave</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Transmutacion de W</td>
+            <td>W puro en EU-DEMO</td>
+            <td>Tras 10 anos de exposicion, el W acumula Re y Os por reacciones nucleares. Re y Os forman precipitados que cambian la constante de red y degradan la energias de defecto de apilamiento generalizado (GSFE), comprometiendo la ductilidad.</td>
+          </tr>
+          <tr>
+            <td>Segregacion en HEA de W</td>
+            <td>W-Ta-Cr-V, W-Cr-Y-Zr</td>
+            <td>Simulaciones MC predicen co-segregacion de Cr y V hacia precipitados ricos en esos elementos. La adicion de V en W-Ta reduce la densidad de huecos en cascadas solapadas. W-Cr-Y-Zr muestra descomposicion de fases entre W y Cr con orden de corto alcance W-Y/Zr.</td>
+          </tr>
+          <tr>
+            <td>Evolucion microestructural en Fe-Cr</td>
+            <td>Aceros FM (HT9, T91)</td>
+            <td>Clustering de Cr con impurezas C/N y vacantes. MLPs y expansion de cluster predicen comportamiento que concuerda con datos de endurecimiento en reactores de neutrones rapidos y doble irradiacion ionica.</td>
+          </tr>
+          <tr>
+            <td>Cascadas en REBCO</td>
+            <td>REBa2Cu3O7 superconductor</td>
+            <td>Simulacion de cascadas de 20 keV muestra creacion de vacantes, intersticiales y antisitios en la estructura compleja del REBCO. Relevante para imanes superconductores del tokamak.</td>
+          </tr>
+          <tr>
+            <td>Difusion de H en metales</td>
+            <td>W y otros metales</td>
+            <td>Los efectos cuanticos nucleares (NQE) via path-integral MD son cruciales a baja temperatura para reproducir la desviacion del comportamiento Arrhenius medida experimentalmente. Los MLPs hacen viable esta simulacion a escala real.</td>
+          </tr>
+          <tr>
+            <td>Retencion y TDS de D en W</td>
+            <td>W irradiado con D</td>
+            <td>Modelos cineticos de Monte Carlo reproducen los espectros TDS experimentales de W implantado con D y predicen la retencion en funcion de temperatura de recocido.</td>
+          </tr>
+          <tr>
+            <td>FEM a escala de tokamak</td>
+            <td>MAST-U, KSTAR</td>
+            <td>Modelos CAD listos para FEM del MAST-U con 127 millones de elementos. V-KSTAR calcula distribucion 3D de flujos de calor y trazado de ondas RF en el KSTAR.</td>
+          </tr>
+          <tr>
+            <td>Fluencia por irradiacion</td>
+            <td>W, Fe (DEMO)</td>
+            <td>MD a baja temperatura muestra que la fluencia es impulsada por SIAs que coalescen por interacciones elasticas, sin necesitar difusion termica de vacantes. Simulaciones de Fe en DEMO-HCPB predicen tasas de hinchamiento y fluencia como funcion de temperatura.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Figuras Explicadas</h2>
+      <p class="small">Este review tiene 30 figuras numeradas mas 4 elementos de pagina sin caption. Se presentan en orden las figuras con caption extraido.</p>
+
+      <div class="figure-list">
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_005_Fig_1_Theory_and_modelling_of_fusion_m.png" alt="Marco conceptual del modelado de materiales de fusion">
+          <figcaption><strong>Fig. 1, pagina 2.</strong><p class="caption">Theory and modelling of fusion materials will necessarily play a part in transitioning from present, experimental devices to future fusion reactors. In this review, we highlight examples from the state-of-the-art alongside the areas where we see gaps that should soon be addressed.</p></figcaption>
+          <div class="figbody">
+            <p>Esta figura abre el review y establece el argumento central: el modelado teorico no es un lujo academico sino una pieza necesaria del camino hacia reactores de fusion practicos. La imagen de fondo (cortesia de la UKAEA) muestra el concepto STEP del tokamak esfera, y los textos alrededor enumeran los temas que cubre la revision. La jerarquia implicita es: DFT y atomistica informan modelos de escala superior, que alimentan FEM de componente, que guian el diseno de reactores.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_006_Fig_2_Variation_in_the_predicted_damag.png" alt="Variacion de tasa de dano en la pared del tokamak STEP">
+          <figcaption><strong>Fig. 2, pagina 3.</strong><p class="caption">Variation in the predicted damage dose rate (dpa per unit time), helium and hydrogen production per year in pure Fe as a function of depth into the plasma-facing wall of a typical fusion tokamak design (early concept of STEP). Also shown is the total neutron flux variation over the same depth.</p></figcaption>
+          <div class="figbody">
+            <p>Una de las figuras clave para entender el desafio de irradiacion. La tasa de dano (dpa/ano), la produccion de He y H, y el flujo de neutrones varian radicalmente con la profundidad dentro de la pared del tokamak. La primera pared (frente al plasma) recibe el mayor dano y la mayor produccion de gases; la manta posterior tiene condiciones muy distintas. Esta heterogeneidad en profundidad hace que un solo material no sea optimo en toda la pared, y exige modelos que predigan la evolucion microestructural en cada zona por separado.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_007_Fig_3_a_Transmutation_of_W_after_10_.png" alt="Transmutacion de W y cambio de propiedades mecanicas">
+          <figcaption><strong>Fig. 3, pagina 4.</strong><p class="caption">(a) Transmutation of W after 10 years of continuous exposure to plasma-facing conditions expected in a prototype fusion reactor; (b) Atomic arrangement of surface models to calculate GSFE on the ⟨111⟩{-110} slip system; (c) Evolution of lattice constant in transmuted W-alloys during the first ten years; and (d) GSFE for slip along ⟨111⟩ in {-110} plane after 5 years.</p></figcaption>
+          <div class="figbody">
+            <p>Esta figura agrupa cuatro resultados criticos sobre el W bajo irradiacion de fusion. El panel a) muestra la composicion del W despues de 10 anos: acumula Re y Os que cambian la quimica de la aleacion sin que el operador lo controle. El panel c) muestra como eso cambia la constante de red un 0.X% a lo largo del tiempo, lo que introduce esfuerzos internos. El panel d) muestra que la GSFE (que controla la movilidad de dislocaciones y ductilidad) cambia significativamente a los 5 anos, lo que podria comprometer la resistencia del material.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_008_Fig_4_Summary_of_method_combining_tran.png" alt="Metodo combinado de transmutacion e inventario nuclear">
+          <figcaption><strong>Fig. 4, pagina 4.</strong><p class="caption">Summary of method combining transport and inventory calculation to investigate material activity with independent uncertainty analysis on relevant nuclear data.</p></figcaption>
+          <div class="figbody">
+            <p>El calculo de transmutacion es en si mismo un problema de modelado multiescala: hay que combinar calculos de transporte neutronico (que da el flujo de neutrones en cada zona del reactor) con calculos de inventario (que integra las reacciones nucleares en el tiempo para obtener la evolucion de composicion). Esta figura resume ese flujo de trabajo y destaca la necesidad de analisis de incertidumbre sobre los datos nucleares, ya que los errores en secciones eficaces se propagan a la composicion predicha tras anos de irradiacion.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_009_Fig_5_Top_A_section_of_phase_diagram_.png" alt="Diagrama de fases W-Re-Os y segregacion en vacios">
+          <figcaption><strong>Fig. 5, pagina 6.</strong><p class="caption">Top: A section of phase diagram with Re, Os cluster concentration from experimental data for neutron irradiated W and ion irradiated W-Re-Os. Bottom: First principles based Monte Carlo simulations in a bcc 30x30x30 supercell with voids decorated by Re and Os in W with 2at% Re and 0.2at% Os at 1173K.</p></figcaption>
+          <div class="figbody">
+            <p>Esta figura conecta la prediccion computacional con datos experimentales de irradiacion de neutrones. La parte superior muestra que las concentraciones de Re y Os en precipitados irradiados se acercan a la frontera de estabilidad de fase en el diagrama W-Re-Os, lo que explica la formacion de precipitados de phase sigma/chi observada experimentalmente. La parte inferior muestra que simulaciones MC de primeros principios en superceldas con vacios reproducen la tendencia de Re y Os a segregarse en la superficie de los huecos (vacios), que actuan como trampas preferenciales.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_010_Fig_6_Short-range_order_evolution_in_W.png" alt="Orden de corto alcance en materiales SMART W-Cr-Y-Zr">
+          <figcaption><strong>Fig. 6, pagina 7.</strong><p class="caption">Short-range order evolution in W-Cr-Y-Zr SMART materials as function of alloy compositions, showing the phase decomposition between W and Cr whereas the SRO between Y and Zr is strongly negative.</p></figcaption>
+          <div class="figbody">
+            <p>Los materiales SMART (Self-passivating Metal Alloy Refractory for Tokamaks) de tipo W-Cr-Y-Zr se disenan para que, bajo condiciones de accidente, los elementos de Cr y Y formen una capa oxida protectora que evite la liberacion de polvo de W radiactivo. Esta figura muestra que las simulaciones MC predicen descomposicion de fases entre W y Cr (separacion de dominios ricos en cada elemento), mientras que el orden de corto alcance entre Y y Zr es fuertemente negativo (Y y Zr tienden a estar juntos en entornos locales). Esto tiene implicaciones directas para la cinetica de oxidacion y la estabilidad de la capa pasivante.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_012_Fig_7_Top_Modelling_of_co-segregation.png" alt="Co-segregacion en HEA W-Ta-Cr-V y reduccion de huecos">
+          <figcaption><strong>Fig. 7, pagina 8.</strong><p class="caption">Top: Modelling of co-segregation of Cr and V from W and Ta in high-entropy alloys W38Ta36Cr15V11. Bottom: Reduction of void density from binary W-Ta to W-Ta-V alloys obtained from overlapping cascade MD simulations using machine-learning potentials.</p></figcaption>
+          <div class="figbody">
+            <p>Esta figura presenta dos resultados de modelado de HEA de W. La parte superior muestra que en el HEA W38Ta36Cr15V11, las simulaciones predicen segregacion de Cr y V formando precipitados distintos de la matriz W-Ta. Esto cambia localmente la quimica y puede afectar la movilidad de defectos. La parte inferior es el resultado mas directamente util para diseno: anadir V al W-Ta reduce la densidad de huecos formados en cascadas solapadas, lo que indica que el V suprime la formacion de vacios bajo irradiacion, una propiedad muy deseable para la primera pared.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_011_Fig_8_Top_Formation_of_Cr_grey_atoms.png" alt="Clustering de Cr en aceros FM y fases en HEA Fe-Cr-Ni-Mn">
+          <figcaption><strong>Fig. 8, pagina 8.</strong><p class="caption">Top: Formation of Cr clustering predicted from modelling of Fe-alloys with nominal 3at.%Cr containing C, N impurities interacting with vacancies. Bottom: Temperature and composition maps showing fcc and bcc phases of Fe-Cr-Ni-Mn high entropy alloys from Monte-Carlo simulations using cluster expansion Hamiltonian.</p></figcaption>
+          <div class="figbody">
+            <p>Para los aceros ferriticos/martensiticos (FM), esta figura muestra dos fenomenos: primero, que el Cr forma clusters en presencia de impurezas C y N que interactuan con vacantes, lo cual es relevante para el endurecimiento por irradiacion; segundo, que en HEA de Fe-Cr-Ni-Mn, las simulaciones MC reproducen la coexistencia de fases fcc y bcc en funcion de temperatura y composicion, lo que es crucial para predecir la estabilidad de fase bajo las condiciones termicas del reactor.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_014_Fig_10_Re-enriched_matrix_precipitates.png" alt="Precipitados enriquecidos en Re en W irradiado en reactor">
+          <figcaption><strong>Fig. 10, pagina 10.</strong><p class="caption">Re-enriched matrix precipitates in pure W irradiated in a mixed spectrum reactor at 590-700°C. The measured and calculated transmutant Re content is far below the 25% Re equilibrium phase stability limit for W-Re at these temperatures.</p></figcaption>
+          <div class="figbody">
+            <p>Una observacion experimental clave que el modelado debe explicar: en W irradiado en reactor a 590-700°C, se forman precipitados ricos en Re aunque la concentracion total de Re transmutado esta muy por debajo del limite de estabilidad de fase de equilibrio (~25% Re). Esto indica que los precipitados se forman por un mecanismo fuera del equilibrio relacionado con los defectos de irradiacion (vacios y SIAs actuan como nucleos), no simplemente por saturacion de la solucion solida. El modelado reproduce esta tendencia usando MC de primeros principios con vacios.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_015_Fig_11_Comparison_of_predicted_and_mea.png" alt="Prediccion vs medida de endurecimiento en aceros HT9 y T91">
+          <figcaption><strong>Fig. 11, pagina 10.</strong><p class="caption">Comparison of predicted and measured hardening of HT9 and T91 ferritic/martensitic steels following fast reactor or dual ion irradiation.</p></figcaption>
+          <div class="figbody">
+            <p>Esta figura valida los modelos de endurecimiento por irradiacion en aceros FM comparando predicciones con datos experimentales de reactores de neutrones rapidos e irradiacion dual de iones. El acuerdo entre prediccion y medicion para HT9 y T91 respalda el uso de los modelos para predecir el comportamiento bajo condiciones de fusion, donde los datos experimentales directos son escasos. La validacion cruzada entre irradiacion con neutrones e iones es especialmente importante, ya que la irradiacion ionica es la principal herramienta de ensayo antes de que existan reactores de fusion operativos.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_016_Fig_12_DFT-CRA_trajectories_of_microst.png" alt="Trayectorias DFT-CRA de evolucion microestructural en Fe bcc">
+          <figcaption><strong>Fig. 12, pagina 12.</strong><p class="caption">DFT-CRA trajectories of microstructural evolution in bcc Fe. The evolution of the total energy for four trajectories and their average is shown.</p></figcaption>
+          <div class="figbody">
+            <p>El metodo Cascade Residual Analysis (CRA) extrae el estado final de una cascada de colision desde calculos DFT mediante tecnicas de busqueda de minimos en la superficie de energia potencial. Esta figura muestra cuatro trayectorias de evolucion de la energia total durante una cascada, convergiendo cada una hacia configuraciones de defecto distintas. El promedio de trayectorias da una prediccion estadistica del estado danado. Este enfoque es mas costoso que MD clasico pero mas preciso en la descripcion de los defectos individuales.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_018_Fig_14_The_largest_C15-type_structures.png" alt="Estructuras C15 formadas bajo condiciones CRA en Fe bcc">
+          <figcaption><strong>Fig. 14, pagina 13.</strong><p class="caption">The largest C15-type structures, dynamically formed under CRA conditions, as a function of irradiation dose predicted by different methodologies.</p></figcaption>
+          <div class="figbody">
+            <p>Los defectos de tipo C15 (clusters de intersticiales con simetria de Laves) son energeticamente estables en Fe y se predicen como configuraciones importantes en la microestructura irradiada. Esta figura muestra que la fraccion de SIAs en la mayor estructura C15 crece con la dosis, y que distintas metodologias (CRA de DFT, potenciales empiricos) dan predicciones cualitativamente consistentes aunque con diferencias cuantitativas. La existencia de defectos C15 afecta la cinetica de recocido y la evolucion del dano a largo plazo.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_019_Fig_15_Variation_of_lattice_strain_and.png" alt="Deformacion de red en W irradiado con iones medida por difraccion Laue">
+          <figcaption><strong>Fig. 15, pagina 13.</strong><p class="caption">Variation of lattice strain and volume strain of an ion irradiated tungsten sample. The scatter plot shows X-ray Laue diffraction measurements of the lattice strain along the irradiation direction. Lattice strain and volumetric strain derived from CRA simulations are shown in solid and dashed curves.</p></figcaption>
+          <div class="figbody">
+            <p>Una validacion experimental directa del metodo CRA en W irradiado con iones: la deformacion de red medida por difraccion Laue de rayos X (dispersora) se compara con la predicha por CRA (lineas). El acuerdo es razonable, y la diferencia entre deformacion de red y de volumen (linea solida vs discontinua) refleja la anisotropia de los defectos formados. Esta validacion es importante porque la deformacion de red es una medida macroscopica accesible experimentalmente que integra toda la microestructura de defectos.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_021_Fig_17_Comparison_of_binding_energies_.png" alt="Energias de enlace de burbujas de He con MLPs">
+          <figcaption><strong>Fig. 17, pagina 15.</strong><p class="caption">Comparison of binding energies calculated with the MLP using 4x4x4, 8x8x8, and 12x12x12 supercells. DFT data is calculated using a 4x4x4 supercell. Binding energies of He with He-vacancy bubbles and He clusters.</p></figcaption>
+          <div class="figbody">
+            <p>El helio en W es uno de los problemas mas dificiles en fusion: el He implantado desde el plasma forma burbujas que degradan las propiedades mecanicas de la superficie (formacion de fuzz, ampollas). Para modelar eso se necesitan energias de enlace He-burbuja precisas. Esta figura muestra que los MLPs reproducen las energias de enlace DFT con buena precision en superceldas pequenas (4x4x4), y que la convergencia con el tamano de supercell es adecuada. Esto valida el uso de MLPs para simulaciones mas grandes de nucleacion y crecimiento de burbujas de He.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_022_Fig_18_Comparison_of_a_formation_ene.png" alt="Energias de formacion y volumenes de relajacion en HEA Ta-Ti-V-W">
+          <figcaption><strong>Fig. 18, pagina 15.</strong><p class="caption">Comparison of (a) formation energies and (b) relaxation volumes of vacancies in the equiatomic random Ta-Ti-V-W high-entropy alloy computed using DFT and MLP.</p></figcaption>
+          <div class="figbody">
+            <p>En un HEA, cada sitio de vacante tiene un entorno quimico distinto, por lo que la energia de formacion de vacante no es un numero unico sino una distribucion. Esta figura compara DFT y MLP para esa distribucion en el HEA equiatómico Ta-Ti-V-W: el MLP reproduce fielmente tanto la media como la dispersion de energias de formacion y volumenes de relajacion de vacantes. Esto es fundamental para predecir la evolucion del dano bajo irradiacion en estos materiales avanzados.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_023_Fig_19_Distribution_of_a_formation_e.png" alt="Distribucion de energias de vacante en HEA desordenado Ta-Ti-V-W">
+          <figcaption><strong>Fig. 19, pagina 16.</strong><p class="caption">Distribution of (a) formation energies and (b) relaxation volumes for vacancies computed using MLP for the structure of disordered equiatomic Ta-Ti-V-W alloy with 128 atomic sites.</p></figcaption>
+          <div class="figbody">
+            <p>Complementa la figura anterior con la distribucion completa de energias de vacante en 128 sitios del HEA desordenado calculada con MLP. La amplitud de la distribucion refleja la heterogeneidad quimica del HEA: algunos sitios tienen vecinos mas favorables para la vacante (baja energia de formacion) y otros menos. Esa distribucion de energias de trampa afecta directamente la movilidad de vacantes bajo irradiacion y la cinetica de formacion de clusters de defectos.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_024_Fig_20_a_Hydrogen_interacting_with_l.png" alt="Difusion de hidrogeno en metales con efectos cuanticos nucleares">
+          <figcaption><strong>Fig. 20, pagina 17.</strong><p class="caption">(a) Hydrogen interacting with lattice defects. (b) Arrhenius plot of hydrogen diffusion coefficient. Red/green lines show diffusion with and without NQEs respectively. (c) NQEs and their description by PI methods. (d) Improvements in accuracy-efficiency thanks to MLPs.</p></figcaption>
+          <div class="figbody">
+            <p>El hidrogeno (y sus isotopos deuterio y tritio) es el combustible de fusion y uno de los principales problemas de retencion en la primera pared. Esta figura resume el estado del arte en su modelado: el panel a) muestra los mecanismos de atrapamiento en defectos, el panel b) muestra que a baja temperatura los datos experimentales de difusion se desvian de la ley de Arrhenius clasica porque el H tunel cuanticamente (NQEs), el panel c) explica como los metodos de path-integral (PI) capturan esos efectos, y el panel d) muestra que los MLPs hacen practico calcular NQEs en sistemas grandes que antes estaban fuera de alcance.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_025_Fig_21_Graphical_representation_of_the.png" alt="Celda unidad de REBa2Cu3O7 superconductor">
+          <figcaption><strong>Fig. 21, pagina 17.</strong><p class="caption">Graphical representation of the REBa2Cu3O7 unit cell, where red spheres represent oxygen ions and blue, green and yellow spheres represent copper, barium and rare earth cations respectively.</p></figcaption>
+          <div class="figbody">
+            <p>Los imanes de campo alto en los tokamaks modernos (como los de ITER y los prototipos de alta campo como ARC/SPARC/STEP) usan superconductores de alta temperatura basados en REBa2Cu3O7 (REBCO). Esta figura muestra la celda unitaria compleja de este material, con 13 atomos por celda de 7 especies distintas. La complejidad estructural hace que simular el dano por irradiacion (necesario para estimar la degradacion de los imanes durante la vida util del reactor) sea un desafio computacional significativo.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_026_Fig_22_Two_images_of_the_cascade_progr.png" alt="Progresion de cascada de 20 keV en REBCO">
+          <figcaption><strong>Fig. 22, pagina 18.</strong><p class="caption">Two images of the cascade progression in the x-z plane of a 20 keV cascade with pka launched in the x direction at peak damage and final state. Vacancies are cubes, interstitial are spheres, antisites are spherocylinders.</p></figcaption>
+          <div class="figbody">
+            <p>Resultado de una simulacion MD de cascada en REBCO con un atomo primario de knock-on (PKA) de 20 keV. La imagen de pico de dano muestra la zona caliente con muchos defectos; la imagen de estado final muestra la recombinacion y los defectos persistentes. La presencia de antisitios (un atomo en el sitio de otro elemento) es una caracteristica especifica de materiales multicomponentes que no aparece en metales puros, y puede degradar las propiedades superconductoras del REBCO.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_029_Fig_25_Trajectories_of_migrating_SIA_.png" alt="Trayectorias de migracion de defectos SIA y He-SIA en W">
+          <figcaption><strong>Fig. 25, pagina 21.</strong><p class="caption">Trajectories of migrating SIA defects and He-SIA (n=1,2) defects at 300 K. (a) SIA1; (b) SIA2; (c) He-SIA1; and (d) He-SIA2.</p></figcaption>
+          <div class="figbody">
+            <p>Esta figura ilustra visualmente como migran los defectos de interatomo propio (SIA) en W a 300 K, y como cambia esa migracion cuando el SIA esta asociado con un atomo de He. Un SIA puro tiende a migrar en una dimension (a lo largo de una direccion cristalografica); cuando lleva un atomo de He, la trayectoria cambia hacia patrones mas tridimensionales. Este cambio de dimensionalidad de la migracion tiene consecuencias directas para la cinetica de acumulacion de dano: si los SIAs migran en 3D en lugar de 1D, alcanzan sumideros mas facilmente y el dano se aniquila mas rapido.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_030_Fig_26_a_Simulated_retention_as_a_fu.png" alt="Retencion de D en W y espectros TDS simulados">
+          <figcaption><strong>Fig. 26, pagina 21.</strong><p class="caption">(a) Simulated retention as a function of annealing temperature after 2 keV D ion implantation with a fluence of 10^22 D/m^2 at 317 K. (b) Simulated total and partial TDS spectra at heating rate 0.5 K/s.</p></figcaption>
+          <div class="figbody">
+            <p>La retencion de tritio en la primera pared es un problema de seguridad critico (inventario de tritio radiactivo) y de economia de combustible en fusion. Esta figura muestra predicciones de retencion de D (sustituto de T) en W como funcion de temperatura de recocido, y los espectros de desorcion termica programada (TDS) correspondientes. Cada pico en el espectro TDS corresponde a D liberado desde un tipo de trampa especifico (vacantes, dislocaciones, bordes de grano). La coincidencia con datos experimentales publicados valida el modelo cinetico de difusion-trampa.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_031_Fig_27_a_Analysis-ready_CAD_model_of.png" alt="Modelo CAD del tokamak MAST-U con malla FEM de 127 millones de elementos">
+          <figcaption><strong>Fig. 27, pagina 22.</strong><p class="caption">(a) Analysis-ready CAD model of the MAST-U tokamak device. The associated finite element mesh involves 127 million elements. (b) The tokamak is loaded with gravitational body forces, producing stresses illustrated using the von Mises invariant of the stress field.</p></figcaption>
+          <div class="figbody">
+            <p>Esta figura representa el extremo superior de escala del review: una simulacion FEM de cuerpo completo del tokamak MAST-U con 127 millones de elementos. El mapa de esfuerzos von Mises muestra donde la estructura soporta las mayores cargas gravitacionales, lo que informa el diseno estructural del tokamak. Este tipo de simulacion a escala de componente es el destino final de la cadena de modelado multiescala: los parametros de material derivados de MD/DFT alimentan el modelo FEM y los resultados guian decisiones de diseno de ingenieria.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_032_Fig_28_A_demonstration_of_the_capabili.png" alt="Capacidades de V-KSTAR: flujos de calor y trazado de ondas RF en KSTAR">
+          <figcaption><strong>Fig. 28, pagina 22.</strong><p class="caption">A demonstration of the capabilities of V-KSTAR: a) 3D distribution of heat fluxes on plasma facing components due to fast ion losses. b) V-KSTAR 3D tracings of radio frequency waves injected for plasma heating and current drive in KSTAR.</p></figcaption>
+          <div class="figbody">
+            <p>V-KSTAR es una plataforma de simulacion integrada del tokamak KSTAR de Corea. Esta figura muestra dos de sus capacidades: el calculo 3D de flujos de calor sobre los componentes que enfrentan el plasma (relevante para predecir el dano termico y la erosion), y el trazado de ondas de radiofrecuencia inyectadas para calentamiento y control de corriente. Ambas son entradas criticas para los modelos de dano de material: el flujo de calor determina la temperatura de la pared, y la temperatura afecta todos los procesos cineticos de defectos.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_033_Fig_29_Changes_in_dimensional_stabilit.png" alt="Tasas de hinchamiento y fluencia en Fe bajo condiciones HCPB de DEMO">
+          <figcaption><strong>Fig. 29, pagina 24.</strong><p class="caption">Changes in dimensional stability as a function of temperature for Fe under DEMO helium-cooled pebble bed (HCPB) fusion blanket conditions. (a) Swelling rate. (b) Creep rate.</p></figcaption>
+          <div class="figbody">
+            <p>Para los materiales de la manta reproductora (blanket), el hinchamiento y la fluencia por irradiacion son modos de fallo criticos: pueden cambiar las dimensiones de los componentes y comprometer la hermeticidad o el circuito de refrigeracion. Esta figura muestra las predicciones de tasa de hinchamiento y tasa de fluencia en Fe puro bajo las condiciones especificas de la manta HCPB del diseno DEMO europeo. Ambas tasas tienen dependencia con la temperatura y la dosis, y el modelo predice un maximo de hinchamiento a temperatura intermedia que coincide con el regimen de mayor movilidad de defectos.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_034_Fig_30_Molecular_dynamics_simulation_o.png" alt="Simulacion MD de fluencia por irradiacion a baja temperatura en W">
+          <figcaption><strong>Fig. 30, pagina 24.</strong><p class="caption">Molecular dynamics simulation of low temperature irradiation creep in tungsten. In the absence of thermally activated diffusion, vacancies remain immobile and isolated, while self-interstitial atom defects coalesce irrespectively of thermal activation, driven by elastic interactions. The irreversible deformation remains closely aligned with externally applied stress.</p></figcaption>
+          <div class="figbody">
+            <p>La ultima figura del review cierra con un resultado contraintuitivo: a baja temperatura, donde la difusion termica de vacantes es despreciable, los SIAs (intersticiales) aun pueden formar clusters y generar fluencia irreversible impulsada por interacciones elasticas con el esfuerzo externo aplicado. Esto significa que incluso a baja temperatura, el W bajo irradiacion puede deformarse de forma permanente y anisotropica siguiendo la direccion del esfuerzo externo. Este mecanismo no aparece en modelos de fluencia clasicos y requiere simulacion MD para ser capturado correctamente.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_001_no_caption.png" alt="Elemento de pagina sin caption">
+          <figcaption><strong>Imagen sin caption, pagina 1.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento editorial de la primera pagina del articulo (logo de revista o marca de pagina). No corresponde a una figura cientifica.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_002_no_caption.png" alt="Elemento de pagina sin caption">
+          <figcaption><strong>Imagen sin caption, pagina 1.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Segundo elemento editorial de la primera pagina. No contiene datos de resultados.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_003_no_caption.png" alt="Elemento de pagina sin caption">
+          <figcaption><strong>Imagen sin caption, pagina 1.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Tercer elemento de pagina detectado por el extractor en la primera pagina del PDF.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_004_no_caption.png" alt="Elemento de pagina sin caption">
+          <figcaption><strong>Imagen sin caption, pagina 1.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Cuarto elemento de pagina. Los cuatro primeros detectados corresponden al encabezado editorial de la primera pagina del review.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_013_no_caption.png" alt="Elemento de pagina sin caption">
+          <figcaption><strong>Imagen sin caption, pagina 9.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento grafico detectado en la pagina 9 sin caption explicito en el PDF. Probablemente un esquema de apoyo o elemento de formato.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_017_no_caption.png" alt="Elemento de pagina sin caption">
+          <figcaption><strong>Imagen sin caption, pagina 13.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento de pagina entre las figuras 12 y 14 del paper. Posiblemente un esquema de transicion de seccion o elemento de estilo de la revista.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_020_no_caption.png" alt="Elemento de pagina sin caption">
+          <figcaption><strong>Imagen sin caption, pagina 14.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento detectado en la pagina 14 sin identificacion de figura. No aporta datos analiticos.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_027_no_caption.png" alt="Elemento de pagina sin caption">
+          <figcaption><strong>Imagen sin caption, pagina 19.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento grafico de pagina 19 sin caption. No corresponde a una figura numerada del review.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-LucaReali.2026_figures/images/fig_028_no_caption.png" alt="Elemento de pagina sin caption">
+          <figcaption><strong>Imagen sin caption, pagina 19.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Segundo elemento de la pagina 19 sin caption extraido. Conservado para completar el set de imagenes extraidas.</p></div>
+        </figure>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Brechas Identificadas Por El Review</h2>
+      <div class="important">
+        <p><strong>Acoplamiento multiescala:</strong> La cadena DFT → MLP → MD → FEM existe pero no esta automatizada ni sistematicamente validada de extremo a extremo para condiciones de fusion. Cada eslabón introduce incertidumbres que se propagan hacia arriba.</p>
+        <p><strong>Datos nucleares:</strong> Las incertidumbres en secciones eficaces de transmutacion se propagan a la composicion predicha del material a largo plazo, con consecuencias para las propiedades mecanicas predichas.</p>
+        <p><strong>Materiales HEA y SMART:</strong> Los potenciales interatomicos para aleaciones multicomponentes de W son escasos y de cobertura quimica limitada. Los MLPs son la via mas prometedora pero requieren grandes bases de datos DFT de entrenamiento.</p>
+        <p><strong>Efectos cuanticos en H/T:</strong> Los NQEs son criticos para la retencion de tritio pero computacionalmente costosos. El uso de MLPs con path-integral MD es el camino mas inmediato para hacerlo practico.</p>
+        <p><strong>Simulaciones de componente completo:</strong> Las simulaciones FEM a escala de tokamak existen pero aun usan propiedades de material simplificadas (no las derivadas de MD bajo irradiacion). Cerrar ese ciclo es el reto de ingenieria pendiente.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Resumen Final</h2>
+      <p>
+        Este review es un mapa completo del estado del arte en modelado de materiales de fusion a principios de los anos 2020. La vision de conjunto es que las herramientas computacionales han madurado enormemente: los MLPs hacen accesible la precision DFT en sistemas grandes, la MD simula cascadas y difusion con quimica realista, y los modelos FEM a escala de tokamak ya existen. Lo que falta es el acoplamiento sistematico y validado de toda la cadena, junto con mas datos experimentales de irradiacion en condiciones de fusion para validar los modelos en regimenes aun inaccesibles. El modelado no es solo una herramienta de investigacion: es una necesidad practica para predecir la vida util de los materiales en reactores que no pueden experimentarse durante anos antes de construirse.
+      </p>
+      <p class="small">Archivo HTML generado desde el PDF local y las figuras ya extraidas en <code>pappers/ilove-LucaReali.2026_figures</code>. El review contiene 30 figuras numeradas (Figs. 1-30, con Fig. 9, 13, 16, 23, 24 no extraidas con caption por el extractor) y 9 elementos de pagina sin caption.</p>
+    </section>
+  </main>
+</body>
+</html>

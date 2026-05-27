@@ -1,0 +1,67 @@
+# Resumen — Bond-orientational order in liquids and glasses
+
+**Autores:** Paul J. Steinhardt, David R. Nelson, Marco Ronchetti
+**Revista:** Physical Review B 28, 784 (1983)
+
+---
+
+## 🎯 Idea central
+
+Paper **fundacional** que introduce los hoy llamados **"parámetros de orden de Steinhardt"** (Q_l, W_l) para caracterizar **simetría orientacional de enlaces** en líquidos sub-enfriados, vidrios y sólidos.
+
+Es la referencia obligatoria para cualquier análisis local de estructura cristalina vs amorfa.
+
+---
+
+## 🧠 Las dos simetrías rotas
+
+En un cristal se rompen dos simetrías:
+
+1. **Translational** — fase de la modulación de densidad periódica.
+2. **Orientational** — los ejes cristalográficos locales están alineados.
+
+Estas simetrías son **independientes**: un sistema puede tener orden orientacional sin orden translacional → fluidos anisotrópicos (similares a nemáticos), pero referidos a "enlaces" (líneas entre vecinos cercanos) en lugar de a partículas anisotrópicas.
+
+---
+
+## ⚙️ Definiciones
+
+Para cada átomo i con vecinos j:
+
+1. **Vector de enlace** r_ij → ángulos (θ, φ).
+2. **Armónicos esféricos** sobre cada enlace: Y_lm(θ, φ).
+3. **Promedio sobre vecinos:**
+
+   q_lm(i) = (1/N_b) Σ_j Y_lm(r_ij)
+
+4. **Invariantes rotacionales:**
+
+   - Cuadrático: Q_l = √[(4π / (2l+1)) Σ_m |q_lm|² ]
+   - Tercer orden (Wigner 3j): W_l
+
+Los valores de Q_l y W_l permiten distinguir entornos icosaédricos, fcc, hcp, bcc, líquidos, vidrios.
+
+---
+
+## 📊 Resultados clave
+
+- En un líquido Lennard-Jones sub-enfriado **~10% bajo T_melt** aparece un orden orientacional extendido, predominantemente **icosaédrico** (Q_6 alto, pero sin pico translacional).
+- Modelos "amorphon" (clusters icosaédricos) reproducen casi perfectamente las correlaciones orientacionales.
+- El Finney random packing muestra solo orden orientacional modesto — los vidrios reales pueden tener más estructura icosaédrica que un random packing pasivo.
+
+---
+
+## 🧩 Legado
+
+Q_6, Q_4 y W_6 son hoy descriptores estándar en:
+- Análisis de cristalización (Lechner-Dellago refinado, etc.).
+- Identificación de fases en MD (OVITO, polyhedral template matching).
+- Features de entrada para ML estructural ([[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]] menciona Steinhardt entre los descriptores LAE).
+
+---
+
+## 📎 Conexiones
+
+- Citado por casi todos los métodos modernos de identificación local: [[FaVAD_fingerprints_defectos_vonToussaint_2020]] lo usa como baseline.
+- Complementa [[CGCNN_cristales_Xie_Grossman_2018]] y [[CarNet_tensores_cartesianos_Chen_2025]]: Steinhardt da descriptores hand-crafted, los GNN aprenden los suyos.
+- Para tu pipeline LAMMPS/OVITO: Q_6 es la métrica clásica para distinguir bulk fcc vs defectos amorfizados en cascadas (vinculá con [[MD_cascadas_CuNi_irradiacion_Wei_2025]]).

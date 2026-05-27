@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen - Survey Code LLMs</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  /* ── Reset & base ──────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;
+    --surface:    #ffffff;
+    --panel:      #ffffff;
+    --ink:        #18202a;
+    --muted:      #5a6472;
+    --line:       #d8dde4;
+    --accent:     #174a7e;    /* azul journal */
+    --accent-h:   #0d3259;
+    --gold:       #b8860b;    /* acento dorado */
+    --teal:       #0a6858;
+    --soft-blue:  #eef3fb;
+    --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;
+    --warn:       #fff8e1;
+    --nav-h:      44px;
+    --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.75;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  /* ── Nav bar ────────────────────────────────────────────────── */
+  .top-nav {
+    position: sticky; top: 0; z-index: 200;
+    height: var(--nav-h);
+    background: var(--accent);
+    display: flex; align-items: center; gap: 12px;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .top-nav a.back {
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px;
+    transition: background .15s;
+  }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title {
+    color: rgba(255,255,255,.6);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .top-nav .journal-name {
+    margin-left: auto;
+    color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  /* ── Header / masthead ──────────────────────────────────────── */
+  header {
+    background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff;
+    padding: 52px 28px 44px;
+    border-bottom: 4px solid var(--gold);
+  }
+  header .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  .journal-stripe {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .journal-stripe::after {
+    content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4);
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.3px;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,.78);
+    max-width: 820px;
+    margin-bottom: 28px;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: rgba(255,255,255,.8);
+  }
+  .meta div {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px;
+    border-radius: 6px;
+  }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* ── Main layout ────────────────────────────────────────────── */
+  main, .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  main { padding: 40px 24px 80px; }
+
+  /* ── Sections ───────────────────────────────────────────────── */
+  section { margin-bottom: 48px; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+    position: relative;
+  }
+  h2::before {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px;
+    background: var(--gold);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  p { margin: 0 0 16px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+
+  /* ── Lead / abstract ────────────────────────────────────────── */
+  .lead {
+    font-size: 17px;
+    font-style: italic;
+    color: #2a3540;
+    background: var(--soft-blue);
+    border-left: 4px solid var(--accent);
+    padding: 22px 24px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  /* ── Tags ───────────────────────────────────────────────────── */
+  .tag {
+    display: inline-block;
+    margin: 0 6px 8px 0;
+    padding: 4px 11px;
+    border-radius: 20px;
+    background: var(--soft-blue);
+    color: var(--accent);
+    border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .2px;
+  }
+
+  /* ── Cards & grids ──────────────────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important {
+    background: var(--soft-gold);
+    border-left: 4px solid var(--gold);
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+  }
+  @media (min-width: 720px) {
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+  }
+
+  /* ── Tables ─────────────────────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    margin: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 11px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+  }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* ── Figure list wrapper ────────────────────────────────────── */
+  .figure-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* ── Figure card ────────────────────────────────────────────── */
+  figure {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s;
+  }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+
+  /* Two-panel layout on wide screens */
+  @media (min-width: 680px) {
+    figure {
+      display: grid;
+      grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr;
+      min-height: 220px;
+    }
+    figure > img {
+      grid-column: 1;
+      grid-row: 1 / 3;
+    }
+    figure > figcaption {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    figure > .figbody {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
+  figure > img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    background: #0e1826;
+    display: block;
+    border-right: 1px solid var(--line);
+  }
+
+  /* On mobile: image full width on top */
+  @media (max-width: 679px) {
+    figure > img {
+      max-height: 280px;
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+
+  figcaption {
+    padding: 18px 20px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  figcaption strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .caption {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #3a4650;
+    line-height: 1.55;
+  }
+
+  .figbody {
+    padding: 16px 20px 18px;
+    background: var(--soft-teal);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: #1e3530;
+    line-height: 1.65;
+    border-left: 3px solid var(--teal);
+  }
+  .figbody p { margin: 0; }
+  .figbody::before {
+    content: '↳ Interpretación';
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 7px;
+  }
+
+  .small { color: var(--muted); font-size: 13px; }
+  .refs li { margin-bottom: 10px; }
+
+  /* ── Scrollbar ──────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+  <a href="../index.html" class="back">← Índice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+    <div class="inner">
+      <h1>LLMs para generacion de codigo</h1>
+      <p class="subtitle">Resumen en espanol del survey <strong>A Survey on Large Language Models for Code Generation</strong>, con las 20 figuras extraidas y explicadas en detalle.</p>
+      <div class="meta">
+        <div><strong>Autores:</strong> Juyong Jiang, Fan Wang, Jiasi Shen, Sungju Kim, Sunghun Kim</div>
+        <div><strong>Revista:</strong> ACM Transactions on Software Engineering and Methodology 35(2), Article 58 (2026)</div>
+        <div><strong>DOI:</strong> <a href="https://doi.org/10.1145/3747588">10.1145/3747588</a></div>
+        <div><strong>PDF local:</strong> <a href="../pappers/ilove-Jiang.2026.pdf">pappers/ilove-Jiang.2026.pdf</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <p class="lead">
+        Este survey organiza el campo de los modelos grandes de lenguaje para generacion de codigo, o Code LLMs. Su foco principal es NL2Code: producir codigo fuente a partir de descripciones en lenguaje natural. El articulo funciona como mapa del area: historia de modelos, arquitecturas Transformer, curacion de datos, pre-entrenamiento, instruction tuning, fine-tuning eficiente, prompting, RAG para codigo, agentes autonomos, evaluacion, seguridad, licencias, impacto ambiental y aplicaciones reales como Copilot.
+      </p>
+      <div>
+        <span class="tag">Code LLMs</span>
+        <span class="tag">NL2Code</span>
+        <span class="tag">Instruction tuning</span>
+        <span class="tag">RAG</span>
+        <span class="tag">Agentes</span>
+        <span class="tag">HumanEval</span>
+        <span class="tag">MBPP</span>
+        <span class="tag">BigCodeBench</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pregunta Del Survey</h2>
+      <p>
+        El paper parte de una brecha: hay muchos trabajos sobre LLMs y tareas de software, pero faltaba una revision actualizada y especifica sobre generacion de codigo. La generacion de codigo ya no es solo completar tokens: incluye modelos especializados, datos sinteticos, alineamiento con instrucciones, ejecucion como feedback, recuperacion desde repositorios, agentes con herramientas y evaluadores automaticos.
+      </p>
+      <p>
+        El objetivo es ordenar ese ecosistema y mostrar donde la investigacion academica todavia no coincide con la practica real de desarrollo. HumanEval esta casi saturado, pero tareas de repositorio, mantenimiento, integracion, seguridad y benchmarks mas realistas siguen siendo dificiles.
+      </p>
+    </section>
+
+    <section>
+      <h2>Ideas Clave</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. El codigo exige datos distintos</h3>
+          <p>Los Code LLMs se entrenan con repositorios, documentacion, problemas con tests, datos sinteticos e instrucciones. La calidad de filtrado, deduplicacion y licencias importa tanto como el tamano.</p>
+        </div>
+        <div class="card">
+          <h3>2. La especializacion supera al modelo base</h3>
+          <p>Pre-entrenamiento continuo, instruction tuning y PEFT permiten convertir modelos generales en asistentes de codigo mucho mas utiles para tareas concretas.</p>
+        </div>
+        <div class="card">
+          <h3>3. Ejecutar cambia el juego</h3>
+          <p>Los pipelines modernos usan tests, errores de compilacion y reflexion iterativa para reparar respuestas. La generacion se vuelve un ciclo, no una unica salida.</p>
+        </div>
+        <div class="card">
+          <h3>4. Evaluar sigue siendo dificil</h3>
+          <p>Pass@1 en HumanEval es util, pero no mide bien trabajo real: dependencias, contexto de repositorio, seguridad, estilo, eficiencia, mantenibilidad y preferencias humanas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Mapa Del Campo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Bloque</th>
+            <th>Que cubre</th>
+            <th>Por que importa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Datos</td>
+            <td>Repositorios, filtrado, deduplicacion, licencias, datos de instrucciones y datos sinteticos.</td>
+            <td>El modelo aprende estilo, APIs, bugs, sesgos y restricciones legales desde los datos.</td>
+          </tr>
+          <tr>
+            <td>Entrenamiento</td>
+            <td>Pre-training, continual pre-training, instruction tuning, RLHF/DPO y PEFT.</td>
+            <td>Define si el modelo solo predice codigo o si puede seguir instrucciones utiles de desarrollo.</td>
+          </tr>
+          <tr>
+            <td>Inferencia</td>
+            <td>Prompting, multi-turn, self-refinement, RAG/RACG y uso de herramientas.</td>
+            <td>Permite incorporar contexto externo, ejecutar, depurar y ajustar soluciones.</td>
+          </tr>
+          <tr>
+            <td>Agentes</td>
+            <td>Planificacion, memoria, herramientas, accion, multi-agente y roles de software.</td>
+            <td>Acerca los LLMs a flujos reales como implementar features, escribir tests o arreglar issues.</td>
+          </tr>
+          <tr>
+            <td>Evaluacion</td>
+            <td>HumanEval, MBPP, BigCodeBench, pruebas de ejecucion, LLM-as-a-Judge y evaluacion humana.</td>
+            <td>Evita confundir resolver puzzles pequenos con hacer software robusto en escenarios reales.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Figuras Explicadas</h2>
+      <p class="small">Las citas bajo cada figura corresponden a los captions extraidos del PDF. Debajo agrego una lectura en espanol orientada a estudiar el argumento del survey.</p>
+
+      <div class="figure-list">
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_001_Fig_1_A_chronological_overview_of_LLMs.png" alt="Linea temporal de LLMs para generacion de codigo">
+          <figcaption><strong>Fig. 1, pagina 4.</strong><p class="caption">A chronological overview of LLMs for code generation in recent years.</p></figcaption>
+          <div class="figbody"><p>La figura muestra la aceleracion del campo: de modelos iniciales y generalistas a modelos especificamente entrenados para codigo. Los modelos con checkpoints publicos estan resaltados, lo que ayuda a distinguir investigacion reproducible de sistemas cerrados. La lectura principal es historica: Code LLMs pasaron de ser adaptaciones de LLMs generales a una familia propia con datos, benchmarks y objetivos especializados.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_002_Fig_2_The_overview_of_LLMs_with_encode.png" alt="Arquitecturas encoder-decoder y decoder-only para codigo">
+          <figcaption><strong>Fig. 2, pagina 6.</strong><p class="caption">The overview of LLMs with encoder-decoder and decoder-only Transformer architecture for code generation.</p></figcaption>
+          <div class="figbody"><p>Compara arquitecturas Transformer relevantes. Los encoder-only suelen servir mejor para comprension, busqueda o clasificacion; los decoder-only dominan tareas generativas como completar o producir codigo; los encoder-decoder pueden cubrir ambos lados. La figura ubica la generacion de codigo dentro de decisiones de arquitectura, no solo de prompt.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_003_Fig_3_Overview_of_the_paper_search_and.png" alt="Proceso de busqueda y coleccion de papers">
+          <figcaption><strong>Fig. 3, pagina 10.</strong><p class="caption">Overview of the paper search and collection process.</p></figcaption>
+          <div class="figbody"><p>Describe como los autores construyen el corpus del survey: busqueda, filtrado automatico, criterios de inclusion/exclusion y revision. Es importante porque el articulo no es solo opinion narrativa; intenta ser una revision sistematica. Esta figura permite evaluar el alcance y posibles sesgos de seleccion.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_004_Fig_4_Data_qualitative_analysis_Top_.png" alt="Analisis cualitativo de papers por anio, venue y tema">
+          <figcaption><strong>Fig. 4, pagina 15.</strong><p class="caption">Data qualitative analysis: annual distribution of selected papers and topic distribution.</p></figcaption>
+          <div class="figbody"><p>Resume la evolucion bibliografica: crecen los trabajos y se distribuyen en temas como datos, entrenamiento, prompting, evaluacion y aplicaciones. Sirve para ver donde esta cargada la investigacion. Si una categoria aparece muy grande, indica madurez o moda; si aparece pequena, puede indicar oportunidad abierta.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_005_Fig_5_A_diagram_illustrating_the_gener.png" alt="Workflow general de entrenamiento, inferencia y evaluacion de Code LLMs">
+          <figcaption><strong>Fig. 5, pagina 16.</strong><p class="caption">General training, inference, and evaluation workflow for Code LLMs and their associated databases.</p></figcaption>
+          <div class="figbody"><p>Es el mapa operativo del ciclo completo: pre-entrenar, continuar pre-entrenamiento si hace falta, ajustar con instrucciones, alinear, inferir y evaluar. La figura muestra que no todos los modelos pasan por todos los pasos. Por ejemplo, un modelo puede solo pre-entrenarse y usarse con prompts, o recibir etapas extra de instruction tuning y alineamiento para mejorar usabilidad.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_006_Fig_6_Taxonomy_of_LLMs_for_code_genera.png" alt="Taxonomia de LLMs para generacion de codigo">
+          <figcaption><strong>Fig. 6, pagina 17.</strong><p class="caption">Taxonomy of LLMs for code generation.</p></figcaption>
+          <div class="figbody"><p>Esta es la figura central del survey. Organiza el campo en datos, modelos, tecnicas de entrenamiento, inferencia, agentes, evaluacion, impacto etico/ambiental y aplicaciones. Funciona como indice mental del paper: cada bloque responde una pregunta distinta, desde "con que datos entreno?" hasta "como se si el codigo generado es seguro y util?".</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_007_Fig_7_The_diagram_provides_a_comprehen.png" alt="Tecnicas e interconexiones en el desarrollo de LLMs">
+          <figcaption><strong>Fig. 7, pagina 18.</strong><p class="caption">Comprehensive overview of techniques and their interconnections within LLM development.</p></figcaption>
+          <div class="figbody"><p>Conecta tecnicas concretas con modelos resultantes. Arriba aparecen procesos de entrenamiento, como pre-training, instruction tuning, RLHF y datos sinteticos; abajo, tecnicas de inferencia y evaluacion como prompt engineering, RAG y LLM-as-a-Judge. La figura muestra que el progreso no viene de una sola mejora, sino de combinaciones acumulativas.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_008_Fig_8_A_diagram_depicting_the_standard.png" alt="Workflow de preprocesamiento de datos para pre-entrenamiento">
+          <figcaption><strong>Fig. 8, pagina 20.</strong><p class="caption">Standard data preprocessing workflow utilized in the pre-training phase.</p></figcaption>
+          <div class="figbody"><p>Explica la parte menos glamorosa pero mas critica: recolectar codigo, limpiar, filtrar duplicados, remover datos problematicos, tokenizar y preparar corpus. En Code LLMs esto importa especialmente porque los repositorios tienen licencias, secretos, codigo generado, tests, binarios, forks y duplicados. Un mal pipeline contamina benchmarks y reproduce bugs.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_009_Fig_9_The_comparison_among_three_repre.png" alt="Comparacion de metodos de sintesis de datos de instruccion">
+          <figcaption><strong>Fig. 9, pagina 28.</strong><p class="caption">Comparison among self-instruct, Evol-Instruct and OSS-Instruct methods.</p></figcaption>
+          <div class="figbody"><p>Compara formas de generar datos de instrucciones. Self-instruct crea ejemplos desde el propio modelo; Evol-Instruct transforma instrucciones en versiones mas complejas; OSS-Instruct aprovecha ecosistemas open source para tareas mas cercanas al codigo real. La figura responde por que la calidad de instruction tuning depende de la diversidad y dificultad de las instrucciones, no solo de cantidad.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_010_Fig_10_Comparison_of_instruction_tunin.png" alt="Comparacion de instruction tuning, fine-tuning y prompting">
+          <figcaption><strong>Fig. 10, pagina 31.</strong><p class="caption">Comparison of instruction tuning with various fine-tuning strategies and prompting for code tasks.</p></figcaption>
+          <div class="figbody"><p>Ubica instruction tuning frente a entrenamiento desde cero, fine-tuning supervisado, prompting y alineamiento con feedback. La idea importante: prompting no cambia pesos; fine-tuning si. Instruction tuning enseña al modelo a obedecer tareas expresadas en lenguaje natural, lo que es esencial para pasar de "modelo que completa codigo" a "asistente que entiende una peticion".</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_011_Fig_11_Two_examples_of_instruction_dat.png" alt="Ejemplos de datos de instruccion de Code Alpaca">
+          <figcaption><strong>Fig. 11, pagina 32.</strong><p class="caption">Two examples of instruction data sampled from Code Alpaca.</p></figcaption>
+          <div class="figbody"><p>Hace concreto el concepto de instruction data: una instruccion textual, posible entrada y salida esperada. Los ejemplos muestran tareas como generar numeros primos o extraer URLs. Esta figura ayuda a entender que el modelo aprende un formato conversacional de tarea-respuesta, no solo distribuciones de repositorios.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_012_Fig_12_An_illustration_of_FFT_and_PEFT.png" alt="Full fine-tuning y metodos PEFT">
+          <figcaption><strong>Fig. 12, pagina 33.</strong><p class="caption">Illustration of FFT and PEFT methods.</p></figcaption>
+          <div class="figbody"><p>Compara full fine-tuning, que actualiza todos los parametros, con PEFT, que ajusta solo partes pequenas o parametros agregados. Incluye BitFit, adapters, prefix/prompt tuning, LoRA y QLoRA. La lectura practica: PEFT permite adaptar modelos grandes a tareas de codigo con menos memoria y costo, aunque con trade-offs de capacidad y estabilidad.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_013_Fig_13_An_illustration_of_the_self-imp.png" alt="Pipeline de auto-mejora con prompts y ejecucion">
+          <figcaption><strong>Fig. 13, pagina 37.</strong><p class="caption">Self-improving code generation pipeline using prompts for LLMs.</p></figcaption>
+          <div class="figbody"><p>Muestra generacion iterativa: el modelo produce codigo, se ejecuta, recibe errores o resultados, y refina la respuesta. Puede incluir self-reflection. Esta figura captura una diferencia central entre texto y codigo: el codigo se puede probar. La ejecucion convierte la generacion en un ciclo de hipotesis, prueba y reparacion.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_014_Fig_14_A_workflow_illustration_of_the_.png" alt="Workflow de retrieval-augmented code generation">
+          <figcaption><strong>Fig. 14, pagina 39.</strong><p class="caption">Workflow illustration of Retrieval-Augmented Code Generation.</p></figcaption>
+          <div class="figbody"><p>RACG agrega recuperacion de contexto antes de generar. Una consulta busca fragmentos, documentacion o ejemplos en una base vectorial; luego el LLM genera usando ese contexto. Para codigo real esto es enorme: muchas respuestas dependen de APIs locales, convenciones del repositorio y dependencias que no estan en el prompt inicial.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_015_Fig_15_The_general_architecture_of_an_.png" alt="Arquitectura general de agente autonomo con LLM">
+          <figcaption><strong>Fig. 15, pagina 40.</strong><p class="caption">General architecture of an LLM-powered autonomous agent system.</p></figcaption>
+          <div class="figbody"><p>Presenta el patron agente: planificacion, memoria, herramientas y accion. En generacion de codigo, esto permite dividir tareas, consultar archivos, ejecutar tests, recordar intentos y usar APIs. La figura explica por que un agente puede resolver problemas que un unico prompt no maneja bien: interactua con el entorno.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_016_Fig_16_MetaGPT_integrates_human_workfl.png" alt="MetaGPT y colaboracion multi-agente">
+          <figcaption><strong>Fig. 16, pagina 41.</strong><p class="caption">MetaGPT integrates human workflow efficiencies into LLM-based multi-agent collaboration.</p></figcaption>
+          <div class="figbody"><p>Usa roles de desarrollo como Product Manager, Architect y Engineer para dividir trabajo. La idea es imitar procesos humanos de software: especificar, disenar, implementar y revisar. La figura tambien advierte una tension: mas agentes no garantizan mejor resultado; el diseno de roles, contexto y comunicacion es parte del sistema.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_017_Fig_17_The_pipeline_of_Code_LLM-as-a.png" alt="Pipeline de LLM-as-a-Judge para evaluar codigo generado">
+          <figcaption><strong>Fig. 17, pagina 43.</strong><p class="caption">Pipeline of Code LLM-as-a-Judge for evaluating generated code.</p></figcaption>
+          <div class="figbody"><p>Describe evaluacion con otro LLM, sea por comparacion par-a-par o calificacion de una respuesta. Es escalable y puede explicar su juicio, pero hereda sesgos y limitaciones del juez. En codigo, conviene combinarlo con ejecucion, tests y criterios humanos, porque una respuesta puede parecer elegante y aun asi fallar casos borde o introducir vulnerabilidades.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_018_Fig_18_The_performance_comparison_of_L.png" alt="Comparacion de modelos en MBPP">
+          <figcaption><strong>Fig. 18, pagina 46.</strong><p class="caption">Performance comparison of LLMs for code generation on the MBPP benchmark, measured by pass@1.</p></figcaption>
+          <div class="figbody"><p>MBPP mide problemas de programacion relativamente basicos. La figura compara modelos por pass@1 y muestra la mejora de modelos especializados y recientes. La lectura importante no es solo quien gana, sino que benchmarks faciles tienden a saturarse: sirven para medir progreso inicial, pero no bastan para evaluar software real.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_019_Fig_19_The_performance_comparison_of_L.png" alt="Comparacion de modelos en BigCodeBench">
+          <figcaption><strong>Fig. 19, pagina 46.</strong><p class="caption">Performance comparison of LLMs for code generation on the BigCodeBench benchmark, measured by pass@1.</p></figcaption>
+          <div class="figbody"><p>BigCodeBench intenta acercarse mas a tareas practicas y complejas. Por eso suele separar mejor a los modelos que MBPP o HumanEval. La figura sostiene uno de los argumentos finales del survey: el campo necesita benchmarks mas realistas, con instrucciones complejas, bibliotecas, contexto y criterios de calidad mas amplios que "pasa los tests".</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Jiang.2026_figures/images/fig_020_Fig_20_An_exemplar_of_GitHub_Copilot_t.png" alt="Ejemplo de GitHub Copilot resolviendo Longest Palindromic Substring">
+          <figcaption><strong>Fig. 20, pagina 54.</strong><p class="caption">An exemplar of GitHub Copilot to demonstrate how to use development tools powered by LLMs.</p></figcaption>
+          <div class="figbody"><p>La figura aterriza el survey en una herramienta real. Muestra un flujo tipo Copilot Chat: se ingresa un problema, el modelo genera codigo y se valida en un juez online. Es representativa de aplicaciones actuales, pero tambien limitada: resolver un ejercicio LeetCode no equivale a mantener un repositorio, entender requisitos cambiantes o garantizar seguridad en produccion.</p></div>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Modelo Mental</h2>
+      <div class="important">
+        <p><strong>De modelo a asistente:</strong> un Code LLM util no nace solo de escalar parametros. Necesita datos de codigo limpios, instruction tuning, evaluacion por ejecucion y adaptacion al flujo de desarrollo.</p>
+        <p><strong>De prompt a sistema:</strong> las tecnicas modernas combinan prompts, RAG, herramientas, tests, memoria y agentes. El modelo ya no es la aplicacion completa, sino el nucleo de un sistema.</p>
+        <p><strong>De benchmark a practica:</strong> HumanEval y MBPP ayudan, pero el futuro esta en evaluaciones con contexto de repositorio, dependencias, seguridad, mantenibilidad y tareas largas.</p>
+        <p><strong>De capacidad a responsabilidad:</strong> generar codigo implica licencias, vulnerabilidades, sesgos, energia, privacidad y accountability. La calidad tecnica no basta.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Limitaciones Y Oportunidades</h2>
+      <p>
+        El survey identifica una brecha persistente entre investigacion y desarrollo real. Muchos resultados se reportan en benchmarks pequenos o saturados, mientras que el trabajo cotidiano involucra repositorios grandes, dependencias, requisitos ambiguos, integracion continua, revision humana, seguridad y mantenimiento. Las oportunidades principales son evaluacion mas holistica, generacion a escala de software, mejores datos abiertos y legales, alineamiento con preferencias humanas, herramientas de depuracion, agentes mas confiables y reduccion del costo ambiental.
+      </p>
+    </section>
+
+    <section>
+      <h2>Resumen Final</h2>
+      <p>
+        Jiang et al. presentan un mapa amplio y actualizado del ecosistema Code LLM. El mensaje central es que la generacion de codigo moderna ya no se explica solo por el modelo: depende de datos, entrenamiento, instrucciones, recuperacion, ejecucion, agentes y evaluacion. El campo avanzo mucho en benchmarks clasicos, pero la frontera real esta en construir sistemas que puedan trabajar con repositorios, herramientas y criterios humanos de calidad. Para estudiar o construir asistentes de codigo, este survey sirve como checklist completo del stack tecnico y de sus riesgos.
+      </p>
+      <p class="small">Archivo HTML generado desde el PDF local y las figuras ya extraidas en <code>pappers/ilove-Jiang.2026_figures</code>.</p>
+    </section>
+  </main>
+</body>
+</html>

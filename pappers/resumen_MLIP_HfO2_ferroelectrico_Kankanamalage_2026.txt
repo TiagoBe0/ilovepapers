@@ -1,0 +1,64 @@
+# Resumen — MLIP development and phase transition analysis of ferroelectric HfO₂
+
+**Autores:** Y. H. Kankanamalage, Y. Xi, S. Zhang, S. Singh, N. Abdolrahim (Univ. of Rochester)
+**Revista:** Phys. Rev. Materials 10, 014414 (2026), DOI: 10.1103/gkvf-t1vl
+
+---
+
+## 🎯 Objetivo
+
+Desarrollar un **potencial interatómico basado en machine learning (MLIP)** para HfO₂ entrenado con datos DFT, y usarlo para investigar las **transiciones de fase del HfO₂ ferroeléctrico** (Pca2₁) bajo presión y temperatura.
+
+---
+
+## 🧪 Contexto físico
+
+- **HfO₂ Pca2₁** (ortorrómbico polar) es la fase ferroeléctrica clave para memorias no volátiles y electrónica CMOS.
+- Polarización remanente ≈ 50 μC/cm² en films delgados.
+- Estabilidad bajo T y σ es lo que decide si funciona en dispositivos reales.
+- Potenciales empíricos clásicos (tipo Matsui–Akaogi) no capturan correctamente las fases de TiO₂/ZrO₂/HfO₂ → motivación del MLIP.
+
+---
+
+## ⚙️ Pipeline del MLIP
+
+1. **Generación de datos DFT** abarcando varias fases y un rango amplio de P y T.
+2. Entrenamiento de un **potencial deep-learning-based** (no especifica arquitectura concreta — probablemente DeepMD o similar).
+3. **Validación** contra DFT:
+   - Parámetros de red
+   - Equation of state
+   - Bulk y shear moduli
+   - Elastic constants
+   → coinciden en varias fases y presiones.
+4. **MD a 200–2500 K** en LAMMPS.
+5. Caracterización con:
+   - Local symmetry identification
+   - Radial distribution function
+   - X-ray diffraction patterns sintéticos
+
+---
+
+## 📊 Resultados clave
+
+| Condición | Transición de fase observada |
+|---|---|
+| **Estado deviatórico puro** (σxx, σyy, σzz individuales no necesariamente cero) | Pca2₁ → tetragonal **P4₂/nmc** |
+| **Stress cero** (σxx = σyy = σzz = 0) | Pca2₁ → ortorrómbico **Pbcn** |
+
+Es decir: **el modo de control del estrés en MD cambia cualitativamente la transición**. Esto es relevante porque un experimento ferroico real opera con condiciones de contorno mecánicas concretas (films, capacitores) que deciden el camino de transición.
+
+---
+
+## 🧩 Aportes
+
+1. Primer MLIP **de alta precisión** específico para HfO₂ cubriendo varias fases.
+2. Muestra que **ensemble isobárico vs constant stress** elige caminos de transición distintos — no es un artefacto numérico.
+3. Guía para experimentos: qué stress macroscópico aplicar para favorecer cada fase competidora.
+
+---
+
+## 📎 Conexiones
+
+- Mismo paradigma que [[CarNet_tensores_cartesianos_Chen_2025]] (potenciales ML), pero para un óxido binario ferroeléctrico.
+- Ejemplo concreto del workflow descrito en [[Review_DL_materiales_Choudhary_2022]] (sección de potenciales ML).
+- Útil como referencia metodológica si querés entrenar tu propio potencial para Cu-Ni / W / etc.

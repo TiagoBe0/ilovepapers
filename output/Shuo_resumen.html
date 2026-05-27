@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — Lattice thermal conductivity of 16 elemental metals from molecular dynamics simulations with a unified neuroevolution potential</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>Lattice thermal conductivity of 16 elemental metals from molecular dynamics simulations with a unified neuroevolution potential</h1>
+    <p class="subtitle">Resumen en español de <strong>Lattice thermal conductivity of 16 elemental metals from molecular dynamics simulations with a unified neuroevolution potential</strong>.</p>
+    <div class="meta">
+        <div><strong>Autores</strong>** Shuo Cao, Ao Wang, Zheyong Fan, Hua Bao, Ping Qian, Ye Su, Yu Yan</div>
+        <div><strong>Revista</strong>** Journal of Applied Physics (preprint, 13 junio 2025)</div>
+        <div><strong>PDF local</strong><a href="../pappers/Shuo.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p><strong>Autores:</strong> Shuo Cao, Ao Wang, Zheyong Fan, Hua Bao, Ping Qian, Ye Su, Yu Yan<br />
+<strong>Revista:</strong> Journal of Applied Physics (preprint, 13 junio 2025)<br />
+<strong>Afiliaciones:</strong> University of Science and Technology Beijing; Shanghai Jiao Tong University; UCLouvain; Bohai University</p>
+<h2>Idea central</h2>
+<p>Estudio sistemático de la <strong>conductividad termica fononica</strong> en 16 metales elementales usando el metodo <strong>HNEMD</strong> (Homogeneous Non-Equilibrium Molecular Dynamics) junto con el potencial de neurorredes <strong>UNEP-v1</strong>, comparando contra la ecuacion de transporte de Boltzmann (BTE) y el potencial empirico EAM clasico.</p>
+<p><strong>Resultado principal:</strong> UNEP-v1 reproduce mucho mejor los resultados BTE que el EAM clasico (RMSE de 14.3 vs 20.3 W/m·K), consolidando el potencial unificado como herramienta confiable para explorar transporte de calor en sistemas complejos como aleaciones de alta entropia (HEA).</p>
+<h2>Por que importa</h2>
+<p>En dispositivos electronicos (circuitos integrados, interconexiones), los metales son los componentes clave del manejo termico. La conductividad termica total tiene dos contribuciones: electronica y fononica. Aunque los electrones dominan en la mayoria de los metales, los fonones pueden contribuir entre el 1% y el 40%. Este paper establece un benchmark sistematico de la contribucion fononica usando potenciales ML modernos.</p>
+<hr />
+<h2>Los 16 metales estudiados</h2>
+<table>
+<thead>
+<tr>
+<th>Estructura</th>
+<th>Metales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BCC</td>
+<td>Cr, Mo, Ta, V, W</td>
+</tr>
+<tr>
+<td>FCC</td>
+<td>Ag, Al, Au, Cu, Ni, Pb, Pd, Pt</td>
+</tr>
+<tr>
+<td>HCP</td>
+<td>Mg, Ti, Zr</td>
+</tr>
+</tbody>
+</table>
+<p>Ademas se estudian 4 aleaciones binarias: Cu3Au, CuAu, Ni3Al, NiAl.</p>
+<hr />
+<h2>Metodos</h2>
+<h3>HNEMD (metodo principal)</h3>
+<ul>
+<li>Aplica una fuerza de conduccion externa para generar flujo de calor neto.</li>
+<li>La conductividad termica se obtiene de la respuesta lineal: kappa = <J> / (T·V·Fe).</li>
+<li>Muy eficiente: implementado en GPUMD (GPU Molecular Dynamics).</li>
+<li>Simulaciones a 300 K, presion cero, 10 ns de produccion por corrida, 3 corridas independientes.</li>
+<li>Supercelda BCC: 35.152 atomos (26x26x26); FCC/HCP: 32.000 atomos (20x20x20).</li>
+</ul>
+<h3>Potencial UNEP-v1 (Song et al. 2024, Nature Comms.)</h3>
+<ul>
+<li>Potencial de neurorredes unificado para 16 metales y sus aleaciones arbitrarias.</li>
+<li>Red neuronal de una capa oculta entrenada sobre energia, fuerzas y tensor virial.</li>
+<li>Supera al EAM en constantes elasticas, energia de superficie, formacion de vacancias, punto de fusion y dispersion fononica.</li>
+</ul>
+<h3>BTE (referencia)</h3>
+<ul>
+<li>Calcula fuerza interatomica desde DFT.</li>
+<li>Puede incluir scattering fonon-fonon (pp) y fonon-electron (pe).</li>
+<li>Limitacion: escala cubica con el tamano de celda; solo estructuras simples.</li>
+</ul>
+<hr />
+<h2>Resultados clave</h2>
+<h3>1. Convergencia temporal</h3>
+<ul>
+<li>kappa converge bien a 10 ns sin divergencia: el sistema esta en regimen de respuesta lineal.</li>
+<li>Mo BCC: kappa ~ 182 W/m·K (sin isotopes), tres ordenes de magnitud mayor que Au FCC: 2.02 W/m·K.</li>
+<li>La diferencia refleja caminos libres medios de fonones mucho mayores en Mo.</li>
+</ul>
+<h3>2. Efecto de desorden isotopico</h3>
+<ul>
+<li>Solo los BCC muestran efectos significativos: Mo, W, Cr.</li>
+<li><strong>Mo es el mas afectado:</strong> reduccion del 62% (182 → 69 W/m·K) al incluir isotopes.</li>
+<li>Razon 1: Mo tiene 7 isotopes con abundancias considerables (92Mo al 100Mo).</li>
+<li>Razon 2: Mo puro tiene baja anharmonicidad → el scattering isotopico domina.</li>
+<li>Los FCC y HCP son practicamente insensibles al desorden isotopico.</li>
+</ul>
+<h3>3. UNEP-v1 vs EAM</h3>
+<ul>
+<li>EAM sistematicamente subestima kappa, especialmente en BCC.</li>
+<li>Para V: diferencia de un orden de magnitud entre NEP y EAM.</li>
+<li>UNEP-v1 es mas confiable porque reproduce mejor las dispersiones fononicas.</li>
+</ul>
+<h3>4. HNEMD-NEP vs BTE</h3>
+<ul>
+<li>Los resultados MD con UNEP-v1 se alinean bien con BTE (solo pp scattering).</li>
+<li>RMSE(UNEP-v1) = 14.3 W/m·K vs RMSE(EAM) = 20.3 W/m·K vs referencia BTE.</li>
+<li>El scattering fonon-electron no domina la conductividad fononica: la correlacion MD vs BTE(pp+pe) sigue siendo buena.</li>
+<li>Para aleaciones binarias (Cu3Au, CuAu, Ni3Al, NiAl): UNEP-v1 tambien supera a EAM.</li>
+</ul>
+<hr />
+<h2>Conductividad termica fononica a 300 K (valores seleccionados)</h2>
+<table>
+<thead>
+<tr>
+<th>Metal</th>
+<th>BTE(pp)</th>
+<th>HNEMD-NEP</th>
+<th>HNEMD-EAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mo</td>
+<td>84–111</td>
+<td>182±3 (75±3 con iso.)</td>
+<td>90±7</td>
+</tr>
+<tr>
+<td>W</td>
+<td>123–218</td>
+<td>164±7 (115±4 con iso.)</td>
+<td>110±3</td>
+</tr>
+<tr>
+<td>Ni</td>
+<td>27.8–33.2</td>
+<td>30±1 (27±1 con iso.)</td>
+<td>27±1</td>
+</tr>
+<tr>
+<td>Cu</td>
+<td>19.5</td>
+<td>13±1</td>
+<td>6.9±0.2</td>
+</tr>
+<tr>
+<td>V</td>
+<td>—</td>
+<td>97±3</td>
+<td>9.4±0.2</td>
+</tr>
+<tr>
+<td>Pb</td>
+<td>—</td>
+<td>0.6±0.1</td>
+<td>0.6±0.1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Conductividad espectral fononica</h2>
+<ul>
+<li>kappa(omega): descompone la contribucion por frecuencia fononica.</li>
+<li>Para Mo: fonones con frecuencia &gt; 2 THz dominan la conductividad.</li>
+<li>El scattering isotopico escala con omega^2 → afecta especialmente a los modos de alta frecuencia de Mo.</li>
+<li>Esto explica la enorme reduccion isotopica en Mo vs otros metales.</li>
+</ul>
+<hr />
+<h2>Conexiones con tu trabajo</h2>
+<ul>
+<li><strong>UNEP-v1 + HEA:</strong> el paper anticipa explicitamente usar HNEMD+UNEP-v1 para HEA, donde el scattering fonon-defecto o fonon-desorden puede ser dominante. Directamente relevante si estudias transporte termico en HEA irradiados o con defectos.</li>
+<li><strong>Potencial alternativo a EAM en Cu-Ni:</strong> si tus simulaciones MD de cascadas usan EAM para CuNi, el benchmark de este paper muestra que NEP da resultados mas confiables para propiedades termicas. Vale como justificacion de mejora de potencial.</li>
+<li><strong>GPUMD:</strong> el mismo software que usa este paper (GPUMD) tiene implementado HNEMD y soporta NEP — si tus simulaciones LAMMPS migraran a GPUMD podrias calcular kappa directamente.</li>
+<li><strong>Conexion con Thermal_transport_atomistico_continuo_Ugwumadu_2026:</strong> ese paper usa metodos atomistico-continuos para kappa; este usa MD puro con NEP — son complementarios en escala y metodologia.</li>
+</ul>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (8)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/Shuo_figures/images/fig_001_FIG_1_Simulation_models_in_this_work_.png" alt="fig_001 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 2</strong>
+            <p class="caption">FIG. 1. Simulation models in this work. Unit cells and supercells for metals with (a) BCC, (b) (FCC, and (c) HCP lattices. The supercells for the BCC and FCC lattices are cubic, while that for the HCP lattice is not cubic but orthogonal. The spacial directions x , y , and z align with the cell axes of the lattices. The BCC supercell contains 35152 atoms, and the FCC and HCP supercells contain 32000 atoms.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 1. Simulation models in this work. Unit cells and supercells for metals with (a) BCC, (b) (FCC, and (c) HCP lattices. The supercells for the BCC and FCC lattices are cubic, while that for the HCP lattice is not cubic but orthogonal. The spacial directions x , y , and z align with the cell axes of the lattices. The BCC supercell contains 35152 atoms, and the FCC and HCP supercells contain 32000 atoms.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Shuo_figures/images/fig_002_FIG_2_Time_convergence_of_the_phonon_t.png" alt="fig_002 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 5</strong>
+            <p class="caption">FIG. 2. Time convergence of the phonon thermal conductivity. Cumulative averages of the phonon thermal conductivity κ of (a) BCC Mo and (b) FCC Au as a function of time calculated using the UNEP-v1 model at 300 K and zero pressure. In both panels, the thin lines represent results from three independent HNEMD simulations, and the thick line represents the average of them. Isotope disorder was not considered in the simulations.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 2. Time convergence of the phonon thermal conductivity. Cumulative averages of the phonon thermal conductivity κ of (a) BCC Mo and (b) FCC Au as a function of time calculated using the UNEP-v1 model at 300 K and zero pressure. In both panels, the thin lines represent results from three independent HNEMD simulations, and the thick line represents the average of them. Isotope disorder was not considered in the simulations.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Shuo_figures/images/fig_003_FIG_3_Comparison_of_phonon_thermal_con.png" alt="fig_003 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 5</strong>
+            <p class="caption">FIG. 3. Comparison of phonon thermal conductivities with and without isotope scattering effects. In all the MD simulations, the temperature is 300 K and the pressure is zero. Error bars denote the standard error of the mean from three independent calculations.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 3. Comparison of phonon thermal conductivities with and without isotope scattering effects. In all the MD simulations, the temperature is 300 K and the pressure is zero. Error bars denote the standard error of the mean from three independent calculations.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Shuo_figures/images/fig_004_no_caption.png" alt="fig_004 — pagina 6" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 6</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 6.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Shuo_figures/images/fig_005_FIG_5_Phonon_thermal_conductivity_comp.png" alt="fig_005 — pagina 7" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 7</strong>
+            <p class="caption">FIG. 5. Phonon thermal conductivity comparison between MD simulations with UNEP-v1 and EAM models. In all the MD simulations, the temperature is 300 K, the pressure is zero, and isotope scattering is considered. Error bars denote the standard error of the mean from three independent calculations.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 5. Phonon thermal conductivity comparison between MD simulations with UNEP-v1 and EAM models. In all the MD simulations, the temperature is 300 K, the pressure is zero, and isotope scattering is considered. Error bars denote the standard error of the mean from three independent calculations.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Shuo_figures/images/fig_006_FIG_6_Phonon_thermal_conductivity_comp.png" alt="fig_006 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 8</strong>
+            <p class="caption">FIG. 6. Phonon thermal conductivity comparison between MD simulations and BTE calculations. In each panel, filled circles represent BTE results considering phonon-phonon (pp) scattering only, plus symbols represent BTE results considering both phonon-phonon and phonon-electron (pe) scatterings, filled squares represent MD results based on the UNEP-v1 model, and filled triangles represent MD results based on the EAM potential. BTE results for W and Mo are from Wang and Bao 13 , while those for the remaining elements are from Wang et al. 6 .</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 6. Phonon thermal conductivity comparison between MD simulations and BTE calculations. In each panel, filled circles represent BTE results considering phonon-phonon (pp) scattering only, plus symbols represent BTE results considering both phonon-phonon and phonon-electron (pe) scatterings, filled squares represent MD results based on the UNEP-v1 model, and filled triangles represent MD results based on the EAM potential. BTE results for W and Mo are from Wang and Bao 13 , while those for the remaining elements are from Wang et al. 6 .</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Shuo_figures/images/fig_007_FIG_7_Comparison_of_MD_and_BTE_results.png" alt="fig_007 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 9</strong>
+            <p class="caption">FIG. 7. Comparison of MD and BTE results for phonon thermal conductivities for all the materials considered in this work, including 16 metals and 4 binary alloys. Filled squares and triangles represent MD results from the UNEP-v1 model and the EAM potential, respectively. Only phonon-phonon scattering is considered in the BTE results.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 7. Comparison of MD and BTE results for phonon thermal conductivities for all the materials considered in this work, including 16 metals and 4 binary alloys. Filled squares and triangles represent MD results from the UNEP-v1 model and the EAM potential, respectively. Only phonon-phonon scattering is considered in the BTE results.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Shuo_figures/images/fig_008_FIG_8_Comparison_of_MD_and_BTE_results.png" alt="fig_008 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 9</strong>
+            <p class="caption">FIG. 8. Comparison of MD and BTE results for phonon thermal conductivities for all the materials considered in this work, including 16 metals and 4 binary alloys. Filled squares represent MD results from the UNEP-v1 model. Both phonon-phonon and phonon-electron scatterings are considered in the BTE results.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 8. Comparison of MD and BTE results for phonon thermal conductivities for all the materials considered in this work, including 16 metals and 4 binary alloys. Filled squares represent MD results from the UNEP-v1 model. Both phonon-phonon and phonon-electron scatterings are considered in the BTE results.</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — OMC25_cristales_moleculares_Meta_2025</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>OMC25_cristales_moleculares_Meta_2025</h1>
+    <p class="subtitle">Resumen en español de <strong>OMC25_cristales_moleculares_Meta_2025</strong>.</p>
+    <div class="meta">
+        <div><strong>PDF local</strong><a href="../pappers/OMC25_cristales_moleculares_Meta_2025.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p>Leí tu archivo y aquí te dejo la traducción resumida de los puntos más importantes del trabajo sobre el dataset Open Molecular Crystals 2025 (OMC25):</p>
+<p>Puntos Clave del Trabajo</p>
+<p>Objetivo principal</p>
+<p>Crear un gran dataset abierto para acelerar el desarrollo de modelos de machine learning aplicados a cristales moleculares.</p>
+<p>Problema previo: había escasez de bases de datos públicas con estructuras y propiedades.</p>
+<p>El dataset OMC25</p>
+<p>Contiene más de 27 millones de estructuras de cristales moleculares.</p>
+<p>Incluye 12 elementos químicos y hasta 300 átomos por celda unitaria.</p>
+<p>Generado a partir de trayectorias de relajación por DFT (teoría del funcional de la densidad) de 230.000 estructuras candidatas construidas con ~50.000 moléculas orgánicas únicas.</p>
+<p>Diversidad y representatividad</p>
+<p>Amplia variedad de interacciones intermoleculares y motivos de empaquetamiento cristalino.</p>
+<p>Cubre 167 grupos espaciales y múltiples sistemas cristalinos.</p>
+<p>Incluye tanto estructuras densa y holgadamente empaquetadas para muestrear todo el espacio de energía potencial.</p>
+<p>Propiedades disponibles en el dataset</p>
+<p>Energía total de la estructura.</p>
+<p>Fuerzas atómicas.</p>
+<p>Tensiones de la celda unitaria.</p>
+<p>División del dataset</p>
+<p>Entrenamiento: 90% (~24,8 M estructuras).</p>
+<p>Validación: 5% (~1,38 M estructuras).</p>
+<p>Test: 5% (~1,35 M estructuras).</p>
+<p>Validación técnica</p>
+<p>Se filtraron estructuras no físicas (con energías/ fuerzas irreales).</p>
+<p>Alta consistencia en la relajación de estructuras.</p>
+<p>Muestra representativa del paisaje de energía potencial.</p>
+<p>Modelos de Machine Learning probados</p>
+<p>Se entrenaron y evaluaron varios modelos de última generación: UMA, eSEN, EquiformerV2.</p>
+<p>Los modelos muestran alta precisión en predicción de energías, fuerzas y tensiones.</p>
+<p>También funcionan bien en tareas externas como:</p>
+<p>Benchmark X23b (energías de red cristalina y volúmenes).</p>
+<p>Ranking de polimorfos (estructuras alternativas de la misma molécula).</p>
+<p>Limitaciones actuales</p>
+<p>Solo incluye cristales orgánicos de un solo componente (no co-cristales, MOFs, solvatos, etc.).</p>
+<p>El nivel de teoría usado (PBE-D3) es bueno, pero no tan preciso como otros más avanzados.</p>
+<p>Falta de modelado robusto de interacciones a largo alcance.</p>
+<p>Necesidad de más pruebas con datos “fuera de distribución” para medir la generalización real.</p>
+<p>Impacto esperado</p>
+<p>Recurso abierto y gratuito (CC BY 4.0).</p>
+<p>Facilita el desarrollo de modelos más rápidos y precisos que el DFT.</p>
+<p>Acelera investigación en áreas como farmacéutica, electrónica orgánica y predicción de estructuras cristalinas.</p>
+<p>Disponibilidad</p>
+<p>Dataset y modelos en HuggingFace:<br />
+ https://huggingface.co/facebook/OMC25</p>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (8)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_001_Figure_1_Overview_of_the_OMC25_dataset_.png" alt="fig_001 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 2</strong>
+            <p class="caption">Figure 1 Overview of the OMC25 dataset: generation method, structure relaxations, statistics, and application areas.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 1 Overview of the OMC25 dataset: generation method, structure relaxations, statistics, and application areas.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_002_no_caption.png" alt="fig_002 — pagina 7" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 7</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 7.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_003_Figure_3_Comparison_of_properties_from_t.png" alt="fig_003 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 8</strong>
+            <p class="caption">Figure 3 Comparison of properties from the first and last frames of relaxation trajectories of molecular crystals in the OMC25 training split: (a) showing density of the last frames and the first frames for different Genarris steps; overlayed is the distribution of densities of organic entries in CSD 6.00, (b) showing relaxation energy (the difference of energy between the initial and final frames), maximum per-atom residual force, and maximum unit cell stress. Average values are presented with vertical dotted lines.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 3 Comparison of properties from the first and last frames of relaxation trajectories of molecular crystals in the OMC25 training split: (a) showing density of the last frames and the first frames for different Genarris steps; overlayed is the distribution of densities of organic entries in CSD 6.00, (b) showing relaxation energy (the difference of energy between the initial and final frames), maximum per-atom residual force, and maximum unit cell stress. Average values are presented with vertical dotted lines.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_004_Table_3_MLIP_evaluations_validation_and.png" alt="fig_004 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 9</strong>
+            <p class="caption">Table 3 MLIP evaluations: validation and test metrics, as well as X23b and Schrödinger polymorph ranking evaluations. The energy, force, and stress errors are presented as mean absolute errors (MAEs) for the validation and test metrics. For the X23b evaluation, the energy represents the lattice energy of the crystal, and the mean absolute percentage error (MAPE) is reported for the molar volume. For the Schrödinger polymorph ranking evaluation, the energies are normalized to the number of molecules in the unit cell. The bolded values show the best performing models, where the evaluation followed the community standards.</p>
+          </figcaption>
+          <div class="figbody"><p>Table 3 MLIP evaluations: validation and test metrics, as well as X23b and Schrödinger polymorph ranking evaluations. The energy, force, and stress errors are presented as mean absolute errors (MAEs) for the validation and test metrics. For the X23b evaluation, the energy represents the lattice energy of the crystal, and the mean absolute percentage error (MAPE) is reported for the molar volume. For the Schrödinger polymorph ranking evaluation, the energies are normalized to the number of molecules in the unit cell. The bolded values show the best performing models, where the evaluation followed the community standards.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_005_Listing_S2_Example_INCAR_settings_for_th.png" alt="fig_005 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 18</strong>
+            <p class="caption">Listing S2 Example INCAR settings for the DFT relaxations with VASP.</p>
+          </figcaption>
+          <div class="figbody"><p>Listing S2 Example INCAR settings for the DFT relaxations with VASP.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_006_Figure_S1_Convergence_study_for_the_DFT_.png" alt="fig_006 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 18</strong>
+            <p class="caption">Figure S1 Convergence study for the DFT settings used in this work. We show the effect of each parameter on the energy of the structure compared to the most tightly converged settings set to 10 -9 eV energy tolerance and 9,000 k-point density per atom.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure S1 Convergence study for the DFT settings used in this work. We show the effect of each parameter on the energy of the structure compared to the most tightly converged settings set to 10 -9 eV energy tolerance and 9,000 k-point density per atom.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_007_Table_S1_Extended_MLIP_evaluation_result.png" alt="fig_007 — pagina 19" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 19</strong>
+            <p class="caption">Table S1 Extended MLIP evaluation results for OMC25 and OMol25 [31] models: validation and test metrics, as well as X23b benchmark and Schrödinger polymorph ranking task. For UMA models [20], we used both the OMC and OMol tasks. The bolded values show the best performing models.</p>
+          </figcaption>
+          <div class="figbody"><p>Table S1 Extended MLIP evaluation results for OMC25 and OMol25 [31] models: validation and test metrics, as well as X23b benchmark and Schrödinger polymorph ranking task. For UMA models [20], we used both the OMC and OMol tasks. The bolded values show the best performing models.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_008_no_caption.png" alt="fig_008 — pagina 20" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 20</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 20.</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

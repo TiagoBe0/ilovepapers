@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — CarNet_tensores_cartesianos_Chen_2025</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>CarNet_tensores_cartesianos_Chen_2025</h1>
+    <p class="subtitle">Resumen en español de <strong>CarNet_tensores_cartesianos_Chen_2025</strong>.</p>
+    <div class="meta">
+        <div><strong>PDF local</strong><a href="../pappers/CarNet_tensores_cartesianos_Chen_2025.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p>Resumen Detallado: Aprendizaje Automático Atomístico con Tensores Naturales Cartesianos<br />
+Resumen General<br />
+Este paper presenta CarNet (Cartesian Natural Tensor Networks), un nuevo marco teórico y computacional para el aprendizaje automático atomístico que trabaja directamente en coordenadas cartesianas en lugar de coordenadas esféricas.</p>
+<ol>
+<li>Contexto y Problema<br />
+¿Qué es el ML Atomístico?<br />
+El aprendizaje automático atomístico predice propiedades de materiales y moléculas directamente desde su estructura atómica:</li>
+</ol>
+<p>Entradas: Coordenadas espaciales y tipos de átomos<br />
+Salidas: Energías, fuerzas, propiedades tensoriales (momento dipolar, tensor de elasticidad, etc.)</p>
+<p>Problema Principal<br />
+Los métodos actuales transforman las coordenadas cartesianas {x, y, z} a coordenadas esféricas (distancias y ángulos), pero:</p>
+<p>Las estructuras atómicas se describen naturalmente en coordenadas cartesianas<br />
+Los métodos cartesianos existentes carecen de un marco teórico sistemático<br />
+No pueden predecir tensores complejos de alto rango (como el tensor elástico)</p>
+<ol>
+<li>Solución Propuesta: Teoría de Tensores Naturales Cartesianos<br />
+¿Qué es un Tensor Natural?<br />
+Un tensor natural es un tensor cartesiano que cumple dos propiedades:</li>
+</ol>
+<p>Simétrico: Invariante bajo permutación de índices<br />
+Sin traza: La traza sobre cualquier par de índices es cero</p>
+<p>Propiedades clave:</p>
+<p>Un tensor natural de rango n tiene solo 2n+1 componentes independientes<br />
+Son representaciones irreducibles del grupo SO(3) (rotaciones 3D)<br />
+Preservan la equivarianza geométrica</p>
+<p>Tres Operaciones Fundamentales<br />
+a) Construcción desde un vector unitario:<br />
+De r̂ → Generar tensores X₀, X₁, X₂, X₃...<br />
+X₀ = 1 (escalar)<br />
+X₁ = r̂ (vector)<br />
+X₂ = r̂⊗r̂ (sin traza)<br />
+X₃ = r̂⊗r̂⊗r̂ (sin traza)<br />
+b) Producto de tensores naturales:<br />
+X_l₁ ⊗̂ Y_l₂ = Z_l₃<br />
+donde |l₁ - l₂| ≤ l₃ ≤ l₁ + l₂<br />
+c) Descomposición y reconstrucción:</p>
+<p>Cualquier tensor físico puede descomponerse en suma de tensores naturales<br />
+Y puede reconstruirse desde ellos<br />
+Ejemplo: tensor rango-2 = tensor rango-0 + tensor rango-1 + tensor rango-2</p>
+<ol>
+<li>Arquitectura del Modelo CarNet<br />
+Flujo del Modelo:</li>
+</ol>
+<p>Entrada → Codificación → Capas GNN → Salida<br />
+Componentes Principales:<br />
+1. Codificación de Posición:</p>
+<p>Vector relativo r → distancia escalar r y dirección r̂<br />
+r se expande con polinomios de Chebyshev (parte radial R)<br />
+r̂ se transforma en tensores naturales X</p>
+<ol>
+<li>Embedding de Especies:</li>
+</ol>
+<p>Número atómico z → características iniciales aprendibles h</p>
+<ol>
+<li>
+<p>Momento Atómico:<br />
+M = R · h ⊗̂ X</p>
+</li>
+<li>
+<p>Hiper-momento:<br />
+H = M ⊗̂ M ⊗̂ ... ⊗̂ M<br />
+Captura interacciones de muchos cuerpos (3, 4, n-cuerpos)</p>
+</li>
+<li>Actualización de Características:</li>
+</ol>
+<p>Se aplican 2-3 capas de GNN<br />
+Conexión residual entre capas</p>
+<ol>
+<li>Construcción de Salida:</li>
+</ol>
+<p>Para potenciales: Extraer componente escalar (rango-0)<br />
+Para tensores: Seleccionar y reconstruir desde componentes naturales relevantes</p>
+<ol>
+<li>Resultados Experimentales<br />
+A) Potenciales Interatómicos<br />
+LiPS (Electrolito sólido):</li>
+</ol>
+<p>MAE energía: 0.09 meV (mejor que NequIP: 0.12)<br />
+MAE fuerzas: 5.6 meV/Å (mejor que NequIP: 7.7)</p>
+<p>Agua líquida:</p>
+<p>RMSE energía: 0.54 meV (mejor que MACE: 0.63)<br />
+RMSE fuerzas: 31 meV/Å (mejor que MACE: 36)</p>
+<p>Simulaciones MD:</p>
+<p>Estables durante 50 ps sin colapso<br />
+RDF (función de distribución radial) coincide con AIMD y experimentos<br />
+Coeficientes de difusión precisos:</p>
+<p>Li⁺ en LiPS: D = 1.09×10⁻⁵ cm²/s (ref: 1.37×10⁻⁵)<br />
+Agua: D = 2.92×10⁻⁵ cm²/s (ref: 2.67×10⁻⁵)</p>
+<p>B) Moléculas de Etanol<br />
+Mejoras sobre TensorNet:</p>
+<p>Momento dipolar μ: 3× menor error<br />
+Desplazamiento químico nuclear δ: 3× menor error<br />
+Tensor de apantallamiento nuclear σ: Predicción completa (antes inaccesible)<br />
+Capacidades únicas:</p>
+<p>Predice el tensor elástico completo (rango-4, hasta 21 componentes)<br />
+Preserva simetrías cristalinas automáticamente<br />
+Calcula módulo de Young direccional Ed para analizar anisotropía</p>
+<ol>
+<li>Innovaciones Técnicas<br />
+Selección de Rutas de Producto Tensorial<br />
+Tres modos:</li>
+</ol>
+<p>Full: Todas las rutas posibles (máxima expresividad, más lento)<br />
+Lite: Rutas restringidas (60% del tiempo de full, mejor generalización)<br />
+Level: Intermedio</p>
+<p>Hallazgo: El modo "lite" es óptimo para la mayoría de casos.<br />
+Dependencia de Especies Atómicas</p>
+<p>Incorporar número atómico z en los pesos mejora precisión<br />
+Excepto para datasets con muchos elementos (84+) y pocos datos<br />
+7. Limitaciones y Trabajo Futuro<br />
+Limitaciones actuales:</p>
+<p>Selección de rutas tensoriales guiada empíricamente (no teóricamente)<br />
+Falta optimización GPU específica (existe para esféricos)</p>
+<p>Aplicaciones potenciales:</p>
+<p>Extensión a nubes de puntos generales (imágenes médicas 3D, LiDAR)<br />
+Modelos fundacionales con muchos elementos<br />
+Predicción de propiedades tensoriales complejas</p>
+<ol>
+<li>Conclusiones Principales</li>
+</ol>
+<p>CarNet es el primer marco sistemático para ML atomístico cartesiano con teoría completa<br />
+Supera el estado del arte en:</p>
+<p>Potenciales interatómicos (materiales y moléculas)<br />
+Predicción de propiedades tensoriales<br />
+Tensor elástico completo (nunca antes logrado)</p>
+<p>Elimina barreras teóricas para enfoques cartesianos en ML atomístico<br />
+Abre nuevas posibilidades:</p>
+<p>Modelado de tensores arbitrarios<br />
+Relaciones estructura-propiedad más ricas<br />
+Mejor interpretabilidad física</p>
+<p>Marco matemático completo para operaciones con tensores naturales (creación, producto, descomposición/reconstrucción)</p>
+<p>Disponibilidad</p>
+<p>Código: https://github.com/wengroup/carnet<br />
+Tensores naturales: https://github.com/wengroup/natt<br />
+Datasets: Públicamente disponibles</p>
+<p>Este trabajo representa un avance fundamental en la teoría y práctica del aprendizaje automático para ciencia de materiales.</p>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (5)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/CarNet_tensores_cartesianos_Chen_2025_figures/images/fig_001_FIG_1_Schematic_illustration_of_Cartes.png" alt="fig_001 — pagina 3" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 3</strong>
+            <p class="caption">FIG. 1. Schematic illustration of Cartesian natural tensor operations. a . Construction of natural tensors of different ranks from a unit vector ˆ r . b . Tensor product between a rank-1 and a rank-2 natural tensor generates three natural tensors of ranks 1, 2, and 3. c . Any physical tensor (e.g., the nuclear shielding tensor) can be decomposed into a set of natural tensors and, conversely, reconstructed from them. ⊗ is the product between ordinary tensors, ˆ ⊗ is the product between natural tensors, and ⊕ is the direct sum of natural tensors.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 1. Schematic illustration of Cartesian natural tensor operations. a . Construction of natural tensors of different ranks from a unit vector ˆ r . b . Tensor product between a rank-1 and a rank-2 natural tensor generates three natural tensors of ranks 1, 2, and 3. c . Any physical tensor (e.g., the nuclear shielding tensor) can be decomposed into a set of natural tensors and, conversely, reconstructed from them. ⊗ is the product between ordinary tensors, ˆ ⊗ is the product between natural tensors, and ⊕ is the direct sum of natural tensors.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CarNet_tensores_cartesianos_Chen_2025_figures/images/fig_002_FIG_2_Overview_of_the_CarNet_model_arc.png" alt="fig_002 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 4</strong>
+            <p class="caption">FIG. 2. Overview of the CarNet model architecture. The relative distance vector r of an atom from its neighbor is encoded using a set of radial basis and natural tensors. The atomic species z is encoded using a learnable embedding to generate the initial atom features h . With the radial part R , the angular part X , and the atom features h , each GNN layer first constructs the atomic moment and then the hyper moment using natural tensor products. Finally, the atomic features are mapped to the target properties using an output head.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 2. Overview of the CarNet model architecture. The relative distance vector r of an atom from its neighbor is encoded using a set of radial basis and natural tensors. The atomic species z is encoded using a learnable embedding to generate the initial atom features h . With the radial part R , the angular part X , and the atom features h , each GNN layer first constructs the atomic moment and then the hyper moment using natural tensor products. Finally, the atomic features are mapped to the target properties using an output head.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CarNet_tensores_cartesianos_Chen_2025_figures/images/fig_003_FIG_3_MD_simulation_results_of_bulk_Li.png" alt="fig_003 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 5</strong>
+            <p class="caption">FIG. 3. MD simulation results of bulk LiPS and water systems. a -c : Crystal structure, RDF, and MSD of Li + ions versus time of LiPS. d -f : Simulation cell, RDF of oxygen-oxygen pairs, and MSD versus time of bulk water. The MD simulations using CarNet were performed at a temperature of 520 K for LiPS and 300 K for water. The reference AIMD and experimental results are at the same temperatures, except for the X-ray diffraction data, which is at 295 K [42]. Five MD simulations with different initial velocities were performed, and the reported diffusion coefficients D are the average over these runs. The water cell in panel d is shown for demonstration; the actual MD simulation used a 2 × 2 × 2 replication of this cell. Simulation cells are plotted using AtomViz [43]. Atom colors: purple (Li), orange (P), yellow (S), red (O), and white (H). RDF: radial distribution function; MSD: mean square displacement.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 3. MD simulation results of bulk LiPS and water systems. a -c : Crystal structure, RDF, and MSD of Li + ions versus time of LiPS. d -f : Simulation cell, RDF of oxygen-oxygen pairs, and MSD versus time of bulk water. The MD simulations using CarNet were performed at a temperature of 520 K for LiPS and 300 K for water. The reference AIMD and experimental results are at the same temperatures, except for the X-ray diffraction data, which is at 295 K [42]. Five MD simulations with different initial velocities were performed, and the reported diffusion coefficients D are the average over these runs. The water cell in panel d is shown for demonstration; the actual MD simulation used a 2 × 2 × 2 replication of this cell. Simulation cells are plotted using AtomViz [43]. Atom colors: purple (Li), orange (P), yellow (S), red (O), and white (H). RDF: radial distribution function; MSD: mean square displacement.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CarNet_tensores_cartesianos_Chen_2025_figures/images/fig_004_FIG_4_Performance_of_CarNet_in_predict.png" alt="fig_004 — pagina 7" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 7</strong>
+            <p class="caption">FIG. 4. Performance of CarNet in predicting elastic properties . a . Predicted bulk modulus K , shear modulus G , and Young's modulus E compared with reference DFT values (84 elements). b . Normalized error by crystal system. c . Directional Young's modulus E d of CaS predicted by the model. The cubic symmetry of rocksalt CaS is clearly reflected in the predicted E d . MAE is the mean absolute error, and MAD is the mean absolute deviation.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 4. Performance of CarNet in predicting elastic properties . a . Predicted bulk modulus K , shear modulus G , and Young's modulus E compared with reference DFT values (84 elements). b . Normalized error by crystal system. c . Directional Young's modulus E d of CaS predicted by the model. The cubic symmetry of rocksalt CaS is clearly reflected in the predicted E d . MAE is the mean absolute error, and MAD is the mean absolute deviation.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CarNet_tensores_cartesianos_Chen_2025_figures/images/fig_005_FIG_5_Learning_curve_for_ethanol_dipol.png" alt="fig_005 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 8</strong>
+            <p class="caption">FIG. 5. Learning curve for ethanol dipole moment determination. MAE in the dipole moment µ training as a function of the size of the training set for models with: a . tensor product mode 'full', 'level' and 'lite'; b . maximum tensor rank L = 1 , 2 , 3; c . maximum correlation degree v = 1 , 2 , 3. The slope s of each linearly fitted curve in log-log space is also reported.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 5. Learning curve for ethanol dipole moment determination. MAE in the dipole moment µ training as a function of the size of the training set for models with: a . tensor product mode 'full', 'level' and 'lite'; b . maximum tensor rank L = 1 , 2 , 3; c . maximum correlation degree v = 1 , 2 , 3. The slope s of each linearly fitted curve in log-log space is also reported.</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

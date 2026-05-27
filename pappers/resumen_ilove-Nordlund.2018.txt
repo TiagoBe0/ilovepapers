@@ -1,0 +1,83 @@
+# Resumen — Primary radiation damage: A review of current understanding and models
+
+**Autores:** K. Nordlund, S. J. Zinkle, A. E. Sand, F. Granberg, R. S. Averback, R. E. Stoller, T. Suzudo, L. Malerba, F. Banhart, W. J. Weber, F. Willaime, S. L. Dudarev, D. Simeone
+**Revista:** Journal of Nuclear Materials 512, 450–479 (2018), DOI: 10.1016/j.jnucmat.2018.10.027
+**Open Access:** CC BY-NC-ND
+
+---
+
+## 🎯 Tipo
+
+**Review fundacional** — la referencia obligatoria para entender "primary damage" en irradiación. Citarlo en cualquier paper sobre cascadas, defectos por PKA o cuantificación de daño.
+
+---
+
+## 🧠 Mensaje central
+
+El estándar internacional actual para cuantificar daño por irradiación, el **NRT-dpa** (Norgett-Robinson-Torrens, 1975), **sobreestima** los defectos sobrevivientes porque ignora la recombinación atérmica que ocurre dentro de la cascada. Este paper:
+
+1. Revisa el estado experimental + simulación de cascadas.
+2. Propone alternativas **arc-dpa** y **rpa** para complementar al NRT.
+
+---
+
+## ⚙️ Modelos clave
+
+### NRT-dpa (1975)
+
+dpa = 0.8 · T_dam / (2 · E_d)
+
+- T_dam = energía de daño disponible (después de pérdidas electrónicas).
+- E_d = energía umbral de desplazamiento.
+- Sobreestima porque cuenta todos los desplazamientos balísticos.
+
+### arc-dpa (Athermal Recombination Corrected)
+
+ν_NRT corregido por una función ξ(T_dam) que captura la **recombinación dentro de la cascada** durante el "thermal spike":
+
+ν_arc-dpa = ν_NRT · ξ(T_dam)
+
+Da entre 30–50% del NRT-dpa para metales — coincide con los conteos reales de defectos vía MD y experimentos.
+
+### rpa (Replacements Per Atom)
+
+Cuantifica el **radiation mixing**: átomos que intercambian posiciones con otros átomos de la red sin generar defectos puntuales finales. Es importante para aleaciones donde la mezcla atómica balística altera composición local sin contribuir a defectos detectables.
+
+---
+
+## 🧪 Procesos físicos cubiertos
+
+1. **PKA initiation** — distribución espectral de PKAs por tipo de partícula.
+2. **Collision cascade** — fase balística ≤ 0.5 ps.
+3. **Thermal spike** — 0.5–10 ps, líquido transitorio, recombinación masiva (~70–80% de los defectos creados).
+4. **Defect production** — defectos sobrevivientes al spike.
+5. **Radiation mixing** — intercambios atómicos.
+
+---
+
+## 📊 Materiales discutidos
+
+- **Metales** (Fe, W, Cu, Ni, …)
+- **Cerámicos**
+- **Polímeros**
+- **Semiconductores**
+- (Excluye biológicos)
+
+Cada clase tiene su comportamiento característico de spike y defect production.
+
+---
+
+## 🧩 Por qué es central para tu trabajo
+
+- Es la referencia obligatoria para hablar de **dpa** en publicaciones sobre Cu-Ni / W / Fe irradiados.
+- Provee los **valores numéricos de arc-dpa** que deberías usar en lugar de NRT para reportar daño.
+- Cubre las cascadas tipo PKA en MD — directamente aplicable a [[MD_cascadas_CuNi_irradiacion_Wei_2025]] y [[MD_kMC_tungsteno_dose_rate_Boleininger_2025]].
+- También es citado por reviews de fusion materials como [[ilove-LucaReali.2026]] (que de hecho discute arc-dpa y CRC-dpa apoyándose en este trabajo).
+
+---
+
+## 📎 Conexiones
+
+- Workshop de modelado de daño por irradiación: [[RESUMEN_WORKSHOP_DE_DAÑO_POR_RADIACION_IMPORTANTE]] ↔ [[ilove-LucaReali.2026]].
+- TGS midiendo defectos en tiempo real: [[TGS_vacancias_in_situ_Botica_MIT_2026]] — referencia conceptual a primary damage.
+- Cascadas Cu-Ni: [[MD_cascadas_CuNi_irradiacion_Wei_2025]] — debería compararse contra arc-dpa, no NRT.

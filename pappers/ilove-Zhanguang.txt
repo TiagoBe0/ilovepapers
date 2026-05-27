@@ -1,0 +1,782 @@
+                                                                Journal of Nuclear Materials 630 (2026) 156712
+
+
+                                                                   Contents lists available at ScienceDirect
+
+
+                                                            Journal of Nuclear Materials
+                                                        journal homepage: www.elsevier.com/locate/jnucmat
+
+
+
+
+Molecular dynamics simulation of cyclic plasticity in irradiated
+FeCoNiCrCu high entropy alloy
+Zhanguang Zheng a,b,* , Yunjia Mo a , Liping Jiang a, Xiangyu Ruan a , Yangguang Hao a
+a
+ College of Mechanical Engineering, Guangxi University, No.100 Daxue Dong Road, Nanning 530004, China
+b
+ State Key Laboratory of Featured Metal Materials and Life-cycle Safety for Composite Structures, Guangxi University, No.100 Daxue Dong Road, Nanning 530004,
+China
+
+
+
+
+A R T I C L E I N F O                                    A B S T R A C T
+
+Keywords:                                                High-entropy alloys (HEAs) have attracted significant attention due to their exceptional mechanical properties
+High-entropy alloys                                      and remarkable radiation resistance. However, structural materials in reactors are subjected not only to irra­
+Irradiation                                              diation damage but also to fatigue loads induced by thermal cycling and vibration during their service life. In this
+Cyclic deformation
+                                                         study, we investigate the mechanical response and microstructural evolution of the FeCoNiCrCu HEA under
+Molecular dynamics
+                                                         cyclic loading after cascade overlapping simulations, using molecular dynamics simulations. The irradiation
+                                                         process was simulated at various primary knock-on atom energies up to 20 keV to introduce defect structures.
+                                                         Our simulations reveal the specific atomistic mechanisms driving the cyclic hardening behavior in HEAs: lattice
+                                                         disordered atoms play a dual role, acting as localized stress concentrators for dislocation nucleation while
+                                                         simultaneously serving as strong pinning sites that contribute to the initial yield strength. As cyclic deformation
+                                                         progresses, the evolution of the dislocation network governs the global transition between softening and hard­
+                                                         ening. In the later stages of cycling, a surge in stacking fault fraction is observed, which is identified as the
+                                                         dominant mechanism driving the sustained cyclic hardening. These findings provide atomic-scale insights into
+                                                         the correlation between irradiation defects and fatigue performance in HEAs. While the high strain rate may bias
+                                                         dislocation and stacking-fault accumulation quantitatively, the qualitative mechanisms identified remain robust.
+
+
+
+
+1. Introduction                                                                               sluggish diffusion effect in FeCoNiCrCu, demonstrating that the reduced
+                                                                                              mobility of dislocation loops hinders their interaction and growth,
+    High-entropy alloys (HEAs) have attracted significant attention as                        thereby resulting in a finer defect structure compared to conventional
+potential structural materials for advanced nuclear systems due to their                      metals. However, reactor components must also endure cyclic me­
+exceptional radiation resistance, high strength, and ductility [1–6].                         chanical loads during service [16]. Previous work by Luzginova et al.
+While experimental quantitative studies confirm these advantages,                             [17] on irradiated steels highlighted a crossover effect, where irradia­
+real-time observation of atomic-scale defect dynamics remains chal­                           tion improves fatigue life at low strain amplitudes due to hardening, but
+lenging. Consequently, researchers have increasingly relied on molec­                         reduces it at high amplitudes due to ductility loss. Sato et al. [18] uti­
+ular dynamics simulations to uncover the mechanisms governing                                 lized positron annihilation lifetime spectroscopy to characterize defect
+radiation tolerance. Previous simulations indicate that the unique lattice                    structures in Ni. They highlighted that while unirradiated fatigue mainly
+distortion and complex composition of HEAs enhance defect recombi­                            produces single vacancies, irradiated fatigue involves vacancy clusters
+nation and retard damage accumulation [7–13]. He et al. [14] system­                          originating from cascades, whose growth is notably hindered by
+atically demonstrated that irradiation resistance improves with                               deformation-induced dislocation networks. Although the interaction
+increasing compositional complexity. Specifically, the FeCoNiCrCu HEA                         between irradiation defects and fatigue has been studied in traditional
+exhibits the highest defect recombination rate among the studied sys­                         materials, the behavior of HEAs under such coupled conditions remains
+tems, attributed to the extended duration of the thermal spike phase                          underexplored.
+induced by the high-entropy effect. Han et al. [15] highlighted the                               Based on this context, this paper employs molecular dynamics
+
+
+
+    * Corresponding author at: College of Mechanical Engineering, Guangxi University, No.100 Daxue Dong Road, Nanning 530004, China.
+      E-mail address: zhenglight@126.com (Z. Zheng).
+
+https://doi.org/10.1016/j.jnucmat.2026.156712
+Received 4 January 2026; Received in revised form 2 April 2026; Accepted 4 May 2026
+Available online 5 May 2026
+0022-3115/© 2026 Elsevier B.V. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+Z. Zheng et al.                                                                                                       Journal of Nuclear Materials 630 (2026) 156712
+
+
+simulation methods to investigate the mechanical response and micro­               with its lattice orientation aligned with the [100], [010], and [001]
+structural evolution mechanisms of FeCoNiCrCu HEAs under cyclic                    directions. Subsequently, the ATOMSK tool [26] was used to create an
+loading conditions, subsequent to overlapping cascade simulations. To              equimolar FeCoNiCrCu alloy by randomly substituting Ni atoms in the
+achieve this, we performed cascade simulations to introduce irradiation            Ni lattice, and the initial lattice constant was set at 3.56 Å. Following
+defects, followed by cyclic loading simulations to observe the resultant           energy minimization via the steepest descent algorithm, the system was
+mechanical and structural changes. The study particularly aims to                  equilibrated at 300 K for 20 ps using a Nosé-Hoover thermostat.
+elucidate the interaction mechanisms between irradiation defects and                   In the displacement cascade simulations, a stratified region division
+cyclic deformation, attempting to reveal these interrelations at an                strategy was implemented to balance computational efficiency and
+atomic scale, thereby providing insights into the fatigue performance              physical fidelity. The system was divided into: (i) an outer fixed
+evolution of HEAs post-irradiation and supplying mechanistic support               boundary layer to absorb shockwaves; (ii) an intermediate thermostat
+for their application in advanced nuclear systems.                                 region (NVT) to dissipate heat; and (iii) a central active region (NVE) for
+                                                                                   the cascade dynamics, as illustrated in Fig. 1(a). To mitigate boundary
+2. Methodology                                                                     effect interference, before each simulation, the entire simulation box
+                                                                                   was randomly translated along the x, y and z directions, and a primary
+2.1. Scheme for cascade simulation                                                 knock-on atom (PKA) was randomly selected in the central region. To
+                                                                                   avoid channeling effects, the PKA was given initial kinetic energy in the
+    Molecular dynamics (MD) simulations of irradiation cascades were               high-index [135] direction as indicated in Fig. 1(b). The conversion of
+conducted utilizing the Large-scale Atomic/Molecular Massively Paral­              atomic energy to velocity is governed by the formula:
+lel Simulator (LAMMPS) [19]. The interatomic interactions were                          1 2
+modeled using the latest embedded atom method which is an                          E=     mv                                                                    (2)
+                                                                                        2
+improvement upon the FeCoNiCrCu HEAs potential proposed by Farkas
+and Caro [20]. By incorporating a smooth interpolation with the                        Where E is the energy, m is the atomic mass, and v is the atomic
+Ziegler-Biersack-Littmark [21] potential in the short-range, the potential         velocity of the incident atom.
+enables accurate predictions of defect energy and displacement behavior                To investigate the material response, 50 cascade simulations were
+in both pure metals and high-entropy alloys during cascade collisions.             performed at 300 K with PKA energies of 1, 5, 10, and 20 keV. While
+The validity of this potential had been sufficiently demonstrated in the           reactor environments involve elevated temperatures, the 300 K condi­
+research by Deluigi et al. [7], with the total energy Ei of an atom i:             tion was chosen to isolate the material response by preserving the
+        (           )                                                              damage structure and decoupling thermal softening, thereby establish­
+         ∑ ( )         1∑ ( )                                                      ing a rigorous athermal baseline. Regarding energy selection, although
+Ei = Fα       ρβ rij +       ϕαβ rij                                   (1)         neutron spectra reach the MeV range, the 20 keV upper limit is justified
+          j∕
+           =i
+                       2 j∕
+                          =i
+                                                                                   by the subcascade splitting phenomenon [27]. Since high-energy im­
+    The energy Ei of atom iis comprised of two components: the                     pacts decompose into separated lower-energy sub-cascades, this range
+embedding energy Fα , which denotes the energy of embedding the atom               effectively captures the representative primary damage states while
+within the electron density environment provided by surrounding                    ensuring the cascade volume remains contained within the simulation
+atoms, and the pair potential ϕαβ , representing the direct interaction            boundaries. The detailed simulation process is illustrated in Fig. 2. In
+energy between atom iand its neighboring atom j.                                   this setup, the number of atomic displacements induced by each cascade
+    The open-source visualization tool (OVITO) [22] was utilized to                collision was estimated using the NRT model [28] with the formula:
+analyze the nucleation and evolution of defects, while the atomic local
+                                                                                            0.8EPKA
+crystal structures were characterized using the Common Neighbor                    NNRT =                                                                       (3)
+                                                                                              2Ed
+Analysis [23] method. The Dislocation Extraction Algorithm (DXA) [24]
+was employed to identify dislocation lengths and types, and the                       Consequently, the cumulative damage dose in displacements per
+Wigner-Seitz defect analysis [25] was used to identify vacancies and               atom (dpa) is calculated as:
+interstitial atoms.
+                                                                                           k × NNRT
+    In terms of modeling, a single-crystal pure Ni simulation box with             dpa =                                                                        (4)
+                                                                                             Ntotal
+dimensions of 178 Å × 178 Å × 178 Å (corresponding to a 50 × 50 × 50
+unit cell, encompassing a total of 500,000 atoms) was first constructed,              Where NNRT represents the theoretical number of Frenkel pairs
+
+
+
+
+                                     Fig. 1. (a) Diagram of simulation region division, (b) Single crystal FeCoNiCrCu HEA.
+
+                                                                               2
+Z. Zheng et al.                                                                                                               Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+                  Fig. 2. (a) Simulation flowchart, (b) Diagram of overlapping cascade irradiation (red atoms are interstitials, blue atoms are vacancies).
+
+
+generated per cascade, EPKA is the kinetic energy of the primary knock-                   energies primarily undergoes four stages. Initially, a small number of
+on atom, and Ed is the average displacement threshold energy.                             defects are generated, followed by a thermal spike phase where the
+Furthermore, k denotes the number of accumulated cascade events, and                      defect count reaches its peak, then a collision remnant phase, and finally
+Ntotal is the total number of atoms in the simulation system. For the                     a stage where defects recombine and stabilize [32]. To validate the
+FeCoNiCrCu HEA, an average displacement threshold energy (Ed ) of                         reliability of the irradiation simulations, the number of surviving Fren­
+45.0 eV was adopted. This choice is strongly supported by recent mo­                      kel pairs (NFP ) was benchmarked against the Norgett-Robinson-Torrens
+lecular dynamics calculations for FeCoNiCrCu HEA, which determined                        (NTR) theoretical prediction (NNRT ). Specifically, for a PKA energy of 10
+an average Ed of 45 ± 2 eV based on extensive sampling of primary                         keV, the calculated defect survival efficiency (η = NFP /NNRT ) is 0.29.
+knock-on atoms in random directions [7]. Although Ed may exhibit                          This value falls well within the reported range of 0.2–0.4 for similar
+temperature dependence [29] and the present simulations were per­                         FCC–HEAs [33]. Although MD simulations inherently yield higher
+formed at 300 K, the value of 45.0 eV is used here as a conventional                      instantaneous defect concentrations than experimental equilibrium
+reference parameter in the NRT formalism to define a nominal damage                       states due to nanosecond-scale relaxation limits, this quantitative
+dose for comparison purposes. By construction, the NRT-dpa is an esti­                    agreement confirms that the current EAM potential and PKA parameters
+mate of displacement production rather than a direct measure of the                       reasonably capture the primary radiation damage mechanisms prior to
+number of surviving defects. Therefore, the dpa values reported here                      the subsequent cyclic loading.
+should be interpreted as nominal dose metrics for cascade accumulation                        Fig. 4 illustrates the variation in defect number with the number of
+and comparison with previous studies, rather than as an exact prediction                  cascades for HEA-FeCoNiCrCu under different dosages. For low-energy
+of the stable defect population under the present temperature condi­                      PKAs (1–10 keV), the number of Frenkel pairs increases gradually and
+tions. This choice is also consistent with a previous study on the same                   tends to saturate after approximately 30 cascades, reaching around 150
+FeCoNiCrCu alloy at 300 K [15]. Accordingly, the nominal dpa values                       pairs. However, when the PKA energy reaches 20 keV, this saturation
+corresponding to the present irradiation conditions are 0, 0.00088,                       state is disrupted. The observed phenomena can be explained by the fact
+0.0044, 0.0088, and 0.0176, respectively.                                                 that under low-energy irradiation, the severe lattice distortion in HEAs
+    Interstitial and vacancy atoms are common point defects in materials                  obstructs point defect migration through high-energy barrier diffusion
+[30]. To establish irradiated HEA-FeCoNiCrCu models with varying                          paths, thereby promoting recombination [34,35] .
+levels of damage, the changes in the number of Wigner-Seitz defects
+under different irradiation doses were statistically analyzed [31].
+    As shown in the Fig. 3, a single cascade collision at different PKA
+
+
+                                                                                      3
+Z. Zheng et al.                                                                                                         Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+                             Fig. 3. Evolution of the number of defects during a single cascade collision at different PKA energies.
+
+
+2.2. Cyclic deformationsimulationprotocol                                               In MD simulations, typical strain rates range from 107 to 1010 s− 1
+                                                                                    [41]. For instance, Shen et al. [42] investigated the fatigue damage
+    The irradiated samples obtained at 300 K were subjected to uniaxial             formation mechanisms of single-crystal and polycrystalline aluminum at
+tensile tension and cyclic loading in the z-direction using MD simula­              strain rates of 5 × 107 and 5 × 109 s− 1, revealing that the yield stress,
+tions. The time integration step was set to 1 fs. Despite low macroscopic           yield strain, and elastic modulus remained within the same order of
+strain rates in cyclic plasticity, crystalline deformation remains intrin­          magnitude. Based on these findings and the cyclic-loading results re­
+sically spatiotemporally localized [36]. In particular, Stinville et al. [37]       ported by Chen et al. [43], which showed that increasing the strain rate
+demonstrated that fatigue-relevant slip is highly localized and occurs via          quantitatively raises the dislocation density and stacking-fault fraction
+discrete intermittent (burst-like) events within nanoscale active vol­              without altering the primary deformation mechanisms, they subse­
+umes. Consistently, nanoscale deformation proceeds via discrete,                    quently adopted 5 × 109 s− 1 for their fatigue loading simulations.
+high-velocity dislocation avalanches [38,39], inducing local strain am­             Furthermore, this same study [43] also explicitly noted that MD simu­
+plitudes that vastly exceed macroscopic averages [40]. Notably, cyclic              lations commonly operate in the range of 107–1010 s− 1, citing related
+loading is physically distinct from monotonic tension because load                  atomistic studies using strain rates up to 1010 s− 1. Although a strain rate
+reversal promotes dislocation reversibility and rearrangement, rather               of 1 × 1010 s− 1 exceeds the maximum rate (2 × 109 s− 1) directly
+than purely unidirectional dislocation accumulation. Nevertheless,                  examined in their work, it remains within the typical range used in MD
+dislocation motion remains one of the primary carriers of plastic                   simulations and can therefore be regarded as a reasonable extrapolation.
+deformation in both loading modes. Therefore, MD provides a suitable                In addition, Wang et al. [44] evaluated FeCoNiCrCu under various strain
+tool to investigate the spatiotemporal localization phenomena under­                rates and observed minimal variations in yield stress, supporting the
+lying macroscopic cyclic plastic deformation. It should be noted, how­              feasibility of using a strain rate of 1 × 1010 s− 1 in MD simulations.
+ever, that this spatiotemporal-localization rationale pertains primarily            Therefore, the rate of 1 × 1010 s− 1 was adopted in our subsequent uni­
+to individual elementary slip events, whereas cyclic deformation addi­              axial tension and cyclic loading simulations to qualitatively elucidate
+tionally involves longer-timescale processes, including dislocation                 the post-irradiation deformation mechanisms of FeCoNiCrCu,
+reciprocation, annihilation, and progressive cell-structure formation. As           acknowledging that absolute quantitative values may exhibit
+a result, some quantitative metrics may carry rate-dependent bias.                  rate-dependent deviations.
+
+
+                                                                                4
+Z. Zheng et al.                                                                                                     Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+                              Fig. 4. Curve of Frenkel defect pairs changing with cascade count under different PKA energies.
+
+
+    Cyclic loading was applied to the irradiated samples, following the          irreversible evolution within the same simulation time. Therefore, 20
+loading mode shown in Fig. 5. The strain amplitude was set to 0.1 (10 %)         tension–compression cycles were performed to resolve the early-stage
+with a strain ratio of − 1. This amplitude was selected based on the             cyclic response and its associated microstructural evolution within a
+stress–strain response from our uniaxial tensile simulations, which              computationally feasible window.
+shows a monotonic yield strain of ~17.8 %. Choosing an amplitude                     In the initialization phase of the loading, energy minimization of the
+below the monotonic yield level allows fatigue-induced cyclic accumu­            irradiated damaged model was first performed using the conjugate
+lation to be resolved while avoiding overly rapid failure at higher am­          gradient algorithm to eliminate residual interatomic stresses. This was
+plitudes; in contrast, lower amplitudes tend to produce much weaker              followed by isothermal relaxation at 300 K for 50 ps to ensure that the
+
+
+
+
+                                                      Fig. 5. Diagram of cyclic loading application.
+
+                                                                             5
+Z. Zheng et al.                                                                                                         Journal of Nuclear Materials 630 (2026) 156712
+
+
+system reached a thermodynamic equilibrium state. Strain control was                and motion. The stress-strain curves for all four simulated samples had
+achieved by dynamically adjusting the z-direction lattice parameters of             identical slopes in this phase, indicating that cascade damage had not
+the simulation box. Cyclic loading followed a sinusoidal triangular                 significantly altered the Young's modulus of the FeCoNiCrCu alloy.
+waveform loading path. Each cycle included symmetric tensile-                       Young's modulus is primarily influenced by factors such as material
+compressive deformation: the first 10 ps applied positive strain up to              composition, temperature, and microstructure. Liu [46] studied the
++0.1, followed by 20 ps of reverse loading down to − 0.1.                           temperature effect and initial plastic deformation of the mechanical
+                                                                                    properties of FeCoNiCrCu HEA under uniaxial tensile load, finding that
+3. Results and discussions                                                          Young's modulus and tensile strength increase with decreasing temper­
+                                                                                    ature. In this study, all materials had the same chemical composition and
+3.1. Mechanical properties                                                          were simulated in the same environment, with microstructural differ­
+                                                                                    ences being the primary influencing factor. As shown in Fig. 6(b), the
+3.1.1. Tensile stress-strain curve                                                  distribution of the microphases remains remarkably stable with
+    When uniaxial tensile stress is applied to a material, irradiation-             increasing irradiation dose, leading to no significant change in Young's
+induced defects and dislocations within the material interact in com­               modulus. This high phase stability is consistent with the experimental
+plex ways, significantly altering the mechanical properties of the ma­              findings of Kiran et al. [47], who performed grazing incidence XRD on
+terials [45]. Uniaxial tensile simulations were first performed on                  Fe-Ni-Mn-Cr HEAs. They reported that the alloy retained its single-phase
+FeCoNiCrCu HEA models with varying levels of initial irradiation                    FCC structure without any detectable second phase or amorphization,
+damage to explore the material's mechanical properties.
+    The stress-strain curves under uniaxial tension for irradiated and
+unirradiated FeCoNiCrCu HEA at room temperature (300 K) are shown                   Table 1
+in Fig. 6(a). The deformation process can be distinctly categorized into            Mechanical properties of unirradiated FeCoNiCrCu and irradiated FeCoNiCrCu
+three stages. Stage I, the elastic stage is characterized by a linear stress-       subjected to different PKA energies.
+strain relationship obeying Hooke’s law, where the lattice deforms                   Material                  εyield             σyield(GPa)             E(GPa)
+reversibly. Stage II, a distinct yielding stage marks the transition from
+                                                                                     unirradiated              17.8 %             19.1                    107.9GPa
+elastic to plastic behavior, accompanied by a deviation from linearity as            irradiated-1keV           14.3 %             14.3                    105.6GPa
+dislocation sources begin to activate. Stage III, the material enters the            irradiated-5keV           13.6 %             13.2                    104.8GPa
+plastic flow stage, where stress continues to evolve nonlinearly with                irradiated-10keV          13.3 %             13.0                    104.5GPa
+strain due to the complex interplay between dislocation multiplication               irradiated-20keV          12.9 %             12.4                    104.2GPa
+
+
+
+
+Fig. 6. (a) Uniaxial stress-strain curve, (b) Variation of face-centered cubic (FCC) phase proportion with PKA energy, (c) Reduction rate of yield strength, (d)
+Reduction rate of yield strain.
+
+                                                                                6
+Z. Zheng et al.                                                                                                       Journal of Nuclear Materials 630 (2026) 156712
+
+
+even under heavy ion irradiation up to 3 dpa at various temperatures.              reversibility in its microstructure, with no significant permanent
+    Subsequently, as shown in Table 1, both the yield strength and yield           deformation. After the fifth cycle, the area enclosed by the stress-strain
+strain of the FeCoNiCrCu HEA decreased monotonically with increasing               curves increased, indicating a transition in deformation behavior from
+PKA energy. Notably, the 20 keV sample yielded earliest (12.45 GPa,                primarily elastic to plastic deformation. Compared to traditional fatigue
+0.129), indicating that irradiation leads to a premature onset of plastic          experiment data, the transition from elastic to plastic deformation
+deformation and diminishes the material's ductility capability. These              occurred after only five cycles, which was fewer than in real experi­
+results are consistent with previous studies [48,49]. Specifically, Liang          mental scenarios. This was primarily due to the inherent time scale
+et al. [50] revealed that this degradation is primarily attributed to              limitations of molecular dynamics simulations [59]. For irradiated
+cascade-induced point defects acting as nucleation sites for dislocations          FeCoNiCrCu HEA, even fewer cycles were required for this deformation
+under applied strain. This mechanism induces premature plastic defor­              behavior transition.
+mation and alters the deformation mode, ultimately resulting in a sig­                 The evolution of stress amplitude at the constant strain amplitude
+nificant deterioration of mechanical properties. Consequently, the                 can reflect the fatigue mechanical characteristics of the material. Cyclic
+presence of irradiation damage significantly shortens the elastic phase,           loading-induced softening and hardening are critical aspects of alloy
+leading to an earlier onset of plastic yielding. The reduction rates of            cyclic plastic deformation behavior [60].
+yield strength and yield strain are illustrated in Fig. 6(c) and (d). It               It could be observed that under cyclic loading, all materials initially
+should be noted that the lines connecting data points serve as visual              underwent varying degrees of softening, followed by alternating cyclic
+guides only and do not imply a continuous mathematical relationship.               softening and hardening. Fig. 8 illustrates the relationship between
+The rates of decrease in yield strength and yield strain followed a similar        stress amplitude and average stress amplitude with the number of cycles
+trend; both dropped sharply with increasing irradiation dose, with the             for each material, where the black curve represents the stress amplitude
+rate of decline gradually leveling off at higher doses.                            for each cycle, and the red curve denotes the average stress amplitude.
+    The results suggest that the mechanical performance of FeCoNiCrCu              For ease of observation regarding the stress amplitude change as ma­
+changed relatively little after irradiation, with this characteristic being        terials stably enter the plastic phase, the stress amplitudes for all ma­
+more pronounced at high irradiation dose.                                          terials were statistically analyzed between 7 and 20 cycles. With
+    To verify the reliability of the simulation settings regarding the             increasing irradiation dose, FeCoNiCrCu displayed a trend of hardening
+mechanical response, Table 2 compares the mechanical parameters of                 influenced by irradiation: the average stress amplitude for unirradiated
+unirradiated FeCoNiCrCu HEA obtained from uniaxial tension in this                 material was 5.45 GPa, with stress amplitude fluctuations around the
+study with reported data from MD simulations. The results indicate that            average. When PKA energy increased to 1 keV, the average stress
+the yield strength and strain from our MD simulations align well with              amplitude slightly decreased to 5.41 GPa, similar to the unirradiated
+other simulation studies in terms of both trend and order of magnitude,            state, though the trend changed (in the early cycles, stress amplitudes
+despite inherent variations due to different interatomic potentials, exact         were generally below the average, stabilizing above the average in later
+compositions, and strain rates. It is noteworthy that the absolute yield           cycles). Moreover, with the increase in PKA energy, the average stress
+strength values from MD simulations are consistently two orders of                 amplitude also increased accordingly, as shown in Fig. 8(f). Notably, all
+magnitude higher than experimental measurements for nominally                      irradiated samples exhibited a pronounced increase in stress amplitude
+similar alloys [51–53]. This significant discrepancy is an expected and            between cycles 15 and 18, which may be attributed to a stronger
+well-documented consequence of the extremely high strain rates                     impediment to dislocation glide during this stage.
+(10⁸–10¹⁰ s⁻¹) required in MD.                                                         Monitoring of the stress-strain response confirmed that the unirra­
+                                                                                   diated samples reached a cyclic saturation state after approximately 10
+3.1.2. Cyclic stressresponse                                                       cycles, characterized by stabilized stress amplitudes. In contrast, for the
+    Plastic deformation induced by cyclic loading is crucial for assessing         irradiated samples, a continuous cyclic hardening behavior was
+cyclic damage [57]. The cyclic stress-strain curves under cyclic loading           observed throughout the 20 cycles. This phenomenon is attributed to the
+for FeCoNiCrCu HEA with different irradiation doses are shown in Fig. 7            persistent interaction between dislocations and irradiation-induced de­
+(a)~(e). Regardless of irradiation, the area of the stress-strain hysteresis       fects, which impedes dislocation motion and delays the onset of
+loops for all materials increased with the number of cycles. The increase          saturation.
+in the area of the stress-strain loops directly resulted from the increased            Consequently, the increase in average stress amplitude with PKA
+plastic deformation component with each cycle. This suggested that                 energy indicates an irradiation-induced hardening effect, which be­
+irreversible microstructural evolution and damage accumulation                     comes more pronounced at higher energy levels.
+occurred within the material[58].                                                      In low-cycle fatigue under constant strain, cyclic hardening and
+    Compared to the unirradiated samples, the irradiated materials                 softening are associated with dislocation movement within the crystal.
+exhibited larger areas enclosed by the stress-strain loops. The area               Dislocation interactions and entanglements impede movement, man­
+enclosed by the stress-strain loops served as an indicator of the material's       ifested as cyclic hardening under cyclic loading. When dislocation ob­
+energy dissipation capacity under cyclic loading. This indicated that              stacles are disrupted or dislocations undergo annihilation and
+irradiated FeCoNiCrCu dissipated more energy during cyclic loading,                reorganization, cyclic softening is observed under cyclic loading. The
+likely due to more obstacles within the irradiated material, making                evolution of dislocations during cyclic loading will be discussed in the
+dislocation movement more difficult.                                               next section.
+    It was also evident that the unirradiated FeCoNiCrCu HEA primarily
+underwent elastic deformation during the first five cycles. During this
+phase, the material exhibited low energy consumption and high
+
+
+Table 2
+Comparison of mechanical properties of unirradiated FeCoNiCrCu HEA between this study and reported MD simulations.
+  Material             Strain rate (s− 1)        Temperature (K)          εyield( %)           σyield (GPa)         Method                     Reference
+
+  This study           1 × 1010                  300K                     17.8                 19.1                 MD Simulation              -
+  FeCoNiCrCu           1 × 1010                  300K                     18.4                 18.9                 MD Simulation              Cao Y et al. [54]
+  FeCoNiCrCu           5 × 108                   300K                     16.7                 18.3                 MD Simulation              Liu X et al. [55]
+  FeCoNiCrCu           1 × 1010                  300K                     16.6                 22.6                 MD Simulation              Wang X et al. [56]
+
+
+                                                                               7
+Z. Zheng et al.                                                                                                          Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+Fig. 7. Cyclic stress-strain loops for unirradiated FeCoNiCrCu and irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (b), 5k eV (c), 1kKeV (d), and
+20k eV (e).
+
+
+3.2. Irradiation damage evolution                                                    for the cyclic hardening or softening of the material.
+                                                                                         Dislocation nucleation is generally considered the initiation of
+3.2.1. Irradiation dislocations                                                      plastic deformation. Analysis of the dislocation character reveals that
+    The irradiation process introduces a substantial number of disloca­              the irradiation-induced dislocations are primarily mediated by Shockley
+tions within the crystal, and low-cycle fatigue is fundamentally a plastic           partial dislocations. Furthermore, owing to the dissociation of perfect
+deformation process controlled by the formation and motion of these                  dislocations and reactions between Shockley partials, other sessile dis­
+dislocations. Thus, the evolution of dislocation structures directly re­             locations were also identified, including stair-rod dislocations (purple
+flects the evolution of the material's microstructure.                               segments), Hirth dislocations (yellow segments), and Frank loops (single
+    Fig. 9 shows snapshots of the defect structures in FeCoNiCrCu HEA at             circular loops marked in light blue). Notably, in the HEA system, a
+different irradiation doses by DXA, where an increase in the total                   limited number of stair-rod dislocations were generated, with the ma­
+dislocation line length within the material was evident with increased               jority arranging into tetrahedral structures. These specific configura­
+irradiation dose. The evolution behavior of these initial dislocation                tions have been widely corroborated by transmission electron
+structures under subsequent cyclic loading was the fundamental reason                microscopy (TEM) observations [61–63].
+
+
+                                                                                 8
+Z. Zheng et al.                                                                                                          Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+Fig. 8. Variation of stress amplitude with the number of cycles for unirradiated FeCoNiCrCu (a), irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV
+(b), 5k eV (c), 10k eV (d), and 20k eV (e), and (f) Variation of average stress amplitude with PKA energy.
+
+
+   From the snapshots at key time points recorded in Fig. 10(a), for                 proliferated, but around 45 ps, most dislocations underwent rear­
+unirradiated material, no dislocation nucleation was observed in the                 rangement and annihilation induced by cyclic loading. This reversible
+early stage of cyclic loading (0~25 ps). With the application of reverse             dislocation evolution behavior persisted in unirradiated samples for
+compressive loading (30 ps), a small number of dislocations began to                 approximately five cycles, consistent with its primarily elastic defor­
+appear in the crystal. By 40 ps, dislocations nucleated further and                  mation response phase. During this phase, almost no irreversible
+
+                                                                                 9
+Z. Zheng et al.                                                                                                            Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+            Fig. 9. Dislocation distributions of irradiated FeCoNiCrCu subjected to different PKA energies of 1k eV (a), 5k eV (b), 10k eV (c), 20k eV (d).
+
+
+damage accumulation occurred within the material, and its mechanical                   evolution characteristics of the microscale deformation mechanism. The
+properties remained essentially unchanged after each cycle.                            evolution of dislocation density can be statistically analyzed using
+    In contrast, irradiated samples already had irradiation-induced                    OVITO, with the dislocation density calculated by the following for­
+dislocation structures at the initial state of cyclic loading (0.0 ps).                mula:
+These defects served as stress concentration points and became the weak
+                                                                                       ρ = L/V                                                                       (5)
+zones that preferentially triggered dislocation slip and local plastic
+deformation, resulting in yielding at relatively lower macroscopic stress                  Where L is the total length of dislocation lines, and V is the crystal
+and early softening behavior. As shown in Fig. 10(a), at 15 ps and 25 ps,              volume. These values can be obtained from OVITO.
+dislocations rapidly nucleated, slipped, and proliferated from defects.                    The statistical results of dislocation density are shown in Fig. 11.
+With increasing irradiation dose, the initial defect density rose, and                 Overall, the dislocation density of all models displayed periodic fluctu­
+dislocation proliferation became more pronounced. Particularly under                   ations with cyclic loading, but unirradiated and irradiated FeCoNiCrCu
+20 keV irradiation, dislocation density rapidly increased and spread                   samples exhibited distinctly different evolution characteristics.
+throughout the crystal during cycling (30.0 ps). Although some dislo­                      For unirradiated samples, the change in dislocation density could be
+cations underwent rearrangement and annihilation during unloading                      divided into three stages. Stage I (the initial five cycles) featured a sharp
+and reverse loading between 40–45 ps, a high density of dislocation                    increase in dislocation density within each loading cycle, followed by
+structures still remained in the samples. Notably, irradiated samples at               near-complete annihilation during unloading, indicating high defor­
+45 ps could not achieve complete dislocation recovery like the unirra­                 mation reversibility. In Stage II, the dislocation density remained at a
+diated samples, indicating that the dynamic recovery process could no                  low level, with minor fluctuations corresponding closely to the stress
+longer restore the material to an entirely elastic state, leading to the               amplitude fluctuations shown in Fig. 8. Stage III witnessed a continuous
+accumulation of irreversible plastic strain, macroscopically evident as                rise in dislocation density.
+an earlier yield point in early cycling.                                                   Conversely, the irradiated samples display a two-stage evolution: an
+    To further reveal the interaction mechanism of irradiated disloca­                 initial rapid increase during the first five cycles, followed by a gradual
+tions under cyclic loading, Fig. 10(b) provides an enlarged view of the                slowdown in the rate of increase, although the overall dislocation den­
+local defect structure in a 20 keV irradiated sample during the plastic                sity continued to grow. Overall, compared with unirradiated samples,
+phase. Strong interactions between newly formed dislocations and the                   the dislocation density of irradiated FeCoNiCrCu under cyclic loading
+pre-existing irradiation dislocation network can be observed, manifest­                consistently fluctuated at a higher range. This was mainly due to irra­
+ing as entanglement, cutting, and pinning effects among dislocation                    diation damage introducing numerous defects that served as dislocation
+lines. As deformation progressed, dislocations gradually formed highly                 sources, promoting continuous dislocation proliferation and annihila­
+localized entangled clusters, effectively hindering further dislocation                tion during cyclic loading. High density of dislocations enhanced in­
+movement and significantly increasing dislocation slip resistance [54],                teractions among dislocations, and when they became entangled in
+thereby inducing notable cyclic hardening in subsequent cycles.                        stable structures that were difficult to move, this significantly hindered
+    In summary, the mechanical response of irradiated FeCoNiCrCu HEA                   dislocation slip, macroscopically manifesting as cyclic hardening.
+under cyclic loading is a dynamic evolutionary process. It is character­
+ized by an initial softening dominated by irradiation-induced early                    3.2.2. Microstructural evolutions
+yielding, followed by significant cyclic hardening triggered by the                       To further explore the plastic deformation mechanisms of FeCo­
+interaction and entanglement of high-density dislocations.                             NiCrCu HEA under cyclic loading, this chapter quantitatively analyzed
+    In face-centered cubic (FCC) materials, plastic deformation primarily              the changes in the fractions of FCC structure atoms and lattice disor­
+originates from dislocation slip, so dislocation density can reflect the               dered atoms across the cycles. Fig. 12 presents their evolution during the
+
+
+                                                                                  10
+Z. Zheng et al.                                                                                                             Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+Fig. 10. (a) Dislocation evolutions of different irradiated FeCoNiCrCu at different of the first cycle, (b) Enlarged view of dislocation evolutions of PKA energy 20k eV
+irradiated FeCoNiCrCu.
+
+
+cyclic process. As shown in Fig. 12(a), as cyclic loading progressed, the              the specific sample conditions, a universal linear relationship is
+percentage of FCC structure atoms gradually decreased, indicating that                 observed between lattice disorder fraction and dislocation density. The
+some FCC structures transformed into lattice disordered structures or                  global Pearson correlation coefficient of 0.974 confirms that lattice
+hexagonal close-packed (HCP) phases during deformation. Notably, the                   disorder atoms are primary driving force for dislocation evolution in this
+higher the irradiation dose, the more significant the decline in the per­              system. On the one hand, lattice disorder atoms can serve as effective
+centage of FCC structure atoms, suggesting that irradiation exacerbated                nucleation sites for dislocations during cyclic deformation.
+the instability of the crystal structure. Correspondingly, Fig. 12(b) shows                At the same time, these disordered regions can act as obstacles,
+that the fraction of lattice disordered atoms continuously increased with              pinning dislocation motion and inhibiting dislocation recombination
+the number of cycles, with the 20 keV irradiated sample having the                     and annihilation. In the study by Choi et al. [64], it was found that the
+highest disorder atom ratio. The transformation from FCC structures to                 slip resistance of dislocations is more significant in lattice disordered
+disordered structures and HCP phases reflected the accumulation of                     regions than in ordered regions. Fig. 14 provides atomic-scale snapshots
+plastic strain during the cycles. In this study, lattice disordered atoms              of the interaction between lattice disordered atoms and dislocations at
+include various crystal defects such as point defects, amorphous atoms,                key moments for the 20 keV sample, illustrating this dynamic process.
+dislocation core atoms, and stacking fault boundary atoms.                             Before loading (5 ps), irradiation-induced dislocations were pinned and
+    It is noteworthy that the trend of lattice disordered atom fraction                surrounded by clusters of disordered atoms, hindering their motion.
+change was highly similar to the evolution of dislocation density as                   Under applied load (10~15 ps), dislocations were forced to bow out or
+showed in Fig. 11. Fig. 13 compiles data from five samples. Regardless of              cut through these disordered obstacles, a process that required high
+
+                                                                                  11
+Z. Zheng et al.                                                                                                           Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+                      Fig. 11. Variations of dislocation density of different irradiated FeCoNiCrCu with the number of cyclic loading cycles.
+
+
+
+
+Fig. 12. (a) Variations of FCC atom proportion with the cycle numbers of cyclic loading, (b) Variations of lattice disorder atom proportion with the cycles number of
+cyclic loading in different irradiated FeCoNiCrCu.
+
+
+stress and simultaneously destroyed the lattice integrity of the traversed            counterparts. This elevated E-Factor indicates a high enrichment of
+region, generating new disordered atoms. During unloading (20~25 ps),                 defects at dislocation cores, forming a strong local pinning effect;
+some mobile defects recovered, leading to a temporary reduction in                    consequently, a higher applied stress is required for dislocations to
+disorder. However, upon reverse loading (30 ps), dislocations from                    overcome this binding and achieve depinning. In contrast, the high-dose
+different slip systems or with opposite Burgers vectors encountered each              samples are characterized by high background disorder, which di­
+other. Their strong elastic interactions resulted in the formation of stable          minishes the concentration difference between the dislocation cores and
+dislocation tangles. These tangles acted as stronger obstacles, impeding              the matrix, leading to a lower E-Factor. This effectively lowers the
+subsequent dislocation motion, and their core regions became stabilized               critical barrier required for dislocations to detach from local defect
+sites with increased local disorder concentration.                                    clusters. Furthermore, the temporal evolution of the E-Factor serves as a
+    To quantitatively verify the pinning effect of disordered domains on              precise indicator of the material's yielding behavior. The sharp precip­
+dislocation motion, a spatial overlap analysis was performed. An                      itous drop in the E-Factor coincides perfectly with the macroscopic yield
+enrichment factor (E-Factor), defined as the ratio of disordered atom                 point. Physically, this transition corresponds to the onset of dislocation
+concentration within a 5Å cylindrical zone around the dislocation line                depinning, where dislocations acquire sufficient driving force to over­
+(Ccore) to the global average (Cavg), was calculated, as shown in Fig. 15.            come the pinning potential imposed by the segregated defect atmo­
+Throughout the simulation, the E-Factor consistently remains above                    spheres. Once the dislocation velocity increases significantly post-yield,
+unity (>1), indicating that the pinning effect of disordered atoms on                 the dynamic equilibrium of core segregation is disrupted, causing the
+dislocations is a persistent feature. However, fluctuations in the E-Factor           localized core concentration (Ccore) to drop relative to the matrix,
+magnitude suggest that while the pinning mechanism remains active, its                leading to the observed collapse in the E-Factor. In the stable cycling
+intensity varies during the cyclic deformation. This fundamentally in­                stage (cycles 7–20), a distinct bifurcation is observed. All irradiated
+dicates a strong tendency for disordered atoms to accumulate around                   samples converge to a similarly low E-Factor, suggesting that the
+dislocation cores, thereby acting as pinning sites that hinder dislocation            continuous interaction with the defect-rich matrix homogenizes the
+motion. Ideally, a higher E-Factor correlates with a stronger localized               structural contrast. Conversely, the unirradiated sample maintains a
+pinning effect, which requires a higher stress to initiate dislocation                relatively higher E-Factor. This is attributed to its pristine matrix
+motion. This is evident in the initial cycles, where the low-dose samples             background, where any deformation-induced disorder remains highly
+exhibit significantly higher E-Factor values compared to the high-dose                localized at the dislocation cores, preserving a high signal-to-noise ratio
+
+                                                                                 12
+Z. Zheng et al.                                                                                                         Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+                                      Fig. 13. Correlation between lattice disorder fraction and dislocation density.
+
+
+
+
+                               Fig. 14. Interaction between dislocations and lattice disordered atoms under cyclic loading.
+
+
+in terms of structural heterogeneity.                                            lattice disordered atoms, respectively. The stacking faults are further
+    The findings above indicate that the pinning effect of disordered            categorized as follows: the local structure with two layers of HCP atoms
+atoms primarily dominates the strength during the early stage of cyclic          is identified as an intrinsic stacking fault, the local structure with one
+loading; however, this mechanism alone cannot fully account for the              layer of HCP atoms is classified as an extrinsic stacking fault, the local
+sustained hardening trend observed in the later stages. To address this          structure with two layers of HCP atoms and two FCC layers is regarded
+and for further analysis of the microscopic evolution during cyclic              as a deformation twin, and the local structure with three or more layers
+loading, stacking fault (SF) changes in the FeCoNiCrCu model at                  of HCP atoms is referred to as the HCP-martensite phase [65].
+different cycle numbers were analyzed, as shown in Fig. 16. In the               Furthermore, the fraction of HCP atoms (serving a quantitative indicator
+visualization method used, Common Neighbor Analysis (CNA), atoms                 for stacking faults) was calculated for each snapshot and is annotated
+are represented in different colors, where green, blue, red, and white           below the corresponding model.The comparison of stacking fault defects
+atoms represent FCC structures, BCC structures, stacking faults, and             in different cycles of irradiated models revealed that stacking faults
+
+
+                                                                            13
+Z. Zheng et al.                                                                                                        Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+Fig. 15. Definition and evolution of the enrichment factor (E-Factor). (a) Schematic representation of the calculation model, showing disordered atoms within the
+cylindrical shell surrounding the dislocation core. (b) Variation of the E-Factor during the loading process.
+
+
+became more significant with increasing cyclic loading. This indicated              hardening drive. In sharp contrast, all irradiated samples exhibit a
+that stacking faults are an important form of defects under cyclic loads.           vigorous activation of phase transformation and hardening during this
+    Additionally, it is important to note that the number of defects in             interval. The high-energy irradiation samples, in particular, display the
+unirradiated models was significantly less than in irradiated models, and           most aggressive evolution. For instance, the 20 keV sample sees its HCP
+the number of stacking faults did not consistently grow, showing fluc­              fraction surge from 10.0 % to 12.9 %, accompanied by a significant
+tuating changes, especially a noticeable decrease at N = 20.This fluc­              stress increase from 5.63 GPa to 6.46 GPa. Similarly, the 10 keV sample
+tuation in microstructure directly corresponded to the macro                        reaches a peak stress of 6.56 GPa at Cycle 17, jumping from 5.56 GPa at
+mechanical performance response: the stress amplitude of unirradiated               Cycle 10. It is worth noting that while the instantaneous stress at Cycle
+FeCoNiCrCu exhibited a fluctuating change. In contrast, the continuous              17 is marginally higher for the 10 keV sample, the 20 keV sample
+accumulation and retention of stacking faults in irradiated samples                 maintains a higher overall average stress amplitude throughout the cy­
+corresponded to an overall stable increase in stress amplitude.                     clic process, consistent with the higher defect density induced by higher
+    Table 3 provides a quantitative assessment of the microstructural               irradiation energy. This comparison conclusively demonstrates that
+and mechanical evolution from Cycle 10 to Cycle 17, capturing the                   while the unirradiated material reaches a stable state early on, the
+critical divergence point in the cyclic response. At Cycle 10, the samples          irradiation-induced defects in the treated samples continue to drive
+exhibit comparable varying initial states, but the subsequent evolution             massive stacking fault generation (fHCP increase) well into Cycle 17,
+reveals fundamentally different deformation mechanisms. A striking                  thereby sustaining a rapid and continuous cyclic hardening process.
+observation is the saturation behavior of the unirradiated sample. Be­                  This macroscopic disparity stems from distinct deformation mecha­
+tween Cycle 10 and Cycle 17, its HCP phase fraction remains completely              nisms. In unirradiated materials, the absence of stable pinning centers
+stagnant at 9.5 %, while the stress amplitude actually experiences a                permits dynamic recovery: dislocations undergo cross-slip and annihi­
+slight decrease from 5.36 GPa to 5.29 GPa, indicating a lack of further             lation, causing the periodic disintegration of SF networks and resulting
+
+                                                                               14
+Z. Zheng et al.                                                                                                               Journal of Nuclear Materials 630 (2026) 156712
+
+
+
+
+                                  Fig. 16. Stacking fault defect distributions of different irradiated FeCoNiCrCu at different cycles.
+
+
+                                                                                            quantitative metrics such as absolute stress amplitudes, overall dislo­
+Table 3
+                                                                                            cation densities, and the rate of SF accumulation inevitably carry rate-
+Quantitative comparison of HCP phase fraction (fHCP ) and stress amplitude
+                                                                                            dependent biases and are likely overestimated, the qualitatively iden­
+(σ amρ ) between the intermediate stage (Cycle 10) and the critical transition stage
+(Cycle 17).
+                                                                                            tified mechanism of SF-network-assisted strengthening mediated by
+                                                                                            partial-dislocation activity remains credible from a mechanistic
+  Sample             Cycles 10                         Cycle 17
+                                                                                            perspective.
+                     fHCP ( %)        σamρ (GPa)       fHCP ( %)       σamρ (GPa)
+                                                                                                Overall, these findings provide mechanistic insight into the cyclic
+  unirradiated       9.5              5.36             9.5             5.29                 plasticity of irradiated FeCoNiCrCu. Distinct from previous MD studies
+  1 keV              6.9              5.08             10.4            5.71
+  5 keV              7.7              5.50             11.9            6.09
+                                                                                            that mainly examined the monotonic tensile behavior of irradiated
+  10 keV             9.3              5.56             12.8            6.56                 HEAs, where irradiation was primarily manifested as earlier yielding
+  20 keV             10.0             5.63             12.9            6.46                 [48], the present work establishes the dose dependence of the cyclic
+                                                                                            response and elucidates the underlying defect–dislocation interactions.
+                                                                                            Furthermore, it reveals a transition in the dominant hardening mecha­
+in fluctuating stress amplitudes. In irradiated samples, however, stable
+                                                                                            nism, from atomic-disorder pinning at early cycles to
+irradiation defects inhibit such recovery. As noted by Li et al. [66], the
+                                                                                            stacking-fault-controlled hardening at later cycles. In contrast to the
+continuous accumulation of planar defects (SFs) creates extensive bar­
+                                                                                            cyclic softening associated with dislocation channeling reported for
+riers that effectively impede dislocation slip. The increasing SF density
+                                                                                            irradiated RAFM steel EUROFER97 [17], irradiated FeCoNiCrCu ex­
+necessitates a higher driving force for deformation, thereby sustaining
+                                                                                            hibits sustained cyclic hardening, indicating a fundamentally different
+the rapid and continuous cyclic hardening process.
+                                                                                            irradiation–fatigue interplay in this HEA system. Future work combining
+                                                                                            lower effective loading rates, longer cycle durations, and larger simu­
+3.3. Limitation and outlook                                                                 lation cells, as well as systematically examining the effects of different
+                                                                                            strain rates, would be valuable for further assessing the long-timescale
+    It should be noted that cyclic deformation additionally involves                        structural evolution under cyclic deformation.
+longer-timescale processes, including dislocation reciprocation, annihi­
+lation, and progressive cell-structure formation. In the present simula­                    4. Conclusion
+tions, however, the cyclic simulations were performed at a high strain
+rate of 1 × 1010 s− 1. Since dislocation motion is inherently time-                             This study employed molecular dynamics simulations to investigate
+dependent, such a rate reduces the time available for thermally acti­                       the atomic-scale deformation mechanisms and microstructural evolu­
+vated recovery during load reversal, which may suppress dislocation                         tion of FeCoNiCrCu HEAs under varying irradiation doses, aimed to
+annihilation and limit dislocation reversibility, thereby promoting the                     understand the fatigue performance of HEAs under high-dose irradia­
+retention of defects generated in each cycle. In addition, the short                        tion. Overlapping cascade simulations were conducted at PKA energies
+timescale may hinder the development of well-equilibrated dislocation                       of 0, 1, 5, 10, and 20 keV to construct defect models. Uniaxial tensile
+cell structures that typically require longer-range dislocation rear­                       tests were applied to the defect models to examine their mechanical
+rangements. Meanwhile, the high rate may promote the formation and                          properties, followed by cyclic loading to simulate the material's low-
+retention of stacking faults and related sessile junctions, thereby                         cycle fatigue. The simulation results lead to the following main
+enhancing the apparent hardening response. Therefore, although
+
+                                                                                       15
+Z. Zheng et al.                                                                                                               Journal of Nuclear Materials 630 (2026) 156712
+
+
+conclusions:                                                                        Data availability
+
+   (1) The stress amplitude of the FeCoNiCrCu alloy exhibits a positive                 No data was used for the research described in the article.
+       correlation with irradiation dose, a behavior primarily governed
+       by the evolution of dislocation density. Irradiation-induced de­             References
+       fects act as preferential dislocation nucleation sites, leading to
+       earlier activation and a higher dislocation population than in the            [1] Z. Cheng, J. Sun, X. Gao, Y. Wang, J. Cui, T. Wang, H. Chang, Irradiation effects in
+                                                                                         high-entropy alloys and their applications, J. Alloy. Compd. 930 (2023) 166768.
+       unirradiated alloy; the resulting dislocation interactions impede             [2] Z. Zhang, D.E.J. Armstrong, P.S. Grant, The effects of irradiation on CrMnFeCoNi
+       glide and produce pronounced hardening.                                           high-entropy alloy and its derivatives, Prog. Mater. Sci. 123 (2022) 100807.
+   (2) During the initial stage of deformation, disordered atoms play a              [3] L. Yang, H. Ge, J. Zhang, T. Xiong, Q. Jin, Y. Zhou, X. Shao, B. Zhang, Z. Zhu,
+                                                                                         S. Zheng, High He-ion irradiation resistance of CrMnFeCoNi high-entropy alloy
+       dual role that governs early-stage strength: they act as nucleation               revealed by comparison study with Ni and 304SS, J. Mater. Sci. Technol. 35 (2019)
+       sites for dislocations and, more critically, serve as strong pinning              300–305.
+       centers that hinder dislocation slip. Consequently, dislocations              [4] O. El-Atwani, N. Li, M. Li, A. Devaraj, J.K.S. Baldwin, M.M. Schneider, D. Sobieraj,
+                                                                                         J.S. Wróbel, D. Nguyen-Manh, S.A. Maloy, Outstanding radiation resistance of
+       undergo intermittent pinning–depinning during glide, elevating                    tungsten-based high-entropy alloys, Sci. Adv. 5 (2019) eaav2002.
+       the early-stage flow stress.                                                  [5] D. Patel, M.D. Richardson, B. Jim, S. Akhmadaliev, R. Goodall, A.S. Gandy,
+   (3) As deformation progresses, the dominant hardening mechanism                       Radiation damage tolerance of a novel metastable refractory high entropy alloy V2.
+                                                                                         5Cr1. 2WMoCo0. 04, J. Nucl. Mater. 531 (2020) 152005.
+       transitions to stacking faults (SFs). The metastable nature and low
+                                                                                     [6] T. Nagase, P.D. Rack, J.H. Noh, T. Egami, In-situ TEM observation of structural
+       SFE of the FeCoNiCrCu matrix facilitate the formation of a high                   changes in nano-crystalline CoCrCuFeNi multicomponent high-entropy alloy
+       density of SFs. These planar defects constitute extensive barriers                (HEA) under fast electron irradiation by high voltage electron microscopy (HVEM),
+       within the distorted lattice, impeding subsequent dislocation                     Intermetallics 59 (2015) 32–42.
+                                                                                     [7] O.R. Deluigi, R.C. Pasianot, F.J. Valencia, A. Caro, D. Farkas, E.M. Bringa,
+       motion more effectively than point defects and serving as the                     Simulations of primary damage in a High Entropy alloy: probing enhanced
+       primary source of sustained cyclic hardening in the later stages.                 radiation resistance, Acta Mater. 213 (2021) 116951.
+                                                                                     [8] Q. Xu, H.Q. Guan, Z.H. Zhong, S.S. Huang, J.J. Zhao, Irradiation resistance
+                                                                                         mechanism of the CoCrFeMnNi equiatomic high-entropy alloy, Sci. Rep. UK 11
+    The observed cyclic hardening implies a critical reduction in plastic                (2021) 608.
+accommodation capability. This behavior is driven by the pinning effect              [9] J. Cui, Q. Hou, M. Li, B. Fu, Effect of applied strain on radiation damage in
+of disordered atoms and extensive stacking fault networks. Due to the                    CoCrFeNi concentrated solid solution alloys: insights from molecular dynamics
+                                                                                         simulations, Nucl. Instrum. Methods Phys. Res. B Beam Interact. Mater. At. 552
+alloy’s low stacking fault energy, the dissociation of dislocations into                 (2024) 165378.
+Shockley partials suppresses cross-slip, preventing stress relaxation via           [10] Y. Zhou, G. Velişa, S. San, M.L. Crespillo, Z. Fan, H. Bei, W.J. Weber, P. Xiu,
+dynamic recovery. Consequently, restricted dislocation mobility creates                  L. Wang, F. Tuomisto, Role of chemical disorder on radiation-induced defect
+                                                                                         production and damage evolution in NiFeCoCr, J. Nucl. Mater. 565 (2022) 153689.
+persistent atomic-scale stress concentrations. Instead of dissipating               [11] F. Tuomisto, I. Makkonen, J. Heikinheimo, F. Granberg, F. Djurabekova,
+through plastic flow, these unrelaxed local stresses serve as preferential               K. Nordlund, G. Velisa, H. Bei, H. Xue, W.J. Weber, Segregation of Ni at early stages
+sites for bond breaking or void nucleation, thereby directly facilitating                of radiation damage in NiCoFeCr solid solution alloys, Acta Mater. 196 (2020)
+                                                                                         44–51.
+crack initiation and early-stage failure.
+                                                                                    [12] Y. Lin, T. Yang, L. Lang, C. Shan, H. Deng, W. Hu, F. Gao, Enhanced radiation
+    Due to the high strain rates (1 × 1010 s− 1) adopted in the present MD               tolerance of the Ni-Co-Cr-Fe high-entropy alloy as revealed from primary damage,
+simulations, the reported absolute stress amplitudes and the quantita­                   Acta Mater. 196 (2020) 133–143.
+tive accumulation of dislocations and stacking faults may carry an up­              [13] B. Zhu, Z. Li, M. Huang, X. Bai, X. Mi, In-depth study of the production and
+                                                                                         accumulation of defects during prolonged irradiation of nano-crystalline Ni and
+ward bias. Nevertheless, the qualitative identification of the transition in             FeCoCrNi high-entropy alloy through MD simulation, Comp. Mater. Sci. 246
+cyclic deformation mechanisms from defect pinning to stacking-fault-                     (2025) 113341.
+controlled hardening remains qualitatively valid.                                   [14] Y. He, W. Shi, C. Han, K. He, C. Liu, Z. Chen, P. Zhang, C. Chen, B. Shen, Molecular
+                                                                                         dynamics simulations of primary cascade damage in FeCoCrNiCu high-entropy
+                                                                                         alloys, J. Alloy. Compd. 983 (2024) 173972.
+CRediT authorship contribution statement                                            [15] L. Han, C. Zhao, X. Tian, Q. Wang, W. Jiang, C. Xu, H. Fan, Molecular dynamics
+                                                                                         simulations on the evolution of irradiation-induced dislocation loops in
+                                                                                         FeCoNiCrCu high-entropy alloy, J. Nucl. Mater. 604 (2025) 155514.
+   Zhanguang Zheng: Writing – review & editing, Writing – original                  [16] Y. Murase, J. Nagakawa, N. Yamamoto, Plastic deformation of SUS304 under in
+draft, Supervision, Resources, Project administration, Methodology,                      situ and post-irradiation fatigue loadings, J. Nucl. Mater. 367-370 (2007) 966–971.
+Funding acquisition, Data curation, Conceptualization. Yunjia Mo:                   [17] N.V. Luzginova, J. Rensman, P. Ten Pierick, J.B.J. Hegeman, Low cycle fatigue of
+                                                                                         irradiated and unirradiated Eurofer97 steel at 300 ◦ C, J. Nucl. Mater. 409 (2011)
+Writing – review & editing, Writing – original draft, Visualization,                     153–155.
+Software, Methodology, Investigation, Conceptualization. Liping Jiang:              [18] K. Sato, X.Z. Cao, T. Yoshiie, Q. Xu, C. Kutsukake, C. Konno, Microstructure of Ni
+Validation, Software, Investigation, Formal analysis. Xiangyu Ruan:                      fatigued under neutron irradiation, J. Nucl. Mater. 442 (2013) S805–S808.
+                                                                                    [19] S. Plimpton, Fast parallel algorithms for short-range molecular dynamics,
+Visualization, Methodology, Investigation. Yangguang Hao: Software,
+                                                                                         J. Comput. Phys. 117 (1995) 1–19.
+Methodology, Formal analysis.                                                       [20] D. Farkas, A. Caro, Model interatomic potentials and lattice strain in a high-entropy
+                                                                                         alloy, J. Mater. Res. 33 (2018) 3218–3225.
+Declaration of competing interest                                                   [21] J.F. Ziegler, SRIM–the stop and range of ions in matter, 2006.
+                                                                                    [22] A. Stukowski, Visualization and analysis of atomistic simulation data with
+                                                                                         OVITO–the open visualization tool, Model. Simul. Mater. Sc. 18 (2009) 15012.
+    The authors declare that they have no known competing financial                 [23] J.D. Honeycutt, H.C. Andersen, Molecular dynamics study of melting and freezing
+interests or personal relationships that could have appeared to influence                of small Lennard-Jones clusters, J. Phys. Chem. 91 (1987) 4950–4963.
+                                                                                    [24] A. Stukowski, V.V. Bulatov, A. Arsenlis, Automated identification and indexing of
+the work reported in this paper.                                                         dislocations in crystal interfaces, Model. Simul. Mater. Sc. 20 (2012) 85007.
+                                                                                    [25] P. Goswami, S. Pal, M. Gupta, Investigation of point defect evolution and Voronoi
+Acknowledgments                                                                          cluster analysis for magnesium during nanoindentation, J. Magnes. Alloy. 11
+                                                                                         (2023) 1029–1042.
+                                                                                    [26] P. Hirel, Atomsk: a tool for manipulating and converting atomic data files, Comput.
+   This research was sponsored by the National Natural Science Foun­                     Phys. Commun. 197 (2015) 212–219.
+dation of China (Grant Nos. 52265018 and 51675110) and the Natural                  [27] S.J. Zinkle, B.N. Singh, Analysis of displacement damage and defect production
+                                                                                         under cascade damage conditions, J. Nucl. Mater. 199 (1993) 173–191.
+Science Foundation of Guangxi (Grant Nos. 2021GXNSFAA220119 and                     [28] M.J. Norgett, M.T. Robinson, I.M. Torrens, A proposed method of calculating
+2025GXNSFDA069015), and Innovation Project of Guangxi Graduate                           displacement dose rates, Nucl. Eng. Des. 33 (1975) 50–54.
+Education (YCBZ2025053).                                                            [29] W. Zag, K. Urban, Temperature dependence of the threshold energy for atom
+                                                                                         displacement in irradiated molybdenum, Phys. Status Solidi A. 76 (1983) 285–295.
+
+
+
+
+                                                                               16
+Z. Zheng et al.                                                                                                                                Journal of Nuclear Materials 630 (2026) 156712
+
+[30] J. Tian, Q. Feng, J. Zheng, X. Liu, W. Zhou, Radiation damage buildup and basal                [49] L. Ma, S. Xiao, H. Deng, W. Hu, Atomistic simulation of mechanical properties and
+     vacancy cluster formation in hcp zirconium: a molecular dynamics study, J. Nucl.                    crack propagation of irradiated nickel, Comp. Mater. Sci. 120 (2016) 21–28.
+     Mater. 551 (2021) 152920.                                                                      [50] C. Liang, Z. Tian, Q. Zheng, J. Wang, M. Fu, Y. Ai, K. Dong, Molecular dynamics
+[31] K. Nordlund, M. Ghaly, R.S. Averback, M. Caturla, T.D. De La Rubia, J. Tarus,                       simulation of mechanical properties of NiCo alloy under primary cascade damage,
+     Defect production in collision cascades in elemental semiconductors and fcc                         Vacuum 230 (2024) 113681.
+     metals, Phys. Rev. B 57 (1998) 7556.                                                           [51] M. Shirali, K. Gheisari, M. Reihanian, Phase evolution, mechanical properties, and
+[32] K. Nordlund, S.J. Zinkle, A.E. Sand, F. Granberg, R.S. Averback, R.E. Stoller,                      corrosion behavior of FeCoNiCu-based high-entropy alloys, J. Mater. Res. Technol.
+     T. Suzudo, L. Malerba, F. Banhart, W.J. Weber, F. Willaime, S.L. Dudarev,                           37 (2025) 4275–4290.
+     D. Simeone, Primary radiation damage: a review of current understanding and                    [52] A. Basem, M.A. Hassan, O.A. Elkady, Y.A. El-Shekeil, S. Bendoukha, N. Barhoumi,
+     models, J. Nucl. Mater. 512 (2018) 450–479.                                                         H.A. Refaey, A. Elsheikh, Characterization of FeCoNiCr high-entropy alloys
+[33] D.J. Bacon, F. Gao, Y.N. Osetsky, The primary damage state in fcc, bcc and hcp                      manufactured by powder metallurgy technique, J. Mater. Res. Technol. 30 (2024)
+     metals as seen in molecular dynamics simulations, J. Nucl. Mater. 276 (2000)                        88–100.
+     1–12.                                                                                          [53] S.M. Oh, S.I. Hong, Microstructural stability and mechanical properties of
+[34] F. Cao, Y. Wang, L. Dai, Novel atomic-scale mechanism of incipient plasticity in a                  equiatomic CoCrCuFeNi, CrCuFeMnNi, CoCrCuFeMn alloys, Mater. Chem. Phys.
+     chemically complex CrCoNi medium-entropy alloy associated with inhomogeneity                        210 (2018) 120–125.
+     in local chemical environment, Acta Mater. 194 (2020) 283–294.                                 [54] Y. Cao, J. Liu, S. Zhou, Y. Xu, Mechanical properties and microstructural evolution
+[35] D.S. Aidhy, C. Lu, K. Jin, H. Bei, Y. Zhang, L. Wang, W.J. Weber, Point defect                      of FeNiCrCoCux high-entropy alloys: a molecular dynamics simulation, Solid. State
+     evolution in Ni, NiFe and NiCr alloys from atomistic simulations and irradiation                    Commun. 359 (2023) 115011.
+     experiments, Acta Mater. 99 (2015) 69–76.                                                      [55] X. Liu, L. Chang, T. Ma, C. Zhou, Molecular dynamics simulation of tension and
+[36] D.M. Dimiduk, C. Woodward, R. LeSar, M.D. Uchic, Scale-free intermittent flow in                    compression deformation behavior in CoCrCuFeNi high-entropy alloy: effects of
+     crystal plasticity, Science 312 (2006) 1188–1190.                                                   temperature and orientation, Mater. Today Commun. 36 (2023) 106523.
+[37] J.C. Stinville, M.A. Charpagne, A. Cervellon, S. Hemery, F. Wang, P.G. Callahan,               [56] X. Wang, H. Liu, J. Mo, S. Wang, H. Li, W. Yang, Atomic-level understanding of
+     V. Valle, T.M. Pollock, On the origins of fatigue strength in crystalline metallic                  enhanced mechanical properties in FeNiCrCoCu high-entropy alloy, Mater. Today
+     materials, Science 377 (2022) 1065–1071.                                                            Commun. 36 (2023) 106759.
+[38] M. Zaiser, Scale invariance in plastic flow of crystalline solids, Adv. Phys. 55               [57] H. Mughrabi, On the Grain-Size Dependence of Metal fatigue: Outlook on the
+     (2006) 185–245.                                                                                     Fatigue of Ultrafine-Grained metals, Investigations and Applications of Severe
+[39] F.F. Csikor, C. Motz, D. Weygand, M. Zaiser, S. Zapperi, Dislocation avalanches,                    Plastic Deformation, Springer, 2000, pp. 241–253.
+     strain bursts, and the problem of plastic forming at the micrometer scale, Science             [58] K. Lu, A. Chauhan, A.S. Tirunilai, J. Freudenberger, A. Kauffmann, M. Heilmaier,
+     318 (2007) 251–254.                                                                                 J. Aktaa, Deformation mechanisms of CoCrFeMnNi high-entropy alloy under low-
+[40] J.C. Stinville, N. Vanderesse, F. Bridier, P. Bocher, T.M. Pollock, High resolution                 cycle-fatigue loading, Acta Mater. 215 (2021) 117089.
+     mapping of strain localization near twin boundaries in a nickel-based superalloy,              [59] H. Nguyen, S. Young, T. Le, T. Vu, T. Fang, Bauschinger effect on high entropy
+     Acta Mater. 98 (2015) 29–42.                                                                        alloy under cyclic deformation, Intermetallics 183 (2025) 108830.
+[41] T. Zhang, J. Zhou, J. Shen, Molecular dynamics simulation of low-cycle fatigue                 [60] A. Ghosh, Low cycle fatigue behaviour of engineering metallic materials: review on
+     behavior of single/polycrystalline iron, Nanomaterials (2025) 217.                                  cyclic deformation micro-mechanism, Mech. Mater. 188 (2024) 104852.
+[42] J. Shen, X. Shen, J. Zhou, W. Yue, T. Zhang, Molecular dynamics simulation of                  [61] Q. Xu, H.Q. Guan, S.S. Huang, Z.H. Zhong, H. Watanabe, M. Tokitani,
+     fatigue damage formation in single-crystal/polycrystalline aluminum, Mater.                         Compositional stability in medium and high-entropy alloys of CoCrFeMnNi system
+     Today Commun. 39 (2024) 109138.                                                                     under ion irradiation, J. Alloy. Compd. 925 (2022) 166697.
+[43] B. Chen, W. Wu, M. Chen, Y. Guo, Molecular dynamics study of fatigue mechanical                [62] T. Yang, S. Xia, W. Guo, R. Hu, J.D. Poplawsky, G. Sha, Y. Fang, Z. Yan, C. Wang,
+     properties and microstructural evolution of Ni-based single crystal superalloys                     C. Li, Y. Zhang, S.J. Zinkle, Y. Wang, Effects of temperature on the irradiation
+     under cyclic loading, Comp. Mater. Sci. 185 (2020) 109954.                                          responses of Al0.1CoCrFeNi high entropy alloy, Scripta Mater. 144 (2018) 31–35.
+[44] Q. Wang, J. Guo, W. Chen, Y. Tian, Molecular dynamics simulations of tensile                   [63] C. Lu, T. Yang, K. Jin, G. Velisa, P. Xiu, Q. Peng, F. Gao, Y. Zhang, H. Bei, W.
+     properties for FeNiCrCoCu high-entropy alloy, Mater. Today Commun. 38 (2024)                        J. Weber, L. Wang, Irradiation effects of medium-entropy alloy NiCoCr with and
+     108187.                                                                                             without pre-indentation, J. Nucl. Mater. 524 (2019) 60–66.
+[45] A. Lehtinen, L. Laurson, F. Granberg, K. Nordlund, M.J. Alava, Effects of                      [64] W. Choi, Y.H. Jo, S.S. Sohn, S. Lee, B. Lee, Understanding the physical metallurgy
+     precipitates and dislocation loops on the yield stress of irradiated iron, Sci. Rep. UK             of the CoCrFeMnNi high-entropy alloy: an atomistic simulation study, NPJ.
+     8 (2018) 6914.                                                                                      Comput. Mater. 4 (2018) 1.
+[46] J. Liu, Molecular dynamic study of temperature dependence of mechanical                        [65] K. Hsieh, Y. Lin, C. Lu, J. Yang, P.K. Liaw, C. Kuo, Atomistic simulations of the face-
+     properties and plastic inception of CoCrCuFeNi high-entropy alloy, Phys. Lett. a                    centered-cubic-to-hexagonal-close-packed phase transformation in the equiatomic
+     384 (2020) 126516.                                                                                  CoCrFeMnNi high entropy alloy under high compression, Comp. Mater. Sci. 184
+[47] N.A.P.K. Kumar, C. Li, K.J. Leonard, H. Bei, S.J. Zinkle, Microstructural stability                 (2020) 109864.
+     and mechanical behavior of FeNiMnCr high entropy alloy under ion irradiation,                  [66] J. Li, Y. Wang, D. Yan, J. Li, Effects of nanotwins and stacking faults on the
+     Acta Mater. 113 (2016) 230–244.                                                                     mechanical properties of CrCoNi medium-entropy alloys, J. Mater. Res. Technol.
+[48] Y. Yu, Y. Yu, Simulations of irradiation resistance and mechanical properties under                 27 (2023) 3447–3458.
+     irradiation of high-entropy alloy NiCoCrFe, Mater. Today Commun. 33 (2022)
+     104308.
+
+
+
+
+                                                                                               17
+

@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen - Bioinsecticidas en colza</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  /* ── Reset & base ──────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;
+    --surface:    #ffffff;
+    --panel:      #ffffff;
+    --ink:        #18202a;
+    --muted:      #5a6472;
+    --line:       #d8dde4;
+    --accent:     #174a7e;    /* azul journal */
+    --accent-h:   #0d3259;
+    --gold:       #b8860b;    /* acento dorado */
+    --teal:       #0a6858;
+    --soft-blue:  #eef3fb;
+    --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;
+    --warn:       #fff8e1;
+    --nav-h:      44px;
+    --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.75;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  /* ── Nav bar ────────────────────────────────────────────────── */
+  .top-nav {
+    position: sticky; top: 0; z-index: 200;
+    height: var(--nav-h);
+    background: var(--accent);
+    display: flex; align-items: center; gap: 12px;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .top-nav a.back {
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px;
+    transition: background .15s;
+  }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title {
+    color: rgba(255,255,255,.6);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .top-nav .journal-name {
+    margin-left: auto;
+    color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  /* ── Header / masthead ──────────────────────────────────────── */
+  header {
+    background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff;
+    padding: 52px 28px 44px;
+    border-bottom: 4px solid var(--gold);
+  }
+  header .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  .journal-stripe {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .journal-stripe::after {
+    content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4);
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.3px;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,.78);
+    max-width: 820px;
+    margin-bottom: 28px;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: rgba(255,255,255,.8);
+  }
+  .meta div {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px;
+    border-radius: 6px;
+  }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* ── Main layout ────────────────────────────────────────────── */
+  main, .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  main { padding: 40px 24px 80px; }
+
+  /* ── Sections ───────────────────────────────────────────────── */
+  section { margin-bottom: 48px; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+    position: relative;
+  }
+  h2::before {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px;
+    background: var(--gold);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  p { margin: 0 0 16px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+
+  /* ── Lead / abstract ────────────────────────────────────────── */
+  .lead {
+    font-size: 17px;
+    font-style: italic;
+    color: #2a3540;
+    background: var(--soft-blue);
+    border-left: 4px solid var(--accent);
+    padding: 22px 24px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  /* ── Tags ───────────────────────────────────────────────────── */
+  .tag {
+    display: inline-block;
+    margin: 0 6px 8px 0;
+    padding: 4px 11px;
+    border-radius: 20px;
+    background: var(--soft-blue);
+    color: var(--accent);
+    border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .2px;
+  }
+
+  /* ── Cards & grids ──────────────────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important {
+    background: var(--soft-gold);
+    border-left: 4px solid var(--gold);
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+  }
+  @media (min-width: 720px) {
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+  }
+
+  /* ── Tables ─────────────────────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    margin: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 11px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+  }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* ── Figure list wrapper ────────────────────────────────────── */
+  .figure-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* ── Figure card ────────────────────────────────────────────── */
+  figure {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s;
+  }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+
+  /* Two-panel layout on wide screens */
+  @media (min-width: 680px) {
+    figure {
+      display: grid;
+      grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr;
+      min-height: 220px;
+    }
+    figure > img {
+      grid-column: 1;
+      grid-row: 1 / 3;
+    }
+    figure > figcaption {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    figure > .figbody {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
+  figure > img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    background: #0e1826;
+    display: block;
+    border-right: 1px solid var(--line);
+  }
+
+  /* On mobile: image full width on top */
+  @media (max-width: 679px) {
+    figure > img {
+      max-height: 280px;
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+
+  figcaption {
+    padding: 18px 20px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  figcaption strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .caption {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #3a4650;
+    line-height: 1.55;
+  }
+
+  .figbody {
+    padding: 16px 20px 18px;
+    background: var(--soft-teal);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: #1e3530;
+    line-height: 1.65;
+    border-left: 3px solid var(--teal);
+  }
+  .figbody p { margin: 0; }
+  .figbody::before {
+    content: '↳ Interpretación';
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 7px;
+  }
+
+  .small { color: var(--muted); font-size: 13px; }
+  .refs li { margin-bottom: 10px; }
+
+  /* ── Scrollbar ──────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+  <a href="../index.html" class="back">← Índice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+    <div class="inner">
+      <h1>Bioinsecticidas, pulgones y enemigos naturales en colza</h1>
+      <p class="subtitle">Resumen en espanol del paper <strong>Effects of bioinsecticide exposure route on aphids and their natural enemies in oilseed rape</strong>, con las figuras extraidas y explicadas.</p>
+      <div class="meta">
+        <div><strong>Autores:</strong> Aimee J. Tonks, Tom W. Pope, Simon Cooper, Joe M. Roberts</div>
+        <div><strong>Revista:</strong> Pest Management Science (2026)</div>
+        <div><strong>DOI:</strong> <a href="https://doi.org/10.1002/ps.70518">10.1002/ps.70518</a></div>
+        <div><strong>PDF local:</strong> <a href="../pappers/ilove-Tonks.2026.pdf">pappers/ilove-Tonks.2026.pdf</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <p class="lead">
+        El estudio evalua tres bioinsecticidas de accion fisica, basados en acidos grasos, polimeros de silicona y surfactantes, contra dos pulgones importantes de la colza: <em>Myzus persicae</em> y <em>Brevicoryne brassicae</em>. La pregunta practica es muy IPM: estos productos sirven para bajar pulgones, pero que pasa con sus enemigos naturales, el parasitoide <em>Diaeretiella rapae</em> y la larva depredadora <em>Chrysoperla carnea</em>, segun la ruta de exposicion?
+      </p>
+      <div>
+        <span class="tag">Colza</span>
+        <span class="tag">Pulgones</span>
+        <span class="tag">Bioinsecticidas</span>
+        <span class="tag">IPM</span>
+        <span class="tag">Parasitoides</span>
+        <span class="tag">Crisopas</span>
+        <span class="tag">Exposicion directa vs residual</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pregunta Del Paper</h2>
+      <p>
+        Los bioinsecticidas fisicos prometen menor persistencia ambiental que insecticidas sinteticos, pero eso no significa automaticamente que sean inocuos. El paper separa tres rutas: exposicion combinada, donde insecto y hoja reciben el spray; exposicion directa al insecto, luego transferido a hoja sin tratar; y exposicion residual, donde el insecto entra en contacto con hojas ya tratadas y secas.
+      </p>
+      <p>
+        Esa separacion es el corazon del trabajo. Si un producto mata solo por contacto directo y deja poco residuo toxico, puede ser util para aplicaciones muy dirigidas. Pero si cae sobre parasitoides o depredadores durante la aplicacion, tambien puede causar mortalidad aguda.
+      </p>
+    </section>
+
+    <section>
+      <h2>Diseno Experimental En Simple</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Plagas</h3>
+          <p>Usan ninfas de tercer instar de <em>M. persicae</em> y <em>B. brassicae</em>, criadas en plantas de colza en condiciones controladas.</p>
+        </div>
+        <div class="card">
+          <h3>Enemigos naturales</h3>
+          <p>Evalua adultos y momias de <em>D. rapae</em>, y larvas de tercer instar de <em>C. carnea</em>. Miden supervivencia y emergencia desde momias parasitadas.</p>
+        </div>
+        <div class="card">
+          <h3>Tratamientos</h3>
+          <p>Compara controles negativos, agua, sulfoxaflor como control sintetico positivo, y bioinsecticidas de acidos grasos, polimeros de silicona y surfactantes.</p>
+        </div>
+        <div class="card">
+          <h3>Lectura estadistica</h3>
+          <p>Usa curvas de supervivencia, pruebas log-rank, modelos AFT y modelos binomiales para probabilidad de emergencia de parasitoides.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Resultados Clave</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Contacto directo funciona mejor</h3>
+          <p>Acidos grasos y polimeros de silicona reducen fuertemente <em>B. brassicae</em> y de forma moderada <em>M. persicae</em>. El surfactante fue el menos consistente.</p>
+        </div>
+        <div class="card">
+          <h3>Residuo seco casi no controla pulgones</h3>
+          <p>La exposicion a residuos produjo mortalidad baja en pulgones con bioinsecticidas, mientras sulfoxaflor mantuvo alta toxicidad residual.</p>
+        </div>
+        <div class="card">
+          <h3>Riesgo para parasitoides en spray directo</h3>
+          <p><em>D. rapae</em> adulto fue muy sensible: acidos grasos y polimeros de silicona alcanzaron mortalidad muy alta bajo exposicion directa.</p>
+        </div>
+        <div class="card">
+          <h3>Baja persistencia puede ayudar al IPM</h3>
+          <p>La baja toxicidad residual permite recolonizacion de enemigos naturales despues de secarse el producto, pero exige aplicacion precisa sobre la plaga.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Valores Para Recordar</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ruta de exposicion</th>
+            <th>Efecto sobre pulgones</th>
+            <th>Efecto sobre enemigos naturales</th>
+            <th>Lectura IPM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Combinada</td>
+            <td>Fatty acids y silicone polymers fueron fuertes contra <em>B. brassicae</em>; menos completos en <em>M. persicae</em>. Surfactants fue moderado/bajo.</td>
+            <td><em>D. rapae</em> adultos sufrieron alta mortalidad; <em>C. carnea</em> fue mas tolerante, aunque no inmune.</td>
+            <td>Controla mejor cuando el producto moja insecto y hoja, pero aumenta riesgo si hay enemigos naturales presentes.</td>
+          </tr>
+          <tr>
+            <td>Directa al insecto</td>
+            <td>En el resumen del paper: <em>B. brassicae</em> 90-56% y <em>M. persicae</em> 63-20% con bioinsecticidas en 72 h.</td>
+            <td><em>D. rapae</em> tuvo 100% de mortalidad a 24 h con acidos grasos y polimeros de silicona; <em>C. carnea</em> 66% y 100%, respectivamente.</td>
+            <td>Alta eficacia de contacto, pero tambien alta toxicidad no objetivo si el spray alcanza enemigos naturales.</td>
+          </tr>
+          <tr>
+            <td>Residual</td>
+            <td>Muy baja mortalidad con bioinsecticidas: <em>M. persicae</em> 0%, <em>B. brassicae</em> hasta 10%.</td>
+            <td>Baja mortalidad con bioinsecticidas: <em>D. rapae</em> hasta 33%, <em>C. carnea</em> hasta 13%; sulfoxaflor fue mucho mas persistente.</td>
+            <td>Menor riesgo despues de secado, pero tambien menor valor como residuo protector.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Figuras Explicadas</h2>
+      <p class="small">Incluyo las figuras cientificas principales en orden. Las imagenes pequenas sin caption que corresponden a marcas/editorial/pagina se conservan al final para completar el set extraido.</p>
+
+      <div class="figure-list">
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_004_Figure_1_Containment_of_Diaeretiella_ra.png" alt="Contencion de Diaeretiella rapae para ensayos">
+          <figcaption><strong>Figura 1, pagina 3.</strong><p class="caption">Containment of Diaeretiella rapae for exposure method assays.</p></figcaption>
+          <div class="figbody">
+            <p>Esta figura documenta como encerraron al parasitoide <em>D. rapae</em> durante los ensayos de exposicion. Es importante porque los adultos son moviles y pequenos: sin contencion adecuada, la mortalidad medida podria confundirse con escape, estres mecanico o contacto desigual con el tratamiento. La figura no es un resultado biologico, sino una pieza de control metodologico.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_007_Figure_2_Survival_of_A_Myzus_persicae.png" alt="Supervivencia de pulgones despues de aplicacion combinada">
+          <figcaption><strong>Figura 2, pagina 5.</strong><p class="caption">Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after combined application.</p></figcaption>
+          <div class="figbody">
+            <p>Compara supervivencia de los dos pulgones cuando insecto y hoja reciben el tratamiento. <em>B. brassicae</em> cae mas rapido con acidos grasos y polimeros de silicona, mientras <em>M. persicae</em> es mas resistente o menos afectado. Sulfoxaflor funciona como referencia de alta eficacia. La lectura clave: los bioinsecticidas fisicos pueden controlar pulgones, pero su eficacia depende de especie y contacto directo.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_009_no_caption.png" alt="Supervivencia de enemigos naturales despues de aplicacion combinada">
+          <figcaption><strong>Figura 3, pagina 6.</strong><p class="caption">Survival of (A) Diaeretiella rapae and (B) Chrysoperla carnea after combined application.</p></figcaption>
+          <div class="figbody">
+            <p>El extractor no capturo el caption, pero el texto del PDF identifica esta grafica como la Figura 3. Aqui aparece el costo ecologico de aplicar sobre organismos presentes: <em>D. rapae</em> adulto es muy vulnerable a todos los insecticidas, especialmente acidos grasos y polimeros de silicona; <em>C. carnea</em> tolera mejor, aunque silicone polymers y fatty acids tambien reducen supervivencia. Esta figura evita una lectura ingenua de "bio" como "seguro".</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_010_Figure_4_Predicted_probability_of_emerg.png" alt="Probabilidad de emergencia de Diaeretiella rapae despues de aplicacion combinada">
+          <figcaption><strong>Figura 4, pagina 6.</strong><p class="caption">Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after combined application.</p></figcaption>
+          <div class="figbody">
+            <p>Mide si las momias parasitadas logran producir adultos despues del tratamiento. En exposicion combinada, los acidos grasos reducen la emergencia estimada frente a controles; otros tratamientos se solapan mas. Esto sugiere que la etapa de momia ofrece cierta proteccion, pero no absoluta. En IPM importa porque las momias pueden estar en el cultivo cuando se aplica el producto.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_012_Figure_5_Survival_of_A_Myzus_persicae.png" alt="Supervivencia de pulgones despues de aplicacion directa">
+          <figcaption><strong>Figura 5, pagina 7.</strong><p class="caption">Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after direct application.</p></figcaption>
+          <div class="figbody">
+            <p>Aqui el producto se aplica al insecto y luego se transfiere a hoja sin tratar. El patron confirma que el modo de accion es principalmente de contacto: si el producto toca al pulgon, acidos grasos y polimeros de silicona causan mortalidad relevante, sobre todo en <em>B. brassicae</em>. <em>M. persicae</em> vuelve a mostrarse menos sensible y el surfactante queda como alternativa debil.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_014_no_caption.png" alt="Supervivencia de enemigos naturales despues de aplicacion directa">
+          <figcaption><strong>Figura 6, pagina 8.</strong><p class="caption">Survival of (A) Diaeretiella rapae and (B) Chrysoperla carnea after direct application.</p></figcaption>
+          <div class="figbody">
+            <p>Tambien aqui el caption quedo perdido en la extraccion, pero el texto la identifica como Figura 6. Es una de las graficas mas importantes para manejo: <em>D. rapae</em> cae muy rapido con acidos grasos y polimeros de silicona, y <em>C. carnea</em> tambien puede verse seriamente afectada, especialmente por polimeros de silicona. El mensaje es operativo: evitar aplicaciones cuando los enemigos naturales estan expuestos directamente.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_015_Figure_7_Predicted_probability_of_emerg.png" alt="Probabilidad de emergencia de parasitoides despues de aplicacion directa">
+          <figcaption><strong>Figura 7, pagina 8.</strong><p class="caption">Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after direct application.</p></figcaption>
+          <div class="figbody">
+            <p>Evalua si rociar directamente las momias afecta la emergencia del parasitoide. Los bioinsecticidas reducen la probabilidad estimada a alrededor de 70%, y sulfoxaflor tambien la reduce algo, pero el texto indica que las diferencias no fueron estadisticamente claras. La interpretacion prudente: las momias son menos vulnerables que los adultos, pero no conviene asumir ausencia total de efecto.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_017_Figure_8_Survival_of_A_Myzus_persicae.png" alt="Supervivencia de pulgones despues de exposicion a residuos">
+          <figcaption><strong>Figura 8, pagina 9.</strong><p class="caption">Survival of (A) Myzus persicae and (B) Brevicoryne brassicae after exposure to residues.</p></figcaption>
+          <div class="figbody">
+            <p>Esta grafica cambia el mensaje: sobre residuos secos, los bioinsecticidas casi no matan pulgones. <em>M. persicae</em> no muestra mortalidad con bioinsecticidas o controles, y <em>B. brassicae</em> solo mortalidad baja. Sulfoxaflor, en cambio, mantiene toxicidad residual fuerte. Esto confirma que los productos fisicos no son buenos como barrera persistente; necesitan impactar al insecto durante la aplicacion.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_018_Figure_9_Survival_of_A_Diaeretiella_r.png" alt="Supervivencia de enemigos naturales despues de exposicion a residuos">
+          <figcaption><strong>Figura 9, pagina 9.</strong><p class="caption">Survival of (A) Diaeretiella rapae and (B) Chrysoperla carnea after exposure to residues.</p></figcaption>
+          <div class="figbody">
+            <p>Es la figura que sostiene la parte favorable para IPM. Cuando los residuos ya estan secos, los bioinsecticidas causan mortalidad baja en enemigos naturales comparados con sulfoxaflor. Esto sugiere que, si se evita el contacto directo durante el spray, parasitoides y depredadores podrian recolonizar el cultivo relativamente rapido.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_020_Figure_10_Predicted_probability_of_emer.png" alt="Probabilidad de emergencia de parasitoides despues de residuos">
+          <figcaption><strong>Figura 10, pagina 10.</strong><p class="caption">Predicted probability of emergence for Diaeretiella rapae from parasitoid mummies after exposure to residues.</p></figcaption>
+          <div class="figbody">
+            <p>La emergencia de <em>D. rapae</em> desde momias no cambia significativamente por exposicion a residuos. Esto refuerza que la persistencia de estos bioinsecticidas es baja. Para manejo integrado, la figura apoya una estrategia de aplicaciones temporizadas: golpear focos de pulgones y permitir que los enemigos naturales vuelvan cuando el residuo ya no sea biologicamente activo.</p>
+          </div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_001_no_caption.png" alt="Imagen sin caption extraida de pagina 1">
+          <figcaption><strong>Imagen sin caption, pagina 1.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento grafico/editorial de la primera pagina. Se conserva para completar el set de imagenes, pero no aporta a la interpretacion biologica.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_002_no_caption.png" alt="Imagen sin caption extraida de pagina 2">
+          <figcaption><strong>Imagen sin caption, pagina 2.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Marca o elemento pequeno de pagina detectado como imagen por el extractor. No corresponde a una figura cientifica del articulo.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_003_no_caption.png" alt="Imagen sin caption extraida de pagina 3">
+          <figcaption><strong>Imagen sin caption, pagina 3.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento sin caption extraido junto al contenido del PDF. No se usa para conclusiones.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_005_no_caption.png" alt="Imagen sin caption extraida de pagina 4">
+          <figcaption><strong>Imagen sin caption, pagina 4.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento grafico pequeno sin valor interpretativo central.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_006_no_caption.png" alt="Imagen sin caption extraida de pagina 5">
+          <figcaption><strong>Imagen sin caption, pagina 5.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento detectado sin caption. La figura cientifica principal de esta pagina es la Figura 2, incluida arriba.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_008_no_caption.png" alt="Imagen sin caption extraida de pagina 6">
+          <figcaption><strong>Imagen sin caption, pagina 6.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento pequeno de pagina extraido por el pipeline; no corresponde a una grafica de resultados.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_011_no_caption.png" alt="Imagen sin caption extraida de pagina 7">
+          <figcaption><strong>Imagen sin caption, pagina 7.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento sin caption; la grafica cientifica de esa pagina esta explicada como Figura 5.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_013_no_caption.png" alt="Imagen sin caption extraida de pagina 8">
+          <figcaption><strong>Imagen sin caption, pagina 8.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento pequeno sin interpretacion cientifica propia.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_016_no_caption.png" alt="Imagen sin caption extraida de pagina 9">
+          <figcaption><strong>Imagen sin caption, pagina 9.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento de pagina sin caption; los resultados de esa pagina estan en Figuras 8 y 9.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_019_no_caption.png" alt="Imagen sin caption extraida de pagina 10">
+          <figcaption><strong>Imagen sin caption, pagina 10.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento grafico pequeno detectado antes de la Figura 10.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_021_no_caption.png" alt="Imagen sin caption extraida de pagina 11">
+          <figcaption><strong>Imagen sin caption, pagina 11.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Elemento editorial o de pagina sin funcion analitica.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/ilove-Tonks.2026_figures/images/fig_022_no_caption.png" alt="Imagen sin caption extraida de pagina 12">
+          <figcaption><strong>Imagen sin caption, pagina 12.</strong><p class="caption">Sin caption extraido.</p></figcaption>
+          <div class="figbody"><p>Ultimo elemento sin caption del PDF; no se usa para interpretar resultados.</p></div>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Modelo Mental Del Resultado</h2>
+      <div class="important">
+        <p><strong>Si el bioinsecticida toca al pulgon:</strong> puede matar, especialmente en <em>B. brassicae</em>, con acidos grasos y polimeros de silicona como opciones mas fuertes.</p>
+        <p><strong>Si el producto ya se seco:</strong> pierde gran parte de su actividad, asi que no funciona como proteccion residual prolongada.</p>
+        <p><strong>Si toca enemigos naturales:</strong> puede ser peligroso, sobre todo para <em>D. rapae</em> adulto y para <em>C. carnea</em> con polimeros de silicona.</p>
+        <p><strong>La ventana de manejo:</strong> aplicar de forma dirigida sobre focos de pulgones, evitando momentos o zonas con alta presencia de parasitoides y depredadores expuestos.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Resumen Final</h2>
+      <p>
+        El paper muestra que estos bioinsecticidas no son reemplazos simples de insecticidas sinteticos. Funcionan mejor como herramientas de contacto, no como residuos persistentes. Esa baja persistencia tiene dos caras: limita el control si no se moja directamente la plaga, pero tambien reduce el riesgo despues del secado y facilita la recolonizacion por enemigos naturales. En manejo integrado, su valor esta en aplicaciones estrategicas y precisas, no en tratamientos amplios sin mirar quien esta presente en el cultivo.
+      </p>
+      <p class="small">Archivo HTML generado desde el PDF local y las figuras ya extraidas en <code>pappers/ilove-Tonks.2026_figures</code>.</p>
+    </section>
+  </main>
+</body>
+</html>

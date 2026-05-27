@@ -1,0 +1,48 @@
+# Resumen — Rapid and accurate predictions of perfect and defective material properties in atomistic simulation using 3D CNN-based tANNs
+
+**Autores:** Iman Peivaste, Saba Ramezani, Ghasem Alahyarizadeh, Reza Ghaderi, Ahmed Makradi, Salim Belouettar
+**Revista:** Scientific Reports 13, 50893 (2023), DOI: 10.1038/s41598-023-50893-9
+
+---
+
+## 🎯 Idea central
+
+Usar **3D CNN entrenados (tANN = trained artificial neural network)** como **modelos surrogate** de simulaciones MD para predecir, en pocos ms, propiedades mecánicas de configuraciones atómicas **perfectas y defectuosas** (con vacancias, dislocaciones, GBs, voids…).
+
+Avance respecto al estado del arte previo: los métodos eran **2D image-based** o **descriptor-based**; este trabajo introduce el input **3D voxelizado** que preserva la información atómica completa.
+
+---
+
+## ⚙️ Pipeline
+
+1. **Generar dataset** con MD (LAMMPS) — estructuras con y sin defectos.
+2. **Voxelizar** cada configuración en una grilla 3D → input al CNN.
+3. **Calcular propiedades target** (típicamente constantes elásticas) por MD → ground truth.
+4. **Entrenar 3D CNN** para regresar de voxel grid → propiedades.
+5. **Validar** sobre configuraciones no vistas.
+
+---
+
+## 📊 Resultados clave
+
+- **RMSE < 0.65 GPa** prediciendo constantes elásticas.
+- **Speed-up de 185× a 2100×** vs MD tradicional.
+- Capaz de aceptar configuraciones con **defectos arbitrarios** (no solo cristal perfecto).
+- Demuestra que **3D > 2D > descriptores** para esta tarea.
+
+---
+
+## 🧩 Por qué importa para vos
+
+- Justifica el uso de **voxel 3D input** para problemas de MD → ML.
+- Predece propiedades **post-irradiación** (con defectos) — muy alineado con tu trabajo de cascadas Cu-Ni.
+- Es la referencia más directa para defender un pipeline "MD → voxel → CNN → módulo elástico".
+
+---
+
+## 📎 Conexiones
+
+- Sucesor metodológico para defectos: [[CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025]] (mismo enfoque 3D CNN, pero aplicado a nanoporosos).
+- Comparable filosóficamente con [[CGCNN_cristales_Xie_Grossman_2018]] (también predice propiedades, pero con grafos en lugar de voxels) y con [[CarNet_tensores_cartesianos_Chen_2025]] (tensores cartesianos).
+- Útil para citar junto a [[MD_cascadas_CuNi_irradiacion_Wei_2025]] como motivación de "MD es caro → necesitamos surrogates".
+- Si combinás con [[voxel_voids_nucleacion_Hemani_2014]] tenés voxelización clásica → voxel + ML moderno (este paper).

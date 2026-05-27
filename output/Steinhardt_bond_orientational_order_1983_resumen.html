@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — Bond-orientational order in liquids and glasses</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>Bond-orientational order in liquids and glasses</h1>
+    <p class="subtitle">Resumen en español de <strong>Bond-orientational order in liquids and glasses</strong>.</p>
+    <div class="meta">
+        <div><strong>Autores</strong>** Paul J. Steinhardt, David R. Nelson, Marco Ronchetti</div>
+        <div><strong>Revista</strong>** Physical Review B 28, 784 (1983)</div>
+        <div><strong>PDF local</strong><a href="../pappers/Steinhardt_bond_orientational_order_1983.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p><strong>Autores:</strong> Paul J. Steinhardt, David R. Nelson, Marco Ronchetti<br />
+<strong>Revista:</strong> Physical Review B 28, 784 (1983)</p>
+<h2>Idea central</h2>
+<p>Paper <strong>fundacional</strong> que introduce los hoy llamados <strong>"parámetros de orden de Steinhardt"</strong> (Q_l, W_l) para caracterizar <strong>simetría orientacional de enlaces</strong> en líquidos sub-enfriados, vidrios y sólidos.</p>
+<p>Es la referencia obligatoria para cualquier análisis local de estructura cristalina vs amorfa.</p>
+<h2>Las dos simetrías rotas</h2>
+<p>En un cristal se rompen dos simetrías:</p>
+<ol>
+<li><strong>Translational</strong> — fase de la modulación de densidad periódica.</li>
+<li><strong>Orientational</strong> — los ejes cristalográficos locales están alineados.</li>
+</ol>
+<p>Estas simetrías son <strong>independientes</strong>: un sistema puede tener orden orientacional sin orden translacional → fluidos anisotrópicos (similares a nemáticos), pero referidos a "enlaces" (líneas entre vecinos cercanos) en lugar de a partículas anisotrópicas.</p>
+<hr />
+<h2>Definiciones</h2>
+<p>Para cada átomo i con vecinos j:</p>
+<ol>
+<li><strong>Vector de enlace</strong> r_ij → ángulos (θ, φ).</li>
+<li><strong>Armónicos esféricos</strong> sobre cada enlace: Y_lm(θ, φ).</li>
+<li><strong>Promedio sobre vecinos:</strong></li>
+</ol>
+<p>q_lm(i) = (1/N_b) Σ_j Y_lm(r_ij)</p>
+<ol>
+<li>
+<p><strong>Invariantes rotacionales:</strong></p>
+</li>
+<li>
+<p>Cuadrático: Q_l = √[(4π / (2l+1)) Σ_m |q_lm|² ]</p>
+</li>
+<li>Tercer orden (Wigner 3j): W_l</li>
+</ol>
+<p>Los valores de Q_l y W_l permiten distinguir entornos icosaédricos, fcc, hcp, bcc, líquidos, vidrios.</p>
+<hr />
+<h2>Resultados clave</h2>
+<ul>
+<li>En un líquido Lennard-Jones sub-enfriado <strong>~10% bajo T_melt</strong> aparece un orden orientacional extendido, predominantemente <strong>icosaédrico</strong> (Q_6 alto, pero sin pico translacional).</li>
+<li>Modelos "amorphon" (clusters icosaédricos) reproducen casi perfectamente las correlaciones orientacionales.</li>
+<li>El Finney random packing muestra solo orden orientacional modesto — los vidrios reales pueden tener más estructura icosaédrica que un random packing pasivo.</li>
+</ul>
+<hr />
+<h2>Legado</h2>
+<p>Q_6, Q_4 y W_6 son hoy descriptores estándar en:<br />
+- Análisis de cristalización (Lechner-Dellago refinado, etc.).<br />
+- Identificación de fases en MD (OVITO, polyhedral template matching).<br />
+- Features de entrada para ML estructural ([[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]] menciona Steinhardt entre los descriptores LAE).</p>
+<hr />
+<h2>Conexiones</h2>
+<ul>
+<li>Citado por casi todos los métodos modernos de identificación local: [[FaVAD_fingerprints_defectos_vonToussaint_2020]] lo usa como baseline.</li>
+<li>Complementa [[CGCNN_cristales_Xie_Grossman_2018]] y [[CarNet_tensores_cartesianos_Chen_2025]]: Steinhardt da descriptores hand-crafted, los GNN aprenden los suyos.</li>
+<li>Para tu pipeline LAMMPS/OVITO: Q_6 es la métrica clásica para distinguir bulk fcc vs defectos amorfizados en cascadas (vinculá con [[MD_cascadas_CuNi_irradiacion_Wei_2025]]).</li>
+</ul>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (16)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_001_FlG_1_Different_13-atom_particle_clust.png" alt="fig_001 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 2</strong>
+            <p class="caption">FlG. 1. Different 13-atom particle clusters occurring in liquids near the melting temperature.</p>
+          </figcaption>
+          <div class="figbody"><p>FlG. 1. Different 13-atom particle clusters occurring in liquids near the melting temperature.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_002_FIG_2_Histograms_of_quadratic_and_thir.png" alt="fig_002 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 5</strong>
+            <p class="caption">FIG. 2. Histograms of quadratic and third-order invariants for 13-atom icosahedral, fcc, and hcp clusters, as we11 as for 1S-atom bcc and 7-atom sc clusters. Bonds at the surface are excluded.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 2. Histograms of quadratic and third-order invariants for 13-atom icosahedral, fcc, and hcp clusters, as we11 as for 1S-atom bcc and 7-atom sc clusters. Bonds at the surface are excluded.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_003_FIG_3_Symmetry_parameter_86_for_a_13-.png" alt="fig_003 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 8</strong>
+            <p class="caption">FIG. 3. Symmetry parameter 8'6 for a 13-atom hcp cluster as a function of aspect ratio c/a. The two equilateral triangles above and below the "equatorial plane" of Fig. 1(b) have been stretched along the c axis. The c/a ratio corresponding to hard spheres is ( 3 )'~ .</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 3. Symmetry parameter 8'6 for a 13-atom hcp cluster as a function of aspect ratio c/a. The two equilateral triangles above and below the "equatorial plane" of Fig. 1(b) have been stretched along the c axis. The c/a ratio corresponding to hard spheres is ( 3 )'~ .</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_004_FIG_4_a_Quadratic_invariants_QI_for_.png" alt="fig_004 — pagina 12" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 12</strong>
+            <p class="caption">FIG. 4. (a) Quadratic invariants QI for a hightemperature LennardJones liquid (solid lines). The dashed lines indicate averages obtained using a randomnumber generator to produce the orientations of an equivalent number of bonds. (b) QI histograms for a supercooled Lennard-Jones liquid. The dependence on the radius (r) of the averaging volume is shown: a dashed line, r=3; dotted-dashed line, r= S, solid line, r=7.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 4. (a) Quadratic invariants QI for a hightemperature LennardJones liquid (solid lines). The dashed lines indicate averages obtained using a randomnumber generator to produce the orientations of an equivalent number of bonds. (b) QI histograms for a supercooled Lennard-Jones liquid. The dependence on the radius (r) of the averaging volume is shown: a dashed line, r=3; dotted-dashed line, r= S, solid line, r=7.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_005_FIR_5_Time_dependence_of_the_a_tempe.png" alt="fig_005 — pagina 13" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 13</strong>
+            <p class="caption">FIR. 5. Time dependence of the (a) temperature and (b) pressure (arbitrary units) for a sequence of moleculardynamics runs. The abrupt changes in the fifth curve from the top at 10 v=4.6 indicates the onset of crystallization. The break in the seventh pressure curve from the top suggests that crystallization may have occurred in this run as well. (The order of samples is the same from top to bottom in the two figures. )</p>
+          </figcaption>
+          <div class="figbody"><p>FIR. 5. Time dependence of the (a) temperature and (b) pressure (arbitrary units) for a sequence of moleculardynamics runs. The abrupt changes in the fifth curve from the top at 10 v=4.6 indicates the onset of crystallization. The break in the seventh pressure curve from the top suggests that crystallization may have occurred in this run as well. (The order of samples is the same from top to bottom in the two figures. )</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_006_FIG_6_a_and_b_show_the_radial_dist.png" alt="fig_006 — pagina 13" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 13</strong>
+            <p class="caption">FIG. 6. (a) and (b) show the radial distribution functions (RDF) for the high-( T*=0.719) and low(T*=0. 554) temperature samples whose orientational order is displayed in Fig. 4. (c) shows the RDF for a sample which has crystallized. The extra peak is indicated by the arrow.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 6. (a) and (b) show the radial distribution functions (RDF) for the high-( T*=0.719) and low(T*=0. 554) temperature samples whose orientational order is displayed in Fig. 4. (c) shows the RDF for a sample which has crystallized. The extra peak is indicated by the arrow.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_007_FIG_7_Orientation_correlation_function.png" alt="fig_007 — pagina 14" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 14</strong>
+            <p class="caption">FIG. 7. Orientation correlation functions in highand low-temperature samples.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 7. Orientation correlation functions in highand low-temperature samples.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_008_FIG_g_Orientational_correlation_length.png" alt="fig_008 — pagina 15" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 15</strong>
+            <p class="caption">FIG. g. Orientational correlation length g6 (triangles) and "order parameter" Q6 (squares) as a function of temperature. The temperature is given both in reduced units and in units appropriate to liquid argon.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. g. Orientational correlation length g6 (triangles) and "order parameter" Q6 (squares) as a function of temperature. The temperature is given both in reduced units and in units appropriate to liquid argon.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_009_FIG_9_View_of_the_12_atoms_making_up_t.png" alt="fig_009 — pagina 16" loading="lazy">
+          <figcaption>
+            <strong>FIG_009 · pagina 16</strong>
+            <p class="caption">FIG. 9. View of the 12 atoms making up the surfaces of an icosahedron, together with their decomposition into three orthogonal rectangular planes.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 9. View of the 12 atoms making up the surfaces of an icosahedron, together with their decomposition into three orthogonal rectangular planes.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_010_no_caption.png" alt="fig_010 — pagina 16" loading="lazy">
+          <figcaption>
+            <strong>FIG_010 · pagina 16</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 16.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_011_no_caption.png" alt="fig_011 — pagina 17" loading="lazy">
+          <figcaption>
+            <strong>FIG_011 · pagina 17</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 17.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_012_FIG_10_The_orientational_correlation_f.png" alt="fig_012 — pagina 17" loading="lazy">
+          <figcaption>
+            <strong>FIG_012 · pagina 17</strong>
+            <p class="caption">FIG. 10. The orientational correlation function G6(r) obtained by cooling in a small icosahedral field, turning this field off, and then equilibrating (solid line). For comparison, we show G6(r) for a sample cooled at the same rate without an icosahedral field (dashed line). Both samples were cooled more rapidly than in the low-temperature sample shown in Fig. 7.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 10. The orientational correlation function G6(r) obtained by cooling in a small icosahedral field, turning this field off, and then equilibrating (solid line). For comparison, we show G6(r) for a sample cooled at the same rate without an icosahedral field (dashed line). Both samples were cooled more rapidly than in the low-temperature sample shown in Fig. 7.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_013_FIG_12_Phase_diagram_for_a_Lennard-Jon.png" alt="fig_013 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_013 · pagina 18</strong>
+            <p class="caption">FIG. 12. Phase diagram for a Lennard-Jones liquid (adapted from Ref. 42). The arrow shows the thermodynamic path taken on most of the runs discussed in this paper (p*=0.973). Qualitatively similar results were obtained upon supercooling at a higher density, p*=1. 053.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 12. Phase diagram for a Lennard-Jones liquid (adapted from Ref. 42). The arrow shows the thermodynamic path taken on most of the runs discussed in this paper (p*=0.973). Qualitatively similar results were obtained upon supercooling at a higher density, p*=1. 053.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_014_FIG_13_Orientational_order_in_the_rela.png" alt="fig_014 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_014 · pagina 18</strong>
+            <p class="caption">FIG. 13. Orientational order in the relaxed Finney model as a function of averaging size. The solid lines show histograms for a well-ordered molecular-dynamics sample with approximately the same number of particles as in the 853-particle Finney model.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 13. Orientational order in the relaxed Finney model as a function of averaging size. The solid lines show histograms for a well-ordered molecular-dynamics sample with approximately the same number of particles as in the 853-particle Finney model.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_015_FICx_14_Qrientational_histograms_for_s.png" alt="fig_015 — pagina 19" loading="lazy">
+          <figcaption>
+            <strong>FIG_015 · pagina 19</strong>
+            <p class="caption">FICx. 14. Qrientational histograms for several of the amorphon clusters discussed in Ref. 11.</p>
+          </figcaption>
+          <div class="figbody"><p>FICx. 14. Qrientational histograms for several of the amorphon clusters discussed in Ref. 11.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_016_FIG_15_Spiral_packing_of_tetrahedra_di.png" alt="fig_016 — pagina 20" loading="lazy">
+          <figcaption>
+            <strong>FIG_016 · pagina 20</strong>
+            <p class="caption">FIG. 15. Spiral packing of tetrahedra discussed by Bernal (Ref. 25).</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 15. Spiral packing of tetrahedra discussed by Bernal (Ref. 25).</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — Exploiting graph theory in MD simulations for extracting chemical and physical properties of materials</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>Exploiting graph theory in MD simulations for extracting chemical and physical properties of materials</h1>
+    <p class="subtitle">Resumen en español de <strong>Exploiting graph theory in MD simulations for extracting chemical and physical properties of materials</strong>.</p>
+    <div class="meta">
+        <div><strong>Autores</strong>** S. Bougueroua, A. Kolganov, C. Helain, C. Zens, D. Barth, E. Pidko, M.-P. Gaigeot</div>
+        <div><strong>Revista</strong>** Phys. Chem. Chem. Phys. 27, 1298 (2025), DOI: 10.1039/d4cp02764g</div>
+        <div><strong>DOI / arXiv</strong><a href="https://doi.org/10.1039/d4cp02764g" target="_blank">10.1039/d4cp02764g</a></div>
+        <div><strong>PDF local</strong><a href="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p><strong>Autores:</strong> S. Bougueroua, A. Kolganov, C. Helain, C. Zens, D. Barth, E. Pidko, M.-P. Gaigeot<br />
+<strong>Revista:</strong> Phys. Chem. Chem. Phys. 27, 1298 (2025), DOI: 10.1039/d4cp02764g</p>
+<h2>Idea central</h2>
+<p>Mostrar cómo la <strong>teoría algorítmica de grafos</strong> puede extraer propiedades químicas y físicas de trayectorias MD complejas que son difíciles de analizar con métodos tradicionales basados solo en coordenadas cartesianas.</p>
+<p>Es una mini-review + paper aplicado, con foco en <strong>interfaces sólido-líquido</strong>.</p>
+<h2>Marco metodológico</h2>
+<h3>Representación</h3>
+<ul>
+<li><strong>Vértices</strong> = átomos.</li>
+<li><strong>Aristas</strong> = interacciones (enlaces covalentes, H-bonds, interacciones débiles…).</li>
+<li><strong>2D topological graphs</strong> por default, pero pueden extenderse a 3D (con coords).</li>
+</ul>
+<h3>Operaciones algorítmicas clave</h3>
+<ol>
+<li><strong>Detección de sub-grafos</strong> (motifs) → patrones químicos recurrentes.</li>
+<li><strong>Isomorfismo de sub-grafos</strong> → reconocer "el mismo motif" en frames distintos.</li>
+<li><strong>Estadística temporal</strong> sobre instancias de motifs → distribución y dinámica.</li>
+</ol>
+<hr />
+<h2>Aplicaciones presentadas</h2>
+<h3>1. Búsqueda de sitios activos catalíticos en SiO₂</h3>
+<ul>
+<li>Identifica patrones de coordinación Si–O que correlacionan con actividad catalítica.</li>
+<li>Permite filtrar la trayectoria por sub-grafos relevantes en lugar de inspección visual.</li>
+</ul>
+<h3>2. Interfaz SiO₂ / H₂O</h3>
+<ul>
+<li>Grafos detectan motivos surface–water (puentes de H, anillos…).</li>
+<li>Estadísticas dan una imagen cuantitativa de la estructura y dinámica del interfaz.</li>
+</ul>
+<hr />
+<h2>Por qué importa</h2>
+<ul>
+<li>Es una <strong>alternativa estructural</strong> a las redes neuronales sobre grafos: aquí el grafo se analiza con algoritmos clásicos de teoría de grafos (no DL), pero el resultado es comparable o complementario en interpretabilidad.</li>
+<li>Particularmente útil cuando se quiere <strong>trazabilidad física</strong> del análisis (qué motif específico aparece y por qué).</li>
+</ul>
+<hr />
+<h2>Conexiones</h2>
+<ul>
+<li>Filosofía cercana a [[CGCNN_cristales_Xie_Grossman_2018]] pero sin aprendizaje — solo análisis algorítmico del grafo.</li>
+<li>Complementario a métodos ML no supervisados como [[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]]: aquí los motifs se enumeran, allí se descubren por embedding.</li>
+<li>Si trabajás con interfaces o sistemas químicos, este enfoque puede integrarse al workflow MD → grafo → estadística.</li>
+</ul>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (22)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_001_no_caption.png" alt="fig_001 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_002_no_caption.png" alt="fig_002 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_003_no_caption.png" alt="fig_003 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_004_no_caption.png" alt="fig_004 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_005_no_caption.png" alt="fig_005 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_006_no_caption.png" alt="fig_006 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 2</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 2.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_007_no_caption.png" alt="fig_007 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 2</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 2.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_008_no_caption.png" alt="fig_008 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 2</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 2.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_009_no_caption.png" alt="fig_009 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_009 · pagina 2</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 2.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_010_no_caption.png" alt="fig_010 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_010 · pagina 2</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 2.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_011_Fig_1_Illustration_of_the_passage_from_.png" alt="fig_011 — pagina 3" loading="lazy">
+          <figcaption>
+            <strong>FIG_011 · pagina 3</strong>
+            <p class="caption">Fig. 1 Illustration of the passage from a 3D conformation (a) to a 2DMolGraph (b). (a) One snapshot in the 3D representation of the gas phase molecule (C14H20NO18S2) extracted from a MD trajectory. (b) Associated topological 2D-MolGraph. In the left panel, carbon atoms are represented in green, nitrogen atoms in blue, oxygen atoms in red, hydrogen atoms in light gray, and sulfur atoms in yellow. In the 2D MolGraph, the conventions are the following. Vertices are colored in dark gray, blue, red, and light blue, corresponding respectively to a carbon atom, nitrogen atom, oxygen atom, and sulfur atoms. Hydrogen atoms are not included in vertices, their knowledge is included only through directed arcs that represent hydrogen bonds. The edges are colored and represented in black lines for a covalent bond and in red dashed lines (arc) for hydrogen bonds, this latter edge being directed from the donor to the acceptor of the H-bond.</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 1 Illustration of the passage from a 3D conformation (a) to a 2DMolGraph (b). (a) One snapshot in the 3D representation of the gas phase molecule (C14H20NO18S2) extracted from a MD trajectory. (b) Associated topological 2D-MolGraph. In the left panel, carbon atoms are represented in green, nitrogen atoms in blue, oxygen atoms in red, hydrogen atoms in light gray, and sulfur atoms in yellow. In the 2D MolGraph, the conventions are the following. Vertices are colored in dark gray, blue, red, and light blue, corresponding respectively to a carbon atom, nitrogen atom, oxygen atom, and sulfur atoms. Hydrogen atoms are not included in vertices, their knowledge is included only through directed arcs that represent hydrogen bonds. The edges are colored and represented in black lines for a covalent bond and in red dashed lines (arc) for hydrogen bonds, this latter edge being directed from the donor to the acceptor of the H-bond.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_012_Fig_2_Identification_of_conformations_o.png" alt="fig_012 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_012 · pagina 4</strong>
+            <p class="caption">Fig. 2 Identification of conformations over a given MD trajectory, following the sequences of (a) the 2D-MolGraph representation of the 3D-structures (at each snapshot of the MD), (b) isomorphism tests (fingerprinting) of the calculated graphs, (c) generation of the complete graph network (the graph of transitions).</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 2 Identification of conformations over a given MD trajectory, following the sequences of (a) the 2D-MolGraph representation of the 3D-structures (at each snapshot of the MD), (b) isomorphism tests (fingerprinting) of the calculated graphs, (c) generation of the complete graph network (the graph of transitions).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_013_Fig_3_The_generalized_workflow_for_the_.png" alt="fig_013 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_013 · pagina 5</strong>
+            <p class="caption">Fig. 3 The generalized workflow for the autonomous exploration of the organometallic catalyst active site.</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 3 The generalized workflow for the autonomous exploration of the organometallic catalyst active site.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_014_Fig_4_The_network_of_states_of_the_sili.png" alt="fig_014 — pagina 6" loading="lazy">
+          <figcaption>
+            <strong>FIG_014 · pagina 6</strong>
+            <p class="caption">Fig. 4 The network of states of the silica-supported zirconocene hydride catalyst discovered with molecular dynamics and graph theory. ''RCp'' stands for n -butylcyclopentadienyl. In some 3D representations, the Cp in the front of the viewer is not shown for clarity.</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 4 The network of states of the silica-supported zirconocene hydride catalyst discovered with molecular dynamics and graph theory. ''RCp'' stands for n -butylcyclopentadienyl. In some 3D representations, the Cp in the front of the viewer is not shown for clarity.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_015_Fig_5_Illustration_of_the_passage_from_.png" alt="fig_015 — pagina 7" loading="lazy">
+          <figcaption>
+            <strong>FIG_015 · pagina 7</strong>
+            <p class="caption">Fig. 5 Illustration of the passage from a 3D structure (a) to a 2D-MolGraph (b), to 2D-Motifs (c and d) schematically represented in (c) and with their associated 2D-MolGraphs in (d). The snapshot in (a) is a 3D representation of the (110)-quartz/liquid water interface taken from our ab initio MD simulation. Silicon atoms are in grey, oxygens in red, hydrogens in white. The associated 2D-MolGraph is reported in (b). By convention, oxygens of water are the red vertices, oxygens of the silica top-surface are the orange vertices, silicon atoms are the grey vertices. The atomistic schemes in (c) show two geometrical motifs that were extracted from the motif analysis: one motif (c-top) corresponds to an out-of-plane Si-OH at the top-surface of silica that is acting as a H-bond donor to a water molecule in the BIL, the second motif (c-bottom) is composed of an in-plane Si-OH at the top-surface of silica that is acting as a H-bond acceptor with a water molecule. The associated 2D-MolGraphs are respectively in d-top and d-bottom, see Section 2 for the definitions of vertices and edges in 2D-MolGraphs.</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 5 Illustration of the passage from a 3D structure (a) to a 2D-MolGraph (b), to 2D-Motifs (c and d) schematically represented in (c) and with their associated 2D-MolGraphs in (d). The snapshot in (a) is a 3D representation of the (110)-quartz/liquid water interface taken from our ab initio MD simulation. Silicon atoms are in grey, oxygens in red, hydrogens in white. The associated 2D-MolGraph is reported in (b). By convention, oxygens of water are the red vertices, oxygens of the silica top-surface are the orange vertices, silicon atoms are the grey vertices. The atomistic schemes in (c) show two geometrical motifs that were extracted from the motif analysis: one motif (c-top) corresponds to an out-of-plane Si-OH at the top-surface of silica that is acting as a H-bond donor to a water molecule in the BIL, the second motif (c-bottom) is composed of an in-plane Si-OH at the top-surface of silica that is acting as a H-bond acceptor with a water molecule. The associated 2D-MolGraphs are respectively in d-top and d-bottom, see Section 2 for the definitions of vertices and edges in 2D-MolGraphs.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_016_Fig_7_Illustration_of_two_2-partner_mot.png" alt="fig_016 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_016 · pagina 8</strong>
+            <p class="caption">Fig. 7 Illustration of two 2-partner motifs that are recognized in the BIL of the (110)-quartz/liquid water interface. The chemical and geometrical compositions of the two motifs are schematized in the figure, the 2DMotif topological graphs associated with each motif are also reported. These 2D-Motif graphs are composed of 3 vertices (thus of size 3) and 2 edges (one edge for a covalent bond, one edge for a hydrogen bond). See Section 2 for more details on the definitions of our graphs. Motifs M 1 and M 2 are composed of one silanol (SiOH) and one water molecule. Motif M 1 (left) has its silanol acting as the acceptor of a hydrogen bond from a water molecule, while this silanol acts as the donor of H-bond to water in motif M 2 (right).</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 7 Illustration of two 2-partner motifs that are recognized in the BIL of the (110)-quartz/liquid water interface. The chemical and geometrical compositions of the two motifs are schematized in the figure, the 2DMotif topological graphs associated with each motif are also reported. These 2D-Motif graphs are composed of 3 vertices (thus of size 3) and 2 edges (one edge for a covalent bond, one edge for a hydrogen bond). See Section 2 for more details on the definitions of our graphs. Motifs M 1 and M 2 are composed of one silanol (SiOH) and one water molecule. Motif M 1 (left) has its silanol acting as the acceptor of a hydrogen bond from a water molecule, while this silanol acts as the donor of H-bond to water in motif M 2 (right).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_017_Fig_6_Illustration_of_concepts_for_the_.png" alt="fig_017 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_017 · pagina 8</strong>
+            <p class="caption">Fig. 6 Illustration of concepts for the coverage of occurrences of a given 2D-Motif (left) within a 2D-MolGraph (right). See text for details.</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 6 Illustration of concepts for the coverage of occurrences of a given 2D-Motif (left) within a 2D-MolGraph (right). See text for details.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_018_no_caption.png" alt="fig_018 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_018 · pagina 9</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 9.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_019_Fig_8_Distribution_of_the_number_of_occ.png" alt="fig_019 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_019 · pagina 9</strong>
+            <p class="caption">Fig. 8 Distribution of the number of occurrences/instances of the 2D-Motifs M 1 (left) and M 2 (right) for the set of 2D-MolGraphs/conformations/ snapshots analyzed over a 10 ps trajectory of the (110)-quartz/liquid water interface (analyses performed every 250 snapshots). See Fig. 7 for the description of the 2D-Motifs M 1 and M 2.</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 8 Distribution of the number of occurrences/instances of the 2D-Motifs M 1 (left) and M 2 (right) for the set of 2D-MolGraphs/conformations/ snapshots analyzed over a 10 ps trajectory of the (110)-quartz/liquid water interface (analyses performed every 250 snapshots). See Fig. 7 for the description of the 2D-Motifs M 1 and M 2.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_020_Fig_9_Distribution_of_the_number_of_occ.png" alt="fig_020 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_020 · pagina 9</strong>
+            <p class="caption">Fig. 9 Distribution of the number of occurrences and coverage rate between motifs of size 3 that contain at least one hydrogen bond and one oxygen atom of the surface, that are being recognized over the 100 conformations extracted from the (110)-quartz/liquid water interface trajectory. The black and white crosses respectively report the ranking of motif M1 and M2.</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 9 Distribution of the number of occurrences and coverage rate between motifs of size 3 that contain at least one hydrogen bond and one oxygen atom of the surface, that are being recognized over the 100 conformations extracted from the (110)-quartz/liquid water interface trajectory. The black and white crosses respectively report the ranking of motif M1 and M2.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_021_no_caption.png" alt="fig_021 — pagina 10" loading="lazy">
+          <figcaption>
+            <strong>FIG_021 · pagina 10</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 10.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_022_Fig_11_Illustration_of_one_4-partner_mo.png" alt="fig_022 — pagina 11" loading="lazy">
+          <figcaption>
+            <strong>FIG_022 · pagina 11</strong>
+            <p class="caption">Fig. 11 Illustration of one 4-partner motif ( M 3) made of the union of two 2-partner motifs ( M 1 and M 2) that are H-bonded together through silanol    silanol. For one given snapshot taken randomly out of the 10 ps trajectory, the instances of M 3 found at the (110)-quartz/liquid water interface are reported through the green vertices of the 2D-MolGraph (right side).</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 11 Illustration of one 4-partner motif ( M 3) made of the union of two 2-partner motifs ( M 1 and M 2) that are H-bonded together through silanol    silanol. For one given snapshot taken randomly out of the 10 ps trajectory, the instances of M 3 found at the (110)-quartz/liquid water interface are reported through the green vertices of the 2D-MolGraph (right side).</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

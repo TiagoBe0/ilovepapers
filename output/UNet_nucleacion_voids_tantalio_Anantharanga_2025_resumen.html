@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — Concepto simplificado del cálculo</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>Concepto simplificado del cálculo</h1>
+    <p class="subtitle">Resumen en español de <strong>Concepto simplificado del cálculo</strong>.</p>
+    <div class="meta">
+        <div><strong>PDF local</strong><a href="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p>Este es un paper técnico muy extenso sobre el uso de redes neuronales convolucionales para predecir la nucleación de vacíos en microestructuras de materiales. Te haré un resumen de los puntos más relevantes y luego puedo traducir las secciones específicas que te interesen.<br />
+Resumen de Puntos Clave<br />
+Título: "Predicción de nucleación de vacíos en microestructura con redes neuronales convolucionales"<br />
+Problema Principal</p>
+<p>Los materiales dúctiles sometidos a cargas de alta velocidad de deformación fallan principalmente por "spallation" (fractura por tensión dinámica)<br />
+La nucleación de vacíos en los límites de grano es un fenómeno crítico pero difícil de predecir<br />
+Los métodos tradicionales (experimentos, simulaciones moleculares) no capturan completamente los factores que llevan a la nucleación</p>
+<p>Metodología Innovadora<br />
+Arquitectura de Red:</p>
+<p>Desarrollaron una U-Net modificada con "attention gates" (puertas de atención)<br />
+Entrada multi-canal: 4 canales de orientaciones de grano + 1 canal de energía de límites de grano<br />
+Dimensiones: 100x100x5 → 100x100x1 (mapa de probabilidad de nucleación)</p>
+<p>Dataset y Preparación:</p>
+<p>57 micrografías post-mortem de experimentos de impacto en tantalio BCC<br />
+10,326 imágenes procesadas de microestructuras<br />
+Técnica de reconstrucción de microestructura para obtener estados "pristinos" previos al daño</p>
+<p>Aspectos Técnicos Clave<br />
+Arquitectura de ML:</p>
+<p>Encoder-Decoder con skip connections<br />
+- Attention gates para manejar el desbalance de clases<br />
+- Focal loss para lidiar con la escasez de píxeles de vacíos<br />
+- Leave-one-out cross validation (57 particiones)<br />
+Métricas de Evaluación:</p>
+<p>PCC (Pearson Correlation Coefficient): Métrica conservadora que evita falsos positivos por desbalance de clases<br />
+ROI (Region of Interest): Métrica permisiva enfocada en reducir falsos negativos</p>
+<p>Resultados Principales<br />
+Rendimiento:</p>
+<p>PCC promedio: 0.25 para el bin más grande (100-531 píxeles de vacío)<br />
+ROI accuracy: ~70% en testing, &gt;90% en training<br />
+El modelo predice correctamente sitios de nucleación observados Y sitios potenciales adicionales</p>
+<p>Descubrimientos:</p>
+<p>La nucleación puede predecirse a partir de geometría microestructural y propiedades<br />
+Los "falsos positivos" pueden representar sitios de nucleación potencial (naturaleza estocástica)<br />
+El rendimiento mejora con el tamaño de los vacíos (más píxeles de vacío = mejor correlación)</p>
+<p>Limitaciones y Trabajo Futuro</p>
+<p>Dataset limitado (57 micrografías experimentales)<br />
+Restricción a nucleación en límites de grano (elimina vacíos intragranulares)<br />
+Necesidad de datos 3D y condiciones de carga variadas<br />
+Incorporación de factores adicionales como puntos triples</p>
+<p>Relevancia para tu Background<br />
+Como programador con experiencia en Python, este trabajo es particularmente interesante porque:</p>
+<p>Demuestra aplicación práctica de deep learning en ciencia de materiales<br />
+Usa técnicas avanzadas de computer vision (U-Net, attention mechanisms)<br />
+Maneja desafíos reales como desbalance extremo de clases<br />
+Combina física de materiales con ML de manera innovadora</p>
+<p>Features Utilizados en el Modelo<br />
+El trabajo utiliza un enfoque multi-canal con 5 features de entrada que capturan diferentes aspectos físicos de la microestructura del material.<br />
+Input Features (Variables de Entrada)<br />
+1. Orientaciones de Grano (4 canales - RGBA)<br />
+Origen de los Datos:</p>
+<p>Obtenidos mediante EBSD (Electron Backscatter Diffraction)<br />
+Convertidos de ángulos de Euler a cuaterniones para evitar "gimbal lock"<br />
+Cada píxel representa la orientación cristalográfica local</p>
+<p>Por qué son Relevantes:<br />
+- Orientación cristalográfica determina propiedades mecánicas locales<br />
+- Diferentes orientaciones responden distinto al estrés<br />
+- Los límites entre granos con grandes diferencias de orientación <br />
+  son más susceptibles a nucleación de vacíos<br />
+  Información Implícita Capturada:</p>
+<p>Tamaño de grano: Regiones de color uniforme = granos grandes<br />
+Desorientación: Cambios abruptos de color = alta desorientación<br />
+Relación de aspecto: Forma y elongación de los granos<br />
+Textura cristalográfica: Orientaciones preferentes del material</p>
+<ol>
+<li>Energía de Límites de Grano (1 canal)<br />
+Método de Cálculo: Lattice Matching</li>
+</ol>
+<h1>Concepto simplificado del cálculo</h1>
+<p>γ(R₁, R₂) = γ₀(1 - c(R₁, R₂)/c₀)</p>
+<p>donde:<br />
+- R₁, R₂: matrices de rotación de granos adyacentes<br />
+- c(R₁, R₂): función de covarianza entre redes cristalinas<br />
+- γ₀: factor de escala energético<br />
+- c₀: covarianza del estado fundamental<br />
+Significado Físico:</p>
+<p>Mide la "incompatibilidad" entre dos granos adyacentes<br />
+Alta energía = límite menos estable = mayor probabilidad de nucleación<br />
+Incorpora los 5 grados de libertad de caracterización de límites de grano</p>
+<p>Limitación Importante:</p>
+<p>Solo usa información 2D (asume límites perpendiculares al plano)<br />
+Pierde información del ángulo de inclinación fuera del plano</p>
+<p>Ground Truth (Variable Objetivo)<br />
+Mapas de Probabilidad de Nucleación<br />
+Construcción:<br />
+D(x,y) = M̃(x,y) · G̃(x,y) = (M * σ) · (G * ε)</p>
+<p>donde:<br />
+- M: máscara de vacíos (de segmentación de imagen)<br />
+- G: energía de límites de grano<br />
+- σ, ε: desviaciones estándar para mollificación (suavizado gaussiano)<br />
+- ·: multiplicación píxel por píxel<br />
+- *: convolución</p>
+<p>Normalización</p>
+<p>Todas las variables escaladas al rango [0,1]<br />
+Crítico para convergencia del modelo<br />
+Equilibra la influencia relativa de cada canal</p>
+<p>Features Implícitos Capturados<br />
+El modelo aprende automáticamente representaciones de:<br />
+Características Geométricas:</p>
+<p>Distribución de tamaños de grano<br />
+Conectividad de límites de grano<br />
+Densidad de puntos triples<br />
+Tortuosidad de los límites</p>
+<p>Características Cristalográficas:</p>
+<p>Relaciones de orientación especiales (Σ3, Σ5, etc.)<br />
+Gradientes de desorientación<br />
+Patrones de textura local</p>
+<p>Características Energéticas:</p>
+<p>Distribución de energías de límite<br />
+Correlaciones espaciales de alta/baja energía<br />
+Interfaces preferenciales para nucleación</p>
+<p>Limitaciones de los Features<br />
+Información Faltante:</p>
+<p>Tensiones locales: No incluye campo de esfuerzos<br />
+Historia de deformación: No captura efectos de procesamiento<br />
+Defectos cristalinos: Dislocaciones, vacantes no modeladas<br />
+Información 3D: Efectos fuera del plano ignorados</p>
+<p>Simplificaciones:</p>
+<p>Asume límites perpendiculares al plano de observación<br />
+Probabilidad uniforme a lo largo de cada límite<br />
+No distingue entre diferentes tipos de puntos triples</p>
+<p>Validación de Features<br />
+Coherencia con Literatura:</p>
+<p>Límites de alta energía correlacionan con nucleación observada<br />
+Orientaciones perpendiculares al estrés son más susceptibles<br />
+Ciertos límites especiales (Σ3) resisten nucleación</p>
+<p>Ablation Studies Implícitos:</p>
+<p>Performance degrada sin información de orientación<br />
+Energía de límites de grano es predictiva por sí sola<br />
+Combinación de ambos features es superior</p>
+<p>Innovación en Feature Engineering<br />
+Aspectos Novedosos:</p>
+<p>Integración multi-física: Combina geometría + energética<br />
+Representación continua: Campos suaves vs. descriptores discretos<br />
+Escalabilidad: Aplicable a grandes datasets microestructurales<br />
+Ground truth sintético: Construcción probabilística de etiquetas</p>
+<p>Comparación con Enfoques Tradicionales:<br />
+Tradicional: Descriptores manuales (tamaño grano, desorientación)<br />
+Este trabajo: Representación completa de campos microestructurales</p>
+<p>Los features elegidos representan un balance entre completitud física y tractabilidad computacional, capturando los mecanismos fundamentales de nucleación mientras mantienen eficiencia para ML.</p>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (20)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_001_no_caption.png" alt="fig_001 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_002_Figure_1_A_reversed_erosion_algorithm_.png" alt="fig_002 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 4</strong>
+            <p class="caption">Figure 1: A reversed erosion algorithm, together with EBSD and grain boundary information, is used to reconstruct pre-damaged microstructures. (top) Samples of EBSD data showing defects resulting from the presence of voids. (middle) Erosion algorithm fills the defects until (bottom) The defect is completely filled.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 1: A reversed erosion algorithm, together with EBSD and grain boundary information, is used to reconstruct pre-damaged microstructures. (top) Samples of EBSD data showing defects resulting from the presence of voids. (middle) Erosion algorithm fills the defects until (bottom) The defect is completely filled.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_003_Figure_2_A_visual_compilation_of_three_.png" alt="fig_003 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 5</strong>
+            <p class="caption">Figure 2: A visual compilation of three image sets: grain boundary energy (top row), void masks (middle row), and final ground truth images (bottom row). The final ground truth images are obtained by performing a pixel wise multiplication of grain boundary energy and void masks. The red boxes emphasize two cases: (i) when voids intersect grain boundaries, resulting in retained regions in the final mask, and (ii) when voids fall outside grain boundaries, leading to their exclusion from the final mask. This approach ensures that only voids that are on grain boundaries are preserved for further analysis.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 2: A visual compilation of three image sets: grain boundary energy (top row), void masks (middle row), and final ground truth images (bottom row). The final ground truth images are obtained by performing a pixel wise multiplication of grain boundary energy and void masks. The red boxes emphasize two cases: (i) when voids intersect grain boundaries, resulting in retained regions in the final mask, and (ii) when voids fall outside grain boundaries, leading to their exclusion from the final mask. This approach ensures that only voids that are on grain boundaries are preserved for further analysis.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_004_Figure_3_A_visual_compilation_of_three_.png" alt="fig_004 — pagina 6" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 6</strong>
+            <p class="caption">Figure 3: A visual compilation of three image sets: micrograph (top row), grain boundary energy (middle row), and grain orientation (bottom row). The dataset to the ML model includes grain orientations and grain boundary energies.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 3: A visual compilation of three image sets: micrograph (top row), grain boundary energy (middle row), and grain orientation (bottom row). The dataset to the ML model includes grain orientations and grain boundary energies.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_005_Figure_4_The_full_U-Net_architecture_c.png" alt="fig_005 — pagina 7" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 7</strong>
+            <p class="caption">Figure 4: The full U-Net architecture, comprised of an encoder-decoder structure with attention gates between corresponding layers. The encoder processes a 100×100×5 input and the decoder reconstructs a 100×100×1 predictions. Popouts illustrate the encoder, decoder, and attention gate architectures.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 4: The full U-Net architecture, comprised of an encoder-decoder structure with attention gates between corresponding layers. The encoder processes a 100×100×5 input and the decoder reconstructs a 100×100×1 predictions. Popouts illustrate the encoder, decoder, and attention gate architectures.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_006_Figure_5_Representative_selection_of_mo.png" alt="fig_006 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 8</strong>
+            <p class="caption">Figure 5: Representative selection of model results for training sets, indicating the robustness of the ML architecture for capturing void nucleation probability fields. Intensity values are clamped between 0.05 and 0.6 for better visualization.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 5: Representative selection of model results for training sets, indicating the robustness of the ML architecture for capturing void nucleation probability fields. Intensity values are clamped between 0.05 and 0.6 for better visualization.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_007_no_caption.png" alt="fig_007 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 9</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 9.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_008_no_caption.png" alt="fig_008 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 9</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 9.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_009_no_caption.png" alt="fig_009 — pagina 10" loading="lazy">
+          <figcaption>
+            <strong>FIG_009 · pagina 10</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 10.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_010_no_caption.png" alt="fig_010 — pagina 12" loading="lazy">
+          <figcaption>
+            <strong>FIG_010 · pagina 12</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 12.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_011_no_caption.png" alt="fig_011 — pagina 12" loading="lazy">
+          <figcaption>
+            <strong>FIG_011 · pagina 12</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 12.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_012_Figure_8_PCC_analysis_of_model_performa.png" alt="fig_012 — pagina 12" loading="lazy">
+          <figcaption>
+            <strong>FIG_012 · pagina 12</strong>
+            <p class="caption">Figure 8: PCC analysis of model performance across entire dataset</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 8: PCC analysis of model performance across entire dataset</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_013_a_Graphical_illustration_of_ROI_metric.png" alt="fig_013 — pagina 12" loading="lazy">
+          <figcaption>
+            <strong>FIG_013 · pagina 12</strong>
+            <p class="caption">(a) Graphical illustration of ROI metric: the region of interest around a void is projected onto the predicted image.</p>
+          </figcaption>
+          <div class="figbody"><p>(a) Graphical illustration of ROI metric: the region of interest around a void is projected onto the predicted image.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_014_no_caption.png" alt="fig_014 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_014 · pagina 18</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 18.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_015_c_Micrograph_segmented_into_red_bad_v.png" alt="fig_015 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_015 · pagina 18</strong>
+            <p class="caption">(c) Micrograph segmented into red (bad voids), blue (good voids), and black (no void regions).</p>
+          </figcaption>
+          <div class="figbody"><p>(c) Micrograph segmented into red (bad voids), blue (good voids), and black (no void regions).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_016_no_caption.png" alt="fig_016 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_016 · pagina 18</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 18.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_017_no_caption.png" alt="fig_017 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_017 · pagina 18</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 18.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_018_f_Mask_applied_to_the_microstructure_t.png" alt="fig_018 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_018 · pagina 18</strong>
+            <p class="caption">(f) Mask applied to the microstructure to highlight regions of voids</p>
+          </figcaption>
+          <div class="figbody"><p>(f) Mask applied to the microstructure to highlight regions of voids</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_019_no_caption.png" alt="fig_019 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_019 · pagina 18</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 18.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_020_Figure_11_Pearson_correlation_coefficie.png" alt="fig_020 — pagina 19" loading="lazy">
+          <figcaption>
+            <strong>FIG_020 · pagina 19</strong>
+            <p class="caption">Figure 11: Pearson correlation coefficient based comparison between the ground truth and predicted void nucleation fields. The reference ground truth image is shown in the top row indicating the baseline against which all comparisons are made. The bottom row presents various predicted images, each annotated with its corresponding PCC value. The predicted field corresponding to the ground truth reference yields the highest correlation values as showm in green, while random predictors (such as constant fields of ones, zeros, or 0.5 values) exhibit significantly lower PCC values, underscoring their lack of structural correspondence. This shows that PCC is stringent as compared many other metrics which can give a false impression that the model predicts well even in cases where it does not do well.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 11: Pearson correlation coefficient based comparison between the ground truth and predicted void nucleation fields. The reference ground truth image is shown in the top row indicating the baseline against which all comparisons are made. The bottom row presents various predicted images, each annotated with its corresponding PCC value. The predicted field corresponding to the ground truth reference yields the highest correlation values as showm in green, while random predictors (such as constant fields of ones, zeros, or 0.5 values) exhibit significantly lower PCC values, underscoring their lack of structural correspondence. This shows that PCC is stringent as compared many other metrics which can give a false impression that the model predicts well even in cases where it does not do well.</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

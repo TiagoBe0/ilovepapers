@@ -1,0 +1,58 @@
+# Resumen — Chemiscope 1.0: interactive exploration of atomistic data from analysis to dissemination
+
+**Autores:** Sofiia Chorna, Jakub Lála, Qianjun Xu, Rose K. Cersonsky, Guillaume Fraux, Michele Ceriotti
+**Revista:** JOSS 11(121), 10380 (mayo 2026), DOI: 10.21105/joss.10380
+**Software:** https://chemiscope.org
+
+---
+
+## 🎯 Idea central
+
+**Software paper** (corto, tipo JOSS) que presenta Chemiscope 1.0, una herramienta **interactiva** para explorar datasets atomísticos relacionando:
+
+- Una **vista de mapa** (embedding 2D, scatter property-property, t-SNE/UMAP, etc.).
+- Un **visualizador 3D** de estructuras.
+
+Click en un punto del mapa → muestra la estructura atómica correspondiente. Esto permite inspeccionar clusters, outliers y relaciones estructura–propiedad de forma fluida.
+
+---
+
+## ⚙️ Novedades de la versión 1.0
+
+Pasa de ser **solo un visualizador web** a un **toolkit Python-céntrico** completo:
+
+- **Jupyter widget** — embedible en notebooks.
+- **Streamlit** — apps web.
+- **Sphinx / sphinx-gallery** — documentación reproducible.
+- **Standalone web viewer** — para diseminar resultados.
+- API soporta directamente:
+  - **ASE** (Atomic Simulation Environment)
+  - **MDAnalysis**
+  - **stk** (supramolecular)
+  - **Chemfiles**
+
+---
+
+## 🧪 Por qué importa
+
+- Es la herramienta natural para **explorar embeddings** generados por SOAP, GNNs, autoencoders, etc.
+- Específicamente diseñada para el flujo: descriptor local → reducción dimensional → cluster → inspeccionar estructura → entender.
+- Citado por papers de Materials Cloud (Talirz et al., 2020) y trabajos del grupo de Ceriotti (EPFL).
+
+---
+
+## 🧩 Caso de uso para tu pipeline
+
+1. MD LAMMPS → dumps con defectos.
+2. SOAP / fingerprints por átomo.
+3. UMAP / PCA → 2D embedding.
+4. Chemiscope: ver clusters de defectos en 2D, click → inspeccionar el átomo y su vecindario 3D.
+
+Esto se solapa directamente con el workflow de [[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]] o [[FaVAD_fingerprints_defectos_vonToussaint_2020]] — Chemiscope es el visualizador ideal después del clustering.
+
+---
+
+## 📎 Conexiones
+
+- Complemento natural de [[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]], [[FaVAD_fingerprints_defectos_vonToussaint_2020]], [[CVAE_defectos_STEM_Ayyubi_2026]].
+- Alternativa interactiva a OVITO / VMD para la parte de **explorar embeddings** (OVITO no maneja el lado "mapa 2D" nativamente).
