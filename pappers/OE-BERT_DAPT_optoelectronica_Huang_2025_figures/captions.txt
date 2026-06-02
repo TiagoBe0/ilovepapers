@@ -1,0 +1,56 @@
+fig_001 (p. 1)
+[Sin caption]
+
+fig_002 (p. 1)
+[Sin caption]
+
+fig_003 (p. 1)
+[Sin caption]
+
+fig_004 (p. 1)
+[Sin caption]
+
+fig_005 (p. 1)
+[Sin caption]
+
+fig_006 (p. 1)
+[Sin caption]
+
+fig_007 (p. 1)
+[Sin caption]
+
+fig_008 (p. 1)
+[Sin caption]
+
+fig_009 (p. 1)
+[Sin caption]
+
+fig_010 (p. 1)
+[Sin caption]
+
+fig_011 (p. 2)
+Figure 1. Applications of BERT-like models in academic research. Left. BERT-like models are built with the transformer architecture, which computes the attention between text tokens. The attention scores can be exploited to conduct dependency parsing and relation discovery. The models can also be fine-tuned to tackle specialized downstream tasks. Top. The question-answering (QA) capability of BERT-like models can be applied to tasks such as text-mining for material databases and topic modeling for research trend analysis. Right. The models can also be fine-tuned to perform text classification, which has wide application in literature review and bibliography management. Bottom. BERT-like models can be modified to produce contextual text embeddings that can be used in document retrieval based on the embedding similarities. The advancement in LLMs and RAG systems have also promoted the application of embedding models.
+
+fig_012 (p. 2)
+[Sin caption]
+
+fig_013 (p. 2)
+Figure 2. Training pipeline for the optoelectronics-adapted language models developed in this study. The starting BERT-like models, pretrained on general English text (ALBERT, BERT, and RoBERTa) were domain adaptive pretrained on optoelectronics research literature, yielding the OEadapted models. Each resulting OE model was then fine-tuned on three downstream tasks: abstract classification, question-answering, and textembedding, using task-specific training data sets. The resulting nine models represent the final utility models; such as the OE-RoBERTa model that serves for QA or the OE-ALBERT model that serves for abstract classification.
+
+fig_014 (p. 4)
+Figure 3. Keyword frequency bar chart for normalized keywords found in 20k Science Direct publications about optoelectronics These 20 normalized keywords outlined three major mutually exclusive categories in terms of material functions: light-emitting, lightharvesting, and photocatalysis categories.
+
+fig_015 (p. 5)
+[Sin caption]
+
+fig_016 (p. 5)
+Figure 4. Pretraining loss and token prediction accuracy progress of BERT, ALBERT, and RoBERTa when further pretrained on optoelectronics literature in order to produce OE-BERT, OEALBERT and OE-RoBERTa, respectively. All three language models achieved a similar masked token prediction accuracy at the end of the DAPT process, while their progress of loss values are more separated with the OE-RoBERTa model affording the lowest loss value.
+
+fig_017 (p. 7)
+Figure 5. Confusion matrix of the classification results on titles concatenated with abstracts from top cited optoelectronics papers in 2023, using the OE-RoBERTa case-lowered classification model. Most confusions occur between the 'light-harvesting' class and the 'other topics' class.
+
+fig_018 (p. 8)
+Figure 6. Performance evolution on the TADF-numerical QA data set of the OE-BERT and OE-RoBERTa models against the progress of their optoelectronics DAPT process as defined by the number of epochs of the DAPT process. a) The progressive evolution of the Exact Match metric. b) The progressive evolution of the F 1 metric. The metric scores of OE-BERT and OE-RoBERTa evolves highly parallel for both Exact Match and F 1 .
+
+fig_019 (p. 10)
+Figure 7. Recall @k results plotted against k for 1 ≤ k ≤ 20 when testing on the test set of the OE-Ttl-Abs-303k data set using the gte-base-en-v1.5 model, the OE-RoBERTa embedding model (all layers fine-tuned), and the OE-RoBERTa embedding model (pooling layers fine-tuned). The OE-RoBERTa embedding model that had all its layers fine-tuned outperformed the state-of-theart embedding model that is of a similar size, gte-base-env1.5 , on this optoelectronics in-domain retrieval task.

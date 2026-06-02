@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — Review_DL_materiales_Choudhary_2022</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>Review_DL_materiales_Choudhary_2022</h1>
+    <p class="subtitle">Resumen en español de <strong>Review_DL_materiales_Choudhary_2022</strong>.</p>
+    <div class="meta">
+        <div><strong>PDF local</strong><a href="../pappers/Review_DL_materiales_Choudhary_2022.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p>laro, aquí tienes un resumen detallado del artículo de revisión “Recent advances and applications of deep learning methods in materials science”, haciendo especial énfasis en los pies de figura y las ilustraciones clave mencionadas:<br />
+Resumen General</p>
+<p>El artículo presenta una revisión exhaustiva de los métodos de aprendizaje profundo (DL) aplicados a la ciencia de materiales, abarcando representaciones atomísticas, imágenes, espectros y procesamiento de lenguaje natural. Destaca cómo el DL acelera el descubrimiento y diseño de materiales, superando limitaciones de métodos tradicionales.<br />
+Figuras y Captiones Importantes<br />
+Figura 1: Esquema de IA, ML y DL en Ciencia de Materiales</p>
+<pre><code>Caption: “Esquema que muestra una visión general de la inteligencia artificial (IA), el aprendizaje automático (ML) y el aprendizaje profundo (DL), y sus aplicaciones en ciencia e ingeniería de materiales. El DL se considera parte del ML, que a su vez está contenido en el término general de IA.”
+
+Importancia: Establece el contexto jerárquico y la relación entre IA, ML y DL, y cómo se aplican en el dominio de los materiales.
+</code></pre>
+<p>Figura 2: Modelos de Redes Neuronales de Grafos para Predicción de Propiedades</p>
+<pre><code>Caption: “Esquema de modelos como SchNet, CGCNN, MEGNet, iCGCNN, DimeNet y ALIGNN utilizados para predecir propiedades de materiales cristalinos y moleculares a partir de configuraciones atomísticas.”
+
+Importancia: Ilustra cómo las redes neuronales de grafos (GNN) capturan interacciones atómicas y predicen propiedades como energía de formación, bandgap, módulo elástico, etc.
+</code></pre>
+<p>Figura 3: Aplicaciones de DL para Datos Espectrales</p>
+<pre><code>Caption (3a): “Predicción de información estructural a partir de difracción de rayos X (XRD).”
+
+Caption (3b): “Predicción de propiedades de catálisis a partir de datos computacionales de densidad de estados electrónicos.”
+
+Importancia: Muestra cómo el DL se utiliza para:
+
+    Identificar fases y estructuras cristalinas a partir de espectros de XRD.
+
+    Relacionar espectros de densidad de estados (DOS) con propiedades de adsorción catalítica.
+</code></pre>
+<p>Figura 4: Segmentación de Átomos con U-Net en Imágenes STEM</p>
+<pre><code>Caption: “Algoritmo basado en DL (U-Net) para clasificación de sitios atómicos en imágenes de STEM de WSe₂. (a) Arquitectura U-Net. (b) Ejemplos de datos de entrenamiento para cinco especies atómicas. (c) Precisión del modelo durante el entrenamiento. (d) Comparación de precisión entre el modelo y mediciones humanas.”
+
+Importancia: Demuestra la capacidad del DL para:
+
+    Identificar y clasificar átomos y vacantes en imágenes de microscopía de alta resolución.
+
+    Lograr una precisión superior a la humana en la cuantificación de defectos atómicos.
+</code></pre>
+<p>Aplicaciones Clave por Modalidad de Datos</p>
+<pre><code>Representaciones Atomísticas:
+
+    Force Fields (FF): Desarrollo de potenciales interatómicos con redes neuronales (ej. BPNN, GNNFF).
+
+    Predicción Directa de Propiedades: Modelos como CGCNN, ALIGNN predicen energías, bandgaps, propiedades elásticas, etc.
+
+Datos Espectrales:
+
+    XRD, XAS, Raman: Clasificación de grupos espaciales, identificación de fases, y predicción de parámetros estructurales.
+
+    Ejemplo: CNNs entrenadas con datos sintéticos logran &gt;90% de precisión en clasificación de sistemas cristalinos.
+
+Imágenes:
+
+    Clasificación y Segmentación: Identificación de fases, defectos, y orientaciones cristalinas en SEM, TEM, EBSD.
+
+    Super-Resolución y Ajuste Automático: GANs para mejorar resolución y modelos que ajustan parámetros experimentales en tiempo real.
+
+Procesamiento de Lenguaje Natural (NLP):
+
+    Extracción automática de datos de síntesis y propiedades desde la literatura.
+
+    Predicción de aplicaciones materiales mediante embeddings de palabras (ej. Word2Vec).
+</code></pre>
+<p>Limitaciones y Desafíos</p>
+<pre><code>Calidad de Datos: Ruido en datos experimentales, falta de estandarización.
+
+Interpretabilidad: Naturaleza de “caja negra” de los modelos DL.
+
+Generalización: Dificultad para extrapolar más allá de los datos de entrenamiento.
+
+Cuantificación de Incertidumbre: Necesidad de métodos robustos para evaluar la confiabilidad de las predicciones.
+</code></pre>
+<p>Recursos Destacados</p>
+<pre><code>Repositorio GitHub: https://github.com/deepmaterials/dlmatreview
+
+Bases de Datos Públicas: Materials Project, JARVIS, OQMD, AFLOW, entre otras.
+
+Software Común: PyTorch, TensorFlow, SchNetPack, CGCNN, ALIGNN, DeepChem.
+</code></pre>
+<p>Conclusión</p>
+<p>El DL está transformando la ciencia de materiales al permitir:</p>
+<pre><code>Análisis automatizado de grandes volúmenes de datos complejos.
+
+Descubrimiento acelerado de materiales con propiedades deseadas.
+
+Integración con métodos físicos y experimentales para un diseño racional.
+</code></pre>
+<p>Si necesitas que profundice en alguna figura, aplicación o técnica específica, házmelo saber.</p>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (35)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_001_no_caption.png" alt="fig_001 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_002_no_caption.png" alt="fig_002 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_003_no_caption.png" alt="fig_003 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_004_no_caption.png" alt="fig_004 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 2</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 2.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_005_Fig_1_Schematic_showing_an_overview_of_.png" alt="fig_005 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 2</strong>
+            <p class="caption">Fig. 1 Schematic showing an overview of arti fi cial intelligence (AI), machine learning (ML), and deep learning (DL) methods and its applications in materials science and engineering. Deep learning is considered a part of machine learning, which is contained in an umbrella term arti fi cial intelligence.</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 1 Schematic showing an overview of arti fi cial intelligence (AI), machine learning (ML), and deep learning (DL) methods and its applications in materials science and engineering. Deep learning is considered a part of machine learning, which is contained in an umbrella term arti fi cial intelligence.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_006_no_caption.png" alt="fig_006 — pagina 3" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 3</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 3.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_007_no_caption.png" alt="fig_007 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 4</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 4.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_008_no_caption.png" alt="fig_008 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 5</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 5.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_009_no_caption.png" alt="fig_009 — pagina 6" loading="lazy">
+          <figcaption>
+            <strong>FIG_009 · pagina 6</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 6.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_010_no_caption.png" alt="fig_010 — pagina 7" loading="lazy">
+          <figcaption>
+            <strong>FIG_010 · pagina 7</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 7.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_011_Fig_2_Schematic_representations_of_an_a.png" alt="fig_011 — pagina 7" loading="lazy">
+          <figcaption>
+            <strong>FIG_011 · pagina 7</strong>
+            <p class="caption">Fig. 2 Schematic representations of an atomic structure as a graph. a CGCNN model in which crystals are converted to graphs with nodes representing atoms in the unit cell and edges representing atom connections. Nodes and edges are characterized by vectors corresponding to the atoms and bonds in the crystal, respectively [Reprinted with permission from ref. 67 Copyright 2019 American Physical Society], b ALIGNN 65 model in which the convolution layer alternates between message passing on the bond graph and its bond-angle line graph. c MEGNet in which the initial graph is represented by the set of atomic attributes, bond attributes and global state attributes [Reprinted with permission from ref. 33 Copyright 2019 American Chemical Society] model, d iCGCNN model in which multiple edges connect a node to neighboring nodes to show the number of Voronoi neighbors [Reprinted with permission from ref. 122 Copyright 2019 American Physical Society].</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 2 Schematic representations of an atomic structure as a graph. a CGCNN model in which crystals are converted to graphs with nodes representing atoms in the unit cell and edges representing atom connections. Nodes and edges are characterized by vectors corresponding to the atoms and bonds in the crystal, respectively [Reprinted with permission from ref. 67 Copyright 2019 American Physical Society], b ALIGNN 65 model in which the convolution layer alternates between message passing on the bond graph and its bond-angle line graph. c MEGNet in which the initial graph is represented by the set of atomic attributes, bond attributes and global state attributes [Reprinted with permission from ref. 33 Copyright 2019 American Chemical Society] model, d iCGCNN model in which multiple edges connect a node to neighboring nodes to show the number of Voronoi neighbors [Reprinted with permission from ref. 122 Copyright 2019 American Physical Society].</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_012_no_caption.png" alt="fig_012 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_012 · pagina 8</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 8.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_013_no_caption.png" alt="fig_013 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_013 · pagina 9</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 9.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_014_Fig_3_Example_applications_of_deep_lear.png" alt="fig_014 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_014 · pagina 9</strong>
+            <p class="caption">Fig. 3 Example applications of deep learning for spectral data. a Predicting structure information from the X-ray diffraction 374 , Reprinted according to the terms of the CC-BY license 374 . Copyright 2020. b Predicting catalysis properties from computational electronic density of states data. Reprinted according to the terms of the CC-BY license 202 . Copyright 2021.</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 3 Example applications of deep learning for spectral data. a Predicting structure information from the X-ray diffraction 374 , Reprinted according to the terms of the CC-BY license 374 . Copyright 2020. b Predicting catalysis properties from computational electronic density of states data. Reprinted according to the terms of the CC-BY license 202 . Copyright 2021.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_015_no_caption.png" alt="fig_015 — pagina 10" loading="lazy">
+          <figcaption>
+            <strong>FIG_015 · pagina 10</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 10.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_016_no_caption.png" alt="fig_016 — pagina 11" loading="lazy">
+          <figcaption>
+            <strong>FIG_016 · pagina 11</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 11.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_017_no_caption.png" alt="fig_017 — pagina 12" loading="lazy">
+          <figcaption>
+            <strong>FIG_017 · pagina 12</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 12.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_018_no_caption.png" alt="fig_018 — pagina 13" loading="lazy">
+          <figcaption>
+            <strong>FIG_018 · pagina 13</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 13.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_019_no_caption.png" alt="fig_019 — pagina 14" loading="lazy">
+          <figcaption>
+            <strong>FIG_019 · pagina 14</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 14.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_020_Fig_4_Deep-learning-based_algorithm_for.png" alt="fig_020 — pagina 14" loading="lazy">
+          <figcaption>
+            <strong>FIG_020 · pagina 14</strong>
+            <p class="caption">Fig. 4 Deep-learning-based algorithm for atomic site classi fi cation. a Deep neural networks U-Net model constructed for quanti fi cation analysis of annular dark- fi eld in the scanning transmission electron microscope (ADF-STEM) image of V-WSe2. b Examples of training dataset for deep learning of atom segmentation model for fi ve different species. c Pixel-level accuracy of the atom segmentation model as a function of training epoch. d Measurement accuracy of the segmentation model compared with human-based measurements. Scale bars are 1 nm [Reprinted according to the terms of the CC-BY license ref. 228 ].</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 4 Deep-learning-based algorithm for atomic site classi fi cation. a Deep neural networks U-Net model constructed for quanti fi cation analysis of annular dark- fi eld in the scanning transmission electron microscope (ADF-STEM) image of V-WSe2. b Examples of training dataset for deep learning of atom segmentation model for fi ve different species. c Pixel-level accuracy of the atom segmentation model as a function of training epoch. d Measurement accuracy of the segmentation model compared with human-based measurements. Scale bars are 1 nm [Reprinted according to the terms of the CC-BY license ref. 228 ].</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_021_no_caption.png" alt="fig_021 — pagina 15" loading="lazy">
+          <figcaption>
+            <strong>FIG_021 · pagina 15</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 15.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_022_no_caption.png" alt="fig_022 — pagina 16" loading="lazy">
+          <figcaption>
+            <strong>FIG_022 · pagina 16</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 16.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_023_no_caption.png" alt="fig_023 — pagina 17" loading="lazy">
+          <figcaption>
+            <strong>FIG_023 · pagina 17</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 17.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_024_no_caption.png" alt="fig_024 — pagina 17" loading="lazy">
+          <figcaption>
+            <strong>FIG_024 · pagina 17</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 17.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_025_no_caption.png" alt="fig_025 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_025 · pagina 18</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 18.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_026_Fig_5_A_schematic_showing_the_applicati.png" alt="fig_026 — pagina 18" loading="lazy">
+          <figcaption>
+            <strong>FIG_026 · pagina 18</strong>
+            <p class="caption">Fig. 5 A schematic showing the application of skip-gram variation of Word2vec for predicting context words. a Network for training word embeddings for natural language processing application. A one-hot encoded vector at left represents each distinct word in the corpus; the role of a hidden layer is to predict the probability of neighboring words in the corpus. This network structure trains a relatively small hidden layer of 100 -200 neurons to contain information on the context of words in the entire corpus, with the result that similar words end up with similar hidden layer weights (word embeddings). Such word embeddings can transform wordsin text form into numerical vectors that may be useful for a variety of applications. b projection of word embeddings for various materials science words, as trained on a corpus scienti fi c abstracts, into two dimensions using principle components analysis. Without any explicit training, the word embeddings naturally preserve relationships between chemical formulas, their common oxides, and their ground state structures. [Reprinted according to the terms of the CC-BY license ref. 259 ].</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 5 A schematic showing the application of skip-gram variation of Word2vec for predicting context words. a Network for training word embeddings for natural language processing application. A one-hot encoded vector at left represents each distinct word in the corpus; the role of a hidden layer is to predict the probability of neighboring words in the corpus. This network structure trains a relatively small hidden layer of 100 -200 neurons to contain information on the context of words in the entire corpus, with the result that similar words end up with similar hidden layer weights (word embeddings). Such word embeddings can transform wordsin text form into numerical vectors that may be useful for a variety of applications. b projection of word embeddings for various materials science words, as trained on a corpus scienti fi c abstracts, into two dimensions using principle components analysis. Without any explicit training, the word embeddings naturally preserve relationships between chemical formulas, their common oxides, and their ground state structures. [Reprinted according to the terms of the CC-BY license ref. 259 ].</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_027_no_caption.png" alt="fig_027 — pagina 19" loading="lazy">
+          <figcaption>
+            <strong>FIG_027 · pagina 19</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 19.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_028_no_caption.png" alt="fig_028 — pagina 20" loading="lazy">
+          <figcaption>
+            <strong>FIG_028 · pagina 20</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 20.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_029_no_caption.png" alt="fig_029 — pagina 21" loading="lazy">
+          <figcaption>
+            <strong>FIG_029 · pagina 21</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 21.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_030_no_caption.png" alt="fig_030 — pagina 22" loading="lazy">
+          <figcaption>
+            <strong>FIG_030 · pagina 22</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 22.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_031_no_caption.png" alt="fig_031 — pagina 23" loading="lazy">
+          <figcaption>
+            <strong>FIG_031 · pagina 23</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 23.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_032_no_caption.png" alt="fig_032 — pagina 24" loading="lazy">
+          <figcaption>
+            <strong>FIG_032 · pagina 24</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 24.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_033_no_caption.png" alt="fig_033 — pagina 25" loading="lazy">
+          <figcaption>
+            <strong>FIG_033 · pagina 25</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 25.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_034_no_caption.png" alt="fig_034 — pagina 26" loading="lazy">
+          <figcaption>
+            <strong>FIG_034 · pagina 26</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 26.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_035_no_caption.png" alt="fig_035 — pagina 26" loading="lazy">
+          <figcaption>
+            <strong>FIG_035 · pagina 26</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 26.</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

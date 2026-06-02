@@ -1,0 +1,84 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/VoxelNet_Zhou_2017.pdf",
+  "total_figures": 6,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "Figure 1. VoxelNet directly operates on the raw point cloud (no need for feature engineering) and produces the 3D detection results using a single end-to-end trainable network.",
+      "page": 1,
+      "bbox": {
+        "l": 319.1953430175781,
+        "t": 579.7116394042969,
+        "r": 534.17138671875,
+        "b": 418.4992980957031
+      },
+      "image_path": "images/fig_001_Figure_1_VoxelNet_directly_operates_on_.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 2. VoxelNet architecture. The feature learning network takes a raw point cloud as input, partitions the space into voxels, and transforms points within each voxel to a vector representation characterizing the shape information. The space is represented as a sparse 4D tensor. The convolutional middle layers processes the 4D tensor to aggregate spatial context. Finally, a RPN generates the 3D detection.",
+      "page": 2,
+      "bbox": {
+        "l": 97.2384262084961,
+        "t": 720.7401657104492,
+        "r": 495.22088623046875,
+        "b": 519.1660461425781
+      },
+      "image_path": "images/fig_002_Figure_2_VoxelNet_architecture_The_fea.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 3,
+      "bbox": {
+        "l": 330.01910400390625,
+        "t": 720.7399215698242,
+        "r": 517.9159545898438,
+        "b": 606.0109405517578
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figure 4. Region proposal network architecture.",
+      "page": 4,
+      "bbox": {
+        "l": 97.00814056396484,
+        "t": 718.0868530273438,
+        "r": 491.6419372558594,
+        "b": 586.1632080078125
+      },
+      "image_path": "images/fig_004_Figure_4_Region_proposal_network_archit.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Figure 5. Illustration of efficient implementation.",
+      "page": 5,
+      "bbox": {
+        "l": 79.97984313964844,
+        "t": 718.5498733520508,
+        "r": 255.26197814941406,
+        "b": 575.9044647216797
+      },
+      "image_path": "images/fig_005_Figure_5_Illustration_of_efficient_impl.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Figure 6. Qualitative results. For better visualization 3D boxes detected using LiDAR are projected on to the RGB images.",
+      "page": 8,
+      "bbox": {
+        "l": 44.67660903930664,
+        "t": 719.0706634521484,
+        "r": 562.0546875,
+        "b": 484.52972412109375
+      },
+      "image_path": "images/fig_006_Figure_6_Qualitative_results_For_bette.png"
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TGS_vacancias_in_situ_Botica_MIT_2026.pdf",
+  "total_figures": 15,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 120.74749755859375,
+        "t": 582.1438446044922,
+        "r": 490.09796142578125,
+        "b": 305.24420166015625
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 1: Scheme of TGS coupled with in situ irradiation. Adapted from [24].",
+      "page": 10,
+      "bbox": {
+        "l": 152.05955505371094,
+        "t": 662.6304016113281,
+        "r": 472.2409973144531,
+        "b": 516.9530944824219
+      },
+      "image_path": "images/fig_002_Figure_1_Scheme_of_TGS_coupled_with_in_.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Figure 2: Irradiation depth profile as calculated by SRIM and nominal TGS e-folding depth sensitivity for thermal and acoustic wave properties.",
+      "page": 13,
+      "bbox": {
+        "l": 148.84646606445312,
+        "t": 661.9231414794922,
+        "r": 461.17437744140625,
+        "b": 495.9918518066406
+      },
+      "image_path": "images/fig_003_Figure_2_Irradiation_depth_profile_as_c.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figure 3: in situ TGS results from 7 MeV Cu 3+ irradiation at 23.3 mW (a) and from 1.63 MeV proton irradiation (b). Most crucially, these two results show that two experiments with the same beam heating power in Watts produce changes in SAW frequency proportional to their ion stopping powers, and not to beam heating temperature. This isolates the effect of beam heating from vacancy concentration on the changes in SAW frequency and thermal diffusivity. c) 0.2% offset Yield Strength model for GRCop-84 from [35], showing that a 0.4% change in elastic properties would imply an increase in temperature of 140 ◦ C . d) Infrared camera calibration and temperature measurement for different isotopes of copper at 1.68MV terminal potential. This plot shows that the maximum increase in temperature for Cu 2+ is 13 ◦ C , and just around 1 . 5 ◦ C for 15 nA of Cu 3+ (current conditions used in plots a) and b).",
+      "page": 15,
+      "bbox": {
+        "l": 113.57586669921875,
+        "t": 598.9011688232422,
+        "r": 500.1085510253906,
+        "b": 329.7291564941406
+      },
+      "image_path": "images/fig_004_Figure_3_in_situ_TGS_results_from_7_MeV.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Figure 4: Periodic pulsed beam experiment, showing how SAW frequency evolves as the Cu-ion beam is cycled on and off. The white background and orange dots represent the periods in which the beam is on, and the grey background and blue dots represent the periods in which the beam is off.",
+      "page": 17,
+      "bbox": {
+        "l": 109.77749633789062,
+        "t": 664.3933715820312,
+        "r": 498.3511657714844,
+        "b": 464.1617431640625
+      },
+      "image_path": "images/fig_005_Figure_4_Periodic_pulsed_beam_experimen.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Figure 5: Vacancy concentration evolution with increasing dose for a periodic pulsed beam experiment. The initial large increase represents the change from only thermal point defects (here we deem this to be negligible) to a high concentration, while the increases at all subsequent doses are much smaller as the proliferation of radiation defects from initial irradiation quickly reduces later vacancy concentrations.",
+      "page": 18,
+      "bbox": {
+        "l": 168.734619140625,
+        "t": 665.2497177124023,
+        "r": 438.60235595703125,
+        "b": 443.86376953125
+      },
+      "image_path": "images/fig_006_Figure_5_Vacancy_concentration_evolutio.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Figure 6: Vacancy concentration calculated for each beam pulse during the logarithmic pulsed-beam experiment (Fig. 4). The concentration of vacancies created corresponds to the beam on periods, and the concentration of vacancies annihilated corresponds to the beam off periods. The color of each point corresponds to the quality of the data, measured by R 2 value.",
+      "page": 19,
+      "bbox": {
+        "l": 110.95059204101562,
+        "t": 653.3481597900391,
+        "r": 499.7270812988281,
+        "b": 501.03875732421875
+      },
+      "image_path": "images/fig_007_Figure_6_Vacancy_concentration_calculat.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Figure 7: Logarithmic pulsed beam experiment. The white background and orange dots represent the periods in which the beam is on, and the grey background and blue dots represent the periods in which the beam is off.",
+      "page": 20,
+      "bbox": {
+        "l": 110.38773345947266,
+        "t": 641.7215118408203,
+        "r": 498.58831787109375,
+        "b": 440.6009826660156
+      },
+      "image_path": "images/fig_008_Figure_7_Logarithmic_pulsed_beam_experi.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Figure 8: Cumulative vacancy concentration comparison between a) the periodic pulsedbeam, and b) the logarithmic scale pulsed-beam experiments.",
+      "page": 20,
+      "bbox": {
+        "l": 112.29075622558594,
+        "t": 332.4753112792969,
+        "r": 494.5666809082031,
+        "b": 179.06011962890625
+      },
+      "image_path": "images/fig_009_Figure_8_Cumulative_vacancy_concentrati.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Figure 9: TEM images from the different Cu-Cr-Ta compositions. On the left side pictures were taken with an underfocus value of -1 µm , and images on the right column were taken with an overfocus value of +1 µm .",
+      "page": 21,
+      "bbox": {
+        "l": 118.3199234008789,
+        "t": 601.9483184814453,
+        "r": 496.9153137207031,
+        "b": 223.5130615234375
+      },
+      "image_path": "images/fig_010_Figure_9_TEM_images_from_the_different_.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Figure 10: Distribution of the number and size of voids detected on each sample. Void densities per µm 2 for each composition are shown in the upper right.",
+      "page": 22,
+      "bbox": {
+        "l": 123.4602279663086,
+        "t": 490.5498352050781,
+        "r": 470.27435302734375,
+        "b": 317.2228698730469
+      },
+      "image_path": "images/fig_011_Figure_10_Distribution_of_the_number_an.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Figure 11: Point defect evolution for FeNi at 300K and 10-3 DPA/s, obtained from standard rate theory and atomistic kinetic Monte Carlo (AKMC) simulations using a random sink distribution and an annihilation rate of sinks. Plot adapted from [36].",
+      "page": 25,
+      "bbox": {
+        "l": 141.8180389404297,
+        "t": 664.4255599975586,
+        "r": 465.4919128417969,
+        "b": 425.9198913574219
+      },
+      "image_path": "images/fig_012_Figure_11_Point_defect_evolution_for_Fe.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Figure 12: Beam on/off period fitting. The data from these fitting correspond to the 4228 s beam on period and the 4404 s beam off period from Figure 4.",
+      "page": 28,
+      "bbox": {
+        "l": 110.59478759765625,
+        "t": 398.10400390625,
+        "r": 499.07354736328125,
+        "b": 278.42108154296875
+      },
+      "image_path": "images/fig_013_Figure_12_Beam_onoff_period_fitting_T.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Figure 13: Vacancy concentration calculated for each beam pulse during the logarithmic pulsed-beam experiment (Figure 7). the concentration of vacancies created correspond to the beam on periods, and the concentration of vacancies annihilated correspond to the beam off period. The color of each point corresponsd to the quality of the data, measured by its R 2 value.",
+      "page": 32,
+      "bbox": {
+        "l": 110.71941375732422,
+        "t": 667.4983749389648,
+        "r": 499.9925537109375,
+        "b": 507.234619140625
+      },
+      "image_path": "images/fig_014_Figure_13_Vacancy_concentration_calcula.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Figure 14: Cumulative vacancy concentration calculated for Cu-9Cr-4Ta (dark blue) and Cu-24Cr-5Ta (light blue) with increasing DPA, showing that the former, despite lower alloying element concentration, exhibits less vacancy concentration increase at similar doses.",
+      "page": 33,
+      "bbox": {
+        "l": 113.08390045166016,
+        "t": 579.3049163818359,
+        "r": 497.4635925292969,
+        "b": 357.8166198730469
+      },
+      "image_path": "images/fig_015_Figure_14_Cumulative_vacancy_concentrat.png"
+    }
+  ]
+}

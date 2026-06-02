@@ -1,0 +1,86 @@
+fig_001 (p. 1)
+[Sin caption]
+
+fig_002 (p. 1)
+[Sin caption]
+
+fig_003 (p. 1)
+[Sin caption]
+
+fig_004 (p. 1)
+[Sin caption]
+
+fig_005 (p. 1)
+[Sin caption]
+
+fig_006 (p. 1)
+[Sin caption]
+
+fig_007 (p. 1)
+[Sin caption]
+
+fig_008 (p. 1)
+[Sin caption]
+
+fig_009 (p. 1)
+[Sin caption]
+
+fig_010 (p. 1)
+[Sin caption]
+
+fig_011 (p. 1)
+[Sin caption]
+
+fig_012 (p. 2)
+[Sin caption]
+
+fig_013 (p. 2)
+[Sin caption]
+
+fig_014 (p. 2)
+[Sin caption]
+
+fig_015 (p. 2)
+[Sin caption]
+
+fig_016 (p. 2)
+[Sin caption]
+
+fig_017 (p. 2)
+[Sin caption]
+
+fig_018 (p. 2)
+[Sin caption]
+
+fig_019 (p. 3)
+FIG. 1. The workflow used in this work: (a) An MD HEA system produced trajectories from which two vacancy surroundings were extracted to compare the influence of various neighbouring atoms on vacancy transitions (Appendix A), (b) vacancy region datasets were converted to graph format, (c) the resulting dataset of states and chosen transition atoms was fed through a GCN to construct a trained model, and (d) model learned dynamics were used to generate accelerated synthetic trajectories of vacancy defect diffusion in the HEA system.
+
+fig_020 (p. 5)
+FIG. 3. Network structure used in this work: (a) A graph input, (b) a convolutional layer that collects information on the host and neighbor nodes [white and black/blue/red in (b) respectively], (c) the output graph features and ReLU activation, (d) flattened node features from graph, (e) a linear layer with ReLU activation, and (f) an output layer that returns a single float value prediction for the rate constant per input atom/node. The tricolored graph nodes are stand-ins for one-hot encoded atom features such as those shown in Fig. 9(b).
+
+fig_021 (p. 5)
+FIG. 2. Configurations of FCC regions of interest for the 1-NNI (upper right) and 2-NNI (lower right). In the 1-NNI model, the environment consists of 12 nearest-neighbor atoms of the vacancy, while in the 2-NNI model, the environment includes 54 atoms, incorporating both the first and second graph neighbors of the vacancy. The 12 allowed transition target atoms are colored in white.
+
+fig_022 (p. 6)
+FIG. 4. Log-likelihood loss plots for both EvoSys training setups. Training runs were plotted together as the unknown true dynamics of the MD system were the same in both setups, enabling direct comparison.
+
+fig_023 (p. 7)
+FIG. 5. Mean transition preferences per-atom as a function of their fraction of the vacancy 1-NNI composition for each dataset (i.e., how often element ' X ' jumped when it occupied ' Y ' /12 of the allowed target atoms). Showing data for (a) MD training, (b) EvoSys 1-NNI, and (c) EvoSys 2-NNI datasets. Values presented in terms of difference with the MD baseline dataset.
+
+fig_024 (p. 8)
+FIG. 7. Number of transition events detected as a function of simulation realtime for the EvoSys 1-NNI and 2-NNI and MD (Baseline) setups. Faded EvoSys points indicate timing reported via from inside the Python script, in contrast to times reported from the bash script, which are presented in solid points.
+
+fig_025 (p. 8)
+FIG. 6. Number of transition events detected as a function of simulated time for EvoSys 1-NNI and 2-NNI and MD Baseline setups. Each plot shows the results of 10 trajectories.
+
+fig_026 (p. 9)
+FIG. 8. ASD measured in 10 ps intervals for each dataset, averaged across 10 trajectories. Shaded regions indicate standard deviation. Values are tabulated in Table IV .
+
+fig_027 (p. 11)
+FIG. 9. NX graph representations of the vacancy defect 1-NNI environment: (a) A layout captured for an arbitrary vacancy state, showing node colors based on features (atom types) and node IDs from number tags assigned by OVITO; (b) an arbitrary vacancy graph layout for a binary alloy demonstrating the one-hot encoding scheme.
+
+fig_028 (p. 11)
+FIG. 10. Histograms of vacancy migration energy barriers for each elemental species (Fe, Ni, Cr, Co, and Cu) in the equiatomic FeNiCrCoCu HEA. The distributions represent the frequency of vacancy jump events as a function of energy barrier. Each histogram is fitted with a Gaussian distribution function, and the corresponding mean energy barrier for each element is reported.
+
+fig_029 (p. 12)
+Unique Compositions (Ordered by Cu)

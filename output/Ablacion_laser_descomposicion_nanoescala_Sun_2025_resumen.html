@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — Dynamics of nanoscale phase decomposition in laser ablation</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>Dynamics of nanoscale phase decomposition in laser ablation</h1>
+    <p class="subtitle">Resumen en español de <strong>Dynamics of nanoscale phase decomposition in laser ablation</strong>.</p>
+    <div class="meta">
+        <div><strong>Autores</strong>** Y. Sun, C. Chen, T. J. Albert, … L. V. Zhigilei, K. Sokolowski-Tinten (SLAC, UVA, Univ. Duisburg-Essen)</div>
+        <div><strong>Revista</strong>** Communications Materials 6, 69 (2025), DOI: 10.1038/s43246-025-00785-4</div>
+        <div><strong>DOI / arXiv</strong><a href="https://doi.org/10.1038/s43246-025-00785-4" target="_blank">10.1038/s43246-025-00785-4</a></div>
+        <div><strong>PDF local</strong><a href="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p><strong>Autores:</strong> Y. Sun, C. Chen, T. J. Albert, … L. V. Zhigilei, K. Sokolowski-Tinten (SLAC, UVA, Univ. Duisburg-Essen)<br />
+<strong>Revista:</strong> Communications Materials 6, 69 (2025), DOI: 10.1038/s43246-025-00785-4</p>
+<h2>Idea central</h2>
+<p>Estudio combinado <strong>experimento + simulación</strong> que reconstruye los procesos de <strong>descomposición de fase nanoescala</strong> durante la <strong>ablación láser ultracorta</strong> de films delgados de oro. Combina:</p>
+<ul>
+<li><strong>Difracción de rayos-X femtosegundo</strong> (LCLS / SLAC) resuelta en tiempo.</li>
+<li><strong>Dinámica molecular</strong> a gran escala.</li>
+</ul>
+<h2>Fenómeno físico</h2>
+<p>Cuando un pulso de fs ilumina un metal:</p>
+<ol>
+<li><strong>Excitación electrónica</strong> ultrarrápida.</li>
+<li><strong>Acoplamiento electrón-fonón</strong> → calentamiento atómico.</li>
+<li><strong>Stress confinement</strong> → ondas mecánicas y tensiones extremas.</li>
+<li><strong>Descomposición de fase</strong> del material superheated:</li>
+<li><strong>Spallation</strong> (a fluencia baja): nucleación y crecimiento de nano-voids sub-superficie → ejección de capa líquida.</li>
+<li><strong>Phase explosion</strong> (a fluencia alta): explosión volumétrica → vapor + clusters atómicos + gotitas líquidas.</li>
+</ol>
+<hr />
+<h2>Lo que aporta el paper</h2>
+<h3>Experimento</h3>
+<ul>
+<li><strong>Pulsos X-ray fs</strong> miden características de <strong>small-angle diffraction</strong> durante la expansión del plume de ablación.</li>
+<li>Mapea la <strong>emergencia y crecimiento de heterogeneidades de densidad nanoescala</strong> en tiempo real.</li>
+</ul>
+<h3>Simulación</h3>
+<ul>
+<li>MD a gran escala (Zhigilei et al.) predice cuándo y cómo aparecen estas heterogeneidades.</li>
+<li>Identifica las <strong>firmas características</strong> de spallation vs phase explosion en la difracción.</li>
+</ul>
+<h3>Mapeo experimento ↔ simulación</h3>
+<ul>
+<li>Las firmas predichas por MD se identifican en los datos X-ray → validación cruzada.</li>
+<li>Permite distinguir mecanismos que ocurren simultáneamente en el plume.</li>
+</ul>
+<hr />
+<h2>Por qué importa</h2>
+<ul>
+<li>Es un caso modelo de <strong>probing extremo</strong> de condiciones lejos del equilibrio termodinámico y mecánico.</li>
+<li>La metodología (X-ray fs + MD multi-escala) puede aplicarse a otros procesos rápidos: choque, irradiación intensa, ablación pulsada para fabricación.</li>
+</ul>
+<hr />
+<h2>Conexiones</h2>
+<ul>
+<li>Mecanismos de nucleación de voids comparten física con [[voxel_voids_nucleacion_Hemani_2014]] (análisis MD voxel) y [[UNet_nucleacion_voids_tantalio_Anantharanga_2025]] (predicción ML de sitios de nucleación).</li>
+<li>Complementario a [[MD_cascadas_CuNi_irradiacion_Wei_2025]] (otro escenario MD de daño extremo, pero por irradiación iónica).</li>
+</ul>
+<hr />
+<h2>Comentario</h2>
+<p>El archivo era <code>test1.pdf</code> (y <code>test0.pdf</code> era duplicado). No tenía resumen previo — quizás lo subiste sin clasificar. Si el tema no te resulta central, es un buen paper "tangente" para referenciar al hablar de procesos lejos del equilibrio.</p>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (13)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_001_no_caption.png" alt="fig_001 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_002_no_caption.png" alt="fig_002 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_003_no_caption.png" alt="fig_003 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_004_Fig_1__Experimental_setup_with_simulta.png" alt="fig_004 — pagina 3" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 3</strong>
+            <p class="caption">Fig. 1 | Experimental setup with simultaneous small- and wide-angle scattering measurements. a Schematic of the femtosecond laser pump, X-ray FEL probe experiment. The samples are 100 nm thick Au fi lms deposited on Si 3 N4 membranes made from 4 in. silicon wafers. The wafer is mounted on translation stages for 2D rastering. The SAXS scattering pattern shown in the schematic is detected by one of the four ePix100s placed at small angles. A JungFrau-1M detector is used to capture</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 1 | Experimental setup with simultaneous small- and wide-angle scattering measurements. a Schematic of the femtosecond laser pump, X-ray FEL probe experiment. The samples are 100 nm thick Au fi lms deposited on Si 3 N4 membranes made from 4 in. silicon wafers. The wafer is mounted on translation stages for 2D rastering. The SAXS scattering pattern shown in the schematic is detected by one of the four ePix100s placed at small angles. A JungFrau-1M detector is used to capture</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_005_the_WAXS_from_the_sample_At_negative_de.png" alt="fig_005 — pagina 3" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 3</strong>
+            <p class="caption">the WAXS from the sample. At negative delays ( δ t < 0 ps), it captures Au (111) and Au (200) polycrystalline Bragg peaks from the fi lm, as shown in the schematic. b A zoomed-in view of the cross-section of a membrane window. c The difference scattering pattern measured by all four ePix100 detectors. The small-angle images in a and c are measured at 250 ps after laser excitation at an incident laser fl uence of 6.3 J/cm 2 .</p>
+          </figcaption>
+          <div class="figbody"><p>the WAXS from the sample. At negative delays ( δ t < 0 ps), it captures Au (111) and Au (200) polycrystalline Bragg peaks from the fi lm, as shown in the schematic. b A zoomed-in view of the cross-section of a membrane window. c The difference scattering pattern measured by all four ePix100 detectors. The small-angle images in a and c are measured at 250 ps after laser excitation at an incident laser fl uence of 6.3 J/cm 2 .</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_006_Fig_2__Temporal_evolution_of_the_WAXS_.png" alt="fig_006 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 4</strong>
+            <p class="caption">Fig. 2 | Temporal evolution of the WAXS and SAXS patterns measured for a 100 nm fi lm irradiated at an incident laser fl uence of 6.3 J/cm 2 . First row: Timeresolved WAXS signal. Second and third rows: SAXS intensity measurement on the detector at the smallest angle. The pattern labeled as -5 ps shows the S ( Q ) pattern</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 2 | Temporal evolution of the WAXS and SAXS patterns measured for a 100 nm fi lm irradiated at an incident laser fl uence of 6.3 J/cm 2 . First row: Timeresolved WAXS signal. Second and third rows: SAXS intensity measurement on the detector at the smallest angle. The pattern labeled as -5 ps shows the S ( Q ) pattern</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_007_used_as_the_reference_in_the_evaluation_.png" alt="fig_007 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 4</strong>
+            <p class="caption">used as the reference in the evaluation of the difference patterns Δ S ( Q , δ t)) = S( Q , δ t) -S( Q , -5 ps) plotted in all other SAXS images. The arrow corresponds to a wavevector of 0.01 Å   1 .</p>
+          </figcaption>
+          <div class="figbody"><p>used as the reference in the evaluation of the difference patterns Δ S ( Q , δ t)) = S( Q , δ t) -S( Q , -5 ps) plotted in all other SAXS images. The arrow corresponds to a wavevector of 0.01 Å   1 .</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_008_Fig_4__Examples_of_time_resolved_diffe.png" alt="fig_008 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 5</strong>
+            <p class="caption">Fig. 4 | Examples of time resolved difference SAXS signal Δ S(Q, δ t). a -d Difference SAXS signals measured for 100 nm fi lms irradiated at incident laser fl uences of 2.5 J/cm 2 , 4.2 J/cm 2 , 6.3 J/cm 2 , and 7.7 J/cm 2 . f -i Difference SAXS signals measured for 250 nm fi lms irradiated at incident laser fl uences of 1.7 J/cm 2 , 2.9 J/ cm 2 , 4.2 J/cm 2 , and 7.0 J/cm 2 . The color bar shown in a is shared by all eight false</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 4 | Examples of time resolved difference SAXS signal Δ S(Q, δ t). a -d Difference SAXS signals measured for 100 nm fi lms irradiated at incident laser fl uences of 2.5 J/cm 2 , 4.2 J/cm 2 , 6.3 J/cm 2 , and 7.7 J/cm 2 . f -i Difference SAXS signals measured for 250 nm fi lms irradiated at incident laser fl uences of 1.7 J/cm 2 , 2.9 J/ cm 2 , 4.2 J/cm 2 , and 7.0 J/cm 2 . The color bar shown in a is shared by all eight false</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_009_Fig_5__Laser_fl_uence_dependence_Radi.png" alt="fig_009 — pagina 6" loading="lazy">
+          <figcaption>
+            <strong>FIG_009 · pagina 6</strong>
+            <p class="caption">Fig. 5 | Laser fl uence dependence. Radial average of the difference SAXS in ( a ) and WAXS in ( b ) measured with different laser fl uences at a delay δ t = 250 ps for the 100 nm Au fi lm. The corresponding intensity changes in the low and high Q regions, and the Au (111) Bragg peak integrated intensity are displayed in ( c , d ). The magenta arrows in a highlight the sub-peaks in the SAXS pro fi le and in b indicate the shift of</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 5 | Laser fl uence dependence. Radial average of the difference SAXS in ( a ) and WAXS in ( b ) measured with different laser fl uences at a delay δ t = 250 ps for the 100 nm Au fi lm. The corresponding intensity changes in the low and high Q regions, and the Au (111) Bragg peak integrated intensity are displayed in ( c , d ). The magenta arrows in a highlight the sub-peaks in the SAXS pro fi le and in b indicate the shift of</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_010_Fig_6__Snapshots_of_atomic_con_fi_gura.png" alt="fig_010 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_010 · pagina 8</strong>
+            <p class="caption">Fig. 6 | Snapshots of atomic con fi gurations from simulations of laser ablation of Au fi lms. The simulations are performed for 100 nm fi lms deposited on a 100 nm thick Si 3 N4 membrane and irradiated by a 50 fs laser pulses. The absorbed laser fl uence is 0.1069 J/cm 2 in ( a ) and 0.2014 J/cm 2 in ( b ). The Au atoms are colored by potential energy in the range of -3.5 to -1 eV, so that the solid and molten Au is</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 6 | Snapshots of atomic con fi gurations from simulations of laser ablation of Au fi lms. The simulations are performed for 100 nm fi lms deposited on a 100 nm thick Si 3 N4 membrane and irradiated by a 50 fs laser pulses. The absorbed laser fl uence is 0.1069 J/cm 2 in ( a ) and 0.2014 J/cm 2 in ( b ). The Au atoms are colored by potential energy in the range of -3.5 to -1 eV, so that the solid and molten Au is</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_011_no_caption.png" alt="fig_011 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_011 · pagina 9</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 9.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_012_no_caption.png" alt="fig_012 — pagina 10" loading="lazy">
+          <figcaption>
+            <strong>FIG_012 · pagina 10</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 10.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_013_Fig_9__Depth-resolved_dynamics_of_nano.png" alt="fig_013 — pagina 11" loading="lazy">
+          <figcaption>
+            <strong>FIG_013 · pagina 11</strong>
+            <p class="caption">Fig. 9 | Depth-resolved dynamics of nanoscale phase decomposition as revealed by the simulations. The left panels a1 and b1 show the radially averaged difference SAXS intensity pro fi les predicted for 200 ps and 500 ps after the laser pulse in simulations performed for absorbed laser fl uences of 0.1069 J/cm 2 and 0.2014 J/cm 2 . Theshaded areas show the total intensity, while the dotted and dashed lines show the contributions to the scattering intensity from regions located above and below the corresponding liquid layers marked by the black arrows in Fig. 6. The contribution</p>
+          </figcaption>
+          <div class="figbody"><p>Fig. 9 | Depth-resolved dynamics of nanoscale phase decomposition as revealed by the simulations. The left panels a1 and b1 show the radially averaged difference SAXS intensity pro fi les predicted for 200 ps and 500 ps after the laser pulse in simulations performed for absorbed laser fl uences of 0.1069 J/cm 2 and 0.2014 J/cm 2 . Theshaded areas show the total intensity, while the dotted and dashed lines show the contributions to the scattering intensity from regions located above and below the corresponding liquid layers marked by the black arrows in Fig. 6. The contribution</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

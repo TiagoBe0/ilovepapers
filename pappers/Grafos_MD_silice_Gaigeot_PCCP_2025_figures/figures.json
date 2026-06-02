@@ -1,0 +1,292 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Grafos_MD_silice_Gaigeot_PCCP_2025.pdf",
+  "total_figures": 22,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 26.9677791595459,
+        "t": 739.0396003723145,
+        "r": 561.7174682617188,
+        "b": 350.560791015625
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 371.25518798828125,
+        "t": 333.8032531738281,
+        "r": 530.58642578125,
+        "b": 122.71014404296875
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 460.5207824707031,
+        "t": 77.9371337890625,
+        "r": 567.2899780273438,
+        "b": 29.74542236328125
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 33.22282409667969,
+        "t": 73.14923095703125,
+        "r": 176.6169891357422,
+        "b": 32.46923828125
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 273.3576354980469,
+        "t": 67.540771484375,
+        "r": 379.4086608886719,
+        "b": 32.91015625
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 409.20257568359375,
+        "t": 757.5873985290527,
+        "r": 553.0582885742188,
+        "b": 716.4517860412598
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 41.62469482421875,
+        "t": 643.7847595214844,
+        "r": 141.84866333007812,
+        "b": 623.7590026855469
+      },
+      "image_path": "images/fig_007_no_caption.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 518.8018188476562,
+        "t": 582.6092987060547,
+        "r": 536.40380859375,
+        "b": 570.7211608886719
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 255.3579559326172,
+        "t": 582.0851287841797,
+        "r": 266.8362121582031,
+        "b": 570.3572540283203
+      },
+      "image_path": "images/fig_009_no_caption.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 467.0967102050781,
+        "t": 570.2982482910156,
+        "r": 492.8363952636719,
+        "b": 558.0294799804688
+      },
+      "image_path": "images/fig_010_no_caption.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 1 Illustration of the passage from a 3D conformation (a) to a 2DMolGraph (b). (a) One snapshot in the 3D representation of the gas phase molecule (C14H20NO18S2) extracted from a MD trajectory. (b) Associated topological 2D-MolGraph. In the left panel, carbon atoms are represented in green, nitrogen atoms in blue, oxygen atoms in red, hydrogen atoms in light gray, and sulfur atoms in yellow. In the 2D MolGraph, the conventions are the following. Vertices are colored in dark gray, blue, red, and light blue, corresponding respectively to a carbon atom, nitrogen atom, oxygen atom, and sulfur atoms. Hydrogen atoms are not included in vertices, their knowledge is included only through directed arcs that represent hydrogen bonds. The edges are colored and represented in black lines for a covalent bond and in red dashed lines (arc) for hydrogen bonds, this latter edge being directed from the donor to the acceptor of the H-bond.",
+      "page": 3,
+      "bbox": {
+        "l": 309.1606750488281,
+        "t": 730.1954383850098,
+        "r": 547.023193359375,
+        "b": 612.86572265625
+      },
+      "image_path": "images/fig_011_Fig_1_Illustration_of_the_passage_from_.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Fig. 2 Identification of conformations over a given MD trajectory, following the sequences of (a) the 2D-MolGraph representation of the 3D-structures (at each snapshot of the MD), (b) isomorphism tests (fingerprinting) of the calculated graphs, (c) generation of the complete graph network (the graph of transitions).",
+      "page": 4,
+      "bbox": {
+        "l": 86.56514739990234,
+        "t": 195.53643798828125,
+        "r": 508.1850280761719,
+        "b": 97.32366943359375
+      },
+      "image_path": "images/fig_012_Fig_2_Identification_of_conformations_o.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 3 The generalized workflow for the autonomous exploration of the organometallic catalyst active site.",
+      "page": 5,
+      "bbox": {
+        "l": 116.56778717041016,
+        "t": 267.41729736328125,
+        "r": 478.8255310058594,
+        "b": 76.19378662109375
+      },
+      "image_path": "images/fig_013_Fig_3_The_generalized_workflow_for_the_.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 4 The network of states of the silica-supported zirconocene hydride catalyst discovered with molecular dynamics and graph theory. ''RCp'' stands for n -butylcyclopentadienyl. In some 3D representations, the Cp in the front of the viewer is not shown for clarity.",
+      "page": 6,
+      "bbox": {
+        "l": 85.42466735839844,
+        "t": 730.0067901611328,
+        "r": 509.2696228027344,
+        "b": 504.8788146972656
+      },
+      "image_path": "images/fig_014_Fig_4_The_network_of_states_of_the_sili.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Fig. 5 Illustration of the passage from a 3D structure (a) to a 2D-MolGraph (b), to 2D-Motifs (c and d) schematically represented in (c) and with their associated 2D-MolGraphs in (d). The snapshot in (a) is a 3D representation of the (110)-quartz/liquid water interface taken from our ab initio MD simulation. Silicon atoms are in grey, oxygens in red, hydrogens in white. The associated 2D-MolGraph is reported in (b). By convention, oxygens of water are the red vertices, oxygens of the silica top-surface are the orange vertices, silicon atoms are the grey vertices. The atomistic schemes in (c) show two geometrical motifs that were extracted from the motif analysis: one motif (c-top) corresponds to an out-of-plane Si-OH at the top-surface of silica that is acting as a H-bond donor to a water molecule in the BIL, the second motif (c-bottom) is composed of an in-plane Si-OH at the top-surface of silica that is acting as a H-bond acceptor with a water molecule. The associated 2D-MolGraphs are respectively in d-top and d-bottom, see Section 2 for the definitions of vertices and edges in 2D-MolGraphs.",
+      "page": 7,
+      "bbox": {
+        "l": 116.61904907226562,
+        "t": 730.4364013671875,
+        "r": 479.1673278808594,
+        "b": 550.3718719482422
+      },
+      "image_path": "images/fig_015_Fig_5_Illustration_of_the_passage_from_.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Fig. 7 Illustration of two 2-partner motifs that are recognized in the BIL of the (110)-quartz/liquid water interface. The chemical and geometrical compositions of the two motifs are schematized in the figure, the 2DMotif topological graphs associated with each motif are also reported. These 2D-Motif graphs are composed of 3 vertices (thus of size 3) and 2 edges (one edge for a covalent bond, one edge for a hydrogen bond). See Section 2 for more details on the definitions of our graphs. Motifs M 1 and M 2 are composed of one silanol (SiOH) and one water molecule. Motif M 1 (left) has its silanol acting as the acceptor of a hydrogen bond from a water molecule, while this silanol acts as the donor of H-bond to water in motif M 2 (right).",
+      "page": 8,
+      "bbox": {
+        "l": 309.74334716796875,
+        "t": 731.6225471496582,
+        "r": 545.7398071289062,
+        "b": 608.6008148193359
+      },
+      "image_path": "images/fig_016_Fig_7_Illustration_of_two_2-partner_mot.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "Fig. 6 Illustration of concepts for the coverage of occurrences of a given 2D-Motif (left) within a 2D-MolGraph (right). See text for details.",
+      "page": 8,
+      "bbox": {
+        "l": 69.59220123291016,
+        "t": 731.0277519226074,
+        "r": 264.1234130859375,
+        "b": 603.0748443603516
+      },
+      "image_path": "images/fig_017_Fig_6_Illustration_of_concepts_for_the_.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "",
+      "page": 9,
+      "bbox": {
+        "l": 302.73480224609375,
+        "t": 730.9392433166504,
+        "r": 490.1601867675781,
+        "b": 606.88671875
+      },
+      "image_path": "images/fig_018_no_caption.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "Fig. 8 Distribution of the number of occurrences/instances of the 2D-Motifs M 1 (left) and M 2 (right) for the set of 2D-MolGraphs/conformations/ snapshots analyzed over a 10 ps trajectory of the (110)-quartz/liquid water interface (analyses performed every 250 snapshots). See Fig. 7 for the description of the 2D-Motifs M 1 and M 2.",
+      "page": 9,
+      "bbox": {
+        "l": 105.17771911621094,
+        "t": 730.7820892333984,
+        "r": 295.5885314941406,
+        "b": 605.139404296875
+      },
+      "image_path": "images/fig_019_Fig_8_Distribution_of_the_number_of_occ.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Fig. 9 Distribution of the number of occurrences and coverage rate between motifs of size 3 that contain at least one hydrogen bond and one oxygen atom of the surface, that are being recognized over the 100 conformations extracted from the (110)-quartz/liquid water interface trajectory. The black and white crosses respectively report the ranking of motif M1 and M2.",
+      "page": 9,
+      "bbox": {
+        "l": 309.35186767578125,
+        "t": 539.2988891601562,
+        "r": 547.4039306640625,
+        "b": 417.1929626464844
+      },
+      "image_path": "images/fig_020_Fig_9_Distribution_of_the_number_of_occ.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "",
+      "page": 10,
+      "bbox": {
+        "l": 85.57286071777344,
+        "t": 730.1438941955566,
+        "r": 509.2062072753906,
+        "b": 494.22564697265625
+      },
+      "image_path": "images/fig_021_no_caption.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "Fig. 11 Illustration of one 4-partner motif ( M 3) made of the union of two 2-partner motifs ( M 1 and M 2) that are H-bonded together through silanol \u0001 \u0001 \u0001 silanol. For one given snapshot taken randomly out of the 10 ps trajectory, the instances of M 3 found at the (110)-quartz/liquid water interface are reported through the green vertices of the 2D-MolGraph (right side).",
+      "page": 11,
+      "bbox": {
+        "l": 85.44784545898438,
+        "t": 731.4377365112305,
+        "r": 509.7047119140625,
+        "b": 547.2553100585938
+      },
+      "image_path": "images/fig_022_Fig_11_Illustration_of_one_4-partner_mo.png"
+    }
+  ]
+}

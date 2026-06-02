@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — MLIP development and phase transition analysis of ferroelectric HfO₂</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>MLIP development and phase transition analysis of ferroelectric HfO₂</h1>
+    <p class="subtitle">Resumen en español de <strong>MLIP development and phase transition analysis of ferroelectric HfO₂</strong>.</p>
+    <div class="meta">
+        <div><strong>Autores</strong>** Y. H. Kankanamalage, Y. Xi, S. Zhang, S. Singh, N. Abdolrahim (Univ. of Rochester)</div>
+        <div><strong>Revista</strong>** Phys. Rev. Materials 10, 014414 (2026), DOI: 10.1103/gkvf-t1vl</div>
+        <div><strong>DOI / arXiv</strong><a href="https://doi.org/10.1103/gkvf-t1vl" target="_blank">10.1103/gkvf-t1vl</a></div>
+        <div><strong>PDF local</strong><a href="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p><strong>Autores:</strong> Y. H. Kankanamalage, Y. Xi, S. Zhang, S. Singh, N. Abdolrahim (Univ. of Rochester)<br />
+<strong>Revista:</strong> Phys. Rev. Materials 10, 014414 (2026), DOI: 10.1103/gkvf-t1vl</p>
+<h2>Objetivo</h2>
+<p>Desarrollar un <strong>potencial interatómico basado en machine learning (MLIP)</strong> para HfO₂ entrenado con datos DFT, y usarlo para investigar las <strong>transiciones de fase del HfO₂ ferroeléctrico</strong> (Pca2₁) bajo presión y temperatura.</p>
+<h2>Contexto físico</h2>
+<ul>
+<li><strong>HfO₂ Pca2₁</strong> (ortorrómbico polar) es la fase ferroeléctrica clave para memorias no volátiles y electrónica CMOS.</li>
+<li>Polarización remanente ≈ 50 μC/cm² en films delgados.</li>
+<li>Estabilidad bajo T y σ es lo que decide si funciona en dispositivos reales.</li>
+<li>Potenciales empíricos clásicos (tipo Matsui–Akaogi) no capturan correctamente las fases de TiO₂/ZrO₂/HfO₂ → motivación del MLIP.</li>
+</ul>
+<hr />
+<h2>Pipeline del MLIP</h2>
+<ol>
+<li><strong>Generación de datos DFT</strong> abarcando varias fases y un rango amplio de P y T.</li>
+<li>Entrenamiento de un <strong>potencial deep-learning-based</strong> (no especifica arquitectura concreta — probablemente DeepMD o similar).</li>
+<li><strong>Validación</strong> contra DFT:</li>
+<li>Parámetros de red</li>
+<li>Equation of state</li>
+<li>Bulk y shear moduli</li>
+<li>Elastic constants<br />
+   → coinciden en varias fases y presiones.</li>
+<li><strong>MD a 200–2500 K</strong> en LAMMPS.</li>
+<li>Caracterización con:</li>
+<li>Local symmetry identification</li>
+<li>Radial distribution function</li>
+<li>X-ray diffraction patterns sintéticos</li>
+</ol>
+<hr />
+<h2>Resultados clave</h2>
+<table>
+<thead>
+<tr>
+<th>Condición</th>
+<th>Transición de fase observada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Estado deviatórico puro</strong> (σxx, σyy, σzz individuales no necesariamente cero)</td>
+<td>Pca2₁ → tetragonal <strong>P4₂/nmc</strong></td>
+</tr>
+<tr>
+<td><strong>Stress cero</strong> (σxx = σyy = σzz = 0)</td>
+<td>Pca2₁ → ortorrómbico <strong>Pbcn</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Es decir: <strong>el modo de control del estrés en MD cambia cualitativamente la transición</strong>. Esto es relevante porque un experimento ferroico real opera con condiciones de contorno mecánicas concretas (films, capacitores) que deciden el camino de transición.</p>
+<hr />
+<h2>Aportes</h2>
+<ol>
+<li>Primer MLIP <strong>de alta precisión</strong> específico para HfO₂ cubriendo varias fases.</li>
+<li>Muestra que <strong>ensemble isobárico vs constant stress</strong> elige caminos de transición distintos — no es un artefacto numérico.</li>
+<li>Guía para experimentos: qué stress macroscópico aplicar para favorecer cada fase competidora.</li>
+</ol>
+<hr />
+<h2>Conexiones</h2>
+<ul>
+<li>Mismo paradigma que [[CarNet_tensores_cartesianos_Chen_2025]] (potenciales ML), pero para un óxido binario ferroeléctrico.</li>
+<li>Ejemplo concreto del workflow descrito en [[Review_DL_materiales_Choudhary_2022]] (sección de potenciales ML).</li>
+<li>Útil como referencia metodológica si querés entrenar tu propio potencial para Cu-Ni / W / etc.</li>
+</ul>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (11)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_001_no_caption.png" alt="fig_001 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 1</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 1.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_002_FIG_1_Crystal_structures_of_different_.png" alt="fig_002 — pagina 3" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 3</strong>
+            <p class="caption">FIG. 1. Crystal structures of different phases of HfO2: (a) Ferroelectric Orthorhombic ( Pca 21) phase, (b) Tetragonal ( P 42 / nmc ) phase, and (c) Orthorhombic ( Pbcn ) phase. Gold spheres represent Hf atoms, and red spheres represent O atoms. The Pca 21 phase exhibits a noncentrosymmetric structure with spontaneous polarization, while the P 42 / nmc and Pbcn phases are centrosymmetric and nonpolar. The Pbcn phase is considered the parent structure of Pca 21 connected through a soft polar mode [2], highlighting their structural relationship.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 1. Crystal structures of different phases of HfO2: (a) Ferroelectric Orthorhombic ( Pca 21) phase, (b) Tetragonal ( P 42 / nmc ) phase, and (c) Orthorhombic ( Pbcn ) phase. Gold spheres represent Hf atoms, and red spheres represent O atoms. The Pca 21 phase exhibits a noncentrosymmetric structure with spontaneous polarization, while the P 42 / nmc and Pbcn phases are centrosymmetric and nonpolar. The Pbcn phase is considered the parent structure of Pca 21 connected through a soft polar mode [2], highlighting their structural relationship.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_003_FIG_3_Predicted_bulk_modulus_B_and_s.png" alt="fig_003 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 4</strong>
+            <p class="caption">FIG. 3. Predicted bulk modulus (B) and shear modulus (G) from the MLIP model compared against DFT reference values for six HfO2 polymorphs. All quantities were computed at 0 K and 0 GPa. DFT reference values are taken from Ref. [19]. The Pbcn and Fm ¯ 3 m phases-denoted by open symbols-were not included in the MLIP training dataset, showing the model's transferability to previously unseen structures.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 3. Predicted bulk modulus (B) and shear modulus (G) from the MLIP model compared against DFT reference values for six HfO2 polymorphs. All quantities were computed at 0 K and 0 GPa. DFT reference values are taken from Ref. [19]. The Pbcn and Fm ¯ 3 m phases-denoted by open symbols-were not included in the MLIP training dataset, showing the model's transferability to previously unseen structures.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_004_FIG_2_Equations_of_state_energy_vs_vo.png" alt="fig_004 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 4</strong>
+            <p class="caption">FIG. 2. Equations of state (energy vs volume) for HfO2 polymorphs: Pbca , Pca 21, Fm ¯ 3 m , P 42 / nmc , P 21 / c , and Pbcn . Circular markers show DFT reference data, while star markers indicate calculations from the developed MLIP. The third-order Birch-Murnaghan fits to the MLIP data are also shown as dashed curves. The close agreement between MLIP and DFT curves across all volumes highlights the MLIP's accuracy in reproducing the DFT equation of state. Note that Fm ¯ 3 m and Pbcn phases were not included in the training set.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 2. Equations of state (energy vs volume) for HfO2 polymorphs: Pbca , Pca 21, Fm ¯ 3 m , P 42 / nmc , P 21 / c , and Pbcn . Circular markers show DFT reference data, while star markers indicate calculations from the developed MLIP. The third-order Birch-Murnaghan fits to the MLIP data are also shown as dashed curves. The close agreement between MLIP and DFT curves across all volumes highlights the MLIP's accuracy in reproducing the DFT equation of state. Note that Fm ¯ 3 m and Pbcn phases were not included in the training set.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_005_FIG_4_Pressure_dependence_of_the_nine_.png" alt="fig_005 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 5</strong>
+            <p class="caption">FIG. 4. Pressure dependence of the nine independent elastic constants Cij of the Pca 21 phase of HfO2. DFT results are shown as dashed lines with square markers, while MLIP predictions are solid lines with circle markers. Line colors identify each Cij component as listed in the right legend.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 4. Pressure dependence of the nine independent elastic constants Cij of the Pca 21 phase of HfO2. DFT results are shown as dashed lines with square markers, while MLIP predictions are solid lines with circle markers. Line colors identify each Cij component as listed in the right legend.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_006_FIG_5_Schematic_of_the_DGCNN_architect.png" alt="fig_006 — pagina 6" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 6</strong>
+            <p class="caption">FIG. 5. Schematic of the DGCNN architecture. The model constructs a k-nearest neighbor graph and processes it through four stages of edge-convolution operations. The outputs from these convolutional stages are merged, and only the maximum and average responses are pooled to create a descriptor of each atom's local environment. This descriptor is then used to assign each atom to its corresponding class.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 5. Schematic of the DGCNN architecture. The model constructs a k-nearest neighbor graph and processes it through four stages of edge-convolution operations. The outputs from these convolutional stages are merged, and only the maximum and average responses are pooled to create a descriptor of each atom's local environment. This descriptor is then used to assign each atom to its corresponding class.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_007_FIG_6_Comparison_of_Radial_distributio.png" alt="fig_007 — pagina 7" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 7</strong>
+            <p class="caption">FIG. 6. Comparison of Radial distribution functions (RDFs)-Left: constant-stress ensemble and pure Pbcn phase, both at ∼ 1000 K and 0 GPa. Right: isobaric ensemble and pure P 42 / nmc phase, both at ∼ 2000 K and 0 GPa. The systems were first equilibrated for 120 ps, followed by time-averaging of the RDFs to ensure statistical reliability.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 6. Comparison of Radial distribution functions (RDFs)-Left: constant-stress ensemble and pure Pbcn phase, both at ∼ 1000 K and 0 GPa. Right: isobaric ensemble and pure P 42 / nmc phase, both at ∼ 2000 K and 0 GPa. The systems were first equilibrated for 120 ps, followed by time-averaging of the RDFs to ensure statistical reliability.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_008_no_caption.png" alt="fig_008 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 9</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 9.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_009_FIG_7_Left_enthalpy_of_the_system_of_.png" alt="fig_009 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_009 · pagina 9</strong>
+            <p class="caption">FIG. 7. Left: enthalpy of the system of the two ensembles as a function of temperature. The graph includes (marked with stars) systems containing pure P 42 / nmc and Pbcn phases as reference points. Right: Helmholtz free energy of the two ensembles at comparable temperatures.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 7. Left: enthalpy of the system of the two ensembles as a function of temperature. The graph includes (marked with stars) systems containing pure P 42 / nmc and Pbcn phases as reference points. Right: Helmholtz free energy of the two ensembles at comparable temperatures.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_010_FIG_8_Confusion_matrix_of_the_hold-out.png" alt="fig_010 — pagina 12" loading="lazy">
+          <figcaption>
+            <strong>FIG_010 · pagina 12</strong>
+            <p class="caption">FIG. 8. Confusion matrix of the hold-out dataset for the model with input cluster size = 16.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 8. Confusion matrix of the hold-out dataset for the model with input cluster size = 16.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_011_FIG_9_No-pooling_convolutional_neural_.png" alt="fig_011 — pagina 12" loading="lazy">
+          <figcaption>
+            <strong>FIG_011 · pagina 12</strong>
+            <p class="caption">FIG. 9. No-pooling convolutional neural network (NPCNN) architecture. The input is the XRD pattern, and the output is the desired classification: eight space groups.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 9. No-pooling convolutional neural network (NPCNN) architecture. The input is the XRD pattern, and the output is the desired classification: eight space groups.</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

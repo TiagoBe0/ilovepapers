@@ -1,0 +1,383 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/ML_vacancias_difusion_HEA_Reimer_2025.pdf",
+  "total_figures": 29,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 28.39217185974121,
+        "t": 792.7949142456055,
+        "r": 84.31825256347656,
+        "b": 576.5265502929688
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 496.62939453125,
+        "t": 704.1302032470703,
+        "r": 509.24755859375,
+        "b": 694.201904296875
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 377.9924011230469,
+        "t": 703.9911193847656,
+        "r": 387.7627258300781,
+        "b": 693.9169616699219
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 438.0907897949219,
+        "t": 703.6008605957031,
+        "r": 447.3920593261719,
+        "b": 694.4751434326172
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 266.8916320800781,
+        "t": 693.7588653564453,
+        "r": 277.2464599609375,
+        "b": 685.2133026123047
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 122.20916748046875,
+        "t": 677.5294036865234,
+        "r": 138.19764709472656,
+        "b": 662.3576507568359
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 120.49797058105469,
+        "t": 634.5628356933594,
+        "r": 128.44712829589844,
+        "b": 626.4453735351562
+      },
+      "image_path": "images/fig_007_no_caption.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 485.34466552734375,
+        "t": 609.6100921630859,
+        "r": 517.2694091796875,
+        "b": 562.3056640625
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 444.69451904296875,
+        "t": 609.5624542236328,
+        "r": 474.05145263671875,
+        "b": 562.1495361328125
+      },
+      "image_path": "images/fig_009_no_caption.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 129.6427764892578,
+        "t": 197.601806640625,
+        "r": 565.2958984375,
+        "b": 80.45758056640625
+      },
+      "image_path": "images/fig_010_no_caption.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 13.311521530151367,
+        "t": 106.7154541015625,
+        "r": 106.10628509521484,
+        "b": 81.5718994140625
+      },
+      "image_path": "images/fig_011_no_caption.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 537.54345703125,
+        "t": 617.1375732421875,
+        "r": 559.1656494140625,
+        "b": 589.1325531005859
+      },
+      "image_path": "images/fig_012_no_caption.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 457.0779724121094,
+        "t": 616.7071075439453,
+        "r": 480.9341735839844,
+        "b": 588.6465759277344
+      },
+      "image_path": "images/fig_013_no_caption.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 494.2408752441406,
+        "t": 616.0174713134766,
+        "r": 524.074951171875,
+        "b": 588.3059997558594
+      },
+      "image_path": "images/fig_014_no_caption.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 519.5844116210938,
+        "t": 567.52685546875,
+        "r": 534.261474609375,
+        "b": 556.3001251220703
+      },
+      "image_path": "images/fig_015_no_caption.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 372.5396423339844,
+        "t": 567.4537811279297,
+        "r": 388.6668701171875,
+        "b": 556.1387481689453
+      },
+      "image_path": "images/fig_016_no_caption.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 173.00489807128906,
+        "t": 555.1194610595703,
+        "r": 188.1072540283203,
+        "b": 544.2828674316406
+      },
+      "image_path": "images/fig_017_no_caption.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 279.7755432128906,
+        "t": 554.7849731445312,
+        "r": 290.1302795410156,
+        "b": 544.654541015625
+      },
+      "image_path": "images/fig_018_no_caption.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "FIG. 1. The workflow used in this work: (a) An MD HEA system produced trajectories from which two vacancy surroundings were extracted to compare the influence of various neighbouring atoms on vacancy transitions (Appendix A), (b) vacancy region datasets were converted to graph format, (c) the resulting dataset of states and chosen transition atoms was fed through a GCN to construct a trained model, and (d) model learned dynamics were used to generate accelerated synthetic trajectories of vacancy defect diffusion in the HEA system.",
+      "page": 3,
+      "bbox": {
+        "l": 321.7463684082031,
+        "t": 369.5826416015625,
+        "r": 552.1334838867188,
+        "b": 192.59710693359375
+      },
+      "image_path": "images/fig_019_FIG_1_The_workflow_used_in_this_work_.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "FIG. 3. Network structure used in this work: (a) A graph input, (b) a convolutional layer that collects information on the host and neighbor nodes [white and black/blue/red in (b) respectively], (c) the output graph features and ReLU activation, (d) flattened node features from graph, (e) a linear layer with ReLU activation, and (f) an output layer that returns a single float value prediction for the rate constant per input atom/node. The tricolored graph nodes are stand-ins for one-hot encoded atom features such as those shown in Fig. 9(b).",
+      "page": 5,
+      "bbox": {
+        "l": 315.7662658691406,
+        "t": 710.1692123413086,
+        "r": 557.687744140625,
+        "b": 605.9859771728516
+      },
+      "image_path": "images/fig_020_FIG_3_Network_structure_used_in_this_w.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "FIG. 2. Configurations of FCC regions of interest for the 1-NNI (upper right) and 2-NNI (lower right). In the 1-NNI model, the environment consists of 12 nearest-neighbor atoms of the vacancy, while in the 2-NNI model, the environment includes 54 atoms, incorporating both the first and second graph neighbors of the vacancy. The 12 allowed transition target atoms are colored in white.",
+      "page": 5,
+      "bbox": {
+        "l": 59.2454833984375,
+        "t": 709.5774383544922,
+        "r": 290.4172058105469,
+        "b": 562.8936462402344
+      },
+      "image_path": "images/fig_021_FIG_2_Configurations_of_FCC_regions_of.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "FIG. 4. Log-likelihood loss plots for both EvoSys training setups. Training runs were plotted together as the unknown true dynamics of the MD system were the same in both setups, enabling direct comparison.",
+      "page": 6,
+      "bbox": {
+        "l": 327.0959167480469,
+        "t": 709.0399932861328,
+        "r": 545.9779052734375,
+        "b": 538.9830932617188
+      },
+      "image_path": "images/fig_022_FIG_4_Log-likelihood_loss_plots_for_bo.png"
+    },
+    {
+      "figure_id": "fig_023",
+      "label": "picture",
+      "caption": "FIG. 5. Mean transition preferences per-atom as a function of their fraction of the vacancy 1-NNI composition for each dataset (i.e., how often element ' X ' jumped when it occupied ' Y ' /12 of the allowed target atoms). Showing data for (a) MD training, (b) EvoSys 1-NNI, and (c) EvoSys 2-NNI datasets. Values presented in terms of difference with the MD baseline dataset.",
+      "page": 7,
+      "bbox": {
+        "l": 54.32331848144531,
+        "t": 389.7115173339844,
+        "r": 559.5553588867188,
+        "b": 157.44476318359375
+      },
+      "image_path": "images/fig_023_FIG_5_Mean_transition_preferences_per-.png"
+    },
+    {
+      "figure_id": "fig_024",
+      "label": "picture",
+      "caption": "FIG. 7. Number of transition events detected as a function of simulation realtime for the EvoSys 1-NNI and 2-NNI and MD (Baseline) setups. Faded EvoSys points indicate timing reported via from inside the Python script, in contrast to times reported from the bash script, which are presented in solid points.",
+      "page": 8,
+      "bbox": {
+        "l": 326.85540771484375,
+        "t": 709.1737518310547,
+        "r": 545.9901733398438,
+        "b": 532.1996765136719
+      },
+      "image_path": "images/fig_024_FIG_7_Number_of_transition_events_dete.png"
+    },
+    {
+      "figure_id": "fig_025",
+      "label": "picture",
+      "caption": "FIG. 6. Number of transition events detected as a function of simulated time for EvoSys 1-NNI and 2-NNI and MD Baseline setups. Each plot shows the results of 10 trajectories.",
+      "page": 8,
+      "bbox": {
+        "l": 65.30490112304688,
+        "t": 334.9627685546875,
+        "r": 283.9429016113281,
+        "b": 157.37481689453125
+      },
+      "image_path": "images/fig_025_FIG_6_Number_of_transition_events_dete.png"
+    },
+    {
+      "figure_id": "fig_026",
+      "label": "picture",
+      "caption": "FIG. 8. ASD measured in 10 ps intervals for each dataset, averaged across 10 trajectories. Shaded regions indicate standard deviation. Values are tabulated in Table IV .",
+      "page": 9,
+      "bbox": {
+        "l": 66.31797790527344,
+        "t": 317.3207092285156,
+        "r": 284.80126953125,
+        "b": 158.21771240234375
+      },
+      "image_path": "images/fig_026_FIG_8_ASD_measured_in_10_ps_intervals_.png"
+    },
+    {
+      "figure_id": "fig_027",
+      "label": "picture",
+      "caption": "FIG. 9. NX graph representations of the vacancy defect 1-NNI environment: (a) A layout captured for an arbitrary vacancy state, showing node colors based on features (atom types) and node IDs from number tags assigned by OVITO; (b) an arbitrary vacancy graph layout for a binary alloy demonstrating the one-hot encoding scheme.",
+      "page": 11,
+      "bbox": {
+        "l": 84.13236999511719,
+        "t": 649.2667388916016,
+        "r": 266.26318359375,
+        "b": 353.5854187011719
+      },
+      "image_path": "images/fig_027_FIG_9_NX_graph_representations_of_the_.png"
+    },
+    {
+      "figure_id": "fig_028",
+      "label": "picture",
+      "caption": "FIG. 10. Histograms of vacancy migration energy barriers for each elemental species (Fe, Ni, Cr, Co, and Cu) in the equiatomic FeNiCrCoCu HEA. The distributions represent the frequency of vacancy jump events as a function of energy barrier. Each histogram is fitted with a Gaussian distribution function, and the corresponding mean energy barrier for each element is reported.",
+      "page": 11,
+      "bbox": {
+        "l": 52.375247955322266,
+        "t": 274.68341064453125,
+        "r": 558.4869995117188,
+        "b": 157.42913818359375
+      },
+      "image_path": "images/fig_028_FIG_10_Histograms_of_vacancy_migration.png"
+    },
+    {
+      "figure_id": "fig_029",
+      "label": "picture",
+      "caption": "Unique Compositions (Ordered by Cu)",
+      "page": 12,
+      "bbox": {
+        "l": 65.13016510009766,
+        "t": 709.5986709594727,
+        "r": 283.372314453125,
+        "b": 530.9266052246094
+      },
+      "image_path": "images/fig_029_Unique_Compositions_Ordered_by_Cu.png"
+    }
+  ]
+}

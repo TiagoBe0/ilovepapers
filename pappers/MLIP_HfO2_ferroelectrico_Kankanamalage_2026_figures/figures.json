@@ -1,0 +1,149 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026.pdf",
+  "total_figures": 11,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 149.9253387451172,
+        "t": 618.3147583007812,
+        "r": 162.73216247558594,
+        "b": 606.2193756103516
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "FIG. 1. Crystal structures of different phases of HfO2: (a) Ferroelectric Orthorhombic ( Pca 21) phase, (b) Tetragonal ( P 42 / nmc ) phase, and (c) Orthorhombic ( Pbcn ) phase. Gold spheres represent Hf atoms, and red spheres represent O atoms. The Pca 21 phase exhibits a noncentrosymmetric structure with spontaneous polarization, while the P 42 / nmc and Pbcn phases are centrosymmetric and nonpolar. The Pbcn phase is considered the parent structure of Pca 21 connected through a soft polar mode [2], highlighting their structural relationship.",
+      "page": 3,
+      "bbox": {
+        "l": 116.53338623046875,
+        "t": 737.6302795410156,
+        "r": 491.97369384765625,
+        "b": 575.8199310302734
+      },
+      "image_path": "images/fig_002_FIG_1_Crystal_structures_of_different_.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "FIG. 3. Predicted bulk modulus (B) and shear modulus (G) from the MLIP model compared against DFT reference values for six HfO2 polymorphs. All quantities were computed at 0 K and 0 GPa. DFT reference values are taken from Ref. [19]. The Pbcn and Fm ¯ 3 m phases-denoted by open symbols-were not included in the MLIP training dataset, showing the model's transferability to previously unseen structures.",
+      "page": 4,
+      "bbox": {
+        "l": 323.5714111328125,
+        "t": 356.4353942871094,
+        "r": 547.4266357421875,
+        "b": 141.6671142578125
+      },
+      "image_path": "images/fig_003_FIG_3_Predicted_bulk_modulus_B_and_s.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "FIG. 2. Equations of state (energy vs volume) for HfO2 polymorphs: Pbca , Pca 21, Fm ¯ 3 m , P 42 / nmc , P 21 / c , and Pbcn . Circular markers show DFT reference data, while star markers indicate calculations from the developed MLIP. The third-order Birch-Murnaghan fits to the MLIP data are also shown as dashed curves. The close agreement between MLIP and DFT curves across all volumes highlights the MLIP's accuracy in reproducing the DFT equation of state. Note that Fm ¯ 3 m and Pbcn phases were not included in the training set.",
+      "page": 4,
+      "bbox": {
+        "l": 48.58828353881836,
+        "t": 347.0047912597656,
+        "r": 296.0235900878906,
+        "b": 161.63726806640625
+      },
+      "image_path": "images/fig_004_FIG_2_Equations_of_state_energy_vs_vo.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "FIG. 4. Pressure dependence of the nine independent elastic constants Cij of the Pca 21 phase of HfO2. DFT results are shown as dashed lines with square markers, while MLIP predictions are solid lines with circle markers. Line colors identify each Cij component as listed in the right legend.",
+      "page": 5,
+      "bbox": {
+        "l": 50.847591400146484,
+        "t": 740.0265426635742,
+        "r": 294.9525146484375,
+        "b": 561.8998413085938
+      },
+      "image_path": "images/fig_005_FIG_4_Pressure_dependence_of_the_nine_.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "FIG. 5. Schematic of the DGCNN architecture. The model constructs a k-nearest neighbor graph and processes it through four stages of edge-convolution operations. The outputs from these convolutional stages are merged, and only the maximum and average responses are pooled to create a descriptor of each atom's local environment. This descriptor is then used to assign each atom to its corresponding class.",
+      "page": 6,
+      "bbox": {
+        "l": 86.73401641845703,
+        "t": 742.4840393066406,
+        "r": 521.6837158203125,
+        "b": 325.1481628417969
+      },
+      "image_path": "images/fig_006_FIG_5_Schematic_of_the_DGCNN_architect.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "FIG. 6. Comparison of Radial distribution functions (RDFs)-Left: constant-stress ensemble and pure Pbcn phase, both at ∼ 1000 K and 0 GPa. Right: isobaric ensemble and pure P 42 / nmc phase, both at ∼ 2000 K and 0 GPa. The systems were first equilibrated for 120 ps, followed by time-averaging of the RDFs to ensure statistical reliability.",
+      "page": 7,
+      "bbox": {
+        "l": 56.98347473144531,
+        "t": 740.6405639648438,
+        "r": 551.8048706054688,
+        "b": 548.7415161132812
+      },
+      "image_path": "images/fig_007_FIG_6_Comparison_of_Radial_distributio.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 9,
+      "bbox": {
+        "l": 302.05169677734375,
+        "t": 740.6059722900391,
+        "r": 539.9173583984375,
+        "b": 582.0020294189453
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "FIG. 7. Left: enthalpy of the system of the two ensembles as a function of temperature. The graph includes (marked with stars) systems containing pure P 42 / nmc and Pbcn phases as reference points. Right: Helmholtz free energy of the two ensembles at comparable temperatures.",
+      "page": 9,
+      "bbox": {
+        "l": 67.58866882324219,
+        "t": 740.2284622192383,
+        "r": 288.2408447265625,
+        "b": 582.1387786865234
+      },
+      "image_path": "images/fig_009_FIG_7_Left_enthalpy_of_the_system_of_.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "FIG. 8. Confusion matrix of the hold-out dataset for the model with input cluster size = 16.",
+      "page": 12,
+      "bbox": {
+        "l": 47.976558685302734,
+        "t": 740.0447387695312,
+        "r": 296.9072570800781,
+        "b": 496.3643798828125
+      },
+      "image_path": "images/fig_010_FIG_8_Confusion_matrix_of_the_hold-out.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "FIG. 9. No-pooling convolutional neural network (NPCNN) architecture. The input is the XRD pattern, and the output is the desired classification: eight space groups.",
+      "page": 12,
+      "bbox": {
+        "l": 74.80033874511719,
+        "t": 223.1497802734375,
+        "r": 532.4468383789062,
+        "b": 85.677490234375
+      },
+      "image_path": "images/fig_011_FIG_9_No-pooling_convolutional_neural_.png"
+    }
+  ]
+}

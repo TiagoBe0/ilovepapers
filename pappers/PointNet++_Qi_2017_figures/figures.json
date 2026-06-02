@@ -1,0 +1,123 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet++_Qi_2017.pdf",
+  "total_figures": 9,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "Figure 1: Visualization of a scan captured from a Structure Sensor (left: RGB; right: point cloud).",
+      "page": 2,
+      "bbox": {
+        "l": 304.89398193359375,
+        "t": 619.0632171630859,
+        "r": 503.8086853027344,
+        "b": 563.6059875488281
+      },
+      "image_path": "images/fig_001_Figure_1_Visualization_of_a_scan_captur.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 2: Illustration of our hierarchical feature learning architecture and its application for set segmentation and classification using points in 2D Euclidean space as an example. Single scale point grouping is visualized here. For details on density adaptive grouping, see Fig. 3",
+      "page": 3,
+      "bbox": {
+        "l": 127.76033020019531,
+        "t": 728.4562911987305,
+        "r": 484.6515197753906,
+        "b": 581.0953369140625
+      },
+      "image_path": "images/fig_002_Figure_2_Illustration_of_our_hierarchic.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 4,
+      "bbox": {
+        "l": 389.8031005859375,
+        "t": 547.22998046875,
+        "r": 503.6811218261719,
+        "b": 467.5620422363281
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figure 4: Left: Point cloud with random point dropout. Right: Curve showing advantage of our density adaptive strategy in dealing with non-uniform density. DP means random input dropout during training; otherwise training is on uniformly dense points. See Sec.3.3 for details.",
+      "page": 6,
+      "bbox": {
+        "l": 113.24349212646484,
+        "t": 619.1191558837891,
+        "r": 495.6015930175781,
+        "b": 519.279052734375
+      },
+      "image_path": "images/fig_004_Figure_4_Left_Point_cloud_with_random_.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 6,
+      "bbox": {
+        "l": 305.00006103515625,
+        "t": 219.05108642578125,
+        "r": 503.42230224609375,
+        "b": 145.14617919921875
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Wall Floor Chair Desk Bed Door Table Figure 6: Scannet labeling results. [20] captures the overall layout of the room correctly but fails to discover the furniture. Our approach, in contrast, is much better at segmenting objects besides the room layout.",
+      "page": 7,
+      "bbox": {
+        "l": 319.3813781738281,
+        "t": 660.8458709716797,
+        "r": 503.3990173339844,
+        "b": 552.5741729736328
+      },
+      "image_path": "images/fig_006_Wall_Floor_Chair_Desk_Bed_Door_Table_Fig.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Figure 7: An example of nonrigid shape classification. (a) Horse (b) Cat (C) Horse",
+      "page": 7,
+      "bbox": {
+        "l": 384.04095458984375,
+        "t": 340.4656982421875,
+        "r": 502.7518005371094,
+        "b": 273.93927001953125
+      },
+      "image_path": "images/fig_007_Figure_7_An_example_of_nonrigid_shape_c.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Figure 8: 3D point cloud patterns learned from the first layer kernels. The model is trained for ModelNet40 shape classification (20 out of the 128 kernels are randomly selected). Color indicates point depth (red is near, blue is far).",
+      "page": 8,
+      "bbox": {
+        "l": 333.86456298828125,
+        "t": 607.2706604003906,
+        "r": 503.4940185546875,
+        "b": 471.6882019042969
+      },
+      "image_path": "images/fig_008_Figure_8_3D_point_cloud_patterns_learne.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Figure 9: Virtual scan generated from ScanNet",
+      "page": 12,
+      "bbox": {
+        "l": 206.53831481933594,
+        "t": 603.8643798828125,
+        "r": 402.6858215332031,
+        "b": 514.0894165039062
+      },
+      "image_path": "images/fig_009_Figure_9_Virtual_scan_generated_from_Sc.png"
+    }
+  ]
+}

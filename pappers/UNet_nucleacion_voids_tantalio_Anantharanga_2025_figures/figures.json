@@ -1,0 +1,266 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025.pdf",
+  "total_figures": 20,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 55.572235107421875,
+        "t": 74.02557373046875,
+        "r": 65.77658081054688,
+        "b": 65.962646484375
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 1: A reversed erosion algorithm, together with EBSD and grain boundary information, is used to reconstruct pre-damaged microstructures. (top) Samples of EBSD data showing defects resulting from the presence of voids. (middle) Erosion algorithm fills the defects until (bottom) The defect is completely filled.",
+      "page": 4,
+      "bbox": {
+        "l": 123.26373291015625,
+        "t": 687.5935096740723,
+        "r": 421.86322021484375,
+        "b": 463.8741149902344
+      },
+      "image_path": "images/fig_002_Figure_1_A_reversed_erosion_algorithm_.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Figure 2: A visual compilation of three image sets: grain boundary energy (top row), void masks (middle row), and final ground truth images (bottom row). The final ground truth images are obtained by performing a pixel wise multiplication of grain boundary energy and void masks. The red boxes emphasize two cases: (i) when voids intersect grain boundaries, resulting in retained regions in the final mask, and (ii) when voids fall outside grain boundaries, leading to their exclusion from the final mask. This approach ensures that only voids that are on grain boundaries are preserved for further analysis.",
+      "page": 5,
+      "bbox": {
+        "l": 36.922523498535156,
+        "t": 687.4736251831055,
+        "r": 493.4420166015625,
+        "b": 492.4160614013672
+      },
+      "image_path": "images/fig_003_Figure_2_A_visual_compilation_of_three_.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figure 3: A visual compilation of three image sets: micrograph (top row), grain boundary energy (middle row), and grain orientation (bottom row). The dataset to the ML model includes grain orientations and grain boundary energies.",
+      "page": 6,
+      "bbox": {
+        "l": 36.92283248901367,
+        "t": 679.8080902099609,
+        "r": 496.2699279785156,
+        "b": 494.3744659423828
+      },
+      "image_path": "images/fig_004_Figure_3_A_visual_compilation_of_three_.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Figure 4: The full U-Net architecture, comprised of an encoder-decoder structure with attention gates between corresponding layers. The encoder processes a 100×100×5 input and the decoder reconstructs a 100×100×1 predictions. Popouts illustrate the encoder, decoder, and attention gate architectures.",
+      "page": 7,
+      "bbox": {
+        "l": 47.99589538574219,
+        "t": 687.1184730529785,
+        "r": 495.02276611328125,
+        "b": 441.19439697265625
+      },
+      "image_path": "images/fig_005_Figure_4_The_full_U-Net_architecture_c.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Figure 5: Representative selection of model results for training sets, indicating the robustness of the ML architecture for capturing void nucleation probability fields. Intensity values are clamped between 0.05 and 0.6 for better visualization.",
+      "page": 8,
+      "bbox": {
+        "l": 36.89220428466797,
+        "t": 689.7663230895996,
+        "r": 504.9222106933594,
+        "b": 603.9121856689453
+      },
+      "image_path": "images/fig_006_Figure_5_Representative_selection_of_mo.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "",
+      "page": 9,
+      "bbox": {
+        "l": 302.65667724609375,
+        "t": 685.9836654663086,
+        "r": 497.4113464355469,
+        "b": 510.1102752685547
+      },
+      "image_path": "images/fig_007_no_caption.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 9,
+      "bbox": {
+        "l": 48.542823791503906,
+        "t": 685.5062713623047,
+        "r": 261.8643798828125,
+        "b": 510.2258605957031
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "",
+      "page": 10,
+      "bbox": {
+        "l": 36.66857147216797,
+        "t": 689.6577568054199,
+        "r": 505.09259033203125,
+        "b": 499.83595275878906
+      },
+      "image_path": "images/fig_009_no_caption.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "",
+      "page": 12,
+      "bbox": {
+        "l": 285.8230895996094,
+        "t": 686.5138740539551,
+        "r": 495.5461730957031,
+        "b": 550.5937957763672
+      },
+      "image_path": "images/fig_010_no_caption.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "",
+      "page": 12,
+      "bbox": {
+        "l": 50.79676055908203,
+        "t": 685.0744247436523,
+        "r": 255.1064453125,
+        "b": 552.7667236328125
+      },
+      "image_path": "images/fig_011_no_caption.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Figure 8: PCC analysis of model performance across entire dataset",
+      "page": 12,
+      "bbox": {
+        "l": 50.24690628051758,
+        "t": 447.13763427734375,
+        "r": 143.69984436035156,
+        "b": 281.6001281738281
+      },
+      "image_path": "images/fig_012_Figure_8_PCC_analysis_of_model_performa.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "(a) Graphical illustration of ROI metric: the region of interest around a void is projected onto the predicted image.",
+      "page": 12,
+      "bbox": {
+        "l": 169.2164306640625,
+        "t": 444.6180114746094,
+        "r": 480.4548034667969,
+        "b": 282.92279052734375
+      },
+      "image_path": "images/fig_013_a_Graphical_illustration_of_ROI_metric.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "",
+      "page": 18,
+      "bbox": {
+        "l": 37.801483154296875,
+        "t": 589.4104309082031,
+        "r": 179.35011291503906,
+        "b": 440.8604736328125
+      },
+      "image_path": "images/fig_014_no_caption.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "(c) Micrograph segmented into red (bad voids), blue (good voids), and black (no void regions).",
+      "page": 18,
+      "bbox": {
+        "l": 364.0208740234375,
+        "t": 589.3680267333984,
+        "r": 505.6089172363281,
+        "b": 441.04010009765625
+      },
+      "image_path": "images/fig_015_c_Micrograph_segmented_into_red_bad_v.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "",
+      "page": 18,
+      "bbox": {
+        "l": 200.78343200683594,
+        "t": 589.2877807617188,
+        "r": 342.48321533203125,
+        "b": 440.9039611816406
+      },
+      "image_path": "images/fig_016_no_caption.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "",
+      "page": 18,
+      "bbox": {
+        "l": 200.73960876464844,
+        "t": 389.36834716796875,
+        "r": 342.6754150390625,
+        "b": 239.91659545898438
+      },
+      "image_path": "images/fig_017_no_caption.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "(f) Mask applied to the microstructure to highlight regions of voids",
+      "page": 18,
+      "bbox": {
+        "l": 363.75860595703125,
+        "t": 389.2767639160156,
+        "r": 506.11138916015625,
+        "b": 239.9072265625
+      },
+      "image_path": "images/fig_018_f_Mask_applied_to_the_microstructure_t.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "",
+      "page": 18,
+      "bbox": {
+        "l": 37.43171691894531,
+        "t": 388.9917297363281,
+        "r": 179.2010955810547,
+        "b": 240.04473876953125
+      },
+      "image_path": "images/fig_019_no_caption.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Figure 11: Pearson correlation coefficient based comparison between the ground truth and predicted void nucleation fields. The reference ground truth image is shown in the top row indicating the baseline against which all comparisons are made. The bottom row presents various predicted images, each annotated with its corresponding PCC value. The predicted field corresponding to the ground truth reference yields the highest correlation values as showm in green, while random predictors (such as constant fields of ones, zeros, or 0.5 values) exhibit significantly lower PCC values, underscoring their lack of structural correspondence. This shows that PCC is stringent as compared many other metrics which can give a false impression that the model predicts well even in cases where it does not do well.",
+      "page": 19,
+      "bbox": {
+        "l": 64.7208023071289,
+        "t": 494.4824523925781,
+        "r": 479.1959228515625,
+        "b": 335.07794189453125
+      },
+      "image_path": "images/fig_020_Figure_11_Pearson_correlation_coefficie.png"
+    }
+  ]
+}

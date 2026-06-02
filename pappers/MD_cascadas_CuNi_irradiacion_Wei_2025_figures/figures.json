@@ -1,0 +1,396 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_cascadas_CuNi_irradiacion_Wei_2025.pdf",
+  "total_figures": 30,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 499.6057434082031,
+        "t": 738.8298568725586,
+        "r": 557.959228515625,
+        "b": 667.1404724121094
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 36.188228607177734,
+        "t": 732.8873100280762,
+        "r": 96.51617431640625,
+        "b": 665.4912109375
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 499.7934875488281,
+        "t": 646.35302734375,
+        "r": 529.31103515625,
+        "b": 616.1598052978516
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 256.6231384277344,
+        "t": 585.9515533447266,
+        "r": 272.4305725097656,
+        "b": 577.5214538574219
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 311.1988220214844,
+        "t": 585.6172637939453,
+        "r": 322.6883544921875,
+        "b": 574.159912109375
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 364.73077392578125,
+        "t": 585.3847045898438,
+        "r": 371.3313293457031,
+        "b": 575.2928466796875
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 121.7022476196289,
+        "t": 584.2187347412109,
+        "r": 133.9849090576172,
+        "b": 572.6705474853516
+      },
+      "image_path": "images/fig_007_no_caption.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 105.09413146972656,
+        "t": 583.9502258300781,
+        "r": 120.40941619873047,
+        "b": 575.9590301513672
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 1. Detailed flow chart of the simulation framework used in this study.",
+      "page": 2,
+      "bbox": {
+        "l": 39.13813400268555,
+        "t": 737.3130683898926,
+        "r": 556.7437744140625,
+        "b": 414.2553405761719
+      },
+      "image_path": "images/fig_009_Fig_1_Detailed_flow_chart_of_the_simul.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "",
+      "page": 3,
+      "bbox": {
+        "l": 126.79271697998047,
+        "t": 737.4948577880859,
+        "r": 466.61395263671875,
+        "b": 435.3681640625
+      },
+      "image_path": "images/fig_010_no_caption.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 3. Variations in the temperature and potential energy of the simulation system during the relaxation period.",
+      "page": 5,
+      "bbox": {
+        "l": 38.714656829833984,
+        "t": 738.2080345153809,
+        "r": 288.0434875488281,
+        "b": 551.9713592529297
+      },
+      "image_path": "images/fig_011_Fig_3_Variations_in_the_temperature_an.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Fig. 4. The change of the Frenkel defect logarithm of (a) Cu- 0 at%Ni, (b) Cu-5at%Ni, (c) Cu-10at%Ni and (d) Cu-20at%Ni in the direction [100] with time at different temperatures and at PKA energy of 4 keV.",
+      "page": 6,
+      "bbox": {
+        "l": 76.05194854736328,
+        "t": 738.3403167724609,
+        "r": 517.69677734375,
+        "b": 351.4515686035156
+      },
+      "image_path": "images/fig_012_Fig_4_The_change_of_the_Frenkel_defect.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 5. Number of Frenkel defect pairs in Cu -Ni alloys during the stable stage at different temperatures. (a) Defect count as a function of temperature for Cu alloys with varying Ni contents. (b) Defect count at different temperatures for Cu -Ni alloys with varying Ni contents.",
+      "page": 6,
+      "bbox": {
+        "l": 76.78907012939453,
+        "t": 303.4024353027344,
+        "r": 518.1648559570312,
+        "b": 106.53582763671875
+      },
+      "image_path": "images/fig_013_Fig_5_Number_of_Frenkel_defect_pairs_i.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 6. The number of Frenkel defect pairs in Cu and Cu -Ni alloys changes over time with PKA energy of 4 keV along the [100] direction at 300 K.",
+      "page": 7,
+      "bbox": {
+        "l": 38.600914001464844,
+        "t": 738.0060501098633,
+        "r": 287.6668395996094,
+        "b": 536.8956298828125
+      },
+      "image_path": "images/fig_014_Fig_6_The_number_of_Frenkel_defect_pai.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Fig. 7. The final distribution of Frenkel defect pairs(t = 100ps) in Cu-10at%Ni alloy at different temperatures with PKA energy of 4 keV and along the [100] direction, where red and blue circles represent interstitial atoms and vacancies, respectively.",
+      "page": 7,
+      "bbox": {
+        "l": 98.72787475585938,
+        "t": 352.5203857421875,
+        "r": 497.10235595703125,
+        "b": 76.92779541015625
+      },
+      "image_path": "images/fig_015_Fig_7_The_final_distribution_of_Frenke.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Fig. 8. The number of Frenkel defect pairs of (a) Cu-0at%Ni, (b) Cu-5at%Ni, (c) Cu-10at%Ni and (d) Cu-20at%Ni under different PKA energy irradiation changes with time at 300 K.",
+      "page": 8,
+      "bbox": {
+        "l": 76.20150756835938,
+        "t": 737.9621086120605,
+        "r": 518.4053955078125,
+        "b": 356.669921875
+      },
+      "image_path": "images/fig_016_Fig_8_The_number_of_Frenkel_defect_pai.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "Fig. 9. The number of Frenkel defect pair(t = 50ps) as a function of Ni content with different PKA energies at 300 K.",
+      "page": 8,
+      "bbox": {
+        "l": 38.762474060058594,
+        "t": 305.459228515625,
+        "r": 287.8788757324219,
+        "b": 99.93292236328125
+      },
+      "image_path": "images/fig_017_Fig_9_The_number_of_Frenkel_defect_pai.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "Fig. 10. The number of Frenkel defect pairs in Cu and Cu -Ni alloys at 300 K with a PKA energy of 10 keV along the [100] direction, (a) initial stage, (b) peak stage and (c) stable stage, where red and blue circles represent interstitial atoms and vacancies, respectively.",
+      "page": 9,
+      "bbox": {
+        "l": 127.03755187988281,
+        "t": 738.3664054870605,
+        "r": 467.8435974121094,
+        "b": 250.06103515625
+      },
+      "image_path": "images/fig_018_Fig_10_The_number_of_Frenkel_defect_pa.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "Fig. 11. (a) Vacant clusters and (b) interstitial clusters in Cu and Cu -Ni alloys during displacement damage process with different PKA energies along the [100] direction at 300 K.",
+      "page": 10,
+      "bbox": {
+        "l": 105.4968032836914,
+        "t": 737.0820465087891,
+        "r": 490.4462585449219,
+        "b": 89.64935302734375
+      },
+      "image_path": "images/fig_019_Fig_11_a_Vacant_clusters_and_b_int.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Fig. 12. The number of Frenkel defects in (a) Cu-0at%Ni, (b) Cu-5at%Ni, (c) Cu-10at%Ni and (d) Cu-20at%Ni varies with time when the PKA energy in different directions is 4 keV at 300 K.",
+      "page": 11,
+      "bbox": {
+        "l": 76.07913208007812,
+        "t": 738.1025505065918,
+        "r": 517.4476318359375,
+        "b": 357.6840515136719
+      },
+      "image_path": "images/fig_020_Fig_12_The_number_of_Frenkel_defects_i.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "Fig. 13. The final distribution of the number of Frenkel defects(t = 100ps) in Cu-10at%Ni alloy with PKA energy of 4 keV at 300 K and along different directions, where red and blue circles represent interstitial atoms and vacancies, respectively.",
+      "page": 12,
+      "bbox": {
+        "l": 126.96965026855469,
+        "t": 738.130126953125,
+        "r": 467.8929443359375,
+        "b": 415.431884765625
+      },
+      "image_path": "images/fig_021_Fig_13_The_final_distribution_of_the_n.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "Fig. 14. (a) Stress-strain curves and (b) enlarged stress-strain curves around yield strength for Cu and Cu -Ni alloys at 300 K.",
+      "page": 12,
+      "bbox": {
+        "l": 76.2938232421875,
+        "t": 365.269287109375,
+        "r": 517.3895263671875,
+        "b": 189.492919921875
+      },
+      "image_path": "images/fig_022_Fig_14_a_Stress-strain_curves_and_b.png"
+    },
+    {
+      "figure_id": "fig_023",
+      "label": "picture",
+      "caption": "Fig. 15. The yield strength of Cu -Ni alloys changes with Ni content at 300 K.",
+      "page": 13,
+      "bbox": {
+        "l": 38.35070037841797,
+        "t": 738.7427635192871,
+        "r": 287.38824462890625,
+        "b": 530.1026916503906
+      },
+      "image_path": "images/fig_023_Fig_15_The_yield_strength_of_Cu_-Ni_al.png"
+    },
+    {
+      "figure_id": "fig_024",
+      "label": "picture",
+      "caption": "Fig. 16. Structural phase transitions observed in (a) Cu- 0 at%Ni, (b) Cu-5at%Ni, (c) Cu-10at%Ni and (d) Cu-20at%Ni during tensile deformation.",
+      "page": 13,
+      "bbox": {
+        "l": 76.6694107055664,
+        "t": 448.78887939453125,
+        "r": 517.8873291015625,
+        "b": 67.72509765625
+      },
+      "image_path": "images/fig_024_Fig_16_Structural_phase_transitions_ob.png"
+    },
+    {
+      "figure_id": "fig_025",
+      "label": "picture",
+      "caption": "Fig. 17. Comparison of phase change structures of Cu and Cu -Ni alloys during the tensile process, where (a) FCC, (b) BCC, (c) HCP and (d) Other.",
+      "page": 14,
+      "bbox": {
+        "l": 76.05047607421875,
+        "t": 738.7238121032715,
+        "r": 517.8568115234375,
+        "b": 391.0061340332031
+      },
+      "image_path": "images/fig_025_Fig_17_Comparison_of_phase_change_stru.png"
+    },
+    {
+      "figure_id": "fig_026",
+      "label": "picture",
+      "caption": "Fig. 18. The length of the dislocation line generated by (a) Cu-0at%Ni, (b) Cu-5at%Ni, (c) Cu-10at%Ni and (d) Cu-20at%Ni varies with strain during tensile process.",
+      "page": 15,
+      "bbox": {
+        "l": 76.66584777832031,
+        "t": 736.909423828125,
+        "r": 516.8983764648438,
+        "b": 362.7041931152344
+      },
+      "image_path": "images/fig_026_Fig_18_The_length_of_the_dislocation_l.png"
+    },
+    {
+      "figure_id": "fig_027",
+      "label": "picture",
+      "caption": "Fig. 19. The Microstructural diagrams of phase structure and dislocations produced in Cu and Cu -Ni alloys during tensile stretching, where (a) strain = 0.02 (b) strain = 0.09 (c) strain = 0.25.",
+      "page": 16,
+      "bbox": {
+        "l": 77.20072937011719,
+        "t": 738.7361373901367,
+        "r": 518.4918823242188,
+        "b": 291.28131103515625
+      },
+      "image_path": "images/fig_027_Fig_19_The_Microstructural_diagrams_of.png"
+    },
+    {
+      "figure_id": "fig_028",
+      "label": "picture",
+      "caption": "Fig. 20. Stress-strain curves of (a) Cu-0at%Ni, (b) Cu-5at%Ni, (c) Cu-10at%Ni and (d) Cu-20at%Ni after irradiation with different PKA energies in the direction [100] at 300 K, (e),(f),(g) and (h) are amplified corresponding graphs near the yield strength in (a), (b), (c) and (d), respectively.",
+      "page": 17,
+      "bbox": {
+        "l": 38.62118148803711,
+        "t": 737.7083930969238,
+        "r": 557.15966796875,
+        "b": 488.6669921875
+      },
+      "image_path": "images/fig_028_Fig_20_Stress-strain_curves_of_a_Cu-.png"
+    },
+    {
+      "figure_id": "fig_029",
+      "label": "picture",
+      "caption": "Fig. 21. The lengths of dislocation lines during the stretching of (a) Cu-0at%Ni, (b) Cu-5at%Ni, (c) Cu-10at%Ni and (d) Cu-20at%Ni under different PKA energy irradiations as a function of time.",
+      "page": 18,
+      "bbox": {
+        "l": 76.94203186035156,
+        "t": 738.5305671691895,
+        "r": 518.8191528320312,
+        "b": 356.8841857910156
+      },
+      "image_path": "images/fig_029_Fig_21_The_lengths_of_dislocation_line.png"
+    },
+    {
+      "figure_id": "fig_030",
+      "label": "picture",
+      "caption": "Fig. 22. Yield strength (GPa) of Cu and Cu -Ni alloys after 300 K irradiation with different PKA energies along the [100] direction. (a) Stress vs. Ni content for varying irradiation energies. (b) Stress vs. PKA energy for Cu alloys with different Ni contents.",
+      "page": 18,
+      "bbox": {
+        "l": 76.57037353515625,
+        "t": 309.1866149902344,
+        "r": 518.2901000976562,
+        "b": 109.057373046875
+      },
+      "image_path": "images/fig_030_Fig_22_Yield_strength_GPa_of_Cu_and_.png"
+    }
+  ]
+}

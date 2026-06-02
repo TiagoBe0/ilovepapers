@@ -1,0 +1,201 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009.pdf",
+  "total_figures": 15,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "Silvia Surez",
+      "page": 2,
+      "bbox": {
+        "l": 304.9729309082031,
+        "t": 458.6127014160156,
+        "r": 420.9647521972656,
+        "b": 314.8945617675781
+      },
+      "image_path": "images/fig_001_Silvia_Surez.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Mara D : Hernndez -Alonso",
+      "page": 2,
+      "bbox": {
+        "l": 42.2955207824707,
+        "t": 458.49822998046875,
+        "r": 158.34979248046875,
+        "b": 314.9423522949219
+      },
+      "image_path": "images/fig_002_Mara_D__Hernndez_-Alonso.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Juan M : Coronado",
+      "page": 2,
+      "bbox": {
+        "l": 304.90447998046875,
+        "t": 233.9002685546875,
+        "r": 421.30657958984375,
+        "b": 90.30487060546875
+      },
+      "image_path": "images/fig_003_Juan_M__Coronado.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Fernando Fresno",
+      "page": 2,
+      "bbox": {
+        "l": 42.420597076416016,
+        "t": 233.140380859375,
+        "r": 158.31639099121094,
+        "b": 89.421875
+      },
+      "image_path": "images/fig_004_Fernando_Fresno.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Fig. 2 Pictorial diagram showing the main events of photocatalysis over semiconductors.",
+      "page": 3,
+      "bbox": {
+        "l": 360.3382873535156,
+        "t": 726.2429733276367,
+        "r": 496.7439880371094,
+        "b": 618.5629577636719
+      },
+      "image_path": "images/fig_005_Fig_2_Pictorial_diagram_showing_the_mai.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Fig. 1 Annual evolution of the number of publications devoted to photocatalysis with alternative materials to TiO2. ZnO ( ), sulfides ( ) and mixed oxides containing Nb, V, Ti or Ta ( ). Data source: ISI web of knowledge.",
+      "page": 3,
+      "bbox": {
+        "l": 84.14794158935547,
+        "t": 726.0720672607422,
+        "r": 247.24476623535156,
+        "b": 599.8466339111328
+      },
+      "image_path": "images/fig_006_Fig_1_Annual_evolution_of_the_number_of.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Fig. 3 Examples of single site photocatalytic centres (A), and pictorial diagram (B) showing the mechanism of CO photo-oxidation over singlesite photocatalysts with Mo centres. (Based on ref. 28).",
+      "page": 4,
+      "bbox": {
+        "l": 47.867881774902344,
+        "t": 727.4747581481934,
+        "r": 284.7344665527344,
+        "b": 594.4306335449219
+      },
+      "image_path": "images/fig_007_Fig_3_Examples_of_single_site_photocata.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Fig. 4 Band gaps (eV) and redox potentials, using the normal hydrogen electrode (NHE) as a reference, for several semiconductors (Based on the data in ref. 8,10-12).",
+      "page": 5,
+      "bbox": {
+        "l": 74.2088394165039,
+        "t": 726.3150100708008,
+        "r": 257.3338928222656,
+        "b": 580.391357421875
+      },
+      "image_path": "images/fig_008_Fig_4_Band_gaps_eV_and_redox_potentia.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 5 Photoactivity expressed as the initial rate for the decomposition of three different pollutants in aqueous solution using different TiO2 commercial photocatalysts with the structures: anatase (A) supplied by Millenium, rutile (R), or a mixture of rutile and anatase (R + A; Degussa P25). Data taken from ref. 46.",
+      "page": 5,
+      "bbox": {
+        "l": 62.53586959838867,
+        "t": 256.4002685546875,
+        "r": 268.5148010253906,
+        "b": 111.82037353515625
+      },
+      "image_path": "images/fig_009_Fig_5_Photoactivity_expressed_as_the_in.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Fig. 6 Mechanism for charge separation on TiO2 coupled with a different semiconductor.",
+      "page": 7,
+      "bbox": {
+        "l": 77.22869873046875,
+        "t": 726.1674194335938,
+        "r": 254.59962463378906,
+        "b": 609.6143188476562
+      },
+      "image_path": "images/fig_010_Fig_6_Mechanism_for_charge_separation_o.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 7 Incident solar power as a function of the photons wavelength as obtained from the integration of the 1.5 AM reference spectrum 74 . Dashed lines represent the solar power accumulated at each wavelength considering photon efficiencies of 5% and 25%. The different symbol marks some of the current or future achievements of photocatalysis for H2 production using TiO2, ZnS, CdS or (Ga0.88Zn0.12)(N0.88O0.12) as photocatalyst. It should be noted that these values are significantly overestimated because total photon absorption is considered and consequently H2 production rates would be appreciably lower in practice.",
+      "page": 8,
+      "bbox": {
+        "l": 58.67936706542969,
+        "t": 725.8007316589355,
+        "r": 272.5100402832031,
+        "b": 584.63232421875
+      },
+      "image_path": "images/fig_011_Fig_7_Incident_solar_power_as_a_functio.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Fig. 8 SEM images of (a) Au and (b) NiO x loaded on BaLa4Ti4O15 photocatalysts by a photo-deposition method. (Reproduced from ref. 94).",
+      "page": 9,
+      "bbox": {
+        "l": 53.079002380371094,
+        "t": 365.9776306152344,
+        "r": 278.2321472167969,
+        "b": 277.73187255859375
+      },
+      "image_path": "images/fig_012_Fig_8_SEM_images_of_a_Au_and_b_NiO_.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 9 Left panel: Photocatalytic degradation of aqueous rhodamine B over flower-shaped Bi2WO6 (A); uncalcined (B); TiO2 Degussa P25 (C); and solid-state synthesized Bi2WO6 (D). Right: SEM image of uncalcined hydrothermally treated Bi2WO6 superstructure. Figure adapted from ref. 143.",
+      "page": 13,
+      "bbox": {
+        "l": 310.69683837890625,
+        "t": 211.70904541015625,
+        "r": 547.1752319335938,
+        "b": 110.5338134765625
+      },
+      "image_path": "images/fig_013_Fig_9_Left_panel_Photocatalytic_degrad.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 10 Transmission electron micrographs of the oxynitride nanoparticles ammonolyzed at (a) 800 \u000e C and (b) 1000 \u000e C. In (c) a high resolution TEM image of the sample treated in NH3 at 800 \u000e C is shown. In (d) a typical electron energy loss spectrum clearly shows the presence of nitrogen in the crystallites. (Reproduced from ref. 177).",
+      "page": 16,
+      "bbox": {
+        "l": 339.27886962890625,
+        "t": 726.7882499694824,
+        "r": 517.4844360351562,
+        "b": 546.8538513183594
+      },
+      "image_path": "images/fig_014_Fig_10_Transmission_electron_micrograph.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Fig. 11 Pictorial diagram showing the proposed mechanism of CO2 photoreduction, using either H2 or CH4 as the reductant, over MgO or ZrO2. From ref. 286-288",
+      "page": 22,
+      "bbox": {
+        "l": 88.5667724609375,
+        "t": 248.2188720703125,
+        "r": 242.5840301513672,
+        "b": 90.3209228515625
+      },
+      "image_path": "images/fig_015_Fig_11_Pictorial_diagram_showing_the_pr.png"
+    }
+  ]
+}

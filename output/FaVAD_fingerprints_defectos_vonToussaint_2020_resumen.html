@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — FaVAD: Software workflow for characterisation and visualizing of defects in crystalline structures</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>FaVAD: Software workflow for characterisation and visualizing of defects in crystalline structures</h1>
+    <p class="subtitle">Resumen en español de <strong>FaVAD: Software workflow for characterisation and visualizing of defects in crystalline structures</strong>.</p>
+    <div class="meta">
+        <div><strong>Autores</strong>** U. von Toussaint, F. J. Domínguez-Gutiérrez, M. Compostella, M. Rampp (Max-Planck IPP & MPCDF)</div>
+        <div><strong>DOI / arXiv</strong><a href="https://arxiv.org/abs/**" target="_blank">arXiv:**</a></div>
+        <div><strong>PDF local</strong><a href="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p><strong>Autores:</strong> U. von Toussaint, F. J. Domínguez-Gutiérrez, M. Compostella, M. Rampp (Max-Planck IPP &amp; MPCDF)<br />
+<strong>arXiv:</strong> 2004.08184 (Computer Physics Communications, 2020)</p>
+<h2>Idea central</h2>
+<p>Workflow open-source (GPLv3) para <strong>identificación y clasificación semi-automática de defectos</strong> en simulaciones MD/DFT de materiales cristalinos. Reemplaza los métodos clásicos (Wigner-Seitz, Voronoi) por un enfoque basado en <strong>descriptores SOAP/GAP</strong> ("fingerprints") + análisis probabilístico.</p>
+<h2>Cómo funciona</h2>
+<ol>
+<li><strong>Descriptor por átomo:</strong> se calcula un vector "fingerprint" rotacionalmente invariante usando <strong>QUIP + Gaussian Approximation Potential (GAP)</strong> sobre el entorno local.</li>
+<li><strong>Comparación con catálogo:</strong> se compara el vector con descriptores precomputados de defectos conocidos (intersticiales, dumbbells, etc.) → clasificación rápida.</li>
+<li><strong>PCA</strong> sobre el conjunto de fingerprints → identifica <strong>nuevos tipos de defectos</strong> no catalogados (outliers).</li>
+<li><strong>Vacancias:</strong> detectadas geométricamente como <strong>esferas vacías máximas</strong> que se pueden inscribir, mediante un KDTree modificado.</li>
+<li><strong>Visualización:</strong> vía VisIt.</li>
+</ol>
+<hr />
+<h2>Caso de prueba</h2>
+<ul>
+<li>Hierro (BCC) irradiado con PKA de <strong>10 keV</strong>.</li>
+<li>Cascada de colisiones analizada con FaVAD.</li>
+<li>Identifica intersticiales, vacancias y defectos extendidos con buen acuerdo con valores de la literatura.</li>
+</ul>
+<hr />
+<h2>Aportes vs Wigner-Seitz / Voronoi</h2>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>W-S / Voronoi</th>
+<th>FaVAD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Robustez a vibración térmica</td>
+<td>Baja</td>
+<td>Calibrable</td>
+</tr>
+<tr>
+<td>Defectos no estándar</td>
+<td>Mal</td>
+<td>Detecta vía PCA</td>
+</tr>
+<tr>
+<td>Probabilidad asignada</td>
+<td>No</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Coste computacional</td>
+<td>Bajo</td>
+<td>Modesto</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Conexiones</h2>
+<ul>
+<li>Es el predecesor metodológico de [[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]] (SOAP + autoencoder + UMAP + HDBSCAN) — misma filosofía SOAP, pero con clustering no supervisado moderno.</li>
+<li>Alternativa más estadística a [[Steinhardt_bond_orientational_order_1983]] (que también compara entornos locales pero con armónicos esféricos sin ML).</li>
+<li>Útil como pipeline a portar a tu setup LAMMPS → OVITO → fingerprint → ML.</li>
+</ul>
+<hr />
+<h2>Disponibilidad</h2>
+<ul>
+<li>Código: incluye Dockerfile portable.</li>
+<li>Stack: Python 3 + Fortran90 + C++ + QUIP + VisIt.</li>
+</ul>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (9)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_001_Figure_1_Workflow_for_analyzing_the_dam.png" alt="fig_001 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 4</strong>
+            <p class="caption">Figure 1: Workflow for analyzing the damaged material sample by calculating the DV. Unclassified atoms are characterized by a principal component analysis (PCA), which defines its DV and geometry.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 1: Workflow for analyzing the damaged material sample by calculating the DV. Unclassified atoms are characterized by a principal component analysis (PCA), which defines its DV and geometry.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_002_Figure_2_Workflow_for_calculating_vacan.png" alt="fig_002 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 4</strong>
+            <p class="caption">Figure 2: Workflow for calculating vacancy spatial volume by computing nearest neighbours (NN) distance between numerical sampling points and the atoms locations.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 2: Workflow for calculating vacancy spatial volume by computing nearest neighbours (NN) distance between numerical sampling points and the atoms locations.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_003_Figure_3_Fe_geometries_used_to_compute_.png" alt="fig_003 — pagina 5" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 5</strong>
+            <p class="caption">Figure 3: Fe geometries used to compute the reference DVs: A Fe atom depicted as a blue sphere represents an atom in a lattice position for the DFA classification (panel a), in an interstitial site (panel b) for the SIA, and next to a single vacancy (panel c) for the ANtV. A green sphere represents a vacancy in the lattice structure. Amplitudes of reference descriptor vectors as a function of their components are shown in panels d-f) for different values of the cutoff parameter r c .</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 3: Fe geometries used to compute the reference DVs: A Fe atom depicted as a blue sphere represents an atom in a lattice position for the DFA classification (panel a), in an interstitial site (panel b) for the SIA, and next to a single vacancy (panel c) for the ANtV. A green sphere represents a vacancy in the lattice structure. Amplitudes of reference descriptor vectors as a function of their components are shown in panels d-f) for different values of the cutoff parameter r c .</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_004_Figure_4_Color_on-line_Normalized_dis.png" alt="fig_004 — pagina 6" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 6</strong>
+            <p class="caption">Figure 4: (Color on-line) Normalized distance distributions of the atom DVs with respect to the reference descriptor vectors for iron lattices at different temperatures. In panel a) the distributions with respect to a reference DV calculated for a lattice at 300 K is given. Displayed is the density for the atoms underlying the reference vector calculation, i.e. the distance distribution for a lattice at 300 K. As is indicated by the dashed line, this distribution follows closely the expected χ 2 -density (c.f. Eq.6 ). Panel a) shows also the distance density of a lattice at 900 K which reflects the effect of atomic thermal motion. The upper boundary of the density provides a good first guess for a reasonable distance threshold (highlighted by the vertical dotted line). In panel b) the same quantities are displayed, although this time with respect to the reference descriptor vector computed from a sample at 600 K. The lower two panels display the distance distribution of the iron sample after the collision cascade. There is a clear separation between the large majority of the atoms and a small fraction at larger distances. For more details please refer to the text.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 4: (Color on-line) Normalized distance distributions of the atom DVs with respect to the reference descriptor vectors for iron lattices at different temperatures. In panel a) the distributions with respect to a reference DV calculated for a lattice at 300 K is given. Displayed is the density for the atoms underlying the reference vector calculation, i.e. the distance distribution for a lattice at 300 K. As is indicated by the dashed line, this distribution follows closely the expected χ 2 -density (c.f. Eq.6 ). Panel a) shows also the distance density of a lattice at 900 K which reflects the effect of atomic thermal motion. The upper boundary of the density provides a good first guess for a reasonable distance threshold (highlighted by the vertical dotted line). In panel b) the same quantities are displayed, although this time with respect to the reference descriptor vector computed from a sample at 600 K. The lower two panels display the distance distribution of the iron sample after the collision cascade. There is a clear separation between the large majority of the atoms and a small fraction at larger distances. For more details please refer to the text.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_005_Figure_5_Color_on-line_DVs_of_the_def.png" alt="fig_005 — pagina 7" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 7</strong>
+            <p class="caption">Figure 5: (Color on-line) DVs of the defect free atom (DFA) classification for different values of n max and two different cut-off-radii ( r c = 0 . 275 nm (labelled as 1NN) and r c = 0 . 31 nm (2NN). Beyond a certain n max the relative differences between the two representations of the two different density fields for the most pronounced vector components are decreasing, thus hampering the stability of the identification. At the same time the number of vector components increases combinatorically (please note the logarithmic scale on the abscissa).</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 5: (Color on-line) DVs of the defect free atom (DFA) classification for different values of n max and two different cut-off-radii ( r c = 0 . 275 nm (labelled as 1NN) and r c = 0 . 31 nm (2NN). Beyond a certain n max the relative differences between the two representations of the two different density fields for the most pronounced vector components are decreasing, thus hampering the stability of the identification. At the same time the number of vector components increases combinatorically (please note the logarithmic scale on the abscissa).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_006_no_caption.png" alt="fig_006 — pagina 8" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 8</strong>
+            <p class="caption">Sin caption</p>
+          </figcaption>
+          <div class="figbody"><p>Figura en pagina 8.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_007_Figure_7_Color_on-line_A_principal_co.png" alt="fig_007 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 9</strong>
+            <p class="caption">Figure 7: (Color on-line) A principal component analysis is applied to the DVs of the unclassified atoms and the obtained results are shown in a). The DV of the unclassified atom is presented in b), which is found by performing a cluster analysis in a). The geometry of the unclassified atom is shown in panel c). Atoms in the new classification are represented by purple spheres, while lattice atoms are depicted as brown spheres.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 7: (Color on-line) A principal component analysis is applied to the DVs of the unclassified atoms and the obtained results are shown in a). The DV of the unclassified atom is presented in b), which is found by performing a cluster analysis in a). The geometry of the unclassified atom is shown in panel c). Atoms in the new classification are represented by purple spheres, while lattice atoms are depicted as brown spheres.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_008_Figure_8_Comparison_of_the_nearest_dist.png" alt="fig_008 — pagina 9" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 9</strong>
+            <p class="caption">Figure 8: Comparison of the nearest distance distribution for a defect-free (pristine) sample and the damaged iron sample. The sampling grid had a lattice spacing of 0.0775 nm in each direction, corresponding to N = 200 3 sampling points. For each sample point the distance to the nearest atom is computed using a KD-tree algorithm which reduces the numerical effort from N 2 to N log N . The sharp cut-off of the distribution of the pristine sample at around 2.5 ˚ A 2 supports a threshold value slightly above, e.g. 3 ˚ A 2 . Sample points with distances to the nearest atom larger than this threshold are considered to be located at/near a vacancy site or in a void structure.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 8: Comparison of the nearest distance distribution for a defect-free (pristine) sample and the damaged iron sample. The sampling grid had a lattice spacing of 0.0775 nm in each direction, corresponding to N = 200 3 sampling points. For each sample point the distance to the nearest atom is computed using a KD-tree algorithm which reduces the numerical effort from N 2 to N log N . The sharp cut-off of the distribution of the pristine sample at around 2.5 ˚ A 2 supports a threshold value slightly above, e.g. 3 ˚ A 2 . Sample points with distances to the nearest atom larger than this threshold are considered to be located at/near a vacancy site or in a void structure.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_009_Figure_9_Visualization_of_the_damage_in.png" alt="fig_009 — pagina 10" loading="lazy">
+          <figcaption>
+            <strong>FIG_009 · pagina 10</strong>
+            <p class="caption">Figure 9: Visualization of the damage in the material. Spheres correspond to Fe atoms, where each colour channel describes a different combination of d M for each defect classification. Cloud-like regions represent vacancies in the volume.</p>
+          </figcaption>
+          <div class="figbody"><p>Figure 9: Visualization of the damage in the material. Spheres correspond to Fe atoms, where each colour channel describes a different combination of d M for each defect classification. Cloud-like regions represent vacancies in the volume.</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

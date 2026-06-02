@@ -1,0 +1,84 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/EdgeConv_Explicacion_Detallada.md.pdf",
+  "total_figures": 6,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 27.831193923950195,
+        "t": 712.9969482421875,
+        "r": 98.36332702636719,
+        "b": 694.7982025146484
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 18,
+      "bbox": {
+        "l": 28.334413528442383,
+        "t": 173.37548828125,
+        "r": 44.58564376831055,
+        "b": 157.58856201171875
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 19,
+      "bbox": {
+        "l": 28.095781326293945,
+        "t": 458.8920593261719,
+        "r": 42.95094680786133,
+        "b": 441.4859924316406
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 20,
+      "bbox": {
+        "l": 30.197744369506836,
+        "t": 346.0209655761719,
+        "r": 41.8455924987793,
+        "b": 328.15191650390625
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 21,
+      "bbox": {
+        "l": 27.30980682373047,
+        "t": 204.04937744140625,
+        "r": 141.36643981933594,
+        "b": 185.916259765625
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 22,
+      "bbox": {
+        "l": 275.9651794433594,
+        "t": 841.1574650406837,
+        "r": 290.5708923339844,
+        "b": 826.111439704895
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    }
+  ]
+}

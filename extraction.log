@@ -2208,3 +2208,975 @@ Salida: /media/admin/ALMACEN_GRANDE_1/ilovepappers/pappers/CNN3D_constantes_elas
 [W526 12:50:06.023028592 NNPACK.cpp:56] Could not initialize NNPACK! Reason: Unsupported hardware.
 [W526 12:50:06.029664123 NNPACK.cpp:56] Could not initialize NNPACK! Reason: Unsupported hardware.
 [W526 12:50:06.279726605 NNPACK.cpp:56] Could not initialize NNPACK! Reason: Unsupported hardware.
+=== Inicio: Tue May 26 01:19:03 PM -03 2026 ===
+
+[1] >>> DGP_multitarea_HEA_Alvi_2025.pdf
+[32m[INFO] 2026-05-26 13:19:39,182 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:19:39,183 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:19:39,184 [RapidOCR] download_file.py:68: Initiating download: https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.8.0/torch/PP-OCRv4/det/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:19:42,676 [RapidOCR] download_file.py:82: Download size: 13.83MB[0m
+[32m[INFO] 2026-05-26 13:19:47,302 [RapidOCR] download_file.py:95: Successfully saved to: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:19:47,304 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:19:47,923 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:19:47,924 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:19:47,924 [RapidOCR] download_file.py:68: Initiating download: https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.8.0/torch/PP-OCRv4/cls/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:19:49,427 [RapidOCR] download_file.py:82: Download size: 0.56MB[0m
+[32m[INFO] 2026-05-26 13:19:49,514 [RapidOCR] download_file.py:95: Successfully saved to: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:19:49,516 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:19:49,581 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:19:49,581 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:19:49,581 [RapidOCR] download_file.py:68: Initiating download: https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.8.0/torch/PP-OCRv4/rec/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:19:51,226 [RapidOCR] download_file.py:82: Download size: 25.67MB[0m
+[32m[INFO] 2026-05-26 13:19:54,041 [RapidOCR] download_file.py:95: Successfully saved to: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:19:54,042 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[+] Procesando PDF: DGP_multitarea_HEA_Alvi_2025.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  96%|█████████▌| 738/770 [00:00<00:00, 7379.22it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 7381.32it/s]
+[+] Figuras encontradas: 11
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_Fig_1__Schematic_overview_of_the_BIRDS.png
+  [+] fig_005 → fig_005_Fig_2__Pairwise_plot_illustrating_corr.png
+  [+] fig_006 → fig_006_Fig_3__Schematic_representation_of_the.png
+  [+] fig_007 → fig_007_Fig_4__The_fi_gure_illustrates_differe.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_Fig_6__HDGP-P-All_model_results_a_Pre.png
+  [+] fig_010 → fig_010_Fig_7__Schematic_representation_of_the.png
+  [+] fig_011 → fig_011_Fig_8__The_fi_gure_illustrates_RMSE_an.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DGP_multitarea_HEA_Alvi_2025_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DGP_multitarea_HEA_Alvi_2025_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DGP_multitarea_HEA_Alvi_2025_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DGP_multitarea_HEA_Alvi_2025_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DGP_multitarea_HEA_Alvi_2025_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DGP_multitarea_HEA_Alvi_2025_figures
+    OK
+
+[2] >>> DJINN_init_redes_arboles_Humbird_2018.pdf
+[32m[INFO] 2026-05-26 13:21:19,807 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:19,808 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:19,817 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:19,817 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:20,127 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:20,127 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:20,128 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:20,128 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:20,189 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:20,189 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:20,205 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:20,205 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: DJINN_init_redes_arboles_Humbird_2018.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  79%|███████▉  | 611/770 [00:00<00:00, 6106.60it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6279.77it/s]
+[+] Figuras encontradas: 5
+  [+] fig_001 → fig_001_Fig_1_Illustration_of_the_DJINN_mappin.png
+  [+] fig_002 → fig_002_Fig_2_Truth_tables_decision_trees_an.png
+  [+] fig_003 → fig_003_Fig_3_MSE_normalized_to_the_MSE_of_on.png
+  [+] fig_004 → fig_004_Fig_4_Cost_MSE_for_data_scaled_to_0.png
+  [+] fig_005 → fig_005_Fig_5_Cost_cross_entropy_with_logits.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DJINN_init_redes_arboles_Humbird_2018_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DJINN_init_redes_arboles_Humbird_2018_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DJINN_init_redes_arboles_Humbird_2018_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DJINN_init_redes_arboles_Humbird_2018_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DJINN_init_redes_arboles_Humbird_2018_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/DJINN_init_redes_arboles_Humbird_2018_figures
+    OK
+
+[3] >>> Documentación Completa de Features - Predicción de Vacancias.pdf
+[32m[INFO] 2026-05-26 13:21:35,790 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:35,792 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:35,801 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:35,801 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:36,102 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:36,103 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:36,103 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:36,103 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:36,164 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:36,164 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:36,180 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:36,180 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: Documentación Completa de Features - Predicción de Vacancias.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  89%|████████▊ | 683/770 [00:00<00:00, 6829.34it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6801.77it/s]
+[+] Figuras encontradas: 0
+[!] No se encontraron figuras.
+    OK
+
+[4] >>> EdgeConv_Explicacion_Detallada.md.pdf
+[32m[INFO] 2026-05-26 13:21:48,864 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:48,866 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:48,876 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:48,876 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:49,182 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:49,182 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:49,183 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:49,183 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:49,242 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:49,242 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:49,258 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:49,258 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: EdgeConv_Explicacion_Detallada.md.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  96%|█████████▌| 739/770 [00:00<00:00, 7389.25it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 7414.60it/s]
+[+] Figuras encontradas: 6
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_no_caption.png
+  [+] fig_005 → fig_005_no_caption.png
+  [+] fig_006 → fig_006_no_caption.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/EdgeConv_Explicacion_Detallada.md_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/EdgeConv_Explicacion_Detallada.md_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/EdgeConv_Explicacion_Detallada.md_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/EdgeConv_Explicacion_Detallada.md_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/EdgeConv_Explicacion_Detallada.md_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/EdgeConv_Explicacion_Detallada.md_figures
+    OK
+
+[5] >>> FaVAD_fingerprints_defectos_vonToussaint_2020.pdf
+[32m[INFO] 2026-05-26 13:21:59,670 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:59,672 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:59,680 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:59,681 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:59,978 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:21:59,978 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:21:59,979 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:21:59,979 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:00,038 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:22:00,038 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:22:00,054 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:00,054 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: FaVAD_fingerprints_defectos_vonToussaint_2020.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  87%|████████▋ | 667/770 [00:00<00:00, 6668.51it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6601.42it/s]
+[+] Figuras encontradas: 9
+  [+] fig_001 → fig_001_Figure_1_Workflow_for_analyzing_the_dam.png
+  [+] fig_002 → fig_002_Figure_2_Workflow_for_calculating_vacan.png
+  [+] fig_003 → fig_003_Figure_3_Fe_geometries_used_to_compute_.png
+  [+] fig_004 → fig_004_Figure_4_Color_on-line_Normalized_dis.png
+  [+] fig_005 → fig_005_Figure_5_Color_on-line_DVs_of_the_def.png
+  [+] fig_006 → fig_006_no_caption.png
+  [+] fig_007 → fig_007_Figure_7_Color_on-line_A_principal_co.png
+  [+] fig_008 → fig_008_Figure_8_Comparison_of_the_nearest_dist.png
+  [+] fig_009 → fig_009_Figure_9_Visualization_of_the_damage_in.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures
+    OK
+
+[6] >>> Fotocatalizadores_alternativos_TiO2_Hernandez_2009.pdf
+[32m[INFO] 2026-05-26 13:22:19,560 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:22:19,562 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:22:19,571 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:19,571 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:19,867 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:22:19,867 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:22:19,867 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:19,868 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:19,926 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:22:19,927 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:22:19,942 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:19,942 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: Fotocatalizadores_alternativos_TiO2_Hernandez_2009.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  83%|████████▎ | 641/770 [00:00<00:00, 6389.47it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6063.59it/s]
+RapidOCR returned empty result!
+RapidOCR returned empty result!
+[33m[WARNING] 2026-05-26 13:22:24,341 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+[+] Figuras encontradas: 15
+  [+] fig_001 → fig_001_Silvia_Surez.png
+  [+] fig_002 → fig_002_Mara_D__Hernndez_-Alonso.png
+  [+] fig_003 → fig_003_Juan_M__Coronado.png
+  [+] fig_004 → fig_004_Fernando_Fresno.png
+  [+] fig_005 → fig_005_Fig_2_Pictorial_diagram_showing_the_mai.png
+  [+] fig_006 → fig_006_Fig_1_Annual_evolution_of_the_number_of.png
+  [+] fig_007 → fig_007_Fig_3_Examples_of_single_site_photocata.png
+  [+] fig_008 → fig_008_Fig_4_Band_gaps_eV_and_redox_potentia.png
+  [+] fig_009 → fig_009_Fig_5_Photoactivity_expressed_as_the_in.png
+  [+] fig_010 → fig_010_Fig_6_Mechanism_for_charge_separation_o.png
+  [+] fig_011 → fig_011_Fig_7_Incident_solar_power_as_a_functio.png
+  [+] fig_012 → fig_012_Fig_8_SEM_images_of_a_Au_and_b_NiO_.png
+  [+] fig_013 → fig_013_Fig_9_Left_panel_Photocatalytic_degrad.png
+  [+] fig_014 → fig_014_Fig_10_Transmission_electron_micrograph.png
+  [+] fig_015 → fig_015_Fig_11_Pictorial_diagram_showing_the_pr.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures
+    OK
+
+[7] >>> Grafos_MD_silice_Gaigeot_PCCP_2025.pdf
+[32m[INFO] 2026-05-26 13:22:53,813 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:22:53,815 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:22:53,824 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:53,824 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:54,130 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:22:54,130 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:22:54,131 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:54,131 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:54,190 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:22:54,190 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:22:54,206 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:22:54,206 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: Grafos_MD_silice_Gaigeot_PCCP_2025.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  97%|█████████▋| 746/770 [00:00<00:00, 7459.30it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 7479.49it/s]
+[+] Figuras encontradas: 22
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_no_caption.png
+  [+] fig_005 → fig_005_no_caption.png
+  [+] fig_006 → fig_006_no_caption.png
+  [+] fig_007 → fig_007_no_caption.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_no_caption.png
+  [+] fig_010 → fig_010_no_caption.png
+  [+] fig_011 → fig_011_Fig_1_Illustration_of_the_passage_from_.png
+  [+] fig_012 → fig_012_Fig_2_Identification_of_conformations_o.png
+  [+] fig_013 → fig_013_Fig_3_The_generalized_workflow_for_the_.png
+  [+] fig_014 → fig_014_Fig_4_The_network_of_states_of_the_sili.png
+  [+] fig_015 → fig_015_Fig_5_Illustration_of_the_passage_from_.png
+  [+] fig_016 → fig_016_Fig_7_Illustration_of_two_2-partner_mot.png
+  [+] fig_017 → fig_017_Fig_6_Illustration_of_concepts_for_the_.png
+  [+] fig_018 → fig_018_no_caption.png
+  [+] fig_019 → fig_019_Fig_8_Distribution_of_the_number_of_occ.png
+  [+] fig_020 → fig_020_Fig_9_Distribution_of_the_number_of_occ.png
+  [+] fig_021 → fig_021_no_caption.png
+  [+] fig_022 → fig_022_Fig_11_Illustration_of_one_4-partner_mo.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures
+    OK
+
+[8] >>> MD_cascadas_CuNi_irradiacion_Wei_2025.pdf
+[32m[INFO] 2026-05-26 13:23:12,570 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:23:12,571 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:23:12,580 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:12,580 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:12,890 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:23:12,890 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:23:12,890 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:12,891 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:12,949 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:23:12,950 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:23:12,965 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:12,965 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: MD_cascadas_CuNi_irradiacion_Wei_2025.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  81%|████████  | 623/770 [00:00<00:00, 6220.72it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6364.44it/s]
+[+] Figuras encontradas: 30
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_no_caption.png
+  [+] fig_005 → fig_005_no_caption.png
+  [+] fig_006 → fig_006_no_caption.png
+  [+] fig_007 → fig_007_no_caption.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_Fig_1_Detailed_flow_chart_of_the_simul.png
+  [+] fig_010 → fig_010_no_caption.png
+  [+] fig_011 → fig_011_Fig_3_Variations_in_the_temperature_an.png
+  [+] fig_012 → fig_012_Fig_4_The_change_of_the_Frenkel_defect.png
+  [+] fig_013 → fig_013_Fig_5_Number_of_Frenkel_defect_pairs_i.png
+  [+] fig_014 → fig_014_Fig_6_The_number_of_Frenkel_defect_pai.png
+  [+] fig_015 → fig_015_Fig_7_The_final_distribution_of_Frenke.png
+  [+] fig_016 → fig_016_Fig_8_The_number_of_Frenkel_defect_pai.png
+  [+] fig_017 → fig_017_Fig_9_The_number_of_Frenkel_defect_pai.png
+  [+] fig_018 → fig_018_Fig_10_The_number_of_Frenkel_defect_pa.png
+  [+] fig_019 → fig_019_Fig_11_a_Vacant_clusters_and_b_int.png
+  [+] fig_020 → fig_020_Fig_12_The_number_of_Frenkel_defects_i.png
+  [+] fig_021 → fig_021_Fig_13_The_final_distribution_of_the_n.png
+  [+] fig_022 → fig_022_Fig_14_a_Stress-strain_curves_and_b.png
+  [+] fig_023 → fig_023_Fig_15_The_yield_strength_of_Cu_-Ni_al.png
+  [+] fig_024 → fig_024_Fig_16_Structural_phase_transitions_ob.png
+  [+] fig_025 → fig_025_Fig_17_Comparison_of_phase_change_stru.png
+  [+] fig_026 → fig_026_Fig_18_The_length_of_the_dislocation_l.png
+  [+] fig_027 → fig_027_Fig_19_The_Microstructural_diagrams_of.png
+  [+] fig_028 → fig_028_Fig_20_Stress-strain_curves_of_a_Cu-.png
+  [+] fig_029 → fig_029_Fig_21_The_lengths_of_dislocation_line.png
+  [+] fig_030 → fig_030_Fig_22_Yield_strength_GPa_of_Cu_and_.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures
+    OK
+
+[9] >>> MD_kMC_tungsteno_dose_rate_Boleininger_2025.pdf
+[32m[INFO] 2026-05-26 13:23:42,346 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:23:42,348 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:23:42,357 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:42,357 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:42,657 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:23:42,658 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:23:42,658 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:42,658 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:42,718 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:23:42,718 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:23:42,734 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:23:42,734 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: MD_kMC_tungsteno_dose_rate_Boleininger_2025.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  92%|█████████▏| 710/770 [00:00<00:00, 7092.43it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 7138.45it/s]
+[+] Figuras encontradas: 17
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_Fig_1_Basic_concepts_of_the_recovery_of.png
+  [+] fig_005 → fig_005_no_caption.png
+  [+] fig_006 → fig_006_no_caption.png
+  [+] fig_007 → fig_007_Fig_2_Vacancy-acceleration_algorithm_.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_Fig_3_Simulated_irradiation_of_tungsten.png
+  [+] fig_010 → fig_010_Fig_4_Simulated_irradiation_of_tungsten.png
+  [+] fig_011 → fig_011_Fig_5_Comparing_prediction_to_simulatio.png
+  [+] fig_012 → fig_012_no_caption.png
+  [+] fig_013 → fig_013_Fig_6_Comparison_to_experiment_a_Deu.png
+  [+] fig_014 → fig_014_Fig_7_Vacancy_detection_validation_Top.png
+  [+] fig_015 → fig_015_no_caption.png
+  [+] fig_016 → fig_016_Fig_8_Kinetic_Monte_Carlo_validation_S.png
+  [+] fig_017 → fig_017_no_caption.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures
+    OK
+
+[10] >>> MLIP_HfO2_ferroelectrico_Kankanamalage_2026.pdf
+[32m[INFO] 2026-05-26 13:24:02,033 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:02,034 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:02,043 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:02,043 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:02,348 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:02,348 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:02,348 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:02,349 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:02,408 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:02,408 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:02,424 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:02,424 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: MLIP_HfO2_ferroelectrico_Kankanamalage_2026.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  87%|████████▋ | 669/770 [00:00<00:00, 6675.52it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6409.91it/s]
+[+] Figuras encontradas: 11
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_FIG_1_Crystal_structures_of_different_.png
+  [+] fig_003 → fig_003_FIG_3_Predicted_bulk_modulus_B_and_s.png
+  [+] fig_004 → fig_004_FIG_2_Equations_of_state_energy_vs_vo.png
+  [+] fig_005 → fig_005_FIG_4_Pressure_dependence_of_the_nine_.png
+  [+] fig_006 → fig_006_FIG_5_Schematic_of_the_DGCNN_architect.png
+  [+] fig_007 → fig_007_FIG_6_Comparison_of_Radial_distributio.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_FIG_7_Left_enthalpy_of_the_system_of_.png
+  [+] fig_010 → fig_010_FIG_8_Confusion_matrix_of_the_hold-out.png
+  [+] fig_011 → fig_011_FIG_9_No-pooling_convolutional_neural_.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures
+    OK
+
+[11] >>> ML_vacancias_difusion_HEA_Reimer_2025.pdf
+[32m[INFO] 2026-05-26 13:24:19,785 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:19,787 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:19,795 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:19,796 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:20,101 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:20,101 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:20,102 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:20,102 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:20,162 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:20,162 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:20,178 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:20,178 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: ML_vacancias_difusion_HEA_Reimer_2025.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  89%|████████▉ | 686/770 [00:00<00:00, 6857.77it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6946.84it/s]
+RapidOCR returned empty result!
+[+] Figuras encontradas: 29
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_no_caption.png
+  [+] fig_005 → fig_005_no_caption.png
+  [+] fig_006 → fig_006_no_caption.png
+  [+] fig_007 → fig_007_no_caption.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_no_caption.png
+  [+] fig_010 → fig_010_no_caption.png
+  [+] fig_011 → fig_011_no_caption.png
+  [+] fig_012 → fig_012_no_caption.png
+  [+] fig_013 → fig_013_no_caption.png
+  [+] fig_014 → fig_014_no_caption.png
+  [+] fig_015 → fig_015_no_caption.png
+  [+] fig_016 → fig_016_no_caption.png
+  [+] fig_017 → fig_017_no_caption.png
+  [+] fig_018 → fig_018_no_caption.png
+  [+] fig_019 → fig_019_FIG_1_The_workflow_used_in_this_work_.png
+  [+] fig_020 → fig_020_FIG_3_Network_structure_used_in_this_w.png
+  [+] fig_021 → fig_021_FIG_2_Configurations_of_FCC_regions_of.png
+  [+] fig_022 → fig_022_FIG_4_Log-likelihood_loss_plots_for_bo.png
+  [+] fig_023 → fig_023_FIG_5_Mean_transition_preferences_per-.png
+  [+] fig_024 → fig_024_FIG_7_Number_of_transition_events_dete.png
+  [+] fig_025 → fig_025_FIG_6_Number_of_transition_events_dete.png
+  [+] fig_026 → fig_026_FIG_8_ASD_measured_in_10_ps_intervals_.png
+  [+] fig_027 → fig_027_FIG_9_NX_graph_representations_of_the_.png
+  [+] fig_028 → fig_028_FIG_10_Histograms_of_vacancy_migration.png
+  [+] fig_029 → fig_029_Unique_Compositions_Ordered_by_Cu.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures
+    OK
+
+[12] >>> OE-BERT_DAPT_optoelectronica_Huang_2025.pdf
+[32m[INFO] 2026-05-26 13:24:38,468 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:38,470 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:38,478 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:38,479 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:38,778 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:38,779 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:38,779 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:38,780 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:38,840 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:38,840 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:38,856 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:38,856 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: OE-BERT_DAPT_optoelectronica_Huang_2025.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  86%|████████▌ | 664/770 [00:00<00:00, 6630.79it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6504.21it/s]
+[+] Figuras encontradas: 19
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_no_caption.png
+  [+] fig_005 → fig_005_no_caption.png
+  [+] fig_006 → fig_006_no_caption.png
+  [+] fig_007 → fig_007_no_caption.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_no_caption.png
+  [+] fig_010 → fig_010_no_caption.png
+  [+] fig_011 → fig_011_Figure_1_Applications_of_BERT-like_mode.png
+  [+] fig_012 → fig_012_no_caption.png
+  [+] fig_013 → fig_013_Figure_2_Training_pipeline_for_the_opto.png
+  [+] fig_014 → fig_014_Figure_3_Keyword_frequency_bar_chart_fo.png
+  [+] fig_015 → fig_015_no_caption.png
+  [+] fig_016 → fig_016_Figure_4_Pretraining_loss_and_token_pre.png
+  [+] fig_017 → fig_017_Figure_5_Confusion_matrix_of_the_classi.png
+  [+] fig_018 → fig_018_Figure_6_Performance_evolution_on_the_T.png
+  [+] fig_019 → fig_019_Figure_7_Recall_k_results_plotted_agai.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures
+    OK
+
+[13] >>> OMC25_cristales_moleculares_Meta_2025.pdf
+[32m[INFO] 2026-05-26 13:24:55,795 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:55,797 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:55,806 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:55,806 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:56,110 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:56,110 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:56,111 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:56,111 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:56,171 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:24:56,171 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:24:56,187 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:24:56,187 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: OMC25_cristales_moleculares_Meta_2025.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  83%|████████▎ | 640/770 [00:00<00:00, 6373.46it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6640.54it/s]
+[+] Figuras encontradas: 8
+  [+] fig_001 → fig_001_Figure_1_Overview_of_the_OMC25_dataset_.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_Figure_3_Comparison_of_properties_from_t.png
+  [+] fig_004 → fig_004_Table_3_MLIP_evaluations_validation_and.png
+  [+] fig_005 → fig_005_Listing_S2_Example_INCAR_settings_for_th.png
+  [+] fig_006 → fig_006_Figure_S1_Convergence_study_for_the_DFT_.png
+  [+] fig_007 → fig_007_Table_S1_Extended_MLIP_evaluation_result.png
+  [+] fig_008 → fig_008_no_caption.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OMC25_cristales_moleculares_Meta_2025_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OMC25_cristales_moleculares_Meta_2025_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OMC25_cristales_moleculares_Meta_2025_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OMC25_cristales_moleculares_Meta_2025_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OMC25_cristales_moleculares_Meta_2025_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OMC25_cristales_moleculares_Meta_2025_figures
+    OK
+
+[14] >>> PartNet_anotacion_regiones_3D_Yi.pdf
+[32m[INFO] 2026-05-26 13:25:16,315 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:25:16,316 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:25:16,325 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:16,325 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:16,628 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:25:16,628 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:25:16,629 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:16,629 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:16,689 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:25:16,689 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:25:16,705 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:16,705 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: PartNet_anotacion_regiones_3D_Yi.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  90%|████████▉ | 692/770 [00:00<00:00, 6887.89it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6957.47it/s]
+[+] Figuras encontradas: 13
+  [+] fig_001 → fig_001_Figure_1_We_use_our_method_to_create_de.png
+  [+] fig_002 → fig_002_Figure_2_This_figure_illustrates_the_nu.png
+  [+] fig_003 → fig_003_Figure_3_This_figure_summarizes_our_pip.png
+  [+] fig_004 → fig_004_no_caption.png
+  [+] fig_005 → fig_005_Figure_4_At_each_iteration_our_method_s.png
+  [+] fig_006 → fig_006_Figure_6_User_interface_for_acquiring_s.png
+  [+] fig_007 → fig_007_Figure_7_Given_a_set_of_human_annotated.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_Figure_9_We_use_our_method_to_get_part_.png
+  [+] fig_010 → fig_010_Figure_10_Number_of_positively-verified.png
+  [+] fig_011 → fig_011_Figure_11_Force-multiplication_factor_.png
+  [+] fig_012 → fig_012_Figure_12_Our_automatic_label_propagati.png
+  [+] fig_013 → fig_013_Figure_13_Comparison_of_different_varia.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PartNet_anotacion_regiones_3D_Yi_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PartNet_anotacion_regiones_3D_Yi_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PartNet_anotacion_regiones_3D_Yi_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PartNet_anotacion_regiones_3D_Yi_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PartNet_anotacion_regiones_3D_Yi_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PartNet_anotacion_regiones_3D_Yi_figures
+    OK
+
+[15] >>> PointNet++_Qi_2017.pdf
+[32m[INFO] 2026-05-26 13:25:51,935 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:25:51,937 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:25:51,946 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:51,946 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:52,246 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:25:52,246 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:25:52,247 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:52,247 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:52,308 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:25:52,308 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:25:52,324 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:25:52,324 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: PointNet++_Qi_2017.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  90%|█████████ | 696/770 [00:00<00:00, 6956.95it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6786.57it/s]
+[33m[WARNING] 2026-05-26 13:25:58,764 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+[33m[WARNING] 2026-05-26 13:26:00,113 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+[+] Figuras encontradas: 9
+  [+] fig_001 → fig_001_Figure_1_Visualization_of_a_scan_captur.png
+  [+] fig_002 → fig_002_Figure_2_Illustration_of_our_hierarchic.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_Figure_4_Left_Point_cloud_with_random_.png
+  [+] fig_005 → fig_005_no_caption.png
+  [+] fig_006 → fig_006_Wall_Floor_Chair_Desk_Bed_Door_Table_Fig.png
+  [+] fig_007 → fig_007_Figure_7_An_example_of_nonrigid_shape_c.png
+  [+] fig_008 → fig_008_Figure_8_3D_point_cloud_patterns_learne.png
+  [+] fig_009 → fig_009_Figure_9_Virtual_scan_generated_from_Sc.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet++_Qi_2017_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet++_Qi_2017_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet++_Qi_2017_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet++_Qi_2017_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet++_Qi_2017_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet++_Qi_2017_figures
+    OK
+
+[16] >>> PointNet_Qi_2017.pdf
+[32m[INFO] 2026-05-26 13:26:08,058 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:26:08,060 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:26:08,069 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:08,069 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:08,370 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:26:08,370 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:26:08,371 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:08,371 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:08,432 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:26:08,432 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:26:08,448 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:08,448 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: PointNet_Qi_2017.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  89%|████████▊ | 683/770 [00:00<00:00, 6829.08it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6911.72it/s]
+[33m[WARNING] 2026-05-26 13:26:20,042 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+[33m[WARNING] 2026-05-26 13:26:20,789 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+RapidOCR returned empty result!
+RapidOCR returned empty result!
+[33m[WARNING] 2026-05-26 13:26:27,163 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+RapidOCR returned empty result!
+RapidOCR returned empty result!
+[+] Figuras encontradas: 24
+  [+] fig_001 → fig_001_Figure_1_Applications_of_PointNet_We_p.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_Figure_3_Qualitative_results_for_part_s.png
+  [+] fig_004 → fig_004_Figure_4_Qualitative_results_for_semant.png
+  [+] fig_005 → fig_005_Figure_5_Three_approaches_to_achieve_or.png
+  [+] fig_006 → fig_006_Figure_6_PointNet_robustness_test_The_.png
+  [+] fig_007 → fig_007_Figure_7_Critical_points_and_upper_boun.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_mlp_64128128_mlp_641281024_input.png
+  [+] fig_010 → fig_010_Figure_10_Baseline_3D_CNN_segmentation_.png
+  [+] fig_011 → fig_011_Figure_11_Precision-recall_curves_for_o.png
+  [+] fig_012 → fig_012_Figure_13_Shape_correspondence_between_.png
+  [+] fig_013 → fig_013_Figure_12_Model_retrieval_from_point_cl.png
+  [+] fig_014 → fig_014_Figure_14_Shape_correspondence_between_.png
+  [+] fig_015 → fig_015_Figure_15_Effects_of_bottleneck_size_an.png
+  [+] fig_016 → fig_016_Figure_16_PointNet_normal_reconstrution.png
+  [+] fig_017 → fig_017_Figure_17_The_consistency_of_segmentati.png
+  [+] fig_018 → fig_018_Figure_18_The_critical_point_sets_and_t.png
+  [+] fig_019 → fig_019_Figure_19_Point_function_visualization.png
+  [+] fig_020 → fig_020_Figure_20_2D_embedding_of_learnt_shape_.png
+  [+] fig_021 → fig_021_Figure_21_PointNet_segmentation_results.png
+  [+] fig_022 → fig_022_Figure_22_PointNet_segmentation_results.png
+  [+] fig_023 → fig_023_Figure_23_PointNet_segmentation_failure.png
+  [+] fig_024 → fig_024_Figure_24_Examples_of_semantic_segmenta.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet_Qi_2017_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet_Qi_2017_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet_Qi_2017_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet_Qi_2017_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet_Qi_2017_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/PointNet_Qi_2017_figures
+    OK
+
+[17] >>> Review_DL_materiales_Choudhary_2022.pdf
+[32m[INFO] 2026-05-26 13:26:35,835 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:26:35,837 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:26:35,847 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:35,847 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:36,142 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:26:36,142 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:26:36,143 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:36,143 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:36,202 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:26:36,202 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:26:36,218 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:26:36,218 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: Review_DL_materiales_Choudhary_2022.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  91%|█████████▏| 704/770 [00:00<00:00, 7036.57it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 7012.18it/s]
+[+] Figuras encontradas: 35
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_no_caption.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_no_caption.png
+  [+] fig_005 → fig_005_Fig_1_Schematic_showing_an_overview_of_.png
+  [+] fig_006 → fig_006_no_caption.png
+  [+] fig_007 → fig_007_no_caption.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_no_caption.png
+  [+] fig_010 → fig_010_no_caption.png
+  [+] fig_011 → fig_011_Fig_2_Schematic_representations_of_an_a.png
+  [+] fig_012 → fig_012_no_caption.png
+  [+] fig_013 → fig_013_no_caption.png
+  [+] fig_014 → fig_014_Fig_3_Example_applications_of_deep_lear.png
+  [+] fig_015 → fig_015_no_caption.png
+  [+] fig_016 → fig_016_no_caption.png
+  [+] fig_017 → fig_017_no_caption.png
+  [+] fig_018 → fig_018_no_caption.png
+  [+] fig_019 → fig_019_no_caption.png
+  [+] fig_020 → fig_020_Fig_4_Deep-learning-based_algorithm_for.png
+  [+] fig_021 → fig_021_no_caption.png
+  [+] fig_022 → fig_022_no_caption.png
+  [+] fig_023 → fig_023_no_caption.png
+  [+] fig_024 → fig_024_no_caption.png
+  [+] fig_025 → fig_025_no_caption.png
+  [+] fig_026 → fig_026_Fig_5_A_schematic_showing_the_applicati.png
+  [+] fig_027 → fig_027_no_caption.png
+  [+] fig_028 → fig_028_no_caption.png
+  [+] fig_029 → fig_029_no_caption.png
+  [+] fig_030 → fig_030_no_caption.png
+  [+] fig_031 → fig_031_no_caption.png
+  [+] fig_032 → fig_032_no_caption.png
+  [+] fig_033 → fig_033_no_caption.png
+  [+] fig_034 → fig_034_no_caption.png
+  [+] fig_035 → fig_035_no_caption.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Review_DL_materiales_Choudhary_2022_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Review_DL_materiales_Choudhary_2022_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Review_DL_materiales_Choudhary_2022_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Review_DL_materiales_Choudhary_2022_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Review_DL_materiales_Choudhary_2022_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Review_DL_materiales_Choudhary_2022_figures
+    OK
+
+[18] >>> Steinhardt_bond_orientational_order_1983.pdf
+[32m[INFO] 2026-05-26 13:27:03,484 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:27:03,486 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:27:03,495 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:03,495 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:03,794 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:27:03,794 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:27:03,795 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:03,795 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:03,855 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:27:03,856 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:27:03,871 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:03,872 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: Steinhardt_bond_orientational_order_1983.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  84%|████████▍ | 645/770 [00:00<00:00, 6426.00it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6616.79it/s]
+[+] Figuras encontradas: 16
+  [+] fig_001 → fig_001_FlG_1_Different_13-atom_particle_clust.png
+  [+] fig_002 → fig_002_FIG_2_Histograms_of_quadratic_and_thir.png
+  [+] fig_003 → fig_003_FIG_3_Symmetry_parameter_86_for_a_13-.png
+  [+] fig_004 → fig_004_FIG_4_a_Quadratic_invariants_QI_for_.png
+  [+] fig_005 → fig_005_FIR_5_Time_dependence_of_the_a_tempe.png
+  [+] fig_006 → fig_006_FIG_6_a_and_b_show_the_radial_dist.png
+  [+] fig_007 → fig_007_FIG_7_Orientation_correlation_function.png
+  [+] fig_008 → fig_008_FIG_g_Orientational_correlation_length.png
+  [+] fig_009 → fig_009_FIG_9_View_of_the_12_atoms_making_up_t.png
+  [+] fig_010 → fig_010_no_caption.png
+  [+] fig_011 → fig_011_no_caption.png
+  [+] fig_012 → fig_012_FIG_10_The_orientational_correlation_f.png
+  [+] fig_013 → fig_013_FIG_12_Phase_diagram_for_a_Lennard-Jon.png
+  [+] fig_014 → fig_014_FIG_13_Orientational_order_in_the_rela.png
+  [+] fig_015 → fig_015_FICx_14_Qrientational_histograms_for_s.png
+  [+] fig_016 → fig_016_FIG_15_Spiral_packing_of_tetrahedra_di.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Steinhardt_bond_orientational_order_1983_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Steinhardt_bond_orientational_order_1983_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Steinhardt_bond_orientational_order_1983_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Steinhardt_bond_orientational_order_1983_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Steinhardt_bond_orientational_order_1983_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/Steinhardt_bond_orientational_order_1983_figures
+    OK
+
+[19] >>> TGS_vacancias_in_situ_Botica_MIT_2026.pdf
+[32m[INFO] 2026-05-26 13:27:57,785 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:27:57,787 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:27:57,798 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:57,798 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:58,123 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:27:58,123 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:27:58,124 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:58,124 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:58,184 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:27:58,185 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:27:58,200 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:27:58,201 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: TGS_vacancias_in_situ_Botica_MIT_2026.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  91%|█████████▏| 704/770 [00:00<00:00, 7009.21it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 7018.23it/s]
+[+] Figuras encontradas: 15
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_Figure_1_Scheme_of_TGS_coupled_with_in_.png
+  [+] fig_003 → fig_003_Figure_2_Irradiation_depth_profile_as_c.png
+  [+] fig_004 → fig_004_Figure_3_in_situ_TGS_results_from_7_MeV.png
+  [+] fig_005 → fig_005_Figure_4_Periodic_pulsed_beam_experimen.png
+  [+] fig_006 → fig_006_Figure_5_Vacancy_concentration_evolutio.png
+  [+] fig_007 → fig_007_Figure_6_Vacancy_concentration_calculat.png
+  [+] fig_008 → fig_008_Figure_7_Logarithmic_pulsed_beam_experi.png
+  [+] fig_009 → fig_009_Figure_8_Cumulative_vacancy_concentrati.png
+  [+] fig_010 → fig_010_Figure_9_TEM_images_from_the_different_.png
+  [+] fig_011 → fig_011_Figure_10_Distribution_of_the_number_an.png
+  [+] fig_012 → fig_012_Figure_11_Point_defect_evolution_for_Fe.png
+  [+] fig_013 → fig_013_Figure_12_Beam_onoff_period_fitting_T.png
+  [+] fig_014 → fig_014_Figure_13_Vacancy_concentration_calcula.png
+  [+] fig_015 → fig_015_Figure_14_Cumulative_vacancy_concentrat.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures
+    OK
+
+[20] >>> TorchPoints3D_framework_Chaton_2020.pdf
+[32m[INFO] 2026-05-26 13:28:32,942 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:28:32,944 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:28:32,953 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:32,953 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:33,252 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:28:33,253 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:28:33,253 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:33,253 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:33,314 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:28:33,314 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:28:33,330 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:33,330 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: TorchPoints3D_framework_Chaton_2020.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  92%|█████████▏| 711/770 [00:00<00:00, 7100.12it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6986.42it/s]
+[+] Figuras encontradas: 6
+  [+] fig_001 → fig_001_Figure_1_Torch-Points3D_supports_multip.png
+  [+] fig_002 → fig_002_Figure_2_Overall_architecture_of_the_fr.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_Table_3_Improvement_in_terms_of_mIoU_pr.png
+  [+] fig_005 → fig_005_Listing_4_Optimizer_hyper-parameters_us.png
+  [+] fig_006 → fig_006_b_Registration_example_on_KITTI_odomet.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TorchPoints3D_framework_Chaton_2020_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TorchPoints3D_framework_Chaton_2020_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TorchPoints3D_framework_Chaton_2020_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TorchPoints3D_framework_Chaton_2020_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TorchPoints3D_framework_Chaton_2020_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/TorchPoints3D_framework_Chaton_2020_figures
+    OK
+
+[21] >>> UNet_nucleacion_voids_tantalio_Anantharanga_2025.pdf
+[32m[INFO] 2026-05-26 13:28:46,075 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:28:46,076 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:28:46,085 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:46,085 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:46,402 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:28:46,403 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:28:46,403 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:46,403 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:46,468 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:28:46,468 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:28:46,485 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:28:46,485 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: UNet_nucleacion_voids_tantalio_Anantharanga_2025.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  79%|███████▉  | 608/770 [00:00<00:00, 6071.54it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 5845.57it/s]
+[33m[WARNING] 2026-05-26 13:28:49,793 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+RapidOCR returned empty result!
+[33m[WARNING] 2026-05-26 13:28:55,852 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+RapidOCR returned empty result!
+[33m[WARNING] 2026-05-26 13:28:56,040 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+[33m[WARNING] 2026-05-26 13:28:56,195 [RapidOCR] main.py:132: The text detection result is empty[0m
+RapidOCR returned empty result!
+[+] Figuras encontradas: 20
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_Figure_1_A_reversed_erosion_algorithm_.png
+  [+] fig_003 → fig_003_Figure_2_A_visual_compilation_of_three_.png
+  [+] fig_004 → fig_004_Figure_3_A_visual_compilation_of_three_.png
+  [+] fig_005 → fig_005_Figure_4_The_full_U-Net_architecture_c.png
+  [+] fig_006 → fig_006_Figure_5_Representative_selection_of_mo.png
+  [+] fig_007 → fig_007_no_caption.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_no_caption.png
+  [+] fig_010 → fig_010_no_caption.png
+  [+] fig_011 → fig_011_no_caption.png
+  [+] fig_012 → fig_012_Figure_8_PCC_analysis_of_model_performa.png
+  [+] fig_013 → fig_013_a_Graphical_illustration_of_ROI_metric.png
+  [+] fig_014 → fig_014_no_caption.png
+  [+] fig_015 → fig_015_c_Micrograph_segmented_into_red_bad_v.png
+  [+] fig_016 → fig_016_no_caption.png
+  [+] fig_017 → fig_017_no_caption.png
+  [+] fig_018 → fig_018_f_Mask_applied_to_the_microstructure_t.png
+  [+] fig_019 → fig_019_no_caption.png
+  [+] fig_020 → fig_020_Figure_11_Pearson_correlation_coefficie.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures
+    OK
+
+[22] >>> VoxelNet_Zhou_2017.pdf
+[32m[INFO] 2026-05-26 13:29:03,424 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:29:03,425 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:29:03,434 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:03,434 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:03,739 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:29:03,739 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:29:03,740 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:03,740 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:03,801 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:29:03,801 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:29:03,817 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:03,817 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: VoxelNet_Zhou_2017.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  93%|█████████▎| 718/770 [00:00<00:00, 7179.54it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 7161.77it/s]
+[+] Figuras encontradas: 6
+  [+] fig_001 → fig_001_Figure_1_VoxelNet_directly_operates_on_.png
+  [+] fig_002 → fig_002_Figure_2_VoxelNet_architecture_The_fea.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_Figure_4_Region_proposal_network_archit.png
+  [+] fig_005 → fig_005_Figure_5_Illustration_of_efficient_impl.png
+  [+] fig_006 → fig_006_Figure_6_Qualitative_results_For_bette.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/VoxelNet_Zhou_2017_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/VoxelNet_Zhou_2017_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/VoxelNet_Zhou_2017_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/VoxelNet_Zhou_2017_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/VoxelNet_Zhou_2017_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/VoxelNet_Zhou_2017_figures
+    OK
+
+[23] >>> voxel_voids_nucleacion_Hemani_2014.pdf
+[32m[INFO] 2026-05-26 13:29:18,825 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:29:18,827 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:29:18,836 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:18,836 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_det_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:19,175 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:29:19,175 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:29:19,175 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:19,176 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:19,235 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-05-26 13:29:19,236 [RapidOCR] device_config.py:64: Using GPU device with ID: 0[0m
+[32m[INFO] 2026-05-26 13:29:19,252 [RapidOCR] download_file.py:60: File exists and is valid: /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[32m[INFO] 2026-05-26 13:29:19,252 [RapidOCR] main.py:50: Using /home/santi/miniconda3/lib/python3.13/site-packages/rapidocr/models/ch_PP-OCRv4_rec_mobile.pth[0m
+[+] Procesando PDF: voxel_voids_nucleacion_Hemani_2014.pdf
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights:  89%|████████▉ | 689/770 [00:00<00:00, 6888.18it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 6947.62it/s]
+[+] Figuras encontradas: 15
+  [+] fig_001 → fig_001_no_caption.png
+  [+] fig_002 → fig_002_Figure_1_Void_Analysis_using_serial_alg.png
+  [+] fig_003 → fig_003_no_caption.png
+  [+] fig_004 → fig_004_no_caption.png
+  [+] fig_005 → fig_005_no_caption.png
+  [+] fig_006 → fig_006_no_caption.png
+  [+] fig_007 → fig_007_no_caption.png
+  [+] fig_008 → fig_008_no_caption.png
+  [+] fig_009 → fig_009_no_caption.png
+  [+] fig_010 → fig_010_no_caption.png
+  [+] fig_011 → fig_011_no_caption.png
+  [+] fig_012 → fig_012_no_caption.png
+  [+] fig_013 → fig_013_no_caption.png
+  [+] fig_014 → fig_014_no_caption.png
+  [+] fig_015 → fig_015_no_caption.png
+[+] Imágenes guardadas en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/voxel_voids_nucleacion_Hemani_2014_figures/images
+[+] JSON guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/voxel_voids_nucleacion_Hemani_2014_figures/figures.json
+[+] Markdown guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/voxel_voids_nucleacion_Hemani_2014_figures/figures.md
+[+] TXT guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/voxel_voids_nucleacion_Hemani_2014_figures/captions.txt
+[+] CSV guardado en: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/voxel_voids_nucleacion_Hemani_2014_figures/captions.csv
+
+✓ Extracción completada.
+Salida: /media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/voxel_voids_nucleacion_Hemani_2014_figures
+    OK
+
+=== Fin: Tue May 26 01:29:30 PM -03 2026 ===
+Total procesados: 23 | OK: 23 | FAIL: 0

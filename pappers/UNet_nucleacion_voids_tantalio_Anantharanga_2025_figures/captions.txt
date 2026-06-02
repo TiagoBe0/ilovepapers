@@ -1,0 +1,59 @@
+fig_001 (p. 1)
+[Sin caption]
+
+fig_002 (p. 4)
+Figure 1: A reversed erosion algorithm, together with EBSD and grain boundary information, is used to reconstruct pre-damaged microstructures. (top) Samples of EBSD data showing defects resulting from the presence of voids. (middle) Erosion algorithm fills the defects until (bottom) The defect is completely filled.
+
+fig_003 (p. 5)
+Figure 2: A visual compilation of three image sets: grain boundary energy (top row), void masks (middle row), and final ground truth images (bottom row). The final ground truth images are obtained by performing a pixel wise multiplication of grain boundary energy and void masks. The red boxes emphasize two cases: (i) when voids intersect grain boundaries, resulting in retained regions in the final mask, and (ii) when voids fall outside grain boundaries, leading to their exclusion from the final mask. This approach ensures that only voids that are on grain boundaries are preserved for further analysis.
+
+fig_004 (p. 6)
+Figure 3: A visual compilation of three image sets: micrograph (top row), grain boundary energy (middle row), and grain orientation (bottom row). The dataset to the ML model includes grain orientations and grain boundary energies.
+
+fig_005 (p. 7)
+Figure 4: The full U-Net architecture, comprised of an encoder-decoder structure with attention gates between corresponding layers. The encoder processes a 100×100×5 input and the decoder reconstructs a 100×100×1 predictions. Popouts illustrate the encoder, decoder, and attention gate architectures.
+
+fig_006 (p. 8)
+Figure 5: Representative selection of model results for training sets, indicating the robustness of the ML architecture for capturing void nucleation probability fields. Intensity values are clamped between 0.05 and 0.6 for better visualization.
+
+fig_007 (p. 9)
+[Sin caption]
+
+fig_008 (p. 9)
+[Sin caption]
+
+fig_009 (p. 10)
+[Sin caption]
+
+fig_010 (p. 12)
+[Sin caption]
+
+fig_011 (p. 12)
+[Sin caption]
+
+fig_012 (p. 12)
+Figure 8: PCC analysis of model performance across entire dataset
+
+fig_013 (p. 12)
+(a) Graphical illustration of ROI metric: the region of interest around a void is projected onto the predicted image.
+
+fig_014 (p. 18)
+[Sin caption]
+
+fig_015 (p. 18)
+(c) Micrograph segmented into red (bad voids), blue (good voids), and black (no void regions).
+
+fig_016 (p. 18)
+[Sin caption]
+
+fig_017 (p. 18)
+[Sin caption]
+
+fig_018 (p. 18)
+(f) Mask applied to the microstructure to highlight regions of voids
+
+fig_019 (p. 18)
+[Sin caption]
+
+fig_020 (p. 19)
+Figure 11: Pearson correlation coefficient based comparison between the ground truth and predicted void nucleation fields. The reference ground truth image is shown in the top row indicating the baseline against which all comparisons are made. The bottom row presents various predicted images, each annotated with its corresponding PCC value. The predicted field corresponding to the ground truth reference yields the highest correlation values as showm in green, while random predictors (such as constant fields of ones, zeros, or 0.5 values) exhibit significantly lower PCC values, underscoring their lack of structural correspondence. This shows that PCC is stringent as compared many other metrics which can give a false impression that the model predicts well even in cases where it does not do well.

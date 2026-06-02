@@ -1,0 +1,10 @@
+figure_id,page,label,caption,image_path
+fig_001,2,picture,Figure 1: Visualization of a scan captured from a Structure Sensor (left: RGB; right: point cloud).,images/fig_001_Figure_1_Visualization_of_a_scan_captur.png
+fig_002,3,picture,"Figure 2: Illustration of our hierarchical feature learning architecture and its application for set segmentation and classification using points in 2D Euclidean space as an example. Single scale point grouping is visualized here. For details on density adaptive grouping, see Fig. 3",images/fig_002_Figure_2_Illustration_of_our_hierarchic.png
+fig_003,4,picture,,images/fig_003_no_caption.png
+fig_004,6,picture,Figure 4: Left: Point cloud with random point dropout. Right: Curve showing advantage of our density adaptive strategy in dealing with non-uniform density. DP means random input dropout during training; otherwise training is on uniformly dense points. See Sec.3.3 for details.,images/fig_004_Figure_4_Left_Point_cloud_with_random_.png
+fig_005,6,picture,,images/fig_005_no_caption.png
+fig_006,7,picture,"Wall Floor Chair Desk Bed Door Table Figure 6: Scannet labeling results. [20] captures the overall layout of the room correctly but fails to discover the furniture. Our approach, in contrast, is much better at segmenting objects besides the room layout.",images/fig_006_Wall_Floor_Chair_Desk_Bed_Door_Table_Fig.png
+fig_007,7,picture,Figure 7: An example of nonrigid shape classification. (a) Horse (b) Cat (C) Horse,images/fig_007_Figure_7_An_example_of_nonrigid_shape_c.png
+fig_008,8,picture,"Figure 8: 3D point cloud patterns learned from the first layer kernels. The model is trained for ModelNet40 shape classification (20 out of the 128 kernels are randomly selected). Color indicates point depth (red is near, blue is far).",images/fig_008_Figure_8_3D_point_cloud_patterns_learne.png
+fig_009,12,picture,Figure 9: Virtual scan generated from ScanNet,images/fig_009_Figure_9_Virtual_scan_generated_from_Sc.png

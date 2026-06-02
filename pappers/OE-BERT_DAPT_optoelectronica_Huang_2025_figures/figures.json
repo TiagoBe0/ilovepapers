@@ -1,0 +1,253 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OE-BERT_DAPT_optoelectronica_Huang_2025.pdf",
+  "total_figures": 19,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 50.49696731567383,
+        "t": 770.6302757263184,
+        "r": 213.6024169921875,
+        "b": 741.0213394165039
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 515.1857299804688,
+        "t": 747.5342826843262,
+        "r": 555.2738647460938,
+        "b": 738.0803756713867
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 531.4489135742188,
+        "t": 735.3535766601562,
+        "r": 554.9950561523438,
+        "b": 721.9313735961914
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 495.3905029296875,
+        "t": 731.6373977661133,
+        "r": 529.13623046875,
+        "b": 723.0029830932617
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 312.0947570800781,
+        "t": 630.2402648925781,
+        "r": 393.3876953125,
+        "b": 605.8510894775391
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 52.8703498840332,
+        "t": 628.9196014404297,
+        "r": 72.35164642333984,
+        "b": 608.151123046875
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 349.0965270996094,
+        "t": 588.2404174804688,
+        "r": 556.2402954101562,
+        "b": 464.17059326171875
+      },
+      "image_path": "images/fig_007_no_caption.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 274.1817626953125,
+        "t": 588.1443939208984,
+        "r": 286.80364990234375,
+        "b": 576.8299560546875
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 512.4948120117188,
+        "t": 125.7908935546875,
+        "r": 555.135498046875,
+        "b": 64.81866455078125
+      },
+      "image_path": "images/fig_009_no_caption.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 50.431983947753906,
+        "t": 41.82305908203125,
+        "r": 166.71224975585938,
+        "b": 19.1064453125
+      },
+      "image_path": "images/fig_010_no_caption.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Figure 1. Applications of BERT-like models in academic research. Left. BERT-like models are built with the transformer architecture, which computes the attention between text tokens. The attention scores can be exploited to conduct dependency parsing and relation discovery. The models can also be fine-tuned to tackle specialized downstream tasks. Top. The question-answering (QA) capability of BERT-like models can be applied to tasks such as text-mining for material databases and topic modeling for research trend analysis. Right. The models can also be fine-tuned to perform text classification, which has wide application in literature review and bibliography management. Bottom. BERT-like models can be modified to produce contextual text embeddings that can be used in document retrieval based on the embedding similarities. The advancement in LLMs and RAG systems have also promoted the application of embedding models.",
+      "page": 2,
+      "bbox": {
+        "l": 517.9114379882812,
+        "t": 763.5547103881836,
+        "r": 554.9341430664062,
+        "b": 751.1383628845215
+      },
+      "image_path": "images/fig_011_Figure_1_Applications_of_BERT-like_mode.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 132.3842315673828,
+        "t": 738.409984588623,
+        "r": 473.57958984375,
+        "b": 500.4881591796875
+      },
+      "image_path": "images/fig_012_no_caption.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Figure 2. Training pipeline for the optoelectronics-adapted language models developed in this study. The starting BERT-like models, pretrained on general English text (ALBERT, BERT, and RoBERTa) were domain adaptive pretrained on optoelectronics research literature, yielding the OEadapted models. Each resulting OE model was then fine-tuned on three downstream tasks: abstract classification, question-answering, and textembedding, using task-specific training data sets. The resulting nine models represent the final utility models; such as the OE-RoBERTa model that serves for QA or the OE-ALBERT model that serves for abstract classification.",
+      "page": 2,
+      "bbox": {
+        "l": 49.9322624206543,
+        "t": 414.4932556152344,
+        "r": 556.2031860351562,
+        "b": 255.24371337890625
+      },
+      "image_path": "images/fig_013_Figure_2_Training_pipeline_for_the_opto.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Figure 3. Keyword frequency bar chart for normalized keywords found in 20k Science Direct publications about optoelectronics These 20 normalized keywords outlined three major mutually exclusive categories in terms of material functions: light-emitting, lightharvesting, and photocatalysis categories.",
+      "page": 4,
+      "bbox": {
+        "l": 50.40633010864258,
+        "t": 741.266357421875,
+        "r": 291.718505859375,
+        "b": 478.44232177734375
+      },
+      "image_path": "images/fig_014_Figure_3_Keyword_frequency_bar_chart_fo.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "",
+      "page": 5,
+      "bbox": {
+        "l": 518.2669677734375,
+        "t": 763.5827713012695,
+        "r": 555.331298828125,
+        "b": 751.1508522033691
+      },
+      "image_path": "images/fig_015_no_caption.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Figure 4. Pretraining loss and token prediction accuracy progress of BERT, ALBERT, and RoBERTa when further pretrained on optoelectronics literature in order to produce OE-BERT, OEALBERT and OE-RoBERTa, respectively. All three language models achieved a similar masked token prediction accuracy at the end of the DAPT process, while their progress of loss values are more separated with the OE-RoBERTa model affording the lowest loss value.",
+      "page": 5,
+      "bbox": {
+        "l": 313.770263671875,
+        "t": 605.1879577636719,
+        "r": 554.7757568359375,
+        "b": 465.4243469238281
+      },
+      "image_path": "images/fig_016_Figure_4_Pretraining_loss_and_token_pre.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "Figure 5. Confusion matrix of the classification results on titles concatenated with abstracts from top cited optoelectronics papers in 2023, using the OE-RoBERTa case-lowered classification model. Most confusions occur between the 'light-harvesting' class and the 'other topics' class.",
+      "page": 7,
+      "bbox": {
+        "l": 49.67095947265625,
+        "t": 742.8250961303711,
+        "r": 292.5441589355469,
+        "b": 537.9423522949219
+      },
+      "image_path": "images/fig_017_Figure_5_Confusion_matrix_of_the_classi.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "Figure 6. Performance evolution on the TADF-numerical QA data set of the OE-BERT and OE-RoBERTa models against the progress of their optoelectronics DAPT process as defined by the number of epochs of the DAPT process. a) The progressive evolution of the Exact Match metric. b) The progressive evolution of the F 1 metric. The metric scores of OE-BERT and OE-RoBERTa evolves highly parallel for both Exact Match and F 1 .",
+      "page": 8,
+      "bbox": {
+        "l": 138.56153869628906,
+        "t": 590.0950927734375,
+        "r": 468.50543212890625,
+        "b": 404.00384521484375
+      },
+      "image_path": "images/fig_018_Figure_6_Performance_evolution_on_the_T.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "Figure 7. Recall @k results plotted against k for 1 ≤ k ≤ 20 when testing on the test set of the OE-Ttl-Abs-303k data set using the gte-base-en-v1.5 model, the OE-RoBERTa embedding model (all layers fine-tuned), and the OE-RoBERTa embedding model (pooling layers fine-tuned). The OE-RoBERTa embedding model that had all its layers fine-tuned outperformed the state-of-theart embedding model that is of a similar size, gte-base-env1.5 , on this optoelectronics in-domain retrieval task.",
+      "page": 10,
+      "bbox": {
+        "l": 56.50360107421875,
+        "t": 742.1278686523438,
+        "r": 284.91351318359375,
+        "b": 592.3771057128906
+      },
+      "image_path": "images/fig_019_Figure_7_Recall_k_results_plotted_agai.png"
+    }
+  ]
+}

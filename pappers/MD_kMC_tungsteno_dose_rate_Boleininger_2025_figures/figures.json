@@ -1,0 +1,227 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025.pdf",
+  "total_figures": 17,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 409.1468811035156,
+        "t": 757.600004196167,
+        "r": 553.096435546875,
+        "b": 716.4657211303711
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 41.483516693115234,
+        "t": 643.3388824462891,
+        "r": 140.32421875,
+        "b": 624.2109985351562
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 248.17791748046875,
+        "t": 581.9738311767578,
+        "r": 260.11138916015625,
+        "b": 570.9388580322266
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Fig. 1 Basic concepts of the recovery of irradiated tungsten illustrated by a rapid annealing simulation. (a) The microstructure of a tungsten crystal, here irradiated to 0.32 dpa, stores potential energy. As the crystal is heated, the microstructure evolves and coarsens, releasing the excess energy, shown here on top of the thermal energy. (b) The rate of energy release (bottom) allows inference on the activation energy by which the recovery proceeds. The simulated heating rate is unrealistically high with 2.5 -10 11 K s \u0000 1 ; in experiment, recovery is expected to occur at lower temperature. Shown here is the mean recovery over five simulations, each starting with a different 0.32 dpa microstructure. Shaded areas indicate the standard error. (c) Microstructural view of tungsten during post-irradiation annealing. Pictured are dislocation lines (green: 1 2 h 111 i ) and void-type defects (blue). As monovacancies become mobile at around 1500 K at this heating rate, stage-III recovery commences: vacancies coalesce into vacancy-type dislocation loops and nanoscale voids, clearing up the microstructure. Shaded areas indicate the standard error over 5 independent annealing simulations.",
+      "page": 3,
+      "bbox": {
+        "l": 69.58300018310547,
+        "t": 730.487419128418,
+        "r": 522.8644409179688,
+        "b": 407.74853515625
+      },
+      "image_path": "images/fig_004_Fig_1_Basic_concepts_of_the_recovery_of.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 3,
+      "bbox": {
+        "l": 13.2153902053833,
+        "t": 354.9274597167969,
+        "r": 26.91173553466797,
+        "b": 288.8201904296875
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 4,
+      "bbox": {
+        "l": 51.430992126464844,
+        "t": 529.5395355224609,
+        "r": 282.5010986328125,
+        "b": 417.3087463378906
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Fig. 2 Vacancy-acceleration algorithm. (a) Left: From the microstructure, shown are voids and dislocation lines, we identify atoms adjacent to void regions. Right: An atom is classified as adjacent to a void if any point (red) in a radius of | 1 2 h 111 i | from the atom is further than 0.75 -| 1 2 h 111 i | from any other atom. (b) Atoms adjacent to voids are clustered by proximity. For each cluster, a connectivity graph is constructed. If the graph is isomorphic to the precomputed graphs of the monovacancy or the two unique divacancy configurations, then the corresponding defect is identified. (c) As only monovacancies and divacancies are accelerated here, larger void structures are effectively immobile. For each vacancy, the hopping rates n ~ d h to the positions of its first neighbours d -are computed, accounting for the virial atomic stress at its current and target positions. The outcome of the random vacancy migration event is evaluated with a rejection kinetic Monte Carlo algorithm. Vacancy migration is considered a stochastically independent and spatially local process.",
+      "page": 4,
+      "bbox": {
+        "l": 70.83812713623047,
+        "t": 398.2833251953125,
+        "r": 266.1898498535156,
+        "b": 332.3837585449219
+      },
+      "image_path": "images/fig_007_Fig_2_Vacancy-acceleration_algorithm_.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 4,
+      "bbox": {
+        "l": 51.6342658996582,
+        "t": 323.892578125,
+        "r": 262.2943115234375,
+        "b": 216.87176513671875
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 3 Simulated irradiation of tungsten as a function of dose, dose rate and temperature. Top row: the vacancy concentration is found to decrease with increasing temperature and decreasing dose rate. Note the broken x -axis scale. Bottom row: simulation snapshots of the highest simulated doses for the 10 \u0000 4 dpa s \u0000 1 dose rate, 0.30, 0.13 and 0.03 dpa, at a temperature of 650, 700, and 750 K, respectively. Pictured are dislocation lines (green: 1 2 h 111 i ), here all of interstitial type, and void-type defects (blue). Some void clustering is observed at 750 K.",
+      "page": 7,
+      "bbox": {
+        "l": 63.97258377075195,
+        "t": 731.2650260925293,
+        "r": 531.3851318359375,
+        "b": 412.4187316894531
+      },
+      "image_path": "images/fig_009_Fig_3_Simulated_irradiation_of_tungsten.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Fig. 4 Simulated irradiation of tungsten containing an initial h 100 i loop of 13 nm diameter as a function of dose and temperature. (a) The initial dislocation loop appears to act as a sink, absorbing interstitials preferentially, which suppresses Frenkel pair recombination and consequently leads to a higher vacancy concentration. (b) No void formation is observed in the 650 K and 700 K structures, while a void of diameter 1.3 nm forms in the 750 K structure. (c) Simulation snapshots of the initial microstructure and highest simulated doses at 0.30, 0.14 and 0.03 dpa, at a temperature of 650, 700, and 750 K, respectively. Pictured are dislocation lines (green: 1 2 h 111 i , purple: h 100 i ) and void-type defects (blue). We find that the h 100 i loop is transformed to a 1 2 h 111 i loop as interstitials are absorbed.",
+      "page": 8,
+      "bbox": {
+        "l": 59.745147705078125,
+        "t": 731.339469909668,
+        "r": 534.9698486328125,
+        "b": 405.25146484375
+      },
+      "image_path": "images/fig_010_Fig_4_Simulated_irradiation_of_tungsten.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 5 Comparing prediction to simulation of irradiation swelling in tungsten. A minimally simple and analytical model of vacancy recombination (line), see text, is consistent with the accelerated irradiation damage simulation (dots), especially under consideration that the model contains no adjustable parameters. The data points and error bars represent the mean and standard deviation of the vacancy or swelling values taken over the latest 20% of the simulation snapshots, with points labelled by the respective mean dose (dpa). Here, a Debye frequency for tungsten of n D = 8 -10 12 Hz was used. The thermal expansion strain was removed from the volumetric swelling strain shown here, see main text. The labels on each data point indicate the mean dose in dpa. While the doses appear low, the transient component of vacancy evolution appears already concluded, see Fig. 3.",
+      "page": 8,
+      "bbox": {
+        "l": 82.1000747680664,
+        "t": 324.0934143066406,
+        "r": 512.2745971679688,
+        "b": 124.93048095703125
+      },
+      "image_path": "images/fig_011_Fig_5_Comparing_prediction_to_simulatio.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "",
+      "page": 10,
+      "bbox": {
+        "l": 13.221077919006348,
+        "t": 354.71533203125,
+        "r": 26.907001495361328,
+        "b": 289.10858154296875
+      },
+      "image_path": "images/fig_012_no_caption.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 6 Comparison to experiment. (a) Deuterium retention of tungsten irradiated at elevated temperature. Experimental data is shown for 290 K and 800 K, in polycrystalline (Schwarz-Selinger et al. 61 ) and singlecrystalline tungsten (Markelj et al. 62,63 ). At 290 K, experiment and simulation are in agreement. At 800 K, simulation underestimates the retained amount. (b) Thermal conductivity of irradiated tungsten. Experimental data is shown for 300 K (Reza et al. , 66 Cui et al. 67 ) and for 1000 K (Cui et al. 67 ). As before, experiment and simulation are in broad agreement for 300 K. At higher irradiation temperature, simulations underestimate defect concentration, resulting in an overestimation of thermal conductivity. Asterisks indicate that the simulated temperature is higher than stated, but representative for room temperature irradiation, see main text for details.",
+      "page": 11,
+      "bbox": {
+        "l": 80.05860137939453,
+        "t": 730.0761642456055,
+        "r": 255.42816162109375,
+        "b": 392.48590087890625
+      },
+      "image_path": "images/fig_013_Fig_6_Comparison_to_experiment_a_Deu.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 7 Vacancy detection validation. Top: Microstructures with varying void volume fractions are analysed for monovacancies and divacancies as a function of temperature. Bottom: The fraction of detected over nominal vacancies, the detection efficiency, is found to be insensitive to thermal noise.",
+      "page": 13,
+      "bbox": {
+        "l": 57.49785232543945,
+        "t": 402.3216857910156,
+        "r": 274.9405822753906,
+        "b": 117.31219482421875
+      },
+      "image_path": "images/fig_014_Fig_7_Vacancy_detection_validation_Top.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "",
+      "page": 13,
+      "bbox": {
+        "l": 13.315877914428711,
+        "t": 354.78106689453125,
+        "r": 27.08036231994629,
+        "b": 288.63360595703125
+      },
+      "image_path": "images/fig_015_no_caption.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Fig. 8 Kinetic Monte Carlo validation. Shown are the diffusion tensors of a tungsten monovacancy, with and without external stress, obtained from standard molecular dynamics ( D MD ), from the vacancy acceleration method ( D kMC ), and from the analytical model ( D model ). The molecular dynamics and accelerated method results are consistent with the model predictions with ( S = 1.8 k B) and without ( S = 0) the entropic contribution to the migration barrier, respectively. Error bars indicating the standard error are too small to be visible on this axis.",
+      "page": 14,
+      "bbox": {
+        "l": 77.4570083618164,
+        "t": 526.0252990722656,
+        "r": 257.70904541015625,
+        "b": 341.64044189453125
+      },
+      "image_path": "images/fig_016_Fig_8_Kinetic_Monte_Carlo_validation_S.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "",
+      "page": 14,
+      "bbox": {
+        "l": 77.52864074707031,
+        "t": 330.8595275878906,
+        "r": 257.6028747558594,
+        "b": 147.04913330078125
+      },
+      "image_path": "images/fig_017_no_caption.png"
+    }
+  ]
+}

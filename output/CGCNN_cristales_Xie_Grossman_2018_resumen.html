@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — Crystal Graph Convolutional Neural Networks (CGCNN)</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Figura del paper'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>Crystal Graph Convolutional Neural Networks (CGCNN)</h1>
+    <p class="subtitle">Resumen en español de <strong>Crystal Graph Convolutional Neural Networks (CGCNN)</strong>.</p>
+    <div class="meta">
+        <div><strong>Autores</strong>** Tian Xie, Jeffrey C. Grossman (MIT)</div>
+        <div><strong>Revista</strong>** Phys. Rev. Lett. 120, 145301 (2018)</div>
+        <div><strong>DOI / arXiv</strong><a href="https://arxiv.org/abs/**" target="_blank">arXiv:**</a></div>
+        <div><strong>PDF local</strong><a href="../pappers/CGCNN_cristales_Xie_Grossman_2018.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p><strong>Autores:</strong> Tian Xie, Jeffrey C. Grossman (MIT)<br />
+<strong>Revista:</strong> Phys. Rev. Lett. 120, 145301 (2018)<br />
+<strong>arXiv:</strong> 1710.10324</p>
+<h2>Idea central</h2>
+<p>Primer framework <strong>universal e interpretable</strong> para predecir propiedades de cristales con DL. Representa el cristal como un <strong>grafo</strong> (átomos = nodos, enlaces = aristas) y aplica <strong>convoluciones de grafo</strong> para aprender directamente del entorno químico local — sin descriptores hand-crafted.</p>
+<h2>Cómo funciona</h2>
+<h3>1. Construcción del crystal graph</h3>
+<ul>
+<li><strong>Nodos</strong> = átomos en la celda unidad.</li>
+<li><strong>Aristas</strong> = vecinos dentro de un radio de corte (multigrafo: pueden existir múltiples aristas entre los mismos nodos por imágenes periódicas).</li>
+<li><strong>Feature de nodo:</strong> propiedades elementales del átomo (electronegatividad, radio, grupo, etc.) one-hot encoded.</li>
+<li><strong>Feature de arista:</strong> distancia interatómica codificada con Gaussian basis.</li>
+</ul>
+<h3>2. Capas de convolución</h3>
+<p>Para cada nodo i, en cada capa l:</p>
+<p>v_i^(l+1) = v_i^(l) + Σ_{j,k} σ(z_{i,j,k} W_f + b_f) ⊙ g(z_{i,j,k} W_s + b_s)</p>
+<p>donde z_{i,j,k} = concatenación de (v_i, v_j, u_{i,j,k}).</p>
+<p>R capas → cada átomo "ve" su entorno hasta R vecinos.</p>
+<h3>3. Pooling</h3>
+<p>Suma normalizada sobre nodos → vector global del cristal v_c.</p>
+<h3>4. Heads MLP</h3>
+<p>L1, L2 capas fully-connected → propiedad target (energía de formación, bandgap, módulo elástico, etc.).</p>
+<hr />
+<h2>Resultados</h2>
+<p>Predice 8 propiedades distintas de Materials Project con <strong>precisión cercana a DFT vs experimento</strong>:</p>
+<ul>
+<li>Energía de formación</li>
+<li>Bandgap</li>
+<li>Módulos elásticos (bulk, shear)</li>
+<li>Permitividad dieléctrica</li>
+<li>Coeficiente de Poisson</li>
+<li>Fermi level</li>
+<li>etc.</li>
+</ul>
+<p>Con sólo <strong>~10⁴ datapoints</strong> ya alcanza error comparable al de DFT.</p>
+<hr />
+<h2>Interpretabilidad</h2>
+<p>CGCNN puede extraer <strong>contribuciones de entornos locales</strong> a la propiedad global. Aplicado a <strong>perovskitas</strong>, los autores recuperan reglas empíricas conocidas de estabilidad y reducen el espacio de búsqueda en high-throughput screening.</p>
+<hr />
+<h2>Aportes clave</h2>
+<ol>
+<li><strong>Representación universal</strong> del cristal (cualquier estructura, cualquier composición).</li>
+<li><strong>Sin feature engineering manual</strong> — solo propiedades atómicas básicas.</li>
+<li><strong>Interpretable</strong> — descompone la predicción global en contribuciones locales.</li>
+<li>Establece la plantilla <strong>GNN para materiales</strong> que dominó la literatura siguiente.</li>
+</ol>
+<hr />
+<h2>Conexiones</h2>
+<ul>
+<li>Punto de partida obligatorio en toda revisión moderna de GNNs para materiales — [[Review_DL_materiales_Choudhary_2022]] lo menciona como pivote.</li>
+<li>Precede a SchNet, MEGNet, iCGCNN, ALIGNN, DimeNet…</li>
+<li>Filosofía opuesta a [[CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025]]: GNN vs CNN volumétrica.</li>
+<li>Tu pipeline con DGCNN sobre defectos comparte herramientas (PyG, grafo dinámico) pero CGCNN trabaja en grafo estático periódico.</li>
+</ul>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (9)</h2>
+    <div class="figure-list">
+        <figure>
+          <img src="../pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_001_FIG_1_Illustration_of_the_crystal_grap.png" alt="fig_001 — pagina 1" loading="lazy">
+          <figcaption>
+            <strong>FIG_001 · pagina 1</strong>
+            <p class="caption">FIG. 1. Illustration of the crystal graph convolutional neural network (CGCNN). (a) Construction of the crystal graph. Crystals are converted to graphs with nodes representing atoms in the unit cell and edges representing atom connections. Nodes and edges are characterized by vectors corresponding to the atoms and bonds in the crystal, respectively. (b) Structure of the convolutional neural network on top of the crystal graph. R convolutional layers and L 1 hidden layers are built on top of each node, resulting in a new graph with each node representing the local environment of each atom. After pooling, a vector representing the entire crystal is connected to L 2 hidden layers, followed by the output layer to provide the prediction.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 1. Illustration of the crystal graph convolutional neural network (CGCNN). (a) Construction of the crystal graph. Crystals are converted to graphs with nodes representing atoms in the unit cell and edges representing atom connections. Nodes and edges are characterized by vectors corresponding to the atoms and bonds in the crystal, respectively. (b) Structure of the convolutional neural network on top of the crystal graph. R convolutional layers and L 1 hidden layers are built on top of each node, resulting in a new graph with each node representing the local environment of each atom. After pooling, a vector representing the entire crystal is connected to L 2 hidden layers, followed by the output layer to provide the prediction.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_002_FIG_2_The_performance_of_CGCNN_on_the_.png" alt="fig_002 — pagina 2" loading="lazy">
+          <figcaption>
+            <strong>FIG_002 · pagina 2</strong>
+            <p class="caption">FIG. 2. The performance of CGCNN on the Materials Project database[11]. (a) Histogram representing the distribution of the number of elements in each crystal. (b) Mean absolute error (MAE) as a function of training crystals for predicting formation energy per atom using different convolution functions. The shaded area denotes the MAE of DFT calculation compared with experiments[18]. (c) 2D histogram representing the predicted formation per atom against DFT calculated value. (d) Receiver operating characteristic (ROC) curve visualizing the result of metal-semiconductor classification. It plots the proportion of correctly identified metals (true positive rate) against the proportion of wrongly identified semiconductors (false positive rate) under different thresholds.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 2. The performance of CGCNN on the Materials Project database[11]. (a) Histogram representing the distribution of the number of elements in each crystal. (b) Mean absolute error (MAE) as a function of training crystals for predicting formation energy per atom using different convolution functions. The shaded area denotes the MAE of DFT calculation compared with experiments[18]. (c) 2D histogram representing the predicted formation per atom against DFT calculated value. (d) Receiver operating characteristic (ROC) curve visualizing the result of metal-semiconductor classification. It plots the proportion of correctly identified metals (true positive rate) against the proportion of wrongly identified semiconductors (false positive rate) under different thresholds.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_003_FIG_3_Extraction_of_site_energy_of_per.png" alt="fig_003 — pagina 4" loading="lazy">
+          <figcaption>
+            <strong>FIG_003 · pagina 4</strong>
+            <p class="caption">FIG. 3. Extraction of site energy of perovskites from total energy above hull. (a) Structure of perovskites. (b) 2D histogram representing the predicted total formation against DFT calculated value. (c, d) Periodic table with the color of each element representing the mean of the site energy when the element occupies A site (c) or B site (d).</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. 3. Extraction of site energy of perovskites from total energy above hull. (a) Structure of perovskites. (b) 2D histogram representing the predicted total formation against DFT calculated value. (c, d) Periodic table with the color of each element representing the mean of the site energy when the element occupies A site (c) or B site (d).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_004_FIG_S1_The_crystal_structures_and_crys.png" alt="fig_004 — pagina 10" loading="lazy">
+          <figcaption>
+            <strong>FIG_004 · pagina 10</strong>
+            <p class="caption">FIG. S1. The crystal structures and crystal graphs of NaCl (a) and KCl (b).</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. S1. The crystal structures and crystal graphs of NaCl (a) and KCl (b).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_005_FIG_S2_Histogram_representing_the_dist.png" alt="fig_005 — pagina 10" loading="lazy">
+          <figcaption>
+            <strong>FIG_005 · pagina 10</strong>
+            <p class="caption">FIG. S2. Histogram representing the distribution of the number of atoms in the primitive cells.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. S2. Histogram representing the distribution of the number of atoms in the primitive cells.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_006_FIG_S3_The_effect_of_different_hyperpa.png" alt="fig_006 — pagina 11" loading="lazy">
+          <figcaption>
+            <strong>FIG_006 · pagina 11</strong>
+            <p class="caption">FIG. S3. The effect of different hyperparameters on the validation mean absolute errors (MAEs). The blue points denotes models using convolution function Eq. 4, and the red points denotes models using Eq. 5. (a) Number of atom features. The 2 features include group number and period number, the 3 features additionally include electronegativity, and the 9 features include all properties in Table II. (b) Number of convolutional layers. (c) Logarithm of the step size.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. S3. The effect of different hyperparameters on the validation mean absolute errors (MAEs). The blue points denotes models using convolution function Eq. 4, and the red points denotes models using Eq. 5. (a) Number of atom features. The 2 features include group number and period number, the 3 features additionally include electronegativity, and the 9 features include all properties in Table II. (b) Number of convolutional layers. (c) Logarithm of the step size.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_007_FIG_S4_2D_histogram_visualizing_the_pr.png" alt="fig_007 — pagina 12" loading="lazy">
+          <figcaption>
+            <strong>FIG_007 · pagina 12</strong>
+            <p class="caption">FIG. S4. 2D histogram visualizing the predictive performance of six properties. (a) Total energy per atom. (b) Band gap. (c) Fermi energy. (d) Bulk moduli. (e) Shear moduli. (e) Poisson ratio.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. S4. 2D histogram visualizing the predictive performance of six properties. (a) Total energy per atom. (b) Band gap. (c) Fermi energy. (d) Bulk moduli. (e) Shear moduli. (e) Poisson ratio.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_008_FIG_S5_The_MAE_of_predicted_bulk_modul.png" alt="fig_008 — pagina 13" loading="lazy">
+          <figcaption>
+            <strong>FIG_008 · pagina 13</strong>
+            <p class="caption">FIG. S5. The MAE of predicted bulk modulus with respect to DFT values against the number of training crystals. The dashed line shows the MAE of DFT calculations with respect to experimental results [S24], which is 0.050 Log(GPa).</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. S5. The MAE of predicted bulk modulus with respect to DFT values against the number of training crystals. The dashed line shows the MAE of DFT calculations with respect to experimental results [S24], which is 0.050 Log(GPa).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_009_FIG_S6_2D_histogram_visualizing_the_pe.png" alt="fig_009 — pagina 13" loading="lazy">
+          <figcaption>
+            <strong>FIG_009 · pagina 13</strong>
+            <p class="caption">FIG. S6. 2D histogram visualizing the performance of predicting formation energy of perovskites using a full pooling layer with Eq. 4 as the convolution function.</p>
+          </figcaption>
+          <div class="figbody"><p>FIG. S6. 2D histogram visualizing the performance of predicting formation energy of perovskites using a full pooling layer with Eq. 4 as the convolution function.</p></div>
+        </figure>
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

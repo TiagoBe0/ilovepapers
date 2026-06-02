@@ -4,11 +4,11 @@
 
 set -u
 
-PROJECT_DIR="/media/admin/ALMACEN_GRANDE_1/ilovepappers"
+PROJECT_DIR="/media/santi/ALMACEN_GRANDE_1/ilovepappers"
 PAPPERS="${PROJECT_DIR}/pappers"
 SCRIPT="${PROJECT_DIR}/figure_extractor.py"
 LOG="${PROJECT_DIR}/extraction.log"
-PY="/home/admin/miniconda3/bin/python"
+PY="/home/santi/miniconda3/bin/python"
 
 echo "=== Inicio: $(date) ===" | tee -a "$LOG"
 

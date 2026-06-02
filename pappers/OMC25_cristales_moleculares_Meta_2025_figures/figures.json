@@ -1,0 +1,110 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/OMC25_cristales_moleculares_Meta_2025.pdf",
+  "total_figures": 8,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "Figure 1 Overview of the OMC25 dataset: generation method, structure relaxations, statistics, and application areas.",
+      "page": 2,
+      "bbox": {
+        "l": 93.03361511230469,
+        "t": 682.2771453857422,
+        "r": 526.9771118164062,
+        "b": 431.3819885253906
+      },
+      "image_path": "images/fig_001_Figure_1_Overview_of_the_OMC25_dataset_.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 7,
+      "bbox": {
+        "l": 71.63310241699219,
+        "t": 722.108268737793,
+        "r": 537.4508056640625,
+        "b": 343.7303161621094
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Figure 3 Comparison of properties from the first and last frames of relaxation trajectories of molecular crystals in the OMC25 training split: (a) showing density of the last frames and the first frames for different Genarris steps; overlayed is the distribution of densities of organic entries in CSD 6.00, (b) showing relaxation energy (the difference of energy between the initial and final frames), maximum per-atom residual force, and maximum unit cell stress. Average values are presented with vertical dotted lines.",
+      "page": 8,
+      "bbox": {
+        "l": 70.77632141113281,
+        "t": 729.0638847351074,
+        "r": 519.3245849609375,
+        "b": 490.32318115234375
+      },
+      "image_path": "images/fig_003_Figure_3_Comparison_of_properties_from_t.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Table 3 MLIP evaluations: validation and test metrics, as well as X23b and Schrödinger polymorph ranking evaluations. The energy, force, and stress errors are presented as mean absolute errors (MAEs) for the validation and test metrics. For the X23b evaluation, the energy represents the lattice energy of the crystal, and the mean absolute percentage error (MAPE) is reported for the molar volume. For the Schrödinger polymorph ranking evaluation, the energies are normalized to the number of molecules in the unit cell. The bolded values show the best performing models, where the evaluation followed the community standards.",
+      "page": 9,
+      "bbox": {
+        "l": 76.92880249023438,
+        "t": 247.13623046875,
+        "r": 540.1597900390625,
+        "b": 100.849853515625
+      },
+      "image_path": "images/fig_004_Table_3_MLIP_evaluations_validation_and.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Listing S2 Example INCAR settings for the DFT relaxations with VASP.",
+      "page": 18,
+      "bbox": {
+        "l": 102.07701873779297,
+        "t": 722.6465835571289,
+        "r": 509.057373046875,
+        "b": 484.76788330078125
+      },
+      "image_path": "images/fig_005_Listing_S2_Example_INCAR_settings_for_th.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Figure S1 Convergence study for the DFT settings used in this work. We show the effect of each parameter on the energy of the structure compared to the most tightly converged settings set to 10 -9 eV energy tolerance and 9,000 k-point density per atom.",
+      "page": 18,
+      "bbox": {
+        "l": 106.8060302734375,
+        "t": 321.8236389160156,
+        "r": 504.117431640625,
+        "b": 116.9140625
+      },
+      "image_path": "images/fig_006_Figure_S1_Convergence_study_for_the_DFT_.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Table S1 Extended MLIP evaluation results for OMC25 and OMol25 [31] models: validation and test metrics, as well as X23b benchmark and Schrödinger polymorph ranking task. For UMA models [20], we used both the OMC and OMol tasks. The bolded values show the best performing models.",
+      "page": 19,
+      "bbox": {
+        "l": 75.48127746582031,
+        "t": 470.91424560546875,
+        "r": 539.9343872070312,
+        "b": 336.37860107421875
+      },
+      "image_path": "images/fig_007_Table_S1_Extended_MLIP_evaluation_result.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 20,
+      "bbox": {
+        "l": 70.941162109375,
+        "t": 717.0634460449219,
+        "r": 512.1122436523438,
+        "b": 176.33404541015625
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    }
+  ]
+}

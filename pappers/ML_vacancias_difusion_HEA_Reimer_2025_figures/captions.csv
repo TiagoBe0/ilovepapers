@@ -1,0 +1,30 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,1,picture,,images/fig_002_no_caption.png
+fig_003,1,picture,,images/fig_003_no_caption.png
+fig_004,1,picture,,images/fig_004_no_caption.png
+fig_005,1,picture,,images/fig_005_no_caption.png
+fig_006,1,picture,,images/fig_006_no_caption.png
+fig_007,1,picture,,images/fig_007_no_caption.png
+fig_008,1,picture,,images/fig_008_no_caption.png
+fig_009,1,picture,,images/fig_009_no_caption.png
+fig_010,1,picture,,images/fig_010_no_caption.png
+fig_011,1,picture,,images/fig_011_no_caption.png
+fig_012,2,picture,,images/fig_012_no_caption.png
+fig_013,2,picture,,images/fig_013_no_caption.png
+fig_014,2,picture,,images/fig_014_no_caption.png
+fig_015,2,picture,,images/fig_015_no_caption.png
+fig_016,2,picture,,images/fig_016_no_caption.png
+fig_017,2,picture,,images/fig_017_no_caption.png
+fig_018,2,picture,,images/fig_018_no_caption.png
+fig_019,3,picture,"FIG. 1. The workflow used in this work: (a) An MD HEA system produced trajectories from which two vacancy surroundings were extracted to compare the influence of various neighbouring atoms on vacancy transitions (Appendix A), (b) vacancy region datasets were converted to graph format, (c) the resulting dataset of states and chosen transition atoms was fed through a GCN to construct a trained model, and (d) model learned dynamics were used to generate accelerated synthetic trajectories of vacancy defect diffusion in the HEA system.",images/fig_019_FIG_1_The_workflow_used_in_this_work_.png
+fig_020,5,picture,"FIG. 3. Network structure used in this work: (a) A graph input, (b) a convolutional layer that collects information on the host and neighbor nodes [white and black/blue/red in (b) respectively], (c) the output graph features and ReLU activation, (d) flattened node features from graph, (e) a linear layer with ReLU activation, and (f) an output layer that returns a single float value prediction for the rate constant per input atom/node. The tricolored graph nodes are stand-ins for one-hot encoded atom features such as those shown in Fig. 9(b).",images/fig_020_FIG_3_Network_structure_used_in_this_w.png
+fig_021,5,picture,"FIG. 2. Configurations of FCC regions of interest for the 1-NNI (upper right) and 2-NNI (lower right). In the 1-NNI model, the environment consists of 12 nearest-neighbor atoms of the vacancy, while in the 2-NNI model, the environment includes 54 atoms, incorporating both the first and second graph neighbors of the vacancy. The 12 allowed transition target atoms are colored in white.",images/fig_021_FIG_2_Configurations_of_FCC_regions_of.png
+fig_022,6,picture,"FIG. 4. Log-likelihood loss plots for both EvoSys training setups. Training runs were plotted together as the unknown true dynamics of the MD system were the same in both setups, enabling direct comparison.",images/fig_022_FIG_4_Log-likelihood_loss_plots_for_bo.png
+fig_023,7,picture,"FIG. 5. Mean transition preferences per-atom as a function of their fraction of the vacancy 1-NNI composition for each dataset (i.e., how often element ' X ' jumped when it occupied ' Y ' /12 of the allowed target atoms). Showing data for (a) MD training, (b) EvoSys 1-NNI, and (c) EvoSys 2-NNI datasets. Values presented in terms of difference with the MD baseline dataset.",images/fig_023_FIG_5_Mean_transition_preferences_per-.png
+fig_024,8,picture,"FIG. 7. Number of transition events detected as a function of simulation realtime for the EvoSys 1-NNI and 2-NNI and MD (Baseline) setups. Faded EvoSys points indicate timing reported via from inside the Python script, in contrast to times reported from the bash script, which are presented in solid points.",images/fig_024_FIG_7_Number_of_transition_events_dete.png
+fig_025,8,picture,FIG. 6. Number of transition events detected as a function of simulated time for EvoSys 1-NNI and 2-NNI and MD Baseline setups. Each plot shows the results of 10 trajectories.,images/fig_025_FIG_6_Number_of_transition_events_dete.png
+fig_026,9,picture,"FIG. 8. ASD measured in 10 ps intervals for each dataset, averaged across 10 trajectories. Shaded regions indicate standard deviation. Values are tabulated in Table IV .",images/fig_026_FIG_8_ASD_measured_in_10_ps_intervals_.png
+fig_027,11,picture,"FIG. 9. NX graph representations of the vacancy defect 1-NNI environment: (a) A layout captured for an arbitrary vacancy state, showing node colors based on features (atom types) and node IDs from number tags assigned by OVITO; (b) an arbitrary vacancy graph layout for a binary alloy demonstrating the one-hot encoding scheme.",images/fig_027_FIG_9_NX_graph_representations_of_the_.png
+fig_028,11,picture,"FIG. 10. Histograms of vacancy migration energy barriers for each elemental species (Fe, Ni, Cr, Co, and Cu) in the equiatomic FeNiCrCoCu HEA. The distributions represent the frequency of vacancy jump events as a function of energy barrier. Each histogram is fitted with a Gaussian distribution function, and the corresponding mean energy barrier for each element is reported.",images/fig_028_FIG_10_Histograms_of_vacancy_migration.png
+fig_029,12,picture,Unique Compositions (Ordered by Cu),images/fig_029_Unique_Compositions_Ordered_by_Cu.png
