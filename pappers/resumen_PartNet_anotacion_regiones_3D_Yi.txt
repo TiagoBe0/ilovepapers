@@ -1,0 +1,59 @@
+# Resumen — A Scalable Active Framework for Region Annotation in 3D Shape Collections
+
+**Autores:** Li Yi, Vladimir G. Kim, Duygu Ceylan, I-Chao Shen, Mengyan Yan, Hao Su, Cewu Lu, Qixing Huang, Alla Sheffer, Leonidas Guibas
+**Conf./Rev.:** ACM SIGGRAPH Asia 2016 (TOG)
+**Afil.:** Stanford / Adobe Research / UBC / TTI Chicago / UT Austin
+
+---
+
+## ⚠️ Nota importante
+
+A pesar del nombre original del archivo (`pointnet.pdf`), **este NO es el paper PointNet**. Es el paper de **anotación activa de regiones en ShapeNet** que produce el dataset **ShapeNetPart** — usado luego por PointNet, PointNet++, DGCNN para evaluación de segmentación de partes.
+
+(PointNet original = [[PointNet_Qi_2017]] · ShapeNetPart dataset = este paper.)
+
+---
+
+## 🎯 Idea central
+
+Construir un dataset masivo (**ShapeNetPart**) con **etiquetado por punto** de partes semánticas (alas de avión, manijas de tazas, ruedas de coches…) sobre miles de modelos 3D, minimizando el esfuerzo humano vía **active learning**.
+
+Producen etiquetas para **31 963 modelos** en **16 categorías** = más de **93 000 partes etiquetadas**.
+
+---
+
+## ⚙️ Marco
+
+Bucle activo:
+
+1. **Anotación manual** de un subconjunto inicial.
+2. **Propagación automática** vía CRF (conditional random field) que aprovecha:
+   - Similitud global shape-to-shape
+   - Similitud local de features
+   - Correspondencias punto-a-punto
+3. **Verificación humana** de las propagaciones.
+4. **Aprendizaje** del feedback para mejorar el siguiente ciclo.
+
+Una **función de utilidad unificada** modela el costo humano de cada acción (anotar, verificar) y elige los próximos modelos a etiquetar/verificar para maximizar accuracy / costo.
+
+---
+
+## 🧪 Por qué importa para vos
+
+- Es la **fuente del benchmark ShapeNetPart** que aparece en TODOS los papers de DL sobre point clouds.
+- Si entrenás [[PointNet_Qi_2017]], [[PointNet++_Qi_2017]] o [[DGCNN_tesis_MIT_Wang_2020]] para segmentación, los splits y labels vienen de aquí.
+- Sirve como referencia metodológica para **active learning** si pensás etiquetar a mano configuraciones atómicas: la misma lógica (propagar, verificar, aprender) se traslada.
+
+---
+
+## 📊 Aportes
+
+1. Dataset orden de magnitud mayor que los previos (Chen et al. 2009 tenía cientos de modelos).
+2. Método de **active learning unificado** considerando costo humano explícito.
+3. Validación sobre benchmarks existentes mostrando mejor eficiencia que técnicas previas.
+
+---
+
+## 📎 Conexiones
+
+- Dataset usado por [[PointNet_Qi_2017]], [[PointNet++_Qi_2017]], [[DGCNN_tesis_MIT_Wang_2020]], [[TorchPoints3D_framework_Chaton_2020]] (re-implementa eval sobre él).

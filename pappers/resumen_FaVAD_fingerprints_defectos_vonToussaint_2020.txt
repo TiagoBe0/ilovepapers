@@ -1,0 +1,54 @@
+# Resumen — FaVAD: Software workflow for characterisation and visualizing of defects in crystalline structures
+
+**Autores:** U. von Toussaint, F. J. Domínguez-Gutiérrez, M. Compostella, M. Rampp (Max-Planck IPP & MPCDF)
+**arXiv:** 2004.08184 (Computer Physics Communications, 2020)
+
+---
+
+## 🎯 Idea central
+
+Workflow open-source (GPLv3) para **identificación y clasificación semi-automática de defectos** en simulaciones MD/DFT de materiales cristalinos. Reemplaza los métodos clásicos (Wigner-Seitz, Voronoi) por un enfoque basado en **descriptores SOAP/GAP** ("fingerprints") + análisis probabilístico.
+
+---
+
+## ⚙️ Cómo funciona
+
+1. **Descriptor por átomo:** se calcula un vector "fingerprint" rotacionalmente invariante usando **QUIP + Gaussian Approximation Potential (GAP)** sobre el entorno local.
+2. **Comparación con catálogo:** se compara el vector con descriptores precomputados de defectos conocidos (intersticiales, dumbbells, etc.) → clasificación rápida.
+3. **PCA** sobre el conjunto de fingerprints → identifica **nuevos tipos de defectos** no catalogados (outliers).
+4. **Vacancias:** detectadas geométricamente como **esferas vacías máximas** que se pueden inscribir, mediante un KDTree modificado.
+5. **Visualización:** vía VisIt.
+
+---
+
+## 🧪 Caso de prueba
+
+- Hierro (BCC) irradiado con PKA de **10 keV**.
+- Cascada de colisiones analizada con FaVAD.
+- Identifica intersticiales, vacancias y defectos extendidos con buen acuerdo con valores de la literatura.
+
+---
+
+## 🧩 Aportes vs Wigner-Seitz / Voronoi
+
+| Aspecto | W-S / Voronoi | FaVAD |
+|---|---|---|
+| Robustez a vibración térmica | Baja | Calibrable |
+| Defectos no estándar | Mal | Detecta vía PCA |
+| Probabilidad asignada | No | Sí |
+| Coste computacional | Bajo | Modesto |
+
+---
+
+## 📎 Conexiones
+
+- Es el predecesor metodológico de [[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]] (SOAP + autoencoder + UMAP + HDBSCAN) — misma filosofía SOAP, pero con clustering no supervisado moderno.
+- Alternativa más estadística a [[Steinhardt_bond_orientational_order_1983]] (que también compara entornos locales pero con armónicos esféricos sin ML).
+- Útil como pipeline a portar a tu setup LAMMPS → OVITO → fingerprint → ML.
+
+---
+
+## 📦 Disponibilidad
+
+- Código: incluye Dockerfile portable.
+- Stack: Python 3 + Fortran90 + C++ + QUIP + VisIt.

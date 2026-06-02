@@ -1,0 +1,80 @@
+# Resumen — Crystal Graph Convolutional Neural Networks (CGCNN)
+
+**Autores:** Tian Xie, Jeffrey C. Grossman (MIT)
+**Revista:** Phys. Rev. Lett. 120, 145301 (2018)
+**arXiv:** 1710.10324
+
+---
+
+## 🎯 Idea central
+
+Primer framework **universal e interpretable** para predecir propiedades de cristales con DL. Representa el cristal como un **grafo** (átomos = nodos, enlaces = aristas) y aplica **convoluciones de grafo** para aprender directamente del entorno químico local — sin descriptores hand-crafted.
+
+---
+
+## ⚙️ Cómo funciona
+
+### 1. Construcción del crystal graph
+
+- **Nodos** = átomos en la celda unidad.
+- **Aristas** = vecinos dentro de un radio de corte (multigrafo: pueden existir múltiples aristas entre los mismos nodos por imágenes periódicas).
+- **Feature de nodo:** propiedades elementales del átomo (electronegatividad, radio, grupo, etc.) one-hot encoded.
+- **Feature de arista:** distancia interatómica codificada con Gaussian basis.
+
+### 2. Capas de convolución
+
+Para cada nodo i, en cada capa l:
+
+v_i^(l+1) = v_i^(l) + Σ_{j,k} σ(z_{i,j,k} W_f + b_f) ⊙ g(z_{i,j,k} W_s + b_s)
+
+donde z_{i,j,k} = concatenación de (v_i, v_j, u_{i,j,k}).
+
+R capas → cada átomo "ve" su entorno hasta R vecinos.
+
+### 3. Pooling
+
+Suma normalizada sobre nodos → vector global del cristal v_c.
+
+### 4. Heads MLP
+
+L1, L2 capas fully-connected → propiedad target (energía de formación, bandgap, módulo elástico, etc.).
+
+---
+
+## 📊 Resultados
+
+Predice 8 propiedades distintas de Materials Project con **precisión cercana a DFT vs experimento**:
+
+- Energía de formación
+- Bandgap
+- Módulos elásticos (bulk, shear)
+- Permitividad dieléctrica
+- Coeficiente de Poisson
+- Fermi level
+- etc.
+
+Con sólo **~10⁴ datapoints** ya alcanza error comparable al de DFT.
+
+---
+
+## 🧠 Interpretabilidad
+
+CGCNN puede extraer **contribuciones de entornos locales** a la propiedad global. Aplicado a **perovskitas**, los autores recuperan reglas empíricas conocidas de estabilidad y reducen el espacio de búsqueda en high-throughput screening.
+
+---
+
+## 🧩 Aportes clave
+
+1. **Representación universal** del cristal (cualquier estructura, cualquier composición).
+2. **Sin feature engineering manual** — solo propiedades atómicas básicas.
+3. **Interpretable** — descompone la predicción global en contribuciones locales.
+4. Establece la plantilla **GNN para materiales** que dominó la literatura siguiente.
+
+---
+
+## 📎 Conexiones
+
+- Punto de partida obligatorio en toda revisión moderna de GNNs para materiales — [[Review_DL_materiales_Choudhary_2022]] lo menciona como pivote.
+- Precede a SchNet, MEGNet, iCGCNN, ALIGNN, DimeNet…
+- Filosofía opuesta a [[CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025]]: GNN vs CNN volumétrica.
+- Tu pipeline con DGCNN sobre defectos comparte herramientas (PyG, grafo dinámico) pero CGCNN trabaja en grafo estático periódico.

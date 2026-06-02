@@ -1,0 +1,58 @@
+# Resumen — Seamlessly joining length scales: From atomistic thermal graphs to anisotropic continuum conductivity
+
+**Autores:** C. Ugwumadu (LANL), D. A. Drabold (Ohio U.), R. M. Tutchton (LANL)
+**Revista:** Phys. Rev. Materials 10, 053804 (2026), Editor's Suggestion, DOI: 10.1103/pfdp-s7ql
+
+---
+
+## 🎯 Idea central
+
+Construir modelos de **elementos finitos (FE)** para transporte térmico directamente a partir de simulaciones atomísticas, **sin perder la anisotropía local ni la información de defectos**. Introducen el toolkit **SCACS** (Simulator Collection for Atomic-to-Continuum Scales).
+
+---
+
+## ⚙️ Pipeline SCACS
+
+### 1. Site-Projected Thermal Conductivity (SPTC)
+
+Descomposición de la conductividad **Green–Kubo** a nivel atómico: cada átomo (sitio) recibe un tensor de conductividad κ_i. Esto preserva la información local (defectos, interfaces, anisotropía).
+
+### 2. GNN predice SPTC en estructuras grandes
+
+- Entrenan una red neuronal de grafos para predecir el tensor κ_i por sitio.
+- Permite escalar a sistemas atómicos grandes sin recalcular Green–Kubo en cada uno.
+
+### 3. Coarse-graining → tensor anisotrópico
+
+Los κ_i atómicos se agrupan en celdas → tensor κ(x) anisotrópico para el FE.
+
+### 4. FE con malla adaptativa **anisotropy-aware**
+
+- Resuelven la ecuación de calor estacionaria: ∇·q + Q = 0 con q = −κ(x)·∇T.
+- Adaptive mesh refinement que respeta la anisotropía local del tensor.
+
+---
+
+## 🧪 Validación
+
+- Aplicado a **nanoestructuras de silicio**.
+- Reproduce conductividades bulk.
+- Captura **anisotropía driven by interfaces y defectos**.
+- Mantiene consistencia termodinámica.
+- Predice tendencias y campos de conductancia coincidentes con experimentos.
+
+---
+
+## 🧩 Por qué importa
+
+- Resuelve el problema clásico de "**el continuo no sabe del átomo**" → modelos FE típicos usan κ homogenizado y ciegan defectos.
+- Aplicable a sectores donde la conductividad importa: nuclear, fusión, semiconductores, aeroespacial.
+- Es un buen ejemplo del paradigma **GNN como surrogate de simulación cara** (Green–Kubo) → continuum scale.
+
+---
+
+## 📎 Conexiones
+
+- Filosóficamente cercano a [[CGCNN_cristales_Xie_Grossman_2018]] y [[CarNet_tensores_cartesianos_Chen_2025]]: GNN predice propiedad tensorial por sitio.
+- Si te interesa transporte en materiales irradiados o nanoporous (con defectos), este es el bridging metodológico.
+- Conexión con [[CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025]] — también escala atomístico → propiedades macroscópicas, pero ahí es elástico y por CNN, aquí es térmico y por GNN.

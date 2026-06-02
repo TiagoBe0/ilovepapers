@@ -1,0 +1,54 @@
+# Resumen — Prediction of vacancy defect diffusion paths in high entropy alloys via ML on MD data
+
+**Autores:** C. Reimer, P. Saidi, C. Casert, C. Beeler, C. G. Tetsassi Feugmo, A. Martinez, L. Béland, I. Tamblyn, S. Whitelam, E. Mansouri
+**Revista:** J. Appl. Phys. 138, 074306 (2025), DOI: 10.1063/5.0280842
+
+---
+
+## 🎯 Objetivo
+
+Identificar **caminos de difusión de vacancias** en aleaciones de alta entropía (HEA) usando modelos surrogate de ML entrenados con datos de **dinámica molecular**. El propósito final es **extender la escala temporal** mucho más allá del límite femtosegundo–picosegundo de MD.
+
+---
+
+## 🧪 Problema físico
+
+- En HEA (FeNiCrCoCu, FeNiCrCoMn, etc.) las vacancias se mueven en un paisaje energético **altamente heterogéneo**: cada salto vacancia ↔ átomo vecino tiene una barrera distinta porque los entornos químicos locales son únicos.
+- MD captura la cinética real pero solo hasta ~ns.
+- Para llegar a ms/s (relevantes para envejecimiento bajo irradiación) hace falta:
+  - kMC con catálogo de barreras
+  - o modelos surrogate aprendidos.
+
+---
+
+## ⚙️ Enfoque
+
+Entrenan modelos de ML que predicen, dado el entorno local de una vacancia, **el siguiente salto preferido**. Las trayectorias predichas son comparables con las MD ground truth pero mucho más baratas.
+
+Detalles típicos del workflow (extraídos del abstract):
+1. **MD masivo** en HEA → trayectorias de vacancia con saltos individuales etiquetados.
+2. Featurización del entorno local de cada vacancia (probablemente SOAP, ACE u otros descriptores).
+3. ML supervisado → probabilidad de salto a cada vecino.
+4. Iteración para reconstruir caminos largos.
+
+---
+
+## 🧩 Aportes
+
+- Escala el análisis cinético más allá de MD.
+- Captura la **heterogeneidad química local** que define la difusión en HEA (algo que rate theory homogénea no puede).
+- Workflow general aplicable a otros sistemas multicomponente.
+
+---
+
+## 📎 Conexiones
+
+- Combina ideas de [[DGP_multitarea_HEA_Alvi_2025]] (ML para propiedades en HEA) y [[MD_kMC_tungsteno_dose_rate_Boleininger_2025]] (aceleración temporal de defectos).
+- Filosóficamente cercano a [[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]] (ambos descriptores locales + ML), aunque allí es no supervisado.
+- Útil si querés extender tu workflow Cu-Ni a HEA de mayor complejidad.
+
+---
+
+## ⚠️ Nota
+
+El paper completo está en CHORUS (acceso público) — revisar la sección de métricas (R², F1 sobre la predicción del próximo salto) y el costo CPU vs MD para una comparación justa.

@@ -1,0 +1,175 @@
+{
+  "source_file": "/media/admin/ALMACEN_GRANDE_1/ilovepappers/pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025.pdf",
+  "total_figures": 13,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 515.0900268554688,
+        "t": 771.2886352539062,
+        "r": 561.1448974609375,
+        "b": 759.0798892974854
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 543.489990234375,
+        "t": 747.333080291748,
+        "r": 560.2490844726562,
+        "b": 721.4011001586914
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 480.6272277832031,
+        "t": 602.2606506347656,
+        "r": 493.16595458984375,
+        "b": 589.8091430664062
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Fig. 1 | Experimental setup with simultaneous small- and wide-angle scattering measurements. a Schematic of the femtosecond laser pump, X-ray FEL probe experiment. The samples are 100 nm thick Au fi lms deposited on Si 3 N4 membranes made from 4 in. silicon wafers. The wafer is mounted on translation stages for 2D rastering. The SAXS scattering pattern shown in the schematic is detected by one of the four ePix100s placed at small angles. A JungFrau-1M detector is used to capture",
+      "page": 3,
+      "bbox": {
+        "l": 88.99752044677734,
+        "t": 741.6465950012207,
+        "r": 304.232666015625,
+        "b": 567.1454772949219
+      },
+      "image_path": "images/fig_004_Fig_1__Experimental_setup_with_simulta.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "the WAXS from the sample. At negative delays ( δ t < 0 ps), it captures Au (111) and Au (200) polycrystalline Bragg peaks from the fi lm, as shown in the schematic. b A zoomed-in view of the cross-section of a membrane window. c The difference scattering pattern measured by all four ePix100 detectors. The small-angle images in a and c are measured at 250 ps after laser excitation at an incident laser fl uence of 6.3 J/cm 2 .",
+      "page": 3,
+      "bbox": {
+        "l": 316.69683837890625,
+        "t": 724.4862060546875,
+        "r": 510.568359375,
+        "b": 574.0789031982422
+      },
+      "image_path": "images/fig_005_the_WAXS_from_the_sample_At_negative_de.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Fig. 2 | Temporal evolution of the WAXS and SAXS patterns measured for a 100 nm fi lm irradiated at an incident laser fl uence of 6.3 J/cm 2 . First row: Timeresolved WAXS signal. Second and third rows: SAXS intensity measurement on the detector at the smallest angle. The pattern labeled as -5 ps shows the S ( Q ) pattern",
+      "page": 4,
+      "bbox": {
+        "l": 58.89441680908203,
+        "t": 742.502742767334,
+        "r": 539.5162963867188,
+        "b": 530.4649963378906
+      },
+      "image_path": "images/fig_006_Fig_2__Temporal_evolution_of_the_WAXS_.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "used as the reference in the evaluation of the difference patterns Δ S ( Q , δ t)) = S( Q , δ t) -S( Q , -5 ps) plotted in all other SAXS images. The arrow corresponds to a wavevector of 0.01 Å \u0000 1 .",
+      "page": 4,
+      "bbox": {
+        "l": 58.172603607177734,
+        "t": 451.7268371582031,
+        "r": 541.6045532226562,
+        "b": 291.83551025390625
+      },
+      "image_path": "images/fig_007_used_as_the_reference_in_the_evaluation_.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Fig. 4 | Examples of time resolved difference SAXS signal Δ S(Q, δ t). a -d Difference SAXS signals measured for 100 nm fi lms irradiated at incident laser fl uences of 2.5 J/cm 2 , 4.2 J/cm 2 , 6.3 J/cm 2 , and 7.7 J/cm 2 . f -i Difference SAXS signals measured for 250 nm fi lms irradiated at incident laser fl uences of 1.7 J/cm 2 , 2.9 J/ cm 2 , 4.2 J/cm 2 , and 7.0 J/cm 2 . The color bar shown in a is shared by all eight false",
+      "page": 5,
+      "bbox": {
+        "l": 57.698299407958984,
+        "t": 740.9269981384277,
+        "r": 540.6767578125,
+        "b": 254.621826171875
+      },
+      "image_path": "images/fig_008_Fig_4__Examples_of_time_resolved_diffe.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 5 | Laser fl uence dependence. Radial average of the difference SAXS in ( a ) and WAXS in ( b ) measured with different laser fl uences at a delay δ t = 250 ps for the 100 nm Au fi lm. The corresponding intensity changes in the low and high Q regions, and the Au (111) Bragg peak integrated intensity are displayed in ( c , d ). The magenta arrows in a highlight the sub-peaks in the SAXS pro fi le and in b indicate the shift of",
+      "page": 6,
+      "bbox": {
+        "l": 58.877925872802734,
+        "t": 743.8637924194336,
+        "r": 541.2212524414062,
+        "b": 445.69329833984375
+      },
+      "image_path": "images/fig_009_Fig_5__Laser_fl_uence_dependence_Radi.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Fig. 6 | Snapshots of atomic con fi gurations from simulations of laser ablation of Au fi lms. The simulations are performed for 100 nm fi lms deposited on a 100 nm thick Si 3 N4 membrane and irradiated by a 50 fs laser pulses. The absorbed laser fl uence is 0.1069 J/cm 2 in ( a ) and 0.2014 J/cm 2 in ( b ). The Au atoms are colored by potential energy in the range of -3.5 to -1 eV, so that the solid and molten Au is",
+      "page": 8,
+      "bbox": {
+        "l": 56.73762893676758,
+        "t": 745.9045257568359,
+        "r": 538.6470336914062,
+        "b": 243.81854248046875
+      },
+      "image_path": "images/fig_010_Fig_6__Snapshots_of_atomic_con_fi_gura.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "",
+      "page": 9,
+      "bbox": {
+        "l": 58.19505310058594,
+        "t": 744.6144561767578,
+        "r": 542.796875,
+        "b": 242.28912353515625
+      },
+      "image_path": "images/fig_011_no_caption.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "",
+      "page": 10,
+      "bbox": {
+        "l": 58.29887771606445,
+        "t": 742.2571754455566,
+        "r": 541.3104858398438,
+        "b": 494.1671142578125
+      },
+      "image_path": "images/fig_012_no_caption.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 9 | Depth-resolved dynamics of nanoscale phase decomposition as revealed by the simulations. The left panels a1 and b1 show the radially averaged difference SAXS intensity pro fi les predicted for 200 ps and 500 ps after the laser pulse in simulations performed for absorbed laser fl uences of 0.1069 J/cm 2 and 0.2014 J/cm 2 . Theshaded areas show the total intensity, while the dotted and dashed lines show the contributions to the scattering intensity from regions located above and below the corresponding liquid layers marked by the black arrows in Fig. 6. The contribution",
+      "page": 11,
+      "bbox": {
+        "l": 58.154144287109375,
+        "t": 742.9748306274414,
+        "r": 540.5435180664062,
+        "b": 377.5104675292969
+      },
+      "image_path": "images/fig_013_Fig_9__Depth-resolved_dynamics_of_nano.png"
+    }
+  ]
+}

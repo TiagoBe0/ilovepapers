@@ -1,0 +1,65 @@
+# Resumen — PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation
+
+**Autores:** Charles R. Qi, Hao Su, Kaichun Mo, Leonidas J. Guibas (Stanford, CVPR 2017)
+**arXiv:** 1612.00593
+
+---
+
+## 🎯 Idea central
+
+Primer trabajo que aplica deep learning **directamente sobre nubes de puntos** (sin voxelización ni proyecciones). Resuelve el problema de la **invariancia a permutaciones** usando una función simétrica simple: **max-pooling**.
+
+---
+
+## 🧠 Diseño
+
+Arquitectura sorprendentemente simple:
+
+```
+Input (N×3) → MLPs por punto independientes → max-pool global → MLP → output
+```
+
+1. Cada punto se procesa de forma idéntica e independiente (shared MLP).
+2. Se agregan todas las features con **max-pooling simétrico** → vector global invariante al orden.
+3. Para clasificación: MLP sobre el vector global.
+4. Para segmentación: se concatena la feature global con la local de cada punto.
+
+Añade un **T-Net** (mini-PointNet) que aprende una transformación afín de los puntos para canonicalizar la entrada.
+
+---
+
+## 📐 Análisis teórico
+
+- PointNet puede aproximar **cualquier función continua sobre conjuntos**.
+- La red aprende a resumir la nube con un conjunto escaso de **"keypoints"** ≈ esqueleto del objeto.
+- Robusto a perturbaciones, inserción de outliers y borrado de puntos (hasta ~50% de pérdida sin caída fuerte).
+
+---
+
+## 📊 Resultados
+
+- **ModelNet40** (clasificación): ~89% accuracy, comparable o mejor que volumétricos y mucho más rápido.
+- **ShapeNetPart** (segmentación de partes): SOTA.
+- **S3DIS / Stanford** (semántica de escenas): supera baselines.
+
+---
+
+## ⚠️ Limitación clave
+
+PointNet trata cada punto **independientemente** hasta el pooling global → **no captura estructura local**.
+Esto motiva el sucesor [[PointNet++]] que aplica PointNet jerárquicamente en regiones locales.
+
+---
+
+## 🧩 Aportes
+
+1. Primera red DL nativa sobre point sets.
+2. Demuestra que max-pooling simétrico es suficiente para invariancia a permutación.
+3. Define el patrón **encoder → global feature → task heads** reutilizado por casi toda la literatura posterior de point clouds.
+
+---
+
+## 📎 Conexiones
+
+- Base de [[PointNet++]], [[DGCNN]], [[VoxelNet]] (usa PointNet dentro de cada voxel).
+- Punto de partida casi obligatorio en cualquier review de DL sobre point clouds (ver [[Review_DL_materiales_Choudhary_2022]]).

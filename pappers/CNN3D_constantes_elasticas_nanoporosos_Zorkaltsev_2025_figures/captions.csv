@@ -1,0 +1,10 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,2,picture,,images/fig_002_no_caption.png
+fig_003,8,picture,Fig. 1 : Typical NPG structures with solid volume fraction of 0.25 (left) and 0.35 (right). (Color: Yellow - surface atoms and Green - FCC atoms).,images/fig_003_Fig_1__Typical_NPG_structures_with_sol.png
+fig_004,13,picture,"Fig. 2 : Nanoporous structure represented by a 3D binary array: (a) All values, (b) Solid part.",images/fig_004_Fig_2__Nanoporous_structure_represente.png
+fig_005,14,picture,Fig. 3 : Distributions of MD-computed elastic constants C ii in the datasets. Each nanoporous structure is represented by three elastic constant values.,images/fig_005_Fig_3__Distributions_of_MD-computed_el.png
+fig_006,14,picture,Fig. 4 : Distributions of as-built solid fraction in the datasets. Each nanoporous structure is represented by one solid fraction value.,images/fig_006_Fig_4__Distributions_of_as-built_solid.png
+fig_007,18,picture,,images/fig_007_no_caption.png
+fig_008,20,picture,Fig. 6 : R 2 test score as a function of fine-tuning structures number.,images/fig_008_Fig_6__R_2_test_score_as_a_function_of.png
+fig_009,22,picture,"Fig. 7 : CNN-predicted elastic modulus values of 100.000 NPG structures plotted against solid fraction, with MD-computed values from Dataset 1 as a reference.",images/fig_009_Fig_7__CNN-predicted_elastic_modulus_v.png

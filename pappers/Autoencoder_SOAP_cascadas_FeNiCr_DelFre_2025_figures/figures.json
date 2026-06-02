@@ -1,0 +1,110 @@
+{
+  "source_file": "/media/admin/ALMACEN_GRANDE_1/ilovepappers/pappers/Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025.pdf",
+  "total_figures": 8,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 74.64485168457031,
+        "t": 509.23370361328125,
+        "r": 511.7214660644531,
+        "b": 370.1730651855469
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 1: Schematic representation of the two branches workflow (A and B) for ML-assisted defect mapping described in section 2.2. SOAP descriptors are computed (A.1) for a defect-free MD reference structure (fcc or hcp depending the materials) to train an autoencoder neural network (A.2). For each cascade snapshot, SOAP descriptors are computed using the same parameters than the reference structure (B.1). Each SOAP vector then passed through the trained AE (B.2) for which a reconstruction error (MSE) threshold is selected (B.3) to classify atoms as inliers (MSE < threshold) or outliers forming defect neighbourhoods (MSE > threshold) based on the per-atom reconstruction error (B.4). Outlier atoms are then embedded with UMAP (B.5) and grouped with HDBSCAN (B.6) to yield unsupervised defect-type groups.",
+      "page": 4,
+      "bbox": {
+        "l": 90.67479705810547,
+        "t": 773.3916244506836,
+        "r": 514.172607421875,
+        "b": 683.3509216308594
+      },
+      "image_path": "images/fig_002_Figure_1_Schematic_representation_of_th.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Figure 2: Log-log histogram of per-atom reconstruction errors for the Ni dataset, obtained from the autoencoder-based analysis across multiple cascade simulations. The histogram is computed using logarithmically spaced bins, and the vertical axis is also plotted on a logarithmic scale to highlight variations across several orders of magnitude. The dashed vertical line indicates the selected threshold (5.0 in this case), which lies near an inflection in the distribution, separating low-error atoms from a high-error tail linked to defective environments.",
+      "page": 5,
+      "bbox": {
+        "l": 185.32107543945312,
+        "t": 769.9908905029297,
+        "r": 409.0014953613281,
+        "b": 605.3954010009766
+      },
+      "image_path": "images/fig_003_Figure_2_Log-log_histogram_of_per-atom_.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figure 3: Example of outlier detection in FeNiCr (left), Ni (middle) and Zr (right) displacement cascades (step B.4, see Figure 1). Atoms whose auto-encoder reconstruction error is below 5.0 (fcc systems) or 2.0 (hcp system) are omitted from the view; only atoms flagged as outliers are shown in solid colors.",
+      "page": 6,
+      "bbox": {
+        "l": 81.598388671875,
+        "t": 768.0941467285156,
+        "r": 520.8857421875,
+        "b": 514.572998046875
+      },
+      "image_path": "images/fig_004_Figure_3_Example_of_outlier_detection_i.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Figure 4: (a) Two-dimensional UMAP projection of latent-space SOAP descriptors for outliers in FeNiCr, Ni and Zr systems, colored by HDBSCAN group labels. For FeNiCr and Ni, points labeled as -1 (black) represent samples that HDBSCAN did not assign to any group. Note that the HDBSCAN labels are assigned independently for each material, meaning that the same label in different systems does not necessarily correspond to the same type of defect pattern (b) Examples of representative atomic configurations associated with selected HDBSCAN groups from (a) (label -1 excluded), shown using the same color scheme. The relative size of each group, as a percentage of the outlier dataset, is also indicated. Transparent atoms represent outlier atoms associated to other HDBSCAN labels.",
+      "page": 7,
+      "bbox": {
+        "l": 71.68611145019531,
+        "t": 673.4152526855469,
+        "r": 522.4822998046875,
+        "b": 272.79510498046875
+      },
+      "image_path": "images/fig_005_Figure_4_a_Two-dimensional_UMAP_proje.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Figure 5: Cluster-identification (CID, see section 3.2.1 for description) diagnostics for the HDBSCAN groups for one typical cascade for FeNiCr, Ni and Zr. For each material, the histogram displays the distribution of the variable CID = sign( n Def ) × DefID , where sign( n Def ) > 0 (triangles) denotes interstitialdominated clusters and sign( n Def ) < 0 (circles) denotes vacancy-dominated clusters. The vertical dotted line marks CID = 0 . The magnitude | CID | is inversely proportional to aggregate size: small | CID | corresponds to large clusters, large | CID | to small clusters and marker size is inversely proportional to | CID | . Hence, points far to the right represent small interstitial defects, whereas points far to the left correspond to small vacancy defects; values near the origin indicate the largest aggregates of either type. Bars are coloured according to the HDBSCAN labels defined in Fig. 4(a).",
+      "page": 9,
+      "bbox": {
+        "l": 71.5301742553711,
+        "t": 770.2681274414062,
+        "r": 522.7164916992188,
+        "b": 614.6006622314453
+      },
+      "image_path": "images/fig_006_Figure_5_Cluster-identification_CID_s.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Figure 6: Correlation between the number of outlier atoms per cluster ( n ML , as identified by the machine learning approach) and the number of defects ( n Def ) within each cluster for the three materials, with n Def defined as the signed sum of defects (interstitial counted as +1 and vacancy as -1 ). Second-order polynomial fits are used to calibrate the relationship, enabling estimation of either the number of atoms or the number of defects in a cluster. Fits are performed separately for interstitial-rich ( n Def > 0 , dashed lines) and vacancy-rich ( n Def < 0 , solid lines) clusters. Shaded regions indicate ± 2 σ confidence intervals. Fitted equations and corresponding R 2 values are shown in the legend, where a quantifies the quadratic contribution, b the linear contribution, and c the constant offset.",
+      "page": 10,
+      "bbox": {
+        "l": 72.63373565673828,
+        "t": 769.7250900268555,
+        "r": 522.8175659179688,
+        "b": 614.8235473632812
+      },
+      "image_path": "images/fig_007_Figure_6_Correlation_between_the_number.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Table 4: Recall of six conventional detectors for every ML-defined HDBSCAN label (noise group (label -1) omitted). Each value is the fraction of ML-flagged atoms in the group that the detector also classifies as outliers.",
+      "page": 14,
+      "bbox": {
+        "l": 167.49351501464844,
+        "t": 726.6221771240234,
+        "r": 425.9117431640625,
+        "b": 376.01702880859375
+      },
+      "image_path": "images/fig_008_Table_4_Recall_of_six_conventional_dete.png"
+    }
+  ]
+}

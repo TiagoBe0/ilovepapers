@@ -1,0 +1,62 @@
+{
+  "source_file": "/home/santi/Documents/ilovepappers/pappers/Linton.pdf",
+  "total_figures": 8,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "Picture",
+      "caption": "Figura 1 | Factores que influyen en las energias de formacion de vacancias. a, c, e Volumen atomico vs. E_v^f y b, d, f carga de Bader vs. E_v^f en aleaciones Ni-Cu, Ag-Au y Cu-Au. En Ni-Cu y Cu-Au (a, e) E_v^f aumenta con el volumen atomico; en Ag-Au (c) no hay correlacion por volumenes similares. Las diferencias de electronegatividad correlacionan E_v^f con la carga de Bader en Ag-Au y Cu-Au (d, f), pero no en Ni-Cu (b).",
+      "page": 3,
+      "image_path": "images/fig_001_Factores_que_influyen_en_Evf.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "Picture",
+      "caption": "Figura 2 | Marco del modelo. El marco convencional relaja el supercell con DFT y calcula E_v^f por vacancia (costoso en HEAs). El marco propuesto: CHGNet ajustado (Modelo 1) relaja estructuras, CGCNN predice cargas de Bader (Modelo 2) y E_v^f (Modelo 3) con mini-grafos, evitando la DFT.",
+      "page": 4,
+      "image_path": "images/fig_002_Marco_del_modelo.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "Picture",
+      "caption": "Figura 3 | Distorsion de red con CHGNet. a MAD (izq) y delta (der) para las 41 aleaciones; cuadrados CHGNet v0.3.0, triangulos CHGNet ajustado, circulos DFT. b MAD con desviacion estandar para las 5 cuaternarias. c MAD DFT vs CHGNet: el modelo ajustado mejora frente a v0.3.0 en las 41 aleaciones.",
+      "page": 5,
+      "image_path": "images/fig_003_Distorsion_de_red_CHGNet.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "Picture",
+      "caption": "Figura 4 | Predicciones de carga de Bader. a Cargas de Bader en binarias, ternarias y cuaternarias entrenando con 70% de binarias (triangulos: entrenamiento; circulos: prueba). b Cargas de Bader para estructuras relajadas con DFT (x) vs CHGNet ajustado (y): predicciones esencialmente identicas.",
+      "page": 6,
+      "image_path": "images/fig_004_Predicciones_carga_de_Bader.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "Picture",
+      "caption": "Figura 5 | Predicciones de E_v^f. a E_v^f en todas las aleaciones entrenando con 80% de binarias y ternarias (triangulos: entrenamiento; circulos: prueba). b E_v^f usando cargas de Bader predichas por CGCNN como entrada en lugar de las de DFT.",
+      "page": 6,
+      "image_path": "images/fig_005_Predicciones_Evf.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "Picture",
+      "caption": "Figura 6 | Evitando la DFT para predecir E_v^f. a E_v^f desde CHGNet ajustado prediciendo primero las cargas de Bader y usandolas como entrada al modelo de E_v^f de la Fig. 5. b Diagramas de caja de E_v^f para las 5 aleaciones Ni-Cu-Au-Pd: DFT vs CHGNet + CGCNN BC + E_v^f.",
+      "page": 6,
+      "image_path": "images/fig_006_Evitando_la_DFT_para_Evf.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "Picture",
+      "caption": "Figura 7 | Extension a supercells mayores. E_v^f promedio y desviacion para NiCuAuPd equiatomico: DFT en 3x3x3 (108 atomos) y predicciones en 4x4x4 (256), 5x5x5 (500), 8x8x8 (2048) y 10x10x10 (4000 atomos) con CHGNet ajustado, carga de Bader CGCNN y modelo de E_v^f CGCNN.",
+      "page": 7,
+      "image_path": "images/fig_007_Extension_a_supercells_mayores.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "Picture",
+      "caption": "Figura 8 | Ajuste fino y validacion en Ni-Co-Cr no vistas. Circulos morados: Ni-Cu-Au-Pd; cuadrados dorados: Ni0.50Co0.50, Ni0.75Cr0.25, Ni0.33Co0.33Cr0.33; triangulos azules: quasirandom y SRO (MPContribs). a/b Carga de Bader modelo base/ajustado. c/d E_v^f modelo base/ajustado: tras reentrenar con Ni-Co-Cr las predicciones (d) son precisas.",
+      "page": 8,
+      "image_path": "images/fig_008_Ajuste_y_validacion_NiCoCr.png"
+    }
+  ]
+}

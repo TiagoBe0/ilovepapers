@@ -1,0 +1,23 @@
+fig_001 (p. 1)
+[Sin caption]
+
+fig_002 (p. 4)
+Figure 1. Comparative analysis of elastic constants calculation and prediction Using MD and tANNs for Varying Vacancy Percentages. The figure showcases the remarkable performance of our framework across different vacancy percentages, highlighting its accuracy even beyond the training data range.
+
+fig_003 (p. 5)
+Figure 2. Comparative analysis of elastic constants calculation and prediction Using MD and tANNs for varying number of voids. The figure showcases the remarkable performance of our framework across different types of defects.
+
+fig_004 (p. 6)
+Figure 3. Effect of processor count on computation time for a defect-free perfect structure. The graph depicts how computation time decreases with an increasing number of processors, yet it plateaus at a lower limit of 7 s, indicating a minimum achievable computation time.
+
+fig_005 (p. 9)
+Figure 4. Visualization of Atomistic Structures in a 3D Array: Atoms represented by '1' and vacancies by '0' within a 3D grid.
+
+fig_006 (p. 10)
+Figure 5. Visualization of Atomistic Structures in a 2D Array (z = 0): Atoms represented by '1' and vacancies by '0' within a 3D grid.
+
+fig_007 (p. 11)
+Figure 6. The neural network structure employed in this research.
+
+fig_008 (p. 14)
+[Sin caption]

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumen · Linton et al. 2026 — Evitar DFT con GNN para vacancias en HEAs FCC</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#181b22; --ink:#e7e9ee; --muted:#9aa3b2;
+    --accent:#4d9fff; --accent2:#16a085; --line:#2a2f3a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  header{
+    padding:48px 24px 32px; max-width:980px; margin:0 auto;
+    border-bottom:1px solid var(--line);
+  }
+  .badge{
+    display:inline-block; font-size:.78rem; letter-spacing:.04em;
+    text-transform:uppercase; color:var(--accent2); font-weight:700;
+    border:1px solid var(--accent2); border-radius:999px; padding:3px 12px; margin-bottom:18px;
+  }
+  h1{font-size:1.7rem; line-height:1.3; margin:.2em 0 .4em}
+  .authors{color:var(--ink); font-weight:600}
+  .meta{color:var(--muted); font-size:.92rem; margin-top:6px}
+  .meta a{color:var(--accent); text-decoration:none}
+  main{max-width:980px; margin:0 auto; padding:8px 24px 64px}
+  .abstract{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:22px 26px; margin:32px 0;
+  }
+  .abstract h2{margin-top:0; font-size:1.05rem; color:var(--accent)}
+  .keypts{list-style:none; padding:0; margin:14px 0 0}
+  .keypts li{padding:6px 0 6px 26px; position:relative}
+  .keypts li::before{content:"▸"; color:var(--accent2); position:absolute; left:4px}
+  figure{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    margin:30px 0; padding:18px 18px 8px; overflow:hidden;
+  }
+  figure img{
+    width:100%; height:auto; display:block; border-radius:8px;
+    background:#fff; padding:10px;
+  }
+  figcaption{padding:14px 6px 10px}
+  .figtag{
+    color:var(--accent2); font-weight:700; font-size:.85rem;
+    text-transform:uppercase; letter-spacing:.03em;
+  }
+  .figtitle{font-weight:700; display:block; margin:2px 0 6px; font-size:1.02rem}
+  .figcap{color:var(--muted); font-size:.94rem; margin:0}
+  .page{float:right; color:var(--muted); font-size:.8rem; border:1px solid var(--line);
+        border-radius:6px; padding:1px 8px}
+  footer{max-width:980px; margin:0 auto; padding:24px; color:var(--muted);
+         font-size:.85rem; border-top:1px solid var(--line)}
+  sub,sup{font-size:.72em}
+</style>
+</head>
+<body>
+<header>
+  <span class="badge">npj Computational Materials · 2026</span>
+  <h1>Marco para evitar por completo los costosos cálculos DFT mediante redes neuronales de grafos para predecir energías de formación de vacancias en aleaciones de alta entropía FCC</h1>
+  <div class="authors">Nathan Linton, Parampreet Singh &amp; Dilpuneet S. Aidhy</div>
+  <div class="meta">
+    Department of Materials Science and Engineering, Clemson University, SC, USA ·
+    npj Computational Materials (2026) 12:175 ·
+    <a href="https://doi.org/10.1038/s41524-026-02037-6">doi:10.1038/s41524-026-02037-6</a>
+  </div>
+</header>
+
+<main>
+  <section class="abstract">
+    <h2>Resumen</h2>
+    <p>La complejidad composicional y la aleatoriedad química de las aleaciones de alta entropía (HEAs)
+    hacen que los cálculos atomísticos convencionales como la teoría del funcional de la densidad (DFT)
+    sean prohibitivamente costosos para predecir propiedades. Una propiedad clave es la
+    <strong>energía de formación de vacancias</strong> (<em>E<sub>v</sub><sup>f</sup></em>), crucial para
+    la difusión y la evolución microestructural. Este trabajo presenta un marco de aprendizaje automático
+    que <strong>elimina la necesidad de DFT</strong> para predecir <em>E<sub>v</sub><sup>f</sup></em> en HEAs,
+    usando modelos entrenados con aleaciones binarias y ternarias.</p>
+    <ul class="keypts">
+      <li>Se relajan estructuras FCC con un modelo <strong>CHGNet ajustado (fine-tuned)</strong> para capturar la distorsión de red.</li>
+      <li>Una <strong>red neuronal de grafos cristalinos (CGCNN)</strong> modificada predice tanto las cargas de Bader como <em>E<sub>v</sub><sup>f</sup></em>.</li>
+      <li>Incorporar las <strong>cargas de Bader</strong> como descriptores aporta información electrónica de tipo DFT y mejora notablemente la precisión.</li>
+      <li>El modelo <strong>generaliza</strong> a otros sistemas (p. ej. Ni-Co-Cr) con mínimo ajuste fino, habilitando predicción de defectos de alto rendimiento.</li>
+    </ul>
+  </section>
+
+  <h2 style="margin-top:40px">Figuras</h2>
+
+  <figure>
+    <span class="page">pág. 3</span>
+    <img src="images/fig_001_Factores_que_influyen_en_Evf.png" alt="Figura 1">
+    <figcaption>
+      <span class="figtag">Figura 1</span>
+      <span class="figtitle">Factores que influyen en las energías de formación de vacancias</span>
+      <p class="figcap"><strong>a, c, e</strong> Volumen atómico frente a <em>E<sub>v</sub><sup>f</sup></em> y
+      <strong>b, d, f</strong> carga de Bader frente a <em>E<sub>v</sub><sup>f</sup></em> en aleaciones Ni-Cu, Ag-Au y Cu-Au.
+      En Ni-Cu y Cu-Au (a y e), <em>E<sub>v</sub><sup>f</sup></em> aumenta con el volumen atómico por las grandes
+      diferencias de volumen entre los dos elementos; en Ag-Au (c) no hay correlación porque sus volúmenes son
+      similares. Análogamente, las diferencias de electronegatividad afectan a <em>E<sub>v</sub><sup>f</sup></em>:
+      en Ag-Au y Cu-Au (d y f) se correlaciona con la carga de Bader, mientras que en Ni-Cu (b), al tener
+      electronegatividades parecidas, no hay correlación.</p>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <span class="page">pág. 4</span>
+    <img src="images/fig_002_Marco_del_modelo.png" alt="Figura 2">
+    <figcaption>
+      <span class="figtag">Figura 2</span>
+      <span class="figtitle">Marco del modelo</span>
+      <p class="figcap">El marco convencional para obtener <em>E<sub>v</sub><sup>f</sup></em> requiere relajar el supercell
+      con DFT y luego calcular la energía de cada vacancia, lo cual es computacionalmente costoso en HEAs.
+      El marco propuesto sustituye la DFT por aprendizaje automático: las estructuras se relajan con
+      <strong>CHGNet ajustado (Modelo 1)</strong> para lograr distorsiones de red a nivel DFT; después se predicen
+      las <strong>cargas de Bader (Modelo 2)</strong> y finalmente las <em>E<sub>v</sub><sup>f</sup></em>
+      <strong>(Modelo 3)</strong> usando «mini» grafos. Así se evita la DFT con un coste mínimo.</p>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <span class="page">pág. 5</span>
+    <img src="images/fig_003_Distorsion_de_red_CHGNet.png" alt="Figura 3">
+    <figcaption>
+      <span class="figtag">Figura 3</span>
+      <span class="figtitle">Distorsión de red con CHGNet</span>
+      <p class="figcap"><strong>a</strong> Desplazamiento atómico medio (MAD, eje izquierdo) y δ (eje derecho)
+      para las 41 aleaciones binarias, ternarias y cuaternarias del estudio. El MAD se muestra con cuadrados
+      (CHGNet v0.3.0), triángulos (CHGNet ajustado) y círculos (DFT); DFT y el modelo ajustado concuerdan muy bien.
+      <strong>b</strong> MAD con barras de desviación estándar para las cinco aleaciones cuaternarias: el CHGNet
+      ajustado mejora claramente el MAD y las desviaciones. <strong>c</strong> Comparación del MAD entre relajaciones
+      DFT y CHGNet; el modelo ajustado (triángulos) mejora frente a CHGNet v0.3.0 (cuadrados) en las 41 aleaciones.</p>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <span class="page">pág. 6</span>
+    <img src="images/fig_004_Predicciones_carga_de_Bader.png" alt="Figura 4">
+    <figcaption>
+      <span class="figtag">Figura 4</span>
+      <span class="figtitle">Predicciones de carga de Bader</span>
+      <p class="figcap"><strong>a</strong> Predicciones de carga de Bader en aleaciones binarias, ternarias y
+      cuaternarias entrenando con el 70% de los datos binarios (triángulos azules: entrenamiento; círculos morados:
+      prueba). <strong>b</strong> Comparación de las cargas de Bader predichas para estructuras relajadas con DFT
+      (eje x) y con CHGNet ajustado (eje y): ambas producen esencialmente las mismas predicciones, lo que indica que
+      el supercell relajado con CHGNet basta para obtener cargas precisas.</p>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <span class="page">pág. 6</span>
+    <img src="images/fig_005_Predicciones_Evf.png" alt="Figura 5">
+    <figcaption>
+      <span class="figtag">Figura 5</span>
+      <span class="figtitle">Predicciones de la energía de formación de vacancias</span>
+      <p class="figcap"><strong>a</strong> Predicciones de <em>E<sub>v</sub><sup>f</sup></em> en todas las aleaciones
+      entrenando solo con el 80% de los datos binarios y ternarios (triángulos azules: entrenamiento;
+      círculos morados: prueba). <strong>b</strong> Predicciones de <em>E<sub>v</sub><sup>f</sup></em> usando las
+      cargas de Bader predichas por CGCNN como entrada, en lugar de las cargas de Bader de DFT, con mínima pérdida
+      de precisión.</p>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <span class="page">pág. 6</span>
+    <img src="images/fig_006_Evitando_la_DFT_para_Evf.png" alt="Figura 6">
+    <figcaption>
+      <span class="figtag">Figura 6</span>
+      <span class="figtitle">Evitando la DFT para predecir energías de formación de vacancias</span>
+      <p class="figcap"><strong>a</strong> Predicciones de <em>E<sub>v</sub><sup>f</sup></em> partiendo del CHGNet
+      ajustado: primero se predicen las cargas de Bader y se usan como entrada al modelo de
+      <em>E<sub>v</sub><sup>f</sup></em> de la Fig. 5. <strong>b</strong> Diagramas de caja de
+      <em>E<sub>v</sub><sup>f</sup></em> para las cinco aleaciones Ni-Cu-Au-Pd, comparando los resultados DFT con
+      el pipeline CHGNet + CGCNN (carga de Bader) + <em>E<sub>v</sub><sup>f</sup></em>.</p>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <span class="page">pág. 7</span>
+    <img src="images/fig_007_Extension_a_supercells_mayores.png" alt="Figura 7">
+    <figcaption>
+      <span class="figtag">Figura 7</span>
+      <span class="figtitle">Extensión del modelo a supercells mayores</span>
+      <p class="figcap">Valores promedio y desviación estándar de <em>E<sub>v</sub><sup>f</sup></em> para NiCuAuPd
+      equiatómico: cálculos DFT en supercell 3×3×3 (108 átomos) y predicciones en supercells 4×4×4 (256 átomos),
+      5×5×5 (500 átomos), 8×8×8 (2048 átomos) y 10×10×10 (4000 átomos) mediante CHGNet ajustado, carga de Bader
+      CGCNN y el modelo de <em>E<sub>v</sub><sup>f</sup></em> CGCNN. El método permite tamaños de sistema mucho
+      mayores que los accesibles por DFT.</p>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <span class="page">pág. 8</span>
+    <img src="images/fig_008_Ajuste_y_validacion_NiCoCr.png" alt="Figura 8">
+    <figcaption>
+      <span class="figtag">Figura 8</span>
+      <span class="figtitle">Ajuste fino y validación en aleaciones Ni-Co-Cr no vistas</span>
+      <p class="figcap">Datos del sistema Ni-Cu-Au-Pd en círculos morados; datos de Ni<sub>0.50</sub>Co<sub>0.50</sub>,
+      Ni<sub>0.75</sub>Cr<sub>0.25</sub> y Ni<sub>0.33</sub>Co<sub>0.33</sub>Cr<sub>0.33</sub> en cuadrados dorados;
+      estructuras quasirandom y de orden de corto alcance (SRO) en triángulos azules (base MPContribs de Walsh et al.).
+      <strong>a</strong> Carga de Bader con el modelo entrenado en Ni, Cu, Au y Pd. <strong>b</strong> Carga de Bader
+      con el modelo ajustado. <strong>c</strong> <em>E<sub>v</sub><sup>f</sup></em> con el modelo entrenado en binarias
+      y ternarias Ni-Cu-Au-Pd. <strong>d</strong> <em>E<sub>v</sub><sup>f</sup></em> con el modelo ajustado: al
+      reentrenar con datos Ni-Co-Cr, las predicciones en (d) son precisas frente a (c).</p>
+    </figcaption>
+  </figure>
+</main>
+
+<footer>
+  Resumen generado a partir de <code>pappers/Linton.pdf</code> · 8 figuras extraídas y recortadas de las páginas 3–8.
+  Captions traducidos y condensados al español. Texto e imágenes © The Author(s) 2026, licencia CC BY-NC-ND 4.0.
+</footer>
+</body>
+</html>

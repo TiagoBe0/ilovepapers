@@ -1,0 +1,123 @@
+{
+  "source_file": "/media/admin/ALMACEN_GRANDE_1/ilovepappers/pappers/CGCNN_cristales_Xie_Grossman_2018.pdf",
+  "total_figures": 9,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "FIG. 1. Illustration of the crystal graph convolutional neural network (CGCNN). (a) Construction of the crystal graph. Crystals are converted to graphs with nodes representing atoms in the unit cell and edges representing atom connections. Nodes and edges are characterized by vectors corresponding to the atoms and bonds in the crystal, respectively. (b) Structure of the convolutional neural network on top of the crystal graph. R convolutional layers and L 1 hidden layers are built on top of each node, resulting in a new graph with each node representing the local environment of each atom. After pooling, a vector representing the entire crystal is connected to L 2 hidden layers, followed by the output layer to provide the prediction.",
+      "page": 1,
+      "bbox": {
+        "l": 315.737548828125,
+        "t": 376.0138244628906,
+        "r": 562.5653686523438,
+        "b": 220.3992919921875
+      },
+      "image_path": "images/fig_001_FIG_1_Illustration_of_the_crystal_grap.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "FIG. 2. The performance of CGCNN on the Materials Project database[11]. (a) Histogram representing the distribution of the number of elements in each crystal. (b) Mean absolute error (MAE) as a function of training crystals for predicting formation energy per atom using different convolution functions. The shaded area denotes the MAE of DFT calculation compared with experiments[18]. (c) 2D histogram representing the predicted formation per atom against DFT calculated value. (d) Receiver operating characteristic (ROC) curve visualizing the result of metal-semiconductor classification. It plots the proportion of correctly identified metals (true positive rate) against the proportion of wrongly identified semiconductors (false positive rate) under different thresholds.",
+      "page": 2,
+      "bbox": {
+        "l": 318.47625732421875,
+        "t": 740.8166427612305,
+        "r": 556.6474609375,
+        "b": 564.44921875
+      },
+      "image_path": "images/fig_002_FIG_2_The_performance_of_CGCNN_on_the_.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "FIG. 3. Extraction of site energy of perovskites from total energy above hull. (a) Structure of perovskites. (b) 2D histogram representing the predicted total formation against DFT calculated value. (c, d) Periodic table with the color of each element representing the mean of the site energy when the element occupies A site (c) or B site (d).",
+      "page": 4,
+      "bbox": {
+        "l": 55.58401107788086,
+        "t": 740.7944145202637,
+        "r": 291.9236755371094,
+        "b": 463.2153015136719
+      },
+      "image_path": "images/fig_003_FIG_3_Extraction_of_site_energy_of_per.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "FIG. S1. The crystal structures and crystal graphs of NaCl (a) and KCl (b).",
+      "page": 10,
+      "bbox": {
+        "l": 124.62220001220703,
+        "t": 687.4384765625,
+        "r": 475.52313232421875,
+        "b": 436.8658142089844
+      },
+      "image_path": "images/fig_004_FIG_S1_The_crystal_structures_and_crys.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "FIG. S2. Histogram representing the distribution of the number of atoms in the primitive cells.",
+      "page": 10,
+      "bbox": {
+        "l": 165.6060791015625,
+        "t": 380.2494812011719,
+        "r": 449.56256103515625,
+        "b": 198.24884033203125
+      },
+      "image_path": "images/fig_005_FIG_S2_Histogram_representing_the_dist.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "FIG. S3. The effect of different hyperparameters on the validation mean absolute errors (MAEs). The blue points denotes models using convolution function Eq. 4, and the red points denotes models using Eq. 5. (a) Number of atom features. The 2 features include group number and period number, the 3 features additionally include electronegativity, and the 9 features include all properties in Table II. (b) Number of convolutional layers. (c) Logarithm of the step size.",
+      "page": 11,
+      "bbox": {
+        "l": 61.00646209716797,
+        "t": 732.8115425109863,
+        "r": 553.9638671875,
+        "b": 510.0594482421875
+      },
+      "image_path": "images/fig_006_FIG_S3_The_effect_of_different_hyperpa.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "FIG. S4. 2D histogram visualizing the predictive performance of six properties. (a) Total energy per atom. (b) Band gap. (c) Fermi energy. (d) Bulk moduli. (e) Shear moduli. (e) Poisson ratio.",
+      "page": 12,
+      "bbox": {
+        "l": 51.11892318725586,
+        "t": 738.5716323852539,
+        "r": 549.003662109375,
+        "b": 166.9461669921875
+      },
+      "image_path": "images/fig_007_FIG_S4_2D_histogram_visualizing_the_pr.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "FIG. S5. The MAE of predicted bulk modulus with respect to DFT values against the number of training crystals. The dashed line shows the MAE of DFT calculations with respect to experimental results [S24], which is 0.050 Log(GPa).",
+      "page": 13,
+      "bbox": {
+        "l": 163.82383728027344,
+        "t": 730.5865516662598,
+        "r": 449.7533264160156,
+        "b": 522.5906372070312
+      },
+      "image_path": "images/fig_008_FIG_S5_The_MAE_of_predicted_bulk_modul.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "FIG. S6. 2D histogram visualizing the performance of predicting formation energy of perovskites using a full pooling layer with Eq. 4 as the convolution function.",
+      "page": 13,
+      "bbox": {
+        "l": 161.86817932128906,
+        "t": 370.3845520019531,
+        "r": 442.9676818847656,
+        "b": 160.5272216796875
+      },
+      "image_path": "images/fig_009_FIG_S6_2D_histogram_visualizing_the_pe.png"
+    }
+  ]
+}

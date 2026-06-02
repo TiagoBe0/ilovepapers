@@ -1,0 +1,59 @@
+# Resumen — Learning representations by back-propagating errors
+
+**Autores:** David E. Rumelhart, Geoffrey E. Hinton, Ronald J. Williams
+**Revista:** Nature 323, 533–536 (1986)
+
+---
+
+## 🎯 Idea central
+
+Paper fundacional que popularizó el algoritmo de **backpropagation** para entrenar redes neuronales con capas ocultas. Demuestra que una red puede aprender **representaciones internas útiles** que no fueron diseñadas a mano, sino emergentes del proceso de optimización.
+
+---
+
+## ⚙️ Algoritmo en una línea
+
+Para minimizar el error E sobre un dataset, actualizar pesos con descenso por gradiente:
+
+w_ij ← w_ij − η ∂E/∂w_ij
+
+El gradiente se calcula propagando el error **hacia atrás** por la red mediante la **regla de la cadena**:
+
+- En la capa de salida: ∂E/∂y · σ'(z)
+- En capas ocultas: la "señal de error" se acumula desde las capas posteriores ponderada por los pesos.
+
+---
+
+## 🧠 Por qué fue revolucionario
+
+Antes de este paper:
+- Perceptrones de una capa (Rosenblatt 1958) no podían aprender XOR ni problemas no linealmente separables (Minsky & Papert 1969).
+- Las redes multi-capa existían en teoría pero no había método práctico para entrenarlas.
+
+Después:
+- Backprop hace tratable el entrenamiento de redes profundas.
+- Las capas ocultas aprenden **detectores de features distribuidos** (lo que hoy llamamos "representation learning").
+
+---
+
+## 🧪 Ejemplos del paper original
+
+- **Symmetry detection:** la red aprende detectar simetría aproximada en patrones binarios.
+- **Family trees:** red predice relaciones de parentesco; las capas ocultas aprenden representaciones que capturan generación, género, etc.
+- **Negation networks:** prueba conceptual sobre operaciones lógicas.
+
+---
+
+## 🧩 Legado
+
+Casi todo el deep learning moderno depende de backprop:
+- CNNs ([[PointNet_Qi_2017]], [[VoxelNet_Zhou_2017]], [[CGCNN_cristales_Xie_Grossman_2018]])
+- GNNs ([[DGCNN_tesis_MIT_Wang_2020]], [[CarNet_tensores_cartesianos_Chen_2025]])
+- Transformers, autoencoders ([[CVAE_defectos_STEM_Ayyubi_2026]], [[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]])
+- Inicialización informada ([[DJINN_init_redes_arboles_Humbird_2018]] — sigue usando backprop después del warm-start).
+
+---
+
+## 📎 Comentario
+
+Citarlo es estándar en cualquier paper de DL aplicado a materiales — sienta la base de todo el resto del workflow.

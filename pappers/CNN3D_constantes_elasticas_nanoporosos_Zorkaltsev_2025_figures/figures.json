@@ -1,0 +1,123 @@
+{
+  "source_file": "/media/admin/ALMACEN_GRANDE_1/ilovepappers/pappers/CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025.pdf",
+  "total_figures": 9,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 334.9441223144531,
+        "t": 763.3962631225586,
+        "r": 471.6160888671875,
+        "b": 590.2693786621094
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 1.6166613101959229,
+        "t": 573.9848327636719,
+        "r": 587.8826904296875,
+        "b": 270.7484130859375
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Fig. 1 : Typical NPG structures with solid volume fraction of 0.25 (left) and 0.35 (right). (Color: Yellow - surface atoms and Green - FCC atoms).",
+      "page": 8,
+      "bbox": {
+        "l": 105.04492950439453,
+        "t": 416.2013854980469,
+        "r": 461.6014099121094,
+        "b": 286.67840576171875
+      },
+      "image_path": "images/fig_003_Fig_1__Typical_NPG_structures_with_sol.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Fig. 2 : Nanoporous structure represented by a 3D binary array: (a) All values, (b) Solid part.",
+      "page": 13,
+      "bbox": {
+        "l": 131.1805419921875,
+        "t": 578.0945129394531,
+        "r": 486.5954284667969,
+        "b": 420.10870361328125
+      },
+      "image_path": "images/fig_004_Fig_2__Nanoporous_structure_represente.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Fig. 3 : Distributions of MD-computed elastic constants C ii in the datasets. Each nanoporous structure is represented by three elastic constant values.",
+      "page": 14,
+      "bbox": {
+        "l": 121.23212432861328,
+        "t": 676.4942321777344,
+        "r": 449.35919189453125,
+        "b": 515.4414367675781
+      },
+      "image_path": "images/fig_005_Fig_3__Distributions_of_MD-computed_el.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Fig. 4 : Distributions of as-built solid fraction in the datasets. Each nanoporous structure is represented by one solid fraction value.",
+      "page": 14,
+      "bbox": {
+        "l": 120.9495620727539,
+        "t": 465.0622863769531,
+        "r": 449.4768981933594,
+        "b": 281.55474853515625
+      },
+      "image_path": "images/fig_006_Fig_4__Distributions_of_as-built_solid.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "",
+      "page": 18,
+      "bbox": {
+        "l": 289.3037109375,
+        "t": 766.3990325927734,
+        "r": 469.2516174316406,
+        "b": 636.1130523681641
+      },
+      "image_path": "images/fig_007_no_caption.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Fig. 6 : R 2 test score as a function of fine-tuning structures number.",
+      "page": 20,
+      "bbox": {
+        "l": 149.39120483398438,
+        "t": 626.9234619140625,
+        "r": 436.7309875488281,
+        "b": 428.29669189453125
+      },
+      "image_path": "images/fig_008_Fig_6__R_2_test_score_as_a_function_of.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 7 : CNN-predicted elastic modulus values of 100.000 NPG structures plotted against solid fraction, with MD-computed values from Dataset 1 as a reference.",
+      "page": 22,
+      "bbox": {
+        "l": 145.1507568359375,
+        "t": 734.5547027587891,
+        "r": 407.71728515625,
+        "b": 486.2138977050781
+      },
+      "image_path": "images/fig_009_Fig_7__CNN-predicted_elastic_modulus_v.png"
+    }
+  ]
+}

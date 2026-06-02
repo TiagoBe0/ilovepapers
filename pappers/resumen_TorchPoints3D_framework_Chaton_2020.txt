@@ -1,0 +1,63 @@
+# Resumen — Torch-Points3D: A Modular Multi-Task Framework for Reproducible Deep Learning on 3D Point Clouds
+
+**Autores:** Nicolas Chaulet, Thomas Chaton, Sofiane Horache, Loic Landrieu
+**Conf.:** 3DV 2020 (IEEE)
+**Repo:** https://github.com/nicolas-chaulet/torch-points3d
+
+---
+
+## 🎯 Idea central
+
+Framework open-source en **PyTorch** que estandariza el desarrollo de deep learning sobre point clouds. Pretende ser el "torchvision / pytorch-geometric del 3D":
+- Re-implementaciones reproducibles de redes SOTA.
+- Pipelines unificados de dataset, training, métricas.
+- Configuración con **Hydra**, logging con **Weights & Biases**.
+
+---
+
+## 🧩 Por qué importa
+
+El campo de 3D DL crecía rápido pero con código fragmentado y benchmarks poco comparables. Torch-Points3D apunta a:
+
+1. **Reproducibilidad** — protocolos de evaluación idénticos entre métodos.
+2. **Comparación justa** — todos los backbones se entrenan con los mismos data loaders, augmentations y métricas.
+3. **Barrera de entrada baja** — un PhD nuevo puede correr SOTA en un dataset sin reimplementar todo.
+
+---
+
+## ⚙️ Tareas soportadas
+
+- **Clasificación** (ModelNet)
+- **Segmentación semántica** (S3DIS, ScanNet, Semantic3D)
+- **Segmentación de partes** (ShapeNetPart)
+- **Object detection 3D**
+- **Panoptic segmentation**
+- **Point cloud registration**
+
+---
+
+## 🧪 Backbones implementados
+
+- [[PointNet_Qi_2017]] / [[PointNet++_Qi_2017]]
+- KPConv
+- Minkowski / sparse convs
+- RandLA-Net
+- [[DGCNN_tesis_MIT_Wang_2020]]
+- y más…
+
+---
+
+## 📊 Aportes del paper
+
+1. **Benchmarks unificados** de los backbones más usados (S3DIS, ScanNet, KITTI, etc.).
+2. Evaluación de **test-time enhancers** (voting, augmentations) — cuantifica cuánto mejora cada uno.
+3. Implementación de **point cloud registration** que alcanza SOTA combinando ideas recientes.
+4. Recomendaciones prácticas de **speed enhancement** transferibles a cualquier modelo.
+
+---
+
+## 📎 Conexiones
+
+- Si vas a entrenar DGCNN / PointNet++ sobre tus dumps LAMMPS, este es el framework natural — no hace falta reimplementar.
+- Alternativa más opinada a `pytorch-geometric`.
+- Útil como referencia metodológica al armar tu propio benchmark.

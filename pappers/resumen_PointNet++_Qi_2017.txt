@@ -1,0 +1,56 @@
+# Resumen — PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
+
+**Autores:** Charles R. Qi, Li Yi, Hao Su, Leonidas J. Guibas (Stanford, NeurIPS 2017)
+**arXiv:** 1706.02413
+
+---
+
+## 🎯 Idea central
+
+Sucesor directo de [[PointNet_Qi_2017]]. Resuelve la limitación clave de PointNet: **no capturaba estructura local**. PointNet++ aplica PointNet **recursivamente** sobre particiones anidadas de la nube de puntos, imitando el receptivo jerárquico de una CNN.
+
+---
+
+## ⚙️ Bloques principales
+
+### Set Abstraction Layer (×N)
+
+Cada nivel jerárquico hace tres cosas:
+
+1. **Sampling layer** — selecciona M centroides con **Farthest Point Sampling (FPS)**.
+2. **Grouping layer** — agrupa los k vecinos (o vecinos dentro de un radio) alrededor de cada centroide.
+3. **PointNet layer** — aplica un mini-PointNet a cada grupo → feature local.
+
+Apilar varias capas produce features cada vez más globales (igual que conv stacks en imágenes).
+
+### Multi-Scale Grouping (MSG) / Multi-Resolution Grouping (MRG)
+
+Para lidiar con **densidades no uniformes** (escaneos reales), agrupa a múltiples radios y combina con pesos aprendibles + dropout aleatorio de puntos durante el entrenamiento.
+
+### Feature Propagation (para segmentación)
+
+Up-sampling con interpolación inversa por distancia + skip connections → predicción por punto.
+
+---
+
+## 📊 Resultados
+
+- **ModelNet40**: ~91.9% (mejor que PointNet).
+- **ScanNet** (escenas reales con densidad variable): supera fuertemente a PointNet.
+- **MNIST-2D**: prueba de concepto.
+
+---
+
+## 🧩 Aportes
+
+1. **Jerarquía local-global** sobre point clouds (analogo a receptive fields crecientes en CNNs).
+2. **Robustez a densidades no uniformes** vía MSG/MRG.
+3. Plantilla que se repite en casi toda la literatura posterior (PointConv, KPConv, etc.).
+
+---
+
+## 📎 Conexiones
+
+- Sucesor de [[PointNet_Qi_2017]].
+- Su esquema de muestreo + agrupamiento es la inspiración directa para [[DGCNN]] (que cambia el agrupamiento fijo por uno dinámico en feature space).
+- Implementaciones modernas se encuentran en [[TorchPoints3D_framework]].

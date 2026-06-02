@@ -1,0 +1,80 @@
+# Resumen — Unsupervised ML Pipeline for Defect Detection: Application to Displacement Cascades
+
+**Autores:** Samuel Del Fré, Andrée De Backer, Christophe Domain, Ludovic Thuinet, Charlotte S. Becquart
+**Afiliación:** Univ. Lille / EDF R&D / EM2VM (Lille, Francia)
+**arXiv:** 2510.24523v1 (oct 2025)
+
+---
+
+## 🎯 Idea central
+
+Pipeline **completamente no supervisado** para detectar y clasificar defectos en cascadas de desplazamiento (irradiación) directamente sobre datos MD. Combina:
+
+**SOAP → Autoencoder → UMAP → HDBSCAN**
+
+Sin templates ni umbrales ajustables a mano.
+
+---
+
+## ⚙️ Pipeline detallado
+
+### 1. Descriptor local: SOAP
+
+Cada átomo se codifica con un **Smooth Overlap of Atomic Positions** (SOAP) — descriptor rotacionalmente invariante del entorno local.
+
+### 2. Autoencoder (AE)
+
+- Se entrena para **reconstruir entornos defect-free**.
+- Átomos cuyo error de reconstrucción es alto → **outliers** = candidatos a formar parte de defectos.
+- Es una detección de anomalías clásica pero sobre el espacio SOAP.
+
+### 3. UMAP
+
+Los SOAP de los outliers se proyectan en un espacio latente 2D-3D con **UMAP** (preserva estructura local + global mejor que t-SNE).
+
+### 4. HDBSCAN
+
+Clusters de densidad en el espacio UMAP → grupos físicos:
+- vacancia-dominados
+- intersticial-dominados
+- pequeños vs grandes agregados
+
+**99.7%** de los outliers se asignan a motivos físicos compactos.
+
+### 5. Métrica de validación
+
+Un **signed cluster-identification score** confirma la separación. El tamaño del cluster en latente correlaciona con el conteo neto de defectos (R² > 0.89).
+
+---
+
+## 🧪 Aplicación
+
+Cascadas de **80 keV** en:
+- **Ni puro**
+- **Fe70Ni10Cr20** (acero austenítico modelo)
+- **Zr**
+
+Comparado contra detectores convencionales:
+- Centrosymmetry Parameter (CSP)
+- Common Neighbor Analysis (CNA)
+- Dislocation Extraction Analysis (DXA)
+- Polyhedral Template Matching (PTM)
+
+→ Fuerte solapamiento + cobertura complementaria.
+
+---
+
+## 🧩 Por qué importa
+
+- **No requiere etiquetado** ni templates fijos → escala a aleaciones complejas (HEA) donde los descriptores hand-crafted fallan.
+- **Detecta defectos novedosos** que CNA/PTM se pierden porque no están en su catálogo.
+- Marco generalizable a cualquier sistema con MD output → SOAP.
+
+---
+
+## 📎 Conexiones
+
+- Versión "ML moderno" de [[FaVAD_fingerprints_defectos_vonToussaint_2020]] (misma idea SOAP, pero con AE + UMAP + HDBSCAN en lugar de PCA + clasificación contra catálogo).
+- Filosofía similar a [[CVAE_defectos_STEM_Ayyubi_2026]] (CVAE para imágenes STEM) pero aplicada a coordenadas atómicas 3D.
+- Compatible con análisis post-PKA tipo [[MD_cascadas_CuNi_irradiacion_Wei_2025]].
+- Para tu pipeline: este es el target a replicar / extender — encaja perfecto con tu interés en clusters de defectos sin etiquetar a mano.

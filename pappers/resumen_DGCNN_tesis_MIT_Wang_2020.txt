@@ -1,0 +1,62 @@
+# Resumen — DGCNN: Learning Point Cloud Representations by Dynamic Graph CNN
+
+**Autor:** Yue Wang (Tesis MS, MIT, 2020)
+**Supervisor:** Justin M. Solomon
+**Tema:** Aprendizaje sobre nubes de puntos 3D mediante grafos dinámicos.
+
+---
+
+## 🎯 Idea central
+
+La tesis propone **EdgeConv**, un módulo de convolución que opera sobre **grafos k-NN construidos dinámicamente capa a capa** en el espacio de features (no solo en el espacio Euclídeo de entrada). Esto recupera la información topológica que las nubes de puntos no tienen explícitamente y enriquece la representación.
+
+---
+
+## ⚙️ Cómo funciona EdgeConv
+
+1. Para cada punto x_i se construye un grafo k-NN con sus k vecinos más cercanos.
+2. Para cada arista (i, j) se calcula:
+   h_θ(x_i, x_j − x_i)
+   → combina información **global** del punto (x_i) y **local relativa** (x_j − x_i).
+3. Se aplica un **max-pooling** sobre los k vecinos.
+4. Después de cada capa se **recalcula el grafo** en el espacio de features (no fijo) → "dinámico".
+
+**Resultado:** afinidad en feature space = similitud semántica, aunque los puntos estén lejos en el espacio físico.
+
+---
+
+## 🧠 Por qué es importante para vos
+
+- Reemplaza el MLP por punto de PointNet con un operador **consciente de vecinos**.
+- Funciona como un drop-in para clasificación, segmentación de partes y semántica de escenas.
+- Es la base de muchos pipelines de detección de defectos atómicos sobre dump LAMMPS → grafos.
+
+---
+
+## 📊 Benchmarks
+
+- **ModelNet40** (clasificación): SOTA al momento de publicación.
+- **ShapeNetPart** (segmentación de partes): SOTA.
+- **S3DIS** (semántica de escenas interiores): SOTA.
+
+---
+
+## 🧩 Ventajas clave
+
+- **Diferenciable** y enchufable en arquitecturas existentes.
+- Apilable: capas sucesivas → receptivo creciente sobre el grafo.
+- Captura long-range affinity en features sin necesidad de muestreo jerárquico costoso.
+
+---
+
+## 🔬 Relación con tu pipeline
+
+EdgeConv es el bloque que estás usando (o pensando usar) para predecir vacancias / clusters de defectos a partir de las posiciones atómicas. La tesis es la referencia primaria — citar:
+- Wang et al. *Dynamic Graph CNN for Learning on Point Clouds*, ACM Trans. Graphics 2019 (versión paper) o esta tesis MIT (versión extendida con experimentos adicionales).
+
+---
+
+## 📎 Conexiones
+
+- Sucesor conceptual de [[PointNet]] y [[PointNet++]].
+- Inspira luego trabajos sobre [[CarNet]], potenciales ML equivariantes, y métodos de detección de defectos por embedding.

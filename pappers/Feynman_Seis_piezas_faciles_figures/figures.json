@@ -1,0 +1,162 @@
+{
+  "source_file": "/home/santi/Documentos/ilovepappers/pappers/libro.pdf",
+  "total_figures": 12,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 0.0,
+        "t": 599.4292869567871,
+        "r": 444.87139892578125,
+        "b": 61.681884765625
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 192.93397521972656,
+        "t": 115.2041015625,
+        "r": 245.30520629882812,
+        "b": 91.322265625
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Agua ampliada mil millones de veces",
+      "page": 8,
+      "bbox": {
+        "l": 117.24684143066406,
+        "t": 572.4534149169922,
+        "r": 327.7593078613281,
+        "b": 431.14501953125
+      },
+      "image_path": "images/fig_003_Agua_ampliada_mil_millones_de_veces.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figura 1.2.",
+      "page": 10,
+      "bbox": {
+        "l": 117.42581939697266,
+        "t": 570.3483963012695,
+        "r": 328.6657409667969,
+        "b": 411.91688537597656
+      },
+      "image_path": "images/fig_004_Figura_12.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Figura 1.3.",
+      "page": 11,
+      "bbox": {
+        "l": 171.60037231445312,
+        "t": 572.7147445678711,
+        "r": 259.7071838378906,
+        "b": 418.3096466064453
+      },
+      "image_path": "images/fig_005_Figura_13.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Figura 1.4.",
+      "page": 13,
+      "bbox": {
+        "l": 108.66313171386719,
+        "t": 571.34716796875,
+        "r": 318.6551818847656,
+        "b": 415.0240783691406
+      },
+      "image_path": "images/fig_006_Figura_14.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Figura 1.5.",
+      "page": 15,
+      "bbox": {
+        "l": 110.42073822021484,
+        "t": 572.7837829589844,
+        "r": 320.16156005859375,
+        "b": 391.64202880859375
+      },
+      "image_path": "images/fig_007_Figura_15.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Figura 1.6.",
+      "page": 17,
+      "bbox": {
+        "l": 112.42728424072266,
+        "t": 571.591796875,
+        "r": 321.1905212402344,
+        "b": 366.4715881347656
+      },
+      "image_path": "images/fig_008_Figura_16.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Figura 1.7.",
+      "page": 18,
+      "bbox": {
+        "l": 59.5561637878418,
+        "t": 572.2089462280273,
+        "r": 380.88360595703125,
+        "b": 361.6188049316406
+      },
+      "image_path": "images/fig_009_Figura_17.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Figura 1.8.",
+      "page": 20,
+      "bbox": {
+        "l": 118.56617736816406,
+        "t": 571.5317993164062,
+        "r": 328.8252868652344,
+        "b": 419.35231018066406
+      },
+      "image_path": "images/fig_010_Figura_18.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "",
+      "page": 22,
+      "bbox": {
+        "l": 117.37104034423828,
+        "t": 571.3317718505859,
+        "r": 328.399169921875,
+        "b": 429.32611083984375
+      },
+      "image_path": "images/fig_011_no_caption.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "1.10. La sustancia representada es α -irona.",
+      "page": 23,
+      "bbox": {
+        "l": 107.31444549560547,
+        "t": 570.4153518676758,
+        "r": 320.3857421875,
+        "b": 442.7951354980469
+      },
+      "image_path": "images/fig_012_110_La_sustancia_representada_es_α_-ir.png"
+    }
+  ]
+}

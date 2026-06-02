@@ -1,0 +1,69 @@
+# Resumen — Development of alternative photocatalysts to TiO₂: Challenges and opportunities
+
+**Autores:** M. D. Hernández-Alonso, F. Fresno, S. Suárez, J. M. Coronado (CIEMAT-PSA / IMDEA-Energía, España)
+**Revista:** Energy & Environmental Science 2, 1231 (2009), DOI: 10.1039/b907933e
+
+---
+
+## 🎯 Tipo
+
+**Review** clásico (2009) sobre fotocatalizadores **alternativos a TiO₂** para tres aplicaciones:
+
+1. **Water splitting** (producción de H₂).
+2. **Descontaminación y desinfección** (agua, aire).
+3. **Síntesis orgánica** vía fotocatálisis.
+
+---
+
+## 🧪 Idea central
+
+TiO₂ es el fotocatalizador dominante desde los 70s por su balance eficiencia / costo / estabilidad, pero tiene **una limitación crítica**:
+
+- **Band gap ~3.2 eV** → solo activo en UV (≤ 6% del espectro solar).
+- Cinética moderada → no apto para procesos de alto throughput.
+
+El paper revisa qué otros materiales se han propuesto y dónde funcionan mejor que TiO₂.
+
+---
+
+## 🔬 Familias de fotocatalizadores alternativos cubiertas
+
+### Óxidos de metales con d⁰
+
+- **Ta⁵⁺, Nb⁵⁺** — buenos para water splitting.
+- Estructuras layered tipo K₄Nb₆O₁₇, óxidos perovskita.
+
+### Óxidos / nitruros de elementos con d¹⁰
+
+- **Ga, In, Bi, Sb** — algunos extienden absorción al visible.
+
+### Semiconductores reconsiderados
+
+- **ZnO** — competidor histórico de TiO₂, ahora recuperado en aplicaciones específicas.
+- **CdS** — descartado por fotocorrosión, ahora viable en nano-formato con protección.
+
+### No-semiconductores
+
+- **Zeolitas intercambiadas** con cationes activos.
+
+### Sulfuros y nitruros de metales
+
+- Activos en el visible — relevantes para usos solares.
+
+---
+
+## 🧩 Tres aplicaciones, tres ganadores diferentes
+
+| Aplicación | Mejor candidato |
+|---|---|
+| Water splitting H₂ | óxidos d⁰ (Ta, Nb), oxynitruros |
+| Descontaminación / desinfección | TiO₂ sigue compitiendo bien |
+| Síntesis orgánica selectiva | semiconductores nanoestructurados con tuning band gap |
+
+---
+
+## 📎 Conexiones
+
+- Tema **off-topic** respecto a tu trabajo principal en MD / defectos / irradiación.
+- El archivo era `test2.pdf` — quizás quedó del pipeline de pruebas de extracción de figuras.
+- Si no te interesa fotocatálisis, considerá si vale mantenerlo en la carpeta. Lo dejo renombrado por si lo necesitás para una cita lateral.
