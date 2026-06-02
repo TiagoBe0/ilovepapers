@@ -81,6 +81,19 @@
     background: var(--accent); color: #fff; border-color: var(--accent);
   }
 
+  /* ── Search box ────────────────────────────────────────────── */
+  .search-box { margin-left: auto; display: flex; align-items: center; gap: 6px; }
+  .search-box svg { width: 13px; height: 13px; opacity: .5; }
+  .search-box input {
+    font-size: 12px; font-family: 'Inter', sans-serif;
+    padding: 4px 12px; border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface); color: var(--text);
+    width: 220px; outline: none; transition: border-color .15s, width .2s;
+  }
+  .search-box input:focus { border-color: var(--accent2); width: 260px; }
+  .search-box input::placeholder { color: var(--muted); }
+
   /* ── Grid ──────────────────────────────────────────────────── */
   main {
     margin-top: calc(var(--header-h) + 42px);
@@ -313,9 +326,43 @@
   <button class="filter-btn" data-tag="IA">IA</button>
   <button class="filter-btn" data-tag="Biología">Biología</button>
   <button class="filter-btn" data-tag="Software">Software</button>
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="search" id="search" placeholder="Buscar por título, autor o tema…" autocomplete="off">
+  </div>
 </div>
 
 <main id="grid">
+
+  <!-- ── Linton 2026: Bypass DFT con GNN para vacancias en HEAs ── -->
+  <article class="card" data-tags="IA Materiales HEA Vacancias">
+    <div class="fig-strip" onclick="openCurrentSlide(this)">
+      <div class="fig-slides">
+        <div class="fig-slide"><img src="pappers/Linton_figures/images/fig_002_Marco_del_modelo.png" data-caption="Fig. 2 — Marco del modelo: CHGNet ajustado + CGCNN reemplazan a la DFT" alt="" loading="lazy"><div class="fig-tooltip">Fig. 2 — Marco del modelo (reemplaza la DFT)</div></div>
+        <div class="fig-slide"><img src="pappers/Linton_figures/images/fig_001_Factores_que_influyen_en_Evf.png" data-caption="Fig. 1 — Volumen atómico y carga de Bader vs. energía de formación de vacancias" alt="" loading="lazy"><div class="fig-tooltip">Fig. 1 — Factores que influyen en Evf</div></div>
+        <div class="fig-slide"><img src="pappers/Linton_figures/images/fig_003_Distorsion_de_red_CHGNet.png" data-caption="Fig. 3 — Distorsión de red: CHGNet ajustado vs. DFT (MAD)" alt="" loading="lazy"><div class="fig-tooltip">Fig. 3 — Distorsión de red con CHGNet</div></div>
+        <div class="fig-slide"><img src="pappers/Linton_figures/images/fig_004_Predicciones_carga_de_Bader.png" data-caption="Fig. 4 — Predicciones de carga de Bader (DFT vs. CGCNN)" alt="" loading="lazy"><div class="fig-tooltip">Fig. 4 — Predicciones de carga de Bader</div></div>
+      </div>
+      <div class="fig-dots"></div>
+    </div>
+    <div class="card-body">
+      <div class="card-top">
+        <span class="year-badge">2026</span>
+        <div class="card-title">Framework para evitar la DFT mediante GNN: energías de formación de vacancias en HEAs FCC</div>
+      </div>
+      <div class="card-authors">Nathan Linton, Parampreet Singh &amp; Dilpuneet S. Aidhy — <em>npj Comput. Mater.</em></div>
+      <div class="tags">
+        <span class="tag">IA</span>
+        <span class="tag">Materiales</span>
+        <span class="tag">HEA</span>
+        <span class="tag">Vacancias</span>
+      </div>
+      <div class="card-actions">
+        <a href="pappers/Linton_figures/resumen_Linton.html" class="btn primary">Resumen</a>
+        <a href="pappers/Linton.pdf" class="btn">PDF</a>
+      </div>
+    </div>
+  </article>
 
   <!-- ── Paper 1: Zhanguang ──────────────────────────────────── -->
   <article class="card" data-tags="Radiación MD Materiales HEA">
@@ -1535,25 +1582,48 @@
     if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('open');
   });
 
-  /* ── Filter ─────────────────────────────────────────────────── */
-  const btns  = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.card');
+  /* ── Filter + Search + Sort ─────────────────────────────────── */
+  const grid    = document.getElementById('grid');
+  const btns    = document.querySelectorAll('.filter-btn');
+  const cards   = Array.from(document.querySelectorAll('.card'));
   const counter = document.getElementById('vis-count');
-  const noRes = document.getElementById('no-results');
+  const noRes   = document.getElementById('no-results');
+  const search  = document.getElementById('search');
+  let activeTag = 'all';
 
-  btns.forEach(btn => btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const tag = btn.dataset.tag;
+  /* Ordenar tarjetas de más nuevas a más viejas (sin año → al final) */
+  const yearOf = c => {
+    const n = parseInt((c.querySelector('.year-badge')?.textContent || '').trim(), 10);
+    return isNaN(n) ? -1 : n;
+  };
+  cards.sort((a, b) => yearOf(b) - yearOf(a));
+  cards.forEach(c => grid.insertBefore(c, noRes));
+
+  function applyFilters() {
+    const q = (search.value || '').toLowerCase().trim();
     let visible = 0;
     cards.forEach(card => {
-      const show = tag === 'all' || card.dataset.tags.includes(tag);
+      const matchTag  = activeTag === 'all' || card.dataset.tags.includes(activeTag);
+      const matchText = !q || card.textContent.toLowerCase().includes(q)
+                            || card.dataset.tags.toLowerCase().includes(q);
+      const show = matchTag && matchText;
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
     counter.textContent = `${visible} paper${visible !== 1 ? 's' : ''}`;
     noRes.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  btns.forEach(btn => btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTag = btn.dataset.tag;
+    applyFilters();
   }));
+
+  search.addEventListener('input', applyFilters);
+
+  applyFilters();   // fija el contador real al cargar
 </script>
 </body>
 </html>
