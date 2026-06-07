@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ilovepappers — Resumen general por tópicos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#f4f3ef;--surface:#fff;--border:#e2dfd8;--accent:#1a4a6e;--text:#1c1c1e;--muted:#6b6b6b;--shadow:0 2px 8px rgba(0,0,0,.08)}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.55}
+  header{position:sticky;top:0;z-index:100;background:var(--accent);display:flex;align-items:center;gap:16px;padding:0 24px;height:54px;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+  header h1{font-family:'Playfair Display',serif;font-size:19px;color:#fff}
+  header .meta{color:rgba(255,255,255,.72);font-size:12px}
+  header a.home{margin-left:auto;color:#fff;text-decoration:none;font-size:12px;border:1px solid rgba(255,255,255,.35);padding:5px 12px;border-radius:20px}
+  header a.home:hover{background:rgba(255,255,255,.15)}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 80px}
+  .intro{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:6px}
+  .intro-sub{color:var(--muted);margin-bottom:26px;max-width:760px}
+  /* TOC */
+  .toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-bottom:42px}
+  .toc-item{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c);border-radius:8px;padding:11px 14px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:transform .12s}
+  .toc-item:hover{transform:translateY(-2px)}
+  .toc-num{font-family:'Playfair Display',serif;font-weight:700;color:var(--c);font-size:17px}
+  .toc-name{flex:1;font-weight:500;font-size:13px}
+  .toc-count{background:var(--c);color:#fff;border-radius:20px;font-size:11px;padding:2px 9px}
+  /* Section */
+  .rg-section{margin-bottom:54px;scroll-margin-top:70px}
+  .rg-sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:3px solid var(--c);padding-bottom:8px;margin-bottom:14px}
+  .rg-sec-num{font-family:'Playfair Display',serif;font-weight:700;font-size:30px;color:var(--c)}
+  .rg-sec-head h2{font-family:'Playfair Display',serif;font-size:23px;flex:1}
+  .rg-sec-count{color:var(--muted);font-size:12px;white-space:nowrap}
+  .rg-synth{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c);border-radius:8px;padding:14px 18px;margin-bottom:22px;box-shadow:var(--shadow)}
+  .rg-synth em{color:var(--c);font-style:italic}
+  /* Papers */
+  .rg-papers{display:grid;grid-template-columns:1fr;gap:18px}
+  .rg-paper{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;box-shadow:var(--shadow)}
+  .rg-paper-head{display:flex;align-items:baseline;gap:10px}
+  .rg-year{font-size:11px;font-weight:600;color:#fff;background:var(--c);border-radius:5px;padding:2px 8px;white-space:nowrap}
+  .rg-paper-head h3{font-size:15.5px;font-weight:600}
+  .rg-authors{color:var(--muted);font-size:12.5px;margin:3px 0 8px}
+  .rg-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+  .rg-tag{font-size:10.5px;background:#eef3f6;color:var(--accent);border-radius:5px;padding:2px 8px}
+  .rg-gallery{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px}
+  .rg-fig{flex:0 0 230px;display:flex;flex-direction:column;background:#faf9f6;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+  .rg-fig img{width:100%;height:150px;object-fit:contain;background:#fff;border-bottom:1px solid var(--border)}
+  .rg-fig figcaption{font-size:11px;color:#4a4a4a;padding:8px 10px;line-height:1.4}
+  .nofig{color:var(--muted);font-size:12px;font-style:italic;padding:8px 0}
+  .rg-actions{display:flex;gap:8px;margin-top:12px}
+  .rg-btn{font-size:12px;text-decoration:none;border:1px solid var(--border);border-radius:6px;padding:5px 14px;color:var(--text);background:#fff}
+  .rg-btn.primary{background:var(--c);color:#fff;border-color:var(--c)}
+  .rg-btn:hover{opacity:.88}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0}
+  @media(min-width:860px){.rg-papers{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>ilovepappers · Resumen general por tópicos</h1>
+  <span class="meta">42 papers · 8 áreas temáticas</span>
+  <a class="home" href="index.html">← Biblioteca</a>
+</header>
+<div class="wrap">
+  <div class="intro">Mapa temático de la biblioteca</div>
+  <p class="intro-sub">Todos los resúmenes agrupados por áreas relacionadas y por líneas de
+  citación. Cada tópico abre con una síntesis general y reúne las figuras estrella de cada
+  paper con su caption. Las flechas entre temas indican qué cluster alimenta a cuál.</p>
+  <nav class="toc"><a class="toc-item" href="#t-rad" style="--c:#b5462e"><span class="toc-num">01</span><span class="toc-name">Daño por radiación y evolución de defectos</span><span class="toc-count">7</span></a><a class="toc-item" href="#t-defect" style="--c:#c77d2e"><span class="toc-num">02</span><span class="toc-name">ML para detección y caracterización de defectos</span><span class="toc-count">6</span></a><a class="toc-item" href="#t-gnn" style="--c:#1a4a6e"><span class="toc-num">03</span><span class="toc-name">Redes de grafos y predicción de propiedades</span><span class="toc-count">8</span></a><a class="toc-item" href="#t-pc" style="--c:#2e7d9e"><span class="toc-num">04</span><span class="toc-name">Deep learning sobre nubes de puntos y datos 3D</span><span class="toc-count">6</span></a><a class="toc-item" href="#t-mlip" style="--c:#3f7d5a"><span class="toc-num">05</span><span class="toc-name">Potenciales interatómicos ML y dinámica molecular</span><span class="toc-count">7</span></a><a class="toc-item" href="#t-ai" style="--c:#5b4b8a"><span class="toc-num">06</span><span class="toc-name">Fundamentos de IA y aprendizaje profundo</span><span class="toc-count">3</span></a><a class="toc-item" href="#t-soft" style="--c:#7a6a3a"><span class="toc-num">07</span><span class="toc-name">Visualización y software científico</span><span class="toc-count">2</span></a><a class="toc-item" href="#t-misc" style="--c:#6b6b6b"><span class="toc-num">08</span><span class="toc-name">Fundamentos de materiales y temas transversales</span><span class="toc-count">3</span></a></nav>
+  
+  <section class="rg-section" id="t-rad" style="--c:#b5462e">
+    <div class="rg-sec-head">
+      <span class="rg-sec-num">01</span>
+      <h2>Daño por radiación y evolución de defectos</h2>
+      <span class="rg-sec-count">7 papers</span>
+    </div>
+    <p class="rg-synth">Núcleo de <strong>materiales nucleares y de fusión</strong>. El trabajo de
+     <em>Nordlund et al. (2018)</em> sobre el daño primario funciona como base conceptual
+     —la cascada de colisión, la función de daño y la zona de alta entropía— y es la
+     referencia que articula al resto: la irradiación de la HEA FeCoNiCrCu (Zhanguang),
+     las cascadas en CuNi (Wei 2025), el acople MD+kMC dependiente de la tasa de dosis
+     en tungsteno (Boleininger 2025) y la teoría de materiales de fusión (Reali 2026).
+     La nucleación de <em>voids</em> (Hemani 2014) y la difusión de vacancias en HEAs
+     (Reimer 2025) cierran el ciclo defecto→migración→propiedad. Estos papers comparten
+     el método de dinámica molecular de cascadas y alimentan directamente al Tema 02,
+     donde el ML aprende a detectar los defectos que aquí se generan.</p>
+    <div class="rg-papers">
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2014</span>
+        <h3>voxel voids nucleacion Hemani 2014</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">MD</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/voxel_voids_nucleacion_Hemani_2014_figures/images/fig_002_Figure_1_Void_Analysis_using_serial_alg.png" loading="lazy" alt=""><figcaption>Figure 1: Void Analysis using serial algorithm</figcaption></figure><figure class="rg-fig"><img src="pappers/voxel_voids_nucleacion_Hemani_2014_figures/images/fig_001_no_caption.png" loading="lazy" alt=""><figcaption>Figura fig_001</figcaption></figure><figure class="rg-fig"><img src="pappers/voxel_voids_nucleacion_Hemani_2014_figures/images/fig_003_no_caption.png" loading="lazy" alt=""><figcaption>Figura fig_003</figcaption></figure><figure class="rg-fig"><img src="pappers/voxel_voids_nucleacion_Hemani_2014_figures/images/fig_004_no_caption.png" loading="lazy" alt=""><figcaption>Figura fig_004</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/voxel_voids_nucleacion_Hemani_2014_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/voxel_voids_nucleacion_Hemani_2014.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2018</span>
+        <h3>Daño Primario por Radiación en Sólidos</h3>
+      </div>
+      <div class="rg-authors">Nordlund et al. — J. Nucl. Mater.</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">MD</span> <span class="rg-tag">Materiales</span> <span class="rg-tag">Cascadas</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/ilove-Nordlund.2018_figures/images/fig_004_a_Kinetic_energy_of_atoms_during_a_col.png" loading="lazy" alt=""><figcaption>(a) Energía cinética de átomos durante cascada de colisión</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Nordlund.2018_figures/images/fig_006_Fig_3_Illustration_of_the_damage_funct.png" loading="lazy" alt=""><figcaption>Fig. 3 — Función de daño y zona de alta entropía</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Nordlund.2018_figures/images/fig_012_Fig_7_MDsimulation_of_the_damage_evolu.png" loading="lazy" alt=""><figcaption>Fig. 7 — Simulación MD de evolución de daño</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Nordlund.2018_figures/images/fig_019_Fig_15_Experimental_and_simulation_dat.png" loading="lazy" alt=""><figcaption>Fig. 15 — Datos experimentales vs. simulación</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/ilove-Nordlund.2018_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/ilove-Nordlund.2018.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2024</span>
+        <h3>Irradiación y Fatiga Cíclica en FeCoNiCrCu HEA</h3>
+      </div>
+      <div class="rg-authors">Zhang &amp;amp; Guang et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">MD</span> <span class="rg-tag">Materiales</span> <span class="rg-tag">HEA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/ilove-Zhanguang_figures/images/fig_005_Fig_1_a_Diagram_of_simulation_region.png" loading="lazy" alt=""><figcaption>Fig. 1 — Región de simulación y cristal de FeCoNiCrCu HEA</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Zhanguang_figures/images/fig_006_Fig_2_a_Simulation_flowchart_b_Di.png" loading="lazy" alt=""><figcaption>Fig. 2 — Flujo de simulación e irradiación en cascada</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Zhanguang_figures/images/fig_010_Fig_6_a_Uniaxial_stress-strain_curve.png" loading="lazy" alt=""><figcaption>Fig. 6 — Curvas tensión-deformación y reducción de resistencia</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Zhanguang_figures/images/fig_013_Fig_9_Dislocation_distributions_of_irr.png" loading="lazy" alt=""><figcaption>Fig. 9 — Distribución de dislocaciones en HEA irradiados</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/ilove-Zhanguang_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/ilove-Zhanguang.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>Prediction of vacancy defect diffusion paths in high entropy alloys via ML on MD data</h3>
+      </div>
+      <div class="rg-authors">** C. Reimer et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">MD</span> <span class="rg-tag">Fusión</span> <span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures/images/fig_019_FIG_1_The_workflow_used_in_this_work_.png" loading="lazy" alt=""><figcaption>FIG. 1. The workflow used in this work: (a) An MD HEA system produced trajectori</figcaption></figure><figure class="rg-fig"><img src="pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures/images/fig_020_FIG_3_Network_structure_used_in_this_w.png" loading="lazy" alt=""><figcaption>FIG. 3. Network structure used in this work: (a) A graph input, (b) a convolutio</figcaption></figure><figure class="rg-fig"><img src="pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures/images/fig_021_FIG_2_Configurations_of_FCC_regions_of.png" loading="lazy" alt=""><figcaption>FIG. 2. Configurations of FCC regions of interest for the 1-NNI (upper right) an</figcaption></figure><figure class="rg-fig"><img src="pappers/ML_vacancias_difusion_HEA_Reimer_2025_figures/images/fig_022_FIG_4_Log-likelihood_loss_plots_for_bo.png" loading="lazy" alt=""><figcaption>FIG. 4. Log-likelihood loss plots for both EvoSys training setups. Training runs</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/ML_vacancias_difusion_HEA_Reimer_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/ML_vacancias_difusion_HEA_Reimer_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2026</span>
+        <h3>Teoría y Modelado de Materiales de Fusión</h3>
+      </div>
+      <div class="rg-authors">Luca Reali et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Fusión</span> <span class="rg-tag">Materiales</span> <span class="rg-tag">Radiación</span> <span class="rg-tag">Tungsteno</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/ilove-LucaReali.2026_figures/images/fig_005_Fig_1_Theory_and_modelling_of_fusion_m.png" loading="lazy" alt=""><figcaption>Fig. 1 — Teoría y modelado de materiales de fusión</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-LucaReali.2026_figures/images/fig_006_Fig_2_Variation_in_the_predicted_damag.png" loading="lazy" alt=""><figcaption>Fig. 2 — Variación de dosis de daño (dpa) en pared del tokamak</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-LucaReali.2026_figures/images/fig_007_Fig_3_a_Transmutation_of_W_after_10_.png" loading="lazy" alt=""><figcaption>Fig. 3 — Transmutación de W tras 10 años en reactor de fusión</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-LucaReali.2026_figures/images/fig_009_Fig_5_Top_A_section_of_phase_diagram_.png" loading="lazy" alt=""><figcaption>Fig. 5 — Diagrama de fases W-Re-Os y segregación</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/ilove-LucaReali.2026_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/ilove-LucaReali.2026.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">—</span>
+        <h3>Cascadas de irradiación en CuNi mediante dinámica molecular</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">MD</span> <span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures/images/fig_009_Fig_1_Detailed_flow_chart_of_the_simul.png" loading="lazy" alt=""><figcaption>Fig. 1. Detailed flow chart of the simulation framework used in this study.</figcaption></figure><figure class="rg-fig"><img src="pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures/images/fig_011_Fig_3_Variations_in_the_temperature_an.png" loading="lazy" alt=""><figcaption>Fig. 3. Variations in the temperature and potential energy of the simulation sys</figcaption></figure><figure class="rg-fig"><img src="pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures/images/fig_012_Fig_4_The_change_of_the_Frenkel_defect.png" loading="lazy" alt=""><figcaption>Fig. 4. The change of the Frenkel defect logarithm of (a) Cu- 0 at%Ni, (b) Cu-5a</figcaption></figure><figure class="rg-fig"><img src="pappers/MD_cascadas_CuNi_irradiacion_Wei_2025_figures/images/fig_013_Fig_5_Number_of_Frenkel_defect_pairs_i.png" loading="lazy" alt=""><figcaption>Fig. 5. Number of Frenkel defect pairs in Cu -Ni alloys during the stable stage</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/MD_cascadas_CuNi_irradiacion_Wei_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/MD_cascadas_CuNi_irradiacion_Wei_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">—</span>
+        <h3>MD + kMC: efecto de la tasa de dosis en tungsteno</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">MD</span> <span class="rg-tag">Fusión</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures/images/fig_004_Fig_1_Basic_concepts_of_the_recovery_of.png" loading="lazy" alt=""><figcaption>Fig. 1 Basic concepts of the recovery of irradiated tungsten illustrated by a ra</figcaption></figure><figure class="rg-fig"><img src="pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures/images/fig_007_Fig_2_Vacancy-acceleration_algorithm_.png" loading="lazy" alt=""><figcaption>Fig. 2 Vacancy-acceleration algorithm. (a) Left: From the microstructure, shown</figcaption></figure><figure class="rg-fig"><img src="pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures/images/fig_009_Fig_3_Simulated_irradiation_of_tungsten.png" loading="lazy" alt=""><figcaption>Fig. 3 Simulated irradiation of tungsten as a function of dose, dose rate and te</figcaption></figure><figure class="rg-fig"><img src="pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025_figures/images/fig_010_Fig_4_Simulated_irradiation_of_tungsten.png" loading="lazy" alt=""><figcaption>Fig. 4 Simulated irradiation of tungsten containing an initial h 100 i loop of 1</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/MD_kMC_tungsteno_dose_rate_Boleininger_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/MD_kMC_tungsteno_dose_rate_Boleininger_2025.pdf" class="rg-btn">PDF</a></div>
+    </article></div>
+  </section>
+  <section class="rg-section" id="t-defect" style="--c:#c77d2e">
+    <div class="rg-sec-head">
+      <span class="rg-sec-num">02</span>
+      <h2>ML para detección y caracterización de defectos</h2>
+      <span class="rg-sec-count">6 papers</span>
+    </div>
+    <p class="rg-synth">Aquí el aprendizaje automático se aplica sobre las estructuras dañadas del
+     Tema 01 para <strong>encontrar, clasificar y cuantificar defectos</strong>.
+     Pipelines no supervisados con <em>autoencoders sobre descriptores SOAP</em>
+     (Del Fré 2025) y <em>fingerprints</em> de defectos (FaVAD, von Toussaint),
+     un <em>CVAE</em> sobre imágenes STEM (Ayyubi 2026), <em>U-Net</em> para nuclear
+     voids en tantalio (Anantharanga 2025) y TGS in situ (Botica MIT 2026). El
+     3D-CNN de Peivaste (2023) predice propiedades de material perfecto y defectuoso.
+     Toman descriptores estructurales del Tema 05 (SOAP, parámetros de orden) y
+     arquitecturas convolucionales/voxel del Tema 04.</p>
+    <div class="rg-papers">
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2004</span>
+        <h3>FaVAD: Software workflow for characterisation and visualizing of defects in crystalline structures</h3>
+      </div>
+      <div class="rg-authors">** U. von Toussaint et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">IA</span> <span class="rg-tag">Software</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_001_Figure_1_Workflow_for_analyzing_the_dam.png" loading="lazy" alt=""><figcaption>Figure 1: Workflow for analyzing the damaged material sample by calculating the</figcaption></figure><figure class="rg-fig"><img src="pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_002_Figure_2_Workflow_for_calculating_vacan.png" loading="lazy" alt=""><figcaption>Figure 2: Workflow for calculating vacancy spatial volume by computing nearest n</figcaption></figure><figure class="rg-fig"><img src="pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_003_Figure_3_Fe_geometries_used_to_compute_.png" loading="lazy" alt=""><figcaption>Figure 3: Fe geometries used to compute the reference DVs: A Fe atom depicted as</figcaption></figure><figure class="rg-fig"><img src="pappers/FaVAD_fingerprints_defectos_vonToussaint_2020_figures/images/fig_004_Figure_4_Color_on-line_Normalized_dis.png" loading="lazy" alt=""><figcaption>Figure 4: (Color on-line) Normalized distance distributions of the atom DVs with</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/FaVAD_fingerprints_defectos_vonToussaint_2020_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/FaVAD_fingerprints_defectos_vonToussaint_2020.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2023</span>
+        <h3>Rapid and accurate predictions of perfect and defective material properties in atomistic simulation using 3D CNN-based tANNs</h3>
+      </div>
+      <div class="rg-authors">** Iman Peivaste et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/3DCNN_predicciones_propiedades_atomisticas_Peivaste_2023_figures/images/fig_002_Figure_1_Comparative_analysis_of_elasti.png" loading="lazy" alt=""><figcaption>Figure 1. Comparative analysis of elastic constants calculation and prediction U</figcaption></figure><figure class="rg-fig"><img src="pappers/3DCNN_predicciones_propiedades_atomisticas_Peivaste_2023_figures/images/fig_003_Figure_2_Comparative_analysis_of_elasti.png" loading="lazy" alt=""><figcaption>Figure 2. Comparative analysis of elastic constants calculation and prediction U</figcaption></figure><figure class="rg-fig"><img src="pappers/3DCNN_predicciones_propiedades_atomisticas_Peivaste_2023_figures/images/fig_004_Figure_3_Effect_of_processor_count_on_c.png" loading="lazy" alt=""><figcaption>Figure 3. Effect of processor count on computation time for a defect-free perfec</figcaption></figure><figure class="rg-fig"><img src="pappers/3DCNN_predicciones_propiedades_atomisticas_Peivaste_2023_figures/images/fig_005_Figure_4_Visualization_of_Atomistic_Str.png" loading="lazy" alt=""><figcaption>Figure 4. Visualization of Atomistic Structures in a 3D Array: Atoms represented</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/3DCNN_predicciones_propiedades_atomisticas_Peivaste_2023_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/3DCNN_predicciones_propiedades_atomisticas_Peivaste_2023.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>Unsupervised ML Pipeline for Defect Detection: Application to Displacement Cascades</h3>
+      </div>
+      <div class="rg-authors">** Samuel Del Fré et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025_figures/images/fig_002_Figure_1_Schematic_representation_of_th.png" loading="lazy" alt=""><figcaption>Figure 1: Schematic representation of the two branches workflow (A and B) for ML</figcaption></figure><figure class="rg-fig"><img src="pappers/Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025_figures/images/fig_003_Figure_2_Log-log_histogram_of_per-atom_.png" loading="lazy" alt=""><figcaption>Figure 2: Log-log histogram of per-atom reconstruction errors for the Ni dataset</figcaption></figure><figure class="rg-fig"><img src="pappers/Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025_figures/images/fig_004_Figure_3_Example_of_outlier_detection_i.png" loading="lazy" alt=""><figcaption>Figure 3: Example of outlier detection in FeNiCr (left), Ni (middle) and Zr (rig</figcaption></figure><figure class="rg-fig"><img src="pappers/Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025_figures/images/fig_005_Figure_4_a_Two-dimensional_UMAP_proje.png" loading="lazy" alt=""><figcaption>Figure 4: (a) Two-dimensional UMAP projection of latent-space SOAP descriptors f</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">—</span>
+        <h3>CVAE para detección de defectos en imágenes STEM</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="nofig">— sin figuras extraídas —</div>
+      <div class="rg-actions"><a href="output/CVAE_defectos_STEM_Ayyubi_2026_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/CVAE_defectos_STEM_Ayyubi_2026.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">—</span>
+        <h3>U-Net para la nucleación de voids en tantalio</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_002_Figure_1_A_reversed_erosion_algorithm_.png" loading="lazy" alt=""><figcaption>Figure 1: A reversed erosion algorithm, together with EBSD and grain boundary in</figcaption></figure><figure class="rg-fig"><img src="pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_003_Figure_2_A_visual_compilation_of_three_.png" loading="lazy" alt=""><figcaption>Figure 2: A visual compilation of three image sets: grain boundary energy (top r</figcaption></figure><figure class="rg-fig"><img src="pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_004_Figure_3_A_visual_compilation_of_three_.png" loading="lazy" alt=""><figcaption>Figure 3: A visual compilation of three image sets: micrograph (top row), grain</figcaption></figure><figure class="rg-fig"><img src="pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025_figures/images/fig_005_Figure_4_The_full_U-Net_architecture_c.png" loading="lazy" alt=""><figcaption>Figure 4: The full U-Net architecture, comprised of an encoder-decoder structure</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/UNet_nucleacion_voids_tantalio_Anantharanga_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/UNet_nucleacion_voids_tantalio_Anantharanga_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">—</span>
+        <h3>TGS in situ para el seguimiento de vacancias (MIT, 2026)</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">Radiación</span> <span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures/images/fig_002_Figure_1_Scheme_of_TGS_coupled_with_in_.png" loading="lazy" alt=""><figcaption>Figure 1: Scheme of TGS coupled with in situ irradiation. Adapted from [24].</figcaption></figure><figure class="rg-fig"><img src="pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures/images/fig_003_Figure_2_Irradiation_depth_profile_as_c.png" loading="lazy" alt=""><figcaption>Figure 2: Irradiation depth profile as calculated by SRIM and nominal TGS e-fold</figcaption></figure><figure class="rg-fig"><img src="pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures/images/fig_004_Figure_3_in_situ_TGS_results_from_7_MeV.png" loading="lazy" alt=""><figcaption>Figure 3: in situ TGS results from 7 MeV Cu 3+ irradiation at 23.3 mW (a) and fr</figcaption></figure><figure class="rg-fig"><img src="pappers/TGS_vacancias_in_situ_Botica_MIT_2026_figures/images/fig_005_Figure_4_Periodic_pulsed_beam_experimen.png" loading="lazy" alt=""><figcaption>Figure 4: Periodic pulsed beam experiment, showing how SAW frequency evolves as</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/TGS_vacancias_in_situ_Botica_MIT_2026_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/TGS_vacancias_in_situ_Botica_MIT_2026.pdf" class="rg-btn">PDF</a></div>
+    </article></div>
+  </section>
+  <section class="rg-section" id="t-gnn" style="--c:#1a4a6e">
+    <div class="rg-sec-head">
+      <span class="rg-sec-num">03</span>
+      <h2>Redes de grafos y predicción de propiedades</h2>
+      <span class="rg-sec-count">8 papers</span>
+    </div>
+    <p class="rg-synth">La familia de <strong>GNN para materiales</strong> nace con
+     <em>CGCNN (Xie &amp; Grossman 2018)</em>, que representa el cristal como grafo y
+     se cita en casi todo lo posterior: el framework de Linton (2026) que combina
+     CHGNet + CGCNN para evitar la DFT en vacancias de HEAs, CarNet para tensores
+     cartesianos (Chen 2025), los procesos gaussianos profundos multitarea (Alvi 2025),
+     los 3D-CNN para constantes elásticas (Zorkaltsev 2025) y la teoría de grafos en MD
+     de sílice (Bougueroua/Gaigeot 2025). OE-BERT extiende el paradigma a transformers
+     en optoelectrónica, y el review de Choudhary (2022) mapea todo el campo. Apoya
+     directamente al Tema 01 (predice E<sub>vf</sub> y difusión) sustituyendo cálculos DFT.</p>
+    <div class="rg-papers">
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2018</span>
+        <h3>Crystal Graph Convolutional Neural Networks (CGCNN)</h3>
+      </div>
+      <div class="rg-authors">** Tian Xie, Jeffrey C. Grossman</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_001_FIG_1_Illustration_of_the_crystal_grap.png" loading="lazy" alt=""><figcaption>FIG. 1. Illustration of the crystal graph convolutional neural network (CGCNN).</figcaption></figure><figure class="rg-fig"><img src="pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_002_FIG_2_The_performance_of_CGCNN_on_the_.png" loading="lazy" alt=""><figcaption>FIG. 2. The performance of CGCNN on the Materials Project database[11]. (a) Hist</figcaption></figure><figure class="rg-fig"><img src="pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_003_FIG_3_Extraction_of_site_energy_of_per.png" loading="lazy" alt=""><figcaption>FIG. 3. Extraction of site energy of perovskites from total energy above hull. (</figcaption></figure><figure class="rg-fig"><img src="pappers/CGCNN_cristales_Xie_Grossman_2018_figures/images/fig_004_FIG_S1_The_crystal_structures_and_crys.png" loading="lazy" alt=""><figcaption>FIG. S1. The crystal structures and crystal graphs of NaCl (a) and KCl (b).</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/CGCNN_cristales_Xie_Grossman_2018_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/CGCNN_cristales_Xie_Grossman_2018.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>Transferable 3D CNNs for elastic constants prediction in nanoporous metals</h3>
+      </div>
+      <div class="rg-authors">** Zorkaltsev et al.</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025_figures/images/fig_003_Fig_1__Typical_NPG_structures_with_sol.png" loading="lazy" alt=""><figcaption>Fig. 1 : Typical NPG structures with solid volume fraction of 0.25 (left) and 0.</figcaption></figure><figure class="rg-fig"><img src="pappers/CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025_figures/images/fig_004_Fig_2__Nanoporous_structure_represente.png" loading="lazy" alt=""><figcaption>Fig. 2 : Nanoporous structure represented by a 3D binary array: (a) All values,</figcaption></figure><figure class="rg-fig"><img src="pappers/CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025_figures/images/fig_005_Fig_3__Distributions_of_MD-computed_el.png" loading="lazy" alt=""><figcaption>Fig. 3 : Distributions of MD-computed elastic constants C ii in the datasets. Ea</figcaption></figure><figure class="rg-fig"><img src="pappers/CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025_figures/images/fig_006_Fig_4__Distributions_of_as-built_solid.png" loading="lazy" alt=""><figcaption>Fig. 4 : Distributions of as-built solid fraction in the datasets. Each nanoporo</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>Exploiting graph theory in MD simulations for extracting chemical and physical properties of materials</h3>
+      </div>
+      <div class="rg-authors">** S. Bougueroua et al.</div>
+      <div class="rg-tags"><span class="rg-tag">MD</span> <span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_011_Fig_1_Illustration_of_the_passage_from_.png" loading="lazy" alt=""><figcaption>Fig. 1 Illustration of the passage from a 3D conformation (a) to a 2DMolGraph (b</figcaption></figure><figure class="rg-fig"><img src="pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_012_Fig_2_Identification_of_conformations_o.png" loading="lazy" alt=""><figcaption>Fig. 2 Identification of conformations over a given MD trajectory, following the</figcaption></figure><figure class="rg-fig"><img src="pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_013_Fig_3_The_generalized_workflow_for_the_.png" loading="lazy" alt=""><figcaption>Fig. 3 The generalized workflow for the autonomous exploration of the organometa</figcaption></figure><figure class="rg-fig"><img src="pappers/Grafos_MD_silice_Gaigeot_PCCP_2025_figures/images/fig_014_Fig_4_The_network_of_states_of_the_sili.png" loading="lazy" alt=""><figcaption>Fig. 4 The network of states of the silica-supported zirconocene hydride catalys</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/Grafos_MD_silice_Gaigeot_PCCP_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Grafos_MD_silice_Gaigeot_PCCP_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>OE-BERT: pre-entrenamiento de dominio (DAPT) para optoelectrónica</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures/images/fig_011_Figure_1_Applications_of_BERT-like_mode.png" loading="lazy" alt=""><figcaption>Figure 1. Applications of BERT-like models in academic research. Left. BERT-like</figcaption></figure><figure class="rg-fig"><img src="pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures/images/fig_013_Figure_2_Training_pipeline_for_the_opto.png" loading="lazy" alt=""><figcaption>Figure 2. Training pipeline for the optoelectronics-adapted language models deve</figcaption></figure><figure class="rg-fig"><img src="pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures/images/fig_014_Figure_3_Keyword_frequency_bar_chart_fo.png" loading="lazy" alt=""><figcaption>Figure 3. Keyword frequency bar chart for normalized keywords found in 20k Scien</figcaption></figure><figure class="rg-fig"><img src="pappers/OE-BERT_DAPT_optoelectronica_Huang_2025_figures/images/fig_016_Figure_4_Pretraining_loss_and_token_pre.png" loading="lazy" alt=""><figcaption>Figure 4. Pretraining loss and token prediction accuracy progress of BERT, ALBER</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/OE-BERT_DAPT_optoelectronica_Huang_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/OE-BERT_DAPT_optoelectronica_Huang_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2026</span>
+        <h3>Framework para evitar la DFT mediante GNN: energías de formación de vacancias en HEAs FCC</h3>
+      </div>
+      <div class="rg-authors">Nathan Linton, Parampreet Singh &amp;amp; Dilpuneet S. Aidhy — npj Comput. Mater.</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span> <span class="rg-tag">HEA</span> <span class="rg-tag">Vacancias</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Linton_figures/images/fig_002_Marco_del_modelo.png" loading="lazy" alt=""><figcaption>Fig. 2 — Marco del modelo: CHGNet ajustado + CGCNN reemplazan a la DFT</figcaption></figure><figure class="rg-fig"><img src="pappers/Linton_figures/images/fig_001_Factores_que_influyen_en_Evf.png" loading="lazy" alt=""><figcaption>Fig. 1 — Volumen atómico y carga de Bader vs. energía de formación de vacancias</figcaption></figure><figure class="rg-fig"><img src="pappers/Linton_figures/images/fig_003_Distorsion_de_red_CHGNet.png" loading="lazy" alt=""><figcaption>Fig. 3 — Distorsión de red: CHGNet ajustado vs. DFT (MAD)</figcaption></figure><figure class="rg-fig"><img src="pappers/Linton_figures/images/fig_004_Predicciones_carga_de_Bader.png" loading="lazy" alt=""><figcaption>Fig. 4 — Predicciones de carga de Bader (DFT vs. CGCNN)</figcaption></figure></div>
+      <div class="rg-actions"><a href="pappers/Linton_figures/resumen_Linton.html" class="rg-btn primary">Resumen</a><a href="pappers/Linton.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">—</span>
+        <h3>CarNet: redes neuronales para tensores cartesianos</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/CarNet_tensores_cartesianos_Chen_2025_figures/images/fig_001_FIG_1_Schematic_illustration_of_Cartes.png" loading="lazy" alt=""><figcaption>FIG. 1. Schematic illustration of Cartesian natural tensor operations. a . Const</figcaption></figure><figure class="rg-fig"><img src="pappers/CarNet_tensores_cartesianos_Chen_2025_figures/images/fig_002_FIG_2_Overview_of_the_CarNet_model_arc.png" loading="lazy" alt=""><figcaption>FIG. 2. Overview of the CarNet model architecture. The relative distance vector</figcaption></figure><figure class="rg-fig"><img src="pappers/CarNet_tensores_cartesianos_Chen_2025_figures/images/fig_003_FIG_3_MD_simulation_results_of_bulk_Li.png" loading="lazy" alt=""><figcaption>FIG. 3. MD simulation results of bulk LiPS and water systems. a -c : Crystal str</figcaption></figure><figure class="rg-fig"><img src="pappers/CarNet_tensores_cartesianos_Chen_2025_figures/images/fig_004_FIG_4_Performance_of_CarNet_in_predict.png" loading="lazy" alt=""><figcaption>FIG. 4. Performance of CarNet in predicting elastic properties . a . Predicted b</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/CarNet_tensores_cartesianos_Chen_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/CarNet_tensores_cartesianos_Chen_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">—</span>
+        <h3>Predicción multitarea de HEAs con incertidumbre (Deep Gaussian Processes)</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/DGP_multitarea_HEA_Alvi_2025_figures/images/fig_004_Fig_1__Schematic_overview_of_the_BIRDS.png" loading="lazy" alt=""><figcaption>Fig. 1 | Schematic overview of the BIRDSHOT data acquisition work fl ow. The dat</figcaption></figure><figure class="rg-fig"><img src="pappers/DGP_multitarea_HEA_Alvi_2025_figures/images/fig_005_Fig_2__Pairwise_plot_illustrating_corr.png" loading="lazy" alt=""><figcaption>Fig. 2 | Pairwise plot illustrating correlations between different experimental</figcaption></figure><figure class="rg-fig"><img src="pappers/DGP_multitarea_HEA_Alvi_2025_figures/images/fig_006_Fig_3__Schematic_representation_of_the.png" loading="lazy" alt=""><figcaption>Fig. 3 | Schematic representation of the two-layered variational deep Gaussian p</figcaption></figure><figure class="rg-fig"><img src="pappers/DGP_multitarea_HEA_Alvi_2025_figures/images/fig_007_Fig_4__The_fi_gure_illustrates_differe.png" loading="lazy" alt=""><figcaption>Fig. 4 | The fi gure illustrates difference in fi tting performance for hardness</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/DGP_multitarea_HEA_Alvi_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/DGP_multitarea_HEA_Alvi_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">—</span>
+        <h3>Review: Deep Learning para la ciencia de materiales</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_005_Fig_1_Schematic_showing_an_overview_of_.png" loading="lazy" alt=""><figcaption>Fig. 1 Schematic showing an overview of arti fi cial intelligence (AI), machine</figcaption></figure><figure class="rg-fig"><img src="pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_011_Fig_2_Schematic_representations_of_an_a.png" loading="lazy" alt=""><figcaption>Fig. 2 Schematic representations of an atomic structure as a graph. a CGCNN mode</figcaption></figure><figure class="rg-fig"><img src="pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_014_Fig_3_Example_applications_of_deep_lear.png" loading="lazy" alt=""><figcaption>Fig. 3 Example applications of deep learning for spectral data. a Predicting str</figcaption></figure><figure class="rg-fig"><img src="pappers/Review_DL_materiales_Choudhary_2022_figures/images/fig_020_Fig_4_Deep-learning-based_algorithm_for.png" loading="lazy" alt=""><figcaption>Fig. 4 Deep-learning-based algorithm for atomic site classi fi cation. a Deep ne</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/Review_DL_materiales_Choudhary_2022_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Review_DL_materiales_Choudhary_2022.pdf" class="rg-btn">PDF</a></div>
+    </article></div>
+  </section>
+  <section class="rg-section" id="t-pc" style="--c:#2e7d9e">
+    <div class="rg-sec-head">
+      <span class="rg-sec-num">04</span>
+      <h2>Deep learning sobre nubes de puntos y datos 3D</h2>
+      <span class="rg-sec-count">6 papers</span>
+    </div>
+    <p class="rg-synth">Linaje canónico de la <strong>visión geométrica 3D</strong>, con una cadena de
+     citación nítida: <em>PointNet (Qi 2017)</em> → <em>PointNet++ (Qi 2017)</em> →
+     <em>DGCNN/EdgeConv (Wang 2020)</em>, junto a la vía basada en vóxeles de
+     <em>VoxelNet (Zhou 2017)</em>, el dataset de anotación de regiones de Yi (PartNet)
+     y el framework reproducible <em>Torch-Points3D</em> (Chaton 2020) que los integra.
+     Son las arquitecturas fundacionales que el Tema 02 reutiliza para procesar
+     estructuras atómicas como nubes de puntos o rejillas de vóxeles.</p>
+    <div class="rg-papers">
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2016</span>
+        <h3>A Scalable Active Framework for Region Annotation in 3D Shape Collections</h3>
+      </div>
+      <div class="rg-authors">** Li Yi et al.</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/PartNet_anotacion_regiones_3D_Yi_figures/images/fig_001_Figure_1_We_use_our_method_to_create_de.png" loading="lazy" alt=""><figcaption>Figure 1: We use our method to create detailed per-point labeling of 31963 model</figcaption></figure><figure class="rg-fig"><img src="pappers/PartNet_anotacion_regiones_3D_Yi_figures/images/fig_002_Figure_2_This_figure_illustrates_the_nu.png" loading="lazy" alt=""><figcaption>Figure 2: This figure illustrates the number of correctly-labeled models (y-axis</figcaption></figure><figure class="rg-fig"><img src="pappers/PartNet_anotacion_regiones_3D_Yi_figures/images/fig_003_Figure_3_This_figure_summarizes_our_pip.png" loading="lazy" alt=""><figcaption>Figure 3: This figure summarizes our pipeline. Given the input dataset we select</figcaption></figure><figure class="rg-fig"><img src="pappers/PartNet_anotacion_regiones_3D_Yi_figures/images/fig_005_Figure_4_At_each_iteration_our_method_s.png" loading="lazy" alt=""><figcaption>Figure 4: At each iteration our method selects an annotation set (in orange) and</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/PartNet_anotacion_regiones_3D_Yi_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/PartNet_anotacion_regiones_3D_Yi.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2017</span>
+        <h3>PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation</h3>
+      </div>
+      <div class="rg-authors">** Charles R. Qi et al.</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/PointNet_Qi_2017_figures/images/fig_001_Figure_1_Applications_of_PointNet_We_p.png" loading="lazy" alt=""><figcaption>Figure 1. Applications of PointNet. We propose a novel deep net architecture tha</figcaption></figure><figure class="rg-fig"><img src="pappers/PointNet_Qi_2017_figures/images/fig_003_Figure_3_Qualitative_results_for_part_s.png" loading="lazy" alt=""><figcaption>Figure 3. Qualitative results for part segmentation. We visualize the CAD part s</figcaption></figure><figure class="rg-fig"><img src="pappers/PointNet_Qi_2017_figures/images/fig_004_Figure_4_Qualitative_results_for_semant.png" loading="lazy" alt=""><figcaption>Figure 4. Qualitative results for semantic segmentation. Top row is input point</figcaption></figure><figure class="rg-fig"><img src="pappers/PointNet_Qi_2017_figures/images/fig_005_Figure_5_Three_approaches_to_achieve_or.png" loading="lazy" alt=""><figcaption>Figure 5. Three approaches to achieve order invariance. Multilayer perceptron (M</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/PointNet_Qi_2017_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/PointNet_Qi_2017.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2017</span>
+        <h3>PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space</h3>
+      </div>
+      <div class="rg-authors">** Charles R. Qi et al.</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/PointNet++_Qi_2017_figures/images/fig_001_Figure_1_Visualization_of_a_scan_captur.png" loading="lazy" alt=""><figcaption>Figure 1: Visualization of a scan captured from a Structure Sensor (left: RGB; r</figcaption></figure><figure class="rg-fig"><img src="pappers/PointNet++_Qi_2017_figures/images/fig_002_Figure_2_Illustration_of_our_hierarchic.png" loading="lazy" alt=""><figcaption>Figure 2: Illustration of our hierarchical feature learning architecture and its</figcaption></figure><figure class="rg-fig"><img src="pappers/PointNet++_Qi_2017_figures/images/fig_004_Figure_4_Left_Point_cloud_with_random_.png" loading="lazy" alt=""><figcaption>Figure 4: Left: Point cloud with random point dropout. Right: Curve showing adva</figcaption></figure><figure class="rg-fig"><img src="pappers/PointNet++_Qi_2017_figures/images/fig_006_Wall_Floor_Chair_Desk_Bed_Door_Table_Fig.png" loading="lazy" alt=""><figcaption>Wall Floor Chair Desk Bed Door Table Figure 6: Scannet labeling results. [20] ca</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/PointNet++_Qi_2017_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/PointNet++_Qi_2017.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2018</span>
+        <h3>VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection</h3>
+      </div>
+      <div class="rg-authors">** Yin Zhou, Oncel Tuzel</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/VoxelNet_Zhou_2017_figures/images/fig_001_Figure_1_VoxelNet_directly_operates_on_.png" loading="lazy" alt=""><figcaption>Figure 1. VoxelNet directly operates on the raw point cloud (no need for feature</figcaption></figure><figure class="rg-fig"><img src="pappers/VoxelNet_Zhou_2017_figures/images/fig_002_Figure_2_VoxelNet_architecture_The_fea.png" loading="lazy" alt=""><figcaption>Figure 2. VoxelNet architecture. The feature learning network takes a raw point</figcaption></figure><figure class="rg-fig"><img src="pappers/VoxelNet_Zhou_2017_figures/images/fig_004_Figure_4_Region_proposal_network_archit.png" loading="lazy" alt=""><figcaption>Figure 4. Region proposal network architecture.</figcaption></figure><figure class="rg-fig"><img src="pappers/VoxelNet_Zhou_2017_figures/images/fig_005_Figure_5_Illustration_of_efficient_impl.png" loading="lazy" alt=""><figcaption>Figure 5. Illustration of efficient implementation.</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/VoxelNet_Zhou_2017_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/VoxelNet_Zhou_2017.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2020</span>
+        <h3>DGCNN: Learning Point Cloud Representations by Dynamic Graph CNN</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span></div>
+      <div class="nofig">— sin figuras extraídas —</div>
+      <div class="rg-actions"><a href="output/DGCNN_tesis_MIT_Wang_2020_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/DGCNN_tesis_MIT_Wang_2020.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2020</span>
+        <h3>Torch-Points3D: A Modular Multi-Task Framework for Reproducible Deep Learning on 3D Point Clouds</h3>
+      </div>
+      <div class="rg-authors">** Nicolas Chaulet et al.</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span> <span class="rg-tag">Software</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/TorchPoints3D_framework_Chaton_2020_figures/images/fig_001_Figure_1_Torch-Points3D_supports_multip.png" loading="lazy" alt=""><figcaption>Figure 1: Torch-Points3D supports multiple tasks such as classification, segment</figcaption></figure><figure class="rg-fig"><img src="pappers/TorchPoints3D_framework_Chaton_2020_figures/images/fig_002_Figure_2_Overall_architecture_of_the_fr.png" loading="lazy" alt=""><figcaption>Figure 2: Overall architecture of the framework, with data flow highlighted in r</figcaption></figure><figure class="rg-fig"><img src="pappers/TorchPoints3D_framework_Chaton_2020_figures/images/fig_004_Table_3_Improvement_in_terms_of_mIoU_pr.png" loading="lazy" alt=""><figcaption>Table 3: Improvement in terms of mIoU provided by inference-time voting schemes</figcaption></figure><figure class="rg-fig"><img src="pappers/TorchPoints3D_framework_Chaton_2020_figures/images/fig_005_Listing_4_Optimizer_hyper-parameters_us.png" loading="lazy" alt=""><figcaption>Listing 4: Optimizer hyper-parameters used for training all models on S3DIS.</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/TorchPoints3D_framework_Chaton_2020_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/TorchPoints3D_framework_Chaton_2020.pdf" class="rg-btn">PDF</a></div>
+    </article></div>
+  </section>
+  <section class="rg-section" id="t-mlip" style="--c:#3f7d5a">
+    <div class="rg-sec-head">
+      <span class="rg-sec-num">05</span>
+      <h2>Potenciales interatómicos ML y dinámica molecular</h2>
+      <span class="rg-sec-count">7 papers</span>
+    </div>
+    <p class="rg-synth">Donde se construyen y explotan los <strong>potenciales interatómicos
+     aprendidos (MLIP)</strong> y los descriptores estructurales que alimentan al resto.
+     Desarrollo de MLIP para HfO₂ ferroeléctrico (Kankanamalage 2026), el potencial
+     de neuroevolución (NEP) para conductividad térmica de 16 metales (Cao), el puente
+     atomístico↔continuo del transporte térmico (Ugwumadu 2026, ligado a sptc-ai),
+     el dataset OMC25 de cristales moleculares (Meta 2025) y la descomposición de fase
+     por ablación láser (Sun 2025). El clásico de <em>Steinhardt (1983)</em> aporta los
+     parámetros de orden orientacional que el Tema 02 usa como descriptores de defectos.</p>
+    <div class="rg-papers">
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">1983</span>
+        <h3>Bond-orientational order in liquids and glasses</h3>
+      </div>
+      <div class="rg-authors">** Paul J. Steinhardt, David R. Nelson, Marco Ronchetti</div>
+      <div class="rg-tags"><span class="rg-tag">MD</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_001_FlG_1_Different_13-atom_particle_clust.png" loading="lazy" alt=""><figcaption>FlG. 1. Different 13-atom particle clusters occurring in liquids near the meltin</figcaption></figure><figure class="rg-fig"><img src="pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_002_FIG_2_Histograms_of_quadratic_and_thir.png" loading="lazy" alt=""><figcaption>FIG. 2. Histograms of quadratic and third-order invariants for 13-atom icosahedr</figcaption></figure><figure class="rg-fig"><img src="pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_003_FIG_3_Symmetry_parameter_86_for_a_13-.png" loading="lazy" alt=""><figcaption>FIG. 3. Symmetry parameter 8&#x27;6 for a 13-atom hcp cluster as a function of aspect</figcaption></figure><figure class="rg-fig"><img src="pappers/Steinhardt_bond_orientational_order_1983_figures/images/fig_004_FIG_4_a_Quadratic_invariants_QI_for_.png" loading="lazy" alt=""><figcaption>FIG. 4. (a) Quadratic invariants QI for a hightemperature LennardJones liquid (s</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/Steinhardt_bond_orientational_order_1983_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Steinhardt_bond_orientational_order_1983.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>Lattice thermal conductivity of 16 elemental metals from molecular dynamics simulations with a unified neuroevolution potential</h3>
+      </div>
+      <div class="rg-authors">** Shuo Cao et al.</div>
+      <div class="rg-tags"><span class="rg-tag">MD</span> <span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Shuo_figures/images/fig_001_FIG_1_Simulation_models_in_this_work_.png" loading="lazy" alt=""><figcaption>FIG. 1. Simulation models in this work. Unit cells and supercells for metals wit</figcaption></figure><figure class="rg-fig"><img src="pappers/Shuo_figures/images/fig_002_FIG_2_Time_convergence_of_the_phonon_t.png" loading="lazy" alt=""><figcaption>FIG. 2. Time convergence of the phonon thermal conductivity. Cumulative averages</figcaption></figure><figure class="rg-fig"><img src="pappers/Shuo_figures/images/fig_003_FIG_3_Comparison_of_phonon_thermal_con.png" loading="lazy" alt=""><figcaption>FIG. 3. Comparison of phonon thermal conductivities with and without isotope sca</figcaption></figure><figure class="rg-fig"><img src="pappers/Shuo_figures/images/fig_005_FIG_5_Phonon_thermal_conductivity_comp.png" loading="lazy" alt=""><figcaption>FIG. 5. Phonon thermal conductivity comparison between MD simulations with UNEP-</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/Shuo_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Shuo.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>sptc-ai: Conductividad Térmica en Si con ML y Elementos Finitos</h3>
+      </div>
+      <div class="rg-authors">et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Materiales</span> <span class="rg-tag">IA</span> <span class="rg-tag">MD</span> <span class="rg-tag">Silicon</span> <span class="rg-tag">FEM</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/chemical_figures/images/fig_002_FIG_1_Architecture_and_Training_of_spt.png" loading="lazy" alt=""><figcaption>FIG. 1 — Arquitectura y entrenamiento de sptc-ai</figcaption></figure><figure class="rg-fig"><img src="pappers/chemical_figures/images/fig_003_FIG_2_Performance_of_sptc-ai__The_NS.png" loading="lazy" alt=""><figcaption>FIG. 2 — Rendimiento de sptc-ai en distintas morfologias de Si</figcaption></figure><figure class="rg-fig"><img src="pappers/chemical_figures/images/fig_004_FIG_3_Analysis_of_sptc2fem_results_for.png" loading="lazy" alt=""><figcaption>FIG. 3 — sptc2fem: conductividad y malla adaptativa</figcaption></figure><figure class="rg-fig"><img src="pappers/chemical_figures/images/fig_006_FIG_5_Experimental_validation_of_the_m.png" loading="lazy" alt=""><figcaption>FIG. 5 — Validacion experimental en nanohilos 3C/2H de Si</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/chemical_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/chemical.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>OMC25: dataset de cristales moleculares orgánicos (Meta)</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">MD</span> <span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_001_Figure_1_Overview_of_the_OMC25_dataset_.png" loading="lazy" alt=""><figcaption>Figure 1 Overview of the OMC25 dataset: generation method, structure relaxations</figcaption></figure><figure class="rg-fig"><img src="pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_003_Figure_3_Comparison_of_properties_from_t.png" loading="lazy" alt=""><figcaption>Figure 3 Comparison of properties from the first and last frames of relaxation t</figcaption></figure><figure class="rg-fig"><img src="pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_004_Table_3_MLIP_evaluations_validation_and.png" loading="lazy" alt=""><figcaption>Table 3 MLIP evaluations: validation and test metrics, as well as X23b and Schrö</figcaption></figure><figure class="rg-fig"><img src="pappers/OMC25_cristales_moleculares_Meta_2025_figures/images/fig_005_Listing_S2_Example_INCAR_settings_for_th.png" loading="lazy" alt=""><figcaption>Listing S2 Example INCAR settings for the DFT relaxations with VASP.</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/OMC25_cristales_moleculares_Meta_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/OMC25_cristales_moleculares_Meta_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>Dynamics of nanoscale phase decomposition in laser ablation</h3>
+      </div>
+      <div class="rg-authors">** Y. Sun et al.</div>
+      <div class="rg-tags"><span class="rg-tag">MD</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_004_Fig_1__Experimental_setup_with_simulta.png" loading="lazy" alt=""><figcaption>Fig. 1 | Experimental setup with simultaneous small- and wide-angle scattering m</figcaption></figure><figure class="rg-fig"><img src="pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_005_the_WAXS_from_the_sample_At_negative_de.png" loading="lazy" alt=""><figcaption>the WAXS from the sample. At negative delays ( δ t &lt; 0 ps), it captures Au (111)</figcaption></figure><figure class="rg-fig"><img src="pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_006_Fig_2__Temporal_evolution_of_the_WAXS_.png" loading="lazy" alt=""><figcaption>Fig. 2 | Temporal evolution of the WAXS and SAXS patterns measured for a 100 nm</figcaption></figure><figure class="rg-fig"><img src="pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025_figures/images/fig_007_used_as_the_reference_in_the_evaluation_.png" loading="lazy" alt=""><figcaption>used as the reference in the evaluation of the difference patterns Δ S ( Q , δ t</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/Ablacion_laser_descomposicion_nanoescala_Sun_2025_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Ablacion_laser_descomposicion_nanoescala_Sun_2025.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2026</span>
+        <h3>MLIP development and phase transition analysis of ferroelectric HfO₂</h3>
+      </div>
+      <div class="rg-authors">** Y. H. Kankanamalage et al.</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_002_FIG_1_Crystal_structures_of_different_.png" loading="lazy" alt=""><figcaption>FIG. 1. Crystal structures of different phases of HfO2: (a) Ferroelectric Orthor</figcaption></figure><figure class="rg-fig"><img src="pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_003_FIG_3_Predicted_bulk_modulus_B_and_s.png" loading="lazy" alt=""><figcaption>FIG. 3. Predicted bulk modulus (B) and shear modulus (G) from the MLIP model com</figcaption></figure><figure class="rg-fig"><img src="pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_004_FIG_2_Equations_of_state_energy_vs_vo.png" loading="lazy" alt=""><figcaption>FIG. 2. Equations of state (energy vs volume) for HfO2 polymorphs: Pbca , Pca 21</figcaption></figure><figure class="rg-fig"><img src="pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_figures/images/fig_005_FIG_4_Pressure_dependence_of_the_nine_.png" loading="lazy" alt=""><figcaption>FIG. 4. Pressure dependence of the nine independent elastic constants Cij of the</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/MLIP_HfO2_ferroelectrico_Kankanamalage_2026_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/MLIP_HfO2_ferroelectrico_Kankanamalage_2026.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2026</span>
+        <h3>Seamlessly joining length scales: From atomistic thermal graphs to anisotropic continuum conductivity</h3>
+      </div>
+      <div class="rg-authors">** C. Ugwumadu , D. A. Drabold , R. M. Tutchton</div>
+      <div class="rg-tags"><span class="rg-tag">MD</span> <span class="rg-tag">IA</span> <span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Thermal_transport_atomistico_continuo_Ugwumadu_2026_figures/images/fig_002_FIG_1_Architecture_and_Training_of_spt.png" loading="lazy" alt=""><figcaption>FIG. 1. Architecture and Training of sptc-ai . Empirical probability of high-SPT</figcaption></figure><figure class="rg-fig"><img src="pappers/Thermal_transport_atomistico_continuo_Ugwumadu_2026_figures/images/fig_003_FIG_2_Performance_of_sptc-ai__The_NS.png" loading="lazy" alt=""><figcaption>FIG. 2. Performance of sptc-ai . The &#x27;NSPTC&#x27; colorbar indicates the normalized S</figcaption></figure><figure class="rg-fig"><img src="pappers/Thermal_transport_atomistico_continuo_Ugwumadu_2026_figures/images/fig_004_FIG_3_Analysis_of_sptc2fem_results_for.png" loading="lazy" alt=""><figcaption>FIG. 3. Analysis of sptc2fem results for the amorphous-crystalline Si structure.</figcaption></figure><figure class="rg-fig"><img src="pappers/Thermal_transport_atomistico_continuo_Ugwumadu_2026_figures/images/fig_005_FIG_4_Analysis_of_the_sptc2fem_results.png" loading="lazy" alt=""><figcaption>FIG. 4. Analysis of the sptc2fem results for the other structures. (a) Twin grai</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/Thermal_transport_atomistico_continuo_Ugwumadu_2026_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Thermal_transport_atomistico_continuo_Ugwumadu_2026.pdf" class="rg-btn">PDF</a></div>
+    </article></div>
+  </section>
+  <section class="rg-section" id="t-ai" style="--c:#5b4b8a">
+    <div class="rg-sec-head">
+      <span class="rg-sec-num">06</span>
+      <h2>Fundamentos de IA y aprendizaje profundo</h2>
+      <span class="rg-sec-count">3 papers</span>
+    </div>
+    <p class="rg-synth">Las piezas <strong>fundacionales y transversales de IA</strong>: el artículo
+     seminal de <em>retropropagación (Rumelhart, Hinton &amp; Williams 1986)</em> que
+     habilita todo lo demás, DJINN (Humbird 2018) que inicializa redes a partir de
+     árboles de decisión, y un survey actual sobre LLMs para generación de código
+     (Jiang 2026). Es la base metodológica que sostiene los Temas 02, 03 y 04.</p>
+    <div class="rg-papers">
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">1986</span>
+        <h3>Learning representations by back-propagating errors</h3>
+      </div>
+      <div class="rg-authors">** David E. Rumelhart, Geoffrey E. Hinton, Ronald J. William</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span></div>
+      <div class="nofig">— sin figuras extraídas —</div>
+      <div class="rg-actions"><a href="output/Backpropagation_Rumelhart_Hinton_Williams_1986_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Backpropagation_Rumelhart_Hinton_Williams_1986.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2026</span>
+        <h3>Survey: LLMs para Generación de Código</h3>
+      </div>
+      <div class="rg-authors">Jiang et al.</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span> <span class="rg-tag">LLM</span> <span class="rg-tag">Código</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/ilove-Jiang.2026_figures/images/fig_001_Fig_1_A_chronological_overview_of_LLMs.png" loading="lazy" alt=""><figcaption>Fig. 1 — Cronología de LLMs para generación de código</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Jiang.2026_figures/images/fig_002_Fig_2_The_overview_of_LLMs_with_encode.png" loading="lazy" alt=""><figcaption>Fig. 2 — Arquitecturas encoder-decoder y decoder-only</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Jiang.2026_figures/images/fig_003_Fig_3_Overview_of_the_paper_search_and.png" loading="lazy" alt=""><figcaption>Fig. 3 — Proceso de búsqueda y selección de papers del survey</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Jiang.2026_figures/images/fig_006_Fig_6_Taxonomy_of_LLMs_for_code_genera.png" loading="lazy" alt=""><figcaption>Fig. 6 — Taxonomía completa de LLMs para código</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/ilove-Jiang.2026_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/ilove-Jiang.2026.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">—</span>
+        <h3>DJINN: inicialización de redes neuronales con árboles de decisión</h3>
+      </div>
+      <div class="rg-authors">—</div>
+      <div class="rg-tags"><span class="rg-tag">IA</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/DJINN_init_redes_arboles_Humbird_2018_figures/images/fig_001_Fig_1_Illustration_of_the_DJINN_mappin.png" loading="lazy" alt=""><figcaption>Fig. 1. Illustration of the DJINN mapping for a simple decision tree. Gray neuro</figcaption></figure><figure class="rg-fig"><img src="pappers/DJINN_init_redes_arboles_Humbird_2018_figures/images/fig_002_Fig_2_Truth_tables_decision_trees_an.png" loading="lazy" alt=""><figcaption>Fig. 2. Truth tables, decision trees, and DJINN-initialized neural networks for</figcaption></figure><figure class="rg-fig"><img src="pappers/DJINN_init_redes_arboles_Humbird_2018_figures/images/fig_003_Fig_3_MSE_normalized_to_the_MSE_of_on.png" loading="lazy" alt=""><figcaption>Fig. 3. MSE (normalized to the MSE of one tree) as a function of the number of t</figcaption></figure><figure class="rg-fig"><img src="pappers/DJINN_init_redes_arboles_Humbird_2018_figures/images/fig_004_Fig_4_Cost_MSE_for_data_scaled_to_0.png" loading="lazy" alt=""><figcaption>Fig. 4. Cost (MSE for data scaled to (0,1)) as a function of training epoch for</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/DJINN_init_redes_arboles_Humbird_2018_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/DJINN_init_redes_arboles_Humbird_2018.pdf" class="rg-btn">PDF</a></div>
+    </article></div>
+  </section>
+  <section class="rg-section" id="t-soft" style="--c:#7a6a3a">
+    <div class="rg-sec-head">
+      <span class="rg-sec-num">07</span>
+      <h2>Visualización y software científico</h2>
+      <span class="rg-sec-count">2 papers</span>
+    </div>
+    <p class="rg-synth">Herramientas para <strong>explorar y diseminar datos atomísticos</strong>.
+     Dos artículos sobre <em>Chemiscope</em> (el de JOSS y el de Ceriotti/Chorna 2026)
+     cubren la visualización interactiva de estructuras y descriptores. Se conectan con
+     Torch-Points3D (Tema 04) y FaVAD (Tema 02) como capa de infraestructura/visualización
+     común a todo el ecosistema.</p>
+    <div class="rg-papers">
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2025</span>
+        <h3>Chemiscope 1.0: Visualización Interactiva de Estructuras Atómicas</h3>
+      </div>
+      <div class="rg-authors">Guillaume Fraux et al. — JOSS</div>
+      <div class="rg-tags"><span class="rg-tag">Software</span> <span class="rg-tag">Materiales</span> <span class="rg-tag">IA</span> <span class="rg-tag">Visualizacion</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/25-05-papper_figures/images/fig_003_Figure_1_Overview_of_Chemiscope_10_mul.png" loading="lazy" alt=""><figcaption>Fig. 1 — Arquitectura y backends de Chemiscope 1.0</figcaption></figure><figure class="rg-fig"><img src="pappers/25-05-papper_figures/images/fig_006_Figure_2_50k_random_structures_from_the.png" loading="lazy" alt=""><figcaption>Fig. 2 — 50 000 estructuras MD22 visualizadas en espacio latente PET-MAD</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/25-05-papper_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/25-05-papper.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2026</span>
+        <h3>Chemiscope 1.0: interactive exploration of atomistic data from analysis to dissemination</h3>
+      </div>
+      <div class="rg-authors">** Sofiia Chorna et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Software</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Chemiscope_visualizacion_atomistica_Ceriotti_2026_figures/images/fig_003_Figure_1_Overview_of_Chemiscope_10_mul.png" loading="lazy" alt=""><figcaption>Figure 1: Overview of Chemiscope 1.0 multi-environment support. The Python API a</figcaption></figure><figure class="rg-fig"><img src="pappers/Chemiscope_visualizacion_atomistica_Ceriotti_2026_figures/images/fig_006_Figure_2_50k_random_structures_from_the.png" loading="lazy" alt=""><figcaption>Figure 2: 50k random structures from the MD22 dataset (Chmiela et al., 2022) vis</figcaption></figure><figure class="rg-fig"><img src="pappers/Chemiscope_visualizacion_atomistica_Ceriotti_2026_figures/images/fig_001_no_caption.png" loading="lazy" alt=""><figcaption>Figura fig_001</figcaption></figure><figure class="rg-fig"><img src="pappers/Chemiscope_visualizacion_atomistica_Ceriotti_2026_figures/images/fig_002_no_caption.png" loading="lazy" alt=""><figcaption>Figura fig_002</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/Chemiscope_visualizacion_atomistica_Ceriotti_2026_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Chemiscope_visualizacion_atomistica_Ceriotti_2026.pdf" class="rg-btn">PDF</a></div>
+    </article></div>
+  </section>
+  <section class="rg-section" id="t-misc" style="--c:#6b6b6b">
+    <div class="rg-sec-head">
+      <span class="rg-sec-num">08</span>
+      <h2>Fundamentos de materiales y temas transversales</h2>
+      <span class="rg-sec-count">3 papers</span>
+    </div>
+    <p class="rg-synth">Material de contexto y casos interdisciplinarios: el texto de divulgación
+     <em>«Átomos en movimiento»</em> (introducción a la ciencia de materiales), el estudio
+     de fotocatalizadores alternativos al TiO₂ (Hernández 2009) y un trabajo de
+     entomología sobre bioinsecticidas en colza (Tonks 2026). No comparten método con
+     los clusters anteriores pero completan la biblioteca.</p>
+    <div class="rg-papers">
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2009</span>
+        <h3>Development of alternative photocatalysts to TiO₂: Challenges and opportunities</h3>
+      </div>
+      <div class="rg-authors">** M. D. Hernández-Alonso et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Materiales</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures/images/fig_001_Silvia_Surez.png" loading="lazy" alt=""><figcaption>Silvia Surez</figcaption></figure><figure class="rg-fig"><img src="pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures/images/fig_002_Mara_D__Hernndez_-Alonso.png" loading="lazy" alt=""><figcaption>Mara D : Hernndez -Alonso</figcaption></figure><figure class="rg-fig"><img src="pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures/images/fig_003_Juan_M__Coronado.png" loading="lazy" alt=""><figcaption>Juan M : Coronado</figcaption></figure><figure class="rg-fig"><img src="pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_figures/images/fig_004_Fernando_Fresno.png" loading="lazy" alt=""><figcaption>Fernando Fresno</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/Fotocatalizadores_alternativos_TiO2_Hernandez_2009_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/Fotocatalizadores_alternativos_TiO2_Hernandez_2009.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">2026</span>
+        <h3>Bioinsecticidas en Colza: Efectos en Pulgones y Parasitoides</h3>
+      </div>
+      <div class="rg-authors">Tonks et al.</div>
+      <div class="rg-tags"><span class="rg-tag">Biología</span> <span class="rg-tag">Entomología</span> <span class="rg-tag">Plaguicidas</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/ilove-Tonks.2026_figures/images/fig_004_Figure_1_Containment_of_Diaeretiella_ra.png" loading="lazy" alt=""><figcaption>Figure 1 — Contención de Diaeretiella rapae para experimento</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Tonks.2026_figures/images/fig_007_Figure_2_Survival_of_A_Myzus_persicae.png" loading="lazy" alt=""><figcaption>Figure 2 — Supervivencia de Myzus persicae y Brevicoryne</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Tonks.2026_figures/images/fig_010_Figure_4_Predicted_probability_of_emerg.png" loading="lazy" alt=""><figcaption>Figure 4 — Probabilidad de emergencia de parasitoides</figcaption></figure><figure class="rg-fig"><img src="pappers/ilove-Tonks.2026_figures/images/fig_012_Figure_5_Survival_of_A_Myzus_persicae.png" loading="lazy" alt=""><figcaption>Figure 5 — Supervivencia adicional con distintos tratamientos</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/ilove-Tonks.2026_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/ilove-Tonks.2026.pdf" class="rg-btn">PDF</a></div>
+    </article>
+    <article class="rg-paper">
+      <div class="rg-paper-head">
+        <span class="rg-year">Libro</span>
+        <h3>Átomos en Movimiento — Introducción a la Ciencia de Materiales</h3>
+      </div>
+      <div class="rg-authors">Texto de referencia</div>
+      <div class="rg-tags"><span class="rg-tag">Materiales</span> <span class="rg-tag">Texto</span></div>
+      <div class="rg-gallery"><figure class="rg-fig"><img src="pappers/libro_figures/images/fig_003_Agua_ampliada_mil_millones_de_veces.png" loading="lazy" alt=""><figcaption>Agua ampliada mil millones de veces — estructura atómica</figcaption></figure><figure class="rg-fig"><img src="pappers/libro_figures/images/fig_004_Figura_12.png" loading="lazy" alt=""><figcaption>Figura 1.2 — Estructura de materiales</figcaption></figure><figure class="rg-fig"><img src="pappers/libro_figures/images/fig_005_Figura_13.png" loading="lazy" alt=""><figcaption>Figura 1.3 — Representación atómica</figcaption></figure><figure class="rg-fig"><img src="pappers/libro_figures/images/fig_012_110_La_sustancia_representada_es_α_-ir.png" loading="lazy" alt=""><figcaption>Fig. 1.10 — La sustancia representada es α-irona</figcaption></figure></div>
+      <div class="rg-actions"><a href="output/libro_resumen.html" class="rg-btn primary">Resumen</a><a href="pappers/libro.pdf" class="rg-btn">PDF</a></div>
+    </article></div>
+  </section>
+  <footer>Generado automáticamente desde index.html · ilovepappers</footer>
+</div>
+</body>
+</html>
