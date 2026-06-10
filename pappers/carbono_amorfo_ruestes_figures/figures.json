@@ -1,0 +1,214 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/carbono_amorfo_ruestes.pdf",
+  "total_figures": 16,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 503.511474609375,
+        "t": 737.3273239135742,
+        "r": 558.793212890625,
+        "b": 664.0396423339844
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 36.80607986450195,
+        "t": 731.6689453125,
+        "r": 98.05928802490234,
+        "b": 663.7076721191406
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 498.3177490234375,
+        "t": 626.1783447265625,
+        "r": 527.7257690429688,
+        "b": 596.0991058349609
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Fig. 2. Measured EELS spectra for DLC samples with diverse sp 3 content: 20% (green line), 30% (blue line), 35% (black line) and 55% (red line). For comparison an EELS spectra for a graphite sample is also shown (orange line).",
+      "page": 4,
+      "bbox": {
+        "l": 306.8486328125,
+        "t": 627.8407745361328,
+        "r": 554.8900146484375,
+        "b": 242.33038330078125
+      },
+      "image_path": "images/fig_004_Fig_2_Measured_EELS_spectra_for_DLC_sa.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Fig. 1. Measured Raman spectra for DLC samples with diverse sp 3 content: 20% (green line), 30% (blue line), 35% (black line) and 55% (red line).",
+      "page": 4,
+      "bbox": {
+        "l": 39.25590133666992,
+        "t": 627.2525024414062,
+        "r": 286.6036682128906,
+        "b": 436.3158874511719
+      },
+      "image_path": "images/fig_005_Fig_1_Measured_Raman_spectra_for_DLC_s.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Fig. 4. Hybridization percentage of samples generated using DFT and EDIP with 256 atoms.",
+      "page": 5,
+      "bbox": {
+        "l": 307.13067626953125,
+        "t": 738.3769073486328,
+        "r": 555.1785278320312,
+        "b": 570.1711120605469
+      },
+      "image_path": "images/fig_006_Fig_4_Hybridization_percentage_of_samp.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Fig. 3. Experimental nanoindentation load-depth curves for DLC samples with diverse sp 3 content: 20% (green line), 30% (blue line), 35% (black line) and 55% (red line).",
+      "page": 5,
+      "bbox": {
+        "l": 39.394683837890625,
+        "t": 737.6898803710938,
+        "r": 287.42706298828125,
+        "b": 557.3855743408203
+      },
+      "image_path": "images/fig_007_Fig_3_Experimental_nanoindentation_loa.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Fig. 5. Load vs. indenter depth curves for DLC with 20, 30 and 55% sp 3 %.",
+      "page": 5,
+      "bbox": {
+        "l": 308.31060791015625,
+        "t": 518.4730224609375,
+        "r": 555.9089965820312,
+        "b": 342.70672607421875
+      },
+      "image_path": "images/fig_008_Fig_5_Load_vs_indenter_depth_curves_f.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 6. (a) Elastic modulus for different sp 3 %, red and blue symbols represent experiments and simulations respectively. Line indicates the fit E = 478 . 5[0 . 248 + sp 3 ) ] 3 / 2 [29,70] . (b) Hybridization as a function of the average coordination of every sample indented with MD. (c) Elastic modulus vs. average coordination. The line indicates the best fit using the model by He and Thorpe [71] , E r = k ( 〈 r 〉 -r p ) m , using r p = 2 . 4 , k = 280 . 3 GPa, and exponent m = 1 . 7 .",
+      "page": 6,
+      "bbox": {
+        "l": 40.02861022949219,
+        "t": 738.731861114502,
+        "r": 287.6660461425781,
+        "b": 565.8751068115234
+      },
+      "image_path": "images/fig_009_Fig_6_a_Elastic_modulus_for_differen.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "",
+      "page": 6,
+      "bbox": {
+        "l": 39.052398681640625,
+        "t": 563.5985870361328,
+        "r": 287.1809387207031,
+        "b": 388.9017639160156
+      },
+      "image_path": "images/fig_010_no_caption.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "",
+      "page": 6,
+      "bbox": {
+        "l": 39.51817321777344,
+        "t": 380.5363464355469,
+        "r": 286.91546630859375,
+        "b": 204.13177490234375
+      },
+      "image_path": "images/fig_011_no_caption.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Fig. 8. Figure of merit H 3 /E 2 versus sp 3 content, for both experiments and simulations.",
+      "page": 7,
+      "bbox": {
+        "l": 306.7580871582031,
+        "t": 739.0132789611816,
+        "r": 555.3110961914062,
+        "b": 558.5621948242188
+      },
+      "image_path": "images/fig_012_Fig_8_Figure_of_merit_H_3_E_2_versus_.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 7. MD hardness at full penetration versus %sp 3 . Experimental results are also included.",
+      "page": 7,
+      "bbox": {
+        "l": 38.6566276550293,
+        "t": 737.3171882629395,
+        "r": 287.0059814453125,
+        "b": 570.4125518798828
+      },
+      "image_path": "images/fig_013_Fig_7_MD_hardness_at_full_penetration_.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Fig. 9. Indentation for different DLC samples. Every picture correspond to a half-cut of the sample. Color code illustrates the shear strain of each atom.",
+      "page": 8,
+      "bbox": {
+        "l": 38.7692985534668,
+        "t": 739.2370681762695,
+        "r": 555.8265380859375,
+        "b": 409.44049072265625
+      },
+      "image_path": "images/fig_014_Fig_9_Indentation_for_different_DLC_sa.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Fig. 10. Shear strain surface around atoms with more than 0.3 shear strain for an aC sample of sp 3 % = 30 %. a), b), c) and d) correspond at indenter depth of 0.5, 1.0, 1.5 and 2.0 nm respectively. Gray atoms correspond to the DLC surface.",
+      "page": 8,
+      "bbox": {
+        "l": 39.677677154541016,
+        "t": 361.58697509765625,
+        "r": 287.76617431640625,
+        "b": 207.310302734375
+      },
+      "image_path": "images/fig_015_Fig_10_Shear_strain_surface_around_ato.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "Fig. 12. Hybridization change for different sp 3 concentration. a) % hybridization change with respect to a non-indented sample with a sp 3 = 20%, left panel, right panel show the /Delta1 % sp 2 , and /Delta1 % sp 3 , respectively. b) % hybridizatoin change for a sp 3 = 55% sample. c) sp 3 as function of distance of the indenter. Calculation were perform at an indenter depth of z = 2 nm. Averages were calculated using spherical bins of 0.5 nm of thickness.",
+      "page": 9,
+      "bbox": {
+        "l": 39.803958892822266,
+        "t": 737.9121360778809,
+        "r": 274.7166442871094,
+        "b": 180.32049560546875
+      },
+      "image_path": "images/fig_016_Fig_12_Hybridization_change_for_differ.png"
+    }
+  ]
+}

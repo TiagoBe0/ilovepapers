@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — Advanced analysis of defect clusters in nuclear reactors using machine learning techniques</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #ffffff; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Interpretación'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>Advanced analysis of defect clusters in nuclear reactors using machine learning techniques</h1>
+    <p class="subtitle">Resumen en español de <strong>Advanced analysis of defect clusters in nuclear reactors</strong>: análisis avanzado de clústeres de defectos en aceros de vasija de reactor (RPV) combinando big data de dinámica molecular y aprendizaje automático.</p>
+    <div class="meta">
+        <div><strong>Autores</strong>Shuai Ren, Xinyu Zhang, Huizhao Li, Changjun Hu &amp; Dandan Chen</div>
+        <div><strong>Revista</strong>Scientific Reports (2025) 15:22439</div>
+        <div><strong>DOI</strong><a href="https://doi.org/10.1038/s41598-025-05802-7" target="_blank">10.1038/s41598-025-05802-7</a></div>
+        <div><strong>PDF local</strong><a href="../pappers/muy_importante.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p><strong>Autores:</strong> Shuai Ren, Xinyu Zhang, Huizhao Li, Changjun Hu, Dandan Chen — School of Computer and Communication Engineering, University of Science and Technology Beijing.<br />
+<strong>Revista:</strong> Scientific Reports (2025) 15:22439, DOI: 10.1038/s41598-025-05802-7</p>
+
+<h2>🎯 Idea central</h2>
+<p>Construir una <strong>cadena completa de análisis con machine learning</strong> para los clústeres de defectos que se forman en los materiales de la <strong>vasija de presión de un reactor nuclear (RPV)</strong> bajo irradiación. A partir de un dataset masivo de <strong>cascadas de colisión</strong> simuladas por dinámica molecular (MISA-MD) en hierro BCC, el trabajo aporta: (1) un <strong>vector de características físico</strong> nuevo para describir la forma de cada clúster (distancias y ángulos entre defectos <em>adyacentes</em>, no respecto del centroide), (2) clustering no supervisado (<strong>t-SNE/UMAP + HDBSCAN</strong>) para clasificar morfologías, y (3) un algoritmo de <strong>reconocimiento de configuraciones internas</strong> ("llenado de red de doble puntero" + componentización en líneas SIA) capaz de identificar lazos paralelos &lt;111&gt;/&lt;100&gt; y clústeres en anillo <strong>C15</strong> en sistemas de millones de átomos.</p>
+
+<h2>🔬 Contexto y motivación</h2>
+<ul>
+<li>La RPV es la <strong>barrera de seguridad crítica</strong> de una central nuclear: la irradiación neutrónica acumula vacancias, intersticiales y lazos de dislocación que <strong>fragilizan el acero</strong> y reducen su tenacidad a la fractura.</li>
+<li>Las cascadas de colisión ocurren en <strong>~10 picosegundos</strong> y a escala atómica: no se pueden observar experimentalmente (la tomografía de sonda atómica es cara y delicada con material radiactivo). La MD es la herramienta estándar para simularlas.</li>
+<li>El grupo se apoya en el concepto de <strong>reactor numérico</strong> (prototipo chino CVR1.0) y en <strong>MISA-MD</strong>, un código MD propio optimizado para supercomputadoras heterogéneas (~51 % más rápido que LAMMPS en GPU), que genera datos de cascadas a escalas de hasta <strong>16 millones de átomos</strong>.</li>
+<li>El problema: analizar esos volúmenes de datos a mano es inviable, y los métodos clásicos de conteo de defectos (celda de Wigner-Seitz) escalan mal (O(N²)) y no describen la <strong>configuración interna</strong> de los clústeres.</li>
+</ul>
+
+<h2>⚙️ Metodología</h2>
+<h3>Dataset</h3>
+<ul>
+<li>Cascadas en <strong>Fe puro BCC</strong> a 600 K, energías de PKA de <strong>10, 20, 30 y 50 keV</strong>, direcciones [122], [135] y [235]; cajas de 80³ a 200³ celdas (1 a 16 millones de átomos); 41 000 pasos de tiempo, con volcado cada 1000 pasos.</li>
+<li>Los datos se organizan en colecciones estructuradas (MongoDB-like): <code>inputPara</code>, <code>result</code>, <code>postProcessing</code>, <code>findDefects</code>, <code>defects</code>, <code>clusters</code>, <code>clusterFeatures</code> y <code>allClusters</code>.</li>
+</ul>
+<h3>Partición en clústeres</h3>
+<ul>
+<li>Dos defectos pertenecen al mismo clúster si distan menos de <strong>L/2</strong> (L = constante de red); entre vacancias no-pseudo el umbral se relaja a <strong>√3·L/2</strong> (la diagonal de la celda).</li>
+</ul>
+<h3>Vector de características físico</h3>
+<ul>
+<li>En vez de medir distancias/ángulos <strong>respecto del centroide</strong> (método habitual, sensible al ruido: una "cola" en un anillo cambia todo el histograma), se calculan <strong>entre puntos defectivos adyacentes</strong>.</li>
+<li>Las distancias se normalizan por la máxima y los ángulos por el intervalo; ambos se discretizan en bins → vector de dimensión fija m+n, <strong>invariante a traslación, rotación y escala</strong>.</li>
+</ul>
+<h3>Clustering no supervisado</h3>
+<ul>
+<li>Reducción de dimensionalidad no lineal con <strong>t-SNE y UMAP</strong> (distancia chi-cuadrado, embedding 2D); UMAP resulta preferible por preservar mejor la estructura global.</li>
+<li>Clasificación con <strong>HDBSCAN</strong> (no requiere fijar ε ni el número de clases); calidad evaluada con el <strong>coeficiente de silueta</strong>.</li>
+</ul>
+<h3>Reconocimiento de configuraciones</h3>
+<ul>
+<li><strong>Conteo de defectos:</strong> mejora del método W-S con <strong>pseudo-defectos</strong> (pares intersticial-vacancia extra que no se cuentan pero ayudan a describir la configuración) y el <strong>método de llenado de red con doble puntero</strong>: se ordenan átomos por su punto de red más cercano y se recorren átomos y puntos de red en paralelo → <strong>O(N log N)</strong> con memoria adicional constante.</li>
+<li><strong>Componentización:</strong> los defectos tipo <em>smileyface</em> (3 defectos en un punto de red) y <em>glasses</em> (pares) se conectan en <strong>líneas SIA</strong> (átomos auto-intersticiales colineales, dirección ≈ vector de Burgers); las líneas se fusionan si distan &lt;1.0 Å y forman &lt;20°.</li>
+<li><strong>Identificación:</strong> las líneas SIA son nodos de un grafo (matriz de adyacencia comprimida en <strong>CSR</strong>); reglas geométricas definen aristas (paralelas: d ≤ 1NN y θ≈0°; anillo: d = 1NN o 3NN y θ≈60°/90°) y una <strong>búsqueda en anchura</strong> de componentes conexas clasifica cada clúster como paralelo (||, ||//), anillo C15 (@) o metaestable (#).</li>
+</ul>
+
+<h2>📊 Resultados clave</h2>
+<h3>El vector de características por puntos adyacentes gana</h3>
+<table>
+<thead>
+<tr><th>Representación</th><th>Clústeres etiquetados como ruido (−1)</th><th>Coef. de silueta</th></tr>
+</thead>
+<tbody>
+<tr><td>Basada en centroide</td><td>219 / 3632</td><td>0.7118</td></tr>
+<tr><td><strong>Basada en puntos adyacentes</strong></td><td><strong>111 / 3632</strong></td><td><strong>0.7571</strong></td></tr>
+</tbody>
+</table>
+<ul>
+<li>Las proyecciones t-SNE/UMAP separan <strong>espontáneamente</strong> clústeres de vacancias y de intersticiales, aunque las features no fueron diseñadas para eso: la geometría codificada tiene significado físico.</li>
+</ul>
+<h3>Conteo de defectos validado contra OVITO y el modelo NRT</h3>
+<ul>
+<li>El método de doble puntero reproduce <strong>exactamente</strong> los conteos de pares de Frenkel de OVITO en las 12 condiciones (p. ej. 600K-50keV-135: 214 pares), con menos memoria.</li>
+<li>Las curvas número de defectos vs. tiempo muestran el patrón clásico: pico térmico, recombinación y <strong>estabilización hacia el paso ~23 000</strong>, en línea con el modelo NRT.</li>
+</ul>
+<h3>Reconocimiento de configuraciones físicamente significativas</h3>
+<ul>
+<li>Identifica automáticamente clústeres SIA paralelos &lt;111&gt;, mixtos &lt;100&gt;/&lt;111&gt;, <strong>anillos C15</strong> y metaestables, en sistemas de millones de átomos.</li>
+<li>La fracción de clústeres C15 es <strong>16.7 % a 10 keV, 10.0 % a 30 keV y 11.5 % a 50 keV</strong> — dentro del rango 5–18 % reportado en la literatura DFT/MD, sin tendencia monótona con la energía (estabilidad de formación).</li>
+<li>La fracción de <em>defectos</em> dentro de C15 cae de 17.6 % (10 keV) a 3.7 % (50 keV): a alta energía los C15 capturan SIAs, se vuelven inestables y colapsan a otras configuraciones, como predice la literatura.</li>
+</ul>
+<h3>Visualización espacial</h3>
+<ul>
+<li>Distribución 3D de clústeres de vacancias e intersticiales y <strong>mapas 2D de densidad espacial</strong> por especie — algo que OVITO no ofrece de forma separada — coherentes con la imagen clásica: corazón de la cascada rico en vacancias, periferia rica en intersticiales.</li>
+<li>La evolución temporal (pasos 3000 → 41 000) reproduce el ciclo crecimiento-contracción de los clústeres observado en OVITO.</li>
+</ul>
+
+<h2>🧩 Por qué importa</h2>
+<ul>
+<li>Convierte el análisis de cascadas, tradicionalmente manual y cualitativo, en un <strong>pipeline automático y escalable</strong> (O(N log N)) apto para los volúmenes de datos de los reactores numéricos.</li>
+<li>El descriptor por puntos adyacentes es una idea <strong>transferible</strong> a cualquier problema de clasificación de morfologías atomísticas (voids, loops, precipitados).</li>
+<li>Detectar y cuantificar <strong>C15</strong> de forma automática es relevante porque estos clústeres, invisibles experimentalmente por su tamaño, podrían jugar un rol clave en la fragilización por radiación del Fe.</li>
+<li>Los mapas de densidad separados por especie dan una vía cuantitativa para estudiar la <strong>correlación espacial vacancia-intersticial</strong>, que gobierna la recombinación y la evolución a largo plazo.</li>
+</ul>
+
+<h2>⚠️ Limitaciones</h2>
+<ul>
+<li>Solo <strong>Fe puro BCC</strong>: el acero RPV real contiene Cu, Ni, Mn y carburos que cambian la energética de los defectos (el esquema de datos contempla aleaciones, pero no se analizan).</li>
+<li>Validación contra <strong>OVITO y literatura</strong>, no contra experimentos; los C15 siguen sin observación experimental directa.</li>
+<li>El clustering no supervisado solo distingue <strong>morfologías simples</strong>; la identificación fina depende de umbrales empíricos (1.0 Å, 20°, reglas 1NN/3NN) ajustados a BCC.</li>
+<li>Escala temporal de MD (~ps–ns): la evolución a largo plazo (envejecimiento, dosis acumulada) requeriría acoplar kMC u otros métodos.</li>
+<li>HDBSCAN requirió <strong>ajuste manual de MinPts</strong> por tipo de feature; la sensibilidad a estos parámetros no se reporta en detalle.</li>
+</ul>
+
+<h2>📎 Conexiones</h2>
+<ul>
+<li>Comparte el problema físico (cascadas en Fe/aleaciones, conteo W-S, pares de Frenkel) con [[ilove-Nordlund.2018]] y [[MD_cascadas_CuNi_irradiacion_Wei_2025]], y la escala temporal extendida con [[MD_kMC_tungsteno_dose_rate_Boleininger_2025]].</li>
+<li>La idea de describir defectos con <strong>features geométricos + clustering no supervisado</strong> es paralela a [[Autoencoder_SOAP_cascadas_FeNiCr_DelFre_2025]] y [[FaVAD_fingerprints_defectos_vonToussaint_2020]], pero aquí el descriptor es artesanal (distancias/ángulos adyacentes) en vez de aprendido.</li>
+<li>Los histogramas de distancias/ángulos invariantes recuerdan a los parámetros de orden de [[Steinhardt_bond_orientational_order_1983]].</li>
+<li>El uso de OVITO como referencia de validación lo conecta con casi todo el corpus de papers de irradiación del repo.</li>
+</ul>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (25)</h2>
+    <div class="figure-list">
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_002_Figure_1__Schematic_diagram_of_radiatio.png" alt="Fig. 1 — daño por radiación (página 2)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 1 · página 2 · Daño por radiación</strong>
+            <p class="caption">Figura 1. Esquema del daño por radiación.</p>
+          </figcaption>
+          <div class="figbody"><p>Panorama del problema: los neutrones desplazan átomos de la red y generan vacancias, intersticiales y lazos de dislocación que se acumulan en el acero de la vasija. Es la cadena causal que motiva todo el trabajo: irradiación → defectos → clústeres → fragilización.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_003_Figure_2__Schematic_diagram_of_a_numeri.png" alt="Fig. 2 — reactor numérico CVR1.0 (página 3)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 2 · página 3 · Reactor numérico</strong>
+            <p class="caption">Figura 2. Esquema del sistema prototipo de reactor numérico (CVR1.0).</p>
+          </figcaption>
+          <div class="figbody"><p>El "reactor virtual" chino CVR1.0: software de simulación multiescala en supercomputadoras que reemplaza experimentos de irradiación costosos y lentos. MISA-MD, la fuente de datos de este paper, es el módulo de dinámica molecular de este ecosistema.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_004_Figure_3__Schematic_diagram_of_body-cen.png" alt="Fig. 3 — estructura BCC (página 4)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 3 · página 4 · Red BCC</strong>
+            <p class="caption">Figura 3. Esquema de la estructura cristalina cúbica centrada en el cuerpo (BCC).</p>
+          </figcaption>
+          <div class="figbody"><p>La celda unitaria del Fe-α: un átomo en cada vértice y uno en el centro del cubo. Esta geometría define los puntos de red contra los que se cuentan los defectos y los umbrales de distancia (L/2, √3·L/2) usados para agrupar defectos en clústeres.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_005_Figure_4__Cascade_defect_cluster_cluste.png" alt="Fig. 4 — flujo de análisis de clustering (página 7)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 4 · página 7 · Pipeline de clustering</strong>
+            <p class="caption">Figura 4. Proceso de análisis por clustering de los clústeres de defectos de cascada.</p>
+          </figcaption>
+          <div class="figbody"><p>Las tres etapas del análisis morfológico: (1) particionar los defectos en clústeres por distancia, (2) representar cada clúster con un vector de características estructurales, (3) reducir dimensionalidad y aplicar clustering no supervisado para obtener las clases de formas.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_006_Figure_5__Schematic_diagram_of_represen.png" alt="Fig. 5 — método de representación (página 9)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 5 · página 9 · Representación de clústeres</strong>
+            <p class="caption">Figura 5. Esquema del método de representación de los clústeres de defectos.</p>
+          </figcaption>
+          <div class="figbody"><p>Cómo se construye el vector de características: de las coordenadas 3D se extraen distancias y ángulos, se normalizan a (0,1] y se acumulan en bins de un histograma. El resultado es un vector de dimensión fija, comparable entre clústeres de distinto tamaño e invariante a rotaciones y escala.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_007_Figure_6__Schematic_diagram_of_cluster_.png" alt="Fig. 6 — representación basada en centroide (página 9)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 6 · página 9 · Método del centroide</strong>
+            <p class="caption">Figura 6. Esquema de la representación de la estructura del clúster basada en el centroide.</p>
+          </figcaption>
+          <div class="figbody"><p>El método convencional: distancias y ángulos medidos desde el centroide. Izquierda, un clúster anular; derecha, el mismo anillo con una "cola". La cola desplaza el centroide y cambia <em>todas</em> las medidas, aunque la estructura subyacente sea casi idéntica — el defecto que motiva la propuesta del paper.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_008_Figure_7__Histogram_of_cluster_structur.png" alt="Fig. 7 — histogramas basados en centroide (página 10)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 7 · página 10 · Histogramas (centroide)</strong>
+            <p class="caption">Figura 7. Histograma de los vectores de características de la estructura del clúster basados en el centroide.</p>
+          </figcaption>
+          <div class="figbody"><p>La consecuencia del problema de la Fig. 6: los histogramas del anillo y del anillo con cola resultan completamente distintos. Dos estructuras físicamente similares caerían en categorías diferentes — el método del centroide amplifica el ruido y los detalles locales.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_009_Figure_8__Schematic_diagram_of_cluster_.png" alt="Fig. 8 — representación por puntos adyacentes (página 10)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 8 · página 10 · Método de puntos adyacentes</strong>
+            <p class="caption">Figura 8. Esquema de la representación de la estructura del clúster basada en puntos adyacentes.</p>
+          </figcaption>
+          <div class="figbody"><p>La propuesta del paper: medir distancias entre defectos vecinos y ángulos entre pares de vecinos respecto de un tercero. La parte anular de ambos clústeres produce exactamente los mismos valores; la cola solo <em>añade</em> entradas al histograma sin alterar las existentes.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_010_Figure_9__Histogram_of_cluster_structur.png" alt="Fig. 9 — histogramas por puntos adyacentes (página 11)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 9 · página 11 · Histogramas (adyacentes)</strong>
+            <p class="caption">Figura 9. Histograma de los vectores de características de la estructura del clúster basados en puntos adyacentes.</p>
+          </figcaption>
+          <div class="figbody"><p>Contraparte de la Fig. 7 con el nuevo método: los histogramas del anillo y del anillo con cola comparten la mayor parte de sus características, de modo que el clustering los agrupa correctamente como estructuras similares. Es la validación conceptual del descriptor propuesto.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_011_Figure_10__Dimensionality_reduction_res.png" alt="Fig. 10 — t-SNE y UMAP (página 13)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 10 · página 13 · t-SNE vs UMAP</strong>
+            <p class="caption">Figura 10. Resultados de la reducción de dimensionalidad con los algoritmos t-SNE (a) y UMAP (b). Cada punto es un clúster de defectos; azul = clústeres intersticiales, naranja/amarillo = clústeres de vacancias.</p>
+          </figcaption>
+          <div class="figbody"><p>Aunque las features no se diseñaron para distinguir vacancias de intersticiales, ambas proyecciones los separan limpiamente: la geometría codifica física real. Los autores eligen UMAP para el pipeline porque preserva mejor la estructura global y produce grupos más compactos, lo que favorece al clustering por densidad (HDBSCAN).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_031_Figure_11_Cascade_defect_cluster_reco.png" alt="Fig. 11 — flujo de reconocimiento (página 15)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 11 · página 15 · Pipeline de reconocimiento</strong>
+            <p class="caption">Figura 11. Proceso de reconocimiento y análisis de configuraciones de clústeres de defectos de cascada. <em>(Figura recortada de la página del PDF; Docling no la extrajo automáticamente.)</em></p>
+          </figcaption>
+          <div class="figbody"><p>El segundo pipeline del paper, complementario al de la Fig. 4: preprocesamiento (listas de defectos con pseudo-defectos), componentización de pares en líneas SIA, y la identificación estructural vía matriz de adyacencia comprimida y búsqueda de componentes conexas. Es el camino que lleva de coordenadas crudas a etiquetas como "paralelo &lt;111&gt;" o "anillo C15".</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_012_Figure_12__Smileyface_type_defects_and_.png" alt="Fig. 12 — smileyface y glasses (página 15)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 12 · página 15 · Smileyface / glasses</strong>
+            <p class="caption">Figura 12. Defectos de tipo <em>smileyface</em> (a) y pares de tipo <em>glasses</em> (b).</p>
+          </figcaption>
+          <div class="figbody"><p>Los "ladrillos" de las líneas SIA: configuraciones donde dos o tres átomos intersticiales comparten un punto de red (azul = intersticial, rojo = punto de red). El par <em>glasses</em> tiene 3 intersticiales y 2 vacancias pero cuenta como un solo defecto neto; los pseudo-defectos asociados son la clave para reconocer la configuración interna.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_013_no_caption.png" alt="Fig. 13 — celda de Wigner-Seitz 2D (página 16)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 13 · página 16 · Celda W-S</strong>
+            <p class="caption">Figura 13. Esquema de la estructura bidimensional de la celda primitiva de Wigner-Seitz (rojo: puntos de red; verde rayado: celda primitiva W-S).</p>
+          </figcaption>
+          <div class="figbody"><p>Construcción clásica de la celda W-S: se conecta un punto de red con sus vecinos y se trazan los bisectores perpendiculares; la región encerrada define el "territorio" de cada punto de red. Todo átomo que caiga dentro de la celda de un punto de red ya ocupado se cuenta como intersticial — la base geométrica del conteo de defectos.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_015_Figure_14__Schematic_diagram_of_defect_.png" alt="Fig. 14 — análisis de defectos con celda W-S (página 16)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 14 · página 16 · Análisis W-S</strong>
+            <p class="caption">Figura 14. Esquema del análisis de defectos mediante el método de la celda primitiva W-S: configuración de referencia, configuración desplazada, asignación de átomos a celdas y números de ocupación calculados.</p>
+          </figcaption>
+          <div class="figbody"><p>El conteo en acción: tras la cascada, cada átomo se asigna a su celda W-S más cercana. Ocupación 1 = átomo normal, 0 = vacancia, ≥2 = intersticial. El paper optimiza este método (O(N²) en su forma directa) con el doble puntero hasta O(N log N), haciéndolo viable para 16 millones de átomos.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_032_Figure_15_Organization_of_component_in.png" alt="Fig. 15 — organización de la información de componentes (página 18)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 15 · página 18 · Estructura de datos</strong>
+            <p class="caption">Figura 15. Organización de los datos de información de componentes: jerarquía LinesData → líneas → sublíneas (izquierda) y campos JSON de cada línea SIA (derecha). <em>(Compuesta a partir de los dos paneles extraídos por separado.)</em></p>
+          </figcaption>
+          <div class="figbody"><p>El formato con el que se serializa cada clúster componentizado: cada línea SIA guarda su ecuación paramétrica, los IDs de sus defectos, sus ángulos con los planos x/y/z (≈ dirección del vector de Burgers), sublíneas fusionadas y defectos aislados. Es el contrato de datos entre la componentización y el reconocimiento de configuraciones.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_018_Figure_16__Construction_of_SIA_line_ass.png" alt="Fig. 16 — construcción de líneas SIA (página 21)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 16 · página 21 · Construcción de líneas SIA</strong>
+            <p class="caption">Figura 16. Construcción de ensambles de líneas SIA.</p>
+          </figcaption>
+          <div class="figbody"><p>Ejemplo concreto con un clúster de 13 defectos: los smileyface/glasses se conectan primero en 5 líneas; luego, usando un K-D tree para hallar vecinos, las líneas que distan &lt;0.3·L y forman &lt;20° se fusionan, dejando 3 líneas SIA. El desorden aparente del clúster queda reducido a unas pocas componentes orientadas.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_019_Figure_17__Algorithm_steps_for_defect_c.png" alt="Fig. 17 — pasos del algoritmo de identificación (página 21)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 17 · página 21 · Identificación de configuraciones</strong>
+            <p class="caption">Figura 17. Pasos del algoritmo para la identificación de la configuración de los clústeres de defectos.</p>
+          </figcaption>
+          <div class="figbody"><p>De líneas SIA a etiquetas físicas: se construye la matriz de adyacencia N×N entre líneas según reglas de distancia/ángulo, se comprime (CSR) y se buscan componentes conexas. Si la búsqueda reencuentra un nodo ya marcado, la componente es un anillo; si no, es paralela o aislada.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_020_Figure_18__Searching_for_connected_comp.png" alt="Fig. 18 — componentes conexas en matriz dispersa (página 22)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 18 · página 22 · Matriz dispersa</strong>
+            <p class="caption">Figura 18. Búsqueda de componentes conexas de una matriz dispersa.</p>
+          </figcaption>
+          <div class="figbody"><p>Detalle de implementación con impacto práctico: con muchas líneas SIA la matriz de adyacencia es enorme y casi toda nula. El almacenamiento CSR (arrays <code>data</code>, <code>indices</code>, <code>indptr</code>) evita desperdiciar memoria y acelera la búsqueda en anchura de componentes conexas.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_021_Figure_19__Connected_components_are_rep.png" alt="Fig. 19 — componentes paralelas o de anillo (página 22)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 19 · página 22 · Paralelo vs anillo</strong>
+            <p class="caption">Figura 19. Las componentes conexas se representan como componentes paralelas o componentes de anillo.</p>
+          </figcaption>
+          <div class="figbody"><p>Las dos topologías objetivo: líneas SIA paralelas (d ≤ 1NN, θ≈0° — precursoras de lazos de dislocación) y anillos (d = 1NN/3NN, θ≈60°/90° — la firma del clúster C15). Lo que no encaja en ninguna se etiqueta como metaestable, normalmente estructuras transitorias por vibración térmica.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_022_Figure_20__Curve_of_Defect_Quantity_Var.png" alt="Fig. 20 — defectos vs tiempo por energía y dirección (página 25)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 20 · página 25 · Evolución del número de defectos</strong>
+            <p class="caption">Figura 20. Curvas de variación de la cantidad de pares de defectos según la dirección del PKA ([122], [135], [235]) a distintas energías: (a) 10 keV, (b) 20 keV, (c) 30 keV, (d) 50 keV.</p>
+          </figcaption>
+          <div class="figbody"><p>La física clásica de cascadas reproducida por el método propio: pico térmico (~paso 10 000, miles de pares), recombinación masiva y estabilización hacia el paso 23 000 con una fracción superviviente pequeña. La dirección del PKA cambia la altura del pico pero no el patrón; los supervivientes finales siguen el modelo NRT.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_023_no_caption.png" alt="Fig. 21 — distribución espacial de defectos (página 26)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 21 · página 26 · Distribución espacial 3D</strong>
+            <p class="caption">Figura 21. Visualización de la distribución espacial de los defectos (azul: intersticiales; rojo: vacancias). Datos del paso 8000 con PKA de 30 keV en dirección [235].</p>
+          </figcaption>
+          <div class="figbody"><p>El resultado integrador: los clústeres de vacancias (rojo) ocupan el corazón de la cascada y los intersticiales (azul) la envuelven en la periferia — la separación espacial que gobierna cuánta recombinación habrá y qué defectos sobreviven. La cascada presenta subcascadas (lóbulos separados), típico de PKA ≥ 20 keV.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_024_Figure_22__Visualization_of_interstitia.png" alt="Fig. 22 — comparación con OVITO (página 26)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 22 · página 26 · Validación vs OVITO</strong>
+            <p class="caption">Figura 22. Visualización de los átomos intersticiales: método propio (izquierda) frente a OVITO (derecha).</p>
+          </figcaption>
+          <div class="figbody"><p>Validación visual del pipeline: posiciones y formas de los clústeres intersticiales coinciden con el estándar de la comunidad (OVITO). La ventaja diferencial del método propio es que además permite analizar vacancias e intersticiales por separado y extraer estadísticas de configuración.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_025_Figure_23__2D_Map_of_the_spatial_densit.png" alt="Fig. 23 — mapas de densidad 2D (página 26)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 23 · página 26 · Mapas de densidad 2D</strong>
+            <p class="caption">Figura 23. Mapa 2D de la densidad espacial de átomos intersticiales (a) y vacancias (b), en una caja de simulación de 120×120×120.</p>
+          </figcaption>
+          <div class="figbody"><p>Proyección cuantitativa de la Fig. 21: ambos mapas comparten la misma región caliente (la cascada principal) pero el máximo de vacancias está más concentrado y el de intersticiales es más extendido. Este tipo de mapa, que OVITO no genera por especie, permite cuantificar la correlación espacial vacancia-intersticial.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_026_Figure_24__Evolution_Process_of_defect_.png" alt="Fig. 24 — evolución temporal de clústeres (página 27)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 24 · página 27 · Evolución temporal</strong>
+            <p class="caption">Figura 24. Proceso de evolución de los clústeres de defectos en los pasos 3000, 10 000, 20 000 y 41 000. Fila superior: método propio; fila inferior: OVITO.</p>
+          </figcaption>
+          <div class="figbody"><p>El método sigue la dinámica completa de la cascada: crecimiento de los clústeres intersticiales hasta el pico térmico y contracción posterior por recombinación, en perfecto acuerdo con OVITO y con las curvas de la Fig. 20c. Demuestra que el pipeline sirve para estudios dinámicos, no solo para instantáneas.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/muy_importante_figures/images/fig_033_Figure_25_composite_Different_defect_c.png" alt="Fig. 25 — configuraciones de defectos en Fe (página 28)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 25 · página 28 · Configuraciones identificadas</strong>
+            <p class="caption">Figura 25. Diferentes configuraciones de defectos en cascadas de colisión en Fe: (a) clústeres estables de líneas SIA paralelas a la dirección &lt;111&gt;; (b) clústeres de líneas SIA paralelas a &lt;100&gt; y &lt;111&gt;; (c) configuración cíclica estable (C15); (d) clústeres con otras configuraciones metaestables. <em>(Compuesta a partir de los cuatro paneles extraídos por separado.)</em></p>
+          </figcaption>
+          <div class="figbody"><p>El producto final del reconocimiento automático: las cuatro familias de configuraciones (||, ||//, @, #) identificadas sin intervención manual en los datos de cascada. La fracción de C15 (10–17 % de los clústeres según la energía) cae dentro del rango 5–18 % de la literatura, confirmando que el modelo detecta estructuras físicamente reales y no artefactos de clasificación.</p></div>
+        </figure>
+
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

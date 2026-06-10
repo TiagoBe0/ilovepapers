@@ -1,0 +1,396 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/muy_importante.pdf",
+  "total_figures": 30,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 481.7179260253906,
+        "t": 675.4957504272461,
+        "r": 554.8639526367188,
+        "b": 659.6317749023438
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "Figure 1 . Schematic diagram of radiation damaged.",
+      "page": 2,
+      "bbox": {
+        "l": 154.37445068359375,
+        "t": 733.4036254882812,
+        "r": 523.2842407226562,
+        "b": 518.4268188476562
+      },
+      "image_path": "images/fig_002_Figure_1__Schematic_diagram_of_radiatio.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "Figure 2 . Schematic diagram of a numerical reactor prototype (CVR1.0) system.",
+      "page": 3,
+      "bbox": {
+        "l": 154.82261657714844,
+        "t": 246.09661865234375,
+        "r": 525.3742065429688,
+        "b": 70.94586181640625
+      },
+      "image_path": "images/fig_003_Figure_2__Schematic_diagram_of_a_numeri.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "Figure 3 . Schematic diagram of body-centered cubic crystal structure.",
+      "page": 4,
+      "bbox": {
+        "l": 154.72666931152344,
+        "t": 408.8905029296875,
+        "r": 451.582763671875,
+        "b": 70.61883544921875
+      },
+      "image_path": "images/fig_004_Figure_3__Schematic_diagram_of_body-cen.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "Figure 4 . Cascade defect cluster clustering analysis process.",
+      "page": 7,
+      "bbox": {
+        "l": 154.8477020263672,
+        "t": 732.9734191894531,
+        "r": 494.37884521484375,
+        "b": 367.7328186035156
+      },
+      "image_path": "images/fig_005_Figure_4__Cascade_defect_cluster_cluste.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "Figure 5 . Schematic diagram of representation method for defect clusters.",
+      "page": 9,
+      "bbox": {
+        "l": 154.8745880126953,
+        "t": 732.8087463378906,
+        "r": 499.6439514160156,
+        "b": 537.6214752197266
+      },
+      "image_path": "images/fig_006_Figure_5__Schematic_diagram_of_represen.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "Figure 6 . Schematic diagram of cluster structure representation based on centroid.",
+      "page": 9,
+      "bbox": {
+        "l": 154.58656311035156,
+        "t": 487.6484680175781,
+        "r": 525.21142578125,
+        "b": 372.8703308105469
+      },
+      "image_path": "images/fig_007_Figure_6__Schematic_diagram_of_cluster_.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "Figure 7 . Histogram of cluster structure feature vectors based on centroid.",
+      "page": 10,
+      "bbox": {
+        "l": 154.72865295410156,
+        "t": 732.8284568786621,
+        "r": 495.20953369140625,
+        "b": 435.860595703125
+      },
+      "image_path": "images/fig_008_Figure_7__Histogram_of_cluster_structur.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Figure 8 . Schematic diagram of cluster structure representation based on adjacent points.",
+      "page": 10,
+      "bbox": {
+        "l": 155.01730346679688,
+        "t": 385.5771179199219,
+        "r": 493.72119140625,
+        "b": 283.0704040527344
+      },
+      "image_path": "images/fig_009_Figure_8__Schematic_diagram_of_cluster_.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Figure 9 . Histogram of cluster structure feature vectors based on adjacent points.",
+      "page": 11,
+      "bbox": {
+        "l": 154.93626403808594,
+        "t": 732.3095741271973,
+        "r": 508.80828857421875,
+        "b": 434.771240234375
+      },
+      "image_path": "images/fig_010_Figure_9__Histogram_of_cluster_structur.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Figure 10 . Dimensionality reduction results with the t-SNE and the UMAP algorithm.",
+      "page": 13,
+      "bbox": {
+        "l": 128.47958374023438,
+        "t": 237.95098876953125,
+        "r": 554.3864135742188,
+        "b": 70.92608642578125
+      },
+      "image_path": "images/fig_011_Figure_10__Dimensionality_reduction_res.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "Figure 12 . Smileyface_type defects and glasses_type pairs.",
+      "page": 15,
+      "bbox": {
+        "l": 110.53790283203125,
+        "t": 733.9603805541992,
+        "r": 554.1483764648438,
+        "b": 261.43389892578125
+      },
+      "image_path": "images/fig_012_Figure_12__Smileyface_type_defects_and_.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "",
+      "page": 16,
+      "bbox": {
+        "l": 155.14051818847656,
+        "t": 732.3774909973145,
+        "r": 399.97479248046875,
+        "b": 592.9735260009766
+      },
+      "image_path": "images/fig_013_no_caption.png"
+    },
+    {
+      "figure_id": "fig_014",
+      "label": "picture",
+      "caption": "Figure 13 . Schematic diagram of the two-dimensional structure of the W-S primitive cell.",
+      "page": 16,
+      "bbox": {
+        "l": 438.93524169921875,
+        "t": 732.1683921813965,
+        "r": 549.7785034179688,
+        "b": 683.0357513427734
+      },
+      "image_path": "images/fig_014_Figure_13__Schematic_diagram_of_the_two.png"
+    },
+    {
+      "figure_id": "fig_015",
+      "label": "picture",
+      "caption": "Figure 14 . Schematic diagram of defect analysis using the W-S primitive cell method.",
+      "page": 16,
+      "bbox": {
+        "l": 155.1025390625,
+        "t": 541.2398986816406,
+        "r": 526.6310424804688,
+        "b": 437.0336608886719
+      },
+      "image_path": "images/fig_015_Figure_14__Schematic_diagram_of_defect_.png"
+    },
+    {
+      "figure_id": "fig_016",
+      "label": "picture",
+      "caption": "",
+      "page": 18,
+      "bbox": {
+        "l": 342.50286865234375,
+        "t": 298.2763366699219,
+        "r": 524.8731079101562,
+        "b": 180.012451171875
+      },
+      "image_path": "images/fig_016_no_caption.png"
+    },
+    {
+      "figure_id": "fig_017",
+      "label": "picture",
+      "caption": "",
+      "page": 18,
+      "bbox": {
+        "l": 155.5283966064453,
+        "t": 297.1606750488281,
+        "r": 327.5282287597656,
+        "b": 71.50933837890625
+      },
+      "image_path": "images/fig_017_no_caption.png"
+    },
+    {
+      "figure_id": "fig_018",
+      "label": "picture",
+      "caption": "Figure 16 . Construction of SIA line assemblies.",
+      "page": 21,
+      "bbox": {
+        "l": 155.35073852539062,
+        "t": 731.3066558837891,
+        "r": 498.3498229980469,
+        "b": 537.7226867675781
+      },
+      "image_path": "images/fig_018_Figure_16__Construction_of_SIA_line_ass.png"
+    },
+    {
+      "figure_id": "fig_019",
+      "label": "picture",
+      "caption": "Figure 17 . Algorithm steps for defect cluster configuration identification.",
+      "page": 21,
+      "bbox": {
+        "l": 154.75791931152344,
+        "t": 489.2478332519531,
+        "r": 504.73223876953125,
+        "b": 111.08984375
+      },
+      "image_path": "images/fig_019_Figure_17__Algorithm_steps_for_defect_c.png"
+    },
+    {
+      "figure_id": "fig_020",
+      "label": "picture",
+      "caption": "Figure 18 . Searching for connected components of a sparse matrix.",
+      "page": 22,
+      "bbox": {
+        "l": 154.83355712890625,
+        "t": 732.4200477600098,
+        "r": 521.0633544921875,
+        "b": 578.6729583740234
+      },
+      "image_path": "images/fig_020_Figure_18__Searching_for_connected_comp.png"
+    },
+    {
+      "figure_id": "fig_021",
+      "label": "picture",
+      "caption": "Figure 19 . Connected components are represented as parallel components or ring components.",
+      "page": 22,
+      "bbox": {
+        "l": 154.26519775390625,
+        "t": 521.9560546875,
+        "r": 538.9512939453125,
+        "b": 414.4482421875
+      },
+      "image_path": "images/fig_021_Figure_19__Connected_components_are_rep.png"
+    },
+    {
+      "figure_id": "fig_022",
+      "label": "picture",
+      "caption": "Figure 20 . Curve of Defect Quantity Variation with PKA Directions at different energy.",
+      "page": 25,
+      "bbox": {
+        "l": 127.14016723632812,
+        "t": 731.612476348877,
+        "r": 554.2329711914062,
+        "b": 377.2815246582031
+      },
+      "image_path": "images/fig_022_Figure_20__Curve_of_Defect_Quantity_Var.png"
+    },
+    {
+      "figure_id": "fig_023",
+      "label": "picture",
+      "caption": "",
+      "page": 26,
+      "bbox": {
+        "l": 153.70423889160156,
+        "t": 733.9003791809082,
+        "r": 545.3694458007812,
+        "b": 504.8057861328125
+      },
+      "image_path": "images/fig_023_no_caption.png"
+    },
+    {
+      "figure_id": "fig_024",
+      "label": "picture",
+      "caption": "Figure 22 . Visualization of interstitial atoms.",
+      "page": 26,
+      "bbox": {
+        "l": 154.472412109375,
+        "t": 454.1146545410156,
+        "r": 516.453857421875,
+        "b": 292.84478759765625
+      },
+      "image_path": "images/fig_024_Figure_22__Visualization_of_interstitia.png"
+    },
+    {
+      "figure_id": "fig_025",
+      "label": "picture",
+      "caption": "Figure 23 . 2D Map of the spatial density distribution of interstitial atoms and vacancies.",
+      "page": 26,
+      "bbox": {
+        "l": 102.46135711669922,
+        "t": 234.32037353515625,
+        "r": 549.5983276367188,
+        "b": 101.171875
+      },
+      "image_path": "images/fig_025_Figure_23__2D_Map_of_the_spatial_densit.png"
+    },
+    {
+      "figure_id": "fig_026",
+      "label": "picture",
+      "caption": "Figure 24 . Evolution Process of defect clusters.",
+      "page": 27,
+      "bbox": {
+        "l": 154.5218505859375,
+        "t": 731.6550178527832,
+        "r": 529.768798828125,
+        "b": 528.3549652099609
+      },
+      "image_path": "images/fig_026_Figure_24__Evolution_Process_of_defect_.png"
+    },
+    {
+      "figure_id": "fig_027",
+      "label": "picture",
+      "caption": "",
+      "page": 28,
+      "bbox": {
+        "l": 352.5007629394531,
+        "t": 728.1102294921875,
+        "r": 538.14404296875,
+        "b": 568.2555541992188
+      },
+      "image_path": "images/fig_027_no_caption.png"
+    },
+    {
+      "figure_id": "fig_028",
+      "label": "picture",
+      "caption": "",
+      "page": 28,
+      "bbox": {
+        "l": 93.28125762939453,
+        "t": 726.2582473754883,
+        "r": 276.1224365234375,
+        "b": 572.5505676269531
+      },
+      "image_path": "images/fig_028_no_caption.png"
+    },
+    {
+      "figure_id": "fig_029",
+      "label": "picture",
+      "caption": "Figure 25 . Different defect configurations in Fe cascade collision.",
+      "page": 28,
+      "bbox": {
+        "l": 349.2887268066406,
+        "t": 530.2615356445312,
+        "r": 536.900390625,
+        "b": 328.8082580566406
+      },
+      "image_path": "images/fig_029_Figure_25__Different_defect_configurati.png"
+    },
+    {
+      "figure_id": "fig_030",
+      "label": "picture",
+      "caption": "",
+      "page": 28,
+      "bbox": {
+        "l": 90.7613525390625,
+        "t": 486.934326171875,
+        "r": 277.38623046875,
+        "b": 347.81884765625
+      },
+      "image_path": "images/fig_030_no_caption.png"
+    }
+  ]
+}

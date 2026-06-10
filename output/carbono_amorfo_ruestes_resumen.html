@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen — Nanoindentation of Amorphous Carbon: a combined experimental and simulation approach</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper:      #fafaf8;  --surface:    #ffffff;  --panel:      #ffffff;
+    --ink:        #18202a;  --muted:      #5a6472;  --line:       #d8dde4;
+    --accent:     #174a7e;  --accent-h:   #0d3259;  --gold:       #b8860b;
+    --teal:       #0a6858;  --soft-blue:  #eef3fb;  --soft-gold:  #fdf6e3;
+    --soft-teal:  #e6f4f1;  --warn:       #fff8e1;
+    --nav-h:      44px;     --max-w:      960px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.75;
+         background: var(--paper); color: var(--ink); }
+
+  /* Nav */
+  .top-nav { position: sticky; top: 0; z-index: 200; height: var(--nav-h);
+    background: var(--accent); display: flex; align-items: center; gap: 12px;
+    padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .top-nav a.back { color: rgba(255,255,255,.85); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 20px; transition: background .15s; }
+  .top-nav a.back:hover { background: rgba(255,255,255,.15); }
+  .top-nav .nav-title { color: rgba(255,255,255,.6); font-family: 'Playfair Display', serif;
+    font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-nav .journal-name { margin-left: auto; color: rgba(255,255,255,.5);
+    font-family: 'Inter', sans-serif; font-size: 11px; font-style: italic; white-space: nowrap; }
+
+  /* Header */
+  header { background: linear-gradient(160deg, #0d2a4a 0%, #174a7e 60%, #1a5c8a 100%);
+    color: #fff; padding: 52px 28px 44px; border-bottom: 4px solid var(--gold); }
+  header .inner { max-width: var(--max-w); margin: 0 auto; }
+  .journal-stripe { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
+  .journal-stripe::after { content: ''; flex: 1; height: 1px; background: rgba(184,134,11,.4); }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 40px);
+    font-weight: 700; line-height: 1.15; letter-spacing: -.3px; margin-bottom: 16px; }
+  .subtitle { font-family: 'Lora', serif; font-style: italic; font-size: 16px;
+    color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,.8); }
+  .meta div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    padding: 10px 14px; border-radius: 6px; }
+  .meta div strong { color: var(--gold); display: block; margin-bottom: 2px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .meta a { color: rgba(255,255,255,.7); }
+  .meta a:hover { color: #fff; }
+
+  /* Layout */
+  main, .inner { max-width: var(--max-w); margin: 0 auto; }
+  main { padding: 40px 24px 80px; }
+  section { margin-bottom: 48px; }
+
+  /* Typography */
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--accent); margin: 0 0 18px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--line); position: relative; }
+  h2::before { content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 48px; height: 2px; background: var(--gold); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 24px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--teal); }
+  a:hover { color: var(--accent); }
+  code { font-family: monospace; background: #f0f4f8; padding: 2px 5px; border-radius: 3px; font-size: 14px; }
+  pre { background: #1a2332; color: #e2e8f0; padding: 16px 20px; border-radius: 8px;
+    overflow-x: auto; margin: 0 0 16px; font-size: 13px; }
+  blockquote { border-left: 4px solid var(--accent); padding: 12px 20px;
+    background: var(--soft-blue); margin: 0 0 16px; border-radius: 0 6px 6px 0; }
+
+  .lead { font-size: 17px; font-style: italic; color: #2a3540; background: var(--soft-blue);
+    border-left: 4px solid var(--accent); padding: 22px 24px; border-radius: 0 8px 8px 0;
+    margin-bottom: 24px; line-height: 1.7; }
+  .tag { display: inline-block; margin: 0 6px 8px 0; padding: 4px 11px; border-radius: 20px;
+    background: var(--soft-blue); color: var(--accent); border: 1px solid #c2d2ea;
+    font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  .card h3 { color: var(--accent); font-size: 15px; margin-bottom: 8px; }
+  .important { background: var(--soft-gold); border-left: 4px solid var(--gold);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface);
+    border: 1px solid var(--line); margin: 20px 0; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th, td { border: 1px solid var(--line); padding: 11px 14px; text-align: left; vertical-align: top; }
+  th { background: var(--accent); color: #fff; font-weight: 600; font-size: 12px;
+    letter-spacing: .4px; text-transform: uppercase; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+
+  /* Figures */
+  .figure-list { display: flex; flex-direction: column; gap: 32px; }
+  figure { margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s; }
+  figure:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  @media (min-width: 680px) {
+    figure { display: grid; grid-template-columns: 56% 44%;
+      grid-template-rows: auto 1fr; min-height: 220px; }
+    figure > img { grid-column: 1; grid-row: 1 / 3; }
+    figure > figcaption { grid-column: 2; grid-row: 1; }
+    figure > .figbody { grid-column: 2; grid-row: 2; }
+  }
+  figure > img { width: 100%; height: 100%; max-height: 520px; object-fit: contain;
+    background: #0e1826; display: block; border-right: 1px solid var(--line); }
+  @media (max-width: 679px) {
+    figure > img { max-height: 280px; border-right: none; border-bottom: 1px solid var(--line); } }
+  figcaption { padding: 18px 20px 10px; font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--muted); border-bottom: 1px solid var(--line); }
+  figcaption strong { display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .caption { font-family: 'Lora', serif; font-style: italic; font-size: 13px;
+    color: #3a4650; line-height: 1.55; }
+  .figbody { padding: 16px 20px 18px; background: var(--soft-teal);
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #1e3530;
+    line-height: 1.65; border-left: 3px solid var(--teal); }
+  .figbody p { margin: 0; }
+  .figbody::before { content: 'Interpretación'; display: block; font-size: 10px;
+    font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 7px; }
+
+  .small { color: var(--muted); font-size: 13px; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--paper); }
+  ::-webkit-scrollbar-thumb { background: #b0bcc8; border-radius: 3px; }
+
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../index.html" class="back">&#8592; Indice</a>
+  <span class="nav-title" id="nav-title-text"></span>
+  <span class="journal-name">ilovepappers Journal</span>
+</nav>
+<script>
+  document.getElementById('nav-title-text').textContent =
+    document.querySelector('h1') ? document.querySelector('h1').textContent.slice(0, 60) : '';
+</script>
+
+<header>
+  <div class="inner">
+    <div class="journal-stripe">ilovepappers Journal &middot; Resumen en Espanol</div>
+    <h1>Nanoindentation of Amorphous Carbon: a combined experimental and simulation approach</h1>
+    <p class="subtitle">Resumen en español de <strong>Nanoindentation of Amorphous Carbon</strong>: nanoindentación de carbono amorfo / DLC combinando experimentos, DFT y dinámica molecular.</p>
+    <div class="meta">
+        <div><strong>Autores</strong>F.J. Valencia, J. Santiago, R.I. González, C. Ruestes, E.M. Bringa (et al.)</div>
+        <div><strong>Revista</strong>Acta Materialia 203 (2021) 116485</div>
+        <div><strong>DOI</strong><a href="https://doi.org/10.1016/j.actamat.2020.116485" target="_blank">10.1016/j.actamat.2020.116485</a></div>
+        <div><strong>PDF local</strong><a href="../pappers/carbono_amorfo_ruestes.pdf">ver PDF</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <p><strong>Autores:</strong> F.J. Valencia, J. Santiago, R.I. González, R. González-Arrabal, C. Ruestes, M. Pérez Díaz, M.A. Monclús, J. Molina-Aldareguia, P. Díaz Núñez, F. Muñoz, M. Kiwi, J.M. Perlado, E.M. Bringa (et al.)<br />
+<strong>Revista:</strong> Acta Materialia 203 (2021) 116485, DOI: 10.1016/j.actamat.2020.116485</p>
+
+<h2>🎯 Idea central</h2>
+<p>Entender, <strong>a escala atómica</strong>, cómo se deforma plásticamente el <strong>carbono amorfo (aC)</strong> —en particular el <em>diamond-like carbon</em> (DLC) sin hidrógeno— durante la nanoindentación, y cómo sus propiedades mecánicas dependen del contenido de enlaces <strong>sp³</strong>. Para ello combinan <strong>tres frentes</strong>: experimentos de nanoindentación, simulaciones <em>ab-initio</em> (DFT) y dinámica molecular clásica (MD). El resultado es una descripción completa y validada que revela <strong>mecanismos de plasticidad inesperados</strong> que no se detectan con las técnicas experimentales habituales.</p>
+
+<h2>🔬 El material: aC / DLC y el papel del sp³</h2>
+<ul>
+<li>El carbono hibrida de tres formas: <strong>sp¹</strong> (lineal), <strong>sp²</strong> (trigonal, tipo grafito) y <strong>sp³</strong> (tetraédrico, tipo diamante).</li>
+<li>El DLC es un carbono amorfo metaestable con una fracción importante de enlaces <strong>sp³</strong>, lo que le da propiedades cercanas al diamante: alta dureza, bajo coeficiente de fricción, resistencia al desgaste, transparencia óptica e inercia química.</li>
+<li>Se acepta que las propiedades mecánicas del DLC sin hidrógeno están controladas principalmente por el <strong>%sp³</strong>. El problema: como el aC carece de orden de largo alcance, los mecanismos de deformación plástica son difíciles de predecir y técnicas como Raman o EELS <strong>no resuelven los cambios locales</strong> bajo el indentador.</li>
+</ul>
+
+<h2>⚙️ Metodología</h2>
+<h3>Simulaciones</h3>
+<ul>
+<li><strong>MD clásica</strong> con <strong>LAMMPS</strong> y el potencial <strong>EDIP</strong> (Environment-Dependent Interatomic Potential), que reproduce bien la densidad y el %sp³ del aC frente a experimentos y DFT.</li>
+<li>Muestras de <strong>~medio millón de átomos</strong> con 10, 15, 20, 25, 30, 40 y 55 % de sp³, generadas por <strong>temple térmico</strong> (fundido a 5000 K y enfriado rápido a 300 K).</li>
+<li>Indentador esférico de <strong>2.5 nm de radio</strong>, penetración de 2 nm a 10 m/s. Módulo elástico vía <strong>Oliver-Pharr</strong>; área de contacto (y dureza) con la <strong>malla de superficie de OVITO</strong>.</li>
+<li><strong>DFT</strong> (VASP, PAW, PBE) sobre muestras de 216 átomos para <strong>validar la hibridación</strong> de las muestras simuladas.</li>
+</ul>
+<h3>Experimentos</h3>
+<ul>
+<li>Cuatro recubrimientos de aC (~1 µm) sobre Si(100): <strong>aC1, aC2, aC3</strong> por <em>magnetron sputtering</em> (MS, variando el <em>bias</em> del sustrato) y <strong>aC4</strong> por <em>pulsed laser deposition</em> (PLD).</li>
+<li>Caracterización estructural con <strong>Raman</strong> (bandas D y G) y <strong>EELS</strong> (relación 1s→π* / 1s→σ*); nanoindentación con punta <strong>Berkovich</strong> y método de <strong>Oliver &amp; Pharr</strong>.</li>
+</ul>
+<table>
+<thead>
+<tr><th>Muestra</th><th>Depósito</th><th>sp³ %</th><th>H (GPa)</th><th>E (GPa)</th></tr>
+</thead>
+<tbody>
+<tr><td>aC-1</td><td>MS</td><td>20</td><td>16.6</td><td>159</td></tr>
+<tr><td>aC-2</td><td>MS</td><td>30</td><td>26.6</td><td>210</td></tr>
+<tr><td>aC-3</td><td>MS</td><td>35</td><td>29.1</td><td>236</td></tr>
+<tr><td>aC-4</td><td>PLD</td><td>55</td><td>40.2</td><td>274</td></tr>
+</tbody>
+</table>
+
+<h2>📊 Resultados clave</h2>
+<h3>Validación cruzada DFT ↔ EDIP</h3>
+<p>EDIP y DFT coinciden muy bien en el %sp³ en el rango de <strong>densidades 1.75–2.75 g/cm³</strong> (hibridación de 10 a 40 %). El acuerdo en sp³ es excelente en todo el rango.</p>
+<h3>El módulo elástico y la dureza crecen con el sp³</h3>
+<ul>
+<li>Tanto experimentos como MD muestran que <strong>E y H aumentan de forma continua con el %sp³</strong> (de ~10 a 55 %), con <strong>excelente acuerdo</strong> entre ambos para el módulo elástico.</li>
+<li>E sigue el modelo de <strong>He y Thorpe</strong> para redes de aC: crece como <strong>ley de potencia con la coordinación promedio</strong>, E ∝ k(⟨r⟩ − r_p)^m, con r_p = 2.4 y exponente m = 1.7.</li>
+<li>Aparece un rol <strong>inesperado del sp¹</strong> por debajo de 20 % de sp³, que los autores atribuyen a un <strong>artefacto del potencial</strong> EDIP.</li>
+</ul>
+<h3>Dos modos de plasticidad según el sp³</h3>
+<ul>
+<li><strong>sp³ &lt; 40 %:</strong> plasticidad mediada por la <strong>transición sp² → sp³</strong> cerca de la punta (plasticidad "química", inducida por la presión de contacto ≈ 20 GPa).</li>
+<li><strong>sp³ alto (~55 %):</strong> enlaces saturados; apenas hay cambio de hibridación (incluso a ~100 GPa). La deformación se atribuye a <strong>densificación por reordenamiento de enlaces</strong> y compactación de porosidad.</li>
+</ul>
+<h3>Patrones de corte altamente anisotrópicos</h3>
+<ul>
+<li>Las distribuciones de <em>shear strain</em> son <strong>muy anisotrópicas</strong>, en contradicción con las predicciones continuas (hemisféricas) para un indentador esférico en un sólido amorfo.</li>
+<li>A bajo sp³ la respuesta de corte se extiende <strong>mucho más allá</strong> del contacto; a alto sp³ se concentra junto a la punta.</li>
+<li>Aparecen <strong>filamentos</strong> y patrones <strong>tipo anillo</strong>, distintos de las bandas de corte de los vidrios metálicos y de los vidrios de sílice. <strong>No</strong> hay grietas, bandas de corte ni dislocaciones a esta escala.</li>
+</ul>
+<h3>Resistencia al desgaste</h3>
+<p>La figura de mérito <strong>H³/E²</strong> crece con el sp³: mejor capacidad de acomodar deflexiones del sustrato y disipar energía bajo carga → <strong>mayor resistencia al desgaste</strong> sin agrietamiento.</p>
+
+<h2>🧩 Por qué importa</h2>
+<ul>
+<li>Da una descripción <strong>cuantitativa y validada</strong> (experimento + DFT + MD) de cómo el %sp³ gobierna E, H y la plasticidad del DLC, recubrimiento clave en herramientas de corte, discos duros, MEMS, motores y biomedicina.</li>
+<li>Usa la <strong>MD como "microscopía computacional in-situ"</strong>: revela la física bajo el indentador (transición sp²→sp³, anisotropía del corte) que Raman o EELS no pueden ver.</li>
+<li>Los resultados sirven para <strong>refinar modelos continuos</strong> de mesoescala y diseñar mejores recubrimientos superlubricantes.</li>
+</ul>
+
+<h2>⚠️ Limitaciones</h2>
+<ul>
+<li>Diferencias de <strong>escala espacial y temporal</strong> entre MD (decenas de nm, ns, indentador esférico) y experimentos (µm, segundos, punta Berkovich): la dureza simulada tiende a ser mayor que la experimental.</li>
+<li>El <strong>exceso de sp¹</strong> a bajo sp³ parece un artefacto del potencial EDIP, sin contraparte experimental.</li>
+<li>Las simulaciones exploran penetraciones pequeñas (2 nm); la conexión con el <strong>agrietamiento y la fractura</strong> a mayores deformaciones queda como trabajo futuro.</li>
+</ul>
+
+<h2>📎 Conexiones</h2>
+<ul>
+<li>Metodológicamente cercano a otros trabajos del grupo de <strong>Ruestes/Bringa</strong> sobre nanoindentación atomística y comparación MD ↔ experimento.</li>
+<li>Comparte la filosofía "atomístico → propiedades macroscópicas" con [[CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025]] y [[Thermal_transport_atomistico_continuo_Ugwumadu_2026]], aunque aquí el puente es <strong>experimento + DFT + MD</strong> en vez de surrogates de IA.</li>
+<li>El uso de <strong>OVITO</strong> para el área de contacto y el análisis de coordinación lo emparenta con el análisis estructural de [[Steinhardt_bond_orientational_order_1983]].</li>
+</ul>
+  </section>
+
+  <section>
+    <h2>Figuras del Paper (13)</h2>
+    <div class="figure-list">
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_005_Fig_1_Measured_Raman_spectra_for_DLC_s.png" alt="Fig. 1 — Raman (pagina 4)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 1 · pagina 4 · Raman</strong>
+            <p class="caption">Fig. 1. Espectros Raman medidos para muestras de DLC con distinto contenido de sp³: 20 % (verde), 30 % (azul), 35 % (negro) y 55 % (rojo).</p>
+          </figcaption>
+          <div class="figbody"><p>La banda G (~1540 cm⁻¹, estiramiento C–C en sitios sp²) y la banda D (~1340 cm⁻¹, modo de respiración de anillos sp²) dominan el espectro. El cociente I_D/I_G y el corrimiento de G hacia números de onda mayores crecen con el sp³, lo que permite seguir la transición aC → ta-C del modelo de tres etapas de Ferrari.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_004_Fig_2_Measured_EELS_spectra_for_DLC_sa.png" alt="Fig. 2 — EELS (pagina 4)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 2 · pagina 4 · EELS</strong>
+            <p class="caption">Fig. 2. Espectros EELS medidos para muestras de DLC con distinto contenido de sp³: 20 % (verde), 30 % (azul), 35 % (negro) y 55 % (rojo). Se incluye, a modo de comparación, el espectro EELS de una muestra de grafito (naranja).</p>
+          </figcaption>
+          <div class="figbody"><p>Las dos señales características —1s→π* a 284 eV y 1s→σ* a ~291 eV— permiten cuantificar la fracción sp² con la fórmula de Ferrari, tomando el grafito (100 % sp²) como referencia. Es la medida experimental directa del %sp³ de cada recubrimiento.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_007_Fig_3_Experimental_nanoindentation_loa.png" alt="Fig. 3 — curvas carga-profundidad (pagina 5)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 3 · pagina 5 · Experimento</strong>
+            <p class="caption">Fig. 3. Curvas experimentales de carga-profundidad de nanoindentación para muestras de DLC con distinto contenido de sp³: 20 % (verde), 30 % (azul), 35 % (negro) y 55 % (rojo).</p>
+          </figcaption>
+          <div class="figbody"><p>Ensayos controlados por carga (Berkovich, Oliver-Pharr). Una pendiente de descarga más pronunciada implica mayor módulo elástico; un desplazamiento de la curva hacia la izquierda (menos penetración para la misma carga) implica mayor dureza. Ambas crecen con el sp³.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_006_Fig_4_Hybridization_percentage_of_samp.png" alt="Fig. 4 — hibridacion DFT vs EDIP (pagina 5)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 4 · pagina 5 · DFT vs EDIP</strong>
+            <p class="caption">Fig. 4. Porcentaje de hibridación (sp¹, sp² y sp³) de muestras de 256 átomos generadas con DFT y con EDIP.</p>
+          </figcaption>
+          <div class="figbody"><p>Validación cruzada del potencial clásico. EDIP y DFT coinciden muy bien en el sp³ en el rango de densidades 1.75–2.75 g/cm³ (10–40 % sp³). A bajo sp³, EDIP subestima el sp² y sobreestima el sp¹ (probable artefacto del potencial).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_008_Fig_5_Load_vs_indenter_depth_curves_f.png" alt="Fig. 5 — carga vs profundidad MD (pagina 5)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 5 · pagina 5 · MD</strong>
+            <p class="caption">Fig. 5. Curvas de carga frente a profundidad del indentador (MD) para DLC con 20, 30 y 55 % de sp³.</p>
+          </figcaption>
+          <div class="figbody"><p>Versión simulada del ensayo, controlada por desplazamiento. A mayor sp³, mayor pendiente elástica y mayor fuerza para una profundidad dada (mayor dureza). El DLC no nuclea bandas de corte lejos de la punta, a diferencia del grafito o el diamante.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_009_Fig_6_a_Elastic_modulus_for_differen.png" alt="Fig. 6a — E vs sp3 (pagina 6)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 6 (a) · pagina 6 · Módulo elástico</strong>
+            <p class="caption">Fig. 6(a). Módulo elástico para distintos %sp³; los símbolos rojos son experimentos y los azules, simulaciones. La línea es el ajuste E = 478.5·[0.248 + sp³]^(3/2).</p>
+          </figcaption>
+          <div class="figbody"><p>Acuerdo excelente experimento-simulación. El módulo crece de forma monótona con el sp³, con un cambio de pendiente cerca del 20 % de sp³. Para sp³ &gt; 20 %, los datos calculados y medidos siguen el mismo ajuste.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_010_no_caption.png" alt="Fig. 6b — hibridacion vs coordinacion (pagina 6)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 6 (b) · pagina 6 · Hibridación</strong>
+            <p class="caption">Fig. 6(b). Hibridación (sp¹, sp², sp³) en función de la coordinación promedio ⟨r⟩ de cada muestra indentada con MD.</p>
+          </figcaption>
+          <div class="figbody"><p>El sp² se mantiene casi constante (~60 %) a bajo sp³; el aumento de rigidez se debe a la caída del sp¹ y el aumento del sp³. Es decir, una transición de un aC blando tipo polimérico (mucho sp¹) hacia una red rígida sobre-restringida (ta-C).</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_011_no_caption.png" alt="Fig. 6c — E vs coordinacion, He-Thorpe (pagina 6)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 6 (c) · pagina 6 · He–Thorpe</strong>
+            <p class="caption">Fig. 6(c). Módulo elástico frente a coordinación promedio ⟨r⟩. La línea es el mejor ajuste con el modelo de He y Thorpe, E_r = k(⟨r⟩ − r_p)^m, con r_p = 2.4, k = 280.3 GPa y m = 1.7.</p>
+          </figcaption>
+          <div class="figbody"><p>La rigidez sigue una ley de potencia con la coordinación, con la transición floppy→rígido en ⟨r⟩ = 2.4. El exponente m = 1.7 (algo mayor que el 1.5 clásico) refleja que el DLC es una red totalmente aleatoria. La extrapolación da ~600 GPa para una red 100 % sp³.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_013_Fig_7_MD_hardness_at_full_penetration_.png" alt="Fig. 7 — dureza MD vs sp3 (pagina 7)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 7 · pagina 7 · Dureza</strong>
+            <p class="caption">Fig. 7. Dureza MD a máxima penetración frente al %sp³. Se incluyen también los resultados experimentales.</p>
+          </figcaption>
+          <div class="figbody"><p>Usando el área de contacto atomística de OVITO (más realista que el área geométrica), la dureza simulada se acerca a la experimental y sigue la misma tendencia creciente con el sp³. El área geométrica sobreestimaría el contacto y daría durezas demasiado bajas.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_012_Fig_8_Figure_of_merit_H_3_E_2_versus_.png" alt="Fig. 8 — figura de merito H3/E2 (pagina 7)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 8 · pagina 7 · H³/E²</strong>
+            <p class="caption">Fig. 8. Figura de mérito H³/E² frente al contenido de sp³, para experimentos y simulaciones.</p>
+          </figcaption>
+          <div class="figbody"><p>H³/E² —indicador de resistencia a la falla por deformación elástica y al desgaste— crece con el sp³: las muestras con más sp³ acomodan mejor las deflexiones del sustrato y disipan más energía bajo carga. Los valores algo mayores en simulación provienen de las durezas MD más altas.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_014_Fig_9_Indentation_for_different_DLC_sa.png" alt="Fig. 9 y Fig. 11 — shear strain y coordinacion (pagina 8)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 9 + FIG. 11 · pagina 8 · Shear / coordinación</strong>
+            <p class="caption">Fig. 9 (izquierda). Indentación de distintas muestras de DLC; cada imagen es un corte transversal (medio) y el color indica la deformación de corte de cada átomo. — Fig. 11 (derecha). Coordinación promedio tras retirar el indentador para 30 % y 55 % sp³: (a, b) sección de 1 nm; (c) 30 % y (d) átomos con Δ⟨r⟩ ≥ 0.15; (e, f) átomos con Δ⟨r⟩ ≤ −0.1. La esfera celeste es la punta; la superficie gris, la muestra.</p>
+          </figcaption>
+          <div class="figbody"><p>A bajo sp³ (izq.) el corte se propaga lejos de la punta; a 55 % se concentra justo bajo ella, por la rigidez del armazón tetraédrico. Tras retirar la punta (der.), la muestra de 30 % tiende a aumentar su coordinación (sp²→sp³), mientras que en la de 55 % la creación y destrucción de enlaces se compensa: casi no cambia la coordinación global. <em>Nota: el extractor fusionó las Figs. 9 y 11 en una sola imagen.</em></p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_015_Fig_10_Shear_strain_surface_around_ato.png" alt="Fig. 10 — superficie de shear strain (pagina 8)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 10 · pagina 8 · Superficie de corte</strong>
+            <p class="caption">Fig. 10. Superficie de deformación de corte alrededor de los átomos con shear strain &gt; 0.3 para una muestra de aC con sp³ = 30 %. (a, b, c, d) corresponden a profundidades del indentador de 0.5, 1.0, 1.5 y 2.0 nm. Los átomos grises son la superficie del DLC.</p>
+          </figcaption>
+          <div class="figbody"><p>Aunque se esperaría un volumen de corte hemisférico (isótropo) en un amorfo, ya a 0.5 nm la región es irregular y, a mayor profundidad, aparecen filamentos y patrones tipo anillo. Esta anisotropía, atribuida a la densidad irregular del aC, es muy distinta de los vidrios metálicos (bandas de corte) o de sílice.</p></div>
+        </figure>
+
+        <figure>
+          <img src="../pappers/carbono_amorfo_ruestes_figures/images/fig_016_Fig_12_Hybridization_change_for_differ.png" alt="Fig. 12 — cambio de hibridacion vs distancia (pagina 9)" loading="lazy">
+          <figcaption>
+            <strong>FIG. 12 · pagina 9 · Cambio de hibridación</strong>
+            <p class="caption">Fig. 12. Cambio de hibridación para distinta concentración de sp³. (a) Cambio porcentual respecto de una muestra no indentada con sp³ = 20 % (izq.: Δ%sp²; der.: Δ%sp³). (b) Cambio para una muestra de sp³ = 55 %. (c) sp³ en función de la distancia al indentador (a z = 2 nm; promedios en cascarones esféricos de 0.5 nm).</p>
+          </figcaption>
+          <div class="figbody"><p>En la muestra de 20 %, el enlace sp³ supera el 30 % a 0.5 nm de la punta, y la transformación estructural alcanza hasta ~3 nm (disparada por ~20 GPa de presión de contacto). En la de 55 % no hay cambio de enlace aun a ~100 GPa: los enlaces ya están saturados, igual que ocurre en el DLC hidrogenado.</p></div>
+        </figure>
+
+      </div>
+  </section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+figure_id,page,label,caption,image_path
+fig_001,1,picture,,images/fig_001_no_caption.png
+fig_002,2,picture,Figure 1 . Schematic diagram of radiation damaged.,images/fig_002_Figure_1__Schematic_diagram_of_radiatio.png
+fig_003,3,picture,Figure 2 . Schematic diagram of a numerical reactor prototype (CVR1.0) system.,images/fig_003_Figure_2__Schematic_diagram_of_a_numeri.png
+fig_004,4,picture,Figure 3 . Schematic diagram of body-centered cubic crystal structure.,images/fig_004_Figure_3__Schematic_diagram_of_body-cen.png
+fig_005,7,picture,Figure 4 . Cascade defect cluster clustering analysis process.,images/fig_005_Figure_4__Cascade_defect_cluster_cluste.png
+fig_006,9,picture,Figure 5 . Schematic diagram of representation method for defect clusters.,images/fig_006_Figure_5__Schematic_diagram_of_represen.png
+fig_007,9,picture,Figure 6 . Schematic diagram of cluster structure representation based on centroid.,images/fig_007_Figure_6__Schematic_diagram_of_cluster_.png
+fig_008,10,picture,Figure 7 . Histogram of cluster structure feature vectors based on centroid.,images/fig_008_Figure_7__Histogram_of_cluster_structur.png
+fig_009,10,picture,Figure 8 . Schematic diagram of cluster structure representation based on adjacent points.,images/fig_009_Figure_8__Schematic_diagram_of_cluster_.png
+fig_010,11,picture,Figure 9 . Histogram of cluster structure feature vectors based on adjacent points.,images/fig_010_Figure_9__Histogram_of_cluster_structur.png
+fig_011,13,picture,Figure 10 . Dimensionality reduction results with the t-SNE and the UMAP algorithm.,images/fig_011_Figure_10__Dimensionality_reduction_res.png
+fig_012,15,picture,Figure 12 . Smileyface_type defects and glasses_type pairs.,images/fig_012_Figure_12__Smileyface_type_defects_and_.png
+fig_013,16,picture,,images/fig_013_no_caption.png
+fig_014,16,picture,Figure 13 . Schematic diagram of the two-dimensional structure of the W-S primitive cell.,images/fig_014_Figure_13__Schematic_diagram_of_the_two.png
+fig_015,16,picture,Figure 14 . Schematic diagram of defect analysis using the W-S primitive cell method.,images/fig_015_Figure_14__Schematic_diagram_of_defect_.png
+fig_016,18,picture,,images/fig_016_no_caption.png
+fig_017,18,picture,,images/fig_017_no_caption.png
+fig_018,21,picture,Figure 16 . Construction of SIA line assemblies.,images/fig_018_Figure_16__Construction_of_SIA_line_ass.png
+fig_019,21,picture,Figure 17 . Algorithm steps for defect cluster configuration identification.,images/fig_019_Figure_17__Algorithm_steps_for_defect_c.png
+fig_020,22,picture,Figure 18 . Searching for connected components of a sparse matrix.,images/fig_020_Figure_18__Searching_for_connected_comp.png
+fig_021,22,picture,Figure 19 . Connected components are represented as parallel components or ring components.,images/fig_021_Figure_19__Connected_components_are_rep.png
+fig_022,25,picture,Figure 20 . Curve of Defect Quantity Variation with PKA Directions at different energy.,images/fig_022_Figure_20__Curve_of_Defect_Quantity_Var.png
+fig_023,26,picture,,images/fig_023_no_caption.png
+fig_024,26,picture,Figure 22 . Visualization of interstitial atoms.,images/fig_024_Figure_22__Visualization_of_interstitia.png
+fig_025,26,picture,Figure 23 . 2D Map of the spatial density distribution of interstitial atoms and vacancies.,images/fig_025_Figure_23__2D_Map_of_the_spatial_densit.png
+fig_026,27,picture,Figure 24 . Evolution Process of defect clusters.,images/fig_026_Figure_24__Evolution_Process_of_defect_.png
+fig_027,28,picture,,images/fig_027_no_caption.png
+fig_028,28,picture,,images/fig_028_no_caption.png
+fig_029,28,picture,Figure 25 . Different defect configurations in Fe cascade collision.,images/fig_029_Figure_25__Different_defect_configurati.png
+fig_030,28,picture,,images/fig_030_no_caption.png

@@ -1,0 +1,89 @@
+# Resumen — Nanoindentation of Amorphous Carbon: a combined experimental and simulation approach
+
+**Autores**: F.J. Valencia, J. Santiago, R.I. González, R. González-Arrabal, C. Ruestes, M. Pérez Díaz, M.A. Monclús, J. Molina-Aldareguia, P. Díaz Núñez, F. Muñoz, M. Kiwi, J.M. Perlado, E.M. Bringa (et al.)
+**Revista**: Acta Materialia 203 (2021) 116485, DOI: 10.1016/j.actamat.2020.116485
+
+---
+
+## 🎯 Idea central
+
+Entender, **a escala atómica**, cómo se deforma plásticamente el **carbono amorfo (aC)** —en particular el *diamond-like carbon* (DLC) sin hidrógeno— durante la nanoindentación, y cómo sus propiedades mecánicas dependen del contenido de enlaces **sp³**. Para ello combinan **tres frentes**: experimentos de nanoindentación, simulaciones *ab-initio* (DFT) y dinámica molecular clásica (MD). El resultado es una descripción completa y validada que revela **mecanismos de plásticidad inesperados** que no se detectan con las técnicas experimentales habituales.
+
+---
+
+## 🔬 El material: aC / DLC y el papel del sp³
+
+- El carbono hibrida de tres formas: **sp¹** (lineal), **sp²** (trigonal, tipo grafito) y **sp³** (tetraédrico, tipo diamante).
+- El DLC es un carbono amorfo metaestable con una fracción importante de enlaces **sp³**, lo que le da propiedades cercanas al diamante: alta dureza, bajo coeficiente de fricción, resistencia al desgaste, transparencia óptica e inercia química.
+- Se acepta que las propiedades mecánicas del DLC sin hidrógeno están controladas principalmente por el **%sp³**. El problema: como el aC carece de orden de largo alcance, los mecanismos de deformación plástica son difíciles de predecir y las técnicas experimentales (Raman, EELS) **no resuelven los cambios locales** bajo el indentador.
+
+---
+
+## ⚙️ Metodología
+
+### Simulaciones
+- **MD clásica** con el código **LAMMPS** y el potencial **EDIP** (Environment-Dependent Interatomic Potential), que reproduce bien la densidad y el %sp³ del aC frente a experimentos y DFT.
+- Muestras de **~medio millón de átomos** con 10, 15, 20, 25, 30, 40 y 55 % de sp³, generadas por **temple térmico** (fundido a 5000 K y enfriado rápido a 300 K), siguiendo el protocolo de de Thomas et al.
+- Indentador esférico de **2.5 nm de radio**, penetración de 2 nm a 10 m/s, con potencial repulsivo anarmónico. Módulo elástico vía **Oliver-Pharr**; área de contacto (y por tanto dureza) calculada con la **malla de superficie de OVITO**.
+- **DFT** (VASP, PAW, PBE) sobre muestras pequeñas de 216 átomos, con 5 semillas, para **validar la hibridación** de las muestras simuladas.
+
+### Experimentos
+- Cuatro recubrimientos de aC (~1 µm) sobre Si(100): **aC1, aC2, aC3** depositados por *magnetron sputtering* (MS) variando el *bias* del sustrato, y **aC4** por *pulsed laser deposition* (PLD).
+- Caracterización estructural con **espectroscopía Raman** (bandas D y G) y **EELS** (relación 1s→π* / 1s→σ* para estimar el %sp²/sp³).
+- Nanoindentación con punta **Berkovich** (Hysitron TI950), método de **Oliver & Pharr** para E y H.
+
+| Muestra | Depósito | sp³ % | H (GPa) | E (GPa) |
+|---|---|---|---|---|
+| aC-1 | MS | 20 | 16.6 | 159 |
+| aC-2 | MS | 30 | 26.6 | 210 |
+| aC-3 | MS | 35 | 29.1 | 236 |
+| aC-4 | PLD | 55 | 40.2 | 274 |
+
+---
+
+## 📊 Resultados clave
+
+### Validación cruzada DFT ↔ EDIP
+- EDIP y DFT coinciden muy bien en el %sp³ en el rango de **densidades 1.75–2.75 g/cm³** (hibridación de 10 a 40 %). El acuerdo en sp³ es excelente en todo el rango.
+
+### El módulo elástico y la dureza crecen con el sp³
+- Tanto experimentos como MD muestran que **E y H aumentan de forma continua con el %sp³** (de ~10 a 55 %), con **excelente acuerdo** entre ambos para el módulo elástico.
+- E sigue el modelo de **He y Thorpe** para redes de aC: crece como **ley de potencia con la coordinación promedio**, E ∝ k(⟨r⟩ − r_p)^m, con r_p = 2.4 y exponente m = 1.7.
+- Aparece un rol **inesperado del sp¹** por debajo de 20 % de sp³ (fracción de sp¹ mayor que la de sp³), que los autores atribuyen a un **artefacto del potencial** EDIP.
+
+### Dos modos de plasticidad según el sp³
+- **sp³ < 40 %:** la plasticidad está mediada por la **transición sp² → sp³** en la zona próxima a la punta (plasticidad "química", inducida por la presión de contacto ≈ 20 GPa).
+- **sp³ alto (~55 %):** los enlaces ya están saturados; apenas hay cambio de hibridación (incluso a ~100 GPa de presión). La deformación se atribuye a **densificación por reordenamiento de enlaces** y cierta compactación de porosidad.
+
+### Patrones de corte altamente anisotrópicos
+- Las distribuciones de *shear strain* simuladas son **muy anisotrópicas**, en contradicción con las predicciones continuas para un indentador esférico perfecto en un sólido amorfo (que serían hemisféricas).
+- A bajo sp³ la respuesta de corte se extiende **mucho más allá** de la zona de contacto (respuesta colectiva de largo alcance); a alto sp³ el corte se concentra junto a la punta.
+- Aparecen contornos irregulares, **filamentos** y patrones **tipo anillo** ("ring-like"), distintos de las bandas de corte de los vidrios metálicos y del comportamiento de los vidrios de sílice.
+- **No** se observan grietas, bandas de corte ni dislocaciones a esta escala.
+
+### Resistencia al desgaste
+- La figura de mérito **H³/E²** crece con el sp³, indicando mejor capacidad de acomodar deflexiones del sustrato y disipar energía bajo carga → **mayor resistencia al desgaste** sin agrietamiento.
+
+---
+
+## 🧩 Por qué importa
+
+- Da una descripción **cuantitativa y validada** (experimento + DFT + MD) de cómo el %sp³ gobierna E, H y la plasticidad del DLC, un recubrimiento clave en herramientas de corte, discos duros, MEMS, motores y aplicaciones biomédicas.
+- Usa la **MD como "microscopía computacional in-situ"**: revela la rica física bajo el indentador (transición sp²→sp³, anisotropía del corte) que Raman o EELS **no pueden ver**.
+- Los resultados sirven para **refinar modelos continuos** de mesoescala y para diseñar mejores recubrimientos superlubricantes.
+
+---
+
+## ⚠️ Limitaciones
+
+- Diferencias inevitables de **escala espacial y temporal** entre MD (decenas de nm, ns, indentador esférico) y experimentos (µm, segundos, punta Berkovich): la dureza simulada tiende a ser mayor que la experimental.
+- El **exceso de sp¹** a bajo sp³ parece un artefacto del potencial EDIP, sin contraparte experimental que lo corrobore.
+- Las simulaciones exploran penetraciones pequeñas (2 nm); la conexión con el **agrietamiento y la fractura a mayores deformaciones** queda como trabajo futuro.
+
+---
+
+## 📎 Conexiones
+
+- Metodológicamente cercano a otros trabajos del grupo de **Ruestes/Bringa** sobre nanoindentación atomística y comparación MD ↔ experimento.
+- Comparte filosofía "atomístico → propiedades macroscópicas" con [[CNN3D_constantes_elasticas_nanoporosos_Zorkaltsev_2025]] y [[Thermal_transport_atomistico_continuo_Ugwumadu_2026]], aunque aquí el puente es **experimento + DFT + MD** en vez de surrogates de IA.
+- El uso de **OVITO** para el área de contacto y el análisis de coordinación lo emparenta con el toolkit de análisis estructural de [[Steinhardt_bond_orientational_order_1983]].

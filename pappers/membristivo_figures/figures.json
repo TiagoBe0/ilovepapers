@@ -1,0 +1,175 @@
+{
+  "source_file": "/media/santi/ALMACEN_GRANDE_1/ilovepappers/pappers/membristivo.pdf",
+  "total_figures": 13,
+  "figures": [
+    {
+      "figure_id": "fig_001",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 436.59332275390625,
+        "t": 778.7440850138664,
+        "r": 594.7053833007812,
+        "b": 665.8980102539062
+      },
+      "image_path": "images/fig_001_no_caption.png"
+    },
+    {
+      "figure_id": "fig_002",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 0.0003546476364135742,
+        "t": 573.6988677978516,
+        "r": 594.9703979492188,
+        "b": 120.796630859375
+      },
+      "image_path": "images/fig_002_no_caption.png"
+    },
+    {
+      "figure_id": "fig_003",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 463.4275817871094,
+        "t": 81.10247802734375,
+        "r": 568.1051025390625,
+        "b": 31.07427978515625
+      },
+      "image_path": "images/fig_003_no_caption.png"
+    },
+    {
+      "figure_id": "fig_004",
+      "label": "picture",
+      "caption": "",
+      "page": 1,
+      "bbox": {
+        "l": 33.2247200012207,
+        "t": 73.88018798828125,
+        "r": 176.60421752929688,
+        "b": 33.09576416015625
+      },
+      "image_path": "images/fig_004_no_caption.png"
+    },
+    {
+      "figure_id": "fig_005",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 409.1119384765625,
+        "t": 757.6404361724854,
+        "r": 553.0770874023438,
+        "b": 716.4579200744629
+      },
+      "image_path": "images/fig_005_no_caption.png"
+    },
+    {
+      "figure_id": "fig_006",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 41.416324615478516,
+        "t": 745.0120468139648,
+        "r": 148.3244171142578,
+        "b": 709.8212127685547
+      },
+      "image_path": "images/fig_006_no_caption.png"
+    },
+    {
+      "figure_id": "fig_007",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 41.957550048828125,
+        "t": 643.4390411376953,
+        "r": 140.7534942626953,
+        "b": 624.4549102783203
+      },
+      "image_path": "images/fig_007_no_caption.png"
+    },
+    {
+      "figure_id": "fig_008",
+      "label": "picture",
+      "caption": "",
+      "page": 2,
+      "bbox": {
+        "l": 13.107120513916016,
+        "t": 354.6304626464844,
+        "r": 27.008249282836914,
+        "b": 288.64361572265625
+      },
+      "image_path": "images/fig_008_no_caption.png"
+    },
+    {
+      "figure_id": "fig_009",
+      "label": "picture",
+      "caption": "Fig. 1 Breakdown and rewiring of single Ag NWs. (a) Scanning Electron Microscopy (SEM) image of a single NW device obtained by connecting an Ag NW to a pre-patterned electrodes by means of IBID deposition of Pt contacts (scale bar, 10 m m). The inset shows a low magnification SEM image of the pre-patterned sub millimetric probe circuit (scale bar, 50 m m). (b) Breakdown of Ag NWs during voltage sweep stimulation, showing a sudden decrease of current due to the formation of an electrically induced nanogap across the NW. The graph shows the NW breakdown of 11 different single Ag NW devices. Insets show the electrical circuital representations of the device before and after breakdown. (c) SEM image of a nanogap across the NW after electrical breakdown (scale bar, 100 nm). (d) Electrical characteristics and corresponding (e) evolution of the Ag NW morphology during breakdown investigated by in situ STEM measurements, showing a thinning effect of the NW until the formation of a nanogap when applying a voltage sweep (scale bar, 200 nm). The inset in panel d shows FESEM image of the chip showing layout of the electrodes on the electron transparent SiN membrane used as observation region (scale bar, 20 m m). (f) Rewiring under voltage sweep stimulation, showing a sudden increase of the device current due to the formation of a conductive filament across the nanogap that re-establish the electrical connection. (g) Conceptual schematization of the simulation approach based on Molecular Dynamics to simulate electrochemical reactions and ionic dynamics across the nanogap. (h) The morphology of conductive filaments across the nanogap is then exploited as input for Density Functional Theory (DFT) that provides quantum transport simulations of ballistic electron transport (i) Dynamics of filament formation under voltage stimulation by MD, showing drift of edge Ag atoms and followed by the formation of islands before the establishment of the first atomic contact. After contact, the filament growth proceeds through lateral expansion.",
+      "page": 4,
+      "bbox": {
+        "l": 82.17742156982422,
+        "t": 730.8999176025391,
+        "r": 512.2593383789062,
+        "b": 235.5164794921875
+      },
+      "image_path": "images/fig_009_Fig_1_Breakdown_and_rewiring_of_single_.png"
+    },
+    {
+      "figure_id": "fig_010",
+      "label": "picture",
+      "caption": "Fig. 2 Resistive switching and quantum conductance effects in single memristive Ag NWs. (a) I -V curves obtained by stimulating the Ag NW after breakdown with voltage sweeps, showing resistive switching between a high resistance state (HRS) and a low resistance state (LRS) and vice versa in correspondence of SET and RESET events, respectively. A compliance current (CC) of 400 m A was imposed to prevent hard breakdown of the device during SET events. (b) Endurance properties of the device under 100 full sweep cycle stimulation, where HRS and LRS were evaluated at a reading voltage of 0.4 V (outliers not shown). (c) Retention properties tested by monitoring LRS and HRS states for 10 3 s by applying a constant voltage of 0.1 V. (d) Normalized conductance state of the conductive filament over rupture/formation cycles, where conductance states corresponds to the LRS of the endurance test reported in panel b. (e) Normalized conductance state of the conductive filament over time, where conductance states corresponds to the LRS of the retention test in panel c. (f) Example of a resistive switching characteristic where the conductance state was programmed to 1 G0by applying a programming CC of 100 m A. (g) Rewiring of the NW obtained by slowing down the kinetics of filament formation (voltage sweep rate of B 2.6 mV s \u0000 1 ), allowing the observation of quantum conductance levels during SET. (h) Rupture of the conductive filament across the nanogap by slowing down kinetics, allowing the observation of quantum conductance levels during RESET (voltage sweep rate of B 4.5 mV s \u0000 1 ). Insets in panels g and h show the details of the step-like evolution of the NW conductance during SET and RESET (red rectangles), respectively.",
+      "page": 6,
+      "bbox": {
+        "l": 55.329429626464844,
+        "t": 730.0166702270508,
+        "r": 538.1195678710938,
+        "b": 430.05792236328125
+      },
+      "image_path": "images/fig_010_Fig_2_Resistive_switching_and_quantum_c.png"
+    },
+    {
+      "figure_id": "fig_011",
+      "label": "picture",
+      "caption": "Fig. 3 Rewiring through quantum conductance effects. (a) Quantum conductance effects in a current sweep induced NW rewiring. A current sweep in the range 0-20 m A was applied to the NW device (sweep rate of B 90 nA s \u0000 1 ) while measuring the voltage drop across its electrodes, allowing the monitoring of the device conductance G measured. (b) Evolution of the transmission coefficient during the rewiring process computed by DFT simulations on the structures depicted in (c). Dependence of the transmission coefficient on the applied voltage (d), (e) and (f) respectively for structure 3, 4 and 5 of Panel c.",
+      "page": 7,
+      "bbox": {
+        "l": 69.68817138671875,
+        "t": 730.4531097412109,
+        "r": 524.2633056640625,
+        "b": 361.1222839355469
+      },
+      "image_path": "images/fig_011_Fig_3_Rewiring_through_quantum_conducta.png"
+    },
+    {
+      "figure_id": "fig_012",
+      "label": "picture",
+      "caption": "",
+      "page": 8,
+      "bbox": {
+        "l": 63.33755111694336,
+        "t": 729.5833778381348,
+        "r": 533.2114868164062,
+        "b": 494.6049499511719
+      },
+      "image_path": "images/fig_012_no_caption.png"
+    },
+    {
+      "figure_id": "fig_013",
+      "label": "picture",
+      "caption": "Fig. 5 Conductance fluctuations over time. (a) Experimental data showing conductance fluctuations around the B 2.5 G 0 quantum level, where the conductance was monitored with a constant read voltage of 0.1 V (data from Fig. 2e). (b) Zoom of the conductance time trace reported in panel a. (c) Transmission coefficient fluctuations as function of time obtained from MD and DFT simulations. (d) Examples of atomic configurations resulting from the simulations. Numbers refer to the points indicated in Panel c.",
+      "page": 9,
+      "bbox": {
+        "l": 74.81330871582031,
+        "t": 730.4573860168457,
+        "r": 519.2164916992188,
+        "b": 494.6588134765625
+      },
+      "image_path": "images/fig_013_Fig_5_Conductance_fluctuations_over_tim.png"
+    }
+  ]
+}

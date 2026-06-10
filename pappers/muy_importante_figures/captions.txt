@@ -1,0 +1,89 @@
+fig_001 (p. 1)
+[Sin caption]
+
+fig_002 (p. 2)
+Figure 1 . Schematic diagram of radiation damaged.
+
+fig_003 (p. 3)
+Figure 2 . Schematic diagram of a numerical reactor prototype (CVR1.0) system.
+
+fig_004 (p. 4)
+Figure 3 . Schematic diagram of body-centered cubic crystal structure.
+
+fig_005 (p. 7)
+Figure 4 . Cascade defect cluster clustering analysis process.
+
+fig_006 (p. 9)
+Figure 5 . Schematic diagram of representation method for defect clusters.
+
+fig_007 (p. 9)
+Figure 6 . Schematic diagram of cluster structure representation based on centroid.
+
+fig_008 (p. 10)
+Figure 7 . Histogram of cluster structure feature vectors based on centroid.
+
+fig_009 (p. 10)
+Figure 8 . Schematic diagram of cluster structure representation based on adjacent points.
+
+fig_010 (p. 11)
+Figure 9 . Histogram of cluster structure feature vectors based on adjacent points.
+
+fig_011 (p. 13)
+Figure 10 . Dimensionality reduction results with the t-SNE and the UMAP algorithm.
+
+fig_012 (p. 15)
+Figure 12 . Smileyface_type defects and glasses_type pairs.
+
+fig_013 (p. 16)
+[Sin caption]
+
+fig_014 (p. 16)
+Figure 13 . Schematic diagram of the two-dimensional structure of the W-S primitive cell.
+
+fig_015 (p. 16)
+Figure 14 . Schematic diagram of defect analysis using the W-S primitive cell method.
+
+fig_016 (p. 18)
+[Sin caption]
+
+fig_017 (p. 18)
+[Sin caption]
+
+fig_018 (p. 21)
+Figure 16 . Construction of SIA line assemblies.
+
+fig_019 (p. 21)
+Figure 17 . Algorithm steps for defect cluster configuration identification.
+
+fig_020 (p. 22)
+Figure 18 . Searching for connected components of a sparse matrix.
+
+fig_021 (p. 22)
+Figure 19 . Connected components are represented as parallel components or ring components.
+
+fig_022 (p. 25)
+Figure 20 . Curve of Defect Quantity Variation with PKA Directions at different energy.
+
+fig_023 (p. 26)
+[Sin caption]
+
+fig_024 (p. 26)
+Figure 22 . Visualization of interstitial atoms.
+
+fig_025 (p. 26)
+Figure 23 . 2D Map of the spatial density distribution of interstitial atoms and vacancies.
+
+fig_026 (p. 27)
+Figure 24 . Evolution Process of defect clusters.
+
+fig_027 (p. 28)
+[Sin caption]
+
+fig_028 (p. 28)
+[Sin caption]
+
+fig_029 (p. 28)
+Figure 25 . Different defect configurations in Fe cascade collision.
+
+fig_030 (p. 28)
+[Sin caption]
